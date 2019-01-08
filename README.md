@@ -4,4 +4,4 @@ Please see the [Wiki](https://github.com/TonyPhipps/SIEM/wiki)
 git clone https://github.com/TonyPhipps/SIEM.wiki.git
 ```
 
-[test](/TonyPhipps/SIEM/blob/Master/test.md)
+[test](/test.md)
