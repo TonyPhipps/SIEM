@@ -1,9 +1,8 @@
 # SIEM Tactics, Techiques, and Procedures
 
-## [Generic Use Cases](/Generic-Use-Cases.md)
-## [ATT&CK Use Cases](/Attack-Use-Cases.md)
+## [Detect Use Cases Mapped to the ATT&CK Framework](/Detect-Use-Cases.md)
 
-## Source-Specific Use Cases
+## Log-and-Product Driven Signatures
 
 | Endpoint Log-Based                            | Network Log-Based                                | Dual-Homed                                                |
 | --------------------------------------------- | ------------------------------------------------ | --------------------------------------------------------- |
