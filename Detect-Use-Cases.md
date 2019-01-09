@@ -1,4 +1,9 @@
-The following table maps detect use cases to the Mitre ATT&CK Framework.
+Mapped to the ATT&CK Framework, these use cases are intended to guide a SIEM team to...
+* ... develop a workflow for content creation (and retirement) in the SIEM and other security tools.
+* ... illustrate detection coverage provided.
+* ... highlight coverage gaps.
+* ... determine whether custom signatures are required where vendor signatures are lacking.
+* ... elimiante or add additional layers of coverage based on organizational needs.
 
 | Name                            | Initial Access                                                                                           | Execution |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------- | --------- |

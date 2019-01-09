@@ -1,18 +1,25 @@
-# SIEM Tactics, Techiques, and Procedures
+## [Detect Use Cases](/Detect-Use-Cases.md)
+Mapped to the ATT&CK Framework, these use cases are intended to guide a SIEM team to...
+* ... develop a workflow for content creation (and retirement) in the SIEM and other security tools.
+* ... illustrate detection coverage provided.
+* ... highlight coverage gaps.
+* ... determine whether custom signatures are required where vendor signatures are lacking.
+* ... elimiante or add additional layers of coverage based on organizational needs.
 
-## [Detect Use Cases Mapped to the ATT&CK Framework](/Detect-Use-Cases.md)
 
-## Log-and-Product Driven Signatures
+### Log-and-Product Driven Signatures
 
-| Endpoint Log-Based                            | Network Log-Based                                | Dual-Homed                                                |
-| --------------------------------------------- | ------------------------------------------------ | --------------------------------------------------------- |
+The "signatures" provided are meant as as a guide to final signature development for each log source or product type, respectfully. Assume that every use cases will require some tuning to eliminate false positives unique to the operating environment.
+
+| Endpoint Log-Based          | Network Log-Based              | Dual-Homed                              |
+| --------------------------- | ------------------------------ | --------------------------------------- |
 | [Virus Scan](/VirusScan.md) | [Network IDS](/Network-IDS.md) | [Email](/Email.md)                      |
 | [Windows](/Windows.md)      | [Flow](/Flow.md)               | [DHCP](/DHCP.md)                        |
-| [Sysmon](/Sysmon.md)        |                                                  | [DNS](/DNS.md)                          |
-| [Host IDS](/Host-IDS.md)    |                                                  | [Layer 3 Firewall](/Layer3-Firewall.md) |
-| [Web Proxy](/Web-Proxy.md)  |                                                  | [Layer 7 Firewall](/Layer7-Firewall.md) |
+| [Sysmon](/Sysmon.md)        |                                | [DNS](/DNS.md)                          |
+| [Host IDS](/Host-IDS.md)    |                                | [Layer 3 Firewall](/Layer3-Firewall.md) |
+| [Web Proxy](/Web-Proxy.md)  |                                | [Layer 7 Firewall](/Layer7-Firewall.md) |
 
-_Note: Assume that every use cases will require some tuning to eliminate false positives unique to the operating environment._
+
 
 ## [Detection Techniques](/Detection-Techniques.md)
 
