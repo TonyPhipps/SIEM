@@ -8,6 +8,7 @@ Mapped to the ATT&CK Framework, these use cases are intended to guide a SIEM tea
 * ... elimiante or add additional layers of coverage based on organizational needs.
 
 ATT&CK Abbreviation Key:
+
 | ATT&CK Tactic        | Abbreviation |
 | -------------------- | ------------ |
 | Initial Access       | IE           |
@@ -21,6 +22,8 @@ ATT&CK Abbreviation Key:
 | Collection           | C            |
 | Exfiltration         | EX           |
 | Command and Control  | CC           |
+
+## Detect | ATT&CK Cross Mapping
 
 | Name                                  | [IE](https://attack.mitre.org/tactics/TA0001/) | [E](https://attack.mitre.org/tactics/TA0002) | [P](https://attack.mitre.org/tactics/TA0003/) |
 | ------------------------------------- | :--------------------------------------------: | :------------------------------------------: | :-------------------------------------------: |
