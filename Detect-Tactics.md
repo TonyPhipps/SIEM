@@ -8,7 +8,7 @@ Mapped to the ATT&CK Framework, these use cases are intended to guide a SIEM tea
 * ... elimiante or add additional layers of coverage based on organizational needs.
 
 #### ATT&CK Abbreviations Used
-Initial Access (IE), Execution (E), Persistence (P), Privilege Escalation (PE), Defense Evasion (DE), 
+Initial Access (IA), Execution (E), Persistence (P), Privilege Escalation (PE), Defense Evasion (DE), 
 Credential Access (CA), Discovery (D), Lateral Movement (LM), Collection (C), Exfiltration (EX), Command and Control (CC)
 
 ## Detect | ATT&CK Cross Mapping
