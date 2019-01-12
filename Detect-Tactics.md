@@ -7,21 +7,9 @@ Mapped to the ATT&CK Framework, these use cases are intended to guide a SIEM tea
 * ... determine whether custom signatures are required where vendor signatures are lacking.
 * ... elimiante or add additional layers of coverage based on organizational needs.
 
-ATT&CK Abbreviation Key:
-
-| ATT&CK Tactic        | Abbreviation |
-| -------------------- | ------------ |
-| Initial Access       | IE           |
-| Execution            | E            |
-| Persistence          | P            |
-| Privilege Escalation | PE           |
-| Defense Evasion      | DE           |
-| Credential Access    | CA           |
-| Discovery            | D            |
-| Lateral Movement     | LM           |
-| Collection           | C            |
-| Exfiltration         | EX           |
-| Command and Control  | CC           |
+#### ATT&CK Abbreviations Used
+Initial Access (IE), Execution (E), Persistence (P), Privilege Escalation (PE), Defense Evasion (DE), 
+Credential Access (CA), Discovery (D), Lateral Movement (LM), Collection (C), Exfiltration (EX), Command and Control (CC)
 
 ## Detect | ATT&CK Cross Mapping
 
