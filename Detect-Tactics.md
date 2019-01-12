@@ -13,7 +13,7 @@ Credential Access (CA), Discovery (D), Lateral Movement (LM), Collection (C), Ex
 
 ## Detect | ATT&CK Cross Mapping
 
-| Name                                  | [IE](https://attack.mitre.org/tactics/TA0001/) | [E](https://attack.mitre.org/tactics/TA0002) | [P](https://attack.mitre.org/tactics/TA0003/) |
+| Name                                  | [IA](https://attack.mitre.org/tactics/TA0001/) | [E](https://attack.mitre.org/tactics/TA0002) | [P](https://attack.mitre.org/tactics/TA0003/) |
 | ------------------------------------- | :--------------------------------------------: | :------------------------------------------: | :-------------------------------------------: |
 | Anomalous Account Creation            |                       X                        |                                              |                                               |
 | Anomalous Account Modifications       |                       X                        |                      X                       |                       X                       |
