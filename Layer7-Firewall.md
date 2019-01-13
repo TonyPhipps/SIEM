@@ -1,4 +1,4 @@
-| Description                                             | [Technique](/Detection-Techniques.md) | Notes |
+| Description                                             | [Technique](/Detection-Methods.md) | Notes |
 | ------------------------------------------------------- | ------------------------------------------------------- | ----- |
 | Abnormal Expired Certificates                           | Aggregate Count                                         |       |
 | Abnormal Self-Signed Certificates                       | Aggregate Count                                         |       |

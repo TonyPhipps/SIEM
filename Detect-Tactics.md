@@ -11,7 +11,7 @@ Mapped to the ATT&CK Framework, these use cases are intended to guide a SIEM tea
 Initial Access (IA), Execution (E), Persistence (P), Privilege Escalation (PE), Defense Evasion (DE), 
 Credential Access (CA), Discovery (D), Lateral Movement (LM), Collection (C), Exfiltration (EX), Command and Control (CC)
 
-## Detect | ATT&CK Cross Mapping
+## Detect | ATT&CK Tactics Cross Mapping
 
 | Name                                  | [IA](https://attack.mitre.org/tactics/TA0001/) | [E](https://attack.mitre.org/tactics/TA0002) | [P](https://attack.mitre.org/tactics/TA0003/) |
 | ------------------------------------- | :--------------------------------------------: | :------------------------------------------: | :-------------------------------------------: |

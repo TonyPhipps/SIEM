@@ -7,7 +7,7 @@ Mapped to the ATT&CK Framework, these use cases are intended to guide a SIEM tea
 * ... elimiante or add additional layers of coverage based on organizational needs.
 
 
-### Log-and-Product Driven Signatures
+### Detection Techniques
 
 The "signatures" provided are meant as as a guide to final signature development for each log source or product type, respectfully. Assume that every use cases will require some tuning to eliminate false positives unique to the operating environment.
 
@@ -21,7 +21,7 @@ The "signatures" provided are meant as as a guide to final signature development
 
 
 
-## [Detection Techniques](/Detection-Techniques.md)
+## [Detection Methods](/Detection-Methods.md)
 
 ## Data Enrichment
 - GeoIP/ASN Lookup
