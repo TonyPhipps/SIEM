@@ -24,6 +24,8 @@ These techniques are provided as guides to final product signature/SIEM content 
 ## [Detection Methods](/Detection-Methods.md)
 
 ## Data Enrichment
+These efforts can provide significant benefits to some ingested logs. Typically enrichment will result in either adding a new field to events or a lookup table for use in filtering or filling in a field.
+
 - GeoIP/ASN Lookup
 - Levenshtein Distance
 - Shannon Entropy Scores
