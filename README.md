@@ -9,7 +9,7 @@ Mapped to the ATT&CK Framework, these use cases are intended to guide a SIEM tea
 
 ### Detection Techniques
 
-The "signatures" provided are meant as as a guide to final signature development for each log source or product type, respectfully. Assume that every use cases will require some tuning to eliminate false positives unique to the operating environment.
+These techniques are provided as guides to final product signature/SIEM content development for the respective log source or product type. Assume that every use case will require some tuning to eliminate false positives unique to the operating environment.
 
 | Endpoint Log-Based          | Network Log-Based              | Dual-Homed                              |
 | --------------------------- | ------------------------------ | --------------------------------------- |
