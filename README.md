@@ -1,4 +1,4 @@
-## [Detect Tactics](/Detect-Tactics.md)
+## [Detect Tactics](/Detection-Tactics.md)
 Mapped to the ATT&CK Framework, these use cases are intended to guide a SIEM team to...
 * ... develop a workflow for content creation (and retirement) in the SIEM and other security tools.
 * ... illustrate detection coverage provided.
