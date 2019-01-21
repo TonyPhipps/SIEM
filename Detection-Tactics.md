@@ -46,8 +46,7 @@ Credential Access (CA), Discovery (D), Lateral Movement (LM), Collection (C), Ex
 | Anomalous Network Protocol Traffic    |                       X                        |                       X                        |
 | Anomalous Network Protocol Behavior   |                       X                        |
 | Anomalous Network Send/Receive Ratio  |                       X                        |
-| Anomalous Network Socket              |                       X                        |                       X                        |                       X                       |
-|                                       |                       X                        |                       X                        |
+| Anomalous Network Socket              |                       X                        |                       X                        |                       X                       |                       X                       |                       X                       |
 | Anomalous Process Argument            |                       X                        |                       X                        |                       X                       |                       X                       |                       X                       |                       X                       |                      X                       |
 | Anomalous Process Execution           |                       X                        |                       X                        |                       X                       |                       X                       |                       X                       |                       X                       |
 | Anomalous Process Hooking             |                       X                        |                       X                        |                       X                       |
@@ -80,4 +79,4 @@ Credential Access (CA), Discovery (D), Lateral Movement (LM), Collection (C), Ex
 | Script Obfuscation                    |                       X                        |                       X                        |
 | Server Service Exploitation           |                       X                        |
 | SQL Injection Attempt                 |                       X                        |
-
+ 
