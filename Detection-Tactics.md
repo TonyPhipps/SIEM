@@ -1,15 +1,9 @@
 _WORK IN PROGRESS_
 
-Mapped to the ATT&CK Framework, these use cases are intended to guide a SIEM team to...
-* ... develop a workflow for content creation (and retirement) in the SIEM and other security tools.
-* ... illustrate detection coverage provided.
-* ... highlight coverage gaps.
-* ... determine whether custom signatures are required where vendor signatures are lacking.
-* ... elimiante or add additional layers of coverage based on organizational needs.
-
 #### ATT&CK Abbreviations Used
 Initial Access (IA), Execution (Exe), Persistence (P), Privilege Escalation (PE), Defense Evasion (DE), 
 Credential Access (CA), Discovery (D), Lateral Movement (LM), Collection (C), Exfiltration (Exf), Command and Control (CC)
+
 
 ## Detect | ATT&CK Tactics Cross Mapping
 

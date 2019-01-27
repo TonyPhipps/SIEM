@@ -1,14 +1,14 @@
 ### Aggregate Count
-AKA Stack Count, Long Tail Analysis. Number of times a value or set of values has occurred, usually in a table or bar chart.
+AKA Stack Count, AKA Long Tail Analysis. Manual analysis focusing on the number of times a value or aggregate set of values has occurred, usually in the form of a table, bar chart, or pie chart.
 
 ### Blacklist Alert
-A alert is generated for each instance. Grouping multiple alerts occurring in a short time frame is usually a good idea. Blacklists can have a list of exceptions.
+An alert is generated for each instance. Grouping multiple alerts occurring in a short time frame is usually a good idea. Blacklists can have a list of exceptions.
 
 ### Whitelist Alert
 Compare incoming values against a list of known-good entries. If no match is found, fire an alert.
 
 ### [Levenshtein Score](https://en.wikipedia.org/wiki/Levenshtein_distance) Alert
-(AKA Edit Distance) A score representing how similar two strings are. In the SIEM, consider this for domain typo-squatting, naming files similarly to recognizable files, sending email from a closely-named, fake user, etc.
+(AKA Edit Distance) A score representing how similar two strings are. Example use cases include domain typo-squatting, naming files similarly to recognizable files, sending email from a closely-named, fake user, etc.
 
 ### Rolling Whitelist Alert
 Building a list of observed strings over a period of time in a given field, then alerting on anything not in the list. New items may also be added to the list (or not).
