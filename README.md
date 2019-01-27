@@ -28,6 +28,7 @@ These use cases are provided as guides to final product signature/SIEM content d
 | [Host IDS](/Host-IDS.md)    |                                | [Layer 3 Firewall](/Layer3-Firewall.md) |
 | [Web Proxy](/Web-Proxy.md)  |                                | [Layer 7 Firewall](/Layer7-Firewall.md) |
 
+More [Generic Use Cases](/Generic-Use-Cases.md)
 
 ## Data Enrichment
 
