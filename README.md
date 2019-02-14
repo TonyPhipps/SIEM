@@ -43,3 +43,6 @@ These efforts can provide significant benefits to some ingested logs. Typically 
 - DNS Lookup
 - Reverse-DNS Lookup
 - Certificate Parsing
+
+# [Metrics](/Metrics.md)
+ Metrics requiring fields, queries, and manual work
