@@ -1,4 +1,4 @@
-| Description                                               | [Technique](/Detection-Methods.md) | Notes          |
+| Description                                               | [Method](/Detection-Methods.md) | Notes          |
 | --------------------------------------------------------- | ------------------------------------------------------- | -------------- |
 | Traffic from printers to servers/workstations             | Aggregate Count                                         |                |
 | Traffic from servers to workstations                      | Aggregate Count                                         |                |

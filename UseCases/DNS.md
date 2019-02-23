@@ -1,4 +1,4 @@
-| Description                                               | [Technique](/Detection-Methods.md) | Notes |
+| Description                                               | [Method](/Detection-Methods.md) | Notes |
 | --------------------------------------------------------- | ------------------------------------------------------- | ----- |
 | Abnormal count of DNS queries per system                  | Threshold Alert                                         |       |
 | Abnormal count of DNS query failures per system (RCODE:3) | Threshold Alert                                         |       |

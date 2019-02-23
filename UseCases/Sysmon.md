@@ -1,4 +1,4 @@
-| Description                                        | [Technique](/Detection-Methods.md) | Notes |
+| Description                                        | [Method](/Detection-Methods.md) | Notes |
 | -------------------------------------------------- | ------------------------------------------------------- | ----- |
 | Newly-observed executables (1)                     | Rolling Whitelist Alert                                 |       |
 | Newly-observed network connections (3)             | Rolling Whitelist Alert                                 |       |

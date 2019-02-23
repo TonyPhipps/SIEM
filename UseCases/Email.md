@@ -1,4 +1,4 @@
-| Description                                              | [Technique](/Detection-Methods.md) | Notes                                     |
+| Description                                              | [Method](/Detection-Methods.md) | Notes                                     |
 | -------------------------------------------------------- | ------------------------------------------------------- | ----------------------------------------- |
 | Abnormal SMTP user agent                                 | Blacklist Alert                                         |                                           |
 | Abnormal count of outbound emails per server/source user | Threshold Alert                                         |                                           |

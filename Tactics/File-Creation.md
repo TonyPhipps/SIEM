@@ -4,7 +4,7 @@
 - Host-Based IPS Signatures
 
 # Threat Hunting Use Cases
-The use cases below are separated by the recommended detection technique.
+The use cases below are separated by the recommended detection method.
 
 ## Aggregate Count Use Cases
 - Files Created in User Space

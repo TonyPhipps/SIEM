@@ -1,6 +1,6 @@
 ## Logs
 
-| Description                                              | [Technique](/Detection-Methods.md) | Notes |
+| Description                                              | [Method](/Detection-Methods.md) | Notes |
 | -------------------------------------------------------- | ------------------------------------------------------- | ----- |
 | Brute Force Attempts (4625)                              | Threshold Alert                                         |       |
 | Clearing of Event Logs (1102)                            | Blacklist Alert                                         |       |
@@ -14,7 +14,7 @@
 
 ## Data Collection (not in default Microsoft Logs)
 
-| Description                                                  | [Technique](/Detection-Methods.md) | Notes |
+| Description                                                  | [Method](/Detection-Methods.md) | Notes |
 | ------------------------------------------------------------ | ------------------------------------------------------- | ----- |
 | Trusted Certificate Authorities on endpoints                 | Aggregate Count                                         |       |
 | Running Process without a Parent Process ID                  | Blacklist Alert                                         |       |

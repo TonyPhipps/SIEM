@@ -1,4 +1,4 @@
-| Description                                                | [Technique](/Detection-Methods.md) | Notes                                   |
+| Description                                                | [Method](/Detection-Methods.md) | Notes                                   |
 | ---------------------------------------------------------- | ------------------------------------------------------ | --------------------------------------- |
 | Abnormal HTTP Method counts per system in a time period    | Threshold Alert                                        |                                         |
 | Abnormal URL Request Length                                | Aggregate Count                                        |                                         |
