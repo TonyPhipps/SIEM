@@ -44,5 +44,5 @@ These efforts can provide significant benefits to some ingested logs. Typically 
 - Reverse-DNS Lookup
 - Certificate Parsing
 
-# [Metrics](/Metrics.md)
+## [Metrics](/Metrics.md)
  Metrics requiring fields, queries, and manual work
