@@ -11,24 +11,24 @@ These resources are intended to guide a SIEM team to...
 To detect an attacker, one must be equipped with the necessary logs to reveal their activities. Here we use a matrix to map detection tactics to attacker tactics ([Mitre ATT&CK](https://attack.mitre.org/)).
 
 
-## [Detection Techniques](/Detection-Techniques.md)
+## [Detection Methods](/Detection-Methods.md)
 
-Once necessary logs are collected (detection tactics), techniques are applied to reveal anomalous, suspicious, and malicious activity.
+Once necessary logs are collected (detection tactics), use various methods to reveal anomalous, suspicious, and malicious activity.
 
 
 ## Detection Use Cases
 
 These use cases are provided as guides to final product signature/SIEM content development for the respective log source or product type. Assume that every use case will require some tuning to eliminate false positives unique to the operating environment.
 
-| Endpoint Log-Based          | Network Log-Based              | Dual-Homed                              |
-| --------------------------- | ------------------------------ | --------------------------------------- |
-| [Virus Scan](/VirusScan.md) | [Network IDS](/Network-IDS.md) | [Email](/Email.md)                      |
-| [Windows](/Windows.md)      | [Flow](/Flow.md)               | [DHCP](/DHCP.md)                        |
-| [Sysmon](/Sysmon.md)        |                                | [DNS](/DNS.md)                          |
-| [Host IDS](/Host-IDS.md)    |                                | [Layer 3 Firewall](/Layer3-Firewall.md) |
-| [Web Proxy](/Web-Proxy.md)  |                                | [Layer 7 Firewall](/Layer7-Firewall.md) |
+| Endpoint Log-Based                   | Network Log-Based                       | Dual-Homed                                       |
+| ------------------------------------ | --------------------------------------- | ------------------------------------------------ |
+| [Virus Scan](/UseCases/VirusScan.md) | [Network IDS](/UseCases/Network-IDS.md) | [Email](/UseCases/Email.md)                      |
+| [Windows](/UseCases/Windows.md)      | [Flow](/UseCases/Flow.md)               | [DHCP](/UseCases/DHCP.md)                        |
+| [Sysmon](/UseCases/Sysmon.md)        |                                         | [DNS](/UseCases/DNS.md)                          |
+| [Host IDS](/UseCases/Host-IDS.md)    |                                         | [Layer 3 Firewall](/UseCases/Layer3-Firewall.md) |
+| [Web Proxy](/UseCases/Web-Proxy.md)  |                                         | [Layer 7 Firewall](/UseCases/Layer7-Firewall.md) |
 
-More [Generic Use Cases](/Generic-Use-Cases.md)
+More [Generic Use Cases](/UseCases/Generic.md)
 
 ## Data Enrichment
 
