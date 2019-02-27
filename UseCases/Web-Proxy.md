@@ -13,6 +13,7 @@
 | Uncommon Web Site Use – sites not in top 1 million list(s) | Aggregate Count                                        | Requieres Top 1 Million List            |
 | Newly Observed Domains                                     | Rolling Whitelist Alert                                |                                         |
 | Known-bad user agents                                      | Blacklist Alert                                        |                                         |
+| Known-bad Domains                                          | Blacklist Alert                                        |                                         |
 | Web requests directly to IP Address (versus domain names)  | Blacklist Alert                                        |                                         |
 | Web requests not originating from company proxy            | Blacklist Alert                                        |                                         |
 | X-Forwarded-For contains a non-trusted proxy address       | Blacklist Alert                                        |                                         |

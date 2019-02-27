@@ -1,5 +1,5 @@
-| Description                         | [Method](/Detection-Methods.md) | Notes |
-| ----------------------------------- | ------------------------------------------------------- | ----- |
-| Newly-observed alerts               | Rolling Whitelist Alert                                 |       |
-| Newly-observed system firing alerts | Rolling Whitelist Alert                                 |       |
+| Description                 | [Method](/Detection-Methods.md) | Notes |
+| --------------------------- | ------------------------------- | ----- |
+| Newly Observed Alerts       | Rolling Whitelist Alert         |       |
+| Excessive Alerts per System | Threshold                       |       |
 
