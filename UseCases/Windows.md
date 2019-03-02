@@ -39,7 +39,7 @@ An influx of failed logon attempts (4625) indicates a possible brute force attem
 
 
 ## Clearing of Event Logs (1102)
-Clearing event logs is a way for adversaries to clear their tracks. With proper event collection, this should occure seldom, making it a relatively easy detection method. Event logs set to "fill" rather than roll or that allow a large enough rolling file size that it causes system administrators to want to clear the logs should be avoided.
+- Clearing event logs is a way for adversaries to clear their tracks. With proper event collection, this should occure seldom, making it a relatively easy detection method. Event logs set to "fill" rather than roll or that allow a large enough rolling file size that it causes system administrators to want to clear the logs should be avoided.
 
 ### Requirements
 - Ensure event ID 1102 from the Windows Security log is collected/forwarded appropriately.
@@ -67,6 +67,9 @@ Service creation can be used by an adversary to achieve persistence.
 - Build a "Rolling Whitelist" of the "Service File Name" and "Service Account" fields. Review the list regularly, and build a Rolling Whitelist Alert if the frequency of new entries is low enough.
 - ...OR... Manually build a large filter of expected services, and alert on anything not listed (Whitelist Alert).
 
+### Exceptions
+- Implement exceptions as they are discovered in the environment.
+
 ### Responses
 - Consider the file path of the "Service File." Is it resting in a strange location, like user writeable folders or shares?
 - Determine if the affected system should logically have this type of service created.
@@ -74,40 +77,66 @@ Service creation can be used by an adversary to achieve persistence.
 - Obtain a copy of the "Service File" and analyze with a malware detonation sandbox.
 - Conduct static analysis on the "Service File".
 
-### Exceptions
-- Implement exceptions as they are discovered in the environment.
-
 
 ## Newly observed executable (4688)                         
-Rolling Whitelist Alert 
 
+### Requirements
+### Methods
+- Rolling Whitelist Alert 
+### Exceptions
+### Responses
 
 ## Non-default PowerShell module use (4103)
-Whitelist Alert 
 
+### Requirements
+### Methods
+- Whitelist Alert 
+### Exceptions
+### Responses
 
 ## Anomalous User Interactive Logon (4624, Types 2,10)
-Rolling Whitelist Alert
 
+### Requirements
+### Methods
+- Rolling Whitelist Alert
+### Exceptions
+### Responses
 
 ## Anomalous Member Added to Admin Group (4728, 4732, 4756)
-Blacklist Alert
 
+### Requirements
+### Methods
+- Blacklist Alert
+
+### Exceptions
+### Responses
 
 # Data Collection
-These data points are not typically stored in Event Logs. Instead, the data must be collected periodically with a script.
+- These data points are not typically stored in Event Logs. Instead, the data must be collected periodically with a script.
 
 ## Trusted Certificate Authorities on endpoints
-Aggregate Count
-
+- Aggregate Count
+### Requirements
+### Methods
+### Exceptions
+### Responses
 
 ## Running Process without a Parent Process ID
-Blacklist Alert
-
+- Blacklist Alert
+### Requirements
+### Methods
+### Exceptions
+### Responses
 
 ## Running Process With Original File on Disk Deleted
-
+### Requirements
+### Methods
+### Exceptions
+### Responses
 
 ## System/Hidden Attributes Enabled on Unexpected Files/Folders
-
+### Requirements
+### Methods
+### Exceptions
+### Responses
 
