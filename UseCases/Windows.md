@@ -11,7 +11,7 @@ SIEM Use Cases Based on Windows Logs
 - [Data Collection](#data-collection)
   - [Trusted Certificate Authorities on endpoints](#trusted-certificate-authorities-on-endpoints)
   - [Running Process without a Parent Process ID](#running-process-without-a-parent-process-id)
-  - [Running Process With Original File on Disk Deleted](#running-process-with-original-file-on-disk-deleted)
+  - [Running Process with Original File Deleted from Disk](#running-process-with-original-file-deleted-from-disk)
   - [System/Hidden Attributes Enabled on Unexpected Files/Folders](#systemhidden-attributes-enabled-on-unexpected-filesfolders)
 
 # Event Logs
@@ -128,7 +128,7 @@ Service creation can be used by an adversary to achieve persistence.
 ### Exceptions
 ### Responses
 
-## Running Process With Original File on Disk Deleted
+## Running Process with Original File Deleted from Disk
 ### Requirements
 ### Methods
 ### Exceptions
