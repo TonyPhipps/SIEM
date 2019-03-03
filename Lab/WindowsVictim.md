@@ -11,20 +11,13 @@ Windows Security > Firewall & Network Protection > Private Network > Turn Off
   - Public Folder Sharing > Turn on...
   - Password Protected Sharing > Turn off...
 
-
-
 ## Sysmon Logging
 - Copy Sysmon to virtual host and install as a service
-- c:\windows\sysmon\sysmon64.exe -i
+- c:\windows\sysmon\sysmon64.exe -accepteula -i [sysmonlabconfig.xml](/Lab/sysmonlabconfig.xml)
 - %SystemRoot%\system32\winevt\logs\Microsoft-Windows-Sysmon%4Operational.evtx
 
 ## PowerShell Logging
 - %SystemRoot%\system32\winevt\logs\Microsoft-Windows-PowerShell%4Operational.evtx
-
-### Increase Log Size
-- Event Viewer > Application and Service Logs > Microsoft > Windows > PowerShell > Operational
-- Right Click > Properties
-- Add at least a 0 to the end of "Maximum Log Size ( KB )"
 
 ### Enable ScriptBlock Logging
 (Event ID 4104)
@@ -47,3 +40,9 @@ Windows Security > Firewall & Network Protection > Private Network > Turn Off
   - Create new DWORD EnableTranscripting = 1
   - Create new STRING VALUE OutputDirectory = <path_to_directory>
 - Logs will be stored in .txt files in teh specified directory, using the format `..\YYYYMMDD\PowerShell_transcript.PCNAME.RANDOM.YYYYMMDDHHMMSS.txt`
+
+## Increase Log Size
+- Event Viewer > Application and Service Logs > Microsoft > Windows > PowerShell > Operational
+- Event Viewer > Application and Service Logs > Microsoft > Windows > Sysmon > Operational
+- Right Click > Properties
+- Maximum Log Size ( KB ): 100,032 or higher is recommended
