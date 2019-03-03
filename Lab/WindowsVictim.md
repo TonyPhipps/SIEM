@@ -1,5 +1,12 @@
 In order to build a lab for Windows logs, a Windows system is required. The content on this page will focus on setting up a victim system with advanced logging. While production systems may not have such high levels of logging, it remains important to understand how attacks and activities can be logged. It may be the case that observations in a lab environment warrant increasing logging on production systems to allow detection.
 
+- [Recommend Setup](#recommend-setup)
+  - [Disable Windows Firewall](#disable-windows-firewall)
+  - [Disable Password Protected Sharing](#disable-password-protected-sharing)
+  - [Sysmon Logging](#sysmon-logging)
+  - [PowerShell Logging](#powershell-logging)
+  - [Increase Log Size](#increase-log-size)
+
 # Recommend Setup
 
 ## Disable Windows Firewall

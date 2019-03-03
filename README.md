@@ -47,5 +47,5 @@ These efforts can provide significant benefits to some ingested logs. Typically 
 ## [Metrics](/Metrics.md)
  Metrics requiring fields, queries, and manual work
 
-## [Lab](/Lab/WIndowsVictim.md)
+## [Lab](/Lab/WindowsVictim.md)
 Set up a lab with a Windows system, a SIEM, and an attacking system to aid in detection research and development (work in progress).
