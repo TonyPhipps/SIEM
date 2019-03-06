@@ -2,92 +2,92 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 
 ### Security Events
 
-| EventID | Description                                                                                                                               |
-| ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| 1100    | The event logging service has shut down.                                                                                                  |
-| 1102    | The audit log was cleared.                                                                                                                |
-| 4618    | A monitored security event pattern has occurred.                                                                                          |
-| 4624    | An account was successfully logged on.                                                                                                    |
-| 4625    | An account failed to log on.                                                                                                              |
-| 4634    | An account was logged off.                                                                                                                |
-| 4648    | A logon was attempted using explicit credentials.                                                                                         |
-| 4649    | A replay attack was detected.                                                                                                             |
-| 4657    | A registry value was modified.                                                                                                            |
-| 4672    | Special privileges assigned to new logon.                                                                                                 |
-| 4688    | A new process has been created.                                                                                                           |
-| 4689    | A process has exited.                                                                                                                     |
-| 4692    | Backup of data protection master key was attempted.                                                                                       |
-| 4693    | Recovery of data protection master key was attempted.                                                                                     |
-| 4697    | A service was installed in the system.                                                                                                    |
-| 4698    | A scheduled task was created.                                                                                                             |
-| 4699    | A scheduled task was deleted.                                                                                                             |
-| 4700    | A scheduled task was enabled.                                                                                                             |
-| 4701    | A scheduled task was disabled.                                                                                                            |
-| 4702    | A scheduled task was updated.                                                                                                             |
-| 4704    | A user right was assigned.                                                                                                                |
-| 4706    | A new trust was created to a domain.                                                                                                      |
-| 4715    | The audit policy (SACL) on an object was changed.                                                                                         |
-| 4716    | Trusted domain information was modified.                                                                                                  |
-| 4717    | System security access was granted to an account.                                                                                         |
-| 4719    | System audit policy was changed.                                                                                                          |
-| 4720    | A user account was created.                                                                                                               |
-| 4724    | An attempt was made to reset an account's password.                                                                                       |
-| 4727    | A security-enabled global group was created.                                                                                              |
-| 4728    | A member was added to a security-enabled global group.                                                                                    |
-| 4731    | A security-enabled local group was created.                                                                                               |
-| 4732    | A member was added to a security-enabled local group.                                                                                     |
-| 4737    | A security-enabled global group was changed.                                                                                              |
-| 4738    | A user account was changed.                                                                                                               |
-| 4739    | Domain Policy was changed.                                                                                                                |
-| 4740    | A user account was locked out.                                                                                                            |
-| 4754    | A security-enabled universal group was created.                                                                                           |
-| 4755    | A security-enabled universal group was changed.                                                                                           |
-| 4756    | A member was added to a security-enabled universal group.                                                                                 |
-| 4764    | A group’s type was changed.                                                                                                              |
-| 4767    | A user account was unlocked.                                                                                                              |
-| 4776    | The domain controller attempted to validate the credentials for an account.                                                               |
-| 4778    | A session was reconnected to a Window Station.                                                                                            |
-| 4779    | A session was disconnected from a Window Station.                                                                                         |
-| 4780    | The ACL was set on accounts which are members of administrators groups.                                                                   |
-| 4794    | An attempt was made to set the Directory Services Restore Mode administrator password.                                                    |
-| 4816    | RPC detected an integrity violation while decrypting an incoming message.                                                                 |
-| 4865    | A trusted forest information entry was added.                                                                                             |
-| 4866    | A trusted forest information entry was removed.                                                                                           |
-| 4867    | A trusted forest information entry was added.                                                                                             |
-| 4882    | The security permissions for Certificate Services changed.                                                                                |
-| 4885    | The audit filter for Certificate Services changed.                                                                                        |
-| 4890    | The certificate manager settings for Certificate Services changed.                                                                        |
-| 4906    | The CrashOnAuditFail value has changed.                                                                                                   |
-| 4907    | Auditing settings on object changed                                                                                                       |
-| 4908    | Special Groups Logon table modified                                                                                                       |
-| 4912    | Per-User Audit Policy changed                                                                                                             |
-| 4946    | Windows Firewall exception list change                                                                                                    |
-| 4950    | A Windows Firewall setting has changed (local only)                                                                                       |
-| 4951    | A rule has been ignored because its major version number was not recognized by Windows Firewall.                                                                                        |
-| 4952    | Parts of a rule have been ignored because its minor version number was not recognized by Windows Firewall. The other parts of the rule will be enforced.   |
-| 4953    | Windows Firewall ignored a rule because it could not be parsed.   |
-| 4957    | Windows Firewall did not apply the following rule.  |
-| 4958    | Windows Firewall did not apply the following rule because the rule referred to items not configured on this computer. |
-| 4964    | Special groups assigned to a new logon                                                                                                    |
-| 5027    | Windows Firewall Service unable to retrieve the security policy from the local storage service will continue enforcing the current policy |
-| 5028    | Windows Firewall Service unable to parse the new security policy service will continue with currently enforced policy                     |
-| 5029    | Windows Firewall Service failed to initialize the driver service will continue to enforce the current policy                              |
-| 5030    | Windows Firewall Service failed to start                                                                                                  |
-| 5031    | The Windows Firewall Service blocked an application from accepting incoming connections on the network.                                                                                                   |
-| 5034    | The Windows Firewall Driver was stopped                                                                                                   |
-| 5035    | Windows Firewall Driver failed to start                                                                                                   |
-| 5037    | Windows Firewall Driver detected critical runtime error Terminating                                                                       |
-| 5038    | Code integrity determined that the image hash of a file is not valid                                                                      |
-| 5140    | Network share object accessed                                                                                                             |
-| 5142    | Network share object added                                                                                                                |
-| 5143    | Network share object changed                                                                                                              |
-| 5144    | Network share object deleted                                                                                                              |
-| 5158    | The Windows Filtering Platform has permitted a bind to a local port.                                                                      |
-| 5376    | Credential Manager credentials were backed up                                                                                             |
-| 6273    | Network Policy Server denied access to a user                                                                                             |
-| 6276    | Network Policy Server quarantined a user                                                                                                  |
-| 6280    | Network Policy Server unlocked the user account                                                                                           |
-| 6416    | A new external device was recognized by the system                                                                                        |
+| EventID | Description                                                                                                                                              |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1100    | The event logging service has shut down.                                                                                                                 |
+| 1102    | The audit log was cleared.                                                                                                                               |
+| 4618    | A monitored security event pattern has occurred.                                                                                                         |
+| 4624    | An account was successfully logged on.                                                                                                                   |
+| 4625    | An account failed to log on.                                                                                                                             |
+| 4634    | An account was logged off.                                                                                                                               |
+| 4648    | A logon was attempted using explicit credentials.                                                                                                        |
+| 4649    | A replay attack was detected.                                                                                                                            |
+| 4657    | A registry value was modified.                                                                                                                           |
+| 4672    | Special privileges assigned to new logon.                                                                                                                |
+| 4688    | A new process has been created.                                                                                                                          |
+| 4689    | A process has exited.                                                                                                                                    |
+| 4692    | Backup of data protection master key was attempted.                                                                                                      |
+| 4693    | Recovery of data protection master key was attempted.                                                                                                    |
+| 4697    | A service was installed in the system.                                                                                                                   |
+| 4698    | A scheduled task was created.                                                                                                                            |
+| 4699    | A scheduled task was deleted.                                                                                                                            |
+| 4700    | A scheduled task was enabled.                                                                                                                            |
+| 4701    | A scheduled task was disabled.                                                                                                                           |
+| 4702    | A scheduled task was updated.                                                                                                                            |
+| 4704    | A user right was assigned.                                                                                                                               |
+| 4706    | A new trust was created to a domain.                                                                                                                     |
+| 4715    | The audit policy (SACL) on an object was changed.                                                                                                        |
+| 4716    | Trusted domain information was modified.                                                                                                                 |
+| 4717    | System security access was granted to an account.                                                                                                        |
+| 4719    | System audit policy was changed.                                                                                                                         |
+| 4720    | A user account was created.                                                                                                                              |
+| 4724    | An attempt was made to reset an account's password.                                                                                                      |
+| 4727    | A security-enabled global group was created.                                                                                                             |
+| 4728    | A member was added to a security-enabled global group.                                                                                                   |
+| 4731    | A security-enabled local group was created.                                                                                                              |
+| 4732    | A member was added to a security-enabled local group.                                                                                                    |
+| 4737    | A security-enabled global group was changed.                                                                                                             |
+| 4738    | A user account was changed.                                                                                                                              |
+| 4739    | Domain Policy was changed.                                                                                                                               |
+| 4740    | A user account was locked out.                                                                                                                           |
+| 4754    | A security-enabled universal group was created.                                                                                                          |
+| 4755    | A security-enabled universal group was changed.                                                                                                          |
+| 4756    | A member was added to a security-enabled universal group.                                                                                                |
+| 4764    | A group’s type was changed.                                                                                                                             |
+| 4767    | A user account was unlocked.                                                                                                                             |
+| 4776    | The domain controller attempted to validate the credentials for an account.                                                                              |
+| 4778    | A session was reconnected to a Window Station.                                                                                                           |
+| 4779    | A session was disconnected from a Window Station.                                                                                                        |
+| 4780    | The ACL was set on accounts which are members of administrators groups.                                                                                  |
+| 4794    | An attempt was made to set the Directory Services Restore Mode administrator password.                                                                   |
+| 4816    | RPC detected an integrity violation while decrypting an incoming message.                                                                                |
+| 4865    | A trusted forest information entry was added.                                                                                                            |
+| 4866    | A trusted forest information entry was removed.                                                                                                          |
+| 4867    | A trusted forest information entry was added.                                                                                                            |
+| 4882    | The security permissions for Certificate Services changed.                                                                                               |
+| 4885    | The audit filter for Certificate Services changed.                                                                                                       |
+| 4890    | The certificate manager settings for Certificate Services changed.                                                                                       |
+| 4906    | The CrashOnAuditFail value has changed.                                                                                                                  |
+| 4907    | Auditing settings on object changed                                                                                                                      |
+| 4908    | Special Groups Logon table modified                                                                                                                      |
+| 4912    | Per-User Audit Policy changed                                                                                                                            |
+| 4946    | Windows Firewall exception list change                                                                                                                   |
+| 4950    | A Windows Firewall setting has changed (local only)                                                                                                      |
+| 4951    | A rule has been ignored because its major version number was not recognized by Windows Firewall.                                                         |
+| 4952    | Parts of a rule have been ignored because its minor version number was not recognized by Windows Firewall. The other parts of the rule will be enforced. |
+| 4953    | Windows Firewall ignored a rule because it could not be parsed.                                                                                          |
+| 4957    | Windows Firewall did not apply the following rule.                                                                                                       |
+| 4958    | Windows Firewall did not apply the following rule because the rule referred to items not configured on this computer.                                    |
+| 4964    | Special groups assigned to a new logon                                                                                                                   |
+| 5027    | Windows Firewall Service unable to retrieve the security policy from the local storage service will continue enforcing the current policy                |
+| 5028    | Windows Firewall Service unable to parse the new security policy service will continue with currently enforced policy                                    |
+| 5029    | Windows Firewall Service failed to initialize the driver service will continue to enforce the current policy                                             |
+| 5030    | Windows Firewall Service failed to start                                                                                                                 |
+| 5031    | The Windows Firewall Service blocked an application from accepting incoming connections on the network.                                                  |
+| 5034    | The Windows Firewall Driver was stopped                                                                                                                  |
+| 5035    | Windows Firewall Driver failed to start                                                                                                                  |
+| 5037    | Windows Firewall Driver detected critical runtime error Terminating                                                                                      |
+| 5038    | Code integrity determined that the image hash of a file is not valid                                                                                     |
+| 5140    | Network share object accessed                                                                                                                            |
+| 5142    | Network share object added                                                                                                                               |
+| 5143    | Network share object changed                                                                                                                             |
+| 5144    | Network share object deleted                                                                                                                             |
+| 5158    | The Windows Filtering Platform has permitted a bind to a local port.                                                                                     |
+| 5376    | Credential Manager credentials were backed up                                                                                                            |
+| 6273    | Network Policy Server denied access to a user                                                                                                            |
+| 6276    | Network Policy Server quarantined a user                                                                                                                 |
+| 6280    | Network Policy Server unlocked the user account                                                                                                          |
+| 6416    | A new external device was recognized by the system                                                                                                       |
 
 ### Microsoft-Windows-Sysmon/Operational
 
