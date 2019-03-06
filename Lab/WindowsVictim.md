@@ -6,6 +6,7 @@ In order to build a lab for Windows logs, a Windows system is required. The cont
   - [Sysmon Logging](#sysmon-logging)
   - [PowerShell Logging](#powershell-logging)
   - [Increase Log Size](#increase-log-size)
+  - [Enable Process Creation (Event ID 4688)](#enable-process-creation-event-id-4688)
 
 # Recommend Setup
 
@@ -53,3 +54,12 @@ Windows Security > Firewall & Network Protection > Private Network > Turn Off
 - Event Viewer > Application and Service Logs > Microsoft > Windows > Sysmon > Operational
 - Right Click > Properties
 - Maximum Log Size ( KB ): 100,032 or higher is recommended
+
+## Enable Process Creation (Event ID 4688)
+- Secpol.exe
+- Advanced Audit Policy Configuration > System Audit Policies > Detailed Traking > Audit Process Creation: Enabled, Success
+
+### Include Command Line in 4688 Events
+- gpedit.msc
+- Computer Configuration > Administrative Templates > System > Audit Process Creation > Include command line in process creation events: Enabled
+
