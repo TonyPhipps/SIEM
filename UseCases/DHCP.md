@@ -1,6 +1,7 @@
+SIEM Use Cases based on DHCP logs
 
+- [Urecognized Hostnames](#urecognized-hostnames)
 
-# Systems Whose Names Do Not Comply with Naming Convention
-- Problem Statement: How can we detect rogue systems on our network?
-- Alert Type: Blacklist Alert
-- Filter Example: 
+# Urecognized Hostnames
+- Blacklist
+- Defer to local naming convention and develop appropriate filters

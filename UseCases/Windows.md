@@ -8,6 +8,10 @@ SIEM Use Cases Based on Windows Logs
   - [Non-default PowerShell module use (4103)](#non-default-powershell-module-use-4103)
   - [Anomalous User Interactive Logon (4624, Types 2,10)](#anomalous-user-interactive-logon-4624-types-210)
   - [Anomalous Member Added to Admin Group (4728, 4732, 4756)](#anomalous-member-added-to-admin-group-4728-4732-4756)
+  - [Service Account Activity Originating from Unauthorized System](#service-account-activity-originating-from-unauthorized-system)
+  - [User Logon More than an Hour Outside Expected Times](#user-logon-more-than-an-hour-outside-expected-times)
+  - [User Logged In to Multiple Systems Interactively](#user-logged-in-to-multiple-systems-interactively)
+  - [Account Use After Employee End Date](#account-use-after-employee-end-date)
 - [Data Collection](#data-collection)
   - [Trusted Certificate Authorities on endpoints](#trusted-certificate-authorities-on-endpoints)
   - [Running Process without a Parent Process ID](#running-process-without-a-parent-process-id)
@@ -20,37 +24,34 @@ These use cases depend on Windows logs. Some will need to be enabled, but all ar
 ## Brute Force Attempts (4625)
 An influx of failed logon attempts (4625) indicates a possible brute force attempt on an account.
 
-### Requirements
+##### Requirements
 - Enable "Audit Logon Events > Failure" via local security or GPO
 - SecPol > Local Policies > Audit Policy > Audit Logon Events > Check Failure
 - Ensure event ID 4625 from the Windows Security log is collected/forwarded appropriately.
 
-### Methods
+##### Methods
 - Use a Threshold Alert to indicate when > 5 failures occurred on a single account in 1 hour.
 - Use a Threshold Alert based on your normal activity to indicate when the failure count is 2x the normal count (across all accounts).
 
-### Responses
+#### Responses
 - Contact the account owner and determine if the issue is a configuration error.
 - Block the traffic with an in-line security device.
 - Block the traffic with the local firewall or other security software.
 
-### Bonuses
+#### Bonuses
 - This method may pick up failed service accounts repeatedly trying to "do their job" with a locked account. Notifying the appropriate admin is a good idea here.
 
 
 ## Clearing of Event Logs (1102)
 - Clearing event logs is a way for adversaries to clear their tracks. With proper event collection, this should occure seldom, making it a relatively easy detection method. Event logs set to "fill" rather than roll or that allow a large enough rolling file size that it causes system administrators to want to clear the logs should be avoided.
 
-### Requirements
+#### Requirements
 - Ensure event ID 1102 from the Windows Security log is collected/forwarded appropriately.
 
-### Methods
+#### Methods
 - Simply alert on every occurrence (Blacklist Alert).
 
-### Exceptions
-- Implement exceptions as they are discovered in the environment. If event logs are set to roll, rather than fill, this should minimize the frequency and number of required exceptions.
-
-### Responses
+#### Responses
 - Contact the source account owner and determine if the activity was authorized.
 - Investigate the last 8 hours of centrally-collected logs from the affected system to reveal any malicious activity.
 - Contain the system with a security tool that blocks traffic, then proceed with forensics.
@@ -60,17 +61,14 @@ An influx of failed logon attempts (4625) indicates a possible brute force attem
 ## New Service Creation (4697)
 Service creation can be used by an adversary to achieve persistence.
 
-### Requirements
+#### Requirements
 - Ensure event ID 4697 from the Windows Security log is collected/forwarded appropriately.
 
-### Methods
+#### Methods
 - Build a "Rolling Whitelist" of the "Service File Name" and "Service Account" fields. Review the list regularly, and build a Rolling Whitelist Alert if the frequency of new entries is low enough.
 - ...OR... Manually build a large filter of expected services, and alert on anything not listed (Whitelist Alert).
 
-### Exceptions
-- Implement exceptions as they are discovered in the environment.
-
-### Responses
+#### Responses
 - Consider the file path of the "Service File." Is it resting in a strange location, like user writeable folders or shares?
 - Determine if the affected system should logically have this type of service created.
 - Contact the source account owner and determine if the activity was authorized.
@@ -80,63 +78,73 @@ Service creation can be used by an adversary to achieve persistence.
 
 ## Newly observed executable (4688)                         
 
-### Requirements
-### Methods
+#### Requirements
+#### Methods
 - Rolling Whitelist Alert 
-### Exceptions
-### Responses
+#### Responses
 
 ## Non-default PowerShell module use (4103)
 
-### Requirements
-### Methods
+#### Requirements
+#### Methods
 - Whitelist Alert 
-### Exceptions
-### Responses
+#### Responses
 
 ## Anomalous User Interactive Logon (4624, Types 2,10)
 
-### Requirements
-### Methods
+#### Requirements
+#### Methods
 - Rolling Whitelist Alert
-### Exceptions
-### Responses
+#### Responses
 
 ## Anomalous Member Added to Admin Group (4728, 4732, 4756)
 
-### Requirements
-### Methods
+#### Requirements
+#### Methods
+- Blacklist Alert
+#### Responses
+
+## Service Account Activity Originating from Unauthorized System
+#### Methods
+- Whitelist Alert
+
+## User Logon More than an Hour Outside Expected Times
+- Blacklist Alert
+## User Logged In to Multiple Systems Interactively
+- Threshold Alert
+
+## Account Use After Employee End Date
 - Blacklist Alert
 
-### Exceptions
-### Responses
+
+
+
+
+
+
+
 
 # Data Collection
 - These data points are not typically stored in Event Logs. Instead, the data must be collected periodically with a script.
 
 ## Trusted Certificate Authorities on endpoints
 - Aggregate Count
-### Requirements
-### Methods
-### Exceptions
-### Responses
+#### Requirements
+#### Methods
+#### Responses
 
 ## Running Process without a Parent Process ID
 - Blacklist Alert
-### Requirements
-### Methods
-### Exceptions
-### Responses
+#### Requirements
+#### Methods
+#### Responses
 
 ## Running Process with Original File Deleted from Disk
-### Requirements
-### Methods
-### Exceptions
-### Responses
+#### Requirements
+#### Methods
+#### Responses
 
 ## System/Hidden Attributes Enabled on Unexpected Files/Folders
-### Requirements
-### Methods
-### Exceptions
-### Responses
-
+#### Requirements
+#### Methods
+#### Responses
