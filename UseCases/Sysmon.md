@@ -22,10 +22,46 @@
 # Long Command/PowerShell Command observed
 - Event ID 1
 - Threshold
+- Recommended threshold of 250+ characters
 
 
 # Suspicious PowerShell Command Observed
 - Event ID 1
 - Blacklist
-
-
+- CommandLine contains things like
+  - -noprofile
+  - -noprofil
+  - -noprofi
+  - -noprof
+  - -nopro
+  - -nopr
+  - -nop
+  - hidden
+  - -noninteractive
+  - -noninteractiv
+  - -noninteracti
+  - -noninteract
+  - -noninterac
+  - -nonintera
+  - -noninter
+  - -noninte
+  - -nonint
+  - -nonin
+  - -noni
+  - bypass
+  - -encodedcommand
+  - -encodedcomman
+  - -encodedcomma
+  - -encodedcomm
+  - -encodedcom
+  - -encodedco
+  - -encodedc
+  - -encoded
+  - -encode
+  - -encod
+  - -enco
+  - -enc
+  - invoke-webrequest
+  - iwr
+  - curl
+  - wget

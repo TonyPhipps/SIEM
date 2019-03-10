@@ -111,6 +111,7 @@
 			<TargetFilename condition="begin with">C:\Windows\Prefetch\TRUSTEDINSTALLER.EXE</TargetFilename>
 			<TargetFilename condition="begin with">C:\Windows\Prefetch\TASKHOSTW.EXE</TargetFilename>
 			<TargetFilename condition="begin with">C:\Windows\Prefetch\SEARCHPROTOCOLHOST.EXE</TargetFilename>
+			<TargetFilename condition="begin with">C:\Windows\Prefetch\TIWORKER.EXE</TargetFilename>
 		</FileCreate>
 
 	<!--SYSMON EVENT ID 12 & 13 & 14 : REGISTRY MODIFICATION [RegistryEvent]-->
@@ -143,6 +144,8 @@
 				<Image condition="is">c:\windows\system32\lsass.exe</Image>
 				<Image condition="is">c:\windows\system32\taskhostw.exe</Image>
 				<Image condition="is">c:\windows\system32\SearchFilterHost.exe</Image>
+				<Image condition="is">c:\windows\system32\SearchIndexer.exe</Image>
+				<Image condition="is">c:\windows\system32\LogonUI.exe</Image>
 				<Image condition="is">c:\windows\servicing\TrustedInstaller.exe</Image>
 				<Image condition="is">c:\windows\system32\backgroundTaskHost.exe</Image>  <!-- Various state changes -->
 				<Image condition="is">c:\windows\system32\smartscreen.exe</Image>
