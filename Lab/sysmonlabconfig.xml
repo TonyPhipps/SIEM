@@ -9,6 +9,9 @@
 	<!--SYSMON EVENT ID 1 : PROCESS CREATION [ProcessCreate]-->
 		<!--DATA: UtcTime, ProcessGuid, ProcessID, Image, FileVersion, Description, Product, Company, CommandLine, CurrentDirectory, User, LogonGuid, LogonId, TerminalSessionId, IntegrityLevel, Hashes, ParentProcessGuid, ParentProcessId, ParentImage, ParentCommandLine-->
 		<ProcessCreate onmatch="exclude">
+			<Image condition="is">c:\windows\system32\SearchProtocolHost.exe</Image>
+			<Image condition="is">c:\windows\system32\RuntimeBroker.exe</Image>
+			<IntegrityLevel condition="is">AppContainer</IntegrityLevel> <!-- Microsoft Windows sandboxed processes -->
 		</ProcessCreate>
 
 	<!--SYSMON EVENT ID 2 : FILE CREATION TIME RETROACTIVELY CHANGED IN THE FILESYSTEM [FileCreateTime]-->
@@ -16,6 +19,7 @@
 
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, TargetFilename, CreationUtcTime, PreviousCreationUtcTime-->
 		<FileCreateTime onmatch="exclude">
+			<Image condition="is">c:\windows\system32\RuntimeBroker.exe</Image>
 		</FileCreateTime>
 
 	<!--SYSMON EVENT ID 3 : NETWORK CONNECTION INITIATED [NetworkConnect]-->
@@ -24,6 +28,9 @@
 		<!--TECHNICAL:	For the DestinationPortName, Sysmon uses the GetNameInfo API for the friendly name of ports you see in logs.-->		
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, User, Protocol, Initiated, SourceIsIpv6, SourceIp, SourceHostname, SourcePort, SourcePortName, DestinationIsIpV6, DestinationIp, DestinationHostname, DestinationPort, DestinationPortName-->
 		<NetworkConnect onmatch="exclude">
+			<DestinationHostname condition="end with">microsoft.com</DestinationHostname> <!--Microsoft:Update delivery-->
+			<DestinationHostname condition="end with">microsoft.com.akadns.net</DestinationHostname> <!--Microsoft:Update delivery-->
+			<DestinationHostname condition="end with">microsoft.com.nsatc.net</DestinationHostname> <!--Microsoft:Update delivery-->
 		</NetworkConnect>
 
 	<!--SYSMON EVENT ID 4 : RESERVED FOR SYSMON STATUS MESSAGES-->
@@ -37,6 +44,10 @@
 			<Image condition="is">c:\windows\system32\SearchFilterHost.exe</Image>
 			<Image condition="is">c:\windows\system32\SearchProtocolHost.exe</Image>
 			<Image condition="is">c:\windows\system32\backgroundTaskHost.exe</Image>
+			<Image condition="is">c:\windows\system32\wbem\WmiPrvSE.exe</Image>
+			<Image condition="is">c:\windows\system32\wbem\taskhostw.exe</Image>
+			<Image condition="is">c:\windows\system32\RuntimeBroker.exe</Image>
+			<Image condition="is">c:\windows\system32\svchost.exe</Image>
 		</ProcessTerminate>
 
 	<!--SYSMON EVENT ID 6 : DRIVER LOADED INTO KERNEL [DriverLoad]-->
@@ -85,6 +96,9 @@
 		<!--NOTE:	You may not see files detected by antivirus. Other filesystem minifilters, like antivirus, can act before Sysmon receives the alert a file was written.-->
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, TargetFilename, CreationUtcTime-->
 		<FileCreate onmatch="exclude">
+			<Image condition="is">c:\windows\system32\RuntimeBroker.exe</Image>
+			<Image condition="is">c:\windows\system32\backgroundTaskHost.exe</Image>
+			<TargetFilename condition="end with">\AppData\Local\Microsoft\Event Viewer\Settings.Xml</TargetFilename>
 		</FileCreate>
 
 	<!--SYSMON EVENT ID 12 & 13 & 14 : REGISTRY MODIFICATION [RegistryEvent]-->
@@ -115,6 +129,9 @@
 				<Image condition="is">c:\windows\system32\SearchProtocolHost.exe</Image>
 				<Image condition="is">c:\windows\system32\lsass.exe</Image>
 				<Image condition="is">c:\windows\system32\SearchFilterHost.exe</Image>
+				<Image condition="is">c:\windows\servicing\TrustedInstaller.exe</Image>
+				<Image condition="is">c:\windows\system32\backgroundTaskHost.exe</Image>  <!-- Various state changes -->
+				<Image condition="is">c:\windows\system32\smartscreen.exe</Image>
 		</RegistryEvent>
 
 	<!--SYSMON EVENT ID 15 : ALTERNATE DATA STREAM CREATED [FileCreateStreamHash]-->
