@@ -1,14 +1,16 @@
 In order to build a lab for Windows logs, a Windows system is required. The content on this page will focus on setting up a victim system with advanced logging. While production systems may not have such high levels of logging, it remains important to understand how attacks and activities can be logged. It may be the case that observations in a lab environment warrant increasing logging on production systems to allow detection.
 
-- [Recommend Setup](#recommend-setup)
+- [Recommended Setup](#recommended-setup)
   - [Disable Windows Firewall](#disable-windows-firewall)
   - [Disable Password Protected Sharing](#disable-password-protected-sharing)
   - [Sysmon Logging](#sysmon-logging)
   - [PowerShell Logging](#powershell-logging)
   - [Increase Log Size](#increase-log-size)
   - [Enable Process Creation (Event ID 4688)](#enable-process-creation-event-id-4688)
+- [Other Useful Tidbits](#other-useful-tidbits)
+  - [Clear all the Logs](#clear-all-the-logs)
 
-# Recommend Setup
+# Recommended Setup
 
 ## Disable Windows Firewall
 Windows Security > Firewall & Network Protection > Private Network > Turn Off
@@ -63,3 +65,7 @@ Windows Security > Firewall & Network Protection > Private Network > Turn Off
 - gpedit.msc
 - Computer Configuration > Administrative Templates > System > Audit Process Creation > Include command line in process creation events: Enabled
 
+# Other Useful Tidbits
+
+## Clear all the Logs
+`wevtutil el | Foreach-Object {wevtutil cl "$_"}`

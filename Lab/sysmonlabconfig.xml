@@ -1,3 +1,6 @@
+<!-- This config file is designed for use in a lab environment on a victim system. -->
+<!-- Purposefully enables ALL logging, then aims to silence normal background activity on a fresh Windows install, sitting at the desktop. -->
+
 <Sysmon schemaversion="4.00">
 	<HashAlgorithms>md5,sha256</HashAlgorithms>
 	<CheckRevocation/> <!-- Check loaded drivers, log if their code-signing certificate has been revoked, in case malware stole one to sign a kernel driver -->
@@ -31,6 +34,9 @@
 		<!--COMMENT:	Useful data in building infection timelines.-->
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image-->
 		<ProcessTerminate onmatch="exclude">
+			<Image condition="is">c:\windows\system32\SearchFilterHost.exe</Image>
+			<Image condition="is">c:\windows\system32\SearchProtocolHost.exe</Image>
+			<Image condition="is">c:\windows\system32\backgroundTaskHost.exe</Image>
 		</ProcessTerminate>
 
 	<!--SYSMON EVENT ID 6 : DRIVER LOADED INTO KERNEL [DriverLoad]-->
@@ -97,6 +103,18 @@
 		<!-- ! CRITICAL NOTE !:	It may appear this section is MISSING important entries, but SOME RULES MONITOR MANY KEYS, so look VERY CAREFULLY to see if something is already covered.-->
 		<!--DATA: EventType, UtcTime, ProcessGuid, ProcessId, Image, TargetObject, Details (can't filter on), NewName (can't filter on)-->
 		<RegistryEvent onmatch="exclude">
+				<Image condition="end with">\sysmon.exe</Image>
+				<Image condition="end with">\sysmon64.exe</Image>
+				<Image condition="is">c:\windows\explorer.exe</Image>
+				<Image condition="is">c:\windows\system32\ctfmon.exe</Image>
+				<Image condition="is">c:\windows\system32\svchost.exe</Image>
+				<Image condition="is">c:\windows\system32\ApplicationFrameHost.exe</Image>
+				<Image condition="is">c:\windows\system32\sihost.exe</Image>
+				<Image condition="is">c:\windows\system32\wbem\wmiprvse.exe</Image>
+				<Image condition="is">c:\windows\system32\RuntimeBroker.exe</Image>
+				<Image condition="is">c:\windows\system32\SearchProtocolHost.exe</Image>
+				<Image condition="is">c:\windows\system32\lsass.exe</Image>
+				<Image condition="is">c:\windows\system32\SearchFilterHost.exe</Image>
 		</RegistryEvent>
 
 	<!--SYSMON EVENT ID 15 : ALTERNATE DATA STREAM CREATED [FileCreateStreamHash]-->
