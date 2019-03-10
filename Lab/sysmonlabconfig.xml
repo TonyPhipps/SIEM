@@ -10,10 +10,13 @@
 		<!--DATA: UtcTime, ProcessGuid, ProcessID, Image, FileVersion, Description, Product, Company, CommandLine, CurrentDirectory, User, LogonGuid, LogonId, TerminalSessionId, IntegrityLevel, Hashes, ParentProcessGuid, ParentProcessId, ParentImage, ParentCommandLine-->
 		<ProcessCreate onmatch="exclude">
 			<Image condition="is">c:\windows\system32\SearchProtocolHost.exe</Image>
+			<Image condition="is">c:\windows\system32\SearchFilterHost.exe</Image>
 			<Image condition="is">c:\windows\system32\RuntimeBroker.exe</Image>
 			<Image condition="begin with">C:\Windows\WinSxS\amd64_microsoft-windows-servicingstack</Image>
 			<IntegrityLevel condition="is">AppContainer</IntegrityLevel> <!-- Microsoft Windows sandboxed processes -->
-			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k wsappx</CommandLine> <!--Microsoft:Windows:Apps [ https://www.howtogeek.com/320261/what-is-wsappx-and-why-is-it-running-on-my-pc/ ] -->
+			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k wsappx</CommandLine> <!-- Microsoft:Windows:Apps [ https://www.howtogeek.com/320261/what-is-wsappx-and-why-is-it-running-on-my-pc/ ] -->
+			<CommandLine condition="is">C:\Windows\System32\svchost.exe -k wsappx -p -s ClipSVC</CommandLine> <!-- Microsoft:Windows:Apps: Client License Service -->
+			<ParentCommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s Schedule</ParentCommandLine>
 		</ProcessCreate>
 
 	<!--SYSMON EVENT ID 2 : FILE CREATION TIME RETROACTIVELY CHANGED IN THE FILESYSTEM [FileCreateTime]-->
@@ -107,6 +110,7 @@
 			<TargetFilename condition="begin with">C:\Windows\Prefetch\SVCHOST.EXE</TargetFilename>
 			<TargetFilename condition="begin with">C:\Windows\Prefetch\TRUSTEDINSTALLER.EXE</TargetFilename>
 			<TargetFilename condition="begin with">C:\Windows\Prefetch\TASKHOSTW.EXE</TargetFilename>
+			<TargetFilename condition="begin with">C:\Windows\Prefetch\SEARCHPROTOCOLHOST.EXE</TargetFilename>
 		</FileCreate>
 
 	<!--SYSMON EVENT ID 12 & 13 & 14 : REGISTRY MODIFICATION [RegistryEvent]-->
@@ -142,6 +146,7 @@
 				<Image condition="is">c:\windows\system32\backgroundTaskHost.exe</Image>  <!-- Various state changes -->
 				<Image condition="is">c:\windows\system32\smartscreen.exe</Image>
 				<Image condition="begin with">C:\Windows\WinSxS\amd64_microsoft-windows-servicingstack</Image>
+				<Image condition="begin with">C:\Program Files\WindowsApps\Microsoft.</Image>
 		</RegistryEvent>
 
 	<!--SYSMON EVENT ID 15 : ALTERNATE DATA STREAM CREATED [FileCreateStreamHash]-->
