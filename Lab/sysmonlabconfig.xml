@@ -111,6 +111,7 @@
 			<TargetFilename condition="begin with">C:\Windows\Prefetch\TRUSTEDINSTALLER.EXE</TargetFilename>
 			<TargetFilename condition="begin with">C:\Windows\Prefetch\TASKHOSTW.EXE</TargetFilename>
 			<TargetFilename condition="begin with">C:\Windows\Prefetch\SEARCHPROTOCOLHOST.EXE</TargetFilename>
+			<TargetFilename condition="begin with">C:\Windows\Prefetch\SEARCHFILTERHOST.EXE</TargetFilename>
 			<TargetFilename condition="begin with">C:\Windows\Prefetch\TIWORKER.EXE</TargetFilename>
 		</FileCreate>
 

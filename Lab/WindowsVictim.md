@@ -7,6 +7,7 @@ In order to build a lab for Windows logs, a Windows system is required. The cont
   - [PowerShell Logging](#powershell-logging)
   - [Increase Log Size](#increase-log-size)
   - [Enable Process Creation (Event ID 4688)](#enable-process-creation-event-id-4688)
+  - [Break SleepStudy](#break-sleepstudy)
 - [Other Useful Tidbits](#other-useful-tidbits)
   - [Clear all the Logs](#clear-all-the-logs)
 
@@ -64,6 +65,12 @@ Windows Security > Firewall & Network Protection > Private Network > Turn Off
 ### Include Command Line in 4688 Events
 - gpedit.msc
 - Computer Configuration > Administrative Templates > System > Audit Process Creation > Include command line in process creation events: Enabled
+
+## Break SleepStudy
+Sometimes this odd service will begin creating an endless loop of .etl files. This command breaks that "feature," since there is no proper option to disable it.
+```
+Set-ItemProperty -Path C:\Windows\System32\SleepStudy\*.etl -Name IsReadOnly -Value $true
+```
 
 # Other Useful Tidbits
 
