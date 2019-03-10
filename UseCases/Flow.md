@@ -1,10 +1,17 @@
+- [Abnormal Upload/Download Ratio](#abnormal-uploaddownload-ratio)
+- [Long-Running Sessions](#long-running-sessions)
+- [High Number of Sessions](#high-number-of-sessions)
+
+# Abnormal Upload/Download Ratio
+- Threshold
 
 
-| Description                    | [Method](/Detection-Methods.md) | Notes |
-| ------------------------------ | ------------------------------------------------------ | ----- |
-| Abnormal upload/download ratio | Threshold Alert                                        |       |
-| Long-running sessions          | Threshold Alert                                        |       |
-| Top number of sessions         | Aggregate Count                                        |       |
+# Long-Running Sessions
+- Threshold
+
+
+# High Number of Sessions
+- Threshold
 
 
 

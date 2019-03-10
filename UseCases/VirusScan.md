@@ -1,5 +1,10 @@
-| Description                 | [Method](/Detection-Methods.md) | Notes |
-| --------------------------- | ------------------------------- | ----- |
-| Newly Observed Alerts       | Rolling Whitelist Alert         |       |
-| Excessive Alerts per System | Threshold                       |       |
+- [Newly Observed Alerts](#newly-observed-alerts)
+- [Excessive Alerts per System](#excessive-alerts-per-system)
+
+# Newly Observed Alerts
+- Rolling Whitelist
+
+
+# Excessive Alerts per System
+- Threshold
 

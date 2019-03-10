@@ -134,6 +134,7 @@
 				<Image condition="is">c:\windows\explorer.exe</Image>
 				<Image condition="is">c:\windows\system32\ctfmon.exe</Image>
 				<Image condition="is">c:\windows\system32\svchost.exe</Image>
+				<Image condition="is">c:\windows\system32\sdiagnhost.exe</Image>
 				<Image condition="is">c:\windows\system32\ApplicationFrameHost.exe</Image>
 				<Image condition="is">c:\windows\system32\sihost.exe</Image>
 				<Image condition="is">c:\windows\system32\wbem\wmiprvse.exe</Image>
