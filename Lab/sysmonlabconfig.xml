@@ -25,6 +25,7 @@
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, TargetFilename, CreationUtcTime, PreviousCreationUtcTime-->
 		<FileCreateTime onmatch="exclude">
 			<Image condition="is">c:\windows\system32\RuntimeBroker.exe</Image>
+			<Image condition="is">c:\windows\system32\svchost.exe</Image>
 		</FileCreateTime>
 
 	<!--SYSMON EVENT ID 3 : NETWORK CONNECTION INITIATED [NetworkConnect]-->
@@ -37,6 +38,7 @@
 			<DestinationHostname condition="end with">microsoft.com.akadns.net</DestinationHostname> <!--Microsoft:Update delivery-->
 			<DestinationHostname condition="end with">microsoft.com.nsatc.net</DestinationHostname> <!--Microsoft:Update delivery-->
 			<Image condition="is">c:\windows\system32\svchost.exe</Image>
+			<Image condition="is">c:\windows\system32\smartscreen.exe</Image>
 		</NetworkConnect>
 
 	<!--SYSMON EVENT ID 4 : RESERVED FOR SYSMON STATUS MESSAGES-->
@@ -113,6 +115,8 @@
 			<TargetFilename condition="begin with">C:\Windows\Prefetch\SEARCHPROTOCOLHOST.EXE</TargetFilename>
 			<TargetFilename condition="begin with">C:\Windows\Prefetch\SEARCHFILTERHOST.EXE</TargetFilename>
 			<TargetFilename condition="begin with">C:\Windows\Prefetch\TIWORKER.EXE</TargetFilename>
+			<TargetFilename condition="begin with">C:\Windows\Prefetch\WMIPRVSE.EXE</TargetFilename>
+			<TargetFilename condition="begin with">C:\Windows\System32\config\systemprofile\AppData\Local\Microsoft\Windows\INetCache\IE</TargetFilename>
 		</FileCreate>
 
 	<!--SYSMON EVENT ID 12 & 13 & 14 : REGISTRY MODIFICATION [RegistryEvent]-->
@@ -150,8 +154,13 @@
 				<Image condition="is">c:\windows\servicing\TrustedInstaller.exe</Image>
 				<Image condition="is">c:\windows\system32\backgroundTaskHost.exe</Image>  <!-- Various state changes -->
 				<Image condition="is">c:\windows\system32\smartscreen.exe</Image>
+				<Image condition="is">c:\windows\system32\smss.exe</Image>
+				<Image condition="is">c:\windows\system32\compattelrunner.exe</Image>
+				<Image condition="is">c:\windows\system32\sppsvc.exe</Image>
+				<Image condition="is">c:\windows\system32\slui.exe</Image>
 				<Image condition="begin with">C:\Windows\WinSxS\amd64_microsoft-windows-servicingstack</Image>
 				<Image condition="begin with">C:\Program Files\WindowsApps\Microsoft.</Image>
+				<Image condition="begin with">C:\Windows\SystemApps\Microsoft.Cortana</Image>
 		</RegistryEvent>
 
 	<!--SYSMON EVENT ID 15 : ALTERNATE DATA STREAM CREATED [FileCreateStreamHash]-->
