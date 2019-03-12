@@ -1,4 +1,6 @@
-Use Case Template
+A Use Cases is a set of SIEM components and procedures that seek to resolve a given problem.
+
+A Use Case can be documented for presention to management, to guide a SOC/Incident Response Team, or for general SIEM content documentation. 
 
 - [Name](#name)
   - [Problem Statement](#problem-statement)
