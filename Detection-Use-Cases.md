@@ -11,8 +11,10 @@ A Use Case can be documented for presention to management, to guide a SOC/Incide
 - [Monitoring and Notifications](#monitoring-and-notifications)
   - [Recommended Response Action(s)](#recommended-response-actions)
 - [Data Source Description](#data-source-description)
+  - [Events](#events)
   - [Component Name(s)](#component-names)
   - [Data Stream Analysis](#data-stream-analysis)
+  - [Attack Simulation](#attack-simulation)
 
 # Name
 One line giving the name of the use case. The name should capture action that resolves the problem statement.
@@ -41,8 +43,14 @@ Describes which actions should be taken with the information provided - typicall
 # Data Source Description
 Describes where events should be sourced from, and the flow of delivery to the SIEM for processing.
 
+## Events
+Raw events and their characteristics.
+
 ## Component Name(s)
 The base components that provide business logic, display, and notification.
 
 ## Data Stream Analysis
 Pseudocode-like logic flow of how events are processed by the SIEM and presented or alerted upon.
+
+## Attack Simulation
+Steps to ensure the components in place display or alert as intended.
