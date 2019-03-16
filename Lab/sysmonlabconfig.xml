@@ -9,26 +9,31 @@
 	<!--SYSMON EVENT ID 1 : PROCESS CREATION [ProcessCreate]-->
 		<!--DATA: UtcTime, ProcessGuid, ProcessID, Image, FileVersion, Description, Product, Company, CommandLine, CurrentDirectory, User, LogonGuid, LogonId, TerminalSessionId, IntegrityLevel, Hashes, ParentProcessGuid, ParentProcessId, ParentImage, ParentCommandLine-->
 		<RuleGroup groupRelation="or">
-			<ProcessCreate onmatch="exclude"> <!-- Common services -->
-				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k netsvcs -p</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k wsappx -p -s ClipSVC</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k appmodel -p -s camsvc</CommandLine>
-				<CommandLine condition="is">C:\Windows\servicing\TrustedInstaller.exe</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\RuntimeBroker.exe -Embedding</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k netsvcs -p</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s wlidsvc</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k wsappx -p -s AppXSvc</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s gpsvc</CommandLine>
+			<ProcessCreate onmatch="exclude"> 
+				<!-- Common services without interaction -->
 				<CommandLine condition="begin with">"C:\Windows\system32\backgroundTaskHost.exe" -ServerName:</CommandLine>
-				<ParentImage condition="is">C:\Windows\System32\SearchIndexer.exe</ParentImage>
-				<ParentImage condition="is">C:\Windows\system32\wbem\wmiprvse.exe -secured -Embedding</ParentImage>
-				<ParentImage condition="is">taskhostw.exe</ParentImage>
-				<ParentImage condition="is">taskhostw.exe SYSTEM</ParentImage>
-				<ParentImage condition="is">taskhostw.exe USER</ParentImage>
-				<ParentImage condition="is">taskhostw.exe Install $(Arg0)</ParentImage>
-				<ParentImage condition="is">C:\Windows\System32\wsqmcons.exe</ParentImage>
-				<ParentImage condition="is">C:\Windows\system32\rundll32.exe Startupscan.dll,SusRunTask</ParentImage>
-				
+				<CommandLine condition="is">C:\Windows\System32\RuntimeBroker.exe -Embedding</CommandLine>
+				<CommandLine condition="is">C:\Windows\System32\slui.exe -Embedding</CommandLine>
+				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k netsvcs -p</CommandLine>
+				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k wsappx -p -s ClipSVC</CommandLine> <!-- Microsoft Windows Client License Service -->
+				<CommandLine condition="is">C:\Windows\System32\wsqmcons.exe</CommandLine>
+				<CommandLine condition="is">C:\Windows\servicing\TrustedInstaller.exe</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\SppExtComObj.exe -Embedding</CommandLine> <!-- Microsoft Windows KMS Activation -->
+				<CommandLine condition="is">C:\Windows\system32\rundll32.exe Startupscan.dll,SusRunTask</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\sc.exe start wuauserv</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\sppsvc.exe</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k appmodel -p -s camsvc</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s gpsvc</CommandLine> <!-- Microsoft Windows  Group Policy -->
+				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s wlidsvc</CommandLine> <!-- Microsoft Windows Live Sign-In Assistant -->
+				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k wsappx -p -s AppXSvc</CommandLine> <!-- Microsoft Windows AppX Deployment Service -->
+				<CommandLine condition="is">C:\Windows\system32\wbem\wmiprvse.exe -secured -Embedding</CommandLine>
+				<CommandLine condition="is">taskhostw.exe Install $(Arg0)</CommandLine>
+				<CommandLine condition="is">taskhostw.exe SYSTEM</CommandLine>
+				<CommandLine condition="is">taskhostw.exe USER</CommandLine>
+				<CommandLine condition="is">taskhostw.exe timer</CommandLine>
+				<CommandLine condition="is">taskhostw.exe</CommandLine>
+				<CommandLine condition="is">%%systemroot%%\system32\MusNotificationUx.exe ClearActiveNotifications</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\MusNotification.exe</CommandLine>
 			</ProcessCreate>
 		</RuleGroup>
 
