@@ -15,7 +15,10 @@
 				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k appmodel -p -s camsvc</CommandLine>
 				<CommandLine condition="is">C:\Windows\servicing\TrustedInstaller.exe</CommandLine>
 				<CommandLine condition="is">C:\Windows\System32\RuntimeBroker.exe -Embedding</CommandLine>
+				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k netsvcs -p</CommandLine>
 				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s wlidsvc</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k wsappx -p -s AppXSvc</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s gpsvc</CommandLine>
 				<CommandLine condition="begin with">"C:\Windows\system32\backgroundTaskHost.exe" -ServerName:App.</CommandLine>
 				<ParentImage condition="is">C:\Windows\System32\SearchIndexer.exe</ParentImage>
 			</ProcessCreate>
