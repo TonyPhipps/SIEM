@@ -8,7 +8,7 @@
 
 	<!--SYSMON EVENT ID 1 : PROCESS CREATION [ProcessCreate]-->
 		<!--DATA: UtcTime, ProcessGuid, ProcessID, Image, FileVersion, Description, Product, Company, CommandLine, CurrentDirectory, User, LogonGuid, LogonId, TerminalSessionId, IntegrityLevel, Hashes, ParentProcessGuid, ParentProcessId, ParentImage, ParentCommandLine-->
-		<RuleGroup groupRelation="and">
+		<RuleGroup groupRelation="or">
 			<ProcessCreate onmatch="exclude"> <!-- Common services -->
 				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k netsvcs -p</CommandLine>
 				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k wsappx -p -s ClipSVC</CommandLine>
@@ -19,8 +19,16 @@
 				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s wlidsvc</CommandLine>
 				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k wsappx -p -s AppXSvc</CommandLine>
 				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s gpsvc</CommandLine>
-				<CommandLine condition="begin with">"C:\Windows\system32\backgroundTaskHost.exe" -ServerName:App.</CommandLine>
+				<CommandLine condition="begin with">"C:\Windows\system32\backgroundTaskHost.exe" -ServerName:</CommandLine>
 				<ParentImage condition="is">C:\Windows\System32\SearchIndexer.exe</ParentImage>
+				<ParentImage condition="is">C:\Windows\system32\wbem\wmiprvse.exe -secured -Embedding</ParentImage>
+				<ParentImage condition="is">taskhostw.exe</ParentImage>
+				<ParentImage condition="is">taskhostw.exe SYSTEM</ParentImage>
+				<ParentImage condition="is">taskhostw.exe USER</ParentImage>
+				<ParentImage condition="is">taskhostw.exe Install $(Arg0)</ParentImage>
+				<ParentImage condition="is">C:\Windows\System32\wsqmcons.exe</ParentImage>
+				<ParentImage condition="is">C:\Windows\system32\rundll32.exe Startupscan.dll,SusRunTask</ParentImage>
+				
 			</ProcessCreate>
 		</RuleGroup>
 
