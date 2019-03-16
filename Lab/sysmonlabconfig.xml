@@ -18,10 +18,13 @@
 				<ParentImage condition="is">C:\Windows\System32\SearchIndexer.exe</ParentImage>
 			</ProcessCreate>
 			<ProcessCreate onmatch="exclude">
-				<ParentImage condition="is">C:\Windows\System32\svchost.exe</ParentImage>
 				<Image condition="is">C:\Windows\System32\backgroundTaskHost.exe</Image>
 				<Image condition="is">C:\Windows\System32\dllhost.exe</Image>
 				<Image condition="is">C:\Windows\System32\RuntimeBroker.exe</Image>
+				<ParentImage condition="is">C:\Windows\System32\svchost.exe</ParentImage>
+			</ProcessCreate>
+			<ProcessCreate onmatch="exclude">
+				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k netsvcs -p</CommandLine>
 			</ProcessCreate>
 		</RuleGroup>
 
