@@ -9,22 +9,15 @@
 	<!--SYSMON EVENT ID 1 : PROCESS CREATION [ProcessCreate]-->
 		<!--DATA: UtcTime, ProcessGuid, ProcessID, Image, FileVersion, Description, Product, Company, CommandLine, CurrentDirectory, User, LogonGuid, LogonId, TerminalSessionId, IntegrityLevel, Hashes, ParentProcessGuid, ParentProcessId, ParentImage, ParentCommandLine-->
 		<RuleGroup groupRelation="and">
-			<ProcessCreate onmatch="exclude">
-				<User condition="is">NT AUTHORITY\LOCAL SERVICE</User>
-				<ParentImage condition="is">C:\Windows\System32\svchost.exe</ParentImage>
-			</ProcessCreate>
-			<ProcessCreate onmatch="exclude">
-				<User condition="is">NT AUTHORITY\SYSTEM</User>
-				<ParentImage condition="is">C:\Windows\System32\SearchIndexer.exe</ParentImage>
-			</ProcessCreate>
-			<ProcessCreate onmatch="exclude">
-				<Image condition="is">C:\Windows\System32\backgroundTaskHost.exe</Image>
-				<Image condition="is">C:\Windows\System32\dllhost.exe</Image>
-				<Image condition="is">C:\Windows\System32\RuntimeBroker.exe</Image>
-				<ParentImage condition="is">C:\Windows\System32\svchost.exe</ParentImage>
-			</ProcessCreate>
-			<ProcessCreate onmatch="exclude">
+			<ProcessCreate onmatch="exclude"> <!-- Common services -->
 				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k netsvcs -p</CommandLine>
+				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k wsappx -p -s ClipSVC</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k appmodel -p -s camsvc</CommandLine>
+				<CommandLine condition="is">C:\Windows\servicing\TrustedInstaller.exe</CommandLine>
+				<CommandLine condition="is">C:\Windows\System32\RuntimeBroker.exe -Embedding</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s wlidsvc</CommandLine>
+				<CommandLine condition="begin with">"C:\Windows\system32\backgroundTaskHost.exe" -ServerName:App.</CommandLine>
+				<ParentImage condition="is">C:\Windows\System32\SearchIndexer.exe</ParentImage>
 			</ProcessCreate>
 		</RuleGroup>
 
