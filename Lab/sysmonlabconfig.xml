@@ -1,48 +1,48 @@
 <!-- This config file is designed for use in a lab environment on a victim system. -->
 <!-- Purposefully enables ALL logging, then aims to silence normal background activity on a fresh Windows install, sitting at the desktop. -->
 
-<Sysmon schemaversion="4.00">
+<Sysmon schemaversion="4.2">
 	<HashAlgorithms>md5,sha256</HashAlgorithms>
 	<CheckRevocation/> <!-- Check loaded drivers, log if their code-signing certificate has been revoked, in case malware stole one to sign a kernel driver -->
 	<EventFiltering>
 
 	<!--SYSMON EVENT ID 1 : PROCESS CREATION [ProcessCreate]-->
 		<!--DATA: UtcTime, ProcessGuid, ProcessID, Image, FileVersion, Description, Product, Company, CommandLine, CurrentDirectory, User, LogonGuid, LogonId, TerminalSessionId, IntegrityLevel, Hashes, ParentProcessGuid, ParentProcessId, ParentImage, ParentCommandLine-->
-		<ProcessCreate onmatch="exclude">
-			<Image condition="is">c:\windows\system32\SearchProtocolHost.exe</Image>
-			<Image condition="is">c:\windows\system32\SearchFilterHost.exe</Image>
-			<Image condition="is">c:\windows\system32\RuntimeBroker.exe</Image>
-			<Image condition="begin with">C:\Windows\WinSxS\amd64_microsoft-windows-servicingstack</Image>
-			<IntegrityLevel condition="is">AppContainer</IntegrityLevel> <!-- Microsoft Windows sandboxed processes -->
-			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k wsappx</CommandLine> <!-- Microsoft:Windows:Apps [ https://www.howtogeek.com/320261/what-is-wsappx-and-why-is-it-running-on-my-pc/ ] -->
-			<CommandLine condition="is">C:\Windows\System32\svchost.exe -k wsappx -p -s ClipSVC</CommandLine> <!-- Microsoft:Windows:Apps: Client License Service -->
-			<ParentCommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s Schedule</ParentCommandLine>
-			<ParentCommandLine condition="is">C:\Windows\system32\svchost.exe -k DcomLaunch -p</ParentCommandLine>
-		</ProcessCreate>
+		<RuleGroup groupRelation="and">
+			<ProcessCreate onmatch="exclude">
+				<User condition="is">NT AUTHORITY\LOCAL SERVICE</User>
+				<ParentImage condition="is">C:\Windows\System32\svchost.exe</ParentImage>
+			</ProcessCreate>
+			<ProcessCreate onmatch="exclude">
+				<User condition="is">NT AUTHORITY\SYSTEM</User>
+				<ParentImage condition="is">C:\Windows\System32\SearchIndexer.exe</ParentImage>
+			</ProcessCreate>
+			<ProcessCreate onmatch="exclude">
+				<ParentImage condition="is">C:\Windows\System32\svchost.exe</ParentImage>
+				<Image condition="is">C:\Windows\System32\backgroundTaskHost.exe</Image>
+				<Image condition="is">C:\Windows\System32\dllhost.exe</Image>
+				<Image condition="is">C:\Windows\System32\RuntimeBroker.exe</Image>
+			</ProcessCreate>
+		</RuleGroup>
 
 	<!--SYSMON EVENT ID 2 : FILE CREATION TIME RETROACTIVELY CHANGED IN THE FILESYSTEM [FileCreateTime]-->
 		<!--COMMENT:	[ https://attack.mitre.org/wiki/Technique/T1099 ] -->
 
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, TargetFilename, CreationUtcTime, PreviousCreationUtcTime-->
-		<FileCreateTime onmatch="exclude">
-			<Image condition="is">c:\windows\system32\RuntimeBroker.exe</Image>
-			<Image condition="is">c:\windows\system32\svchost.exe</Image>
-			<Image condition="is">c:\windows\system32\backgroundTaskHost.exe</Image>  <!-- Various state changes -->
-		</FileCreateTime>
+		<RuleGroup groupRelation="and">
+			<FileCreateTime onmatch="include">
+			</FileCreateTime>
+		</RuleGroup>
 
 	<!--SYSMON EVENT ID 3 : NETWORK CONNECTION INITIATED [NetworkConnect]-->
 		<!--COMMENT:	[ https://attack.mitre.org/wiki/Command_and_Control ] [ https://attack.mitre.org/wiki/Exfiltration ] [ https://attack.mitre.org/wiki/Lateral_Movement ] -->
 		<!--TECHNICAL:	For the DestinationHostname, Sysmon uses the GetNameInfo API, which will often not have any information, and may just be a CDN. This is NOT reliable for filtering.-->
 		<!--TECHNICAL:	For the DestinationPortName, Sysmon uses the GetNameInfo API for the friendly name of ports you see in logs.-->		
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, User, Protocol, Initiated, SourceIsIpv6, SourceIp, SourceHostname, SourcePort, SourcePortName, DestinationIsIpV6, DestinationIp, DestinationHostname, DestinationPort, DestinationPortName-->
-		<NetworkConnect onmatch="exclude">
-			<DestinationHostname condition="end with">microsoft.com</DestinationHostname> <!--Microsoft:Update delivery-->
-			<DestinationHostname condition="end with">microsoft.com.akadns.net</DestinationHostname> <!--Microsoft:Update delivery-->
-			<DestinationHostname condition="end with">microsoft.com.nsatc.net</DestinationHostname> <!--Microsoft:Update delivery-->
-			<Image condition="is">c:\windows\system32\svchost.exe</Image>
-			<Image condition="is">c:\windows\system32\smartscreen.exe</Image>
-			<Image condition="begin with">C:\Program Files\WindowsApps\Microsoft.Windows.Photos_</Image>
-		</NetworkConnect>
+		<RuleGroup groupRelation="and">
+			<NetworkConnect onmatch="include">
+			</NetworkConnect>
+		</RuleGroup>
 
 	<!--SYSMON EVENT ID 4 : RESERVED FOR SYSMON STATUS MESSAGES-->
 		<!--DATA: UtcTime, State, Version, SchemaVersion-->
@@ -51,37 +51,37 @@
 	<!--SYSMON EVENT ID 5 : PROCESS ENDED [ProcessTerminate]-->
 		<!--COMMENT:	Useful data in building infection timelines.-->
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image-->
-		<ProcessTerminate onmatch="exclude">
-			<Image condition="is">c:\windows\system32\SearchFilterHost.exe</Image>
-			<Image condition="is">c:\windows\system32\SearchProtocolHost.exe</Image>
-			<Image condition="is">c:\windows\system32\backgroundTaskHost.exe</Image>
-			<Image condition="is">c:\windows\system32\wbem\WmiPrvSE.exe</Image>
-			<Image condition="is">c:\windows\system32\wbem\taskhostw.exe</Image>
-			<Image condition="is">c:\windows\system32\RuntimeBroker.exe</Image>
-			<Image condition="is">c:\windows\system32\svchost.exe</Image>
-			<Image condition="is">c:\windows\system32\taskhostw.exe</Image>
-		</ProcessTerminate>
+		<RuleGroup groupRelation="and">
+			<ProcessTerminate onmatch="include">
+			</ProcessTerminate>
+		</RuleGroup>
 
 	<!--SYSMON EVENT ID 6 : DRIVER LOADED INTO KERNEL [DriverLoad]-->
 		<!--COMMENT:	[ https://attack.mitre.org/wiki/Technique/T1014 ] -->
 		<!--TECHNICAL:	Sysmon will check the signing certificate revocation status of any driver you don't exclude.-->
 		<!--DATA: UtcTime, ImageLoaded, Hashes, Signed, Signature, SignatureStatus-->
-		<DriverLoad onmatch="exclude">
-		</DriverLoad>
+		<RuleGroup groupRelation="and">
+			<DriverLoad onmatch="include">
+			</DriverLoad>
+		</RuleGroup>
 
 	<!--SYSMON EVENT ID 7 : DLL (IMAGE) LOADED BY PROCESS [ImageLoad]-->
 		<!--COMMENT:	Can cause high system load, disabled by default.-->
 		<!--COMMENT:	[ https://attack.mitre.org/wiki/Technique/T1073 ] [ https://attack.mitre.org/wiki/Technique/T1038 ] [ https://attack.mitre.org/wiki/Technique/T1034 ] -->
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, ImageLoaded, Hashes, Signed, Signature, SignatureStatus-->
-		<ImageLoad onmatch="exclude">
-		</ImageLoad>
+		<RuleGroup groupRelation="and">		
+			<ImageLoad onmatch="include">
+			</ImageLoad>
+		</RuleGroup>
 
 	<!--SYSMON EVENT ID 8 : REMOTE THREAD CREATED [CreateRemoteThread]-->
 		<!--COMMENT:	Monitor for processes injecting code into other processes. Often used by malware to cloak their actions. Also when Firefox loads Flash.
 		[ https://attack.mitre.org/wiki/Technique/T1055 ] -->
 		<!--DATA: UtcTime, SourceProcessGuid, SourceProcessId, SourceImage, TargetProcessId, TargetImage, NewThreadId, StartAddress, StartModule, StartFunction-->
-		<CreateRemoteThread onmatch="exclude">
-		</CreateRemoteThread>
+		<RuleGroup groupRelation="and">
+			<CreateRemoteThread onmatch="include">
+			</CreateRemoteThread>
+		</RuleGroup>
 
 	<!--SYSMON EVENT ID 9 : RAW DISK ACCESS [RawAccessRead]-->
 		<!--EVENT 9: "RawAccessRead detected"-->
@@ -91,28 +91,30 @@
 			Encourage you to experiment with this feature yourself. [ https://attack.mitre.org/wiki/Technique/T1067 ] -->
 		<!--COMMENT:	You will likely want to set this to a full capture on domain controllers, where no process should be doing raw reads.-->
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, Device-->
-		<RawAccessRead onmatch="exclude">
-		</RawAccessRead>
+		<RuleGroup groupRelation="and">
+			<RawAccessRead onmatch="include">
+			</RawAccessRead>
+		</RuleGroup>
 
 	<!--SYSMON EVENT ID 10 : INTER-PROCESS ACCESS [ProcessAccess]-->
 		<!--EVENT 10: "Process accessed"-->
 		<!--COMMENT:	Can cause high system load, disabled by default.-->
 		<!--COMMENT:	Monitor for processes accessing other process' memory.-->
 		<!--DATA: UtcTime, SourceProcessGuid, SourceProcessId, SourceThreadId, SourceImage, TargetProcessGuid, TargetProcessId, TargetImage, GrantedAccess, CallTrace-->
-		<ProcessAccess onmatch="exclude">
-		</ProcessAccess>
+		<RuleGroup groupRelation="and">
+			<ProcessAccess onmatch="include">
+			</ProcessAccess>
+		</RuleGroup>
 
 	<!--SYSMON EVENT ID 11 : FILE CREATED [FileCreate]-->
 		<!--EVENT 11: "File created"-->
 		<!--NOTE:	Other filesystem "minifilters" can make it appear to Sysmon that some files are being written twice. This is not a Sysmon issue, per Mark Russinovich.-->
 		<!--NOTE:	You may not see files detected by antivirus. Other filesystem minifilters, like antivirus, can act before Sysmon receives the alert a file was written.-->
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, TargetFilename, CreationUtcTime-->
-		<FileCreate onmatch="exclude">
-			<Image condition="is">c:\windows\system32\RuntimeBroker.exe</Image>
-			<Image condition="is">c:\windows\system32\backgroundTaskHost.exe</Image>
-			<Image condition="is">c:\windows\system32\svchost.exe</Image>
-			<TargetFilename condition="end with">\AppData\Local\Microsoft\Event Viewer\Settings.Xml</TargetFilename>
-		</FileCreate>
+		<RuleGroup groupRelation="and">
+			<FileCreate onmatch="include">
+			</FileCreate>
+		</RuleGroup>
 
 	<!--SYSMON EVENT ID 12 & 13 & 14 : REGISTRY MODIFICATION [RegistryEvent]-->
 		<!--EVENT 12: "Registry object added or deleted"-->
@@ -129,39 +131,10 @@
 		<!--NOTE:	Because Sysmon runs as a service, it has no filtering ability for, or concept of, HKCU or HKEY_CURRENT_USER. Use "contains" or "end with" to get around this limitation-->
 		<!-- ! CRITICAL NOTE !:	It may appear this section is MISSING important entries, but SOME RULES MONITOR MANY KEYS, so look VERY CAREFULLY to see if something is already covered.-->
 		<!--DATA: EventType, UtcTime, ProcessGuid, ProcessId, Image, TargetObject, Details (can't filter on), NewName (can't filter on)-->
-		<RegistryEvent onmatch="exclude">
-				<Image condition="end with">\sysmon.exe</Image>
-				<Image condition="end with">\sysmon64.exe</Image>
-				<Image condition="is">c:\windows\explorer.exe</Image>
-				<Image condition="is">c:\windows\system32\ctfmon.exe</Image>
-				<Image condition="is">c:\windows\system32\svchost.exe</Image>
-				<Image condition="is">c:\windows\system32\sdiagnhost.exe</Image>
-				<Image condition="is">c:\windows\system32\ApplicationFrameHost.exe</Image>
-				<Image condition="is">c:\windows\system32\sihost.exe</Image>
-				<Image condition="is">c:\windows\system32\wbem\wmiprvse.exe</Image>
-				<Image condition="is">c:\windows\system32\RuntimeBroker.exe</Image>
-				<Image condition="is">c:\windows\system32\SearchProtocolHost.exe</Image>
-				<Image condition="is">c:\windows\system32\lsass.exe</Image>
-				<Image condition="is">c:\windows\system32\taskhostw.exe</Image>
-				<Image condition="is">c:\windows\system32\SearchFilterHost.exe</Image>
-				<Image condition="is">c:\windows\system32\SearchIndexer.exe</Image>
-				<Image condition="is">c:\windows\system32\LogonUI.exe</Image>
-				<Image condition="is">c:\windows\servicing\TrustedInstaller.exe</Image>
-				<Image condition="is">c:\windows\system32\backgroundTaskHost.exe</Image>  <!-- Various state changes -->
-				<Image condition="is">c:\windows\system32\smartscreen.exe</Image>
-				<Image condition="is">c:\windows\system32\smss.exe</Image>
-				<Image condition="is">c:\windows\system32\compattelrunner.exe</Image>
-				<Image condition="is">c:\windows\system32\sppsvc.exe</Image>
-				<Image condition="is">c:\windows\system32\slui.exe</Image>
-				<Image condition="is">c:\windows\system32\dwm.exe</Image>
-				<Image condition="is">c:\windows\system32\DllHost.exe</Image>
-				<Image condition="is">c:\windows\system32\consent.exe</Image>
-				<Image condition="is">c:\windows\system32\smartscreen.exe</Image>
-				<Image condition="begin with">C:\Windows\WinSxS\amd64_microsoft-windows-servicingstack</Image>
-				<Image condition="begin with">C:\Program Files\WindowsApps\Microsoft.</Image>
-				<Image condition="begin with">C:\Windows\SystemApps\Microsoft.Cortana</Image>
-				<Image condition="begin with">C:\Windows\SystemApps\Microsoft.Windows.Cortana</Image>
-		</RegistryEvent>
+		<RuleGroup groupRelation="and">
+			<RegistryEvent onmatch="include">
+			</RegistryEvent>
+		</RuleGroup>
 
 	<!--SYSMON EVENT ID 15 : ALTERNATE DATA STREAM CREATED [FileCreateStreamHash]-->
 		<!--EVENT 15: "File stream created"-->
@@ -171,8 +144,10 @@
 			[ https://textslashplain.com/2016/04/04/downloads-and-the-mark-of-the-web/ ] -->
 		<!--NOTE: Other filesystem minifilters can make it appear to Sysmon that some files are being written twice. This is not a Sysmon issue, per Mark Russinovich.-->
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, TargetFilename, CreationUtcTime, Hash-->
-		<FileCreateStreamHash onmatch="exclude">
-		</FileCreateStreamHash>
+		<RuleGroup groupRelation="and">
+			<FileCreateStreamHash onmatch="include">
+			</FileCreateStreamHash>
+		</RuleGroup>
 
 	<!--SYSMON EVENT ID 16 : SYSMON CONFIGURATION CHANGE-->
 		<!--EVENT 16: "Sysmon config state changed"-->
@@ -186,8 +161,10 @@
 		<!--ADDITIONAL REFERENCE: [ https://www.cobaltstrike.com/help-smb-beacon ] -->
 		<!--ADDITIONAL REFERENCE: [ https://blog.cobaltstrike.com/2015/10/07/named-pipe-pivoting/ ] -->
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, PipeName, Image-->
-		<PipeEvent onmatch="exclude">
-		</PipeEvent>
+		<RuleGroup groupRelation="and">
+			<PipeEvent onmatch="include">
+			</PipeEvent>
+		</RuleGroup>
 
 	<!--SYSMON EVENT ID 19 & 20 & 21 : WMI EVENT MONITORING [WmiEvent]-->
 		<!--EVENT 19: "WmiEventFilter activity detected"-->
@@ -196,8 +173,10 @@
 		<!--ADDITIONAL REFERENCE: [ https://www.darkoperator.com/blog/2017/10/15/sysinternals-sysmon-610-tracking-of-permanent-wmi-events ] -->
 		<!--ADDITIONAL REFERENCE: [ https://rawsec.lu/blog/posts/2017/Sep/19/sysmon-v610-vs-wmi-persistence/ ] -->
 		<!--DATA: EventType, UtcTime, Operation, User, Name, Type, Destination, Consumer, Filter-->
-		<WmiEvent onmatch="exclude">
-		</WmiEvent>
+		<RuleGroup groupRelation="and">
+			<WmiEvent onmatch="include">
+			</WmiEvent>
+		</RuleGroup>
 
 	<!--SYSMON EVENT ID 255 : ERROR-->
 		<!--"This event is generated when an error occurred within Sysmon. They can happen if the system is under heavy load
