@@ -32,8 +32,19 @@
 				<CommandLine condition="is">taskhostw.exe USER</CommandLine>
 				<CommandLine condition="is">taskhostw.exe timer</CommandLine>
 				<CommandLine condition="is">taskhostw.exe</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\wermgr.exe -upload</CommandLine>
+				<CommandLine condition="is">"C:\Windows\system32\wuauclt.exe" /RunHandlerComServer</CommandLine>
 				<CommandLine condition="is">%%systemroot%%\system32\MusNotificationUx.exe ClearActiveNotifications</CommandLine>
 				<CommandLine condition="is">C:\Windows\system32\MusNotification.exe</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\dstokenclean.exe</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\dmclient.exe</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\disksnapshot.exe -z</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\compattelrunner.exe -maintenance</CommandLine>
+				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k LocalService -s W32Time</CommandLine>
+				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k LocalServiceNetworkRestricted -s RmSvc</CommandLine>
+				<CommandLine condition="end with">\TiWorker.exe -Embedding</CommandLine>
+				<ParentImage condition="is">C:\Windows\System32\SearchIndexer.exe</ParentImage>
+				<ParentImage condition="is">C:\Windows\System32\dstokenclean.exe</ParentImage>
 			</ProcessCreate>
 		</RuleGroup>
 
