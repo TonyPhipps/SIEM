@@ -25,7 +25,7 @@ Observe general process execution with the goal of understanding normal and dete
 
 
 ## Suspicious Command-Line Interface Activity
-MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.org/techniques/T1059)
+MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.org/techniques/T1059), [PowerShell (T1086)](https://attack.mitre.org/techniques/T1086)
 - Event ID 1
 
 ### Methods
