@@ -4,7 +4,6 @@ A Use Case can be documented for presention to management, to guide a SOC/Incide
 
 - [Name](#name)
   - [Problem Statement](#problem-statement)
-  - [Assurance Metrics](#assurance-metrics)
   - [Objectives](#objectives)
   - [Mitre ATT&CK Framework](#mitre-attck-framework)
   - [Assumptions and Limitations](#assumptions-and-limitations)
@@ -15,15 +14,13 @@ A Use Case can be documented for presention to management, to guide a SOC/Incide
   - [Component Name(s)](#component-names)
   - [Data Stream Analysis](#data-stream-analysis)
   - [Attack Simulation](#attack-simulation)
+  - [Assurance Metrics](#assurance-metrics)
 
 # Name
 One line giving the name of the use case. The name should capture action that resolves the problem statement.
 
 ## Problem Statement
 Describes the problem, beginning with any necessary background information.
-
-## Assurance Metrics
-Methods to ensure the use case was developed and is operating properly. These can be pass/fail, time based, or other relevant measurements.
 
 ## Objectives
 Defines the goals of the use case.
@@ -54,3 +51,6 @@ Pseudocode-like logic flow of how events are processed by the SIEM and presented
 
 ## Attack Simulation
 Steps to ensure the components in place display or alert as intended.
+
+## Assurance Metrics
+Methods to ensure the use case was developed and is operating properly. These can be pass/fail, time based, or other relevant measurements.
