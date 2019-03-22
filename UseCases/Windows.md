@@ -81,6 +81,7 @@ Service creation can be used by an adversary to achieve persistence.
 Observe general process execution with the goal of understanding normal and detecting anomalies. Use of multiple visualizations, tables, and aggregation methods is recommended. Any confirmed malicious behavior from this use case should be considered as a foundation for a new alert.
 
 - Running Process with Original File Deleted from Disk
+- Newly-observed executables
 
 #### Requirements
 - Enable Process Creation (Event ID 4688)
@@ -98,7 +99,7 @@ Observe general process execution with the goal of understanding normal and dete
 - Acquire a copy of the suspcious file for further analysis.
 
 ## Suspicious Command-Line Interface Activity
-MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.org/techniques/T1059)
+MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.org/techniques/T1059), [PowerShell (T1086)](https://attack.mitre.org/techniques/T1086)
 - Non-default PowerShell Module Use (4103)
 
 Execution of malicious commands and scripts from command-line interfaces.
@@ -113,6 +114,7 @@ Execution of malicious commands and scripts from command-line interfaces.
   - Event ID 4104 will populate the Microsoft-Windows-PowerShell/Operational log
 
 - Enable Module Logging
+(Event ID 4103)
   - Create the key path: HKLM\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ModuleLogging
     - Create new DWORD EnableModuleLogging = 1
   - Create the key path: HKLM\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ModuleLogging\ModuleNames
@@ -128,6 +130,16 @@ Execution of malicious commands and scripts from command-line interfaces.
 
 #### Methods
 - Whitelist Alert
+- Blacklist
+  - -nop (from noprofile)
+  - hidden
+  - -noni (from noninteractive)
+  - bypass
+  - -enc (from encodedcommand)
+  - invoke-webrequest
+  - iwr
+  - curl
+  - wget
 #### Responses
 
 ## Valid Account Compromise
