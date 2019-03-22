@@ -1,28 +1,25 @@
 SIEM Use Cases Based on Windows Logs
+SIEM Use Cases Based on Windows Logs
 
 - [Event Logs](#event-logs)
-  - [Brute Force Attempts (4625)](#brute-force-attempts-4625)
-  - [Clearing of Event Logs (1102)](#clearing-of-event-logs-1102)
-  - [New Service Creation (4697)](#new-service-creation-4697)
-  - [Newly observed executable (4688)](#newly-observed-executable-4688)
-  - [Non-default PowerShell module use (4103)](#non-default-powershell-module-use-4103)
-  - [Anomalous User Interactive Logon (4624, Types 2,10)](#anomalous-user-interactive-logon-4624-types-210)
-  - [Anomalous Member Added to Admin Group (4728, 4732, 4756)](#anomalous-member-added-to-admin-group-4728-4732-4756)
-  - [Service Account Activity Originating from Unauthorized System](#service-account-activity-originating-from-unauthorized-system)
-  - [User Logon More than an Hour Outside Expected Times](#user-logon-more-than-an-hour-outside-expected-times)
-  - [User Logged In to Multiple Systems Interactively](#user-logged-in-to-multiple-systems-interactively)
-  - [Account Use After Employee End Date](#account-use-after-employee-end-date)
-- [Data Collection](#data-collection)
-  - [Trusted Certificate Authorities on endpoints](#trusted-certificate-authorities-on-endpoints)
-  - [Running Process without a Parent Process ID](#running-process-without-a-parent-process-id)
-  - [Running Process with Original File Deleted from Disk](#running-process-with-original-file-deleted-from-disk)
-  - [System/Hidden Attributes Enabled on Unexpected Files/Folders](#systemhidden-attributes-enabled-on-unexpected-filesfolders)
+  - [Brute Force Attempts](#brute-force-attempts)
+  - [Clearing of Event Logs](#clearing-of-event-logs)
+  - [Service Exploitation](#service-exploitation)
+  - [General Process Monitoring](#general-process-monitoring)
+  - [Suspicious Command-Line Interface Activity](#suspicious-command-line-interface-activity)
+  - [Valid Account Compromise](#valid-account-compromise)
+  - [Account Manipulation](#account-manipulation)
+- [Other Sources](#other-sources)
+  - [Installation of Root Certificates](#installation-of-root-certificates)
+  - [Hidden Files and Directories](#hidden-files-and-directories)
 
 # Event Logs
 These use cases depend on Windows logs. Some will need to be enabled, but all are found in the various Event Logs.
 
-## Brute Force Attempts (4625)
-An influx of failed logon attempts (4625) indicates a possible brute force attempt on an account.
+## Brute Force Attempts
+MITRE ATT&CK Framework: [Brute Force (T1110)](https://attack.mitre.org/techniques/T1110/)
+
+An influx of failed logon attempts indicates a possible brute force attempt on an account.
 
 ##### Requirements
 - Enable "Audit Logon Events > Failure" via local security or GPO
@@ -42,7 +39,9 @@ An influx of failed logon attempts (4625) indicates a possible brute force attem
 - This method may pick up failed service accounts repeatedly trying to "do their job" with a locked account. Notifying the appropriate admin is a good idea here.
 
 
-## Clearing of Event Logs (1102)
+## Clearing of Event Logs
+MITRE ATT&CK Framework: [Indicator Removal on Host (T1070)](https://attack.mitre.org/techniques/T1070/)
+
 - Clearing event logs is a way for adversaries to clear their tracks. With proper event collection, this should occure seldom, making it a relatively easy detection method. Event logs set to "fill" rather than roll or that allow a large enough rolling file size that it causes system administrators to want to clear the logs should be avoided.
 
 #### Requirements
@@ -58,7 +57,9 @@ An influx of failed logon attempts (4625) indicates a possible brute force attem
 - Contain the system by disconnecting all network devices, then proceed with forensics.
 
 
-## New Service Creation (4697)
+## Service Exploitation
+MITRE ATT&CK Framework: [Modify Existing Service (T1031)](https://attack.mitre.org/techniques/T1031), [New Service (T1050)](https://attack.mitre.org/techniques/T1050), [Service Execution (T1035)](https://attack.mitre.org/techniques/T1035/)
+
 Service creation can be used by an adversary to achieve persistence.
 
 #### Requirements
@@ -76,75 +77,112 @@ Service creation can be used by an adversary to achieve persistence.
 - Conduct static analysis on the "Service File".
 
 
-## Newly observed executable (4688)                         
+## General Process Monitoring
+Observe general process execution with the goal of understanding normal and detecting anomalies. Use of multiple visualizations, tables, and aggregation methods is recommended. Any confirmed malicious behavior from this use case should be considered as a foundation for a new alert.
+
+- Running Process with Original File Deleted from Disk
 
 #### Requirements
-#### Methods
-- Rolling Whitelist Alert 
-#### Responses
+- Enable Process Creation (Event ID 4688)
+  - Secpol.exe
+  - Advanced Audit Policy Configuration > System Audit Policies > Detailed Traking > Audit Process Creation: Enabled, Success
 
-## Non-default PowerShell module use (4103)
+- Include Command Line in 4688 Events
+  - gpedit.msc
+  - Computer Configuration > Administrative Templates > System > Audit Process Creation > Include command line in process creation events: Enabled
 
-#### Requirements
-#### Methods
-- Whitelist Alert 
-#### Responses
-
-## Anomalous User Interactive Logon (4624, Types 2,10)
-
-#### Requirements
 #### Methods
 - Rolling Whitelist Alert
+
+#### Responses
+- Acquire a copy of the suspcious file for further analysis.
+
+## Suspicious Command-Line Interface Activity
+MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.org/techniques/T1059)
+- Non-default PowerShell Module Use (4103)
+
+Execution of malicious commands and scripts from command-line interfaces.
+
+#### Requirements
+-  Enable ScriptBlock Logging
+(Event ID 4104)
+  - Create they key path: HKLM\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
+    - Create new DWORD
+    - EnableScriptBlockLogging = 1
+    - EnableScriptBlockInvocationLogging = 1
+  - Event ID 4104 will populate the Microsoft-Windows-PowerShell/Operational log
+
+- Enable Module Logging
+  - Create the key path: HKLM\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ModuleLogging
+    - Create new DWORD EnableModuleLogging = 1
+  - Create the key path: HKLM\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ModuleLogging\ModuleNames
+      - Create new STRING VALUE \* = * (an asterisk for the value and data)
+  - Event ID 4103 will populate the Microsoft-Windows-PowerShell/Operational log
+
+- Transcription
+  - Create the key path: HKLM\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\Transcription\
+    - Create new DWORD EnableInvocationHeader = 1
+    - Create new DWORD EnableTranscripting = 1
+    - Create new STRING VALUE OutputDirectory = <path_to_directory>
+  - Logs will be stored in .txt files in teh specified directory, using the format `..\YYYYMMDD\PowerShell_transcript.PCNAME.RANDOM.YYYYMMDDHHMMSS.txt`
+
+#### Methods
+- Whitelist Alert
 #### Responses
 
-## Anomalous Member Added to Admin Group (4728, 4732, 4756)
+## Valid Account Compromise
+- Anomalous User Interactive Logon
+- Service Account Activity Originating from Unauthorized System
+- User Logon More than an Hour Outside Expected Times
+- User Logged In to Multiple Systems Interactively
+- Account Use After Employee End Date
+
+#### Requirements
+- Event logs attributable to user accounts (4624, 4625, 4688, etc.)
+  - Datetime stamps
+  - Source System
+  - Destination System
+
+#### Methods
+- Rolling Whitelist Alert
+- Threshold Alert
+- Blacklist Alert
+- Whitelist Alert
+
+#### Responses
+
+## Account Manipulation
+MITRE ATT&CK Framework: [Account Manipulation (T1098)](https://attack.mitre.org/techniques/T1098)
+- Anomalous Member Added to Admin Group (4728, 4732, 4756)
 
 #### Requirements
 #### Methods
 - Blacklist Alert
 #### Responses
 
-## Service Account Activity Originating from Unauthorized System
 #### Methods
 - Whitelist Alert
 
-## User Logon More than an Hour Outside Expected Times
-- Blacklist Alert
-## User Logged In to Multiple Systems Interactively
-- Threshold Alert
 
-## Account Use After Employee End Date
-- Blacklist Alert
+# Other Sources
 
-
-
-
-
-
-
-
-
-# Data Collection
-- These data points are not typically stored in Event Logs. Instead, the data must be collected periodically with a script.
-
-## Trusted Certificate Authorities on endpoints
-- Aggregate Count
+## Installation of Root Certificates
+MITRE ATT&CK Framework: [Install Root Certificate (T1130)](https://attack.mitre.org/techniques/T1130)
+  
 #### Requirements
+- No viable event ID contains information on this action. Instead, the data must be collected periodically with a script.
+
 #### Methods
+- Blacklist Alert
+
 #### Responses
 
-## Running Process without a Parent Process ID
-- Blacklist Alert
-#### Requirements
-#### Methods
-#### Responses
 
-## Running Process with Original File Deleted from Disk
-#### Requirements
-#### Methods
-#### Responses
+## Hidden Files and Directories 
+MITRE ATT&CK Framework: [Hidden Files and Directories (T1158)](https://attack.mitre.org/techniques/T1158)
 
-## System/Hidden Attributes Enabled on Unexpected Files/Folders
 #### Requirements
+- No viable event ID contains information on this action. Instead, the data must be collected periodically with a script.
+
 #### Methods
 #### Responses

@@ -3,6 +3,7 @@
 - [Non-PowerShell process loading powershell DLLs](#non-powershell-process-loading-powershell-dlls)
 - [Long Command/PowerShell Command observed](#long-commandpowershell-command-observed)
 - [Suspicious PowerShell Command Observed](#suspicious-powershell-command-observed)
+  - [Running Process without a Parent Process ID](#running-process-without-a-parent-process-id)
 
 # Newly-observed executables
 - Evend ID 1
@@ -65,3 +66,5 @@
   - iwr
   - curl
   - wget
+
+## Running Process without a Parent Process ID
