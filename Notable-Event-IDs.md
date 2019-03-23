@@ -1,6 +1,28 @@
 Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, etc
 
-### Security Events
+- [Security Events](#security-events)
+- [Microsoft-Windows-Sysmon/Operational](#microsoft-windows-sysmonoperational)
+- [System Events](#system-events)
+- [Application](#application)
+- [Microsoft-Windows-PrintService/Operational Events](#microsoft-windows-printserviceoperational-events)
+- [Microsoft-Windows-Kernel-PnP/Device Configuration](#microsoft-windows-kernel-pnpdevice-configuration)
+- [Microsoft-Windows-TaskScheduler/Operational](#microsoft-windows-taskscheduleroperational)
+- [Microsoft-Windows-Powershell/Operational](#microsoft-windows-powershelloperational)
+- [Microsoft-Windows-PowerShell/Operational](#microsoft-windows-powershelloperational)
+- [Windows PowerShell](#windows-powershell)
+- [Microsoft-Windows-PowerShell/Analytic](#microsoft-windows-powershellanalytic)
+- [Microsoft-Windows-Windows Defender/Operational](#microsoft-windows-windows-defenderoperational)
+- [Microsoft-Windows-Windows Firewall With Advanced Security/Firewall](#microsoft-windows-windows-firewall-with-advanced-securityfirewall)
+- [Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational](#microsoft-windows-remotedesktopservices-rdpcoretsoperational)
+- [Microsoft-Windows-TerminalServices-RDPClient/Operational](#microsoft-windows-terminalservices-rdpclientoperational)
+- [Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational](#microsoft-windows-terminalservices-remoteconnectionmanageroperational)
+- [Microsoft-Windows-TerminalServices-LocalSessionManager/Operational](#microsoft-windows-terminalservices-localsessionmanageroperational)
+- [Microsoft-Windows-SmbClient/Security](#microsoft-windows-smbclientsecurity)
+- [Microsoft-Windows-WMI-Activity/Operational](#microsoft-windows-wmi-activityoperational)
+- [Microsoft-Windows-WinRM/Operational](#microsoft-windows-winrmoperational)
+- [Microsoft-Windows-AppLocker/MSI and Script](#microsoft-windows-applockermsi-and-script)
+
+## Security Events
 
 | EventID | Description                                                                                                                                              |
 | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -89,7 +111,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 6280    | Network Policy Server unlocked the user account                                                                                                          |
 | 6416    | A new external device was recognized by the system                                                                                                       |
 
-### Microsoft-Windows-Sysmon/Operational
+## Microsoft-Windows-Sysmon/Operational
 
 | EventID | Description                                           |
 | :-----: | ----------------------------------------------------- |
@@ -116,7 +138,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |   255   | Error                                                 |
 
 
-### System Events
+## System Events
 
 | EventID | Description                                                                                     |
 | :-----: | :---------------------------------------------------------------------------------------------- |
@@ -136,7 +158,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |  7045   | A service was installed in the system                                                           |
 
 
-### Application
+## Application
 
 | EventID | Description       |
 | :-----: | :---------------- |
@@ -145,14 +167,14 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |  1003   | Application Error |
 
 
-### Microsoft-Windows-PrintService/Operational Events
+## Microsoft-Windows-PrintService/Operational Events
 
 | EventID | Description       |
 | :-----: | :---------------- |
 |   307   | Printing Document |
 
 
-### Microsoft-Windows-Kernel-PnP/Device Configuration
+## Microsoft-Windows-Kernel-PnP/Device Configuration
 
 | EventID | Description                   |
 | :-----: | :---------------------------- |
@@ -160,7 +182,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |   410   | New Mass Storage Installation |
 
 
-### Microsoft-Windows-TaskScheduler/Operational
+## Microsoft-Windows-TaskScheduler/Operational
 
 | EventID | Description    |
 | :-----: | :------------- |
@@ -171,7 +193,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |   201   | Task Completed |
 
 
-### Microsoft-Windows-Powershell/Operational
+## Microsoft-Windows-Powershell/Operational
 
 | EventID | Description                 |
 | :-----: | :-------------------------- |
@@ -182,7 +204,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |  24577  | Powershell script ran       |
 
 
-### Microsoft-Windows-PowerShell/Operational
+## Microsoft-Windows-PowerShell/Operational
 
 |  EventID   | Description                     |
 | :--------: | ------------------------------- |
@@ -191,7 +213,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |   53504    | Records the authenticating user |
 
 
-### Windows PowerShell
+## Windows PowerShell
 
 | EventID | Description                  |
 | :-----: | ---------------------------- |
@@ -200,7 +222,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |   800   | Includes partial script code |
 
 
-### Microsoft-Windows-PowerShell/Analytic
+## Microsoft-Windows-PowerShell/Analytic
 
 | EventID | Description                      |
 | :-----: | -------------------------------- |
@@ -209,7 +231,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |  32868  | PowerShell output object         |
 
 
-### Microsoft-Windows-Windows Defender/Operational
+## Microsoft-Windows-Windows Defender/Operational
 
 | EventID | Description                                                                                                                                                                      |
 | :-----: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -241,7 +263,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |  2001   |                                                                                                                                                                                  |
 
 
-### Microsoft-Windows-Windows Firewall With Advanced Security/Firewall
+## Microsoft-Windows-Windows Firewall With Advanced Security/Firewall
 
 | EventID | Description                               |
 | :-----: | ----------------------------------------- |
@@ -253,7 +275,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |  2009   | Firewall Failed to load group policy      |
 
 
-### Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational
+## Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational
 
 | EventID | Description                                 |
 | :-----: | ------------------------------------------- |
@@ -261,7 +283,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |   140   | Connection failed; bad username or password |
 
 
-### Microsoft-Windows-TerminalServices-RDPClient/Operational
+## Microsoft-Windows-TerminalServices-RDPClient/Operational
 
 | EventID | Description                        |
 | :-----: | ---------------------------------- |
@@ -271,14 +293,14 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |  1103   | multi-transport connection made    |
 
 
-### Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational
+## Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational
 
 | EventID | Description                   |
 | :-----: | ----------------------------- |
 |  1149   | User authentication succeeded |
 
 
-### Microsoft-Windows-TerminalServices-LocalSessionManager/Operational
+## Microsoft-Windows-TerminalServices-LocalSessionManager/Operational
 
 | EventID | Description                                        |
 | :-----: | -------------------------------------------------- |
@@ -291,14 +313,14 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |   40    | Session <X> has been disconnected, reason code <Z> |
 
 
-### Microsoft-Windows-SmbClient/Security
+## Microsoft-Windows-SmbClient/Security
 
 | EventID | Description                 |
 | :-----: | --------------------------- |
 |  31001  | Failed login to destination |
 
 
-### Microsoft-Windows-WMI-Activity/Operational
+## Microsoft-Windows-WMI-Activity/Operational
 
 | EventID | Description                              |
 | :-----: | ---------------------------------------- |
@@ -308,7 +330,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |  5861   | Registration of Permanent Event Consumer |
 
 
-### Microsoft-Windows-WinRM/Operational
+## Microsoft-Windows-WinRM/Operational
 
 |   EventID    | Description                    |
 | :----------: | ------------------------------ |
@@ -322,7 +344,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |     169      | Authentication success         |
 
 
-### Microsoft-Windows-AppLocker/MSI and Script
+## Microsoft-Windows-AppLocker/MSI and Script
 
 | EventID | Description        |
 | :-----: | ------------------ |
