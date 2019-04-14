@@ -66,6 +66,11 @@ Windows Security > Firewall & Network Protection > Private Network > Turn Off
 - gpedit.msc
 - Computer Configuration > Administrative Templates > System > Audit Process Creation > Include command line in process creation events: Enabled
 
+### Enable Subcategory Override
+- gpedit.msc
+- Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options
+- Audit: Force audit policy subcategory settings (Windows Vista or later) to override audit policy category settings
+
 ## Break SleepStudy
 Sometimes this odd service will begin creating an endless loop of .etl files. This command breaks that "feature," since there is no proper option to disable it.
 ```
