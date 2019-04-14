@@ -58,7 +58,7 @@ Windows Security > Firewall & Network Protection > Private Network > Turn Off
 - Turn On Module Logging: Enabled
 - Module Name: *
 
-- Event ID 4103 will populate the Microsoft-Windows-PowerShell/Operational log
+Event ID 4103 will populate the Microsoft-Windows-PowerShell/Operational log
 
 ### Transcription
 - Create the key path: HKLM\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\Transcription\
