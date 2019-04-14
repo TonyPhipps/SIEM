@@ -38,11 +38,26 @@ Windows Security > Firewall & Network Protection > Private Network > Turn Off
   - EnableScriptBlockInvocationLogging = 1
 - Event ID 4104 will populate the Microsoft-Windows-PowerShell/Operational log
 
+-OR-
+
+- gpedit.msc
+- Computer Configuration > Administrative Templates > Windows Components > Windows Powershell
+- Turn On Script Block Logging: Enabled
+- Log Stop/Start Events: Checked
+
 ### Enable Module Logging
 - Create the key path: HKLM\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ModuleLogging
   - Create new DWORD EnableModuleLogging = 1
 - Create the key path: HKLM\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ModuleLogging\ModuleNames
     - Create new STRING VALUE \* = * (an asterisk for the value and data)
+
+-OR-
+
+- gpedit.msc
+- Computer Configuration > Administrative Templates > Windows Components > Windows Powershell
+- Turn On Module Logging: Enabled
+- Module Name: *
+
 - Event ID 4103 will populate the Microsoft-Windows-PowerShell/Operational log
 
 ### Transcription
@@ -51,6 +66,13 @@ Windows Security > Firewall & Network Protection > Private Network > Turn Off
   - Create new DWORD EnableTranscripting = 1
   - Create new STRING VALUE OutputDirectory = <path_to_directory>
 - Logs will be stored in .txt files in teh specified directory, using the format `..\YYYYMMDD\PowerShell_transcript.PCNAME.RANDOM.YYYYMMDDHHMMSS.txt`
+
+-OR-
+
+- gpedit.msc
+- Computer Configuration > Administrative Templates > Windows Components > Windows Powershell
+- Turn On PowerShell Transcription: Enabled
+- Log Stop/Start Events: Checked
 
 ## Increase Log Size
 - Event Viewer > Application and Service Logs > Microsoft > Windows > PowerShell > Operational
@@ -65,13 +87,10 @@ Windows Security > Firewall & Network Protection > Private Network > Turn Off
 
 ### Include Command Line in 4688 Events
 - gpedit.msc
-- Computer Configuration > Administrative Templates > System > Audit Process Creation
-- Include command line in process creation events: Enabled
-
-### Enable Subcategory Override
-- gpedit.msc
 - Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options
 - Audit: Force audit policy subcategory settings (Windows Vista or later) to override audit policy category settings: Enabled
+- Computer Configuration > Administrative Templates > System > Audit Process Creation
+- Include command line in process creation events: Enabled
 
 ## Break SleepStudy
 Sometimes this odd service will begin creating an endless loop of .etl files. This command breaks that "feature," since there is no proper option to disable it.
