@@ -24,11 +24,11 @@ An influx of failed logon attempts indicates a possible brute force attempt on a
 ##### Requirements
 - Enable "Audit Logon Events > Failure" via local security or GPO
 - SecPol > Local Policies > Audit Policy > Audit Logon Events > Check Failure
-- Ensure event ID 4625 from the Windows Security log is collected/forwarded appropriately.
+- Ensure event ID's 4625 and 4648 from the Windows Security log are collected/forwarded appropriately.
 
 ##### Methods
-- Use a Threshold Alert to indicate when > 5 failures occurred on a single account in 1 hour.
-- Use a Threshold Alert based on your normal activity to indicate when the failure count is 2x the normal count (across all accounts).
+- 4624- Use a Threshold Alert to indicate when > 5 failures occurred on a single account in 1 hour.
+- 4648 - Use a Threshold Alert to indicate when > 5 failures occurred from one source account to more than 1 destination account in 1 hour.
 
 #### Responses
 - Contact the account owner and determine if the issue is a configuration error.
