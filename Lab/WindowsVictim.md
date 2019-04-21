@@ -1,17 +1,18 @@
 In order to build a lab for Windows logs, a Windows system is required. The content on this page will focus on setting up a victim system with advanced logging. While production systems may not have such high levels of logging, it remains important to understand how attacks and activities can be logged. It may be the case that observations in a lab environment warrant increasing logging on production systems to allow detection.
 
-- [Recommended Setup](#recommended-setup)
+- [Windows Configuration](#windows-configuration)
   - [Disable Windows Firewall](#disable-windows-firewall)
   - [Disable Password Protected Sharing](#disable-password-protected-sharing)
-  - [Sysmon Logging](#sysmon-logging)
   - [PowerShell Logging](#powershell-logging)
   - [Increase Log Size](#increase-log-size)
   - [Enable Process Creation (Event ID 4688)](#enable-process-creation-event-id-4688)
-  - [Break SleepStudy](#break-sleepstudy)
+  - [Enable Task History](#enable-task-history)
+- [Sysmon](#sysmon)
+- [WinLogBeat](#winlogbeat)
 - [Other Useful Tidbits](#other-useful-tidbits)
   - [Clear all the Logs](#clear-all-the-logs)
 
-# Recommended Setup
+# Windows Configuration
 
 ## Disable Windows Firewall
 Windows Security > Firewall & Network Protection > Private Network > Turn Off
@@ -21,11 +22,6 @@ Windows Security > Firewall & Network Protection > Private Network > Turn Off
 - Control Panel > Network and Internet > Network and Sharing Center > Advanced Sharing Settings > All Networks > ...
   - Public Folder Sharing > Turn on...
   - Password Protected Sharing > Turn off...
-
-## Sysmon Logging
-- Copy Sysmon to virtual host and install as a service
-- c:\windows\sysmon\sysmon64.exe -accepteula -i [sysmonlabconfig.xml](/Lab/sysmonlabconfig.xml)
-- %SystemRoot%\system32\winevt\logs\Microsoft-Windows-Sysmon%4Operational.evtx
 
 ## PowerShell Logging
 - %SystemRoot%\system32\winevt\logs\Microsoft-Windows-PowerShell%4Operational.evtx
@@ -92,7 +88,24 @@ Event ID 4103 will populate the Microsoft-Windows-PowerShell/Operational log
 - Computer Configuration > Administrative Templates > System > Audit Process Creation
 - Include command line in process creation events: Enabled
 
-## Break SleepStudy
+## Enable Task History
+- Task Scheduler
+- Click Enable All Tasks History
+
+# Sysmon
+- Copy Sysmon to virtual host and install as a service
+- c:\windows\sysmon\sysmon64.exe -accepteula -i [sysmonlabconfig.xml](/Lab/sysmonlabconfig.xml)
+- %SystemRoot%\system32\winevt\logs\Microsoft-Windows-Sysmon%4Operational.evtx
+
+# WinLogBeat
+- https://www.elastic.co/downloads/beats/winlogbeat
+- Configure WinLogBeat by editing winlogbeat.yml
+- Recommended starter config: https://raw.githubusercontent.com/Cyb3rWard0g/HELK/master/winlogbeat/winlogbeat.yml
+- Ensure the ```hosts:``` section of the config file has the correct destination IP
+- Install via install-service-winlogbeat.ps1, then start via ```Start-Service winlogbeat```
+
+
+### Break SleepStudy
 Sometimes this odd service will begin creating an endless loop of .etl files. This command breaks that "feature," since there is no proper option to disable it.
 ```
 Set-ItemProperty -Path C:\Windows\System32\SleepStudy\*.etl -Name IsReadOnly -Value $true
