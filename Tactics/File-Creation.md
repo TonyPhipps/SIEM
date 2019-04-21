@@ -2,6 +2,7 @@
 - Sysmon Event ID 11: FileCreate
 - Windows Security Log Event ID 4656: A handle to an object was requested
 - Host-Based IPS Signatures
+- Other Application Logs
 
 # Threat Hunting Use Cases
 The use cases below are separated by the recommended detection method.

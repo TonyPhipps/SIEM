@@ -28,15 +28,15 @@ A Use Case can be documented for presention to management, to guide a SOC/Incide
 
 [Generic Use Cases](/UseCases/Generic.md)
 
-| Endpoint Log-Based                      | Server or Appliance Log-Based                    |
-| --------------------------------------- | ------------------------------------------------ |
-| [Virus Scan](/UseCases/VirusScan.md)    | [Email](/UseCases/Email.md)                      |
-| [Network IDS](/UseCases/Network-IDS.md) | [DHCP](/UseCases/DHCP.md)                        |
-| [Windows](/UseCases/Windows.md)         | [DNS](/UseCases/DNS.md)                          |
-| [Sysmon](/UseCases/Sysmon.md)           | [Layer 3 Firewall](/UseCases/Layer3-Firewall.md) |
-| [Host IDS](/UseCases/Host-IDS.md)       | [Layer 7 Firewall](/UseCases/Layer7-Firewall.md) |
-|                                         | [Flow](/UseCases/Flow.md)                        |
-|                                         | [Web Proxy](/UseCases/Web-Proxy.md)              |
+| Endpoint Log-Based                              | Server or Appliance Log-Based                    |
+| ----------------------------------------------- | ------------------------------------------------ |
+| [Virus Scan](/UseCases/VirusScan.md)            | [Email](/UseCases/Email.md)                      |
+| [Network IDS](/UseCases/Network-IDS.md)         | [DHCP](/UseCases/DHCP.md)                        |
+| [Windows Security](/UseCases/Windows-Security/) | [DNS](/UseCases/DNS.md)                          |
+| [Windows (Other)](/UseCases/Windows-Other/)     | [Layer 3 Firewall](/UseCases/Layer3-Firewall.md) |
+| [Sysmon](/UseCases/Sysmon.md)                   | [Layer 7 Firewall](/UseCases/Layer7-Firewall.md) |
+| [Host IDS](/UseCases/Host-IDS.md)               | [Flow](/UseCases/Flow.md)                        |
+|                                                 | [Web Proxy](/UseCases/Web-Proxy.md)              |
 
 # Data Enrichment
 

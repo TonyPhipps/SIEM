@@ -2,7 +2,7 @@ SIEM Use Cases Based on Windows Logs
 SIEM Use Cases Based on Windows Logs
 
 - [Event Logs](#event-logs)
-  - [Brute Force Attempts](#brute-force-attempts)
+  - [Brute Force](#brute-force)
   - [Clearing of Event Logs](#clearing-of-event-logs)
   - [Service Exploitation](#service-exploitation)
   - [General Process Monitoring](#general-process-monitoring)
@@ -16,7 +16,7 @@ SIEM Use Cases Based on Windows Logs
 # Event Logs
 These use cases depend on Windows logs. Some will need to be enabled, but all are found in the various Event Logs.
 
-## Brute Force Attempts
+## Brute Force
 MITRE ATT&CK Framework: [Brute Force (T1110)](https://attack.mitre.org/techniques/T1110/)
 
 An influx of failed logon attempts indicates a possible brute force attempt on an account.
