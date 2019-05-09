@@ -23,13 +23,16 @@ One line giving the name of the use case. The name should capture action that re
 Describes the problem, beginning with any necessary background information.
 
 ## Objectives
-Defines the goals of the use case.
+Defines the goals of the use case
+
+### Compliance
+List applicable compliance items this use case aims to partially or fully meet.
 
 ## Mitre ATT&CK Framework
 Describes which of the Mitre ATT&CK Framework Tactics/Techniques the objectives should allow detection of.
 
 ## Assumptions and Limitations
-Describes any assumptions/limitations regarding law, licensing, policies, or techincalities. 
+Describes any assumptions/limitations regarding law, licensing, policies, or techincalities.
 
 # Monitoring and Notifications
 Describes how analysts will monitor or be notified of activity. This typically involves monitors, dashboards, reports, emails, etc.
