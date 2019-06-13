@@ -22,11 +22,11 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Suspicious File Name Closely Matching System File Name
 
 ## Rolling Whitelist Alert
-- File Extension
-- Source Process and File Extension
-- Source Process and File Path
-- User and File Extension
-- User and File Path
+- Newly Observed Extension
+- Newly Observed Source Process and Extension
+- Newly Observed Source Process and File Path
+- Newly Observed User and Extension
+- Newly Observed User and File Path
 
 ## Shannon Entropy Score Alert
 - File Created with High Entropy Score
