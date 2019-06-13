@@ -3,14 +3,16 @@
 Grouped by [Detection Method](/Detection-Methods.md)
 
 ## Aggregate Count
-- Executable Files Created in User Space
-    - Aggregate by Process, Full File Path
-- Files Created in System Space by an Executable Ran from User Space
-    - Aggregate by Process, Full File Path
+- Count of User and Extension
+- Count of User and File Path
+- Count of Process and File Path
 
 ## Blacklist Alert
 - File Created with Known-Malicious Name
 - File Created with Known-System Name in Unexpected Folder
+- File Created in System Space by Process in User Space
+- File Created in User Space by Privileged Account
+- File Created in System Space by Nonprivileged Account
 
 ## Whitelist Alert
 - File Created in System Folder
