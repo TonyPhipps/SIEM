@@ -1,4 +1,6 @@
-# Use Cases by Detection Method
+# File Creation Use Cases
+
+Grouped by [Detection Method](/Detection-Methods.md)
 
 ## Aggregate Count
 - Executable Files Created in User Space
