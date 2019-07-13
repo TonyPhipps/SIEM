@@ -36,8 +36,8 @@ MITRE ATT&CK Framework:
     - Computer Configuration > Administrative Templates > System > Audit Process Creation > Include command line in process creation events: Enabled
 
 
-# Responses
+# Response Options
 - Acquire a copy of the suspicious file for further analysis.
 
 
-# Possible False Postivies
+## Possible False Postivies

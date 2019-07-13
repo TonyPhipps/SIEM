@@ -33,15 +33,15 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 # Log Source Examples
-- Winows Security Event ID 4624
-- Winows Security Event ID 4625
-- Winows Security Event ID 4648
+- Windows Security Event ID 4624
+- Windows Security Event ID 4625
+- Windows Security Event ID 4648
 
 
-# Responses
+# Response Options
 - Contact the account owner and determine if the issue is a configuration error.
 - Block the traffic from the source IP.
 
 
-# Possible False Postivies
+## Possible False Postivies
 - This method may pick up failed service accounts repeatedly trying to "do their job" with a locked account. Notifying the appropriate admin is a good idea here.

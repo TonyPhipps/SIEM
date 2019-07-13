@@ -36,3 +36,9 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 # Log Source Examples
 - Windows Security Event ID 4720
+
+
+# Response Options
+
+
+## Possible False Positives

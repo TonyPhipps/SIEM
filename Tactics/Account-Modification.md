@@ -32,8 +32,14 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 # Log Source Examples
-- Winows Security Event ID 4728
-- Winows Security Event ID 4738
-- Winows Security Event ID 4732
-- Winows Security Event ID 4756
-- Winows Security Event ID 4767
+- Windows Security Event ID 4728
+- Windows Security Event ID 4738
+- Windows Security Event ID 4732
+- Windows Security Event ID 4756
+- Windows Security Event ID 4767
+
+
+# Response Options
+
+
+## Possible False Positives

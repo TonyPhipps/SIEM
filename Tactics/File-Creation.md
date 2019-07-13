@@ -41,3 +41,9 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Windows Security Log 
   - Event ID 4656: A handle to an object was requested
 - Host-Based IPS Signatures
+ 
+
+# Response Options
+
+
+## Possible False Positives

@@ -31,7 +31,7 @@ MITRE ATT&CK Framework: [Modify Existing Service (T1031)](https://attack.mitre.o
 - Windows Security Event ID 4697
 
 
-# Responses
+# Response Options
 - Consider the file path of the "Service File." Is it resting in a strange location, like user writeable folders or shares?
 - Determine if the affected system should logically have this type of service created.
 - Contact the source account owner and determine if the activity was authorized.
@@ -39,4 +39,4 @@ MITRE ATT&CK Framework: [Modify Existing Service (T1031)](https://attack.mitre.o
 - Conduct static analysis on the "Service File".
 
 
-# Possible False Postivies
+## Possible False Postivies
