@@ -28,7 +28,7 @@ MITRE ATT&CK Framework: [Modify Existing Service (T1031)](https://attack.mitre.o
 
 
 # Log Source Examples
-- Winows Security Event ID 4697
+- Windows Security Event ID 4697
 
 
 # Responses
