@@ -10,6 +10,16 @@ MITRE ATT&CK Framework:
 
 
 ## Blacklist Alert
+- Execution Command contains one of the following strings
+  - -nop (from noprofile)
+  - hidden
+  - -noni (from noninteractive)
+  - bypass
+  - -enc (from encodedcommand)
+  - invoke-webrequest
+  - iwr
+  - curl
+  - wget
 
 
 ## Whitelist Alert
@@ -19,21 +29,21 @@ MITRE ATT&CK Framework:
 
 
 ## Rolling Whitelist Alert
-- Newly observed executable file names
+- Newly observed executables
+- Newly observed executables in User-Editable Folders
 
 ## Shannon Entropy Score Alert
 
 
 ## Threshold Alert
+- Excessive Command Length
 
 
 # Log Source Examples
-- Winows Security Event ID 4688
-  - Secpol.exe
-  - Advanced Audit Policy Configuration > System Audit Policies > Detailed Traking > Audit Process Creation: Enabled, Success
-  - Include Command Line in 4688 Events
-    - gpedit.msc
-    - Computer Configuration > Administrative Templates > System > Audit Process Creation > Include command line in process creation events: Enabled
+- Windows Security Event ID 4688
+  - Secpol.exe > Advanced Audit Policy Configuration > System Audit Policies > Detailed Traking > Audit Process Creation: Enabled, Success
+  - gpedit.msc > Computer Configuration > Administrative Templates > System > Audit Process Creation > Include command line in process creation events: Enabled
+- Sysmon Event ID 1
 
 
 # Response Options

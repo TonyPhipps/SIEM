@@ -26,11 +26,6 @@ These basic use cases should be detectable by any SIEM, provided the correct log
 - Firmware is updated/out-of-date
 - Software is installed/out-of-date
 
-## Network
-
-- A protocol field is larger than X bytes
-- A TCP connection has been open for a prolonged period
-
 
 ## Correlation
 - A system reports more than X anomaly-style alerts in Y time frame

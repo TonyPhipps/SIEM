@@ -1,44 +1,9 @@
 Sysmon
 
-- [General Process Monitoring](#general-process-monitoring)
-- [Suspicious Command-Line Interface Activity](#suspicious-command-line-interface-activity)
-- [Uncommonly Used Port](#uncommonly-used-port)
-- [General Network Connection Monitoring](#general-network-connection-monitoring)
-- [Suspicious Loading of PowerShell DLLs](#suspicious-loading-of-powershell-dlls)
-- [DLL Side-Loading Attack](#dll-side-loading-attack)
-
-
-## General Process Monitoring
-- Event ID 1
-- Running Process with Original File Deleted from Disk
-- Newly-observed executables
-- Running Process without a Parent Process ID
-- Long Command/PowerShell Command observed
-
-Observe general process execution with the goal of understanding normal and detecting anomalies. Use of multiple visualizations, tables, and aggregation methods is recommended. Any confirmed malicious behavior from this use case should be considered as a foundation for a new alert.
-
-### Requirements
-
-### Methods  
-- Rolling Whitelist
-- Command length threshold of 250+ characters
-
-
-## Suspicious Command-Line Interface Activity
-MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.org/techniques/T1059), [PowerShell (T1086)](https://attack.mitre.org/techniques/T1086)
-- Event ID 1
-
-### Methods
-- Blacklist
-  - -nop (from noprofile)
-  - hidden
-  - -noni (from noninteractive)
-  - bypass
-  - -enc (from encodedcommand)
-  - invoke-webrequest
-  - iwr
-  - curl
-  - wget
+- [Uncommonly Used Port](#Uncommonly-Used-Port)
+- [General Network Connection Monitoring](#General-Network-Connection-Monitoring)
+- [Suspicious Loading of PowerShell DLLs](#Suspicious-Loading-of-PowerShell-DLLs)
+- [DLL Side-Loading Attack](#DLL-Side-Loading-Attack)
 
 
 ## Uncommonly Used Port
