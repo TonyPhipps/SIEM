@@ -36,10 +36,8 @@ Grouped by [Detection Method](/Detection-Methods.md)
 ## Threshold Alert
 
 # Log Source Examples
-- Sysmon
-  - Event ID 11: FileCreate
-- Windows Security Log 
-  - Event ID 4656: A handle to an object was requested
+- Microsoft Sysmon Event ID 11: FileCreate
+- Windows Security Event ID 4656: A handle to an object was requested
 - Host-Based IPS Signatures
  
 

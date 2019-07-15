@@ -1,26 +1,26 @@
 Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, etc
 
-- [Security Events](#security-events)
-- [Microsoft-Windows-Sysmon/Operational](#microsoft-windows-sysmonoperational)
-- [System Events](#system-events)
-- [Application](#application)
-- [Microsoft-Windows-PrintService/Operational Events](#microsoft-windows-printserviceoperational-events)
-- [Microsoft-Windows-Kernel-PnP/Device Configuration](#microsoft-windows-kernel-pnpdevice-configuration)
-- [Microsoft-Windows-TaskScheduler/Operational](#microsoft-windows-taskscheduleroperational)
-- [Microsoft-Windows-Powershell/Operational](#microsoft-windows-powershelloperational)
-- [Microsoft-Windows-PowerShell/Operational](#microsoft-windows-powershelloperational)
-- [Windows PowerShell](#windows-powershell)
-- [Microsoft-Windows-PowerShell/Analytic](#microsoft-windows-powershellanalytic)
-- [Microsoft-Windows-Windows Defender/Operational](#microsoft-windows-windows-defenderoperational)
-- [Microsoft-Windows-Windows Firewall With Advanced Security/Firewall](#microsoft-windows-windows-firewall-with-advanced-securityfirewall)
-- [Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational](#microsoft-windows-remotedesktopservices-rdpcoretsoperational)
-- [Microsoft-Windows-TerminalServices-RDPClient/Operational](#microsoft-windows-terminalservices-rdpclientoperational)
-- [Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational](#microsoft-windows-terminalservices-remoteconnectionmanageroperational)
-- [Microsoft-Windows-TerminalServices-LocalSessionManager/Operational](#microsoft-windows-terminalservices-localsessionmanageroperational)
-- [Microsoft-Windows-SmbClient/Security](#microsoft-windows-smbclientsecurity)
-- [Microsoft-Windows-WMI-Activity/Operational](#microsoft-windows-wmi-activityoperational)
-- [Microsoft-Windows-WinRM/Operational](#microsoft-windows-winrmoperational)
-- [Microsoft-Windows-AppLocker/MSI and Script](#microsoft-windows-applockermsi-and-script)
+- [Security Events](#Security-Events)
+- [Microsoft-Windows-Sysmon/Operational](#Microsoft-Windows-SysmonOperational)
+- [System Events](#System-Events)
+- [Application](#Application)
+- [Microsoft-Windows-PrintService/Operational Events](#Microsoft-Windows-PrintServiceOperational-Events)
+- [Microsoft-Windows-Kernel-PnP/Device Configuration](#Microsoft-Windows-Kernel-PnPDevice-Configuration)
+- [Microsoft-Windows-TaskScheduler/Operational](#Microsoft-Windows-TaskSchedulerOperational)
+- [Microsoft-Windows-Powershell/Operational](#Microsoft-Windows-PowershellOperational)
+- [Microsoft-Windows-PowerShell/Operational](#Microsoft-Windows-PowerShellOperational)
+- [Windows PowerShell](#Windows-PowerShell)
+- [Microsoft-Windows-PowerShell/Analytic](#Microsoft-Windows-PowerShellAnalytic)
+- [Microsoft-Windows-Windows Defender/Operational](#Microsoft-Windows-Windows-DefenderOperational)
+- [Microsoft-Windows-Windows Firewall With Advanced Security/Firewall](#Microsoft-Windows-Windows-Firewall-With-Advanced-SecurityFirewall)
+- [Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational](#Microsoft-Windows-RemoteDesktopServices-RdpCoreTSOperational)
+- [Microsoft-Windows-TerminalServices-RDPClient/Operational](#Microsoft-Windows-TerminalServices-RDPClientOperational)
+- [Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational](#Microsoft-Windows-TerminalServices-RemoteConnectionManagerOperational)
+- [Microsoft-Windows-TerminalServices-LocalSessionManager/Operational](#Microsoft-Windows-TerminalServices-LocalSessionManagerOperational)
+- [Microsoft-Windows-SmbClient/Security](#Microsoft-Windows-SmbClientSecurity)
+- [Microsoft-Windows-WMI-Activity/Operational](#Microsoft-Windows-WMI-ActivityOperational)
+- [Microsoft-Windows-WinRM/Operational](#Microsoft-Windows-WinRMOperational)
+- [Microsoft-Windows-AppLocker/MSI and Script](#Microsoft-Windows-AppLockerMSI-and-Script)
 
 ## Security Events
 
@@ -260,7 +260,6 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |  5010   | Scanning for malware and other potentially unwanted software is disabled.                                                                                                        |
 |  5012   | Scanning for viruses is disabled.                                                                                                                                                |
 |  5101   | The antimalware platform is expired.                                                                                                                                             |
-|  2001   |                                                                                                                                                                                  |
 
 
 ## Microsoft-Windows-Windows Firewall With Advanced Security/Firewall
