@@ -25,6 +25,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 ## Rolling Whitelist Alert
 - Newly Observed Domain
+- Newly observed source process
 
 
 ## Shannon Entropy Score Alert
@@ -40,10 +41,8 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 # Log Source Examples
-- Server Logs
 - DHCP Server Logs
-- Web Proxy Logs
-- Reverse Web Proxy Logs
+- Microsoft Sysmon Event ID 22: DNSEvent (DNS query)
 
 
 # Response Options

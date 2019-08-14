@@ -45,6 +45,9 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 # Log Source Examples
+- Email server logs
+- Email secure gateway logs
+- Endpoint Email client logs
 
 
 # Response Options

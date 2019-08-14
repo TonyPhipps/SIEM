@@ -37,7 +37,7 @@ MITRE ATT&CK Framework:
 - Newly observed executables ran by service account
 - Newly observed executables ran by system accounts
 - Newly observed source executable and destination executable
-- Newly observed source user executing [LOLBOAS](https://github.com/LOLBAS-Project/LOLBAS)
+- Newly observed source user executing [LOLBAS](https://github.com/LOLBAS-Project/LOLBAS)
 
 
 ## Shannon Entropy Score Alert

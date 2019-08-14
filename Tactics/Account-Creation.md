@@ -20,6 +20,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 ## Levenshtein Score Alert
 - Account Created With Name Similar to "Admin"
 - Account Created With Name Similar to "Administrator"
+- Account Created With Name Similar to "svc" (or the local service account naming convention)
 
 
 ## Rolling Whitelist Alert
@@ -35,7 +36,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 # Log Source Examples
-- Windows Security Event ID 4720
+- Windows Security Event ID 4720: A user account was created
 
 
 # Response Options

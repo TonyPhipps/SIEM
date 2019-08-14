@@ -10,7 +10,7 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 
 ## Blacklist Alert
-- PowerShell command contains...
+- Command contains one or more of these PowerShell keywords...
   - -nop (from noprofile)
   - hidden
   - -noni (from noninteractive)
@@ -28,7 +28,8 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 
 ## Rolling Whitelist Alert
-  
+- Newly observed child processes of cmd.exe, powershell.exe, or powershell_ise.exe
+
 
 ## Shannon Entropy Score Alert
 
@@ -55,3 +56,4 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 
 ## Possible False Positives
+- Many commandline activities performed by authorized privileged users may false-positive on this content.

@@ -20,4 +20,3 @@ These basic use cases should be detectable by any SIEM, provided the correct log
 - A firewall blocks more than X packets to/from a single system in Y time frame
 - An account accesses more than X file shares in Y time frame
 - An account makes authentication attempts during abnormal hours of the day
-- A system makes network connections during abnormal hours of the day

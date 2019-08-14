@@ -18,17 +18,21 @@ MITRE ATT&CK Framework: [Indicator Removal on Host (T1070)](https://attack.mitre
 ## Levenshtein Score Alert
 
 
+
 ## Rolling Whitelist Alert
+- Newly Observed Source user clearing logs
 
 
 ## Shannon Entropy Score Alert
 
 
 ## Threshold Alert
+- Ten or more occurrences of 1104
 
 
 ## LogSource Examples
-- Winows Security Event ID 1102
+- Windows Security Event ID 1102: The audit log was cleared
+- Windows Security Event ID 1104: The security Log is now full
 
 
 ## Response Options

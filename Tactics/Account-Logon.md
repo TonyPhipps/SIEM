@@ -35,9 +35,9 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 # Log Source Examples
-- Windows Security Event ID 4624
-- Windows Security Event ID 4625
-- Windows Security Event ID 4648
+- Windows Security Event ID 4624: An account was successfully logged on
+- Windows Security Event ID 4625: An account failed to log on
+- Windows Security Event ID 4648: A logon was attempted using explicit credentials
 
 
 # Response Options
