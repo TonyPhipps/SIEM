@@ -10,10 +10,12 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 ## Blacklist Alert
 - Account Logon After Employee End Date
+- Service account logs on interactively
 
 
 ## Whitelist Alert
 - Logon More than an Hour Outside Expected Times
+- A user with an unrecognized naming convention is observed
 
 
 ## Levenshtein Score Alert

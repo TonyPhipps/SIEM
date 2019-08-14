@@ -15,6 +15,8 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Whitelist Alert
+- A source system with an unrecognized naming convention is observed
+- Requests on domains not in a Top-Million list is observed
 
 
 ## Levenshtein Score Alert

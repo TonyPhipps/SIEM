@@ -10,6 +10,7 @@ MITRE ATT&CK Framework:
 
 
 ## Blacklist Alert
+- A file with a non-executable extension is executed
 - Execution Command contains one of the following strings
   - -nop (from noprofile)
   - hidden
@@ -26,13 +27,21 @@ MITRE ATT&CK Framework:
 
 
 ## Levenshtein Score Alert
+- Processes with filenames that closely resemble system files.
 
 
 ## Rolling Whitelist Alert
 - Newly observed executables
 - Newly observed executables in User-Editable Folders
+- Newly observed executables ran by privileged user
+- Newly observed executables ran by service account
+- Newly observed executables ran by system accounts
+- Newly observed source executable and destination executable
+- Newly observed source user executing [LOLBOAS](https://github.com/LOLBAS-Project/LOLBAS)
+
 
 ## Shannon Entropy Score Alert
+- Processes executed with randomized file names.
 
 
 ## Threshold Alert

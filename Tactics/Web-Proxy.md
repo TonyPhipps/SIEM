@@ -24,7 +24,9 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - HTTPS request with 3 or more / (when no break-and-inspect is deployed, this signifies HTTP over port 443)
 - Known-bad User Agents
 - Known-bad Domains
-
+- A privileged account generates any web traffic
+- A service account generates any web traffic
+- A system account generates any web traffic
 
 
 ## Whitelist Alert

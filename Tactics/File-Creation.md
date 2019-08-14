@@ -13,6 +13,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - File Created in System Space by Process in User Space
 - File Created in User Space by Privileged Account
 - File Created in System Space by Nonprivileged Account
+- A file is created in a non-standard location (e.g. a non-ini/otf/compositefont/ttc/ttf/fon/dat/tmp file created in c:\windows\fonts)
 
 ## Whitelist Alert
 - File Created in System Folder
@@ -24,11 +25,11 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Suspicious File Name Closely Matching System File Name
 
 ## Rolling Whitelist Alert
-- Newly Observed Extension
-- Newly Observed Source Process and Extension
-- Newly Observed Source Process and File Path
-- Newly Observed User and Extension
-- Newly Observed User and File Path
+- Newly Observed Destination File Extension
+- Newly Observed Source Process and Destination File Extension
+- Newly Observed Source Process and Destination File Path
+- Newly Observed Source User and Destination File Extension
+- Newly Observed Source User and Destination File Path
 
 ## Shannon Entropy Score Alert
 - File Created with High Entropy Score
