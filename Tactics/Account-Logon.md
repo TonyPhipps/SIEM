@@ -29,9 +29,9 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Threshold Alert
-- Logon to 3 or more Systems Simultaneously
-- Over 5 failures occurred on a single account within 1 hour
-- Over 5 failures occurred from one source account to more than 1 destination account within 1 hour
+- User Name, Destination Host where Destination Host Count exceeds threshold
+- Source Account, Outcome=Failure where Count exceeds threshold
+- Source Account, Outcome=Failure, Destination Host where Destination Host Count exceeds threshold
 
 
 # Log Source Examples

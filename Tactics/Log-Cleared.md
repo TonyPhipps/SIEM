@@ -27,7 +27,7 @@ MITRE ATT&CK Framework: [Indicator Removal on Host (T1070)](https://attack.mitre
 
 
 ## Threshold Alert
-- Ten or more occurrences of 1104
+- EventId=1104 where Count exceeds threshold
 
 
 ## LogSource Examples

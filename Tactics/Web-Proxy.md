@@ -47,9 +47,11 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Threshold Alert
-- Excessive Allow:Block Daily Ratio
-- Excessive GET:POST Daily Ratio
-- Excessive Up:Down Bytes Daily Ratio
+- User Name, Request URL Host, Bytes Out Total where Bytes Out Total out exceeds threshold
+- User name, Allow, Block, Allow/Block Ratio where Allow/Block Ratio exceeds threshold
+- User Name, GET Total, Post+Put Total, GET:POST/Put Ratio where GET:POST/Put Ratio exceeds threshold
+- User Name, Bytes In Total, Bytes Out Total, Bytes In/Out Ratio Where Bytes In/Out exceeds threshold
+
 
 
 # Log Source Examples

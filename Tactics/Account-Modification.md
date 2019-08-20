@@ -32,7 +32,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Threshold Alert
-- More than 5 Accounts Modified by a Single Source User within 5 Minutes
+- Source User, Destination User where Destination User Count exceeds threshold
 
 
 # Log Source Examples

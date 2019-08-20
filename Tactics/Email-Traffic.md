@@ -38,10 +38,12 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Threshold Alert
-- Excessive Outbound Emails from a Single User/System
-- Excessive Inbound Emails from a Single User/SMTP Server/Domain
-- Excessive Outbound Emails to a Single Address
-- Excessive Non-Delivery Reports
+- Source User, Direction=Outbound where Source User Count exceeds threshold
+- Source System, Direction=Outbound where Source System Count exceeds threshold
+- Source User, Direction=Inbound where Source User Count exceeds threshold
+- Source System, Direction=Inbound where Source System Count exceeds threshold
+- Destination SMTP Server, Direction=Outbound where Destination SMTP Server Count exceeds threshold
+- Subject=Non-Delivery Report where Count exceeds threshold
 
 
 # Log Source Examples

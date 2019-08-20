@@ -36,7 +36,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Threshold Alert
-
+- Signature Name where Count exceeds threshold
 
 
 # Log Source Examples

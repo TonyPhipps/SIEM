@@ -23,7 +23,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Threshold Alert
-- Excessive Session Length
+- Connection Length where Connection Length exceeds threshold
 
 
 # Log Source Examples

@@ -22,9 +22,10 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Threshold Alert
-- A system receives/sents UDP packets to more than X IPs in Y time frame
-- A system surpasses X TCP connections in Y time frame
-- A system surpasses X currently active TCP sessions
+- Source System, Destination System, Protocol=UDP where Source System Count exceeds threshold
+- Source System, Destination System, Protocol=UDP where Destination System Count exceeds threshold
+- Source System, Protocol=TCP where Count exceeds threshold
+- Destination System, Protocol=TCP where Count exceeds threshold
 
 
 # Log Source Examples

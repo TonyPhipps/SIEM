@@ -21,7 +21,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Threshold Alert
-- Excessive Up:Down Ratio
+- Bytes In Total, Bytes Out Total, Bytes In/Out Ratio where Bytes In/Out Ratio exceeds threshold
 
 
 # Log Source Examples

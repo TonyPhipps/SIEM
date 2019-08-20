@@ -34,10 +34,10 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Threshold Alert
-- TXT queries with high length (RCODE:16)
-- Excessive queries from a single system
-- Excessive query failures from a single system (RCODE:3)
-- Excessive TXT queries from a single system (RCODE:16)
+- type=TXT, TXT Length where length exceeeds threshold (RCODE:16)
+- Source System where Count exceeds threshold
+- Source System, Outcome=Failure where Count exceeds threshold (RCODE:3)
+- Source System, Type=TXT where Source System Count exceeds threshold (RCODE:16)
 
 
 # Log Source Examples

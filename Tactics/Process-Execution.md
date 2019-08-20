@@ -45,7 +45,7 @@ MITRE ATT&CK Framework:
 
 
 ## Threshold Alert
-- Excessive Command Length
+- Command Length where Command Length exceeds threshold
 
 
 # Log Source Examples
