@@ -32,7 +32,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Threshold Alert
-- More than 1 Account Created Per Minute
+- Count exceeds threshold
 
 
 # Log Source Examples
