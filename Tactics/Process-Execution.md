@@ -31,13 +31,13 @@ MITRE ATT&CK Framework:
 
 
 ## Rolling Whitelist Alert
-- Newly observed executables
-- Newly observed executables in User-Editable Folders
-- Newly observed executables ran by privileged user
-- Newly observed executables ran by service account
-- Newly observed executables ran by system accounts
-- Newly observed source executable and destination executable
-- Newly observed source user executing [LOLBAS](https://github.com/LOLBAS-Project/LOLBAS)
+- Newly observed Destination File Path
+- Newly observed Destination File Path=[User-Editable Path]
+- Newly observed Destination File, User=[Privileged Account]
+- Newly observed Destination File, User=[Serivce Account]
+- Newly observed Destination File, User=[System Account]
+- Newly observed Source Executable and Destination File
+- Newly observed Source User executing items on list [LOLBAS](https://github.com/LOLBAS-Project/LOLBAS)
 
 
 ## Shannon Entropy Score Alert

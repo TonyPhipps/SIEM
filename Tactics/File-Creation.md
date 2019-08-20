@@ -30,10 +30,10 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 ## Rolling Whitelist Alert
 - Newly Observed Destination File Extension
-- Newly Observed Source Process and Destination File Extension
-- Newly Observed Source Process and Destination File Path
-- Newly Observed Source User and Destination File Extension
-- Newly Observed Source User and Destination File Path
+- Newly Observed Source Process, Destination File Extension
+- Newly Observed Source Process, Destination File Path
+- Newly Observed Source User, Destination File Extension
+- Newly Observed Source User, Destination File Path
 
 
 ## Shannon Entropy Score Alert

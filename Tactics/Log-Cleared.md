@@ -20,7 +20,7 @@ MITRE ATT&CK Framework: [Indicator Removal on Host (T1070)](https://attack.mitre
 
 
 ## Rolling Whitelist Alert
-- Newly Observed Source user clearing logs
+- Newly Observed Source User
 
 
 ## Shannon Entropy Score Alert

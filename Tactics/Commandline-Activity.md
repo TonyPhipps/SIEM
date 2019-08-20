@@ -28,7 +28,9 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 
 ## Rolling Whitelist Alert
-- Newly observed child processes of cmd.exe, powershell.exe, or powershell_ise.exe
+- Newly observed Source Process=cmd.exe, Child Process
+- Newly observed Source Process=powershell.exe, Child Process
+- Newly observed Source Process=powershell_ise.exe, Child Process
 
 
 ## Shannon Entropy Score Alert

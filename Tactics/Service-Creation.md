@@ -19,7 +19,7 @@ MITRE ATT&CK Framework: [New Service (T1050)](https://attack.mitre.org/technique
 
 
 ## Rolling Whitelist Alert
-- Newly observed combination of "Service File Name" and "Service Account"
+- Newly observed Service File Name, Service Account
 
 ## Shannon Entropy Score Alert
 

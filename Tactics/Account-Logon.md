@@ -25,8 +25,8 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Rolling Whitelist Alert
-- Newly Observed Logon
-- Newly Observed Service Account Interactive Logon
+- Newly Observed Source User
+- Newly Observed Source User=Service Account, Type=Interactive
 
 ## Shannon Entropy Score Alert
 

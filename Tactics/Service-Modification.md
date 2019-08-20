@@ -19,7 +19,7 @@ MITRE ATT&CK Framework: [Modify Existing Service (T1031)](https://attack.mitre.o
 
 
 ## Rolling Whitelist Alert
-- Newly observed source user
+- Newly observed Source User
 
 ## Shannon Entropy Score Alert
 

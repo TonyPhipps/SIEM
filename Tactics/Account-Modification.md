@@ -25,7 +25,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Rolling Whitelist Alert
-- New Source User Observed Modifying Accounts
+- Newly Observed Source User
 
 
 ## Shannon Entropy Score Alert

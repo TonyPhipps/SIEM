@@ -15,7 +15,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Rolling Whitelist Alert
-- A system makes network connections during abnormal hours of the day
+- Newly Observed Source System, HourOfDay
 
 
 ## Shannon Entropy Score Alert

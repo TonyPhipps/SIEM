@@ -25,7 +25,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 ## Rolling Whitelist Alert
 - Newly Observed Domain
-- Newly observed source process
+- Newly observed Source Process
 
 
 ## Shannon Entropy Score Alert

@@ -15,7 +15,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Rolling Whitelist Alert
-- Newly observed source system and protocol
+- Newly observed Source System, Protocol
 
 
 ## Shannon Entropy Score Alert
