@@ -40,7 +40,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 ## Rolling Whitelist Alert
 - Newly Observed User Agent
-  
+
 
 ## Shannon Entropy Score Alert
 - High Entropy Domain Name
@@ -48,9 +48,9 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 ## Threshold Alert
 - User Name, Request URL Host, Bytes Out Total where Bytes Out Total out exceeds threshold
-- User name, Allow, Block, Allow/Block Ratio where Allow/Block Ratio exceeds threshold
+- User Name, Allow Count, Block Count, Allow/Block Ratio where Allow/Block Ratio exceeds threshold
 - User Name, GET Total, Post+Put Total, GET:POST/Put Ratio where GET:POST/Put Ratio exceeds threshold
-- User Name, Bytes In Total, Bytes Out Total, Bytes In/Out Ratio Where Bytes In/Out exceeds threshold
+- User Name, Bytes In Total, Bytes Out Total, Bytes In/Out Ratio Where Bytes In/Out Ratio exceeds threshold
 
 
 

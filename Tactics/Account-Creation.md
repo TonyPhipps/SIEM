@@ -20,7 +20,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 ## Levenshtein Score Alert
 - Account Created With Name Similar to "Admin"
 - Account Created With Name Similar to "Administrator"
-- Account Created With Name Similar to "svc" (or the local service account naming convention)
+- Account Created With Name Similar to the local service account naming convention
 
 
 ## Rolling Whitelist Alert
