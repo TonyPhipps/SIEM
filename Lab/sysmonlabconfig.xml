@@ -2,261 +2,261 @@
 <!-- Purposefully enables ALL logging, then aims to silence normal background activity on a fresh Windows install, sitting at the desktop. -->
 
 <Sysmon schemaversion="4.2">
-	<HashAlgorithms>md5,sha256</HashAlgorithms>
-	<CheckRevocation/> <!-- Check loaded drivers, log if their code-signing certificate has been revoked, in case malware stole one to sign a kernel driver -->
-	<EventFiltering>
+    <HashAlgorithms>md5,sha256</HashAlgorithms>
+    <CheckRevocation/> <!-- Check loaded drivers, log if their code-signing certificate has been revoked, in case malware stole one to sign a kernel driver -->
+    <EventFiltering>
 
-	<!--SYSMON EVENT ID 1 : PROCESS CREATION [ProcessCreate]-->
-		<!--DATA: UtcTime, ProcessGuid, ProcessID, Image, FileVersion, Description, Product, Company, CommandLine, CurrentDirectory, User, LogonGuid, LogonId, TerminalSessionId, IntegrityLevel, Hashes, ParentProcessGuid, ParentProcessId, ParentImage, ParentCommandLine-->
-		<RuleGroup groupRelation="or">
-			<ProcessCreate onmatch="exclude"> 
-				<!-- Vanilla services without user interaction -->
-				<CommandLine condition="begin with">"C:\Windows\system32\backgroundTaskHost.exe" -ServerName:</CommandLine>
-				<CommandLine condition="begin with">C:\Windows\System32\Upfc.exe /launchtype periodic /cv</CommandLine>
-				<CommandLine condition="begin with">C:\Windows\system32\CompatTelRunner.exe -m:appraiser.dll -f:DoScheduledTelemetryRun</CommandLine>
-				<CommandLine condition="begin with">C:\Windows\system32\CompatTelRunner.exe -m:appraiser.dll -f:UpdateAvStatus</CommandLine>
-				<CommandLine condition="begin with">C:\Windows\system32\compattelrunner.exe -m:GeneralTel.dll -f:RunGeneralTelemetry</CommandLine>
-				<CommandLine condition="contains">\MpCmdRun.exe" GetDeviceTicket -AccessKey</CommandLine>
-				<CommandLine condition="end with">\FileCoAuth.exe -Embedding</CommandLine>
-				<CommandLine condition="end with">\MpCmdRun.exe" -IdleTask -TaskName WdCacheMaintenance</CommandLine>
-				<CommandLine condition="end with">\MpCmdRun.exe" -IdleTask -TaskName WdCleanup</CommandLine>
-				<CommandLine condition="end with">\MpCmdRun.exe" -IdleTask -TaskName WdVerification</CommandLine>
-				<CommandLine condition="end with">\MpCmdRun.exe" SignatureUpdate -ScheduleJob -RestrictPrivileges -Reinvoke</CommandLine>
-				<CommandLine condition="end with">\MpCmdRun.exe" SignatureUpdate -ScheduleJob -RestrictPrivileges</CommandLine>
-				<CommandLine condition="end with">\MpCmdRun.exe" SignaturesUpdateService -ScheduleJob -UnmanagedUpdate</CommandLine>
-				<CommandLine condition="end with">\TiWorker.exe -Embedding</CommandLine>
-				<CommandLine condition="is">"C:\Windows\System32\MicrosoftEdgeCP.exe" -ServerName:Windows.Internal.WebRuntime.ContentProcessServer</CommandLine>
-				<CommandLine condition="is">"C:\Windows\system32\wuauclt.exe" /RunHandlerComServer</CommandLine>
-				<CommandLine condition="is">"C:\Windows\system32\wwahost.exe" -ServerName:Microsoft.MicrosoftOfficeHub.wwa</CommandLine>
-				<CommandLine condition="is">/updateInstalled /background</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\DataExchangeHost.exe -Embedding</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\RuntimeBroker.exe -Embedding</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\slui.exe -Embedding</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k LocalServiceNetworkRestricted -s RmSvc</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p -s WdiSystemHost</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p -s WdiSystemHost</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k NetworkService -p -s DoSvc</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k WerSvcGroup</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k netsvcs -p -s PushToInstall</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k netsvcs -p</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k smphost</CommandLine>
-				<CommandLine condition="is">C:\Windows\System32\svchost.exe -k wsappx -p -s ClipSVC</CommandLine> <!-- Microsoft Windows Client License Service -->
-				<CommandLine condition="is">C:\Windows\System32\wsqmcons.exe</CommandLine>
-				<CommandLine condition="is">C:\Windows\servicing\TrustedInstaller.exe</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\MusNotification.exe</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\SppExtComObj.exe -Embedding</CommandLine> <!-- Microsoft Windows KMS Activation -->
-				<CommandLine condition="is">C:\Windows\system32\compattelrunner.exe -m:aeinv.dll -f:UpdateSoftwareInventoryW</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\compattelrunner.exe -maintenance</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\compattelrunner.exe</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\devicecensus.exe UserCxt</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\devicecensus.exe</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\disksnapshot.exe -z</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\dmclient.exe utcwnf</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\dmclient.exe</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\dstokenclean.exe</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\rundll32.exe Startupscan.dll,SusRunTask</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\sc.exe start pushtoinstall registration</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\sc.exe start wuauserv</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\speech_onecore\common\SpeechModelDownload.exe</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\sppsvc.exe</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k LocalService -s W32Time</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s NgcSvc</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k WbioSvcGroup -s WbioSrvc</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k appmodel -p -s camsvc</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k defragsvc</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s gpsvc</CommandLine> <!-- Microsoft Windows  Group Policy -->
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s wisvc</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s wlidsvc</CommandLine> <!-- Microsoft Windows Live Sign-In Assistant -->
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s wuauserv</CommandLine> <!-- Microsoft Windows Automatic Update Service -->
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -s LxpSvc</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k wsappx -p -s AppXSvc</CommandLine> <!-- Microsoft Windows AppX Deployment Service -->
-				<CommandLine condition="is">C:\Windows\system32\svchost.exe -k wusvcs -p -s WaaSMedicSvc</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\usoclient.exe StartModelUpdates</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\wbem\wmiprvse.exe -Embedding</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\wbem\wmiprvse.exe -secured -Embedding</CommandLine>
-				<CommandLine condition="is">C:\Windows\system32\wermgr.exe -upload</CommandLine>
-				<CommandLine condition="is">\??\C:\Windows\system32\conhost.exe 0xffffffff -ForceV1</CommandLine>
-				<CommandLine condition="is">rundll32.exe AppXDeploymentExtensions.OneCore.dll,ShellRefresh</CommandLine>
-				<CommandLine condition="is">rundll32.exe AppXDeploymentExtensions.OneCore.dll,ShellRefresh</CommandLine>
-				<CommandLine condition="is">taskhostw.exe Install $(Arg0)</CommandLine>
-				<CommandLine condition="is">taskhostw.exe SYSTEM</CommandLine>
-				<CommandLine condition="is">taskhostw.exe USER</CommandLine>
-				<CommandLine condition="is">taskhostw.exe network</CommandLine>
-				<CommandLine condition="is">taskhostw.exe timer</CommandLine>
-				<CommandLine condition="is">taskhostw.exe</CommandLine>
-				<Image condition="is">C:\Windows\System32\MusNotificationUx.exe</Image>
-				<ParentCommandLine condition="is">C:\Windows\system32\sc.exe start pushtoinstall registration</ParentCommandLine>
-				<ParentCommandLine condition="is">C:\Windows\system32\sc.exe start wuauserv</ParentCommandLine>
-				<ParentCommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s Schedule</ParentCommandLine>
-				<ParentImage condition="begin with">C:\Windows\SoftwareDistribution\Download\Install\</ParentImage>
-				<ParentImage condition="is">C:\Windows\SoftwareDistribution\Download\Install\AM_Delta.exe</ParentImage>
-				<ParentImage condition="is">C:\Windows\System32\SearchIndexer.exe</ParentImage>
-				<ParentImage condition="is">C:\Windows\System32\SppExtComObj.Exe</ParentImage>
-				<ParentImage condition="is">C:\Windows\System32\dmclient.exe</ParentImage>
-				<ParentImage condition="is">C:\Windows\System32\dstokenclean.exe</ParentImage>
-				<ParentImage condition="is">C:\Windows\System32\upfc.exe</ParentImage>
-				<ParentImage condition="is">C:\Windows\System32\wuauclt.exe</ParentImage>
-			</ProcessCreate>
-		</RuleGroup>
+    <!--SYSMON EVENT ID 1 : PROCESS CREATION [ProcessCreate]-->
+        <!--DATA: UtcTime, ProcessGuid, ProcessID, Image, FileVersion, Description, Product, Company, CommandLine, CurrentDirectory, User, LogonGuid, LogonId, TerminalSessionId, IntegrityLevel, Hashes, ParentProcessGuid, ParentProcessId, ParentImage, ParentCommandLine-->
+        <RuleGroup groupRelation="or">
+            <ProcessCreate onmatch="exclude"> 
+                <!-- Vanilla services without user interaction -->
+                <CommandLine condition="begin with">"C:\Windows\system32\backgroundTaskHost.exe" -ServerName:</CommandLine>
+                <CommandLine condition="begin with">C:\Windows\System32\Upfc.exe /launchtype periodic /cv</CommandLine>
+                <CommandLine condition="begin with">C:\Windows\system32\CompatTelRunner.exe -m:appraiser.dll -f:DoScheduledTelemetryRun</CommandLine>
+                <CommandLine condition="begin with">C:\Windows\system32\CompatTelRunner.exe -m:appraiser.dll -f:UpdateAvStatus</CommandLine>
+                <CommandLine condition="begin with">C:\Windows\system32\compattelrunner.exe -m:GeneralTel.dll -f:RunGeneralTelemetry</CommandLine>
+                <CommandLine condition="contains">\MpCmdRun.exe" GetDeviceTicket -AccessKey</CommandLine>
+                <CommandLine condition="end with">\FileCoAuth.exe -Embedding</CommandLine>
+                <CommandLine condition="end with">\MpCmdRun.exe" -IdleTask -TaskName WdCacheMaintenance</CommandLine>
+                <CommandLine condition="end with">\MpCmdRun.exe" -IdleTask -TaskName WdCleanup</CommandLine>
+                <CommandLine condition="end with">\MpCmdRun.exe" -IdleTask -TaskName WdVerification</CommandLine>
+                <CommandLine condition="end with">\MpCmdRun.exe" SignatureUpdate -ScheduleJob -RestrictPrivileges -Reinvoke</CommandLine>
+                <CommandLine condition="end with">\MpCmdRun.exe" SignatureUpdate -ScheduleJob -RestrictPrivileges</CommandLine>
+                <CommandLine condition="end with">\MpCmdRun.exe" SignaturesUpdateService -ScheduleJob -UnmanagedUpdate</CommandLine>
+                <CommandLine condition="end with">\TiWorker.exe -Embedding</CommandLine>
+                <CommandLine condition="is">"C:\Windows\System32\MicrosoftEdgeCP.exe" -ServerName:Windows.Internal.WebRuntime.ContentProcessServer</CommandLine>
+                <CommandLine condition="is">"C:\Windows\system32\wuauclt.exe" /RunHandlerComServer</CommandLine>
+                <CommandLine condition="is">"C:\Windows\system32\wwahost.exe" -ServerName:Microsoft.MicrosoftOfficeHub.wwa</CommandLine>
+                <CommandLine condition="is">/updateInstalled /background</CommandLine>
+                <CommandLine condition="is">C:\Windows\System32\DataExchangeHost.exe -Embedding</CommandLine>
+                <CommandLine condition="is">C:\Windows\System32\RuntimeBroker.exe -Embedding</CommandLine>
+                <CommandLine condition="is">C:\Windows\System32\slui.exe -Embedding</CommandLine>
+                <CommandLine condition="is">C:\Windows\System32\svchost.exe -k LocalServiceNetworkRestricted -s RmSvc</CommandLine>
+                <CommandLine condition="is">C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p -s WdiSystemHost</CommandLine>
+                <CommandLine condition="is">C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p -s WdiSystemHost</CommandLine>
+                <CommandLine condition="is">C:\Windows\System32\svchost.exe -k NetworkService -p -s DoSvc</CommandLine>
+                <CommandLine condition="is">C:\Windows\System32\svchost.exe -k WerSvcGroup</CommandLine>
+                <CommandLine condition="is">C:\Windows\System32\svchost.exe -k netsvcs -p -s PushToInstall</CommandLine>
+                <CommandLine condition="is">C:\Windows\System32\svchost.exe -k netsvcs -p</CommandLine>
+                <CommandLine condition="is">C:\Windows\System32\svchost.exe -k smphost</CommandLine>
+                <CommandLine condition="is">C:\Windows\System32\svchost.exe -k wsappx -p -s ClipSVC</CommandLine> <!-- Microsoft Windows Client License Service -->
+                <CommandLine condition="is">C:\Windows\System32\wsqmcons.exe</CommandLine>
+                <CommandLine condition="is">C:\Windows\servicing\TrustedInstaller.exe</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\MusNotification.exe</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\SppExtComObj.exe -Embedding</CommandLine> <!-- Microsoft Windows KMS Activation -->
+                <CommandLine condition="is">C:\Windows\system32\compattelrunner.exe -m:aeinv.dll -f:UpdateSoftwareInventoryW</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\compattelrunner.exe -maintenance</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\compattelrunner.exe</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\devicecensus.exe UserCxt</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\devicecensus.exe</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\disksnapshot.exe -z</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\dmclient.exe utcwnf</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\dmclient.exe</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\dstokenclean.exe</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\rundll32.exe Startupscan.dll,SusRunTask</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\sc.exe start pushtoinstall registration</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\sc.exe start wuauserv</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\speech_onecore\common\SpeechModelDownload.exe</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\sppsvc.exe</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\svchost.exe -k LocalService -s W32Time</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s NgcSvc</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\svchost.exe -k WbioSvcGroup -s WbioSrvc</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\svchost.exe -k appmodel -p -s camsvc</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\svchost.exe -k defragsvc</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s gpsvc</CommandLine> <!-- Microsoft Windows  Group Policy -->
+                <CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s wisvc</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s wlidsvc</CommandLine> <!-- Microsoft Windows Live Sign-In Assistant -->
+                <CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s wuauserv</CommandLine> <!-- Microsoft Windows Automatic Update Service -->
+                <CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -s LxpSvc</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\svchost.exe -k wsappx -p -s AppXSvc</CommandLine> <!-- Microsoft Windows AppX Deployment Service -->
+                <CommandLine condition="is">C:\Windows\system32\svchost.exe -k wusvcs -p -s WaaSMedicSvc</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\usoclient.exe StartModelUpdates</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\wbem\wmiprvse.exe -Embedding</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\wbem\wmiprvse.exe -secured -Embedding</CommandLine>
+                <CommandLine condition="is">C:\Windows\system32\wermgr.exe -upload</CommandLine>
+                <CommandLine condition="is">\??\C:\Windows\system32\conhost.exe 0xffffffff -ForceV1</CommandLine>
+                <CommandLine condition="is">rundll32.exe AppXDeploymentExtensions.OneCore.dll,ShellRefresh</CommandLine>
+                <CommandLine condition="is">rundll32.exe AppXDeploymentExtensions.OneCore.dll,ShellRefresh</CommandLine>
+                <CommandLine condition="is">taskhostw.exe Install $(Arg0)</CommandLine>
+                <CommandLine condition="is">taskhostw.exe SYSTEM</CommandLine>
+                <CommandLine condition="is">taskhostw.exe USER</CommandLine>
+                <CommandLine condition="is">taskhostw.exe network</CommandLine>
+                <CommandLine condition="is">taskhostw.exe timer</CommandLine>
+                <CommandLine condition="is">taskhostw.exe</CommandLine>
+                <Image condition="is">C:\Windows\System32\MusNotificationUx.exe</Image>
+                <ParentCommandLine condition="is">C:\Windows\system32\sc.exe start pushtoinstall registration</ParentCommandLine>
+                <ParentCommandLine condition="is">C:\Windows\system32\sc.exe start wuauserv</ParentCommandLine>
+                <ParentCommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs -p -s Schedule</ParentCommandLine>
+                <ParentImage condition="begin with">C:\Windows\SoftwareDistribution\Download\Install\</ParentImage>
+                <ParentImage condition="is">C:\Windows\SoftwareDistribution\Download\Install\AM_Delta.exe</ParentImage>
+                <ParentImage condition="is">C:\Windows\System32\SearchIndexer.exe</ParentImage>
+                <ParentImage condition="is">C:\Windows\System32\SppExtComObj.Exe</ParentImage>
+                <ParentImage condition="is">C:\Windows\System32\dmclient.exe</ParentImage>
+                <ParentImage condition="is">C:\Windows\System32\dstokenclean.exe</ParentImage>
+                <ParentImage condition="is">C:\Windows\System32\upfc.exe</ParentImage>
+                <ParentImage condition="is">C:\Windows\System32\wuauclt.exe</ParentImage>
+            </ProcessCreate>
+        </RuleGroup>
 
-	<!--SYSMON EVENT ID 2 : FILE CREATION TIME RETROACTIVELY CHANGED IN THE FILESYSTEM [FileCreateTime]-->
-		<!--COMMENT:	[ https://attack.mitre.org/wiki/Technique/T1099 ] -->
+    <!--SYSMON EVENT ID 2 : FILE CREATION TIME RETROACTIVELY CHANGED IN THE FILESYSTEM [FileCreateTime]-->
+        <!--COMMENT:    [ https://attack.mitre.org/wiki/Technique/T1099 ] -->
 
-		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, TargetFilename, CreationUtcTime, PreviousCreationUtcTime-->
-		<RuleGroup groupRelation="and">
-			<FileCreateTime onmatch="include">
-			</FileCreateTime>
-		</RuleGroup>
+        <!--DATA: UtcTime, ProcessGuid, ProcessId, Image, TargetFilename, CreationUtcTime, PreviousCreationUtcTime-->
+        <RuleGroup groupRelation="and">
+            <FileCreateTime onmatch="include">
+            </FileCreateTime>
+        </RuleGroup>
 
-	<!--SYSMON EVENT ID 3 : NETWORK CONNECTION INITIATED [NetworkConnect]-->
-		<!--COMMENT:	[ https://attack.mitre.org/wiki/Command_and_Control ] [ https://attack.mitre.org/wiki/Exfiltration ] [ https://attack.mitre.org/wiki/Lateral_Movement ] -->
-		<!--TECHNICAL:	For the DestinationHostname, Sysmon uses the GetNameInfo API, which will often not have any information, and may just be a CDN. This is NOT reliable for filtering.-->
-		<!--TECHNICAL:	For the DestinationPortName, Sysmon uses the GetNameInfo API for the friendly name of ports you see in logs.-->		
-		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, User, Protocol, Initiated, SourceIsIpv6, SourceIp, SourceHostname, SourcePort, SourcePortName, DestinationIsIpV6, DestinationIp, DestinationHostname, DestinationPort, DestinationPortName-->
-		<RuleGroup groupRelation="and">
-			<NetworkConnect onmatch="include">
-			</NetworkConnect>
-		</RuleGroup>
+    <!--SYSMON EVENT ID 3 : NETWORK CONNECTION INITIATED [NetworkConnect]-->
+        <!--COMMENT:    [ https://attack.mitre.org/wiki/Command_and_Control ] [ https://attack.mitre.org/wiki/Exfiltration ] [ https://attack.mitre.org/wiki/Lateral_Movement ] -->
+        <!--TECHNICAL:    For the DestinationHostname, Sysmon uses the GetNameInfo API, which will often not have any information, and may just be a CDN. This is NOT reliable for filtering.-->
+        <!--TECHNICAL:    For the DestinationPortName, Sysmon uses the GetNameInfo API for the friendly name of ports you see in logs.-->        
+        <!--DATA: UtcTime, ProcessGuid, ProcessId, Image, User, Protocol, Initiated, SourceIsIpv6, SourceIp, SourceHostname, SourcePort, SourcePortName, DestinationIsIpV6, DestinationIp, DestinationHostname, DestinationPort, DestinationPortName-->
+        <RuleGroup groupRelation="and">
+            <NetworkConnect onmatch="include">
+            </NetworkConnect>
+        </RuleGroup>
 
-	<!--SYSMON EVENT ID 4 : RESERVED FOR SYSMON STATUS MESSAGES-->
-		<!--DATA: UtcTime, State, Version, SchemaVersion-->
-		<!--Cannot be filtered.-->
+    <!--SYSMON EVENT ID 4 : RESERVED FOR SYSMON STATUS MESSAGES-->
+        <!--DATA: UtcTime, State, Version, SchemaVersion-->
+        <!--Cannot be filtered.-->
 
-	<!--SYSMON EVENT ID 5 : PROCESS ENDED [ProcessTerminate]-->
-		<!--COMMENT:	Useful data in building infection timelines.-->
-		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image-->
-		<RuleGroup groupRelation="and">
-			<ProcessTerminate onmatch="include">
-			</ProcessTerminate>
-		</RuleGroup>
+    <!--SYSMON EVENT ID 5 : PROCESS ENDED [ProcessTerminate]-->
+        <!--COMMENT:    Useful data in building infection timelines.-->
+        <!--DATA: UtcTime, ProcessGuid, ProcessId, Image-->
+        <RuleGroup groupRelation="and">
+            <ProcessTerminate onmatch="include">
+            </ProcessTerminate>
+        </RuleGroup>
 
-	<!--SYSMON EVENT ID 6 : DRIVER LOADED INTO KERNEL [DriverLoad]-->
-		<!--COMMENT:	[ https://attack.mitre.org/wiki/Technique/T1014 ] -->
-		<!--TECHNICAL:	Sysmon will check the signing certificate revocation status of any driver you don't exclude.-->
-		<!--DATA: UtcTime, ImageLoaded, Hashes, Signed, Signature, SignatureStatus-->
-		<RuleGroup groupRelation="and">
-			<DriverLoad onmatch="include">
-			</DriverLoad>
-		</RuleGroup>
+    <!--SYSMON EVENT ID 6 : DRIVER LOADED INTO KERNEL [DriverLoad]-->
+        <!--COMMENT:    [ https://attack.mitre.org/wiki/Technique/T1014 ] -->
+        <!--TECHNICAL:    Sysmon will check the signing certificate revocation status of any driver you don't exclude.-->
+        <!--DATA: UtcTime, ImageLoaded, Hashes, Signed, Signature, SignatureStatus-->
+        <RuleGroup groupRelation="and">
+            <DriverLoad onmatch="include">
+            </DriverLoad>
+        </RuleGroup>
 
-	<!--SYSMON EVENT ID 7 : DLL (IMAGE) LOADED BY PROCESS [ImageLoad]-->
-		<!--COMMENT:	Can cause high system load, disabled by default.-->
-		<!--COMMENT:	[ https://attack.mitre.org/wiki/Technique/T1073 ] [ https://attack.mitre.org/wiki/Technique/T1038 ] [ https://attack.mitre.org/wiki/Technique/T1034 ] -->
-		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, ImageLoaded, Hashes, Signed, Signature, SignatureStatus-->
-		<RuleGroup groupRelation="and">		
-			<ImageLoad onmatch="include">
-			</ImageLoad>
-		</RuleGroup>
+    <!--SYSMON EVENT ID 7 : DLL (IMAGE) LOADED BY PROCESS [ImageLoad]-->
+        <!--COMMENT:    Can cause high system load, disabled by default.-->
+        <!--COMMENT:    [ https://attack.mitre.org/wiki/Technique/T1073 ] [ https://attack.mitre.org/wiki/Technique/T1038 ] [ https://attack.mitre.org/wiki/Technique/T1034 ] -->
+        <!--DATA: UtcTime, ProcessGuid, ProcessId, Image, ImageLoaded, Hashes, Signed, Signature, SignatureStatus-->
+        <RuleGroup groupRelation="and">        
+            <ImageLoad onmatch="include">
+            </ImageLoad>
+        </RuleGroup>
 
-	<!--SYSMON EVENT ID 8 : REMOTE THREAD CREATED [CreateRemoteThread]-->
-		<!--COMMENT:	Monitor for processes injecting code into other processes. Often used by malware to cloak their actions. Also when Firefox loads Flash.
-		[ https://attack.mitre.org/wiki/Technique/T1055 ] -->
-		<!--DATA: UtcTime, SourceProcessGuid, SourceProcessId, SourceImage, TargetProcessId, TargetImage, NewThreadId, StartAddress, StartModule, StartFunction-->
-		<RuleGroup groupRelation="and">
-			<CreateRemoteThread onmatch="include">
-			</CreateRemoteThread>
-		</RuleGroup>
+    <!--SYSMON EVENT ID 8 : REMOTE THREAD CREATED [CreateRemoteThread]-->
+        <!--COMMENT:    Monitor for processes injecting code into other processes. Often used by malware to cloak their actions. Also when Firefox loads Flash.
+        [ https://attack.mitre.org/wiki/Technique/T1055 ] -->
+        <!--DATA: UtcTime, SourceProcessGuid, SourceProcessId, SourceImage, TargetProcessId, TargetImage, NewThreadId, StartAddress, StartModule, StartFunction-->
+        <RuleGroup groupRelation="and">
+            <CreateRemoteThread onmatch="include">
+            </CreateRemoteThread>
+        </RuleGroup>
 
-	<!--SYSMON EVENT ID 9 : RAW DISK ACCESS [RawAccessRead]-->
-		<!--EVENT 9: "RawAccessRead detected"-->
-		<!--COMMENT:	Can cause high system load, disabled by default.-->
-		<!--COMMENT:	Monitor for raw sector-level access to the disk, often used to bypass access control lists or access locked files.
-			Disabled by default since including even one entry here activates this component. Reward/performance/rule maintenance decision.
-			Encourage you to experiment with this feature yourself. [ https://attack.mitre.org/wiki/Technique/T1067 ] -->
-		<!--COMMENT:	You will likely want to set this to a full capture on domain controllers, where no process should be doing raw reads.-->
-		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, Device-->
-		<RuleGroup groupRelation="and">
-			<RawAccessRead onmatch="include">
-			</RawAccessRead>
-		</RuleGroup>
+    <!--SYSMON EVENT ID 9 : RAW DISK ACCESS [RawAccessRead]-->
+        <!--EVENT 9: "RawAccessRead detected"-->
+        <!--COMMENT:    Can cause high system load, disabled by default.-->
+        <!--COMMENT:    Monitor for raw sector-level access to the disk, often used to bypass access control lists or access locked files.
+            Disabled by default since including even one entry here activates this component. Reward/performance/rule maintenance decision.
+            Encourage you to experiment with this feature yourself. [ https://attack.mitre.org/wiki/Technique/T1067 ] -->
+        <!--COMMENT:    You will likely want to set this to a full capture on domain controllers, where no process should be doing raw reads.-->
+        <!--DATA: UtcTime, ProcessGuid, ProcessId, Image, Device-->
+        <RuleGroup groupRelation="and">
+            <RawAccessRead onmatch="include">
+            </RawAccessRead>
+        </RuleGroup>
 
-	<!--SYSMON EVENT ID 10 : INTER-PROCESS ACCESS [ProcessAccess]-->
-		<!--EVENT 10: "Process accessed"-->
-		<!--COMMENT:	Can cause high system load, disabled by default.-->
-		<!--COMMENT:	Monitor for processes accessing other process' memory.-->
-		<!--DATA: UtcTime, SourceProcessGuid, SourceProcessId, SourceThreadId, SourceImage, TargetProcessGuid, TargetProcessId, TargetImage, GrantedAccess, CallTrace-->
-		<RuleGroup groupRelation="and">
-			<ProcessAccess onmatch="include">
-			</ProcessAccess>
-		</RuleGroup>
+    <!--SYSMON EVENT ID 10 : INTER-PROCESS ACCESS [ProcessAccess]-->
+        <!--EVENT 10: "Process accessed"-->
+        <!--COMMENT:    Can cause high system load, disabled by default.-->
+        <!--COMMENT:    Monitor for processes accessing other process' memory.-->
+        <!--DATA: UtcTime, SourceProcessGuid, SourceProcessId, SourceThreadId, SourceImage, TargetProcessGuid, TargetProcessId, TargetImage, GrantedAccess, CallTrace-->
+        <RuleGroup groupRelation="and">
+            <ProcessAccess onmatch="include">
+            </ProcessAccess>
+        </RuleGroup>
 
-	<!--SYSMON EVENT ID 11 : FILE CREATED [FileCreate]-->
-		<!--EVENT 11: "File created"-->
-		<!--NOTE:	Other filesystem "minifilters" can make it appear to Sysmon that some files are being written twice. This is not a Sysmon issue, per Mark Russinovich.-->
-		<!--NOTE:	You may not see files detected by antivirus. Other filesystem minifilters, like antivirus, can act before Sysmon receives the alert a file was written.-->
-		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, TargetFilename, CreationUtcTime-->
-		<RuleGroup groupRelation="and">
-			<FileCreate onmatch="include">
-			</FileCreate>
-		</RuleGroup>
+    <!--SYSMON EVENT ID 11 : FILE CREATED [FileCreate]-->
+        <!--EVENT 11: "File created"-->
+        <!--NOTE:    Other filesystem "minifilters" can make it appear to Sysmon that some files are being written twice. This is not a Sysmon issue, per Mark Russinovich.-->
+        <!--NOTE:    You may not see files detected by antivirus. Other filesystem minifilters, like antivirus, can act before Sysmon receives the alert a file was written.-->
+        <!--DATA: UtcTime, ProcessGuid, ProcessId, Image, TargetFilename, CreationUtcTime-->
+        <RuleGroup groupRelation="and">
+            <FileCreate onmatch="include">
+            </FileCreate>
+        </RuleGroup>
 
-	<!--SYSMON EVENT ID 12 & 13 & 14 : REGISTRY MODIFICATION [RegistryEvent]-->
-		<!--EVENT 12: "Registry object added or deleted"-->
-		<!--EVENT 13: "Registry value set-->
-		<!--EVENT 14: "Registry objected renamed"-->
-		<!--NOTE:	Windows writes hundreds or thousands of registry keys a minute, so just because you're not changing things, doesn't mean these rules aren't being run.-->
-		<!--NOTE:	You do not have to spend a lot of time worrying about performance, CPUs are fast, but it's something to consider. Every rule and condition type has a small cost.-->
-		<!--NOTE:	"contains" works by finding the first letter, then matching the second, etc, so the first letters should be as low-occurrence as possible.-->
-		<!--NOTE:	[ https://attack.mitre.org/wiki/Technique/T1112 ] -->
-		<!--TECHNICAL:	You cannot filter on the "Details" attribute, due to performance issues when very large keys are written, and variety of data formats-->
-		<!--TECHNICAL:	Possible prefixes are HKLM, HKCR, and HKU-->
-		<!--CRITICAL:	Schema version 3.30 and higher change HKLM\="\REGISTRY\MACHINE\" and HKU\="\REGISTRY\USER\" and HKCR\="\REGISTRY\MACHINE\SOFTWARE\Classes\" and CurrentControlSet="ControlSet001"-->
-		<!--CRITICAL:	Due to a bug, Sysmon versions BEFORE 7.01 may not properly log with the new prefix style for registry keys that was originally introduced in schema version 3.30-->
-		<!--NOTE:	Because Sysmon runs as a service, it has no filtering ability for, or concept of, HKCU or HKEY_CURRENT_USER. Use "contains" or "end with" to get around this limitation-->
-		<!-- ! CRITICAL NOTE !:	It may appear this section is MISSING important entries, but SOME RULES MONITOR MANY KEYS, so look VERY CAREFULLY to see if something is already covered.-->
-		<!--DATA: EventType, UtcTime, ProcessGuid, ProcessId, Image, TargetObject, Details (can't filter on), NewName (can't filter on)-->
-		<RuleGroup groupRelation="and">
-			<RegistryEvent onmatch="include">
-			</RegistryEvent>
-		</RuleGroup>
+    <!--SYSMON EVENT ID 12 & 13 & 14 : REGISTRY MODIFICATION [RegistryEvent]-->
+        <!--EVENT 12: "Registry object added or deleted"-->
+        <!--EVENT 13: "Registry value set-->
+        <!--EVENT 14: "Registry objected renamed"-->
+        <!--NOTE:    Windows writes hundreds or thousands of registry keys a minute, so just because you're not changing things, doesn't mean these rules aren't being run.-->
+        <!--NOTE:    You do not have to spend a lot of time worrying about performance, CPUs are fast, but it's something to consider. Every rule and condition type has a small cost.-->
+        <!--NOTE:    "contains" works by finding the first letter, then matching the second, etc, so the first letters should be as low-occurrence as possible.-->
+        <!--NOTE:    [ https://attack.mitre.org/wiki/Technique/T1112 ] -->
+        <!--TECHNICAL:    You cannot filter on the "Details" attribute, due to performance issues when very large keys are written, and variety of data formats-->
+        <!--TECHNICAL:    Possible prefixes are HKLM, HKCR, and HKU-->
+        <!--CRITICAL:    Schema version 3.30 and higher change HKLM\="\REGISTRY\MACHINE\" and HKU\="\REGISTRY\USER\" and HKCR\="\REGISTRY\MACHINE\SOFTWARE\Classes\" and CurrentControlSet="ControlSet001"-->
+        <!--CRITICAL:    Due to a bug, Sysmon versions BEFORE 7.01 may not properly log with the new prefix style for registry keys that was originally introduced in schema version 3.30-->
+        <!--NOTE:    Because Sysmon runs as a service, it has no filtering ability for, or concept of, HKCU or HKEY_CURRENT_USER. Use "contains" or "end with" to get around this limitation-->
+        <!-- ! CRITICAL NOTE !:    It may appear this section is MISSING important entries, but SOME RULES MONITOR MANY KEYS, so look VERY CAREFULLY to see if something is already covered.-->
+        <!--DATA: EventType, UtcTime, ProcessGuid, ProcessId, Image, TargetObject, Details (can't filter on), NewName (can't filter on)-->
+        <RuleGroup groupRelation="and">
+            <RegistryEvent onmatch="include">
+            </RegistryEvent>
+        </RuleGroup>
 
-	<!--SYSMON EVENT ID 15 : ALTERNATE DATA STREAM CREATED [FileCreateStreamHash]-->
-		<!--EVENT 15: "File stream created"-->
-		<!--COMMENT:	Any files created with an NTFS Alternate Data Stream which match these rules will be hashed and logged.
-			[ https://blogs.technet.microsoft.com/askcore/2013/03/24/alternate-data-streams-in-ntfs/ ]
-			ADS's are used by browsers and email clients to mark files as originating from the Internet or other foreign sources.
-			[ https://textslashplain.com/2016/04/04/downloads-and-the-mark-of-the-web/ ] -->
-		<!--NOTE: Other filesystem minifilters can make it appear to Sysmon that some files are being written twice. This is not a Sysmon issue, per Mark Russinovich.-->
-		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, TargetFilename, CreationUtcTime, Hash-->
-		<RuleGroup groupRelation="and">
-			<FileCreateStreamHash onmatch="include">
-			</FileCreateStreamHash>
-		</RuleGroup>
+    <!--SYSMON EVENT ID 15 : ALTERNATE DATA STREAM CREATED [FileCreateStreamHash]-->
+        <!--EVENT 15: "File stream created"-->
+        <!--COMMENT:    Any files created with an NTFS Alternate Data Stream which match these rules will be hashed and logged.
+            [ https://blogs.technet.microsoft.com/askcore/2013/03/24/alternate-data-streams-in-ntfs/ ]
+            ADS's are used by browsers and email clients to mark files as originating from the Internet or other foreign sources.
+            [ https://textslashplain.com/2016/04/04/downloads-and-the-mark-of-the-web/ ] -->
+        <!--NOTE: Other filesystem minifilters can make it appear to Sysmon that some files are being written twice. This is not a Sysmon issue, per Mark Russinovich.-->
+        <!--DATA: UtcTime, ProcessGuid, ProcessId, Image, TargetFilename, CreationUtcTime, Hash-->
+        <RuleGroup groupRelation="and">
+            <FileCreateStreamHash onmatch="include">
+            </FileCreateStreamHash>
+        </RuleGroup>
 
-	<!--SYSMON EVENT ID 16 : SYSMON CONFIGURATION CHANGE-->
-		<!--EVENT 16: "Sysmon config state changed"-->
-		<!--COMMENT:	This ONLY logs if the hash of the configuration changes. Running "sysmon.exe -c" with the current configuration will not be logged with Event 16-->
-		<!--DATA: UtcTime, Configuration, ConfigurationFileHash-->
-		<!--Cannot be filtered.-->
+    <!--SYSMON EVENT ID 16 : SYSMON CONFIGURATION CHANGE-->
+        <!--EVENT 16: "Sysmon config state changed"-->
+        <!--COMMENT:    This ONLY logs if the hash of the configuration changes. Running "sysmon.exe -c" with the current configuration will not be logged with Event 16-->
+        <!--DATA: UtcTime, Configuration, ConfigurationFileHash-->
+        <!--Cannot be filtered.-->
 
-	<!--SYSMON EVENT ID 17 & 18 : PIPE CREATED / PIPE CONNECTED [PipeEvent]-->
-		<!--EVENT 17: "Pipe Created"-->
-		<!--EVENT 18: "Pipe Connected"-->
-		<!--ADDITIONAL REFERENCE: [ https://www.cobaltstrike.com/help-smb-beacon ] -->
-		<!--ADDITIONAL REFERENCE: [ https://blog.cobaltstrike.com/2015/10/07/named-pipe-pivoting/ ] -->
-		<!--DATA: UtcTime, ProcessGuid, ProcessId, PipeName, Image-->
-		<RuleGroup groupRelation="and">
-			<PipeEvent onmatch="include">
-			</PipeEvent>
-		</RuleGroup>
+    <!--SYSMON EVENT ID 17 & 18 : PIPE CREATED / PIPE CONNECTED [PipeEvent]-->
+        <!--EVENT 17: "Pipe Created"-->
+        <!--EVENT 18: "Pipe Connected"-->
+        <!--ADDITIONAL REFERENCE: [ https://www.cobaltstrike.com/help-smb-beacon ] -->
+        <!--ADDITIONAL REFERENCE: [ https://blog.cobaltstrike.com/2015/10/07/named-pipe-pivoting/ ] -->
+        <!--DATA: UtcTime, ProcessGuid, ProcessId, PipeName, Image-->
+        <RuleGroup groupRelation="and">
+            <PipeEvent onmatch="include">
+            </PipeEvent>
+        </RuleGroup>
 
-	<!--SYSMON EVENT ID 19 & 20 & 21 : WMI EVENT MONITORING [WmiEvent]-->
-		<!--EVENT 19: "WmiEventFilter activity detected"-->
-		<!--EVENT 20: "WmiEventConsumer activity detected"-->
-		<!--EVENT 21: "WmiEventConsumerToFilter activity detected"-->
-		<!--ADDITIONAL REFERENCE: [ https://www.darkoperator.com/blog/2017/10/15/sysinternals-sysmon-610-tracking-of-permanent-wmi-events ] -->
-		<!--ADDITIONAL REFERENCE: [ https://rawsec.lu/blog/posts/2017/Sep/19/sysmon-v610-vs-wmi-persistence/ ] -->
-		<!--DATA: EventType, UtcTime, Operation, User, Name, Type, Destination, Consumer, Filter-->
-		<RuleGroup groupRelation="and">
-			<WmiEvent onmatch="include">
-			</WmiEvent>
-		</RuleGroup>
+    <!--SYSMON EVENT ID 19 & 20 & 21 : WMI EVENT MONITORING [WmiEvent]-->
+        <!--EVENT 19: "WmiEventFilter activity detected"-->
+        <!--EVENT 20: "WmiEventConsumer activity detected"-->
+        <!--EVENT 21: "WmiEventConsumerToFilter activity detected"-->
+        <!--ADDITIONAL REFERENCE: [ https://www.darkoperator.com/blog/2017/10/15/sysinternals-sysmon-610-tracking-of-permanent-wmi-events ] -->
+        <!--ADDITIONAL REFERENCE: [ https://rawsec.lu/blog/posts/2017/Sep/19/sysmon-v610-vs-wmi-persistence/ ] -->
+        <!--DATA: EventType, UtcTime, Operation, User, Name, Type, Destination, Consumer, Filter-->
+        <RuleGroup groupRelation="and">
+            <WmiEvent onmatch="include">
+            </WmiEvent>
+        </RuleGroup>
 
-	<!--SYSMON EVENT ID 255 : ERROR-->
-		<!--"This event is generated when an error occurred within Sysmon. They can happen if the system is under heavy load
-			and certain tasked could not be performed or a bug exists in the Sysmon service. You can report any bugs on the
-			Sysinternals forum or over Twitter (@markrussinovich)."-->
-		<!--Cannot be filtered.-->
+    <!--SYSMON EVENT ID 255 : ERROR-->
+        <!--"This event is generated when an error occurred within Sysmon. They can happen if the system is under heavy load
+            and certain tasked could not be performed or a bug exists in the Sysmon service. You can report any bugs on the
+            Sysinternals forum or over Twitter (@markrussinovich)."-->
+        <!--Cannot be filtered.-->
 
-	</EventFiltering>
+    </EventFiltering>
 </Sysmon>
