@@ -1,6 +1,4 @@
-A Use Cases is a set of SIEM components and procedures that seek to resolve a given problem.
-
-A Use Case can be documented for presention to management, to guide a SOC/Incident Response Team, or for general SIEM content documentation. 
+A "use case" describes and documents a goal and how it's objectives are accomplished by people, tools, and processes.
 
 - [Executive Summary](#executive-summary)
   - [Name](#name)
@@ -21,7 +19,7 @@ A Use Case can be documented for presention to management, to guide a SOC/Incide
 Primarily focused on providing high-level information, references, and background
 
 ## Name
-A brisk statement that broadly describes the overall objective
+A succint statement that broadly describes the use case
 
 ## Problem Statement
 Describes the problem, beginning with any necessary background information.
