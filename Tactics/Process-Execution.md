@@ -42,6 +42,7 @@ MITRE ATT&CK Framework:
    -  powershell
    -  powershell_ise
 - Destination Process name matches a system executable, but folder path does not start with c:\windows\
+- Use of wevutil with 'cl' in command line
 
 
 ## Whitelist Alert
