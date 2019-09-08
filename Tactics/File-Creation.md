@@ -15,6 +15,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - File Created in User Space by Privileged Account
 - File Created in System Space by Nonprivileged Account
 - A file is created in a non-standard location (e.g. a non-ini/otf/compositefont/ttc/ttf/fon/dat/tmp file created in c:\windows\fonts)
+- File Created that matches known-system executables (pre-staging)
 
 
 ## Whitelist Alert

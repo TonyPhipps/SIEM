@@ -11,7 +11,7 @@ MITRE ATT&CK Framework:
 
 ## Blacklist Alert
 - A file with a non-executable extension is executed
-- Execution Command contains one of the following strings
+- PowerShell with one of the following in the command line
   - -nop (from noprofile)
   - hidden
   - -noni (from noninteractive)
@@ -19,11 +19,37 @@ MITRE ATT&CK Framework:
   - -enc (from encodedcommand)
   - invoke-webrequest
   - iwr
+  - invoke-restmethod
+  - irm
   - curl
   - wget
+  - bitstransfer
+  - downloadstring
+  - downloadfile
+  - winhttprequest
+  - xmlhttp
+- whoami ran by 'NT AUTHORITY\SYSTEM'
+- 'certutil' with one of the following in the command line
+  - urlcach
+  - url
+  - ping
+  - http
+  - ftp
+-  Command line with http or ftp from the following executables
+   -  msiexec
+   -  regsvr32
+   -  cmd
+   -  powershell
+   -  powershell_ise
+- Destination Process name matches a system executable, but folder path does not start with c:\windows\
 
 
 ## Whitelist Alert
+- Anomalous Office Product Child Process
+- Anomalous process ran by 'NT AUTHORITY\SYSTEM'
+- Anomalous use of 'wmic'
+- Anomalous use of certutil with '-decode' in command line
+- Anomalous use of 'reg'
 
 
 ## Levenshtein Score Alert
