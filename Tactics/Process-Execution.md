@@ -51,6 +51,7 @@ MITRE ATT&CK Framework:
 - Anomalous use of 'wmic'
 - Anomalous use of certutil with '-decode' in command line
 - Anomalous use of 'reg'
+- Anomalous use of 'echo'
 
 
 ## Levenshtein Score Alert
