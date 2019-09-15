@@ -8,14 +8,15 @@ The following is a prioritized list of recommended event logs to collect into yo
 - DNS client Requests
 - Web Proxy Requests
 - Email
+- Custom Application Logs
 - Layer 7 Firewall
 - Layer 3 Firewall
 - Netflow
-- Custom Application Logs
+- Full packet capture
 
 The priority here takes into consideration
-- Attack vectors 
-- Detection sources
-- Noise levels
+- Common attack vectors 
+- Common detection sources
+- Expected noise levels
 - Legal precedence on what adequate security monitoring includes
 - Raw space consumption
