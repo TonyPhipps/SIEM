@@ -1,20 +1,26 @@
+### Threshold Alert
+ -Aggregating on specific fields and alerting when the total count of any set exceeds a given threshold.
+
 ### Aggregate Count
-AKA Stack Count, AKA Long Tail Analysis. Manual analysis focusing on the number of times a value or aggregate set of values has occurred, usually in the form of a table, bar chart, or pie chart.
+(AKA Stack Count; AKA Long Tail Analysis)
+- Aggregating on specific fields and showing the total count of each set. Presented in the form of a table, bar chart, or pie chart and visually monitored.
 
 ### Blacklist Alert
-An alert is generated for each instance. Grouping multiple alerts occurring in a short time frame is usually a good idea. Blacklists can have a list of exceptions.
+- An alert is generated for each match.
+- -OR- comparing against of list of known-bads and alerting for each match.
 
 ### Whitelist Alert
-Compare incoming values against a list of known-good entries. If no match is found, fire an alert.
-
-### [Levenshtein Score](https://en.wikipedia.org/wiki/Levenshtein_distance) Alert
-(AKA Edit Distance) A score representing how similar two strings are. Example use cases include domain typo-squatting, naming files similarly to recognizable files, sending email from a closely-named, fake user, etc.
+- An alert is generated when no match is observed.
+- -OR- Comparing against a list of known-good entries, alert if no match is found.
 
 ### Rolling Whitelist Alert
-Building a list of observed strings over a period of time in a given field, then alerting on anything not in the list. New items may also be added to the list (or not).
+- Automatically adding all activity to a time-decaying list and alerting when a unique entry is observed.
 
-### Shannon Entropy Score Alert
-(AKA Frequency Scoring) A score representing the randomness of a string. May be used in a SIEM to detect domains created by a [Domain-Generation Algorithm (DHA)](https://en.wikipedia.org/wiki/Domain_generation_algorithm)
+### [Levenshtein Score](https://en.wikipedia.org/wiki/Levenshtein_distance) Alert
+(AKA Edit Distance) 
+- Calculating the similarity between observed words against a list of words of interest and alerting when the score exceeds a given threshold.
 
-### Threshold Alert
-Counting matching occurrences based on a filter, then alerting when a specified number has been met or surpassed.
+### [Shannon Entropy Score](https://en.wikipedia.org/wiki/Entropy_(information_theory)) Alert
+(AKA Frequency Scoring)
+- Calculating the randomness of strings and alerting when the score exceeds a given threshold.
+
