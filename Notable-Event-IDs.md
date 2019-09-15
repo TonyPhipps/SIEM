@@ -1,26 +1,26 @@
 Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, etc
 
-- [Security Events](#Security-Events)
-- [Microsoft-Windows-Sysmon/Operational](#Microsoft-Windows-SysmonOperational)
-- [System Events](#System-Events)
-- [Application](#Application)
-- [Microsoft-Windows-PrintService/Operational Events](#Microsoft-Windows-PrintServiceOperational-Events)
-- [Microsoft-Windows-Kernel-PnP/Device Configuration](#Microsoft-Windows-Kernel-PnPDevice-Configuration)
-- [Microsoft-Windows-TaskScheduler/Operational](#Microsoft-Windows-TaskSchedulerOperational)
-- [Microsoft-Windows-Powershell/Operational](#Microsoft-Windows-PowershellOperational)
-- [Microsoft-Windows-PowerShell/Operational](#Microsoft-Windows-PowerShellOperational)
-- [Windows PowerShell](#Windows-PowerShell)
-- [Microsoft-Windows-PowerShell/Analytic](#Microsoft-Windows-PowerShellAnalytic)
-- [Microsoft-Windows-Windows Defender/Operational](#Microsoft-Windows-Windows-DefenderOperational)
-- [Microsoft-Windows-Windows Firewall With Advanced Security/Firewall](#Microsoft-Windows-Windows-Firewall-With-Advanced-SecurityFirewall)
-- [Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational](#Microsoft-Windows-RemoteDesktopServices-RdpCoreTSOperational)
-- [Microsoft-Windows-TerminalServices-RDPClient/Operational](#Microsoft-Windows-TerminalServices-RDPClientOperational)
-- [Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational](#Microsoft-Windows-TerminalServices-RemoteConnectionManagerOperational)
-- [Microsoft-Windows-TerminalServices-LocalSessionManager/Operational](#Microsoft-Windows-TerminalServices-LocalSessionManagerOperational)
-- [Microsoft-Windows-SmbClient/Security](#Microsoft-Windows-SmbClientSecurity)
-- [Microsoft-Windows-WMI-Activity/Operational](#Microsoft-Windows-WMI-ActivityOperational)
-- [Microsoft-Windows-WinRM/Operational](#Microsoft-Windows-WinRMOperational)
-- [Microsoft-Windows-AppLocker/MSI and Script](#Microsoft-Windows-AppLockerMSI-and-Script)
+- [Security Events](#security-events)
+- [Microsoft-Windows-Sysmon/Operational](#microsoft-windows-sysmonoperational)
+- [System Events](#system-events)
+- [Application](#application)
+- [Microsoft-Windows-PrintService/Operational Events](#microsoft-windows-printserviceoperational-events)
+- [Microsoft-Windows-Kernel-PnP/Device Configuration](#microsoft-windows-kernel-pnpdevice-configuration)
+- [Microsoft-Windows-TaskScheduler/Operational](#microsoft-windows-taskscheduleroperational)
+- [Microsoft-Windows-Powershell/Operational](#microsoft-windows-powershelloperational)
+- [Microsoft-Windows-PowerShell/Operational](#microsoft-windows-powershelloperational)
+- [Windows PowerShell](#windows-powershell)
+- [Microsoft-Windows-PowerShell/Analytic](#microsoft-windows-powershellanalytic)
+- [Microsoft-Windows-Windows Defender/Operational](#microsoft-windows-windows-defenderoperational)
+- [Microsoft-Windows-Windows Firewall With Advanced Security/Firewall](#microsoft-windows-windows-firewall-with-advanced-securityfirewall)
+- [Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational](#microsoft-windows-remotedesktopservices-rdpcoretsoperational)
+- [Microsoft-Windows-TerminalServices-RDPClient/Operational](#microsoft-windows-terminalservices-rdpclientoperational)
+- [Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational](#microsoft-windows-terminalservices-remoteconnectionmanageroperational)
+- [Microsoft-Windows-TerminalServices-LocalSessionManager/Operational](#microsoft-windows-terminalservices-localsessionmanageroperational)
+- [Microsoft-Windows-SmbClient/Security](#microsoft-windows-smbclientsecurity)
+- [Microsoft-Windows-WMI-Activity/Operational](#microsoft-windows-wmi-activityoperational)
+- [Microsoft-Windows-WinRM/Operational](#microsoft-windows-winrmoperational)
+- [Microsoft-Windows-AppLocker/MSI and Script](#microsoft-windows-applockermsi-and-script)
 
 ## Security Events
 
@@ -40,6 +40,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 4689    | A process has exited.                                                                                                                                    |
 | 4692    | Backup of data protection master key was attempted.                                                                                                      |
 | 4693    | Recovery of data protection master key was attempted.                                                                                                    |
+| 4695    | Unprotection of auditable protected data was attempted.                                                                                                  |
 | 4697    | A service was installed in the system.                                                                                                                   |
 | 4698    | A scheduled task was created.                                                                                                                            |
 | 4699    | A scheduled task was deleted.                                                                                                                            |
@@ -48,30 +49,54 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 4702    | A scheduled task was updated.                                                                                                                            |
 | 4704    | A user right was assigned.                                                                                                                               |
 | 4706    | A new trust was created to a domain.                                                                                                                     |
+| 4707    | A trust to a domain was removed.                                                                                                                         |
+| 4713    | Kerberos policy was changed.                                                                                                                             |
 | 4715    | The audit policy (SACL) on an object was changed.                                                                                                        |
 | 4716    | Trusted domain information was modified.                                                                                                                 |
 | 4717    | System security access was granted to an account.                                                                                                        |
+| 4718    | System security access was removed from an account.                                                                                                      |
 | 4719    | System audit policy was changed.                                                                                                                         |
 | 4720    | A user account was created.                                                                                                                              |
+| 4722    | A user account was enabled.                                                                                                                              |
+| 4723    | An attempt was made to change an account's password.                                                                                                     |
 | 4724    | An attempt was made to reset an account's password.                                                                                                      |
+| 4725    | A user account was disabled.                                                                                                                             |
+| 4726    | A user account was deleted.                                                                                                                              |
 | 4727    | A security-enabled global group was created.                                                                                                             |
 | 4728    | A member was added to a security-enabled global group.                                                                                                   |
+| 4729    | A member was removed from a security-enabled global group.                                                                                               |
 | 4731    | A security-enabled local group was created.                                                                                                              |
 | 4732    | A member was added to a security-enabled local group.                                                                                                    |
+| 4733    | A member was removed from a security-enabled local group.                                                                                                |
+| 4735    | A security-enabled local group was changed.                                                                                                              |
 | 4737    | A security-enabled global group was changed.                                                                                                             |
 | 4738    | A user account was changed.                                                                                                                              |
 | 4739    | Domain Policy was changed.                                                                                                                               |
 | 4740    | A user account was locked out.                                                                                                                           |
+| 4741    | A computer account was created.                                                                                                                          |
+| 4742    | A computer account was changed.                                                                                                                          |
+| 4743    | A computer account was deleted.                                                                                                                          |
 | 4754    | A security-enabled universal group was created.                                                                                                          |
 | 4755    | A security-enabled universal group was changed.                                                                                                          |
 | 4756    | A member was added to a security-enabled universal group.                                                                                                |
-| 4764    | A group’s type was changed.                                                                                                                             |
+| 4757    | A member was removed from a security-enabled universal group.                                                                                            |
+| 4764    | A group’s type was changed.                                                                                                                              |
+| 4765    | SID History was added to an account.                                                                                                                     |
+| 4766    | An attempt to add SID History to an account failed.                                                                                                      |
 | 4767    | A user account was unlocked.                                                                                                                             |
+| 4768    | A Kerberos authentication ticket (TGT) was requested.                                                                                                    |
+| 4769    | A Kerberos service ticket was requested.                                                                                                                 |
+| 4770    | A Kerberos service ticket was renewed.                                                                                                                   |
+| 4771    | Kerberos pre-authentication failed.                                                                                                                      |
+| 4772    | A Kerberos authentication ticket request failed.                                                                                                         |
 | 4776    | The domain controller attempted to validate the credentials for an account.                                                                              |
 | 4778    | A session was reconnected to a Window Station.                                                                                                           |
 | 4779    | A session was disconnected from a Window Station.                                                                                                        |
 | 4780    | The ACL was set on accounts which are members of administrators groups.                                                                                  |
 | 4794    | An attempt was made to set the Directory Services Restore Mode administrator password.                                                                   |
+| 4798    | A user's local group membership was enumerated.                                                                                                          |
+| 4800    | The workstation was locked.                                                                                                                              |
+| 4801    | The workstation was unlocked.                                                                                                                            |
 | 4816    | RPC detected an integrity violation while decrypting an incoming message.                                                                                |
 | 4865    | A trusted forest information entry was added.                                                                                                            |
 | 4866    | A trusted forest information entry was removed.                                                                                                          |
@@ -100,12 +125,15 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 5035    | Windows Firewall Driver failed to start                                                                                                                  |
 | 5037    | Windows Firewall Driver detected critical runtime error Terminating                                                                                      |
 | 5038    | Code integrity determined that the image hash of a file is not valid                                                                                     |
+| 5136    | A directory service object was modified.                                                                                                                 |
 | 5140    | Network share object accessed                                                                                                                            |
 | 5142    | Network share object added                                                                                                                               |
 | 5143    | Network share object changed                                                                                                                             |
 | 5144    | Network share object deleted                                                                                                                             |
+| 5146    | The Windows Filtering Platform has blocked a packet.                                                                                                     |
 | 5158    | The Windows Filtering Platform has permitted a bind to a local port.                                                                                     |
 | 5376    | Credential Manager credentials were backed up                                                                                                            |
+| 5378    | The requested credentials delegation was disallowed by policy.                                                                                           |
 | 6273    | Network Policy Server denied access to a user                                                                                                            |
 | 6276    | Network Policy Server quarantined a user                                                                                                                 |
 | 6280    | Network Policy Server unlocked the user account                                                                                                          |
