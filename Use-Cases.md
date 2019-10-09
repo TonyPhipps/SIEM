@@ -1,4 +1,18 @@
 # Use Case Samples for a SIEM/SOC Environment
+Each use case can be fully developed for the purposes of uniformity, tracking, reporting, metrics, etc.
+
+- Detect X[Activity] with Y[Product] via Z Events [1 per unique XYZ combination]
+- Develop New Use Case
+- Upgrade X Software [1 per X]
+- Update X Configuration [1 per X]
+- Respond to X Alert [1 per X]
+- Respond to Reported HIPAA Breach
+- Respond to Reported GDPR Violation
+- Respond to Reported Phishing Attempt
+- Provide Activity Report
+- Hunt for X Activity [1 per X]
+- Deploy X Software [1 per X]
+- Deploy X Hardware [1 per X]
 
 - Review a Knoweledge Base Article
 - Review a Policy
@@ -18,17 +32,6 @@
 - Provide Internal Training Meeting
 - Provide Internal On-the-Job Training
 
-- Develop New Use Case
-- Upgrade X Software [1 per X]
-- Update X Configuration [1 per X]
-- Respond to X Alert [1 per X]
-- Respond to Reported HIPAA Breach
-- Respond to Reported GDPR Violation
-- Respond to Reported Phishing Attempt
-- Provide Activity Report
-- Detect X[Activity] with Y[Product] via Z Events [1 per unique XYZ combination]
-- Hunt for X Activity [1 per X]
-- Deploy X Software [1 per X]
-- Deploy X Hardware [1 per X]
+
 
 
