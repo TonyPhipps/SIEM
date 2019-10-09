@@ -1,4 +1,4 @@
-# Use Cases Ideal for Tracking Activity in a SIEM/SOC
+# Use Case Samples for a SIEM/SOC Environment
 
 - Review a Knoweledge Base Article
 - Review a Policy
