@@ -1,0 +1,34 @@
+# Use Cases Ideal for Tracking Activity in a SIEM/SOC
+
+- Review a Knoweledge Base Article
+- Review a Policy
+- Review a Signature
+- Review a Use Case
+- Review an Automation Script
+- Submit a Knoweledge Base Article
+- Submit a Policy
+- Submit a Signature
+- Submit a Use Case
+- Submit an Automation Script
+- Update a Knowledge Base Article
+- Update a Policy
+- Update a Signature
+- Update a Use Case
+- Update an Automation Script
+- Provide Internal Training Meeting
+- Provide Internal On-the-Job Training
+
+- Develop New Use Case
+- Upgrade X Software [1 per X]
+- Update X Configuration [1 per X]
+- Respond to X Alert [1 per X]
+- Respond to Reported HIPAA Breach
+- Respond to Reported GDPR Violation
+- Respond to Reported Phishing Attempt
+- Provide Activity Report
+- Detect X[Activity] with Y[Product] via Z Events [1 per unique XYZ combination]
+- Hunt for X Activity [1 per X]
+- Deploy X Software [1 per X]
+- Deploy X Hardware [1 per X]
+
+
