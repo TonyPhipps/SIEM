@@ -1,5 +1,5 @@
-# Use Case Samples for a SIEM/SOC Environment
-Each use case can be fully developed for the purposes of uniformity, tracking, reporting, metrics, etc.
+# Use Case Samples
+Use Cases provide a means to document solutions for many reasons including tracking work, uniform response, content recreation, metrics & reporting, making informed decisions, avoiding work duplication, and more.
 
 - Detect X[Activity] with Y[Product] via Z Events [1 per unique XYZ combination]
 - Develop New Use Case
