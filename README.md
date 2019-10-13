@@ -16,13 +16,14 @@ To detect an attacker, one must be equipped with the necessary logs to reveal th
 Once necessary logs are collected (detection tactics), use various methods to reveal anomalous, suspicious, and malicious activity.
 
 
-# [Detection Use Cases](/Use-Cases.md)
+# Detection Use Cases
 
 Use Cases provide a means to document solutions for many reasons including tracking work, uniform response, content recreation, metrics & reporting, making informed decisions, avoiding work duplication, and more.
 
-## [Use Case Template](/Detection-Use-Cases.md)
+## [Use Case Structure](/Use-Case-Structure.md)
 
-A Use Case can be documented for presention to management, to guide a SOC/Incident Response Team, or for general SIEM content documentation. 
+## [Use Case Samples](/Use-Case-Samples.md)
+
 
 # Data Enrichment
 
