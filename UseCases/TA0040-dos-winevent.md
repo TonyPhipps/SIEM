@@ -36,7 +36,7 @@ Systems may be shut down or restarted repeatedly to affect the availability of s
 ## Assumptions and Limitations
 
 - Services may crash unexpectedly due to benign actions or events.
-- Services may be stopped during troublehsooting by legitimate, authorized users/accounts.
+- Services may be stopped during troubleshooting by legitimate, authorized users/accounts.
 
 
 # Analysis

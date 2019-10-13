@@ -1,6 +1,6 @@
 # Executive Summary
 
-Adversaries may attempt to creatively brute force many accounts on a network by increasing the time between logon attempts, preventing automatic account locking. Since waiting more time impacts speed of the attack, adverssaries typically target more than one account simultaneously.
+Adversaries may attempt to creatively brute force many accounts on a network by increasing the time between logon attempts, preventing automatic account locking. Since waiting more time impacts speed of the attack, adversaries typically target more than one account simultaneously.
 
 ## Name
 
