@@ -3,7 +3,7 @@
 
 ## Name
 
-Detect Password Spraying
+Detect Password Spraying via Windows Events
 
 
 ## Problem Statement
@@ -36,21 +36,6 @@ Password spraying targets the human tendency to both use weak password and reuse
 
 Password spraying uses one password (e.g. 'Password01'), or a small list of passwords, that matches the complexity policy of the domain and may be a commonly used password. Logins are attempted with that password and many different accounts on a network to avoid account lockouts that would normally occur when brute forcing a single account with many passwords.
 
-Typically, management services over commonly used ports are used when password spraying. Commonly targeted services include the following:
-
-    SSH (22/TCP)
-    Telnet (23/TCP)
-    FTP (21/TCP)
-    NetBIOS / SMB / Samba (139/TCP & 445/TCP)
-    LDAP (389/TCP)
-    Kerberos (88/TCP)
-    RDP / Terminal Services (3389/TCP)
-    HTTP/HTTP Management Services (80/TCP & 443/TCP)
-    MSSQL (1433/TCP)
-    Oracle (1521/TCP)
-    MySQL (3306/TCP)
-    VNC (5900/TCP)
-
 
 ## Monitoring and Notifications
 
@@ -73,15 +58,13 @@ Typically, management services over commonly used ports are used when password s
 
 ## Component Names
 
-Event sources may include a combination of:
-- Windows Security Event ID 4624
-- Windows Security Event ID 4625
-- Windows Security Event ID 4648
 
 
 ## Data Stream Analysis
 
-.
+- Windows Security Event ID 4624
+- Windows Security Event ID 4625
+- Windows Security Event ID 4648
 
 
 ## Assurance Metrics
