@@ -1,5 +1,5 @@
 # Use Case Samples
-- [Detect Command and Control via Firewall Deny Events](/UseCases/TA0011-firewall-deny.md)
+- [Detect Adversarial Activity via Firewall Deny Events](/UseCases/TA0007-8-10-11-40-firewall-deny.md)
 
 
 
