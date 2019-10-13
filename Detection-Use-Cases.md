@@ -16,10 +16,10 @@ A "use case" describes and documents a goal and how it's objectives are accompli
   - [Assurance Metrics](#assurance-metrics)
 
 # Executive Summary
-Primarily focused on providing high-level information, references, and background
+Primarily focused on providing high-level information, references, and background.
 
 ## Name
-A succint statement that broadly describes the use case
+A succinct statement that broadly describes the use case.
 
 ## Problem Statement
 Describes the problem, beginning with any necessary background information.
@@ -49,7 +49,7 @@ Describes which actions should be taken with the information provided - typicall
 Primarily focused on necessary steps and content construction that fulfills the use case.
 
 ## Component Names
-The base components that provide business logic, display, and notification. Includes expected event log construction and field contents included. Incldudes server names, user names, document names, scripts, queries, etc.
+The base components that provide business logic, display, and notification. Includes expected event log construction and field contents included. Includes server names, user names, document names, scripts, queries, etc.
 
 ## Data Stream Analysis
 Pseudocode-like logic flow of how events are processed by the SIEM and presented or alerted upon. When possible, include a visual representation of some sort.
