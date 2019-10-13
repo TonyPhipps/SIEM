@@ -57,7 +57,6 @@ Pseudocode-like logic flow of how events are processed by the SIEM and presented
 
 ## Assurance Metrics
 Methods to ensure the use case was developed and is operating properly. These can be pass/fail, time based, or other relevant measurements. When possible, include an automated script or manual steps to cause the alert to fire on demand (i.e. attack simulation)
-<<<<<<< HEAD:Use-Case-Structure.md
 
 # Use Case Sample Names
 Note: The names below are intended to encourage a line of thought and are therefore intentionally imprecise and an incomplete list.
@@ -92,5 +91,3 @@ Note: The names below are intended to encourage a line of thought and are theref
 - Update an Automation Script
 - Provide Internal Training Meeting
 - Provide Internal On-the-Job Training
-=======
->>>>>>> acc0bef1000e782d8786e8d50b8bf41deff6d7ba:Detection-Use-Cases.md
