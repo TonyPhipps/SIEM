@@ -17,10 +17,10 @@ A "use case" describes and documents a goal and how it's objectives are accompli
 - [Use Case Sample Names](#use-case-sample-names)
 
 # Executive Summary
-Primarily focused on providing high-level information, references, and background
+Primarily focused on providing high-level information, references, and background.
 
 ## Name
-A succint statement that broadly describes the use case
+A succinct statement that broadly describes the use case.
 
 ## Problem Statement
 Describes the problem, beginning with any necessary background information.
@@ -50,13 +50,14 @@ Describes which actions should be taken with the information provided - typicall
 Primarily focused on necessary steps and content construction that fulfills the use case.
 
 ## Component Names
-The base components that provide business logic, display, and notification. Includes expected event log construction and field contents included. Incldudes server names, user names, document names, scripts, queries, etc.
+The base components that provide business logic, display, and notification. Includes expected event log construction and field contents included. Includes server names, user names, document names, scripts, queries, etc.
 
 ## Data Stream Analysis
 Pseudocode-like logic flow of how events are processed by the SIEM and presented or alerted upon. When possible, include a visual representation of some sort.
 
 ## Assurance Metrics
 Methods to ensure the use case was developed and is operating properly. These can be pass/fail, time based, or other relevant measurements. When possible, include an automated script or manual steps to cause the alert to fire on demand (i.e. attack simulation)
+<<<<<<< HEAD:Use-Case-Structure.md
 
 # Use Case Sample Names
 Note: The names below are intended to encourage a line of thought and are therefore intentionally imprecise and an incomplete list.
@@ -91,3 +92,5 @@ Note: The names below are intended to encourage a line of thought and are theref
 - Update an Automation Script
 - Provide Internal Training Meeting
 - Provide Internal On-the-Job Training
+=======
+>>>>>>> acc0bef1000e782d8786e8d50b8bf41deff6d7ba:Detection-Use-Cases.md
