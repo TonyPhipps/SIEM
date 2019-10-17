@@ -47,7 +47,7 @@ Describes which of the Mitre ATT&CK Framework Tactics/Techniques the objectives 
 
 ## Assumptions and Limitations
 
-Describes any assumptions/limitations regarding law, licensing, policies, or techincalities.
+Describes any assumptions/limitations regarding law, licensing, policies, or technicalities.
 
 
 # Analysis
