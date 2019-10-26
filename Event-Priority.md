@@ -2,11 +2,15 @@
 
 The following is a prioritized list of recommended event logs to collect into your SIEM (ordering should be customized per organization and is subject to change here). 
 
+- DHCP Leases
+- DNS Queries (with endpoint name/IP)
+- Active Directory / LDAP Logs
+- Egress Firewall Traffic
+- Web Proxy Requests
+- VPN Authentication
 - Security Product Alerts
 - Windows Event Logs
 - Linux auditd Logs
-- DNS client Requests
-- Web Proxy Requests
 - Email
 - Custom Application Logs
 - Layer 7 Firewall
