@@ -29,15 +29,15 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Shannon Entropy Score Alert
-- High Entropy Domain Name
-- HIgh Entropy TXT Queries (RCODE:16)
+- High-Entropy Domain Name
+- High-Entropy TXT Queries (RCODE:16)
 
 
 ## Threshold Alert
-- type=TXT, TXT Length where length exceeeds threshold (RCODE:16)
-- Source System where Count exceeds threshold
-- Source System, Outcome=Failure where Count exceeds threshold (RCODE:3)
-- Source System, Type=TXT where Source System Count exceeds threshold (RCODE:16)
+Requests where type=TXT and TXT field length exceeds X characters (filter by RCODE=16)
+- Number of requests from a single system exceeds X amount in Y time (aggregate on fields: source system)
+- Number of resolution failures for a single system exceeds X amount in Y time (aggregate on fields: Source System; filter by RCODE=3)
+- Number of TXT-type DNS requests from a single system exceeds X amount in Y time (aggregate on fields: source system; filter by RCODE=16)
 
 
 # Log Source Examples
