@@ -14,6 +14,7 @@ A "use case" describes and documents a goal and how it's objectives are accompli
   - [Component Names](#component-names)
   - [Data Stream Analysis](#data-stream-analysis)
   - [Assurance Metrics](#assurance-metrics)
+    - [Attack Simlulation](#attack-simlulation)
 - [Use Case Sample Names](#use-case-sample-names)
 
 # Executive Summary
@@ -86,6 +87,7 @@ Methods to ensure the use case was developed and is operating properly. These ca
 
 ### Attack Simlulation
 
+Specific actions to reproduce events that are expected to be detected/highlighted by use case components.
 
 # Use Case Sample Names
 
