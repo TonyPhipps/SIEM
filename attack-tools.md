@@ -11,3 +11,4 @@ Study these tools to find new ways to discover/defend against.
   - Request Smuggler plugin
 - openvas - https://github.com/greenbone/openvas
 - impacket - https://github.com/SecureAuthCorp/impacket
+- nmap - https://nmap.org/
