@@ -6,10 +6,10 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Blacklist Alert
-
+- Known-Bad Destination Port Use
 
 ## Whitelist Alert
-
+- Anomalous Destination Port Use
 
 ## Levenshtein Score Alert
 
@@ -32,6 +32,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 # Log Source Examples
+- Layer 3 or 7 Firewall Logs
 - Netflow Logs
 - IPFIX Logs
 - SFLOW Logs
