@@ -2,6 +2,7 @@
 
 Study these tools to find new ways to discover/defend against.
 
+- Basically anything in Kali Linux - https://www.kali.org/
 - pingcastle - https://github.com/vletoux/pingcastle
 - mimikatz - https://github.com/gentilkiwi/mimikatz
 - crackmapexec - https://github.com/byt3bl33d3r/CrackMapExec
@@ -12,3 +13,4 @@ Study these tools to find new ways to discover/defend against.
 - openvas - https://github.com/greenbone/openvas
 - impacket - https://github.com/SecureAuthCorp/impacket
 - nmap - https://nmap.org/
+- autossh - www.harding.motd.ca/autossh/
