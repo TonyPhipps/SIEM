@@ -14,3 +14,4 @@ Study these tools to find new ways to discover/defend against.
 - impacket - https://github.com/SecureAuthCorp/impacket
 - nmap - https://nmap.org/
 - autossh - www.harding.motd.ca/autossh/
+- dirb - http://dirb.sourceforge.net/
