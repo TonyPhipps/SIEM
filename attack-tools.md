@@ -15,3 +15,8 @@ Study these tools to find new ways to discover/defend against.
 - nmap - https://nmap.org/
 - autossh - www.harding.motd.ca/autossh/
 - dirb - http://dirb.sourceforge.net/
+- evilginx2 - https://github.com/kgretzky/evilginx2
+- chashell - https://github.com/sysdream/chashell
+- Exchange Web Services (EWS) Crack - https://github.com/mikesiegel/ews-crack
+- Okta Password Sprayer - https://github.com/Rhynorater/Okta-Password-Sprayer
+- CQHashDumpV2 - https://cqureacademy.com/blog/identity-theft-protection/pass-hash-attack-tutorial
