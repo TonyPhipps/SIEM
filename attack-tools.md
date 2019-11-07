@@ -2,10 +2,12 @@
 
 Study these tools to find new ways to discover/defend against.
 
-- pingcastle
-- mimikatz
-- crackmapexec
-- hashchat
-- bloodhound
-- burp request smuggler plugin
-- openvas
+- pingcastle - https://github.com/vletoux/pingcastle
+- mimikatz - https://github.com/gentilkiwi/mimikatz
+- crackmapexec - https://github.com/byt3bl33d3r/CrackMapExec
+- hashchat - https://github.com/hashcat/hashcat
+- bloodhound - https://github.com/BloodHoundAD/BloodHound
+- Burp Suite - https://portswigger.net/burp/communitydownload
+  - Request Smuggler plugin
+- openvas - https://github.com/greenbone/openvas
+- impacket - https://github.com/SecureAuthCorp/impacket
