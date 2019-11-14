@@ -20,3 +20,5 @@ Study these tools to find new ways to discover/defend against.
 - Exchange Web Services (EWS) Crack - https://github.com/mikesiegel/ews-crack
 - Okta Password Sprayer - https://github.com/Rhynorater/Okta-Password-Sprayer
 - CQHashDumpV2 - https://cqureacademy.com/blog/identity-theft-protection/pass-hash-attack-tutorial
+- Rubeus - https://github.com/GhostPack/Rubeus
+- Seatbelt - https://github.com/ghostpack/seatbelt
