@@ -12,7 +12,6 @@ Study these tools to find new ways to discover/defend against.
   - Request Smuggler plugin
 - openvas - https://github.com/greenbone/openvas
 - impacket - https://github.com/SecureAuthCorp/impacket
-- nmap - https://nmap.org/
 - autossh - www.harding.motd.ca/autossh/
 - dirb - http://dirb.sourceforge.net/
 - evilginx2 - https://github.com/kgretzky/evilginx2
@@ -30,6 +29,12 @@ Stuff you probably won't see on your network, but could use "against yourself"
 - PowerMeta - https://github.com/dafthack/PowerMeta
 - truffleHog - https://github.com/dxa4481/truffleHog
 - reposcanner - https://github.com/Dionach/reposcanner
+
+# Active Recon Tools
+You might see some of this
+- aquatone - https://github.com/michenriksen/aquatone
+- dirsearch - https://github.com/maurosoria/dirsearch
+- nmap - https://nmap.org/
 
 ## Google Dorking
 - yourdomain.com (site:amazonaws.com | site:blob.core.windows.net | site:digitaloceanspaces.com)
