@@ -7,7 +7,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 ## Aggregate Count
 - HTTP GET Method Counts
 - HTTP POST Method Counts
-- User String Counts
+- User Agent String Counts
 - Allow:Block Ratio per System/User
 - GET:POST Ratio per System/User
 - Up:Down Bytes Ratio per System/User
@@ -27,6 +27,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - A privileged account generates any web traffic
 - A service account generates any web traffic
 - A system account generates any web traffic
+- User Agent string containing 'Nmap'
 
 
 ## Whitelist Alert
