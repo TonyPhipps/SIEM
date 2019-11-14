@@ -22,3 +22,11 @@ Study these tools to find new ways to discover/defend against.
 - CQHashDumpV2 - https://cqureacademy.com/blog/identity-theft-protection/pass-hash-attack-tutorial
 - Rubeus - https://github.com/GhostPack/Rubeus
 - Seatbelt - https://github.com/ghostpack/seatbelt
+
+# Passive Recon Tools
+Stuff you probably won't see on your network, but could use "against yourself"
+- hardcidr - https://github.com/trustedsec/hardcidr
+- amass - https://github.com/caffix/amass
+- PowerMeta - https://github.com/dafthack/PowerMeta
+- truffleHog - https://github.com/dxa4481/truffleHog
+- reposcanner - https://github.com/Dionach/reposcanner
