@@ -31,7 +31,7 @@ Stuff you probably won't see on your network, but could use "against yourself"
 - truffleHog - https://github.com/dxa4481/truffleHog
 - reposcanner - https://github.com/Dionach/reposcanner
 
-# Google Dorking
+## Google Dorking
 - yourdomain.com (site:amazonaws.com | site:blob.core.windows.net | site:digitaloceanspaces.com)
 - yourdoamin.com (site:pastebin.com | site:paste2.org | site:paste.bradleygill.com | site:pastie.org | site:dpaste.org)
 - "your company" site:linkedin.com (intitle:"Service Desk" | intitle:"Desktop Support" | intitle:"Security Engineer" | intitle:"Help Desk")
