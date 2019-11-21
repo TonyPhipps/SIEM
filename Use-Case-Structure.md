@@ -13,8 +13,9 @@ A "use case" describes and documents a goal and how it's objectives are accompli
 - [Engineering](#engineering)
   - [Component Names](#component-names)
   - [Data Stream Analysis](#data-stream-analysis)
-  - [Assurance Metrics](#assurance-metrics)
+  - [Validation](#validation)
     - [Attack Simlulation](#attack-simlulation)
+  - [References and Resources](#references-and-resources)
 - [Use Case Sample Names](#use-case-sample-names)
 
 # Executive Summary
@@ -81,13 +82,18 @@ The base components that provide business logic, display, and notification. Incl
 Pseudocode-like logic flow of how events are processed by the SIEM and presented or alerted upon. When possible, include a visual representation of some sort.
 
 
-## Assurance Metrics
+## Validation
 
 Methods to ensure the use case was developed and is operating properly. These can be pass/fail, time based, or other relevant measurements. When possible, include an automated script or manual steps to cause the alert to fire on demand (i.e. attack simulation)
 
 ### Attack Simlulation
 
 Specific actions to reproduce events that are expected to be detected/highlighted by use case components.
+
+
+## References and Resources
+Any useful resources or references that can help understand the vulnerability, attack, detection, affected software, protocols, etc.
+
 
 # Use Case Sample Names
 
