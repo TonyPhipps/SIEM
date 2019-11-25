@@ -7,7 +7,6 @@ Study these tools to find new ways to discover/defend against.
 - mimikatz - https://github.com/gentilkiwi/mimikatz
 - crackmapexec - https://github.com/byt3bl33d3r/CrackMapExec
 - hashchat - https://github.com/hashcat/hashcat
-- bloodhound - https://github.com/BloodHoundAD/BloodHound
 - Burp Suite - https://portswigger.net/burp/communitydownload
   - Request Smuggler plugin
 - openvas - https://github.com/greenbone/openvas
@@ -24,7 +23,7 @@ Study these tools to find new ways to discover/defend against.
 - evilClippy - https://github.com/outflanknl/EvilClippy
 - proxychains - https://github.com/haad/proxychains
 
-# Passive Recon Tools
+# Discovery (Passive)
 Stuff you probably won't see on your network, but could use "against yourself"
 - hardcidr - https://github.com/trustedsec/hardcidr
 - amass - https://github.com/caffix/amass
@@ -32,16 +31,20 @@ Stuff you probably won't see on your network, but could use "against yourself"
 - truffleHog - https://github.com/dxa4481/truffleHog
 - reposcanner - https://github.com/Dionach/reposcanner
 
-## Breach Databases
-- https://thepiratebay.org/torrent/22590240/Leaked_Databases
-
-# Active Recon Tools
-You might see some of this
-- aquatone - https://github.com/michenriksen/aquatone
-- dirsearch - https://github.com/maurosoria/dirsearch
-- nmap - https://nmap.org/
-
 ## Google Dorking
 - yourdomain.com (site:amazonaws.com | site:blob.core.windows.net | site:digitaloceanspaces.com)
 - yourdoamin.com (site:pastebin.com | site:paste2.org | site:paste.bradleygill.com | site:pastie.org | site:dpaste.org)
 - "your company" site:linkedin.com (intitle:"Service Desk" | intitle:"Desktop Support" | intitle:"Security Engineer" | intitle:"Help Desk")
+
+## Breach Databases
+- https://thepiratebay.org/torrent/22590240/Leaked_Databases
+
+# Discovery (Active)
+You might see some of this
+- aquatone - https://github.com/michenriksen/aquatone
+- dirsearch - https://github.com/maurosoria/dirsearch
+- nmap - https://nmap.org/
+- bloodhound - https://github.com/BloodHoundAD/BloodHound
+
+# Credential Access
+- CleverSpray - https://github.com/wavestone-cdt/Invoke-CleverSpray
