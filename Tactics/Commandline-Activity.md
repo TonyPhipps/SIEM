@@ -20,6 +20,9 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
   - iwr
   - curl
   - wget
+- Command contains very uncommon "LOLBAS/LOLBIN" commands
+  - hh.exe
+
 
 ## Whitelist Alert
 
@@ -48,6 +51,7 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
   - Create new DWORD EnableTranscripting = 1
   - Create new STRING VALUE OutputDirectory = <path_to_directory>
   - Logs will be stored in .txt files in teh specified directory, using the format `..\YYYYMMDD\PowerShell_transcript.PCNAME.RANDOM.YYYYMMDDHHMMSS.txt`)
+- Endpoint Detection and Response product
 
 
 # Response Options
