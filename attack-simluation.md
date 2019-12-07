@@ -28,3 +28,5 @@
   - https://github.com/fugawi/mate
 - Purple Team ATT&CK Automation
   - https://github.com/praetorian-inc/purple-team-attack-automation
+- Invoke-Attack
+  - https://blogs.technet.microsoft.com/motiba/2018/04/09/invoke-adversary-simulating-adversary-operations/
