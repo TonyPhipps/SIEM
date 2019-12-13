@@ -1,13 +1,15 @@
-# Free Training Resources
+# Free Resources
 - NIST Computer Security Incident Handling Guide (800-61r2)
   - https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final
 - Interfacing with Law Enforcement
   - https://www.sans.org/score/law-enforcement-faq
 - Incident Handling Forms
   - https://www.sans.org/score/incident-forms
+- Jai Minton's DFIR Cheat Sheet
+  - https://www.jaiminton.com/cheatsheet/DFIR/#persistence-and-automatic-loadrun-reg-keys
 
 
-# Non-Free Training Resources
+# Non-Free Resources
 - SANS Hacker Tools, Techniques, Exploits, and Incident Handling (SEC504)
   - https://www.sans.org/course/hacker-techniques-exploits-incident-handling
 
