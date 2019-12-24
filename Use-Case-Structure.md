@@ -76,6 +76,16 @@ The necessary steps and content construction that fulfills the use case.
 
 The base components that provide business logic, display, and notification. Includes expected event log construction and field contents included. Includes server names, user names, document names, scripts, queries, etc.
 
+### Alert Name
+- Filter
+- Grouping
+- Severity
+- Threshold
+  - Event Count
+  - Time Window
+- Category/Normalization
+- Tags
+
 
 ## Data Stream Analysis
 
