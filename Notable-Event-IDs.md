@@ -163,6 +163,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |   19    | WmiEvent (WmiEventFilter activity detected)           |
 |   20    | WmiEvent (WmiEventConsumer activity detected)         |
 |   21    | WmiEvent (WmiEventConsumerToFilter activity detected) |
+|   22    | DNSEvent (DNS query)                                  |
 |   255   | Error                                                 |
 
 
