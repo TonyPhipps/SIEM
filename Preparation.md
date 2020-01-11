@@ -1,0 +1,67 @@
+# Internal Points of Contact
+
+- IT Support
+- IT Architecture/Server Teams
+- Asset Management
+- Identity and Access Management
+- Data Backup Administration
+- Networking
+- Hosting/Application Teams
+- Database Administration
+- Development Teams
+- Computer Security-related teams
+- Physical Security
+- Human Resources
+- Public Relations
+- Legal Department
+
+# External Points of Contact
+
+- Internet Service Provider(s)
+- Local law enforcement
+- Product Vendor and Technical Support
+
+# Regulatory and Compliance Mandates in Scope
+
+What compliance mandates are required by law or internal policy? Which systems are in scope for each mandate?
+
+- HIPAA
+- PCI-DSS
+- GLBA
+- FISMA
+- Sarbanes-Oxley Act
+- GDPR
+-Other Foreign laws
+- NIST 800-53
+- ISO/IEC 27002
+
+# Crown Jewels
+
+- What is the most sensitive data and where is it stored?
+- What is the most sensitive service?
+- What are the permitted access methods for both?
+- Who has authority to access them?
+
+# Execution of Incident Management Procedures
+
+- Port closure
+- DNS Redirect/Black-hole
+- VLAN isolation
+- Internal device blocking/isolation
+- Border device blocking/isolation
+- Account disabling
+- Active Directory
+- VPN
+- Other accounts not tied to active directory
+- Seizure of devices
+- Log collection of any of the above
+
+# Existing Security Policies and Other Documentation
+
+- Asset Inventory (Hardware and Software)
+- Network Architecture
+- Authorized Users and Groups
+- Account and Device Naming Conventions
+- Disaster Recovery Plan
+- Business Continuity Plan
+- Change Management Process
