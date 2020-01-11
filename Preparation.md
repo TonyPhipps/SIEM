@@ -39,9 +39,11 @@ What compliance mandates are required by law or internal policy? Which systems a
 
 - What is the most sensitive data and where is it stored?
 - Which are the most sensitive services and what infrastructure supports them?
-- What are the permitted access methods for both?
-- Who has authority to access them?
+- Which service accounts exist to support them?
+- What are the permitted access methods?
+- Who has authority to access these?
 - What logs are available for monitoring?
+- Which people would cause the most damage if they were socially engineered or their accounts were compromised or abused?
 
 # Execution of Incident Management Procedures
 
