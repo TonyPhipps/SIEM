@@ -38,9 +38,10 @@ What compliance mandates are required by law or internal policy? Which systems a
 # Crown Jewels
 
 - What is the most sensitive data and where is it stored?
-- What is the most sensitive service?
+- Which are the most sensitive services and what infrastructure supports them?
 - What are the permitted access methods for both?
 - Who has authority to access them?
+- What logs are available for monitoring?
 
 # Execution of Incident Management Procedures
 
