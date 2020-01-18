@@ -14,9 +14,7 @@ A "use case" describes and documents a goal and how it's objectives are accompli
   - [Component Names](#component-names)
   - [Data Stream Analysis](#data-stream-analysis)
   - [Validation](#validation)
-    - [Attack Simlulation](#attack-simlulation)
   - [References and Resources](#references-and-resources)
-- [Use Case Sample Names](#use-case-sample-names)
 
 # Executive Summary
 
@@ -25,7 +23,7 @@ Primarily focused on providing high-level information, references, and backgroun
 
 ## Name
 
-A succinct statement that broadly describes the use case.
+A succinct statement that describes intention of the use case (e.g. Detect Communication with a Known-Bad IP). Group multiple detection components into a single use case when they share other characteristics in Executive Summary and Analysis sections.
 
 
 ## Problem Statement
@@ -103,39 +101,3 @@ Specific actions to reproduce events that are expected to be detected/highlighte
 
 ## References and Resources
 Any useful resources or references that can help understand the vulnerability, attack, detection, affected software, protocols, etc.
-
-
-# Use Case Sample Names
-
-Note: The names below are intended to encourage a line of thought and are therefore intentionally imprecise and an incomplete list.
-
-- Detect X[Activity] with Y[Product] via Z Events [1 per unique XYZ combination]
-- Develop New Use Case
-- Upgrade X Software [1 per X]
-- Update X Configuration [1 per X]
-- Respond to X Alert [1 per X]
-- Respond to Reported HIPAA Breach
-- Respond to Reported GDPR Violation
-- Respond to Reported Phishing Attempt
-- Provide Activity Report
-- Hunt for X Activity [1 per X]
-- Deploy X Software [1 per X]
-- Deploy X Hardware [1 per X]
-
-- Review a Knoweledge Base Article
-- Review a Policy
-- Review a Signature
-- Review a Use Case
-- Review an Automation Script
-- Submit a Knoweledge Base Article
-- Submit a Policy
-- Submit a Signature
-- Submit a Use Case
-- Submit an Automation Script
-- Update a Knowledge Base Article
-- Update a Policy
-- Update a Signature
-- Update a Use Case
-- Update an Automation Script
-- Provide Internal Training Meeting
-- Provide Internal On-the-Job Training

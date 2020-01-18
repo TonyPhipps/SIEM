@@ -3,7 +3,7 @@
 A compromise that has gone undetected by existing security software may result in external communications attempts to perform further discovery, lateral movement, data exfiltration, or command and control, or to cause availability impact. Adversaries commonly attempt to mimic normal, expected traffic to avoid detection. However, a securely configured firewall is likely to reveal signs of endpoint infection in the "deny" logs.
 
 # Name
-Detect Adversarial Activity via Firewall Deny Events
+Detect Suspicious Firewall Activity
 
 # Problem Statement
 
@@ -11,10 +11,8 @@ Adversarial activity may indeed be blocked inherently by a properly secured fire
 
 # Objectives
 
-Bring attention to any of the following events:
-
-- A source system incurs an abnormally high number of firewall denies.
-- A destination system incurs an abnormally high number of firewall denies.
+- Detect a source system with an abnormally high number of firewall denies.
+- Detect a destination system with an abnormally high number of firewall denies.
 
 # Compliance
 
