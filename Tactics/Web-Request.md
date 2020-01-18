@@ -54,11 +54,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - User Name, Bytes In Total, Bytes Out Total, Bytes In/Out Ratio Where Bytes In/Out Ratio exceeds threshold
 
 
-
 # Log Source Examples
 
 
-# Response Options
-
-
-## Possible False Positives
+# Possible False Positives

@@ -32,8 +32,4 @@ Observe general process behavior with the goal of understanding normal and detec
 - Sysmon Event ID 10
 
 
-# Response Options
-- Acquire a copy of the suspicious file for further analysis.
-
-
-## Possible False Postivies
+# Possible False Postivies

@@ -35,11 +35,4 @@ MITRE ATT&CK Framework: [Indicator Removal on Host (T1070)](https://attack.mitre
 - Windows Security Event ID 1104: The security Log is now full
 
 
-## Response Options
-- Contact the source account owner and determine if the activity was authorized.
-- Investigate the last 8 hours of centrally-collected logs from the affected system to reveal any malicious activity.
-- Contain the system with a security tool that blocks traffic, then proceed with forensics.
-- Contain the system by disconnecting all network devices, then proceed with forensics.
-
-
-## Possible False Postivies
+# Possible False Postivies

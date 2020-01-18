@@ -38,7 +38,4 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Layer 7 Firewall Logs
 
 
-# Response Options
-
-
-## Possible False Positives
+# Possible False Positives

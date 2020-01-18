@@ -6,20 +6,26 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Blacklist Alert
-- Known-Bad Destination Port Use
+
 
 ## Whitelist Alert
-- Anomalous Destination Port Use
+- Unexpected Process Names
+
 
 ## Levenshtein Score Alert
+- Processes Matching or Similar to System Processes in Unexpected Directories
 
 
 ## Rolling Whitelist Alert
-- Newly observed Source System, Protocol
-- Newly Observed Source System, HourOfDay
-
+- Newly observed Process
+- Newly observed Port
+- Newly observed Source Port
+- Newly observed Source Port Name
+- Newly observed Destination Port
+- Newly observed Destnation Port Name
 
 ## Shannon Entropy Score Alert
+- Processes with Random Names
 
 
 ## Threshold Alert
@@ -32,9 +38,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 # Log Source Examples
-- Layer 3 or 7 Firewall Logs
-- Netflow Logs
-- IPFIX Logs
-- SFLOW Logs
+- Sysmon Event ID 3
 
 # Possible False Positives

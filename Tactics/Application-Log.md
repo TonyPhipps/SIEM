@@ -47,7 +47,4 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Microsoft-Windows-Windows Defender/Operational Event ID 1116
 
 
-# Response Options
-
-
-## Possible False Positives
+# Possible False Positives

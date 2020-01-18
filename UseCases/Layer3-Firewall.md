@@ -1,20 +1,22 @@
+TODO: Merge into Tactics md's
+
 SIEM Use Cases based on Layer 3 Firewalls
-- [Traffic from Printers to Servers/Workstations](#Traffic-from-Printers-to-ServersWorkstations)
-- [Traffic from Servers to Workstations](#Traffic-from-Servers-to-Workstations)
-- [Traffic from Workstations to Workstations](#Traffic-from-Workstations-to-Workstations)
-- [Unauthorized Egress DNS Traffic](#Unauthorized-Egress-DNS-Traffic)
-- [Unauthorized Egress NTP Traffic](#Unauthorized-Egress-NTP-Traffic)
-- [OS Update Requests to Non-Company Servers](#OS-Update-Requests-to-Non-Company-Servers)
-- [Newly Observed Port Use](#Newly-Observed-Port-Use)
-- [Known-bad Port Observed](#Known-bad-Port-Observed)
-- [Known-bad IP Address Observed](#Known-bad-IP-Address-Observed)
-- [Newly observed UDP Traffic](#Newly-observed-UDP-Traffic)
-- [Spike in Outbound Denies](#Spike-in-Outbound-Denies)
-- [Spike in Egress Sessions](#Spike-in-Egress-Sessions)
-- [Anomalous Upload/Download Ratio](#Anomalous-UploadDownload-Ratio)
-- [Unauthorized Egress Email Traffic](#Unauthorized-Egress-Email-Traffic)
-- [Unauthorized Egress Web Requests](#Unauthorized-Egress-Web-Requests)
-- [Border Firewall Egress Default Deny Blocks](#Border-Firewall-Egress-Default-Deny-Blocks)
+- [Traffic from Printers to Servers/Workstations](#traffic-from-printers-to-serversworkstations)
+- [Traffic from Servers to Workstations](#traffic-from-servers-to-workstations)
+- [Traffic from Workstations to Workstations](#traffic-from-workstations-to-workstations)
+- [Unauthorized Egress DNS Traffic](#unauthorized-egress-dns-traffic)
+- [Unauthorized Egress NTP Traffic](#unauthorized-egress-ntp-traffic)
+- [OS Update Requests to Non-Company Servers](#os-update-requests-to-non-company-servers)
+- [Newly Observed Port Use](#newly-observed-port-use)
+- [Known-bad Port Observed](#known-bad-port-observed)
+- [Known-bad IP Address Observed](#known-bad-ip-address-observed)
+- [Newly observed UDP Traffic](#newly-observed-udp-traffic)
+- [Spike in Outbound Denies](#spike-in-outbound-denies)
+- [Spike in Egress Sessions](#spike-in-egress-sessions)
+- [Anomalous Upload/Download Ratio](#anomalous-uploaddownload-ratio)
+- [Unauthorized Egress Email Traffic](#unauthorized-egress-email-traffic)
+- [Unauthorized Egress Web Requests](#unauthorized-egress-web-requests)
+- [Border Firewall Egress Default Deny Blocks](#border-firewall-egress-default-deny-blocks)
 
 # Traffic from Printers to Servers/Workstations
 - Blacklist Alert

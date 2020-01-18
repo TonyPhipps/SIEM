@@ -31,12 +31,4 @@ MITRE ATT&CK Framework: [New Service (T1050)](https://attack.mitre.org/technique
 - Windows Security Event ID 4697
 
 
-# Response Options
-- Consider the file path of the "Service File." Is it resting in a strange location, like user writeable folders or shares?
-- Determine if the affected system should logically have this type of service created.
-- Contact the source account owner and determine if the activity was authorized.
-- Obtain a copy of the "Service File" and analyze with a malware detonation sandbox.
-- Conduct static analysis on the "Service File".
-
-
-## Possible False Postivies
+# Possible False Postivies

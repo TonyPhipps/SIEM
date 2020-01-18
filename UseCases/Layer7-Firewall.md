@@ -1,17 +1,19 @@
+TODO: Merge into Tactics md's
+
 SIEM Use Cases for Layer 7 Firewalls. Note that Layer 3 Firewall use cases also apply here.
 
-- [Abnormal Expired Certificates](#Abnormal-Expired-Certificates)
-- [Abnormal Self-Signed Certificates](#Abnormal-Self-Signed-Certificates)
-- [Abnormal certificate Algorithms/Sizes](#Abnormal-certificate-AlgorithmsSizes)
-- [Abnormal Certificates Validity Length](#Abnormal-Certificates-Validity-Length)
-- [Certificates with Abnormal Common Name Fields](#Certificates-with-Abnormal-Common-Name-Fields)
-- [Certificates with Blank Fields that are Commonly Filled](#Certificates-with-Blank-Fields-that-are-Commonly-Filled)
-- [Certificates with Invalid Country Codes / States](#Certificates-with-Invalid-Country-Codes--States)
-- [Newly-observed Protocol in Use](#Newly-observed-Protocol-in-Use)
-- [Protocol Use Over Non-Standard Port](#Protocol-Use-Over-Non-Standard-Port)
-- [Web requests Directly to IP Address](#Web-requests-Directly-to-IP-Address)
-- [Newly Observed File Transfer Protocol Use](#Newly-Observed-File-Transfer-Protocol-Use)
-- [Unauthorized X-Forwarded-For Address](#Unauthorized-X-Forwarded-For-Address)
+- [Abnormal Expired Certificates](#abnormal-expired-certificates)
+- [Abnormal Self-Signed Certificates](#abnormal-self-signed-certificates)
+- [Abnormal certificate Algorithms/Sizes](#abnormal-certificate-algorithmssizes)
+- [Abnormal Certificates Validity Length](#abnormal-certificates-validity-length)
+- [Certificates with Abnormal Common Name Fields](#certificates-with-abnormal-common-name-fields)
+- [Certificates with Blank Fields that are Commonly Filled](#certificates-with-blank-fields-that-are-commonly-filled)
+- [Certificates with Invalid Country Codes / States](#certificates-with-invalid-country-codes--states)
+- [Newly-observed Protocol in Use](#newly-observed-protocol-in-use)
+- [Protocol Use Over Non-Standard Port](#protocol-use-over-non-standard-port)
+- [Web requests Directly to IP Address](#web-requests-directly-to-ip-address)
+- [Newly Observed File Transfer Protocol Use](#newly-observed-file-transfer-protocol-use)
+- [Unauthorized X-Forwarded-For Address](#unauthorized-x-forwarded-for-address)
 
 # Abnormal Expired Certificates
 - Aggregate Count

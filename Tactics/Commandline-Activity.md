@@ -54,12 +54,5 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 - Endpoint Detection and Response product
 
 
-# Response Options
-- Contact the source account owner and determine if the activity was authorized.
-- Investigate the last 8 hours of centrally-collected logs from the affected system to reveal any malicious activity.
-- Contain the system with a security tool that blocks traffic, then proceed with forensics.
-- Contain the system by disconnecting all network devices, then proceed with forensics.
-
-
-## Possible False Positives
+# Possible False Positives
 - Many commandline activities performed by authorized privileged users may false-positive on this content.

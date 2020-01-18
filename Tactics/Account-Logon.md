@@ -45,10 +45,5 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Windows Security Event ID 4648: A logon was attempted using explicit credentials
 
 
-# Response Options
-- Contact the account owner and determine if the issue is a configuration error.
-- Block the traffic from the source IP.
-
-
-## Possible False Postivies
-- This method may pick up failed service accounts repeatedly trying to "do their job" with a locked account. Notifying the appropriate admin is a good idea here.
+# Possible False Postivies
+- May pick up failed service accounts repeatedly trying to "do their job" with a locked account. Notifying the appropriate admin is a good idea here.

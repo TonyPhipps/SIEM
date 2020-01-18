@@ -45,7 +45,4 @@ Requests where type=TXT and TXT field length exceeds X characters (filter by RCO
 - Microsoft Sysmon Event ID 22: DNSEvent (DNS query)
 
 
-# Response Options
-
-
-## Possible False Positives
+# Possible False Positives

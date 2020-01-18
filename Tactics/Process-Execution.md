@@ -83,8 +83,4 @@ MITRE ATT&CK Framework:
 - Sysmon Event ID 1
 
 
-# Response Options
-- Acquire a copy of the suspicious file for further analysis.
-
-
-## Possible False Postivies
+# Possible False Postivies

@@ -52,7 +52,4 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Endpoint Email client logs
 
 
-# Response Options
-
-
-## Possible False Positives
+# Possible False Positives

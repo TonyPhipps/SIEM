@@ -39,7 +39,4 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Windows Security Event ID 4720: A user account was created
 
 
-# Response Options
-
-
-## Possible False Positives
+# Possible False Postivies

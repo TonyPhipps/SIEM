@@ -29,7 +29,4 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Host-Based IPS Signatures
  
 
-# Response Options
-
-
-## Possible False Positives
+# Possible False Positives

@@ -1,3 +1,5 @@
+# TODO: Merge into Tactics md's
+
 # Use Cases by Detection Method
 
 Grouped by [Detection Method](/Detection-Methods.md)
@@ -49,7 +51,4 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Windows Security Event ID 4781: The name of an account was changed
 
 
-# Response Options
-
-
-## Possible False Positives
+# Possible False Positives
