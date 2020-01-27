@@ -1,3 +1,5 @@
+Seek to understand the holistic structure of the organization, its mission, its tolerance for risk, and its culture.
+
 # Internal Points of Contact
 
 - IT Support
@@ -31,7 +33,7 @@ What compliance mandates are required by law or internal policy? Which systems a
 - FISMA
 - Sarbanes-Oxley Act
 - GDPR
--Other Foreign laws
+- Other Foreign laws
 - NIST 800-53
 - ISO/IEC 27002
 
@@ -70,3 +72,6 @@ What compliance mandates are required by law or internal policy? Which systems a
 - Change Management Process
 - Acceptable Use Policy
 - Data Classification and Protection
+
+# Temporal Documentation
+- Vulnerability Scan Reports

@@ -1,5 +1,6 @@
 A "use case" describes and documents a goal and how it's objectives are accomplished by people, tools, and processes.
 
+
 - [Executive Summary](#executive-summary)
   - [Name](#name)
   - [Problem Statement](#problem-statement)
@@ -12,9 +13,13 @@ A "use case" describes and documents a goal and how it's objectives are accompli
   - [Recommended Response Action(s)](#recommended-response-actions)
 - [Engineering](#engineering)
   - [Component Names](#component-names)
+    - [Alert [Name]](#alert-name)
+    - [Query [Name]](#query-name)
   - [Data Stream Analysis](#data-stream-analysis)
   - [Validation](#validation)
+    - [Attack Simlulation](#attack-simlulation)
   - [References and Resources](#references-and-resources)
+
 
 # Executive Summary
 
@@ -23,7 +28,7 @@ Primarily focused on providing high-level information, references, and backgroun
 
 ## Name
 
-A succinct statement that describes intention of the use case (e.g. Detect Communication with a Known-Bad IP). Group multiple detection components into a single use case when they share other characteristics in Executive Summary and Analysis sections.
+A succinct statement that describes intention of the use case (e.g. Detect Communication with a Known-Bad IP). 
 
 
 ## Problem Statement
@@ -62,19 +67,24 @@ Describes how analysts will monitor or be notified of activity. This typically i
 
 ## Recommended Response Action(s)
 
-Describes which actions should be taken with the information provided - typically alerts or simply observing something anomalous. 
+Describes which actions should be taken with the information provided - typically alerts or simply observing something anomalous.
 
 
 # Engineering
 
-The necessary steps and content construction that fulfills the use case.
+The necessary steps and content construction that fulfills the use case. If the entire monitoring/alerting solution were replaced, this section should allow complete reconstruction.
 
 
 ## Component Names
 
-The base components that provide business logic, display, and notification. Includes expected event log construction and field contents included. Includes server names, user names, document names, scripts, queries, etc.
+The base components that provide business logic, display, and notification. 
+- Include the expected source log makeup and example.
+- Use a word like "Suspicious" to indicate that the fidelity is lower, therefore some false positives may result.
+- Group alerts/queries into a single use case when they share common objectives/recommended response actions.
 
-### Alert Name
+
+### Alert [Name]
+
 - Filter
 - Grouping
 - Severity
@@ -83,6 +93,14 @@ The base components that provide business logic, display, and notification. Incl
   - Time Window
 - Category/Normalization
 - Tags
+- Fidelity (high means no false positives)
+
+
+### Query [Name]
+
+- Query String
+- Fidelity (high means no false positives)
+- Query Explanation
 
 
 ## Data Stream Analysis
@@ -93,6 +111,7 @@ Pseudocode-like logic flow of how events are processed by the SIEM and presented
 ## Validation
 
 Methods to ensure the use case was developed and is operating properly. These can be pass/fail, time based, or other relevant measurements. When possible, include an automated script or manual steps to cause the alert to fire on demand (i.e. attack simulation)
+
 
 ### Attack Simlulation
 

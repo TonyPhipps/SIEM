@@ -48,6 +48,7 @@ MITRE ATT&CK Framework:
 ## Whitelist Alert
 - Anomalous Office Product Child Process
 - Anomalous process ran by 'NT AUTHORITY\SYSTEM'
+- Anomalous process ran by 'NETWORK SERVICE'
 - Anomalous use of 'wmic'
 - Anomalous use of certutil with '-decode' in command line
 - Anomalous use of 'reg'
