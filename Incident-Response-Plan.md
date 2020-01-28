@@ -1,7 +1,6 @@
 The following sample incident response plan is meant to be tailored to your organization before use.
 
 - [References](#references)
-- [Definitions](#definitions)
 - [Responsibilities](#responsibilities)
 - [Assumptions](#assumptions)
 - [Objectives](#objectives)
@@ -31,11 +30,6 @@ The following sample incident response plan is meant to be tailored to your orga
 - SANS Incident Response Stages
 
 
-# Definitions 
-
-(See Glossary)
-
-
 # Responsibilities
 
 - Incident Responders will:
@@ -47,7 +41,7 @@ The following sample incident response plan is meant to be tailored to your orga
   - Maintain up-to-date work log and other details within the incident tracking system(s).
   - Provide feedback and/or adjustments regarding protection measures, identification and detection content, and response actions.
   - Share and document lessons learned to improve the overall service and team.
-- Senior Incident Handling Leads will:
+- Senior Incident Responders will:
   - Provide oversight and management of responsibilities for Incident Responders.
   - Monitor the enterprise-wide status of computer incident response actions and activities.
   - Provide guidance and assistance to all organizational elements in dealing with computer incidents/events.
@@ -58,8 +52,6 @@ The following sample incident response plan is meant to be tailored to your orga
 
 The following documents/resources are familiar and readily accessible:
 - Cyber Security Events stored in Enterprise Log Management System
-- Applicable organizational CERT Techniques, Tactics, and Procedures (TTP)
-- Applicable organizational CERT Quick Reference Guides (QRG)
 
 
 #  Objectives
@@ -188,7 +180,7 @@ Law Enforcement / Criminal Investigations (LE/CI), will be notified of all activ
 - Involves child pornography
 - Otherwise legally questionable
 
-Report of such incidents will occur according to priority timelines previously outlined. Any reported incident will include all related evidence and investigation will be paused immediately. If the CERT Incident Responder or Forensic Analyst takes action on behalf of LE/CI, they are considered an Agent of Law Enforcement, possibly leading to a court summons. Such authorization must be provided by a manager or a higher position of authority. If authorization is provided, the Incident Responder must ensure that all evidence handling, chain of custody forms, and notes are thoroughly recorded. Management and LE/CI must remain fully informed and involved regarding all decisions revolving around Law Enforcement requesting action of an Incident Responder.
+Report of such incidents will occur according to priority timelines previously outlined. Any reported incident will include all related evidence and investigation will be paused immediately. If the Incident Responder or Forensic Analyst takes action on behalf of LE/CI, they are considered an Agent of Law Enforcement, possibly leading to a court summons. Such authorization must be provided by a manager or a higher position of authority. If authorization is provided, the Incident Responder must ensure that all evidence handling, chain of custody forms, and notes are thoroughly recorded. Management and LE/CI must remain fully informed and involved regarding all decisions revolving around Law Enforcement requesting action of an Incident Responder.
 
 For incidents to be investigated for computer crime, a qualifying Incident Responder will understand proper forensics and evidence handling policies and procedures. Otherwise, the Incident Handler must stand by and seek the assistance of a qualified Incident Responder to perform proper evidence collection. Data and information gathered for forensics analysis or evidence must be obtained and handled IAW various applicable laws, possibly spanning many jurisdictions, in order to ensure the authenticity and reliability of the information, that it remains admissible in court.
 
@@ -203,10 +195,8 @@ A proper chain of custody must be maintained for all evidence including, but not
 
 It is generally desirable to acquire evidence from a system of interest as soon as one suspects that an incident may have occurred. Many incidents cause a dynamic chain of events to occur; an initial system snapshot may do more good in identifying the problem and its source than most other actions that can be taken at this stage. From an evidentiary standpoint, it is much better to get a snapshot of the system as-is rather than doing so after Incident Responders, system administrators, and others have inadvertently altered the state of the machine during the investigation.
 
-Physical evidence will be placed in a protected storage container or secure areas appropriate for the classification of the data/hardware, where access is limited to the Organizational CERT and other staff investigating the incident. The evidence shall have a log file containing the following information:
-- Storage container (for classified incident handling)
-- Secure area (for non-classified incident)
-- IAM/IAO or system administrator who imaged the system
+Physical evidence will be placed in a protected storage container or secure areas appropriate for the classification of the data/hardware, where access is limited to and tracked by those investigating the incident. The evidence shall have a log file containing the following information:
+- Individual who imaged the system
 - System from which the image was attained
 - System IP and DNS name, if available
 - Date and Time of the image creation
