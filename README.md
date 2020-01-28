@@ -22,8 +22,6 @@ Use Cases provide a means to document solutions for many reasons including track
 
 ## [Use Case Structure](/Use-Case-Structure.md)
 
-## [Use Case Samples](/Use-Case-Samples.md)
-
 
 # Data Enrichment
 
