@@ -183,39 +183,37 @@ Law Enforcement will be notified of all activity matching the following characte
 - Involves child pornography
 - Otherwise legally questionable
 
-Report of such incidents will occur according to priority timelines previously outlined. Any reported incident will include all related evidence and investigation will be paused immediately. If the Incident Responder or Forensic Analyst takes action on behalf of LE/CI, they are considered an Agent of Law Enforcement, possibly leading to a court summons. Such authorization must be provided by a manager or a higher position of authority. If authorization is provided, the Incident Responder must ensure that all evidence handling, chain of custody forms, and notes are thoroughly recorded. Management and LE/CI must remain fully informed and involved regarding all decisions revolving around Law Enforcement requesting action of an Incident Responder.
+Report of such incidents will occur according to priority timelines previously outlined. Any reported incident will include all related evidence and investigation will be paused immediately. If the Incident Responder or Forensic Analyst takes action on behalf of Law Enforcement, they are considered an Agent of Law Enforcement, possibly leading to a court summons. Such authorization must be provided by a manager or a higher position of authority. If authorization is provided, the Incident Responder must ensure that all evidence handling, chain of custody forms, and notes are thoroughly recorded. Management and Law Enforcement must remain fully informed and involved regarding all decisions revolving around Law Enforcement requesting action of an Incident Responder.
 
-For incidents to be investigated for computer crime, a qualifying Incident Responder will understand proper forensics and evidence handling policies and procedures. Otherwise, the Incident Handler must stand by and seek the assistance of a qualified Incident Responder to perform proper evidence collection. Data and information gathered for forensics analysis or evidence must be obtained and handled IAW various applicable laws, possibly spanning many jurisdictions, in order to ensure the authenticity and reliability of the information, that it remains admissible in court.
+For incidents to be investigated for computer crime, a qualifying Incident Responder will have a firm understanding of proper forensics and evidence handling policies and procedures. Otherwise, the Incident Handler must stand by and seek the assistance of a qualified Incident Responder to perform proper evidence collection. Data and information gathered for forensics analysis or evidence must be obtained and handled in accordance with various applicable laws, possibly spanning many jurisdictions, in order to ensure the authenticity and reliability of the information ensuring it remains admissible in court.
 
-Pornography alone is not enough to alert LE/CI, unless it involves a minor or is otherwise legally questionable.
+Pornography alone is not enough to alert Law Enforcement unless it involves a minor or is otherwise legally questionable.
 
 
 ### Chain of Custody
 
 It is important to clearly document how all evidence has been preserved. Evidence shall be accounted for at all times; whenever evidence is transferred from person to person, chain of custody forms will detail the transfer and include each party’s signature.
 
-A proper chain of custody must be maintained for all evidence including, but not limited to, log files, forensic images, hard drives, peripherals, removable media, and other hardware related to the Incident. This also applies to backups of evidence created while in abeyance of further instruction, shipment, or onsite pickup by law enforcement.
-
-It is generally desirable to acquire evidence from a system of interest as soon as one suspects that an incident may have occurred. Many incidents cause a dynamic chain of events to occur; an initial system snapshot may do more good in identifying the problem and its source than most other actions that can be taken at this stage. From an evidentiary standpoint, it is much better to get a snapshot of the system as-is rather than doing so after Incident Responders, system administrators, and others have inadvertently altered the state of the machine during the investigation.
+A proper chain of custody must be maintained for all evidence including, but not limited to, log files, forensic images, hard drives, peripherals, removable media, and other hardware related to the Incident. This also applies to backups of evidence created while in abeyance of further instruction, shipment, or onsite pickup by Law Enforcement.
 
 Physical evidence will be placed in a protected storage container or secure areas appropriate for the classification of the data/hardware, where access is limited to and tracked by those investigating the incident. The evidence shall have a log file containing the following information:
-- Individual who imaged the system
+- Individual who created or acquired the evidence
 - System from which the image was attained
 - System IP and DNS name, if available
-- Date and Time of the image creation
-- Date and Time of the initial incident
-- A list of all individuals who accessed the image, if any
-- When applicable, an MD5-Hash of the image when created
-- The software utilized to obtain the image
-- A Signature of the person who created image
-- A Signature of person who secured image
+- Date and time of the image creation
+- When applicable, an hash of the evidence immediately after creation time
+- Date and time of the initial identification/discovery
+- A list of all individuals who accessed the evidence
+- The software utilized to obtain the evidence
+- Date, time, and signature of the person who created the evidence
+- Date, time, and signature of the person who secured the evidence
 
 
 ### Turnover Log & Call
 
-In order to facilitate information exchance, a brief Turnover Call will be conducted between each of the three shifts. Turnover calls will signify the relinquishing of monitoring duties from one shift to the next including promptly responding to phone calls, emails, and other related duties.
+In order to facilitate information exchance, a brief Turnover Call will be conducted between each of the three shifts. Turnover calls will signify the relinquishing of monitoring duties and investigation continuation from one shift to the next including promptly responding to phone calls, emails, and other related duties.
 
-A turnover page will be maintained on Confluence to track any ongoing tasks that must continue to the next shift including, but not limited to:
+A turnover page will be maintained on Confluence/SharePoint/Collaboration Tool to track any ongoing tasks that must continue to the next shift including, but not limited to:
 - Follow-up calls.
 - Repeating notifications where acknowledgement was not received.
 - Continuing to work open cases.
