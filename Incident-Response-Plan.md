@@ -2,21 +2,20 @@ The following sample incident response plan is meant to be tailored to your orga
 
 - [References](#references)
 - [Responsibilities](#responsibilities)
-- [Assumptions](#assumptions)
 - [Objectives](#objectives)
 - [Preparation](#preparation)
   - [Incident Tracking System](#incident-tracking-system)
   - [Documentation, Training, Awareness](#documentation-training-awareness)
   - [Internally-Gathered Indicators of Compromise](#internally-gathered-indicators-of-compromise)
   - [Coordination & Correspondence](#coordination--correspondence)
-    - [Safeguarding Information](#safeguarding-information)
-    - [Sanitization of Data](#sanitization-of-data)
-    - [Escalation](#escalation)
-    - [Notification](#notification)
-    - [External Notification](#external-notification)
-    - [Law Enforcement Notification and Interaction](#law-enforcement-notification-and-interaction)
-    - [Chain of Custody](#chain-of-custody)
-    - [Turnover Log & Call](#turnover-log--call)
+  - [-------------------](#hr)
+  - [-------------------](#hr-1)
+  - [-------------------](#hr-2)
+  - [-------------------](#hr-3)
+  - [-------------------](#hr-4)
+  - [-------------------](#hr-5)
+  - [-------------------](#hr-6)
+  - [-------------------](#hr-7)
 
 
 # References
@@ -26,6 +25,7 @@ The following sample incident response plan is meant to be tailored to your orga
 - NIST SP 800-86, Guide to Integrating Forensic Techniques into Incident Response
 - CJCSM 6510.01B, Cyber Incident Handling Program
 - Blueteam Handbook: SOC, SIEM, and Threat Hunting
+- Blueteam Handbook: Incident Response Edition
 - Crafting the InfoSec Playbook
 - SANS Incident Response Stages
 
@@ -48,12 +48,6 @@ The following sample incident response plan is meant to be tailored to your orga
   - Maintain awareness of business operations to identify potential impact to organizational systems and anything that may impact incident response work load or incident response operations at large.
 
 
-# Assumptions
-
-The following documents/resources are familiar and readily accessible:
-- Cyber Security Events stored in Enterprise Log Management System
-
-
 #  Objectives
 
 This policy provides a general, standardized process that establishes the intent and requirements for detecting, analyzing, and responding to information or technology events or incidents for the purpose of mitigating any adverse operational or technical impact on critical client data, systems, networks, and services.
@@ -71,74 +65,83 @@ The primary objectives are to:
 
 # Preparation
 
-The goal of Preparation is to ensure an Incident Responder has knowledge and references essential to handling an incident. Incident Responders should be familiar with the following documents and have them readily accessible:
-- Infrastructure Diagrams.
-- Critical systems and services to business operations.
-- Local laws and regulations applicable to the affected systems governing incident response, data privacy, and others with impact to investigations.
-- Rules of Behavior
-- Cybersecurity Training
-- Login Warning Banner
-- Points of Contact
+The goal in preparation is to ensure Incident Responders have the knowledge and references essential to handling an incident. Incident Responders should be familiar with the following documents and have them readily accessible:
+- IP Address Management
+- Network Architecture Diagrams
 - User Directory
-- Hardware Inventory
+- Asset Inventory
+  - Critical systems and services to business operations
+- Local laws and regulations applicable to the affected systems governing incident response, data privacy, and others with impact to investigations.
+- Rules of Behavior / Acceptable Use Policy
+- Login Warning Banner
+- User Directory
+- Account and Device Naming Convetions
+- Disaster Recovery Plan
+- Business Continuity Plan
+- Change Mangement Procedures
+- Data Classification and Protection Guidelines
+- Standard Security Configurations
 
 
 ## Incident Tracking System
 
-A full-featured ticketing system will be used to track all Incidents. All Incidents and related data will be stored for a period of no less than 1 (one) year. Incidents must be actioned upon and updated at least once per shift until closure. Updates will consist of, at a minimum, a Work Log entry specifying the last action taken or pending status. It is the shared responsibility of all Incident Responders to ensure all incidents receive proper attention and timely updates.
+A full-featured ticketing system will be used to track all Incidents. All Incidents and related data will be stored for a period of no less than 1 (one) year. Incidents must be actioned upon and updated at least once per shift until closure. Updates will consist of, at a minimum, a Work Log entry specifying the last action taken, who took the actions, and when. It is the shared responsibility of all Incident Responders to ensure all incidents receive proper attention and timely updates.
 
-The Work Log will be used to document email correspondence and other information related to the incident.
+Tickets will have relevant emails and correspondence attached in such a way that they are archived alongside other details for review and records.
 
-Results of related reports, searches, and other files that are not easily added to the Work Log will be added to the incident as an  attachment or stored in the Incidents Archive (keeping in mind encryption policies).
+Documents too large or otherwise not easily attached to the Ticket will be stored in a secondary file system, encrypted and limited in access to the Incident Response Team and other parties with a need-to-know.
 
-The Executive Summary will be kept up-to-date, reflecting the known beginning, midddle, and end of each incident at a high level. Pending details should be included in this field, as they provide the current summary.
+The Executive Summary will be kept up-to-date, reflecting the known beginning, midddle, and end of each incident at a high level. Outstanding actions should be included in this field, as they provide the current summary.
 
 
 ## Documentation, Training, Awareness
 
 Incident Responders will maximize off-peak duty hours by remaining productive and helpful to the team, including...
-- performing and seeking cross-training
-- improving & updating documentation
-- maintaining awareness of cyber security through official and open-source intelligence
-- studying normal behavior of monitored logs, networks, systems, etc. with the goal of improving identification of anomalies
-- safely validating signatures fire as expected
+- remaining familiar with documents and diagrams listed in the preparation phase.
+- performing and seeking cross-training.
+- improving & updating documentation.
+- maintaining awareness of cyber security through official and open-source intelligence.
+- studying normal behavior of monitored logs, networks, systems, etc. with the goal of improving identification of anomalies.
+- safely validating signatures fire as expected.
 
 The internal Knowledge Base will be kept up-to-date with detailed procedures for products and Incident Response-specific processes.
 
-The Knowledge Base will be referenced often and maintained by Incident Handling Leads. Incident Responders are to assist in keeping it up to date and reflective of current procedures by updating as soon as possible when steps change for any reason (i.e. software updates, governance updates, improvements in knowledge or experience gained).
+The Knowledge Base will be referenced often and maintained by Senior Incident Responders. Incident Responders are to assist in keeping articles up to date and reflective of current procedures by updating as soon as possible when steps change for any reason (i.e. software updates, governance updates, improvements in knowledge or experience gained).
 
 
 ## Internally-Gathered Indicators of Compromise
 
-True-positive incidents may provide valuable indicators of compromise including file names, URLs, IP addresses, domains, etc. that could reveal compromise of other systems being monitored. These internal  IOCs and their respective details will be tracked in such a way that allows Incident Responders to quickly find, study, and respond to ongoing investigations. Details will include the context in which the IOC was first observed, when it will expire, and where it is currently being leveraged for automated detection, if at all.
+True-positive incidents may provide valuable indicators of compromise (IOC) including file names, URLs, IP addresses, domains, etc. that could reveal compromise of other systems being monitored. These internal IOCs and their respective details will be tracked in such a way that allows Incident Responders to quickly find, study, and respond to ongoing investigations. Details will include the context in which the IOC was first observed, when it will expire, and where it is currently being leveraged for automated detection.
 
-Internal IOCs will be reviewed annually at expiration time and each time it is referenced during an investigation. If the IOC is determined to still be of use, its expiration will be set for one year from that review date.
+Internal IOCs will be reviewed annually at expiration time and each time it is referenced during an investigation. If the IOC is determined to still be of value, its expiration will be set for one year from that review date.
 
 
 ## Coordination & Correspondence
 
-Incident Responders will often need to communicate with outside parties regarding an incident, and should do so whenever appropriate, such as contacting law enforcement, ISP’s, vendors, other incident response teams, and seeking external expertise. The incident response team should maintain contacts with the public affairs office, legal department, and various persons in management.
+Incident Responders will often need to communicate with outside parties regarding an incident, and should do so whenever appropriate, such as contacting law enforcement, ISP’s, vendors, other incident response teams, and seeking external expertise. The Incident Response Team should maintain contacts with the public affairs office, legal department, and various persons in management.
 
-All email correspondence related to incidents will include a carbon-copy (CC) to the team mailbox. Emails containing sensitive information must have all recipients verified for authoried access and must be encrypted.
+All email correspondence related to incidents will include a carbon-copy (CC) to the Incident Response Team email inbox. Emails containing sensitive information must have all recipients verified for authoried access and must be encrypted. Using an external, encrypting file sharing service is acceptable.
 
 All communication, files, and information related to an incident will be disseminated only on a need-to-know basis. Incident details shall not be discussed outside of the Incident Response team and its management without previous consent from management.
 
 Incident Responders may need to speak to a software vendor about suspicious activity. This contact could include questions regarding the significance of certain log entries or known false positives for certain intrusion detection signatures, where minimal information regarding the incident may need to be revealed. Software vendors may also provide information on known threats (e.g., new attacks) to help organizations understand the current threat environment. Sanitization shall be performed on data prior to being sent to software vendors when possible and reasonable. Scripts may be used to significantly reduce what appears to be a large amount of manual effort.
 
+At least one secondary communication channel should be established in the case where primary means of communication may be compromised. This could be cell phones, secondary email accounts, etc. These systems must be established prior to their need to minimize their immediate use in a time of need.
+
 
 ### Safeguarding Information
 
-Incident Responders will practice due diligence in safeguarding  information related to incidents both while stored at rest and in transit. Every effort will be made to reasonably secure data known to contain sensitive information through with modern encryption techniques both in transit (e.g. email encryption and secure web servers) and at rest (e.g. encrypted zip containers and physical media).
+Incident Responders will practice due diligence in safeguarding information related to incidents both while stored at rest and in transit. Every effort will be made to reasonably secure data known to contain sensitive information with modern encryption techniques applied, both in transit (e.g. email encryption and secure web servers) and at rest (e.g. encrypted zip containers and physical media).
 
 
 ### Sanitization of Data
 
-After authorization for data relase to third parties, a sanitization check is required to ensure the data is appropriate for the audience. Possible concerns include the releasing of protected intellectual property or other data protected by laws and governance.
+After receiving authorization for data release to third parties, a sanitization check is required to ensure the data is appropriate for the audience. Possible concerns include the releasing of protected intellectual property or other data protected by laws and governance. This data can be stripped with custom scripts or tools design for such sanitization. Only once sentiive data is removed or obfuscated will the data be shared.
 
 
 ### Escalation
 
-Incident Responders unable requiring assistance must escalate an incident to the next higher position of seniority. The next level of escalation is the manager and remaining chain of command, who may then request external, third-party assistance if needed.
+Incident Responders requiring assistance must escalate an incident to the next higher position of seniority. The next level of escalation beyond the Incident Response Team is the manager and remaining chain of command, who may then request external, third-party assistance if needed.
 
 
 ### Notification
@@ -152,18 +155,18 @@ Incidents are classified by priority, which in turn determines notification time
  |  Medium   |    8h     |
  |    Low    |    24h    |
 
-Recipients are expected to acknowledge the receipt of notification emails following the same timeline above. If an acknowledgement is not received, the Incident Responder will begin the notification process again seeking acknowledgement through another means of communication, like email. Further lack of response will result in escalating the case to a higher authority. The notification process will be repeated until acknowledgement is received or if the incident runs its course to complete recovery.
+Recipients are expected to acknowledge the receipt of notification emails following the same timeline above. If an acknowledgement is not received, the Incident Responder will begin the notification process again seeking acknowledgement through another means of communication, like email or phone. Further lack of response will result in escalating the case to a higher authority. The notification process will be repeated until acknowledgement is received or if the incident runs its course to complete recovery.
 
 High or emergency cases that require continuous attention will be passed along during each shift turnover until resolved.
 
 
 ### External Notification
 
-All external correspondence must be sent with courtesy copies (CC) to the SOC group inbox with incident ID number in the subject. All correspondence with Emergency priority will be sent with CC to sender's Manager.
+All external correspondence must be sent with courtesy copies (CC) to the Incident Response Team email box with incident ID number in the subject. All correspondence with Emergency priority will be sent with CC to sender's manager and the recipients manager, when possible.
 
 Any incident that may potentially affect another organization must be reported to that organization as soon as possible along with a summary sufficiently detailed to allow them to begin an investigation.
 
-Incidents or situations escalating or expected to escalate to LE/CI or to parties outside the organization will also include notification of management beforehand and during correspondence through availble means (CC line, teleconference information sharing, etc).
+Incidents or situations escalating or expected to escalate to Law Enforcement or to parties outside the organization will also include notification of management beforehand and during email, phone, or other correspondence.
 
 Example external parties
 - Law Enforcement
@@ -173,10 +176,10 @@ Example external parties
 
 ### Law Enforcement Notification and Interaction
 
-Law Enforcement / Criminal Investigations (LE/CI), will be notified of all activity matching the following characteristics:
+Law Enforcement will be notified of all activity matching the following characteristics:
 - Threatens public safety
 - Threatens national security
-- Substantial operational or financial impact to a U.S. citizen, company, or similar entity.
+- Substantial operational or financial impact to a U.S. citizen, company, or similar entity
 - Involves child pornography
 - Otherwise legally questionable
 
@@ -223,3 +226,13 @@ Other agenda items may include:
 - Important use case adjustments
 - Zero-day announcements affecting monitored users, systems, software, etc.
 
+
+-------------------
+-------------------
+-------------------
+-------------------
+-------------------
+-------------------
+-------------------
+-------------------
+-------------------
