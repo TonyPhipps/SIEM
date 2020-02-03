@@ -8,6 +8,9 @@ The following sample incident response plan is meant to be tailored to your orga
   - [Documentation, Training, Awareness](#documentation-training-awareness)
   - [Internally-Gathered Indicators of Compromise](#internally-gathered-indicators-of-compromise)
   - [Coordination & Correspondence](#coordination--correspondence)
+- [Identification](#identification)
+  - [Initial Assessment](#initial-assessment)
+  - [Opening an Incident](#opening-an-incident)
   - [-------------------](#hr)
   - [-------------------](#hr-1)
   - [-------------------](#hr-2)
@@ -225,6 +228,54 @@ Other agenda items may include:
 - Zero-day announcements affecting monitored users, systems, software, etc.
 
 
+# Identification
+
+An event is any observable occurrence in a system or network. Events include a user connecting to a file share, a server receiving a request for a web page, a user sending email, and a firewall blocking a connection attempt. Suspicious activity includes events with a potentially negative consequence, such as system crashes, packet floods, unauthorized/questionable use of system privileges, unauthorized/questionable access to sensitive data, and destruction of data. An incident is a violation or imminent threat ...
+- of violation of computer security policies
+- of acceptable use policies
+- of standard security practices
+- to confidentiality of business-critical data
+- to accessiblity of business-critical services
+- to integrity of business-critical data
+
+Incident Responders will monitor available dashboards, signatures, and logs for suspicious activity and events that have the potential to cause an incident. Identification by automated means (e.g. signatures, heuristics analysis, statistics-based anomalies, and automated correlation) will be leveraged to increase the effectiveness of each Incident Responder. Manual identification methods, such as relying on users to identify and report infected hosts, and individually checking each host, are not feasible for most situations. However, a means of manual end-user reporting will be made available by maintaining a group email box and a phone number.
+
+Incidents can originate from several other sources, including:
+- Users or individuals may report suspicious activity via email, telephone, or a support ticket.
+- Reports from other organizations such as another service provider, governments agencies, law enforcement, partners, and competitors.
+
+However, centralized log databases and Security Information and Event Management (SIEM) solutions are expected to be the primary points of monitoring and incident identification. Within the SIEM, correlation rules and dashboards will be maintained that both display events of particular concern and present recent events for short-term correlation and analysis. Queries tuned to the business operating environment will be maintained and shared among the team to speed up identification.
+
+Identification can occur from multiple places in the environment, including:
+- Network-level events including firewalls, VPN, proxy logs, network-level intrusion detection and prevention systems, network access control, routers, switches, and other appliances.
+- Workstation-level events including operating system events, antivirus, host-based intrusion prevention systems, host-based firewalls, rogue detection, application whitelisting, etc.
+- Server-level events including Active Directory, DNS, DHCP, web, database, and other application servers.
+
+
+## Initial Assessment
+
+An initial assessment will be conducted to determine if the identified event or activity constitutes an incident. Initial assessment shall be performed quickly, even with limited details and analysis. After initial assessment, if the activity or event is determined to be benign, no incident is required.
+
+An Incident Responder that suspects that an incident has occurred shall immediately start recording all facts regarding the potential incident. At the very least this will include date/time, source party, destination party(ies), a description of the actions performed, and a copy of correspondence/events. Documenting system events, conversations, and observed changes in files can lead to a more efficient, more systematic, and less error-prone handling of the incident. Every step taken from the time the incident was detected to its final resolution will be documented and time-stamped. Information of this nature can also be used as evidence in a court of law if legal prosecution is pursued.
+
+When conducting an initial assessment, the following will be considered:
+- When did the activity first begin? When did it end, or is it on-going?
+- Was the activity observed conducted by an expected, authorized party?
+  - Implies gathering data on involved users.
+- Was the activity observed conducted on an expected, authorized system?
+  - Implies gathering data on involved systems.
+- Did the activity occur during an expected time of day?
+  - Implies gathering and normalizing time stamps.
+- What would the potential business impact be if an incident is confirmed?
+  - Implies understanding business processes and criticality of systems.
+- Were any relevant security alarms triggered?
+
+
+## Opening an Incident
+
+The investigating Incident Responder will create an incident and assign it to themselves. Senior Incident Responders may assign and reassign incidents as needed. Incident Responders may request incident reassignments, which remains at the discretion of the present Senior Incident Responders, management, or the most senior Incident Responder on duty. The Incident Responder assigned to an incident is responsible for successful execution of all actions required in handling the incident until otherwise notified or relieved during the next shift change. The assigned Incident Responder may request assistance from team members, but ultimately maintains all responsibility for the progression of the incident.
+
+
 -------------------
 -------------------
 -------------------
@@ -234,3 +285,4 @@ Other agenda items may include:
 -------------------
 -------------------
 -------------------
+
