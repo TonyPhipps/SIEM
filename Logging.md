@@ -5,7 +5,7 @@ The following is a prioritized list of recommended event logs to collect into yo
 - DHCP Leases
 - DNS Queries (with endpoint name/IP)
 - Active Directory / LDAP Logs
-- Egress Firewall Traffic
+- Layer 3 or 7 Firewall (Egress Only)
 - Web Proxy Requests
 - VPN Authentication
 - Security Product Alerts
