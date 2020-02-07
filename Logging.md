@@ -58,11 +58,11 @@ Common tune-outs at the ingest level include
 
 Some logs can be significantly reduced by eliminating one or more fields, like Windows Event Logs often multi-paragraph long descriptions included in the log.
 
-Logs that do not provide basic security context should be considered for tuning out.
+Logs that do not provide basic security context should be considered for tuning out:
 - Date and Time of Action
 - Source System/Account Attribution
 - Description of Action
 - Description of Target (when applicable)
 - Description of Outcome (sometimes implied)
 
-Note: This does not immply that non-security focused logs are no value/use.
+Note: This does not immply that non-security focused logs are of no value/use.
