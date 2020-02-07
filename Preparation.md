@@ -81,29 +81,32 @@ What compliance mandates are required by law or internal policy? Which systems a
 - What log sources are available immediately?
 - What log sources can we work on down the road?
 
-# Leverageable Systems
-Incident Response may benefit greatly from logs, read access, write access, API access, etc. from various systems. IR may benefit from systems that are not inherently security-focused, such as DHCP logs/access for tying IP addresses to a hostname through lease details live or in a specific time period.
+# Console Access
+Incident Response may benefit greatly from access to various systems, including those not inherently security-focused.
 
 - Active Directory
 - File Servers
 - Print Servers
+- Cloud
+- Virtualization
 - DNS
 - DHCP
 - MFA
-- IDPS/IDS
+- HIPS
+- IPS/IDS
+- EDR
+- AV
 - Firewall
+- NetFlow
 - Web Proxy
 - Domain Controllers
 - EDR
 - Email
 - VPN
-- Secure File Sharing
+- File Sharing
 - Switches
 - Routers
 - Door Access Systems
-- Privileged Account Management
-- Other network appliances
-- Other servers
+- Privileged Account Management System
+- Service Management
 - Third-party services
-- Third-party VPN
-- What systems can the Incident Response be granted access to for investigation/response? (noting response usually requires "write" access)

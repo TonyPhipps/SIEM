@@ -2,20 +2,20 @@
 
 The following is a prioritized list of recommended event logs to collect into your SIEM (ordering should be customized per organization and is subject to change here). 
 
+- Security Product Alerts (EDR/AV/HIPS/IPS)
+- Active Directory / LDAP Logs
+- Web Proxy Requests
 - DHCP Leases
 - DNS Queries (with endpoint name/IP)
-- Active Directory / LDAP Logs
 - Layer 3 or 7 Firewall (Egress Only)
-- Web Proxy Requests
-- VPN Authentication
-- Security Product Alerts
+- VPN Logs
+- Netflow
 - Windows Event Logs
 - Linux auditd Logs
-- Email
+- Email Logs
 - Custom Application Logs
 - Layer 7 Firewall
 - Layer 3 Firewall
-- Netflow
 - Full packet capture
 
 The priority here takes into consideration
