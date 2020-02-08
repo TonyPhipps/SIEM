@@ -11,14 +11,7 @@ The following sample incident response plan is meant to be tailored to your orga
 - [Identification](#identification)
   - [Initial Assessment](#initial-assessment)
   - [Opening an Incident](#opening-an-incident)
-  - [-------------------](#hr)
-  - [-------------------](#hr-1)
-  - [-------------------](#hr-2)
-  - [-------------------](#hr-3)
-  - [-------------------](#hr-4)
-  - [-------------------](#hr-5)
-  - [-------------------](#hr-6)
-  - [-------------------](#hr-7)
+  - [Investigation](#investigation)
 
 
 # References
@@ -111,6 +104,8 @@ The internal Knowledge Base will be kept up-to-date with detailed procedures for
 
 The Knowledge Base will be referenced often and maintained by Senior Incident Responders. Incident Responders are to assist in keeping articles up to date and reflective of current procedures by updating as soon as possible when steps change for any reason (i.e. software updates, governance updates, improvements in knowledge or experience gained).
 
+Incident Responders must have a strong command of the analysis tools at their disposal. This organization provides support by providing Incident Responders with specialized training, continuing education, and a lab environment to maintain awareness and familiarity. Automated analysis and alerting tools only provide the beginnings of understanding a security incident, and only a skilled analyst provided with appropriate tools can complete the picture.
+
 
 ## Internally-Gathered Indicators of Compromise
 
@@ -130,6 +125,8 @@ All communication, files, and information related to an incident will be dissemi
 Incident Responders may need to speak to a software vendor about suspicious activity. This contact could include questions regarding the significance of certain log entries or known false positives for certain intrusion detection signatures, where minimal information regarding the incident may need to be revealed. Software vendors may also provide information on known threats (e.g., new attacks) to help organizations understand the current threat environment. Sanitization shall be performed on data prior to being sent to software vendors when possible and reasonable. Scripts may be used to significantly reduce what appears to be a large amount of manual effort.
 
 At least one secondary communication channel should be established in the case where primary means of communication may be compromised. This could be cell phones, secondary email accounts, etc. These systems must be established prior to their need to minimize their immediate use in a time of need.
+
+Incident Responders should collaborate with security and product administrators in advance in any incidents to identify data sources that can aid in detection, investigation, and response efforts. Incident Responders should seek to understand what types of information each data source may record and identify data/logging relationships that could offer secondary sources of logs.
 
 
 ### Safeguarding Information
@@ -276,13 +273,101 @@ When conducting an initial assessment, the following will be considered:
 The investigating Incident Responder will create an incident and assign it to themselves. Senior Incident Responders may assign and reassign incidents as needed. Incident Responders may request incident reassignments, which remains at the discretion of the present Senior Incident Responders, management, or the most senior Incident Responder on duty. The Incident Responder assigned to an incident is responsible for successful execution of all actions required in handling the incident until otherwise notified or relieved during the next shift change. The assigned Incident Responder may request assistance from team members, but ultimately maintains all responsibility for the progression of the incident.
 
 
--------------------
--------------------
--------------------
--------------------
--------------------
--------------------
--------------------
--------------------
--------------------
+## Investigation
+
+Available information related to the incident will be collected, validated, and analyzed to characterize the perceived threat and to assist in identifying the attack technique, scope of compromise, root cause(s), and potential business impact. The incident will continue to be updated with any actions taken and other useful information that may help to better characterize the incident. Investigations will be handed over to the next shift, rather than remain inactive while the original Incident Responder is off duty.
+
+The primary objectives of investigation include:
+- Ensuring the accuracy and completeness of steps taken during investigation.
+- Characterizing and communicating the potential impact to the business.
+- Systematically capturing the methods used in the attack and the security controls that could prevent future occurrences.
+- Determining the present scope of compromise and identifying containment options.
+- Determining options available to eradicate the adversarial presence.
+- Identifying the root cause(s) of the incident through technical analysis.
+
+The following questions are provided as a starting point for investigation; tailoring is likely required and recommended:
+- Was the activity observed authorized, and was it performed by an authorized account at an authorized time on an authorized system?
+- What is the current state of the affected system? Is it compromised at the user or root/admin level?
+- Who is the affected user/system owner, and who is their supervisor?
+- What is the impact on the mission if the system is isolated from the network immediately?
+    - If a server or appliance is involved, what notable applications/services are installed/running?
+    - If a workstation is involed, how long would it take to restore operations to its user, and how would that downtime affect the business?
+- If policy allows the choice, should the system be isolated or should the team monitor closely?
+- What was the time of the event that began the investigation?
+- What surrounding events exist with matching source/destination user/IP addresses?
+- Are there any logs available outside the centralized logging solution that would benefit the investigation?
+- What is the earliest observable event relevent to the investigation?
+- What symptoms has the user experienced?
+- If the system was compromised, what did its most recent vulnerability scan data reveal?
+    - Are there any recent zero-day or otherwise notable vulnerabilities present?
+- Which tenets of security (Confidentiality, Integrity, and Availability) are affected?
+- What is my hypothesis for what happened? What logs will I need to confirm or deny it?
+
+Unless a suspicion arises early in the investigation of an insider threat, affected users may be asked relevant questions via email or telephone interview depending on the characteristics of the incident. The Shift Change meeting will be leveraged to request assistance from an appropriate shift when a telephone-based user interview is required (e.g. the affected user works a different shift than the current Incident Responder). Interview questions and answers will be recorded in the case, even when a verbal interview was conducted.
+
+When possible, investigation should be conducted in parallel with containment, eradication, and recovery stages. An extremely linear incident response process would likely result in a much higher business expense than is necessary by prolonging adversarial exposure, availability impact, and increasing costs.
+
+
+### Gather Logs
+
+Understanding the activity characteristics is helpful in assigning an appropriate priority to the incident response efforts and planning effective containment, eradication, and recovery activities. Details of queries executed (search string and date) to collect logs will be recorded in the applicable case.
+
+The information to be analyzed typically includes various logs, files, configuration settings, records of currently logged-on users, past connections (logins), running processes, open files, and changes to files or system settings (access control lists (ACLs), registries, and permissions).
+
+All logs relevant to the event or activity will be gathered for analysis. The centralized log management system should be the starting point for log acquisition. When necessary, valuable logs from non-centralized services may be collected or requested from the system owner(s). Network captures (in the form of .pcap files) may be required depending on the nature of the incident. Acquiring only traffic that matches specific criteria keeps the volume of data manageable and minimizes the inadvertent capture of sensitive, regularyede information. Endpoint logs or a collection endpoint volatile state information is often necessary to confirm scope of compromise. This could include a memory snapshot or a collection of scripts to collect information. If escalation to law enforcement or the court system is expected, carefully consider the evidence impact of accessing the endpoint at all beyond network isolation.
+
+
+### Analysis
+
+Timeline reconstruction can help in understanding the attacker’s actions. Collected logs from relevant hosts, network appliances, server applications, etc. must be identified and placed into an event timeline to allow proper analysis. This timeline may be used to correlate events among multiple sources, which is invaluable in confirming of denying any hypotheses formed in earlier stages of the investigation.
+
+Note affected systems IPs, domain names, files, and accounts to allow retrospective analysis for repeat offenders, threat intelligence matches, and the potential for a wider scope than expected. Analysis that does result in a widening of scope in relation to time, systems, users, files, etc. may require gathering of additional logs. Incident Responders should maintain a high level of awareness of data that could be used as internal indicators of compromise that could result in a shorter detection time (or even prevention of) future incidents.
+
+The involvement of mulitple teamd and various functional communities (e.g., intelligence, subject-matter experts, and application owners) may significantly improve incident response. It is important to involve relevant parties by informing them, asking direct questions, and making direct requests for support as needed and as soon as possible.
+
+
+### Determine Priority
+
+Levels of impact may be "Low," "Medium,"  "High," or "Emergency." Higher Incident Responders must coordinate with all organizations involved in the incident to determine whether systems from external agencies or organizations are involved. Priority determination must include consideration of the current and potential impact on the confidentiality, availability, and integrity of organizational operations, data, assets, and individuals.
+
+Other considerations include direct or indirect impact on:
+- Network health status.
+- Potential data compromise or loss.
+- Equipment downtime or destruction.
+- Downstream impact on other ISs or components (e.g., a machine removed from operations takes 8 hours to be rebuilt).
+- Stolen sensitive data, operational plans, and decision briefs that provide an adversary with a critical advantage.
+- Complete or partial databases loss.
+- Degraded or denied access to critical business functions.
+- Degraded, denied, or misdirected communication from leadership to subordinate offices.
+- Loss of control of critical networks.
+
+_Establish any service level agreements or other requirements related to Priority_
+
+
+### Determine Attack Technique
+
+Attack Techniques define the primary paths or methods used by the adversary to cause the incident to occur. This information is used to provide metrics and identify trends in the prevalence of attack techniques. By understanding the most prevalent attack techniques, tactical and strategic plans can be developed to improve defensive and detective posturing.
+
+Incident Responders will use MITRE's ATT&CK Framework to determine the appropriate attack techniques tied to the incident and record the information in the case.
+
+
+### Determine Root Cause
+
+Root cause is defined as the high-level oversight, misconfiguration, or process failure that provided the exposure exploited by the adversary. Root cause metrics are used to assisting in preventing similar incidents from occurring in the future. Underlying system weaknesses, vulnerabilities, or security controls that could have prevented or mitigated the impact of the incident will be identified. More than one weakness category may apply.
+
+Root Causes may include, but are not limited to:
+- User Training/Awareness
+- Non-technical Policy Violation
+- Technical Security Control Bypass
+- Unpatched Vulnerability
+- Zero-Day Vulnerability
+- Configuration Weakness
+- Power Instability/Failure
+- Hardware Instability/Failure
+- Software Instability/Failure
+- Natural Disaster
+- Sabotage
+- Negligence
+
+Root cause(s) should be determined prior to the recovery and reconstitution of any affected system, unless not practical or otherwise approved. The decision to restore a system without identifying the root cause(s) must be weighed carefully doing so may restore the original exposure for repeated exploitation.
 
