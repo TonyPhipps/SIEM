@@ -8,23 +8,52 @@ The following sample incident response plan is meant to be tailored to your orga
   - [Documentation, Training, Awareness](#documentation-training-awareness)
   - [Internally-Gathered Indicators of Compromise](#internally-gathered-indicators-of-compromise)
   - [Coordination & Correspondence](#coordination--correspondence)
+    - [Safeguarding Information](#safeguarding-information)
+    - [Sanitization of Data](#sanitization-of-data)
+    - [Escalation](#escalation)
+    - [Notification](#notification)
+    - [External Notification](#external-notification)
+    - [Law Enforcement Notification and Interaction](#law-enforcement-notification-and-interaction)
+    - [Chain of Custody](#chain-of-custody)
+    - [Turnover Log & Call](#turnover-log--call)
 - [Identification](#identification)
   - [Initial Assessment](#initial-assessment)
   - [Opening an Incident](#opening-an-incident)
   - [Investigation](#investigation)
+    - [Gather Logs](#gather-logs)
+    - [Analysis](#analysis)
+    - [Determine Priority](#determine-priority)
+    - [Determine Attack Technique](#determine-attack-technique)
+    - [Determine Root Cause](#determine-root-cause)
+    - [Develop Courses of Action](#develop-courses-of-action)
+  - [-------------------](#hr)
+  - [-------------------](#hr-1)
+  - [-------------------](#hr-2)
+  - [-------------------](#hr-3)
+  - [-------------------](#hr-4)
+  - [-------------------](#hr-5)
+  - [-------------------](#hr-6)
+  - [-------------------](#hr-7)
 
 
 # References
 
 - NIST SP 800-61, Revision 2, Computer Security Incident Handling Guide
-- NIST SP 800-83, Guide to Malware Incident Prevention and Handling for Desktops and Laptops
-- NIST SP 800-86, Guide to Integrating Forensic Techniques into Incident Response
+  - https://doi.org/10.6028/NIST.SP.800-61r2
+- NIST SP 800-83 rev. 1, Guide to Malware Incident Prevention and Handling for Desktops and Laptops
+  - https://doi.org/10.6028/NIST.SP.800-83r1
+- NIST SP 800-86 rev. 2, Guide to Integrating Forensic Techniques into Incident Response
+  - https://doi.org/10.6028/NIST.SP.800-86
 - CJCSM 6510.01B, Cyber Incident Handling Program
+  - https://www.jcs.mil/Portals/36/Documents/Library/Manuals/m651001.pdf
 - Blueteam Handbook: SOC, SIEM, and Threat Hunting
+  - https://www.amazon.com/dp/1091493898
 - Blueteam Handbook: Incident Response Edition
+  - https://www.amazon.com/dp/1500734756
 - Crafting the InfoSec Playbook
-- SANS Incident Response Stages
-
+  - https://www.amazon.com/dp/1491949406
+- SANS Incident Response Process (outlined in GCIH)
+  - https://www.sans.org/course/hacker-techniques-exploits-incident-handling
 
 # Responsibilities
 
@@ -371,3 +400,25 @@ Root Causes may include, but are not limited to:
 
 Root cause(s) should be determined prior to the recovery and reconstitution of any affected system, unless not practical or otherwise approved. The decision to restore a system without identifying the root cause(s) must be weighed carefully doing so may restore the original exposure for repeated exploitation.
 
+
+### Develop Courses of Action
+
+Identify a base plan including actions necessary to respond to the incident including containment, eradication, and recovery.
+
+The following list of consideration for determining appropriate courses of action includes may be used as a starting point: 
+- Potential damage to and theft of resources. 
+- Need for and extent of evidence preservation.
+- Service availability impact of courses of action.
+- Time and resources needed to implement the courses of action. 
+- Effectiveness of courses of action (e.g., partially contains the incident, fully contains the incident). 
+- Duration of the solution (e.g., emergency workaround to be removed in four hours, temporary workaround to be removed in two weeks, permanent solution). 
+ 
+-------------------
+-------------------
+-------------------
+-------------------
+-------------------
+-------------------
+-------------------
+-------------------
+-------------------
