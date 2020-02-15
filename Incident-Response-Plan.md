@@ -26,14 +26,16 @@ The following sample incident response plan is meant to be tailored to your orga
     - [Determine Attack Technique](#determine-attack-technique)
     - [Determine Root Cause](#determine-root-cause)
     - [Develop Courses of Action](#develop-courses-of-action)
-  - [-------------------](#hr)
-  - [-------------------](#hr-1)
-  - [-------------------](#hr-2)
-  - [-------------------](#hr-3)
-  - [-------------------](#hr-4)
-  - [-------------------](#hr-5)
-  - [-------------------](#hr-6)
-  - [-------------------](#hr-7)
+    - [Computer Forensics](#computer-forensics)
+    - [Malware Analysis](#malware-analysis)
+- [Containment](#containment)
+  - [----------------------------------](#hr)
+  - [----------------------------------](#hr-1)
+  - [----------------------------------](#hr-2)
+  - [----------------------------------](#hr-3)
+  - [----------------------------------](#hr-4)
+  - [----------------------------------](#hr-5)
+  - [----------------------------------](#hr-6)
 
 
 # References
@@ -157,6 +159,18 @@ At least one secondary communication channel should be established in the case w
 
 Incident Responders should collaborate with security and product administrators in advance in any incidents to identify data sources that can aid in detection, investigation, and response efforts. Incident Responders should seek to understand what types of information each data source may record and identify data/logging relationships that could offer secondary sources of logs.
 
+Consider the following actions likely to arise when investigating or responding to an incident and who the best point(s) of contact are for each:
+- Taking a server or service offline or isolating it
+- Taking a workstation offline or isolating it
+- Making changes in Active Directory or other LDAPs
+- Retrieving or deleting a file on a workstation, server, NAS, cloud storage, etc.
+- Performing initial triage/data collection on an endpoint with administrative account locally or remotely
+- Physically quarantine, collect, and/or ship a physical system or its hard drives
+- Acquire and deliver a system image
+- Block or redirect an IP address or domain
+- Remove sensitive/confidential information
+- Activities listed under Containment section
+
 
 ### Safeguarding Information
 
@@ -212,7 +226,7 @@ Law Enforcement will be notified of all activity matching the following characte
 - Involves child pornography
 - Otherwise legally questionable
 
-Report of such incidents will occur according to priority timelines previously outlined. Any reported incident will include all related evidence and investigation will be paused immediately. If the Incident Responder or Forensic Analyst takes action on behalf of Law Enforcement, they are considered an Agent of Law Enforcement, possibly leading to a court summons. Such authorization must be provided by a manager or a higher position of authority. If authorization is provided, the Incident Responder must ensure that all evidence handling, chain of custody forms, and notes are thoroughly recorded. Management and Law Enforcement must remain fully informed and involved regarding all decisions revolving around Law Enforcement requesting action of an Incident Responder.
+Report of such incidents will occur according to priority timelines previously outlined. Any reported incident will include all related evidence and investigation will be paused immediately. If the Incident Responder or takes action on behalf of Law Enforcement, they are considered an Agent of Law Enforcement, possibly leading to a court summons. Such authorization must be provided by a manager or a higher position of authority. If authorization is provided, the Incident Responder must ensure that all evidence handling, chain of custody forms, and notes are thoroughly recorded. Management and Law Enforcement must remain fully informed and involved regarding all decisions revolving around Law Enforcement requesting action of an Incident Responder.
 
 For incidents to be investigated for computer crime, a qualifying Incident Responder will have a firm understanding of proper forensics and evidence handling policies and procedures. Otherwise, the Incident Handler must stand by and seek the assistance of a qualified Incident Responder to perform proper evidence collection. Data and information gathered for forensics analysis or evidence must be obtained and handled in accordance with various applicable laws, possibly spanning many jurisdictions, in order to ensure the authenticity and reliability of the information ensuring it remains admissible in court.
 
@@ -412,13 +426,84 @@ The following list of consideration for determining appropriate courses of actio
 - Time and resources needed to implement the courses of action. 
 - Effectiveness of courses of action (e.g., partially contains the incident, fully contains the incident). 
 - Duration of the solution (e.g., emergency workaround to be removed in four hours, temporary workaround to be removed in two weeks, permanent solution). 
- 
--------------------
--------------------
--------------------
--------------------
--------------------
--------------------
--------------------
--------------------
--------------------
+
+
+### Computer Forensics
+
+Computer forensics is the application of science to the identification, collection, examination, and analysis of data while preserving the integrity of the information and maintaining a strict chain of custody.
+
+Many forensics collection and analysis tasks are similar to or overlap with other incident analysis activities, which are generally more focused on gaining a technical understanding of the incident. When these information gathering and analysis activities are performed for forensics purposes, the forensic activities focus on processing and preserving the authenticity and integrity of the data in a manner that ensures the evidence is admissible in a court of law.
+
+It is generally desirable to acquire evidence from a system of interest as soon as one suspects that an incident may have occurred - even more so when legal action is required suspected. In such cases, it is essential to isolate the affected system from the network and acquire a snapshot before Incident Responders, system administrators, and others begin investigating, which will alter the state of the machine during the investigation (and therefore make all evidence questionable or inadmissable).
+
+Forensic approaches include:
+- Immediate memory capture and artifact collection with a minimal impact to evidence
+- Booting into a forensic environment
+- Acquiring a copy of associated virtual disks
+
+Proper chain of custody, media write-protection, and immediate hash generation of evidence are among the most critical components of forensics intended for use in court. Further details in forensics processes are beyond the scope of this document.
+
+
+### Malware Analysis
+
+Malware analysis, when necessary, will be conducted on system isolated from all business systems and networks.
+
+Incident Responders may study the behavior of malware by analyzing it actively by means of executing the malware and monitoring it during execution. Such active approaches are best performed on malware test systems instead of production hosts to minimize possible damage caused by allowing the malware to execute. Ideal active approaches involve an incident Responder acquiring a malware sample from an infected host and placing the malware on an isolated test system. Test systems are to be maintained virtually to allow instantaneous restoral to a known-good state through snapshots or similar features.
+
+The test system should: 
+- include up-to-date tools for identifying and monitoring software
+- maintain an elevated logging level, at debug level when necessary.
+- include immediate log forwarding to reduce potential of losing visibility when malware cleans up its own tracks by means of log and data destruction or altering
+
+Malware test systems are helpful not only for analyzing current malware threats without the risk of inadvertently causing additional damage to the organization, but also for training staff in malware incident handling.
+
+
+# Containment
+
+Incident Responders will attempt to contain systems, software, and adversaries in an effort to limit the overall scope of incidents. Courses of action related to containment focus on the immediate protection of information systems and data from further damage while analysis continues and/or deepens. A more complete response may be taken after thorough analysis is performed. 
+
+The primary objectives of containment include:
+- Preventing an incident from causing further impact on confidentiality, integrity, and availability.
+- Preventing the compromise of additional systems, users, and data.
+- Maintaining control of the affected information system(s) and the surrounding environment.
+- Ensuring forensically sound acquisition of data when necessary.
+- Maintaining and updating the incident.
+- Actively communicating updates through the appropriate technical and operational command channels.
+
+For more widespread malware incidents, such as fast-spreading worms, a strategy that contains the incident for most hosts as quickly as possible is necessary; this aims to limit the number of machines that are infected, the amount of damage that is done, and the amount of time that it will take to fully recover all data and services. 
+
+Containment courses of action include:
+- Local user account disablement
+- Authorization/access revocation
+- Host isolation by removal of a network card
+- Host isolation by EDR or similar software
+- Port Blocking
+- IP/Domain blocking or redirection
+- Switchport Isolation
+- VLAN/subnet Isolation
+- Trunk Switchport Isolation
+- Service Shutdown
+- Power Disconnection of endpoints or network appliances
+- LDAP Object disablement
+- Software or file removal
+- Registry deletions/modifications
+- ISP assistance with DDoS response
+- Upgrading software/firmware
+
+NIST SP 800-83 may be referred to for COAs and Response Actions (RAs) for various attacks such as DoS, malicious code, unauthorized access, and inappropriate usage.
+
+No single malware containment category or individual method is appropriate or effective in every situation; Incident Responders should select a combination of containment methods that is likely to be effective in containing the current incident while limiting impact to evidence and increase in scope. In some cases eradication may need to be immediately performed, skipping containment in favor of a more rapid response.
+
+Containment actions that may affect the ability to acquire and preserve data about the incident must be decided on carefully. When making these decisions, it is important to assess the relative value of ensuring mission success by preventing further damage against the potential for containment actions to hinder further analysis. Malware on a host may attempt to exfiltrate sensitive data, replace system files, or cause other damage. Some malware is designed to cause additional damage when network connectivity is lost or other containment measures are performed.
+
+When sufficient information to contain and eradicate the incident is lacking, consultation with internal and external resources may be required. It is important to accurately determine the root cause of each incident to allow confidence in the completeness of containment courses of action.
+
+----------------------------------
+----------------------------------
+----------------------------------
+----------------------------------
+----------------------------------
+----------------------------------
+----------------------------------
+----------------------------------
+
