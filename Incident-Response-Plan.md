@@ -29,6 +29,10 @@ The following sample incident response plan is meant to be tailored to your orga
     - [Computer Forensics](#computer-forensics)
     - [Malware Analysis](#malware-analysis)
 - [Containment](#containment)
+  - [User Participation](#user-participation)
+  - [Containment Courses of Action](#containment-courses-of-action)
+  - [Disablement and/or Shutdown of Services/Processes](#disablement-andor-shutdown-of-servicesprocesses)
+  - [Disabling Connectivity](#disabling-connectivity)
   - [----------------------------------](#hr)
   - [----------------------------------](#hr-1)
   - [----------------------------------](#hr-2)
@@ -472,6 +476,22 @@ The primary objectives of containment include:
 
 For more widespread malware incidents, such as fast-spreading worms, a strategy that contains the incident for most hosts as quickly as possible is necessary; this aims to limit the number of machines that are infected, the amount of damage that is done, and the amount of time that it will take to fully recover all data and services. 
 
+No single malware containment category or individual method is appropriate or effective in every situation; Incident Responders should select a combination of containment methods that is likely to be effective in containing the current incident while limiting impact to evidence and increase in scope. In some cases eradication may need to be immediately performed, skipping containment in favor of a more rapid response.
+
+Containment actions that may affect the ability to acquire and preserve data about the incident must be decided on carefully. When making these decisions, it is important to assess the relative value of ensuring mission success by preventing further damage against the potential for containment actions to hinder further analysis. Malware on a host may attempt to exfiltrate sensitive data, replace system files, or cause other damage. Some malware is designed to cause additional damage when network connectivity is lost or other containment measures are performed.
+
+When sufficient information to contain and eradicate the incident is lacking, consultation with internal and external resources may be required. It is important to accurately determine the root cause of each incident to allow confidence in the completeness of containment courses of action.
+
+
+## User Participation
+
+When possible, automated and/or remote containment actions must be performed by trained, experience staff. However, when a system administrator or pre-established contact for incident response assistance is unvailable, options are limited. Leveraging users for containment actions is a last resort due to varying levels of user expertise. In most cases, the level of user participation is expected to be limited to disconnecting from the network immediately and either notifying or delivering their system to the nearest administrator or shipping the hardware to the Incident Response Team.
+
+
+## Containment Courses of Action
+
+Various courses of action can be taken to contain malware and malicious activity to allow further analysis and eradication. Often signature-based or threat intelligence-based security tools are updated with capabilities that automatate containment/prevention effectively. This may allow careful rolling back of containment steps. Note that if the scope of compromise includes the OS, it is possible for malware or adversaries to remain hidden from any security tools or controls.
+
 Containment courses of action include:
 - Local user account disablement
 - Authorization/access revocation
@@ -479,10 +499,12 @@ Containment courses of action include:
 - Host isolation by EDR or similar software
 - Port Blocking
 - IP/Domain blocking or redirection
+- Web content filtering
+- Hash Blacklisting
 - Switchport Isolation
 - VLAN/subnet Isolation
 - Trunk Switchport Isolation
-- Service Shutdown
+- Disablement and/or Shutdown of Services/Processes
 - Power Disconnection of endpoints or network appliances
 - LDAP Object disablement
 - Software or file removal
@@ -492,11 +514,19 @@ Containment courses of action include:
 
 NIST SP 800-83 may be referred to for COAs and Response Actions (RAs) for various attacks such as DoS, malicious code, unauthorized access, and inappropriate usage.
 
-No single malware containment category or individual method is appropriate or effective in every situation; Incident Responders should select a combination of containment methods that is likely to be effective in containing the current incident while limiting impact to evidence and increase in scope. In some cases eradication may need to be immediately performed, skipping containment in favor of a more rapid response.
+Some details on containments steps are presented below.
 
-Containment actions that may affect the ability to acquire and preserve data about the incident must be decided on carefully. When making these decisions, it is important to assess the relative value of ensuring mission success by preventing further damage against the potential for containment actions to hinder further analysis. Malware on a host may attempt to exfiltrate sensitive data, replace system files, or cause other damage. Some malware is designed to cause additional damage when network connectivity is lost or other containment measures are performed.
 
-When sufficient information to contain and eradicate the incident is lacking, consultation with internal and external resources may be required. It is important to accurately determine the root cause of each incident to allow confidence in the completeness of containment courses of action.
+## Disablement and/or Shutdown of Services/Processes
+
+Some malware incidents necessitate more drastic and potentially disruptive measures for containment. These incidents make extensive use of a particular service. Containing such an incident quickly and effectively might be accomplished through a loss of services, such as shutting down a service used by malware, blocking a certain service at the network perimeter, or disabling portions of a service (e.g., large mailing lists). Also, a service might provide a channel for infection or for transferring data from infected hosts. This action is typically performed at the application level (e.g. disabling a service on servers) or at the network level (e.g. configuring firewalls to block IP addresses or ports associated with a service). System administrators must be consulted to gain understanding of dependencies between major services when making containment decisions.
+
+
+## Disabling Connectivity
+
+Containing incidents by placing temporary restrictions on network connectivity can be very effective. An alternative to blocking network access for particular IP addresses is to disconnect the infected hosts from the network, which could be accomplished by reconfiguring network devices to deny network access, physically disconnecting network cables from infected hosts, or using host-based firewalls to greatly restrict network communication. Such activities could eliminate network or service access to groups of non-compromised hosts. Implementing a widespread loss of connectivity to achieve containment is most likely to be acceptable in cases where malware activity is already causing severe network disruptions or infected hosts are performing attacks. Because a major loss of connectivity is likely to affect organizational missions, connectivity must be restored as soon as possible.
+
+When possible, avoid shutting down systems prior to acquiring and preserving volatile data such as running processes, network connections, and/or the entire contents of memory. This may not be an option if the compromised system begins to perform destructive tasks such as deleting files, exfiltrating sensitive data, formatting drives, or actively spreading to other hosts. In these cases, the system should be promptly disconnected, or otherwise effectively isolated. If there is no backup or restoral efforts are significant, immediate shutdown through severing power should be considered.
 
 ----------------------------------
 ----------------------------------
@@ -506,4 +536,3 @@ When sufficient information to contain and eradicate the incident is lacking, co
 ----------------------------------
 ----------------------------------
 ----------------------------------
-
