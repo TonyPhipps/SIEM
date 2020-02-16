@@ -33,6 +33,10 @@ The following sample incident response plan is meant to be tailored to your orga
   - [Containment Courses of Action](#containment-courses-of-action)
   - [Disablement and/or Shutdown of Services/Processes](#disablement-andor-shutdown-of-servicesprocesses)
   - [Disabling Connectivity](#disabling-connectivity)
+- [Eradication](#eradication)
+- [Recovery](#recovery)
+  - [Risk Acceptance](#risk-acceptance)
+  - [Closing an Incident](#closing-an-incident)
   - [----------------------------------](#hr)
   - [----------------------------------](#hr-1)
   - [----------------------------------](#hr-2)
@@ -527,6 +531,67 @@ Some malware incidents necessitate more drastic and potentially disruptive measu
 Containing incidents by placing temporary restrictions on network connectivity can be very effective. An alternative to blocking network access for particular IP addresses is to disconnect the infected hosts from the network, which could be accomplished by reconfiguring network devices to deny network access, physically disconnecting network cables from infected hosts, or using host-based firewalls to greatly restrict network communication. Such activities could eliminate network or service access to groups of non-compromised hosts. Implementing a widespread loss of connectivity to achieve containment is most likely to be acceptable in cases where malware activity is already causing severe network disruptions or infected hosts are performing attacks. Because a major loss of connectivity is likely to affect organizational missions, connectivity must be restored as soon as possible.
 
 When possible, avoid shutting down systems prior to acquiring and preserving volatile data such as running processes, network connections, and/or the entire contents of memory. This may not be an option if the compromised system begins to perform destructive tasks such as deleting files, exfiltrating sensitive data, formatting drives, or actively spreading to other hosts. In these cases, the system should be promptly disconnected, or otherwise effectively isolated. If there is no backup or restoral efforts are significant, immediate shutdown through severing power should be considered.
+
+
+# Eradication
+
+The goal of eradication is to permanently remove the infection. During eradication, it is important to identify all hosts within the scope of compromise to ensure complete remediation. Different situations necessitate various combinations of eradication techniques.
+
+Eradication optiosn include:
+- System rebuild
+- Permanent firewall/ACL changes on border devices
+- Disinfection by means of surgical removal/restoral/disinfection/reversal of any and every malicious action on the system.
+
+In general, a system rebuild is advised if any of the following characteristics are present:
+- Administrator/root accounts were compromised.
+- Arbitrary code execution was performed at the administrator/root level.
+- Critical system files were replaced or modified.
+- Physical access to the system was made available to an adversary.
+- After disinfection attempts, the system shows signs of instability.
+- There is a reasonable suspicion that a rootkit or similar means of persistence exists. 
+
+If an incident does not have any of the above characteristics it is generally acceptable to disinfect the host instead of rebuilding it. However, disinfection is most often not feasible or cost-effective, especially on non-critical systems. 
+
+Rebuilding is the best eradication option when the extent of a system's compromise is unknown, when a rootkit is suspected, or the fastest possible restoration is required. Rebuilding includes the reinstallation, updating, and hardening of the OS and subsequently installed applications. New, secured hardware may be swapped out during the rebuild process to allow an even faster recovery of operations. The rebuild process may be followed by data restoral from known-good backups. Great care and caution must be taken with any file preservation from a compromised system due to the potential for carrying-over infected files. Upon conclusion of an incident involving a compromised system requiring a rebuild, the original hard drive/device may be reused or be destroyed at the discretion of management. Master boot records must be erased on reused disks to eliminate any possible boot sector infection.
+
+
+# Recovery
+
+The main goals of recovery from incidents are restoring operations and data, removing temporary containment measures, and preventing reinfection and similar incidents. Once a resource is successfully attacked, it is often targeted again, or other resources are targeted in a similar manner.
+
+Recovery may include but is not limited to the following:
+- Ensuring the operating system and all applications are up-to-date with patches, whether the system was rebuild or disinfected.
+- Ensuring security software is in place with current engine, signature, and other updates.
+- Ensuring applicable firmware is up to date.
+- Removal of extraneous software and services.
+- Removal of extraneous user access/rights (including group membership).
+- Ensuring compliance with applicable governance, regulations, policies, and best practices.
+- Creation of new signatures or other detection content.
+- Issuing a warning or alert to employees, partners, and customers.
+- Changing baseline configurations.
+- Tightening network perimeter security.
+- Conducting user training.
+- Increasing levels or configuration of logging.
+- Centralizing new event feeds.
+- A final analysis to confirm proper mitigations are in place.
+- Documenting lessons learned during the incident process.
+- Conducting an after-action-review meeting to discuss lessons learned as a team.
+- Updating or introducing new documentation.
+- Identification and acceptance of residual risk.
+
+
+## Risk Acceptance
+
+Given a breakdown of risk and any deployed mitigations, management may formally accept residual risk. Risk acceptance shall be discussed on a need-to-know basis, with paperwork and correspodence treated as confidential information and stored carefully to avoid unnecessary exposure of accepted risks.
+
+
+## Closing an Incident	
+
+Incidents marked as closed must be reviewed by a Senior Incident Responder or a manager. Review consists of the following checks:
+- verifying fields are filled properly
+- summary and correspodence are professional and reflect well upon the organization
+- work log hours are reported and appear complete and accurate
+
 
 ----------------------------------
 ----------------------------------
