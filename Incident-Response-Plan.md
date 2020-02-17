@@ -40,13 +40,7 @@ The following sample incident response plan is meant to be tailored to your orga
   - [Lessons Learned](#lessons-learned)
     - [After Action Report](#after-action-report)
     - [Signature Development](#signature-development)
-  - [----------------------------------](#hr)
-  - [----------------------------------](#hr-1)
-  - [----------------------------------](#hr-2)
-  - [----------------------------------](#hr-3)
-  - [----------------------------------](#hr-4)
-  - [----------------------------------](#hr-5)
-  - [----------------------------------](#hr-6)
+- [Glossary](#glossary)
 
 
 # References
@@ -633,11 +627,49 @@ Action items will be tracked until completion. Completed AAR’s will be stored 
 
 Some incidents are expected to give way to potential development of new signatures, rules, reports, etc. to assist in the automated detection of future activity indicative of compromise. Such efforts and content will be tracked and grouped by the intentions and expected response into use cases. Use cases will fully document analysis steps, content creation 
 
-----------------------------------
-----------------------------------
-----------------------------------
-----------------------------------
-----------------------------------
-----------------------------------
-----------------------------------
-----------------------------------
+
+# Glossary
+
+- Authenticity: The property of being genuine and being able to be verified and trusted; confidence in the validity of a transmission, a message, or message originator.
+
+- Availability: The property of being accessible and useable upon demand by an authorized entity.
+
+- Confidentiality: The property that information is not disclosed to system entities (users, processes, devices) unless they have been authorized to access the information. 
+
+- Denial of Service (DoS). The prevention of authorized access to resources or the delaying of time-critical operations. (Time-critical may be milliseconds or it may be hours, depending upon the service provided.)
+
+- Encryption: The process of changing plaintext into ciphertext for the purpose of security or privacy.
+
+- Environment: The aggregate of external procedures, conditions, and objects that affect the development, operation, and maintenance of a system.
+
+- Event: Any observable occurrence in a system and/or network. Events sometimes provide indication that an incident is occurring.
+
+- Incident: Actions taken through the use of computer networks that result in an actual or potentially adverse effect on an information system and/or the information residing therein.
+
+- Information System: Any telecommunication or computer-related equipment or interconnected system or subsystems of equipment that is used in the acquisition, storage, manipulation, management, movement, control, display, switching, interchange, transmission, or reception of voice and/or data; includes software, firmware, and hardware. 
+
+- Integrity: The property whereby an entity has not been impaired or modified in an unauthorized or accidental manner.
+
+- Residual Risk: Portion of risk remaining after security measures have been applied.
+
+- Risk: A measure of the extent to which an entity is threatened by a potential circumstance or event, and typically a function of 1) the adverse impacts that would arise if the circumstance or event occurs; and 2) the likelihood of occurrence.
+
+- Risk Management: The process of managing risks to organizational operations (including mission, functions, image, or reputation), organizational assets, individuals, other organizations, or the nation resulting from the operation or use of an information system, and includes: 1) the conduct of a risk assessment; 2) the implementation of a risk mitigation strategy; 3) employment of techniques and procedures for the continuous monitoring of the security state of the information system; and 4) documenting the overall risk management program.
+
+- Security: A condition that results from the establishment and maintenance of protective measures that enable an enterprise to perform its mission or critical functions despite risks posed by threats to its use of information systems. Protective measures may involve a combination of deterrence, avoidance, prevention, detection, recovery, and correction that should form part of the enterprise’s risk management approach.
+
+- Security Requirements: Requirements levied on an information system that are derived from applicable laws, Executive Orders, directives, policies, standards, instructions, regulations, or procedures, or organizational mission/business case needs to ensure the confidentiality, integrity, and availability of the information being processed, stored, or transmitted.
+
+- Sensitive Information: Information, the loss, misuse, or unauthorized access to or modification of, that could adversely affect the business interest or the conduct of business programs, or the privacy to which individuals are entitled under 5 U.S.C. Section 552a (the Privacy Act).
+
+- System: Any organized assembly of resources and procedures united and regulated by interaction or interdependence to accomplish a set of specific functions. See also information system.
+
+- Threat: Any circumstance or event with the potential to adversely impact organizational operations (including mission, functions, image, or reputation), organizational assets, individuals, other organizations, or the Nation through an information system via unauthorized access, destruction, disclosure, modification of information, and/or denial of service.
+
+- User: Individual, or (system) process acting on behalf of an individual, authorized to access an information system.
+
+- Vulnerability: Weakness in an information system, or cryptographic system, or components (e.g., system security procedures, hardware design, internal controls) that could be exploited.
+
+- Vulnerability Assessment: Systematic examination of an information system or product to determine the adequacy of security measures, identify security deficiencies, provide data from which to predict the effectiveness of proposed security measures, and confirm the adequacy of such measures after implementation.
+
+- Worm: A self-replicating, self-propagating, self-contained program that uses networking mechanisms to spread itself. See malicious code.
