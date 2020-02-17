@@ -37,6 +37,9 @@ The following sample incident response plan is meant to be tailored to your orga
 - [Recovery](#recovery)
   - [Risk Acceptance](#risk-acceptance)
   - [Closing an Incident](#closing-an-incident)
+  - [Lessons Learned](#lessons-learned)
+    - [After Action Report](#after-action-report)
+    - [Signature Development](#signature-development)
   - [----------------------------------](#hr)
   - [----------------------------------](#hr-1)
   - [----------------------------------](#hr-2)
@@ -590,8 +593,45 @@ Given a breakdown of risk and any deployed mitigations, management may formally 
 Incidents marked as closed must be reviewed by a Senior Incident Responder or a manager. Review consists of the following checks:
 - verifying fields are filled properly
 - summary and correspodence are professional and reflect well upon the organization
-- work log hours are reported and appear complete and accurate
+- work logs are present and appear complete and accurate
 
+
+## Lessons Learned
+
+During the course of many incidents, it is expected that lessons are learned. 
+
+The primary benefits of being mindful of, discussing, and integrating lessons learned include:
+- Identifying and addressing infrastructure problems or improvements.
+- Identifying and addressing needed updates to existing organizational policies and procedures, or the creation thereof.
+- Identifying and addressing technical skill gaps and operational training needs.
+- Identifying and addressing issues in the any phase of the incident response process outlined in this document.
+- Clarifying unclear or undefined roles, responsibilities, interfaces, and authority as needed.
+- Improving tools required to perform protection, detection, analysis, or response actions.
+- Developing training and knowledgebase material as needed.
+
+After a major incident has been handled, an "After-Action Review" meeting is to be conducted, wherein lessons-learned will be presented, reviewed, and assigned to members of the team for integration. After-Action Review meetings will each have a moderator to ensure topics are covered in a timely and efficient manner, as well as an individual assigned to document the discussion. These meetings must result in a specific list of actionables with primary points of contact who will be responsible for enacting changes required during the course of the meeting.
+
+In order to benefit the entire Incident Response Team and the organization, these lessons learned must lead to actual change in documentation, instruction, practice, architecture, etc. Smaller scale or scoped incidents may also result in lessons learned that are just as impactful as those observed in larger incidents, and should be likewise incorporated, though may not necessitate holding formal After-Action Review meetings.
+
+
+### After Action Report
+
+After-Action Reports (AARs) are created during and after After-Action Review meetings to identify successes, failures, and lessons learned. These reports also serve to track the assignment and execution of any changes that may be warranted as a result of lessons learned.
+
+AARs will include:
+- Unique Incident Number
+- Incident Summary
+- All incident fields
+- Activities to Sustain
+- Opportunities to Improve
+- Action Items and the individual assigned to each
+
+Action items will be tracked until completion. Completed AAR’s will be stored in the incident as an attachment.
+
+
+### Signature Development
+
+Some incidents are expected to give way to potential development of new signatures, rules, reports, etc. to assist in the automated detection of future activity indicative of compromise. Such efforts and content will be tracked and grouped by the intentions and expected response into use cases. Use cases will fully document analysis steps, content creation 
 
 ----------------------------------
 ----------------------------------
