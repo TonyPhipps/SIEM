@@ -1,11 +1,12 @@
-The following sample incident response plan is meant to be tailored to your organization before use.
+The following sample Incident Response Policy is meant to be tailored to your organization before use.
 
+- [Scope](#scope)
 - [References](#references)
 - [Responsibilities](#responsibilities)
 - [Objectives](#objectives)
 - [Preparation](#preparation)
   - [OODA Loop](#ooda-loop)
-  - [Incident Tracking System](#incident-tracking-system)
+  - [Ticketing System](#ticketing-system)
   - [Documentation, Training, Awareness](#documentation-training-awareness)
   - [Internally-Gathered Indicators of Compromise](#internally-gathered-indicators-of-compromise)
   - [Coordination & Correspondence](#coordination--correspondence)
@@ -22,6 +23,10 @@ The following sample incident response plan is meant to be tailored to your orga
   - [Closing a Ticket](#closing-a-ticket)
   - [Lessons Learned](#lessons-learned)
 - [Glossary](#glossary)
+
+
+# Scope
+This policy applies to all employees, customers, clients, visitors, and third-party affiliates working on behalf of this organization within all business areas and geographic markets (“Staff”).  Compliance with this policy is required by related procedural documents and knowledge base articles. 
 
 
 # References
@@ -45,6 +50,7 @@ The following sample incident response plan is meant to be tailored to your orga
 - SANS Incident Response Process (outlined in GCIH)
   - https://www.sans.org/course/hacker-techniques-exploits-incident-handling
 
+
 # Responsibilities
 
 - Incident Responders shall:
@@ -58,7 +64,7 @@ The following sample incident response plan is meant to be tailored to your orga
   - Share and document lessons learned to improve the overall service and team.
 - Senior Incident Responders shall:
   - Provide oversight and management of responsibilities for Incident Responders.
-  - Monitor the enterprise-wide status of computer incident response actions and activities.
+  - Monitor the organization-wide status of computer incident response actions and activities.
   - Provide guidance and assistance to all organizational elements in dealing with computer incidents/events.
   - Maintain awareness of business operations to identify potential impact to organizational systems and anything that may impact incident response work load or incident response operations at large.
 
@@ -82,7 +88,7 @@ The primary objectives are to:
 
 The goal in preparation is to ensure Incident Responders have the knowledge and references essential to handling an incident. 
 
-Incident Responders should be familiar with the following documents and have them readily accessible:
+Incident Responders shall be familiar with the following documents and have them readily accessible:
 - IP Address Management
 - Network Architecture Diagrams
 - User Directory
@@ -99,6 +105,7 @@ Incident Responders should be familiar with the following documents and have the
 - Data Classification and Protection Guidelines
 - Standard Security Configurations
 
+
 ## OODA Loop
 
 Incident Response Team members will utilize the OODA Loop to maintain calm control under sometimes high-stress situations when responding to incidents:
@@ -111,13 +118,13 @@ Incident Response Team members will utilize the OODA Loop to maintain calm contr
 Following a simple model presents allows the opportunity to calmly assess, carefully process available choices, and act on the most appropriate one for the situation at hand.
 
 
-## Incident Tracking System
+## Ticketing System
 
-A full-featured ticketing system shall be used to track all Incidents. All Incidents and related data shall be stored for a period of no less than 1 (one) year. Tickets shall have relevant emails and correspondence attached in such a way that they are archived alongside other incident details.
+A full-featured ticketing system shall be used to track all Incidents. All tickets and related data shall be stored for a period of no less than 1 (one) year. Tickets shall have relevant emails and correspondence attached in such a way that they are archived alongside other incident details.
 
 Documents too large or otherwise not easily attached to the Ticket shall be stored in a secondary file system, encrypted and limited in access to the Incident Response Team and other parties with a need-to-know.
 
-It is the shared responsibility of all Incident Responders to ensure all tickets receive proper attention and timely updates. Tickets must be actioned upon and updated at least once per shift until closure. Updates shall consist of, at a minimum, a Work Log entry specifying the last action taken, who took the actions, and when. The Executive Summary shall be kept up-to-date, reflecting the known beginning, middle, and end of each incident at a high level. Outstanding actions should be included in this field, as they represent a portion the complete ticket summary.
+It is the shared responsibility of all Incident Responders to ensure all tickets receive proper attention and timely updates. Tickets must be actioned upon and updated at least once per shift until closure. Updates shall consist of, at a minimum, a Work Log entry specifying the last action taken, who took the actions, and when. The Executive Summary shall be kept up-to-date, reflecting the known beginning, middle, and end of each incident at a high level. Outstanding actions shall be included in this field, as they represent a portion the complete ticket summary.
 
 
 ## Documentation, Training, Awareness
@@ -146,7 +153,7 @@ Internal IOCs shall be reviewed annually at expiration time and each time it is 
 
 ## Coordination & Correspondence
 
-Incident Responders will often need to communicate with outside parties regarding an incident, and should do so whenever appropriate, such as contacting law enforcement, ISPs, vendors, other incident response teams, and seeking external expertise. The Incident Response Team shall maintain contacts with the public affairs office, legal department, and various persons in management.
+Incident Responders will often need to communicate with outside parties regarding an incident, and shall do so whenever appropriate, such as contacting law enforcement, ISPs, vendors, other incident response teams, and seeking external expertise. The Incident Response Team shall maintain contacts with the public affairs office, legal department, and various persons in management.
 
 All email correspondence related to incidents shall include a carbon-copy (CC) to the Incident Response Team email inbox. Emails containing sensitive information must have all recipients verified for authorized access and must be encrypted. Using an external, encrypting file sharing service is acceptable.
 
@@ -188,23 +195,12 @@ Incident Responders requiring assistance shall escalate the ticket to the next h
 
 ### Incident-Related Correspondence
 
-Incidents are classified by priority, which in turn determines notification timeline requirements. Once priority is determined and the event is determined to be a true positive, the timeline requirement to notify the affected party or parties begins.
-
- |  Priority  | Timeline  |
- | :-------: | :-------: |
- | Emergency | Immediate |
- |   High    |    1h     |
- |  Medium   |    8h     |
- |    Low    |    24h    |
-
-High or emergency tickets that require continuous attention shall be passed along during each shift turnover until resolved.
+All external correspondence shall be sent with courtesy copies (CC) to the ticketing system inbox that allows for automated association to the ticket in the subject line. All correspondence with Emergency priority shall be sent with CC to sender's manager and the recipients manager, when possible.
 
 Recipients are expected to acknowledge the receipt of notification emails following the same timeline above. If an acknowledgement is not received, the Incident Responder shall begin the notification process again seeking acknowledgement through another means of communication, like email or phone. Further lack of response shall result in escalating the ticket to a higher authority. The notification process shall be repeated until acknowledgement is received or if the ticket runs its course to complete recovery.
 
 
 ### External Correspondence
-
-All external correspondence shall be sent with courtesy copies (CC) to the ticketing system inbox that allows for automated association to the ticket in the subject line. All correspondence with Emergency priority shall be sent with CC to sender's manager and the recipients manager, when possible.
 
 Any incident that may potentially affect another organization shall be reported to that organization as soon as possible along with a summary sufficiently detailed to allow them to begin an investigation.
 
@@ -318,6 +314,8 @@ When conducting an initial assessment, the following shall be considered:
 
 The investigating Incident Responder shall create a ticket and assign it to themselves. Senior Incident Responders may assign and reassign tickets as needed. Incident Responders may request ticket reassignments, which remains at the discretion of the present Senior Incident Responders, management, or the most senior Incident Responder on duty. The Incident Responder assigned to a ticket is responsible for successful execution of all actions required in handling the ticket until otherwise notified or relieved during the next shift change. The assigned Incident Responder may request assistance from team members, but ultimately maintains all responsibility for the progression of the ticket.
 
+High or emergency tickets that require continuous attention shall be passed along during each shift turnover until resolved.
+
 
 ## Investigation
 
@@ -351,7 +349,16 @@ The following questions are provided as a starting point for investigation; tail
 
 Unless a suspicion arises early in the investigation of an insider threat, affected users may be asked relevant questions via email or telephone interview depending on the characteristics of the incident. The Shift Change meeting shall be leveraged to request assistance from an appropriate shift when a telephone-based user interview is required (e.g. the affected user works a different shift than the current Incident Responder). Interview questions and answers shall be recorded in the ticket, even when a verbal interview was conducted.
 
-When possible, investigation should be conducted in parallel with containment, eradication, and recovery stages. An extremely linear incident response process would likely result in a much higher business expense than is necessary by prolonging adversarial exposure, availability impact, and increasing costs.
+When possible, investigation shall be conducted in parallel with containment, eradication, and recovery stages. An extremely linear incident response process would likely result in a much higher business expense than is necessary by prolonging adversarial exposure, availability impact, and increasing costs.
+
+Once the incident is determined to be a true positive, the timeline requirement to notify the affected party or parties begins.
+
+ | Priority  | Timeline  |
+ | :-------: | :-------: |
+ | Emergency | Immediate |
+ |   High    |    1h     |
+ |  Medium   |    8h     |
+ |    Low    |    24h    |
 
 
 ### Gather Logs
@@ -360,32 +367,44 @@ Understanding associated logs is helpful in assigning an appropriate priority to
 
 The information to be analyzed typically includes various logs, files, configuration settings, records of currently logged-on users, past connections (logins), running processes, open files, and changes to files or system settings (access control lists (ACLs), registries, and permissions).
 
-All logs relevant to the incident shall be gathered for analysis and stored or associated with the respective ticket. The centralized log management system should be the starting point for log acquisition. When necessary, valuable logs from non-centralized services may be collected or requested from the system owner(s). Network captures (in the form of .pcap files) may be required depending on the nature of the incident. Acquiring only traffic that matches specific criteria keeps the volume of data manageable and minimizes the inadvertent capture of sensitive, regulated information. Endpoint logs or a collection endpoint volatile state information is often necessary to confirm scope of compromise. This could include a memory snapshot or a collection of scripts to collect information. If escalation to law enforcement or the court system is expected, carefully consider the evidence impact of accessing the endpoint at all beyond network isolation.
+All logs relevant to the incident shall be gathered for analysis and stored or associated with the respective ticket. The centralized log management system shall be the starting point for log acquisition. When necessary, valuable logs from non-centralized services may be collected or requested from the system owner(s). Network captures (in the form of .pcap files) may be required depending on the nature of the incident. Acquiring only traffic that matches specific criteria keeps the volume of data manageable and minimizes the inadvertent capture of sensitive, regulated information. Endpoint logs or a collection endpoint volatile state information is often necessary to confirm scope of compromise. This could include a memory snapshot or a collection of scripts to collect information. If escalation to law enforcement or the court system is expected, carefully consider the evidence impact of accessing the endpoint at all beyond network isolation.
 
 
 ### Analysis
 
 Timeline reconstruction can help in understanding the attacker’s actions. Collected logs from relevant hosts, network appliances, server applications, etc. must be identified and placed into an event timeline to allow proper analysis. This timeline may be used to correlate events among multiple sources, which is invaluable in confirming of denying any hypotheses formed in earlier stages of the investigation.
 
-Note affected systems IPs, domain names, files, and accounts to allow retrospective analysis for repeat offenders, threat intelligence matches, and the potential for a wider scope than expected. Analysis that does result in a widening of scope in relation to time, systems, users, files, etc. may require gathering of additional logs. Incident Responders should maintain a high level of awareness of data that could be used as internal indicators of compromise that could result in a shorter detection time (or even prevention of) future incidents.
+Note affected systems IPs, domain names, files, and accounts to allow retrospective analysis for repeat offenders, threat intelligence matches, and the potential for a wider scope than expected. Analysis that does result in a widening of scope in relation to time, systems, users, files, etc. may require gathering of additional logs. Incident Responders shall maintain a high level of awareness of data that could be used as internal indicators of compromise that could result in a shorter detection time (or even prevention of) future incidents.
 
 The involvement of multiple teams and various functional communities (e.g., intelligence, subject-matter experts, and application owners) may significantly improve incident response. It is important to involve relevant parties by informing them, asking direct questions, and making direct requests for support as needed and as soon as possible.
 
 
 ### Determine Priority
 
-Levels of impact may be "Low," "Medium,"  "High," or "Emergency." Higher Incident Responders must coordinate with all organizations involved in the incident to determine whether systems from external agencies or organizations are involved. Priority determination must include consideration of the current and potential impact on the confidentiality, availability, and integrity of organizational operations, data, assets, and individuals.
+Tickets are classified by incident priority, which primarily determines notification timeline requirements. Ticket Priority be "Low," "Medium," "High," or "Emergency." Priority determination must include consideration of the current and potential impact on the confidentiality, availability, and integrity of organizational operations, data, assets, and individuals.
+
+Emergency: Tickets are Emergency priority when one of the following is suspect or confirmed:
+- An adversary causes impact to the confidentiality, integrity, or availability of a critical asset or confidential information.
+- An adversary compromises a root/administrator level account that impacts a critical asset.
+- An adversary causes impact that could lead to significant financial fines to the organization.
+
+High: Tickets are High priority when one of the following is suspect or confirmed:
+- An asset is compromised that could impact the confidentiality, integrity, or availability of critical assets or confidential information.
+- An adversary causes impact that could lead to financial fines to the organization causing a delay in financial goals.
+
+Medium: Tickets are Medium priority when one of the following is suspect or confirmed:
+- An adversary causes impact to the confidentiality, integrity, or availability of a non-critical asset that may allow the compromise of additional assets.
+- An adversary causes impact that could result in financial fines to the organization.
+- A security control is successfully and intentionally bypassed.
+
+Low: Tickets are Low priority when one of the following is suspect or confirmed:
+- An adversary causes impact to the confidentiality, integrity, or availability of a non-critical asset with a limited scope.
+- An concerted effort is made to bypass a security control.
 
 Other considerations include direct or indirect impact on:
-- Network health status.
-- Potential data compromise or loss.
-- Equipment downtime or destruction.
-- Downstream impact on other ISs or components (e.g., a machine removed from operations takes 8 hours to be rebuilt).
-- Stolen sensitive data, operational plans, and decision briefs that provide an adversary with a critical advantage.
-- Complete or partial databases loss.
-- Degraded or denied access to critical business functions.
+- Impact to asset health, including performance and resource consumption.
+- Expected cost of the entire incident response process.
 - Degraded, denied, or misdirected communication from leadership to subordinate offices.
-- Loss of control of critical networks.
 
 _Establish any service level agreements or other requirements related to Priority_
 
@@ -415,7 +434,7 @@ Root Causes may include, but are not limited to:
 - Sabotage
 - Negligence
 
-Root cause(s) should be determined prior to the recovery and reconstitution of any affected system, unless not practical or otherwise approved. The decision to restore a system without identifying the root cause(s) must be weighed carefully doing so may restore the original exposure for repeated exploitation.
+Root cause(s) shall be determined prior to the recovery and reconstitution of any affected system, unless not practical or otherwise approved. The decision to restore a system without identifying the root cause(s) must be weighed carefully doing so may restore the original exposure for repeated exploitation.
 
 
 ### Develop Courses of Action
@@ -453,7 +472,7 @@ Malware analysis, when necessary, shall be conducted on system isolated from all
 
 Incident Responders may study the behavior of malware by analyzing it actively by means of executing the malware and monitoring it during execution. Such active approaches are best performed on malware test systems instead of production hosts to minimize possible damage caused by allowing the malware to execute. Ideal active approaches involve an Incident Responder acquiring a malware sample from an infected host and placing the malware on an isolated test system. Test systems are to be maintained virtually to allow instantaneous restoration to a known-good state through snapshots or similar features.
 
-The test system should: 
+The test system shall: 
 - include up-to-date tools for identifying and monitoring software
 - maintain an elevated logging level, at debug level when necessary.
 - include immediate log forwarding to reduce potential of losing visibility when malware cleans up its own tracks by means of log and data destruction or altering
@@ -475,7 +494,7 @@ The primary objectives of containment include:
 
 For more widespread malware incidents, such as fast-spreading worms, a strategy that contains the incident for most hosts as quickly as possible is necessary; this aims to limit the number of machines that are infected, the amount of damage that is done, and the amount of time that it will take to fully recover all data and services. 
 
-No single malware containment category or individual method is appropriate or effective in every situation; Incident Responders should select a combination of containment methods that is likely to be effective in containing the current incident while limiting impact to evidence and increase in scope. In some cases eradication may need to be immediately performed, skipping containment in favor of a more rapid response.
+No single malware containment category or individual method is appropriate or effective in every situation; Incident Responders shall select a combination of containment methods that is likely to be effective in containing the current incident while limiting impact to evidence and increase in scope. In some cases eradication may need to be immediately performed, skipping containment in favor of a more rapid response.
 
 Containment actions that may affect the ability to acquire and preserve data about the incident must be decided on carefully. When making these decisions, it is important to assess the relative value of ensuring mission success by preventing further damage against the potential for containment actions to hinder further analysis. Malware on a host may attempt to exfiltrate sensitive data, replace system files, or cause other damage. Some malware is designed to cause additional damage when network connectivity is lost or other containment measures are performed.
 
@@ -524,7 +543,7 @@ Some incidents necessitate more drastic and potentially disruptive measures for 
 
 Containing incidents by placing temporary restrictions on network connectivity can be very effective. An alternative to blocking network access for particular IP addresses is to disconnect the infected hosts from the network, which could be accomplished by reconfiguring network devices to deny network access, physically disconnecting network cables from infected hosts, or using host-based firewalls to greatly restrict network communication. Such activities could eliminate network or service access to groups of non-compromised hosts. Implementing a widespread loss of connectivity to achieve containment is most likely to be acceptable in cases where malware activity is already causing severe network disruptions or infected hosts are performing attacks. Because a major loss of connectivity is likely to affect organizational missions, connectivity must be restored as soon as possible.
 
-When possible, avoid shutting down systems prior to acquiring and preserving volatile data such as running processes, network connections, and/or the entire contents of memory. This may not be an option if the compromised system begins to perform destructive tasks such as deleting files, exfiltrating sensitive data, formatting drives, or actively spreading to other hosts. In these cases, the system should be promptly disconnected, or otherwise effectively isolated. If there is no backup or restoration efforts are significant, immediate shutdown through severing power should be considered.
+When possible, avoid shutting down systems prior to acquiring and preserving volatile data such as running processes, network connections, and/or the entire contents of memory. This may not be an option if the compromised system begins to perform destructive tasks such as deleting files, exfiltrating sensitive data, formatting drives, or actively spreading to other hosts. In these cases, the system shall be promptly disconnected, or otherwise effectively isolated. If there is no backup or restoration efforts are significant, immediate shutdown through severing power shall be considered.
 
 
 # Eradication
@@ -602,7 +621,7 @@ The primary benefits of being mindful of, discussing, and integrating lessons le
 
 After a major incident has been handled, an "After-Action Review" meeting is to be conducted, wherein lessons-learned shall be presented, reviewed, and assigned to members of the team for integration. After-Action Review meetings shall each have a moderator to ensure topics are covered in a timely and efficient manner, as well as an individual assigned to document the discussion. These meetings must result in a specific list of actionables with primary points of contact who will be responsible for enacting changes required during the course of the meeting.
 
-In order to benefit the entire Incident Response Team and the organization, these lessons learned must lead to actual change in documentation, instruction, practice, architecture, etc. Smaller scale or scoped incidents may also result in lessons learned that are just as impactful as those observed in larger incidents, and should be likewise incorporated, though may not necessitate holding formal After-Action Review meetings.
+In order to benefit the entire Incident Response Team and the organization, these lessons learned must lead to actual change in documentation, instruction, practice, architecture, etc. Smaller scale or scoped incidents may also result in lessons learned that are just as impactful as those observed in larger incidents, and shall be likewise incorporated, though may not necessitate holding formal After-Action Review meetings.
 
 
 ### After Action Report
@@ -653,7 +672,7 @@ Some incidents are expected to give way to potential development of new signatur
 
 - Risk Management: The process of managing risks to organizational operations (including mission, functions, image, or reputation), organizational assets, individuals, other organizations, or the nation resulting from the operation or use of an information system, and includes: 1) the conduct of a risk assessment; 2) the implementation of a risk mitigation strategy; 3) employment of techniques and procedures for the continuous monitoring of the security state of the information system; and 4) documenting the overall risk management program.
 
-- Security: A condition that results from the establishment and maintenance of protective measures that enable an enterprise to perform its mission or critical functions despite risks posed by threats to its use of information systems. Protective measures may involve a combination of deterrence, avoidance, prevention, detection, recovery, and correction that should form part of the enterprise’s risk management approach.
+- Security: A condition that results from the establishment and maintenance of protective measures that enable an organization to perform its mission or critical functions despite risks posed by threats to its use of information systems. Protective measures may involve a combination of deterrence, avoidance, prevention, detection, recovery, and correction that shall form part of the organization's risk management approach.
 
 - Security Requirements: Requirements levied on an information system that are derived from applicable laws, Executive Orders, directives, policies, standards, instructions, regulations, or procedures, or organizational mission/business case needs to ensure the confidentiality, integrity, and availability of the information being processed, stored, or transmitted.
 
