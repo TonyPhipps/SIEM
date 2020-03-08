@@ -80,6 +80,7 @@ What compliance mandates are required by law or internal policy? Which systems a
 - [Logging Priorities and Considerations](/Logging.md)
 - What log sources are available immediately?
 - What log sources can we work on down the road?
+- What time zones are set on ingested logs? Is there an internal NTP server?
 
 # Console Access
 Incident Response may benefit greatly from access to various systems, including those not inherently security-focused.
@@ -110,3 +111,4 @@ Incident Response may benefit greatly from access to various systems, including 
 - Privileged Account Management System
 - Service Management
 - Third-party services
+- Vulnerability Scanners

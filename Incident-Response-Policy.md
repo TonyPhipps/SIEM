@@ -5,11 +5,13 @@ The following sample Incident Response Policy is meant to be tailored to your or
 - [Responsibilities](#responsibilities)
 - [Objectives](#objectives)
 - [Preparation](#preparation)
-  - [OODA Loop](#ooda-loop)
-  - [Ticketing System](#ticketing-system)
   - [Documentation, Training, Awareness](#documentation-training-awareness)
   - [Internally-Gathered Indicators of Compromise](#internally-gathered-indicators-of-compromise)
+  - [Log Ingestion](#log-ingestion)
+  - [OODA Loop](#ooda-loop)
+  - [Ticketing System](#ticketing-system)
   - [Coordination & Correspondence](#coordination--correspondence)
+- [Console Access](#console-access)
 - [Identification](#identification)
   - [Initial Assessment](#initial-assessment)
   - [Creating a Ticket for an Incident](#creating-a-ticket-for-an-incident)
@@ -86,7 +88,16 @@ The primary objectives are to:
 
 # Preparation
 
-The goal in preparation is to ensure Incident Responders have the knowledge and references essential to handling an incident. 
+- Documentation, Training, Awareness
+- References
+- Authority
+- Contacts
+- Logs
+- Tools
+- Confidence
+
+
+## Documentation, Training, Awareness
 
 Incident Responders shall be familiar with the following documents and have them readily accessible:
 - IP Address Management
@@ -102,8 +113,35 @@ Incident Responders shall be familiar with the following documents and have them
 - Disaster Recovery Plan
 - Business Continuity Plan
 - Change Management Procedures
+- Acceptable Use Policy
 - Data Classification and Protection Guidelines
 - Standard Security Configurations
+
+Incident Responders shall maximize off-peak duty hours by remaining productive and helpful to the team, including...
+- remaining familiar with documents and diagrams listed in the preparation phase.
+- performing and seeking cross-training.
+- improving & updating documentation.
+- maintaining awareness of cyber security through official and open-source intelligence.
+- seeking to understand normal behavior of monitored logs, networks, systems, etc. with the goal of improving identification of anomalies.
+- safely validating signatures fire as expected.
+
+The internal Knowledge Base shall be kept up-to-date with detailed procedures for products and Incident Response-specific processes.
+
+The Knowledge Base shall be referenced often and maintained by all Incident Responders. Incident Responders are to assist in keeping articles up to date and reflective of current procedures by updating as soon as possible when steps change for any reason (i.e. software updates, governance updates, improvements in knowledge or experience gained).
+
+Incident Responders must have a strong command of the analysis tools at their disposal. This organization provides support by providing Incident Responders with specialized training, continuing education, and a lab environment to maintain awareness and familiarity. Automated analysis and alerting tools only provide the beginnings of understanding a security incident, and only a skilled analyst provided with appropriate tools can complete the picture.
+
+
+## Internally-Gathered Indicators of Compromise
+
+True-positive incidents may provide valuable indicators of compromise (IOC) including file names, URLs, IP addresses, domains, etc. that could reveal compromise of other systems being monitored. These internal IOCs and their respective details shall be tracked in such a way that allows Incident Responders to quickly find, study, and respond to ongoing investigations. Details shall include the context in which the IOC was first observed, when it will expire, and where it is currently being leveraged for automated detection.
+
+Internal IOCs shall be reviewed annually at expiration time and each time it is referenced during an investigation. If the IOC is determined to still be of value, its expiration shall be set for one year from that review date.
+
+
+## Log Ingestion
+
+Logs shall be centrally gathered from systems that provide the ability to identify and investigate security incidents. Where possible, an NTP server shall be deployed, with as many systems as possible configured to utilize the service. Centralized logging minimizes the risk of tampering, clearing, and general integrity concerns of logs.
 
 
 ## OODA Loop
@@ -127,30 +165,6 @@ Documents too large or otherwise not easily attached to the Ticket shall be stor
 It is the shared responsibility of all Incident Responders to ensure all tickets receive proper attention and timely updates. Tickets must be actioned upon and updated at least once per shift until closure. Updates shall consist of, at a minimum, a Work Log entry specifying the last action taken, who took the actions, and when. The Executive Summary shall be kept up-to-date, reflecting the known beginning, middle, and end of each incident at a high level. Outstanding actions shall be included in this field, as they represent a portion the complete ticket summary.
 
 
-## Documentation, Training, Awareness
-
-Incident Responders shall maximize off-peak duty hours by remaining productive and helpful to the team, including...
-- remaining familiar with documents and diagrams listed in the preparation phase.
-- performing and seeking cross-training.
-- improving & updating documentation.
-- maintaining awareness of cyber security through official and open-source intelligence.
-- studying normal behavior of monitored logs, networks, systems, etc. with the goal of improving identification of anomalies.
-- safely validating signatures fire as expected.
-
-The internal Knowledge Base shall be kept up-to-date with detailed procedures for products and Incident Response-specific processes.
-
-The Knowledge Base shall be referenced often and maintained by all Incident Responders. Incident Responders are to assist in keeping articles up to date and reflective of current procedures by updating as soon as possible when steps change for any reason (i.e. software updates, governance updates, improvements in knowledge or experience gained).
-
-Incident Responders must have a strong command of the analysis tools at their disposal. This organization provides support by providing Incident Responders with specialized training, continuing education, and a lab environment to maintain awareness and familiarity. Automated analysis and alerting tools only provide the beginnings of understanding a security incident, and only a skilled analyst provided with appropriate tools can complete the picture.
-
-
-## Internally-Gathered Indicators of Compromise
-
-True-positive incidents may provide valuable indicators of compromise (IOC) including file names, URLs, IP addresses, domains, etc. that could reveal compromise of other systems being monitored. These internal IOCs and their respective details shall be tracked in such a way that allows Incident Responders to quickly find, study, and respond to ongoing investigations. Details shall include the context in which the IOC was first observed, when it will expire, and where it is currently being leveraged for automated detection.
-
-Internal IOCs shall be reviewed annually at expiration time and each time it is referenced during an investigation. If the IOC is determined to still be of value, its expiration shall be set for one year from that review date.
-
-
 ## Coordination & Correspondence
 
 Incident Responders will often need to communicate with outside parties regarding an incident, and shall do so whenever appropriate, such as contacting law enforcement, ISPs, vendors, other incident response teams, and seeking external expertise. The Incident Response Team shall maintain contacts with the public affairs office, legal department, and various persons in management.
@@ -161,7 +175,7 @@ All communication, files, and information related to an incident shall be dissem
 
 Incident Responders may need to speak to a software vendor about suspicious activity. This contact could include questions regarding the significance of certain log entries or known false positives for certain intrusion detection signatures, where minimal information regarding the incident may need to be revealed. Software vendors may also provide information on known threats (e.g., new attacks) to help organizations understand the current threat environment. Sanitization shall be performed on data prior to being sent to software vendors when possible and reasonable. Scripts may be used to significantly reduce what appears to be a large amount of manual effort.
 
-At least one secondary communication channel shall be established for use in cases where primary means of communication may be compromised. This could be cell phones, secondary email accounts, etc. These systems must be established prior to their need to minimize their immediate use in a time of need.
+At least one secondary communication channel shall be established for use in cases where primary means of communication may be compromised. This could be cell phones, secondary email accounts, etc. These communication channels must be established prior to their need to minimize their immediate use in a time of need.
 
 Incident Responders shall collaborate with security and product administrators in advance in any incidents to identify data sources that can aid in detection, investigation, and response efforts. Incident Responders shall seek to understand what types of information each data source may record and identify data/logging relationships that could offer secondary sources of logs.
 
@@ -176,6 +190,26 @@ The following actions are likely to arise when investigating or responding to an
 - Block or redirect an IP address or domain
 - Remove sensitive/confidential information
 - Activities listed under Containment section
+
+Additional points of contact that may be required to investigate or respond to an incident include the following.
+
+- IT Support
+- IT Architecture/Server Teams
+- Asset Management
+- Identity and Access Management
+- Data Backup Administration
+- Networking
+- Hosting/Application Teams
+- Database Administration
+- Development Teams
+- Computer Security-related teams
+- Physical Security
+- Human Resources
+- Public Relations
+- Legal Department
+- Internet Service Provider(s)
+- Local law enforcement
+- Product Vendor and Technical Support
 
 
 ### Safeguarding Information
@@ -265,6 +299,38 @@ Other agenda items may include:
 - Important documentation updates
 - Important use case adjustments
 - Zero-day announcements affecting monitored users, systems, software, etc.
+
+
+# Console Access
+Incident Response benefits greatly from access to various systems, including those not inherently security-focused. Incident Response members shall maintain access to as many of the following tools as possible to enable quick, effective handling of security incidents.
+
+- Active Directory
+- File Servers
+- Print Servers
+- Cloud
+- Virtualization
+- DNS
+- DHCP
+- MFA
+- HIPS
+- IPS/IDS
+- EDR
+- AV
+- Firewall
+- NetFlow
+- Web Proxy
+- Domain Controllers
+- EDR
+- Email
+- VPN
+- File Sharing
+- Switches
+- Routers
+- Door Access Systems
+- Privileged Account Management System
+- Service Management
+- Third-party services
+- Vulnerability Scanners
 
 
 # Identification
