@@ -419,12 +419,12 @@ When possible, investigation shall be conducted in parallel with containment, er
 
 Once the incident is determined to be a true positive, the timeline requirement to notify the affected party or parties begins.
 
- | Priority  | Timeline  |
- | :-------: | :-------: |
- | Emergency | Immediate |
- |   High    |    1h     |
- |  Medium   |    8h     |
- |    Low    |    24h    |
+ | Priority  |      Description      | Timeline  |
+ | :-------: | :-------------------: | :-------: |
+ | Emergency |   Clear Emergencies   | Immediate |
+ |   High    |  Probable Compromise  |    1h     |
+ |  Medium   |  Suspicious Activity  |    8h     |
+ |    Low    | Questionable Activity |    24h    |
 
 
 ### Gather Logs
