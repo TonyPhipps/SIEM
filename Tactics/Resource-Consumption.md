@@ -8,7 +8,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 ## Blacklist Alert
 
 
-
 ## Whitelist Alert
 
 
@@ -22,9 +21,10 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Threshold Alert
+- High CPU/Memory Usage over X Minutes
 
 
 # Log Source Examples
- 
+
 
 # Possible False Positives
