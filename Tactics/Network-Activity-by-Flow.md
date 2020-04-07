@@ -23,12 +23,14 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Threshold Alert
-- Source System, Destination System, Protocol=UDP where Source System Count exceeds threshold
-- Source System, Destination System, Protocol=UDP where Destination System Count exceeds threshold
-- Source System, Protocol=TCP where Count exceeds threshold
-- Destination System, Protocol=TCP where Count exceeds threshold
-- Bytes In Total, Bytes Out Total, Bytes In/Out Ratio where Bytes In/Out Ratio exceeds threshold
-- Connection Length where Connection Length exceeds threshold
+- Source System, Destination System, Protocol=UDP where Count exceeds threshold
+- Source System, Destination System, Protocol=UDP where Count exceeds threshold
+- Source/Destination System, Protocol=TCP where Count exceeds threshold
+- Source/Destination System, Protocol=TCP where Count exceeds threshold
+- Source/Destination System, Bytes In Total, where Bytes In Total exceeds threshold
+- Source/Destination System, Bytes Out Total, where Bytes Out Total exceeds threshold
+- Source/Destination System, Bytes In Total, Bytes Out Total, Bytes In/Out Ratio where Bytes In/Out Ratio exceeds threshold
+- Source/Destination System, Connection Length where Connection Length exceeds threshold
 
 
 # Log Source Examples
