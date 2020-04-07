@@ -1,6 +1,6 @@
 # TODO: Merge into Tactics md's
 
-# Use Cases by Detection Method
+# Account Modification Use Cases
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
@@ -44,7 +44,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Windows Security Event ID 4756: A member was added to a security-enabled universal group
 - Windows Security Event ID 4767: A user account was unlocked
 - Windows Security Event ID 4722: A user account was enabled
-- Windows Security Event ID 4723: An attempt was made to change an account's password
+- Windows Security Event ID 4723: An attempt was made to change an accounts password
 - Windows Security Event ID 4724: An attempt was made to reset an accounts password
 - Windows Security Event ID 4725: A user account was disabled
 - Windows Security Event ID 4726: A user account was deleted

@@ -54,6 +54,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Microsoft Sysmon Event ID 11: FileCreate
 - Windows Security Event ID 4656: A handle to an object was requested
 - Host-Based IPS Signatures
+- Cloud Bucket Logs
  
 
 # Possible False Positives

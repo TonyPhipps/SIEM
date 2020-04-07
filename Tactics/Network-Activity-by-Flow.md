@@ -1,4 +1,4 @@
-# Use Cases by Detection Method
+# Network Activity by Flow Use Cases
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
@@ -37,5 +37,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Netflow Logs
 - IPFIX Logs
 - SFLOW Logs
+- VPC Flow Logs
 
 # Possible False Positives

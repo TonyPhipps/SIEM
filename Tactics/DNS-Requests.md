@@ -1,4 +1,4 @@
-# Use Cases by Detection Method
+# DNS Request Use Cases
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

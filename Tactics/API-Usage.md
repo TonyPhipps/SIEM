@@ -1,4 +1,4 @@
-# Use Cases by Detection Method
+# API Usage Use Cases
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

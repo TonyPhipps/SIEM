@@ -1,4 +1,4 @@
-# Use Cases by Detection Method
+# Service Modification Use Cases
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

@@ -1,4 +1,4 @@
-# Use Cases by Detection Method
+# Network Activity by Full Packet Capture Use Cases
 
 
 Grouped by [Detection Method](/Detection-Methods.md)

@@ -1,4 +1,4 @@
-# Use Cases by Detection Method
+# Network Activity by Process Use Cases
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
