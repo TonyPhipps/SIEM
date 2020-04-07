@@ -27,9 +27,13 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Source System, Destination System, Protocol=UDP where Destination System Count exceeds threshold
 - Source System, Protocol=TCP where Count exceeds threshold
 - Destination System, Protocol=TCP where Count exceeds threshold
+- Bytes In Total, Bytes Out Total, Bytes In/Out Ratio where Bytes In/Out Ratio exceeds threshold
+- Connection Length where Connection Length exceeds threshold
 
 
 # Log Source Examples
-- Layer 3 or 7 Firewall Logs
+- Netflow Logs
+- IPFIX Logs
+- SFLOW Logs
 
 # Possible False Positives

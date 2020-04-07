@@ -47,6 +47,11 @@
 - For each matching event, determine if matching record's matching day of week field is FALSE
 - Alarm if matching record's day of week field is FALSE
 
+## Group of Alarms
+- For matching alarm event, store in a watchlist
+- For next matching alarm event, compare to watchlist for matches in one or more properties.
+- Alarm if match is found
+
 ## Levenshtein Score Alarm
 
 (AKA Edit Distance; AKA Similarity Score)
