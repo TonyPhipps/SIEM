@@ -27,3 +27,5 @@ Prepend Review/Deploy/Audit/Change/Remove to any of the following where it makes
 - Centralized Logging and Monitoring
 - Principal of Least Privilege
 - Separation of Duties
+- Endpoint Detection and Response
+- Antivirus
