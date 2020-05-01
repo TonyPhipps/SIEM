@@ -11,7 +11,7 @@ Prepend Review/Deploy/Audit/Change/Remove to any of the following where it makes
 - Group Policy
 - High-Availability/Redundancy
 - Network Access Control
-- Network Segementation
+- Network Segmentation
 - OffSite Backup
 - Password Complexity Policy
 - Redundant Power Supply
@@ -20,7 +20,7 @@ Prepend Review/Deploy/Audit/Change/Remove to any of the following where it makes
 - User/Entity Behavior Analytics
 - Web Proxy/Filtering
 - Email Security/Filtering
-- Next-Generation Anitvirus
+- Next-Generation Antivirus
 - Network/Host IPS
 - Web Application Firewall
 - IOC/Reputation Subscription
