@@ -1,0 +1,31 @@
+Prepend Review/Deploy/Audit/Change/Remove to any of the following where it makes sense
+
+- Administrative Policy
+- Application Whitelisting
+- Vulnerability Management
+- Privileges/Memberships
+- Installed Software
+- Enabled Services
+- Code Signing
+- Security Configuration
+- Group Policy
+- High-Availability/Redundancy
+- Network Access Control
+- Network Segmentation
+- OffSite Backup
+- Password Complexity Policy
+- Redundant Power Supply
+- Network Traffic Restriction
+- User Awareness Training
+- User/Entity Behavior Analytics
+- Web Proxy/Filtering
+- Email Security/Filtering
+- Next-Generation Antivirus
+- Network/Host IPS
+- Web Application Firewall
+- IOC/Reputation Subscription
+- Centralized Logging and Monitoring
+- Principal of Least Privilege
+- Separation of Duties
+- Endpoint Detection and Response
+- Antivirus

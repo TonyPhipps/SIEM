@@ -1,2 +1,4 @@
 *.tmp
 .~lock.Detect.ods#
+.vscode/settings.json
+.vscode/launch.json
