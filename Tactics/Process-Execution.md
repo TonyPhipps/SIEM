@@ -36,11 +36,11 @@ MITRE ATT&CK Framework:
   - http
   - ftp
 -  Command line with http or ftp from the following executables
-   -  msiexec
-   -  regsvr32
-   -  cmd
-   -  powershell
-   -  powershell_ise
+  - msiexec
+  - regsvr32
+  - cmd
+  - powershell
+  - powershell_ise
 - Destination Process name matches a system executable, but folder path does not start with c:\windows\
 - Use of wevutil with 'cl' in command line
 
@@ -53,6 +53,10 @@ MITRE ATT&CK Framework:
 - Anomalous use of certutil with '-decode' in command line
 - Anomalous use of 'reg'
 - Anomalous use of 'echo'
+- Anomalous parent process of
+  - c:\windows\system32\w3wp.exe
+- Anomalous process starting from
+  - c:\windows\system32\
 
 
 ## Levenshtein Score Alert
@@ -84,4 +88,4 @@ MITRE ATT&CK Framework:
 - Sysmon Event ID 1
 
 
-# Possible False Postivies
+# Possible False Positives
