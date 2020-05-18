@@ -41,21 +41,137 @@ MITRE ATT&CK Framework:
   - cmd
   - powershell
   - powershell_ise
-- Destination Process name matches a system executable, but folder path does not start with c:\windows\
 - Use of wevutil with 'cl' in command line
+- Executables matching those in Sysinternals package ran from non-administrators and non-developers (include name.exe and name64.exe variants)
+  - pslist.exe
+  - psservice.exe
+  - psexec.exe
+  - psgetsid.exe
+  - pskill.exe
+  - pkill.exe
+  - psloggedon.exe
+  - psfile.exe
+  - PipeList.exe
+  - AccessChk.exe
+  - AccessEnum.exe
+  - LogonSessions.exe
+  - PsLogList.exe
+  - PsInfo.exe
+  - PsPasswd.exe
+  - ru.exe
+  - procdump.exe
+  - ShellRunas.exe
+  - LoadOrd.exe
+  - LoadOrdC.exe
+  - regsize.exe
+- eventvwr.exe child process other than mmc.exe (T1088)
+- Commandline containing a ^ (T1027)
+- fltMC.exe with commandline contains 'unload' OR 'detach' (T1054)
+- InstallUtil.exe with commandline contains '/logfile=' OR '/LogToConsole=false' OR '/U' (T1118)
+- certutil.exe with commandline containing '-decode'
+- Executables as useful to attackers as they are to admins (living off the land)
+  - appcmd.exe (T1218)
+  - attrib.exe (T1158)
+  - bash.exe (T1202)
+  - certutil.exe (T1202)
+  - cmd.exe (T1059)
+  - cmdkey.exe (T1087)
+  - CMSTP.exe with commandline containing '/ni' OR '/s' (T1191)
+  - computerdefaults.exe (T1088)
+  - control.exe (T1202)
+  - cscript.exe (T1202)
+  - dism.exe (T1088)
+  - esentutl.exe (T1003)
+  - findstr.exe (T1081)
+  - fodhelper.exe (T1088)
+  - forfiles.exe (T1222)
+  - hh.exe (T1047)
+  - icacls.exe (T1222)
+  - ipconfig (T1016)
+  - jjs.exe (T1218)
+  - klist.exe (T1087)
+  - makecab.exe
+  - mofcomp.exe (T1047)
+  - MpCmdRun.exe with commandline containing 'Add-MpPreference' OR 'RemoveDefinitions' OR 'DisableIOAVProtection' (T1089)
+  - mshta.exe (T1170)
+  - nbtstat.exe (T1016)
+  - net.exe (T1018)
+  - netsh.exe (T1063)
+  - netstat.exe (T1049)
+  - nltest.exe (T1033)
+  - nltestrk.exe with command line containing '/domain_trusts (T1482)
+  - nslookup.exe (T1016)
+  - odbcconf.exe (T1073)
+  - pcalua.exe (T1202)
+  - powershell.exe (T1086)
+  - powershell_ise.exe (T1086)
+  - qprocess.exe (T1057)
+  - query.exe (T1057)
+  - quser.exe (T1033)
+  - qwinsta.exe (T1057)
+  - reg.exe (T1112)
+  - regasm.exe (T1121)
+  - regsvcs.exe (T1121)
+  - regsvr32.exe (T1117)
+  - replace.exe (T1218)
+  - robocopy.exe (T1074)
+  - route.exe (T1016)
+  - runas.exe (T1134)
+  - rwinsta.exe (T1057)
+  - sc.exe (T1031)
+  - schtasks.exe (T1053)
+  - scrcons.exe (T1047)
+  - SyncAppvPublishingServer.exe (T1218)
+  - systeminfo.exe (T1033)
+  - takeown.exe (T1222)
+  - taskeng.exe (T1053)
+  - taskkill.exe (T1112)
+  - tasklist.exe (T1057)
+  - tracert.exe (T1016)
+  - tree.com (T1016)
+  - vassadmin.exe (T1490)
+  - wevtutil.exe (T1070)
+  - where.exe (T1081)
+  - whoami.exe (T1033)
+  - winrm.cmd (T1028)
+  - winrs.exe (T1202)
+  - wmiprvse.exe (T1047)
+  - wscript.exe (T1202)
+  - wsmprovhost.exe (T1028)
+  - wusa.exe
+  - xcopy.exe (T1074)
+  - Mavinject.exe with command line containing '/INJECTRUNNING'(T1218)
+  - MSBuild.exe (T1127)
+  - sdbinst.exe (T1138)
+  - bitsadmin.exe (T1197)
+  - fodhelper.exe (T1088)
+  - sethc.exe (T1015)
+  - utilman.exe (T1015)
+  - osk.exe (T1015)
+  - magnify.exe (T1015)
+  - displayswitch.exe (T1015)
+  - narrator.exe (T1015)
+  - atbroker.exe (T1015)
+- Commandline containing 'wmic'
+- Commandline containing 'reg'
+- Commandline containing 'echo'
+- Commandline containing lsass.exe
 
 
 ## Whitelist Alert
-- Anomalous Office Product Child Process
-- Anomalous process ran by 'NT AUTHORITY\SYSTEM'
-- Anomalous process ran by 'NETWORK SERVICE'
-- Anomalous use of 'wmic'
-- Anomalous use of certutil with '-decode' in command line
-- Anomalous use of 'reg'
-- Anomalous use of 'echo'
-- Anomalous parent process of
+- Unrecognized Child Processes of Office Products (T1137)
+  - excel.exe
+  - winword.exe
+  - powerpnt.exe
+  - outlook.exe
+  - msaccess.exe
+  - mspub.exe
+- Unrecognized processes with owner of 'NT AUTHORITY\SYSTEM'
+- Unrecognized processes with owner of 'NETWORK SERVICE'
+- Urecognized folder path where process name matches a system executable name (T1036)
+- Unrecognized parent process of
   - c:\windows\system32\w3wp.exe
-- Anomalous process starting from
+- Unrecognized process starting from (T1036)
   - c:\windows\system32\
 
 
