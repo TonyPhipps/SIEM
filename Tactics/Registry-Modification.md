@@ -1,4 +1,4 @@
-# File Access Use Cases
+# Registry Modification Use Cases
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
