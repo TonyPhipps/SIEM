@@ -1,4 +1,4 @@
-# File Modification Use Cases
+# File Access Use Cases
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
@@ -6,7 +6,25 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Blacklist Alert
-- HKLM:\Software\Microsoft\.NETFramework\ETWEnabled (DWord)
+- "HKU\{SID}\Software\Microsoft\Windows\CurrentVersion\Run"
+- "HKU\{SID}\Software\Microsoft\Windows\CurrentVersion\RunOnce"
+- "HKU\{SID}\Software\Microsoft\Windows\CurrentVersion\RunOnceEx"
+- "HKLM\Software\Microsoft\Windows\CurrentVersion\Run"
+- "HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce"
+- "HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnceEx"
+- "HKU\{SID}\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders"
+- "HKU\{SID}\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders"
+- "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders"
+- "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders"
+- "HKLM\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce"
+- "HKU\{SID}\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce"
+- "HKLM\Software\Microsoft\Windows\CurrentVersion\RunServices"
+- "HKU\{SID}\Software\Microsoft\Windows\CurrentVersion\RunServices"
+- "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run"
+- "HKU\{SID}\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run"
+- "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit"
+- "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell"
+- "HKU\{SID}\Software\Microsoft\Windows NT\CurrentVersion\Windows"
 
 
 ## Whitelist Alert
@@ -25,7 +43,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 # Log Source Examples
-- Windows Security Event ID 4657
-- Sysmon Event ID 13
+ 
 
 # Possible False Positives

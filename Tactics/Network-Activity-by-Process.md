@@ -6,10 +6,13 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Blacklist Alert
-
+- mstsc.exe from an unexpected source user
+- wscript.exe
+- cscript.exe
+- bitsadmin.exe
 
 ## Whitelist Alert
-- Unexpected Process Names
+- Unexpected Process Names with network activity
 
 
 ## Levenshtein Score Alert

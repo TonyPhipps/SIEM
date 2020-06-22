@@ -10,39 +10,34 @@ MITRE ATT&CK Framework:
 
 
 ## Blacklist Alert
-- A file with a non-executable extension is executed
-- PowerShell with one of the following in the command line
-  - -nop (from noprofile)
+- PowerShell.exe or powershell_ise.exe with one of the following in the command line
+  - -nop (from -noprofile)
   - hidden
-  - -noni (from noninteractive)
+  - -noni (from -noninteractive)
   - bypass
-  - -enc (from encodedcommand)
-  - invoke-webrequest
-  - iwr
-  - invoke-restmethod
-  - irm
-  - curl
-  - wget
+  - -enc (from -encodedcommand)
+  - invoke-webrequest or iwr or curl or wget
+  - invoke-restmethod or irm
   - bitstransfer
   - downloadstring
   - downloadfile
   - winhttprequest
   - xmlhttp
-- whoami ran by 'NT AUTHORITY\SYSTEM'
-- 'certutil' with one of the following in the command line
+- whoami.exe ran by 'NT AUTHORITY\SYSTEM'
+- 'certutil.exe' with one of the following in the command line
   - urlcach
   - url
   - ping
   - http
   - ftp
--  Command line with http or ftp from the following executables
-  - msiexec
-  - regsvr32
-  - cmd
-  - powershell
-  - powershell_ise
-- Use of wevutil with 'cl' in command line
-- Executables matching those in Sysinternals package ran from non-administrators and non-developers (include name.exe and name64.exe variants)
+-  Command line containing 'http' or 'ftp' from the following executables
+  - msiexec.exe
+  - regsvr32.exe
+  - cmd.exe
+  - powershell.exe
+  - powershell_ise.exe
+- Use of wevutil.exe with 'cl' in command line
+- Executables matching those in Sysinternals package (include name.exe and name64.exe variants)
   - pslist.exe
   - psservice.exe
   - psexec.exe
@@ -69,7 +64,7 @@ MITRE ATT&CK Framework:
 - fltMC.exe with commandline contains 'unload' OR 'detach' (T1054)
 - InstallUtil.exe with commandline contains '/logfile=' OR '/LogToConsole=false' OR '/U' (T1118)
 - certutil.exe with commandline containing '-decode'
-- Executables as useful to attackers as they are to admins (living off the land)
+- Executables as useful to attackers as they are to admins (LOLBINS)
   - appcmd.exe (T1218)
   - attrib.exe (T1158)
   - bash.exe (T1202)
@@ -155,10 +150,15 @@ MITRE ATT&CK Framework:
 - Commandline containing 'wmic'
 - Commandline containing 'reg'
 - Commandline containing 'echo'
-- Commandline containing lsass.exe
+- Commandline containing 'lsass.exe'
+- Administrator account running chrome.exe, iexplore.exe, MicrosoftEdge.exe, msedge.exe
+- chrome.exe with commandline containing "headless" or "remote-debugging"
+- Unsigned child process of a browser
 
 
 ## Whitelist Alert
+- A file with a non-executable extension is executed
+  - bat, bin, cmd, com, cpl, exe, gadget, inf, ins, inx, isu, job, jse, lnk, msc, msi, msp, mst, paf, pif, ps1, reg, rgs, scr, sct, shb, shs, u3p, vb, vbe, vbs, vbscript, ws, wsf, wsh
 - Unrecognized Child Processes of Office Products (T1137)
   - excel.exe
   - winword.exe
@@ -173,6 +173,8 @@ MITRE ATT&CK Framework:
   - c:\windows\system32\w3wp.exe
 - Unrecognized process starting from (T1036)
   - c:\windows\system32\
+  - c:\windows\
+- Unexpected user running runas.exe
 
 
 ## Levenshtein Score Alert

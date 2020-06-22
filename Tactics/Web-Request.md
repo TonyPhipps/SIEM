@@ -23,6 +23,11 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - URL containing an IP Address
 - HTTPS request with 3 or more / (when no break-and-inspect is deployed, this signifies HTTP over port 443)
 - Known-bad User Agents
+- Suspicious User Agents
+  - Contains "curl"
+  - Contains "python"
+  - Contains "Go-http-client"
+  - Contains "wget"
 - Known-bad Domains
 - A privileged account generates any web traffic
 - A service account generates any web traffic

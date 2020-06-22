@@ -12,7 +12,8 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Changes by an unexpected user to any file under c:\program files (x86)\
 - Changes by an unexpected user to any file under c:\windows\
 - Changes to files in another user's home directory
-
+- Changes to files in folder path containing 'inetpub' or 'wwwroot'
+- Changes to c:\windows\system32\drivers\etc\hosts
 
 ## Whitelist Alert
 

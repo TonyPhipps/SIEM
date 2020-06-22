@@ -22,10 +22,12 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
   - wget
 - Command contains very uncommon "LOLBAS/LOLBIN" commands
   - hh.exe
-
+- Command line contains 'get-ciminstance' or 'gcim'
+- Command line contains 'get-wmiobject' or 'gwmi'
+- Command line contains 'http' or 'ftp'
 
 ## Whitelist Alert
-
+- Unexpected user where command line contains "runas"
 
 ## Levenshtein Score Alert
 
