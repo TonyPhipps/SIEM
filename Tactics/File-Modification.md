@@ -2,6 +2,7 @@
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
+
 ## Aggregate Count
 
 
@@ -32,5 +33,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 # Log Source Examples
 - Cloud Bucket Logs
+
 
 # Possible False Positives

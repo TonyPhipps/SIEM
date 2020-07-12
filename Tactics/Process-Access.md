@@ -4,6 +4,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 Observe general process behavior with the goal of understanding normal and detecting anomalies. Use of multiple visualizations, tables, and aggregation methods is recommended. Any confirmed malicious behavior from this use case should be considered as a foundation for a new alert.
 
+
 ## Aggregate Count
 
 
@@ -32,4 +33,4 @@ Observe general process behavior with the goal of understanding normal and detec
 - Sysmon Event ID 10
 
 
-# Possible False Postivies
+# Possible False Positives

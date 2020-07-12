@@ -2,6 +2,7 @@
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
+
 ## Aggregate Count
 - Count of Events per Hour
 - Count of Events per Source System
@@ -45,5 +46,5 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Windows Security Event ID 4648: A logon was attempted using explicit credentials
 
 
-# Possible False Postivies
+# Possible False Positives
 - May pick up failed service accounts repeatedly trying to "do their job" with a locked account. Notifying the appropriate admin is a good idea here.

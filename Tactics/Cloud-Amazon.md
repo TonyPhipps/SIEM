@@ -2,6 +2,7 @@
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
+
 ## Aggregate Count
 
 
@@ -31,5 +32,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - S3 Bucket Logs
 - CloudTrail
 - CloudFront Logs
+
 
 # Possible False Positives

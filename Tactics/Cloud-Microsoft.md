@@ -2,8 +2,10 @@
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
+
 ## Aggregate Count
 - Count of Operations Performed
+
 
 ## Blacklist Alert
 - Account Creation
@@ -36,6 +38,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Server Outbound Megabytes to One System Exceeds Threshold
 - Server Inbound Megabytes to One System Exceeds Threshold
 
+
 # Log Source Examples
 - Activity Logs
 - Resource (Diagnostic) Logs
@@ -48,5 +51,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Storage Analytics Logs
 - Network Security Group (NSG) Logs
 - Security Center
+
 
 # Possible False Positives

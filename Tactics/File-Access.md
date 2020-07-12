@@ -2,8 +2,10 @@
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
+
 ## Aggregate Count
 - Access of .ost, .pst files (Outlook Email Archives)
+
 
 ## Blacklist Alert
 - A business confidential file is accessed

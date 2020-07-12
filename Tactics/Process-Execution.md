@@ -6,6 +6,7 @@ MITRE ATT&CK Framework:
 
 - Observe general process execution with the goal of understanding normal and detecting anomalies. Use of multiple visualizations, tables, and aggregation methods is recommended. Any confirmed malicious behavior from this use case should be considered as a foundation for a new alert.
 
+
 ## Aggregate Count
 
 

@@ -2,6 +2,7 @@
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
+
 ## Aggregate Count
 
 
@@ -10,6 +11,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - wscript.exe
 - cscript.exe
 - bitsadmin.exe
+
 
 ## Whitelist Alert
 - Unexpected Process Names with network activity
@@ -27,6 +29,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Newly observed Destination Port
 - Newly observed Destnation Port Name
 
+
 ## Shannon Entropy Score Alert
 - Processes with Random Names
 
@@ -42,5 +45,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 # Log Source Examples
 - Sysmon Event ID 3
+
 
 # Possible False Positives

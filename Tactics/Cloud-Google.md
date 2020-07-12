@@ -2,6 +2,7 @@
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
+
 ## Aggregate Count
 
 
@@ -30,5 +31,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Cloud Storage Logs
 - Container (GKE) Logs
   - StackdriverLogging for Kubernetes (GKE)
+
 
 # Possible False Positives

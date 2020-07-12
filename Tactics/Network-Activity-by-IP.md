@@ -2,11 +2,13 @@
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
+
 ## Aggregate Count
 
 
 ## Blacklist Alert
 - Known-Bad Destination Port Use
+
 
 ## Whitelist Alert
 - Anomalous Destination Port Use
@@ -31,5 +33,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 # Log Source Examples
 - Layer 3 or 7 Firewall Logs
+
 
 # Possible False Positives

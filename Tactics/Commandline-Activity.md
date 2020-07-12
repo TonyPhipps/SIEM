@@ -6,6 +6,7 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 - Execution of malicious commands and scripts from command-line interfaces.
 
+
 ## Aggregate Count
 
 
@@ -25,6 +26,7 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 - Command line contains 'get-ciminstance' or 'gcim'
 - Command line contains 'get-wmiobject' or 'gwmi'
 - Command line contains 'http' or 'ftp'
+
 
 ## Whitelist Alert
 - Unexpected user where command line contains "runas"

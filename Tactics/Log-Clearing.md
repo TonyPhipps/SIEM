@@ -6,6 +6,7 @@ MITRE ATT&CK Framework: [Indicator Removal on Host (T1070)](https://attack.mitre
 
 - Clearing event logs is a way for adversaries to clear their tracks. With proper event collection, this should occur seldom, making it a relatively easy detection method. Event logs set to "fill" rather than roll or that allow a large enough rolling file size that it causes system administrators to want to clear the logs should be avoided.
 
+
 ## Aggregate Count
 
 

@@ -2,6 +2,7 @@
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
+
 ## Aggregate Count
 - Count of Events per Source User
 - Count of Events per Hour
@@ -39,4 +40,4 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Windows Security Event ID 4720: A user account was created
 
 
-# Possible False Postivies
+# Possible False Positives
