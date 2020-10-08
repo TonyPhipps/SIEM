@@ -65,9 +65,11 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 4727    | A security-enabled global group was created.                                                                                                             |
 | 4728    | A member was added to a security-enabled global group.                                                                                                   |
 | 4729    | A member was removed from a security-enabled global group.                                                                                               |
+| 4730    | A security-enabled global group was deleted.                                                                                                             |
 | 4731    | A security-enabled local group was created.                                                                                                              |
 | 4732    | A member was added to a security-enabled local group.                                                                                                    |
 | 4733    | A member was removed from a security-enabled local group.                                                                                                |
+| 4734    | A security-enabled local group was deleted.                                                                                                              |
 | 4735    | A security-enabled local group was changed.                                                                                                              |
 | 4737    | A security-enabled global group was changed.                                                                                                             |
 | 4738    | A user account was changed.                                                                                                                              |
