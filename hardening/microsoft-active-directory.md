@@ -66,3 +66,4 @@
 - Mandiant Whitepaper: Ransomware Protection and Containment Strategies
   - https://www.fireeye.com/content/dam/fireeye-www/current-threats/pdfs/wp-ransomware-protection-and-containment-strategies.pdf
 - SANS course and public materials
+- https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material

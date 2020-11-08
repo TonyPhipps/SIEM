@@ -8,7 +8,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 - [Microsoft-Windows-Kernel-PnP/Device Configuration](#microsoft-windows-kernel-pnpdevice-configuration)
 - [Microsoft-Windows-TaskScheduler/Operational](#microsoft-windows-taskscheduleroperational)
 - [Microsoft-Windows-Powershell/Operational](#microsoft-windows-powershelloperational)
-- [Microsoft-Windows-PowerShell/Operational](#microsoft-windows-powershelloperational)
+- [Microsoft-Windows-PowerShell/Operational](#microsoft-windows-powershelloperational-1)
 - [Windows PowerShell](#windows-powershell)
 - [Microsoft-Windows-PowerShell/Analytic](#microsoft-windows-powershellanalytic)
 - [Microsoft-Windows-Windows Defender/Operational](#microsoft-windows-windows-defenderoperational)
@@ -127,7 +127,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 5035    | Windows Firewall Driver failed to start                                                                                                                  |
 | 5037    | Windows Firewall Driver detected critical runtime error Terminating                                                                                      |
 | 5038    | Code integrity determined that the image hash of a file is not valid                                                                                     |
-| 5136    | A directory service object was modified.                                                                                                                 |
+| 5136    | A directory service object was modified. [1]                                                                                                             |
 | 5140    | Network share object accessed                                                                                                                            |
 | 5142    | Network share object added                                                                                                                               |
 | 5143    | Network share object changed                                                                                                                             |
@@ -140,6 +140,8 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 6276    | Network Policy Server quarantined a user                                                                                                                 |
 | 6280    | Network Policy Server unlocked the user account                                                                                                          |
 | 6416    | A new external device was recognized by the system                                                                                                       |
+
+- 1 - Requires that “Audit Directory Service Changes” auditing be enabled.
 
 ## Microsoft-Windows-Sysmon/Operational
 
