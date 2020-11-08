@@ -112,3 +112,27 @@ Incident Response may benefit greatly from access to various systems, including 
 - Service Management
 - Third-party services
 - Vulnerability Scanners
+
+
+# Domain Controller Redundancy
+- Ensure there is a domain controller that can be quickly taken offline in the need of an isolation to prevent rebuilding. Preferable one that holds FSMO roles. 
+  - ```netdom query fsmo```
+
+
+
+# Backups
+- Ensure critical systems are backed up and NOT accessible from the network. Often connected backups are targeted for encryption or deletion.
+- Ensure recent backups of GPO's exist.
+  - ```backup-gpo -domain "domain.local" -all -path "c:\temp\gpo-backups"```
+- Ensure the Directory Services Restore Mode (DSRM) password is set to a known value on all Domain Controllers. The steps will need to be initiated on each Domain Controller:
+```
+   PS C:\Windows\system32> ntdsutil
+   C:\Windows\System32\ntdsutil.exe: set drsm password
+   Reset DRSM Administrator Password: reset password on server null
+   Please type password for DS Restore Mode Administrator Account: ***
+   Please confirm new password: ***
+   Password has been set successfully.
+```
+- Test recovery from backups at least annually for critical data, servers, and domains.
+
+
