@@ -29,6 +29,7 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 ## Aggregate Count
 - Process file names (without path)
 - Process file names (with path)
+- Rundll32.exe commandlines
 
 
 ## Blacklist Alert
