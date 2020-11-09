@@ -60,7 +60,7 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
   - Commandline containing consecutive commas
   - Commandline containing consecutive semicolons
   - Commandline containing COMSPEC (part of %COMSPEC%)
-  - Commandline containing /\ or \/ or \.\ or /./ or\./ or ..
+  - Commandline containing /\\ or \\/ or \\.\\ or /./ or\\./ or ..
   - Commandline containing | cmd or |cmd
   - Commandline containing final
 
