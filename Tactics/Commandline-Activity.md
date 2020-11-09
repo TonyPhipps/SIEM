@@ -6,6 +6,7 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 - Execution of malicious commands and scripts from command-line interfaces.
 
+
 ## Match Alert
 - PowerShell.exe or powershell_ise.exe with one of the following in the command line
   - -nop or /nop (from -noprofile)
@@ -25,6 +26,7 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
   - ftp
   - 'get-ciminstance' or 'gcim'
   - 'get-wmiobject' or 'gwmi'
+
 
 ## Aggregate Count
 - Process file names (without path)
@@ -58,8 +60,7 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
   - Commandline containing consecutive commas
   - Commandline containing consecutive semicolons
   - Commandline containing COMSPEC (part of %COMSPEC%)
-  - Commandline containing \.\ 
-  - Commandline containing ./
+  - Commandline containing /\ or \/ or \.\ or /./ or\./ or ..
   - Commandline containing | cmd or |cmd
   - Commandline containing final
 
