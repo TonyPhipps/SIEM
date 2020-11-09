@@ -114,6 +114,11 @@ MITRE ATT&CK Framework:
 - Use of wevutil.exe with 'cl' in command line
 - cmd.exe with command line containing 'http' or 'ftp'
 
+- Executable running from $Recylce.Bin
+- Executable running from \System Volume Information
+- Executable running from \Temp folders
+
+
 ## Aggregate Count
 - Suspicious child process of system executable
 
@@ -139,9 +144,11 @@ MITRE ATT&CK Framework:
 - Suspicious commandline parameters of commonly installed apps
   - chrome.exe with commandline containing "headless" or "remote-debugging"
 
+
 ## Blacklist Alert
 - Executables masquerading as c:\windows system files running from bad paths (blacklist of processes expected in c:\windows\)
 - Executables masquerading as c:\windows\sysem32 system files running from bad paths (blacklist of processes expected in c:\windows\system32\)
+- Executables running from any folder with TEMP in the path
 
 - Administrator account running "daily use" applications (blacklist of admin names)
   -  chrome.exe 
@@ -177,8 +184,8 @@ MITRE ATT&CK Framework:
   - ```Get-ChildItem c:\windows\*.exe | select name```
 - Unrecognized process starting from c:\windows\system32\ (T1036) (whitelist of processes expected)
   - ```Get-ChildItem c:\windows\system32\*.exe | select name```
-  
-
+- Unrecognized process starting from c:\windows\winsxs\ (T1036) (whitelist of processes expected)
+  - ```Get-ChildItem c:\windows\winsxs\*.exe | group-object | select name```
 
 
 ## Levenshtein Score Alert
@@ -214,6 +221,7 @@ MITRE ATT&CK Framework:
 
 
 # Possible False Positives
+- Generally a lot of false positives can be expected from this log source. Understanding normal operating system, trusted application, user norms, and business norms is expected to efficiently tune down noise over time.
 
 
 # Resources
