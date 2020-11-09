@@ -8,28 +8,36 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 
 ## Aggregate Count
+- Process file names (without path)
+- Process file names (with path)
 
 
 ## Blacklist Alert
-- Command contains one or more of these PowerShell keywords...
-  - -nop (from noprofile)
+- Powershell execution containing one or more of these switches common in adversary tradecraft ...
+  - -nop (from -noprofile)
   - hidden
-  - -noni (from noninteractive)
+  - -noni (from -noninteractive)
   - bypass
-  - -enc (from encodedcommand)
-  - invoke-webrequest
-  - iwr
-  - curl
-  - wget
-- Command contains very uncommon "LOLBAS/LOLBIN" commands
+  - -ec or -enc (from -encodedcommand)
+  - invoke-webrequest or iwr
+  - curl or wget
+- Powershell specific cmdlet use
+  - 'get-ciminstance' or 'gcim'
+  - 'get-wmiobject' or 'gwmi'
+- Powershell command line with particularly interesting keywords
+  - 'http' or 'ftp'
+- Very uncommon "LOLBAS/LOLBIN" process execution, regardless of commandline
   - hh.exe
-- Command line contains 'get-ciminstance' or 'gcim'
-- Command line contains 'get-wmiobject' or 'gwmi'
-- Command line contains 'http' or 'ftp'
 
 
 ## Whitelist Alert
-- Unexpected user where command line contains "runas"
+- List of expected users acting as a whitelist to each of the following processes
+  - runas.exe
+  - mstsc.exe
+  - powershell*.exe
+  - cmd.exe
+  - python*.exe
+
 
 ## Levenshtein Score Alert
 
