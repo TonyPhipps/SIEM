@@ -6,12 +6,8 @@ MITRE ATT&CK Framework:
 
 - Observe general process execution with the goal of understanding normal and detecting anomalies. Use of multiple visualizations, tables, and aggregation methods is recommended. Any confirmed malicious behavior from this use case should be considered as a foundation for a new alert.
 
-
-## Aggregate Count
-
-
-## Blacklist Alert
-- Unexpected use of sysinternals processes (include name.exe and name64.exe variants)
+## Match Alarm
+- Execution of sysinternals processes (include name.exe and name64.exe variants)
   - pslist.exe
   - psservice.exe
   - psexec.exe
@@ -33,165 +29,94 @@ MITRE ATT&CK Framework:
   - LoadOrd.exe
   - LoadOrdC.exe
   - regsize.exe
-
-- Unexpected invocation of system executables
-  - appcmd.exe (T1218)
-  - attrib.exe (T1158)
-  - bash.exe (T1202)
-  - certutil.exe (T1202)
-  - cmdkey.exe (T1087)
-  - computerdefaults.exe (T1088)
-  - control.exe (T1202)
-  - dism.exe (T1088)
-  - esentutl.exe (T1003)
-  - findstr.exe (T1081)
-  - fodhelper.exe (T1088)
-  - forfiles.exe (T1222)
-  - hh.exe (T1047)
-  - icacls.exe (T1222)
-  - jjs.exe (T1218)
-  - klist.exe (T1087)
+  
+- Unexpected invocation of system executables (LOLBAS)
+  - appcmd.exe (t1218)
+  - at.exe
+  - atbroker.exe (t1015)
+  - attrib.exe (t1158)
+  - bash.exe (t1202)
+  - bitsadmin.exe (t1197)
+  - certutil.exe (t1202)
+  - cmdkey.exe (t1087)
+  - computerdefaults.exe (t1088)
+  - control.exe (t1202)
+  - dism.exe (t1088)
+  - displayswitch.exe (t1015)
+  - esentutl.exe (t1003)
+  - findstr.exe (t1081)
+  - fodhelper.exe (t1088)
+  - fodhelper.exe (t1088)
+  - forfiles.exe (t1222)
+  - hh.exe (t1047)
+  - icacls.exe (t1222)
+  - jjs.exe (t1218)
+  - klist.exe (t1087)
+  - magnify.exe (t1015)
   - makecab.exe
-  - mofcomp.exe (T1047)
-  - mshta.exe (T1170)
-  - nbtstat.exe (T1016)
-  - netsh.exe (T1063)
-  - netstat.exe (T1049)
-  - nltest.exe (T1033)
-  - nslookup.exe (T1016)
-  - odbcconf.exe (T1073)
-  - pcalua.exe (T1202)
-  - qprocess.exe (T1057)
-  - query.exe (T1057)
-  - quser.exe (T1033)
-  - qwinsta.exe (T1057)
-  - reg.exe (T1112)
-  - regasm.exe (T1121)
-  - regsvcs.exe (T1121)
-  - regsvr32.exe (T1117)
-  - replace.exe (T1218)
-  - robocopy.exe (T1074)
-  - route.exe (T1016)
-  - runas.exe (T1134)
-  - rwinsta.exe (T1057)
-  - sc.exe (T1031)
-  - schtasks.exe (T1053)
-  - scrcons.exe (T1047)
-  - SyncAppvPublishingServer.exe (T1218)
-  - systeminfo.exe (T1033)
-  - takeown.exe (T1222)
-  - taskeng.exe (T1053)
-  - taskkill.exe (T1112)
-  - tasklist.exe (T1057)
-  - tree.com (T1016)
-  - vassadmin.exe (T1490)
-  - wevtutil.exe (T1070)
-  - where.exe (T1081)
-  - whoami.exe (T1033)
-  - winrm.cmd (T1028)
-  - winrs.exe (T1202)
-  - wmiprvse.exe (T1047)
-  - wsmprovhost.exe (T1028)
+  - mofcomp.exe (t1047)
+  - mshta.exe (t1170)
+  - narrator.exe (t1015)
+  - nbtstat.exe (t1016)
+  - netsh.exe (t1063)
+  - netstat.exe (t1049)
+  - nltest.exe (t1033)
+  - nslookup.exe (t1016)
+  - odbcconf.exe (t1073)
+  - osk.exe (t1015)
+  - pcalua.exe (t1202)
+  - psexec.exe
+  - psexesvc.exe
+  - qprocess.exe (t1057)
+  - query.exe (t1057)
+  - quser.exe (t1033)
+  - qwinsta.exe (t1057)
+  - reg.exe (t1112)
+  - regasm.exe (t1121)
+  - regsvcs.exe (t1121)
+  - regsvr32.exe (t1117)
+  - replace.exe (t1218)
+  - robocopy.exe (t1074)
+  - route.exe (t1016)
+  - runas.exe (t1134)
+  - rwinsta.exe (t1057)
+  - sc.exe (t1031)
+  - schtasks.exe (t1053)
+  - scrcons.exe (t1047)
+  - sdbinst.exe (t1138)
+  - sethc.exe (t1015)
+  - syncappvpublishingserver.exe (t1218)
+  - systeminfo.exe (t1033)
+  - takeown.exe (t1222)
+  - taskeng.exe (t1053)
+  - taskkill.exe (t1112)
+  - tasklist.exe (t1057)
+  - tree.com (t1016)
+  - utilman.exe (t1015)
+  - vassadmin.exe (t1490)
+  - wevtutil.exe (t1070)
+  - where.exe (t1081)
+  - whoami.exe (t1033)
+  - winrm.cmd (t1028)
+  - winrs.exe (t1202)
+  - wmiprvse.exe (t1047)
+  - wsmprovhost.exe (t1028)
   - wusa.exe
-  - xcopy.exe (T1074)
-  - sdbinst.exe (T1138)
-  - bitsadmin.exe (T1197)
-  - fodhelper.exe (T1088)
-  - sethc.exe (T1015)
-  - utilman.exe (T1015)
-  - osk.exe (T1015)
-  - magnify.exe (T1015)
-  - displayswitch.exe (T1015)
-  - narrator.exe (T1015)
-  - atbroker.exe (T1015)
+  - xcopy.exe (t1074)
 
-- Commandline Obfuscation
-  - Commandline containing a caret (^) (T1027)
-  - Commandline containing /c echo
-  - Commandline containing two double quotes ("")
-  - Commandline containing a comma immediately followed by a  (,;)
-  - Commandline containing a semicolon immediately followed by a comma (;,)
-  - Commandline containing consecutive commas
-  - Commandline containing consecutive semicolons
-  - Commandline containing COMSPEC (part of %COMSPEC%)
-  - Commandline containing \.\ 
-  - Commandline containing ./
-  - Commandline containing | cmd or |cmd
-  - Commandline containing final
-- Suspicious process path with system process name
 - Microsoft process name without digital signature
+
 - Suspicious parent process of system executable
   - eventvwr.exe child of process other than mmc.exe (T1088)
-- Suspicious child process of system executable
-- Unexpected source user of system executable
-  - Administrator account running chrome.exe, iexplore.exe, MicrosoftEdge.exe, msedge.exe
-  - ipconfig.exe ran by non sysadmin/helpdesk/developer (T1016)
-  - powershell.exe ran by non sysadmin/heldesk/developer(T1086)
-  - powershell_ise.exe ran by non sysadmin/helpdesk/developer (T1086)
-  - net.exe ran by non sysadmin/helpdesk/developer (T1018)
-  - cscript.exe ran by non sysadmin/helpdesk/developer (T1202)
-  - wscript.exe ran by non sysadmin/helpdesk/developer (T1202)
-  - MSBuild.exe ran by non sysadmin/developer(T1127)
-  - tracert.exe ran by non sysadmin/helpdesk/developer (T1016)
-  - runas.exe ran by non sysadmin/helpdesk/developer
-- Suspicious commandline parameters of system executables
-  - CMSTP.exe with commandline containing '/ni' or '-ni' or '/s' or '-s' (T1191)
-  - MpCmdRun.exe with commandline containing 'Add-MpPreference' OR 'RemoveDefinitions' OR 'DisableIOAVProtection' (T1089)
-  - nltestrk.exe with command line containing 'domain_trusts (T1482)
-  - Mavinject.exe with command line containing 'INJECTRUNNING'(T1218)
-  - fltMC.exe with commandline contains 'unload' OR 'detach' (T1054)
-  - InstallUtil.exe with commandline contains 'logfile=' OR 'LogToConsole=false' OR '/u' or '-u' (T1118)
-  - 'certutil.exe' with any of the following in the command line
-    - urlcach
-    - url
-    - ping
-    - http
-    - ftp
-    - -decode
-  - PowerShell.exe or powershell_ise.exe with one of the following in the command line
-    - -nop or /nop (from -noprofile)
-    - hidden
-    - -noni or /noni (from -noninteractive)
-    - -ep or /ep (from -execution-policy)
-    - bypass
-    - -enc or /enc (from -encodedcommand)
-    - invoke-webrequest or iwr or curl or wget
-    - invoke-restmethod or irm
-    - invoke-expression or iex
-    - bitstransfer
-    - downloadstring
-    - downloadfile
-    - winhttprequest
-    - http
-    - ftp
-  - whoami.exe ran by 'NT AUTHORITY\SYSTEM'
-  - msiexec.exe with command line containing 'http' or 'ftp'
-  - regsvr32.exe with command line containing 'http' or 'ftp'
-  - Use of wevutil.exe with 'cl' in command line
-- Suspicious commandline parameters of commonly installed apps
-  - chrome.exe with commandline containing "headless" or "remote-debugging"
-- cmd.exe with command line containing 'http' or 'ftp'
-- Administrator account running "daily use" applications
-  -  chrome.exe 
-  -  iexplore.exe
-  -  MicrosoftEdge.exe
-  -  msedge.exe
-  -  firefox.exe
-  -  brave.exe
 
-## Whitelist Alert
-- Unexpected process from non-admin/helpdesk/developer
-  - ipconfig.exe ran by non sysadmin/helpdesk/developer (T1016)
-  - powershell.exe ran by non sysadmin/heldesk/developer(T1086)
-  - powershell_ise.exe ran by non sysadmin/helpdesk/developer (T1086)
-  - net.exe ran by non sysadmin/helpdesk/developer (T1018)
-  - cscript.exe ran by non sysadmin/helpdesk/developer (T1202)
-  - wscript.exe ran by non sysadmin/helpdesk/developer (T1202)
-  - MSBuild.exe ran by non sysadmin/developer(T1127)
-  - tracert.exe ran by non sysadmin/helpdesk/developer (T1016)
-  - runas.exe ran by non sysadmin/helpdesk/developer
-- A file with a non-executable extension is executed
-  - bat, bin, cmd, com, cpl, exe, gadget, inf, ins, inx, isu, job, jse, lnk, msc, msi, msp, mst, paf, pif, ps1, reg, rgs, scr, sct, shb, shs, u3p, vb, vbe, vbs, vbscript, ws, wsf, wsh
+- msiexec.exe with command line containing 'http' or 'ftp'
+- regsvr32.exe with command line containing 'http' or 'ftp'
+- Use of wevutil.exe with 'cl' in command line
+- cmd.exe with command line containing 'http' or 'ftp'
+
+## Aggregate Count
+- Suspicious child process of system executable
+
 - Unrecognized Child Processes of Office Products (T1137)
   - excel.exe
   - winword.exe
@@ -199,14 +124,60 @@ MITRE ATT&CK Framework:
   - outlook.exe
   - msaccess.exe
   - mspub.exe
-- Unrecognized processes with owner of 'NT AUTHORITY\SYSTEM'
-- Unrecognized processes with owner of 'NETWORK SERVICE'
-- Urecognized folder path where process name matches a system executable name (T1036)
-- Unrecognized parent process of
-  - c:\windows\system32\w3wp.exe
-- Unrecognized process starting from (T1036)
-  - c:\windows\system32\
-  - c:\windows\
+  
+- Unexpected source user of system executable  
+  - ipconfig.exe (T1016)
+  - powershell.exe (T1086)
+  - powershell_ise.exe (T1086)
+  - net.exe (T1018)
+  - cscript.exe (T1202)
+  - wscript.exe (T1202)
+  - MSBuild.exe (T1127)
+  - tracert.exe (T1016)
+  - runas.exe
+
+- Suspicious commandline parameters of commonly installed apps
+  - chrome.exe with commandline containing "headless" or "remote-debugging"
+
+## Blacklist Alert
+- Executables masquerading as c:\windows system files running from bad paths (blacklist of processes expected in c:\windows\)
+- Executables masquerading as c:\windows\sysem32 system files running from bad paths (blacklist of processes expected in c:\windows\system32\)
+
+- Administrator account running "daily use" applications (blacklist of admin names)
+  -  chrome.exe 
+  -  iexplore.exe
+  -  MicrosoftEdge.exe
+  -  msedge.exe
+  -  firefox.exe
+  -  brave.exe
+
+
+## Whitelist Alert
+- A file with a non-executable extension is executed (whitelist of extensions)
+  - bat, bin, cmd, com, cpl, exe, gadget, inf, ins, inx, isu, job, jse, lnk, msc, msi, msp, mst, paf, pif, ps1, reg, rgs, scr, sct, shb, shs, u3p, vb, vbe, vbs, vbscript, ws, wsf, wsh
+  
+- Unexpected process from non-admin/helpdesk/developer (whitelist of admins, etc)
+  - ipconfig.exe (T1016)
+  - powershell.exe (T1086)
+  - powershell_ise.exe (T1086)
+  - net.exe ran (T1018)
+  - cscript.exe (T1202)
+  - wscript.exe (T1202)
+  - MSBuild.exe (T1127)
+  - tracert.exe (T1016)
+  - runas.exe
+  - mstsc.exe
+  - cmd.exe
+  - python*.exe
+
+- Unrecognized processes with owner of 'NT AUTHORITY\SYSTEM' (whitelist of expected full process paths)
+- Unrecognized processes with owner of 'NETWORK SERVICE' (whitelist of expected full process paths)
+
+- Unrecognized process starting from c:\windows\ (T1036) (whitelist of processes expected) 
+  - ```Get-ChildItem c:\windows\*.exe | select name```
+- Unrecognized process starting from c:\windows\system32\ (T1036) (whitelist of processes expected)
+  - ```Get-ChildItem c:\windows\system32\*.exe | select name```
+  
 
 
 
@@ -215,6 +186,9 @@ MITRE ATT&CK Framework:
 
 
 ## Rolling Whitelist Alert
+- Newly observed Source Process=cmd.exe, Child Process
+- Newly observed Source Process=powershell.exe, Child Process
+- Newly observed Source Process=powershell_ise.exe, Child Process
 - Newly observed Destination File Path
 - Newly observed Destination File Path=[User-Editable Path]
 - Newly observed Destination File, User=[Privileged Account]
