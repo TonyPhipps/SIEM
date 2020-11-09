@@ -6,6 +6,25 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 - Execution of malicious commands and scripts from command-line interfaces.
 
+## Match Alert
+- PowerShell.exe or powershell_ise.exe with one of the following in the command line
+  - -nop or /nop (from -noprofile)
+  - hidden
+  - -noni or /noni (from -noninteractive)
+  - -ep or /ep (from -execution-policy)
+  - bypass
+  - -enc or /enc or -ec or /ec (from -encodedcommand)
+  - invoke-webrequest or iwr or curl or wget
+  - invoke-restmethod or irm
+  - invoke-expression or iex
+  - bitstransfer
+  - downloadstring
+  - downloadfile
+  - winhttprequest
+  - http
+  - ftp
+  - 'get-ciminstance' or 'gcim'
+  - 'get-wmiobject' or 'gwmi'
 
 ## Aggregate Count
 - Process file names (without path)
@@ -13,39 +32,45 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 
 ## Blacklist Alert
-- Powershell execution containing one or more of these switches common in adversary tradecraft ...
-  - -nop (from -noprofile)
-  - hidden
-  - -noni (from -noninteractive)
-  - bypass
-  - -ec or -enc (from -encodedcommand)
-  - invoke-webrequest or iwr
-  - curl or wget
-- Powershell specific cmdlet use
-  - 'get-ciminstance' or 'gcim'
-  - 'get-wmiobject' or 'gwmi'
-- Powershell command line with particularly interesting keywords
-  - 'http' or 'ftp'
-- Very uncommon "LOLBAS/LOLBIN" process execution, regardless of commandline
-  - hh.exe
+- Suspicious commandline parameters of system executables
+  - CMSTP.exe with commandline containing '/ni' or '-ni' or '/s' or '-s' (T1191)
+  - MpCmdRun.exe with commandline containing 'Add-MpPreference' OR 'RemoveDefinitions' OR 'DisableIOAVProtection' (T1089)
+  - nltestrk.exe with command line containing 'domain_trusts (T1482)
+  - Mavinject.exe with command line containing 'INJECTRUNNING'(T1218)
+  - fltMC.exe with commandline contains 'unload' OR 'detach' (T1054)
+  - InstallUtil.exe with commandline contains 'logfile=' OR 'LogToConsole=false' OR '/u' or '-u' (T1118)
+  - 'certutil.exe' with any of the following in the command line
+    - urlcach
+    - url
+    - ping
+    - http
+    - ftp
+    - -decode
+    
+  
+- Commandline Obfuscation
+  - Commandline containing a caret (^) (T1027)
+  - Commandline containing /c echo
+  - Commandline containing two double quotes ("")
+  - Commandline containing a comma immediately followed by a  (,;)
+  - Commandline containing a semicolon immediately followed by a comma (;,)
+  - Commandline containing consecutive commas
+  - Commandline containing consecutive semicolons
+  - Commandline containing COMSPEC (part of %COMSPEC%)
+  - Commandline containing \.\ 
+  - Commandline containing ./
+  - Commandline containing | cmd or |cmd
+  - Commandline containing final
 
 
 ## Whitelist Alert
-- List of expected users acting as a whitelist to each of the following processes
-  - runas.exe
-  - mstsc.exe
-  - powershell*.exe
-  - cmd.exe
-  - python*.exe
 
 
 ## Levenshtein Score Alert
 
 
 ## Rolling Whitelist Alert
-- Newly observed Source Process=cmd.exe, Child Process
-- Newly observed Source Process=powershell.exe, Child Process
-- Newly observed Source Process=powershell_ise.exe, Child Process
+
 
 
 ## Shannon Entropy Score Alert
