@@ -7,10 +7,10 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 - [Microsoft-Windows-PrintService/Operational Events](#microsoft-windows-printserviceoperational-events)
 - [Microsoft-Windows-Kernel-PnP/Device Configuration](#microsoft-windows-kernel-pnpdevice-configuration)
 - [Microsoft-Windows-TaskScheduler/Operational](#microsoft-windows-taskscheduleroperational)
-- [Microsoft-Windows-Powershell/Operational](#microsoft-windows-powershelloperational)
-- [Microsoft-Windows-PowerShell/Operational](#microsoft-windows-powershelloperational-1)
 - [Windows PowerShell](#windows-powershell)
+- [Microsoft-Windows-Powershell/Operational](#microsoft-windows-powershelloperational)
 - [Microsoft-Windows-PowerShell/Analytic](#microsoft-windows-powershellanalytic)
+- [Microsoft-Windows-PowerShell-DesiredStateConfiguration-FileDownloadManager/Operational](#microsoft-windows-powershell-desiredstateconfiguration-filedownloadmanageroperational)
 - [Microsoft-Windows-Windows Defender/Operational](#microsoft-windows-windows-defenderoperational)
 - [Microsoft-Windows-Windows Firewall With Advanced Security/Firewall](#microsoft-windows-windows-firewall-with-advanced-securityfirewall)
 - [Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational](#microsoft-windows-remotedesktopservices-rdpcoretsoperational)
@@ -19,19 +19,27 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 - [Microsoft-Windows-TerminalServices-LocalSessionManager/Operational](#microsoft-windows-terminalservices-localsessionmanageroperational)
 - [Microsoft-Windows-SmbClient/Security](#microsoft-windows-smbclientsecurity)
 - [Microsoft-Windows-WMI-Activity/Operational](#microsoft-windows-wmi-activityoperational)
+- [Microsoft-Windows-TPM-WMI](#microsoft-windows-tpm-wmi)
 - [Microsoft-Windows-WinRM/Operational](#microsoft-windows-winrmoperational)
 - [Microsoft-Windows-AppLocker/MSI and Script](#microsoft-windows-applockermsi-and-script)
+- [Microsoft-Windows-Authentication/AuthenticationPolicyFailures-DomainController](#microsoft-windows-authenticationauthenticationpolicyfailures-domaincontroller)
+- [Microsoft-Windows-Authentication/ProtectedUserFailures-DomainController](#microsoft-windows-authenticationprotecteduserfailures-domaincontroller)
+- [Microsoft-Windows-NTLM/Operational](#microsoft-windows-ntlmoperational)
+- [Microsoft-Windows-CodeIntegrity/Operational](#microsoft-windows-codeintegrityoperational)
+- [EMET](#emet)
+- [](#)
 
 ## Security Events
 
-| EventID | Description                                                                                                                                              |
-| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1100    | The event logging service has shut down.                                                                                                                 |
+| EventID | Description                                                                                                                                              | Filter       |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| 1100    | The event logging service has shut down.                                                                                                                 |              |
 | 1102    | The audit log was cleared.                                                                                                                               |
 | 4618    | A monitored security event pattern has occurred.                                                                                                         |
 | 4624    | An account was successfully logged on.                                                                                                                   |
 | 4625    | An account failed to log on.                                                                                                                             |
 | 4634    | An account was logged off.                                                                                                                               |
+| 4647    | User initiated logoff.                                                                                                                                   |
 | 4648    | A logon was attempted using explicit credentials.                                                                                                        |
 | 4649    | A replay attack was detected.                                                                                                                            |
 | 4657    | A registry value was modified.                                                                                                                           |
@@ -91,6 +99,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 4770    | A Kerberos service ticket was renewed.                                                                                                                   |
 | 4771    | Kerberos pre-authentication failed.                                                                                                                      |
 | 4772    | A Kerberos authentication ticket request failed.                                                                                                         |
+| 4773    | A Kerberos service ticket request failed.                                                                                                                |
 | 4776    | The domain controller attempted to validate the credentials for an account.                                                                              |
 | 4778    | A session was reconnected to a Window Station.                                                                                                           |
 | 4779    | A session was disconnected from a Window Station.                                                                                                        |
@@ -99,6 +108,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 4798    | A user's local group membership was enumerated.                                                                                                          |
 | 4800    | The workstation was locked.                                                                                                                              |
 | 4801    | The workstation was unlocked.                                                                                                                            |
+| 4803    | The screen saver was dismissed.                                                                                                                          |
 | 4816    | RPC detected an integrity violation while decrypting an incoming message.                                                                                |
 | 4865    | A trusted forest information entry was added.                                                                                                            |
 | 4866    | A trusted forest information entry was removed.                                                                                                          |
@@ -126,7 +136,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 5034    | The Windows Firewall Driver was stopped                                                                                                                  |
 | 5035    | Windows Firewall Driver failed to start                                                                                                                  |
 | 5037    | Windows Firewall Driver detected critical runtime error Terminating                                                                                      |
-| 5038    | Code integrity determined that the image hash of a file is not valid                                                                                     |
+| 5038    | Code integrity determined that the image hash of a file is not valid                                                                                     | Level 0 or 4 |
 | 5136    | A directory service object was modified. [1]                                                                                                             |
 | 5140    | Network share object accessed                                                                                                                            |
 | 5142    | Network share object added                                                                                                                               |
@@ -139,6 +149,8 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 6273    | Network Policy Server denied access to a user                                                                                                            |
 | 6276    | Network Policy Server quarantined a user                                                                                                                 |
 | 6280    | Network Policy Server unlocked the user account                                                                                                          |
+| 6281    |                                                                                                                                                          | Level 0 or 4 |
+| 6410    |                                                                                                                                                          | Level 0 or 4 |
 | 6416    | A new external device was recognized by the system                                                                                                       |
 
 - 1 - Requires that “Audit Directory Service Changes” auditing be enabled.
@@ -173,22 +185,22 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 
 ## System Events
 
-| EventID | Description                                                                                     |
-| :-----: | :---------------------------------------------------------------------------------------------- |
+| EventID | Description                                                                                     | Filter                 |
+| :-----: | :---------------------------------------------------------------------------------------------- | ---------------------- |
 |   104   | Event Log was Cleared                                                                           |
 |  1001   | System Crash                                                                                    |
-|  7022   | Service hung on starting                                                                        |
-|  7023   | Service terminated with error                                                                   |
-|  7024   | Service terminated with the following service-specific error                                    |
-|  7026   | The boot-start or system-start driver(s) [did not/failed to] load                               |
+|  7022   | Service hung on starting                                                                        | Level 0, 1, 2, 3, or 4 |
+|  7023   | Service terminated with error                                                                   | Level 0, 1, 2, 3, or 4 |
+|  7024   | Service terminated with the following service-specific error                                    | Level 0, 1, 2, 3, or 4 |
+|  7026   | The boot-start or system-start driver(s) [did not/failed to] load                               | Level 0, 1, 2, 3, or 4 |
 |  7030   | Service Creation Errors                                                                         |
-|  7031   | Service terminated unexpectedly                                                                 |
-|  7032   | Service tried to take a corrective action (1) after the unexpected termination of the % service |
-|  7034   | service terminated unexpectedly                                                                 |
+|  7031   | Service terminated unexpectedly                                                                 | Level 0, 1, 2, 3, or 4 |
+|  7032   | Service tried to take a corrective action (1) after the unexpected termination of the % service | Level 0, 1, 2, 3, or 4 |
+|  7034   | service terminated unexpectedly                                                                 | Level 0, 1, 2, 3, or 4 |
 |  7035   | The [Service Name] service was successfully sent a [start/stop] control                         |
 |  7036   | The [Service Name] service entered the [Status] state                                           |
-|  7040   | The service state has changed                                                                   |
-|  7045   | A service was installed in the system                                                           |
+|  7040   | The service state has changed                                                                   | Level 0, 1, 2, 3, or 4 |
+|  7045   | A service was installed in the system                                                           | Level 0, 1, 2, 3, or 4 |
 
 
 ## Application
@@ -226,26 +238,6 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |   201   | Task Completed |
 
 
-## Microsoft-Windows-Powershell/Operational
-
-| EventID | Description                 |
-| :-----: | :-------------------------- |
-|  4103   | Pipeline executed           |
-|  4104   | Scriptblock executed        |
-|  40961  | PowerShell Console Starting |
-|  40962  | PowerShell Console Started  |
-|  24577  | Powershell script ran       |
-
-
-## Microsoft-Windows-PowerShell/Operational
-
-|  EventID   | Description                     |
-| :--------: | ------------------------------- |
-| 8193, 8194 | Session created                 |
-|    8197    | Session Closed                  |
-|   53504    | Records the authenticating user |
-
-
 ## Windows PowerShell
 
 | EventID | Description                  |
@@ -255,6 +247,20 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |   800   | Includes partial script code |
 
 
+## Microsoft-Windows-Powershell/Operational
+
+|  EventID   | Description                     |
+| :--------: | :------------------------------ |
+|    4103    | Pipeline executed               |
+|    4104    | Scriptblock executed            |
+|   40961    | PowerShell Console Starting     |
+|   40962    | PowerShell Console Started      |
+|   24577    | Powershell script ran           |
+| 8193, 8194 | Session created                 |
+|    8197    | Session Closed                  |
+|   53504    | Records the authenticating user |
+
+
 ## Microsoft-Windows-PowerShell/Analytic
 
 | EventID | Description                      |
@@ -262,6 +268,9 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |  32850  | Creating a server remote session |
 |  32867  | PowerShell input object          |
 |  32868  | PowerShell output object         |
+
+
+## Microsoft-Windows-PowerShell-DesiredStateConfiguration-FileDownloadManager/Operational
 
 
 ## Microsoft-Windows-Windows Defender/Operational
@@ -362,6 +371,10 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |  5861   | Registration of Permanent Event Consumer |
 
 
+## Microsoft-Windows-TPM-WMI
+513, 514
+
+
 ## Microsoft-Windows-WinRM/Operational
 
 |   EventID    | Description                    |
@@ -383,6 +396,29 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 |  8005   | Allowed to run     |
 |  8006   | Would have blocked |
 
+
+## Microsoft-Windows-Authentication/AuthenticationPolicyFailures-DomainController
+101, 105, 106, 305, 306
+
+
+## Microsoft-Windows-Authentication/ProtectedUserFailures-DomainController
+100, 104, 303
+
+## Microsoft-Windows-NTLM/Operational
+8001, 8002, 8003, 8004
+
+
+## Microsoft-Windows-CodeIntegrity/Operational
+3001, 3002, 3003, 3004, 3010, 3023 with Level 2 or 3
+
+
+## EMET
+1, 2 with Level 2 or 3
+
+
+## 
+
+
 Sources
 * [Detecting Lateral Movement through Tracking Event Logs - JPCERT Coordination Center](https://www.jpcert.or.jp/english/pub/sr/20170612ac-ir_research_en.pdf)
 * [Appendix L: Events to Monitor](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)
@@ -394,6 +430,6 @@ Sources
 * [Windows RDP-Related Event Logs: Identification, Tracking, and Investigation](https://ponderthebits.com/2018/02/windows-rdp-related-event-logs-identification-tracking-and-investigation/)
 * [Basics of Tracking WMI Activity](https://www.darkoperator.com/blog/2017/10/14/basics-of-tracking-wmi-activity)
 * [Investigating PowerShell Attack](https://www.blackhat.com/docs/us-14/materials/us-14-Kazanciyan-Investigating-Powershell-Attacks-WP.pdf)
-
-
-* [DonatStudios.com Markdown table formatter](https://donatstudios.com/CsvToMarkdownTable)
+* https://docs.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/authentication-policies-and-authentication-policy-silos
+* https://docs.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/protected-users-security-group
+* https://github.com/palantir/windows-event-forwarding/tree/master/wef-subscriptions
