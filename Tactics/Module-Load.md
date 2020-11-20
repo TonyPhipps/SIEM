@@ -4,14 +4,16 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Aggregate Count
+- Full paths of loaded modules
 
 
 ## Blacklist Alert
-
+- Loading modules from user space
 
 
 ## Whitelist Alert
 - Anomalous load of System.Management.Automation.dll
+- Explorer.exe loading unexpected DLLs
 
 
 ## Levenshtein Score Alert

@@ -2,6 +2,12 @@
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
+## Match Alert
+- Startup items
+  - %AppData%\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+- File Created with Known-Malicious Name
+- File Created in System Space by Process in User Space
+
 
 ## Aggregate Count
 - Count of User and Extension
@@ -10,12 +16,9 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Blacklist Alert
-- File Created with Known-Malicious Name
-- File Created with Known-System Name in Unexpected Folder
-- File Created in System Space by Process in User Space
+- File Created in System Folder
 - File Created in User Space by Privileged Account
 - File Created in System Space by Nonprivileged Account
-- A file is created in a non-standard location (e.g. a non-ini/otf/compositefont/ttc/ttf/fon/dat/tmp file created in c:\windows\fonts)
 - File Created that matches known-system executables (pre-staging)
   - sethc.exe
   - utilman.exe
@@ -26,10 +29,9 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Whitelist Alert
-- File Created in System Folder
-- File Created by Process
-- File Created with Extension
+- File Created with Known-System Name in Unexpected Folder
 - Executable File Created in User Space
+- A file is created in a non-standard location (e.g. a non-ini/otf/compositefont/ttc/ttf/fon/dat/tmp file created in c:\windows\fonts)
 
 
 ## Levenshtein Score Alert

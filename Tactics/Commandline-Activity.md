@@ -26,6 +26,15 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
   - ftp
   - 'get-ciminstance' or 'gcim'
   - 'get-wmiobject' or 'gwmi'
+  - 'ToBase64String'
+  - 'FromBase64String'
+
+- sc.exe with 'create'
+
+- schtasks.exe with 'create'
+
+- wmic.exe with 'process get', 'service get', 'qfe get', 'startup get', 'process call create'
+
 
 
 ## Aggregate Count
