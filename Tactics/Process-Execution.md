@@ -1,5 +1,7 @@
 # Process Execution Use Cases
 
+This use case is purposefully separated from commandline activity. These detections assume you have all process execution details other than commandline (process name, PID, full path, etc.)
+
 Grouped by [Detection Method](/Detection-Methods.md)
 
 MITRE ATT&CK Framework: 
@@ -109,11 +111,6 @@ MITRE ATT&CK Framework:
 - Suspicious parent process of system executable
   - eventvwr.exe child of process other than mmc.exe (T1088)
 
-- msiexec.exe with command line containing 'http' or 'ftp'
-- regsvr32.exe with command line containing 'http' or 'ftp'
-- Use of wevutil.exe with 'cl' in command line
-- cmd.exe with command line containing 'http' or 'ftp'
-
 - Executable running from $Recylce.Bin
 - Executable running from \System Volume Information
 - Executable running from \Temp folders
@@ -140,9 +137,7 @@ MITRE ATT&CK Framework:
   - MSBuild.exe (T1127)
   - tracert.exe (T1016)
   - runas.exe
-
-- Suspicious commandline parameters of commonly installed apps
-  - chrome.exe with commandline containing "headless" or "remote-debugging"
+  - scrcons.exe (parent process of wmi ActiveScriptConsumers)
 
 
 ## Blacklist Alert

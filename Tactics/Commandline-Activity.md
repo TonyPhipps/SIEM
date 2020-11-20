@@ -8,22 +8,23 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 
 ## Match Alert
-- PowerShell.exe or powershell_ise.exe with one of the following in the command line
-  - -nop or /nop (from -noprofile)
-  - hidden
-  - -noni or /noni (from -noninteractive)
-  - -ep or /ep (from -execution-policy)
-  - bypass
-  - -enc or /enc or -ec or /ec (from -encodedcommand)
-  - invoke-webrequest or iwr or curl or wget
-  - invoke-restmethod or irm
-  - invoke-expression or iex
-  - bitstransfer
-  - downloadstring
-  - downloadfile
-  - winhttprequest
-  - http
-  - ftp
+- PowerShell.exe or powershell_ise.exe with one of the following in the command line (or straight commandline use)
+  - '-nop' or '/nop' (from -noprofile)
+  - 'hidden'
+  - '-noni' or '/noni' (from -noninteractive)
+  - '-ep' or '/ep' (from -execution-policy)
+  - 'bypass'
+  - '-enc or /enc or -ec or /ec (from -encodedcommand)
+  - 'invoke-webrequest' or 'iwr' or 'curl' or 'wget'
+  - 'invoke-restmethod' or 'irm'
+  - 'invoke-expression' or 'iex'
+  - 'invoke-wmimethod' or 'invoke-cimmethod'
+  - 'bitstransfer'
+  - 'downloadstring'
+  - 'downloadfile'
+  - 'winhttprequest'
+  - 'http'
+  - 'ftp'
   - 'get-ciminstance' or 'gcim'
   - 'get-wmiobject' or 'gwmi'
   - 'ToBase64String'
@@ -35,7 +36,19 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 - wmic.exe with 'process get', 'service get', 'qfe get', 'startup get', 'process call create'
 
+- mofcomp.exe with '-N'
 
+- msiexec.exe with command line containing 'http' or 'ftp'
+
+- regsvr32.exe with command line containing 'http' or 'ftp'
+
+- Use of wevutil.exe with 'cl' in command line
+
+- cmd.exe with command line containing these strings (or straight commandline use)
+  - 'http' or 'ftp'
+  - 'reg add'
+
+- chrome.exe with commandline containing "headless" or "remote-debugging"
 
 ## Aggregate Count
 - Process file names (without path)
