@@ -30,6 +30,11 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
   - 'ToBase64String'
   - 'FromBase64String'
 
+- Powershell third-party functions tied to malicious activity
+  - nishang
+    - Enable-DuplicateToken
+    - Get-LsaSecret
+
 - sc.exe with 'create'
 
 - schtasks.exe with 'create'

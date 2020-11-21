@@ -48,6 +48,7 @@
   - The "Account is sensitive and cannot be delegated" setting, as seen in Active Directory Users and Computers, is enforced.
   - Note: requires domain functional level to be Windows Server 2012 R2 or higher.
   - Note: NO service account should be added to the “Protected Users” security group as authentication will fail.
+  - https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn466518(v=ws.11)?redirectedfrom=MSDN
 
 
 # Eliminate Older Operating Systems
@@ -61,8 +62,13 @@
   - Computer Configuration > Policies > Administrative Templates > System > Group Policy > Configure **security** policy processing–Enabled - Process even if the GPOs have not changed
   - Computer Configuration > Policies > Administrative Templates > System > Group Policy > Configure **registry** policy processing–Enabled - Process even if the GPOs have not changed
 
+# Group Managed Service Accounts
+- https://docs.microsoft.com/en-us/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview
+- https://blog.stangroome.com/2013/07/28/avoid-password-management-with-group-managed-service-accounts/
 
-# Resources
+
+
+# Additional Resources
 - Mandiant Whitepaper: Ransomware Protection and Containment Strategies
   - https://www.fireeye.com/content/dam/fireeye-www/current-threats/pdfs/wp-ransomware-protection-and-containment-strategies.pdf
 - SANS course and public materials

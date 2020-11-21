@@ -43,6 +43,7 @@ MITRE ATT&CK Framework:
   - cmdkey.exe (t1087)
   - computerdefaults.exe (t1088)
   - control.exe (t1202)
+  - dcsync.exe
   - dism.exe (t1088)
   - displayswitch.exe (t1015)
   - esentutl.exe (t1003)
@@ -95,7 +96,7 @@ MITRE ATT&CK Framework:
   - tasklist.exe (t1057)
   - tree.com (t1016)
   - utilman.exe (t1015)
-  - vassadmin.exe (t1490)
+  - vssadmin.exe (t1490)
   - wevtutil.exe (t1070)
   - where.exe (t1081)
   - whoami.exe (t1033)
@@ -105,6 +106,18 @@ MITRE ATT&CK Framework:
   - wsmprovhost.exe (t1028)
   - wusa.exe
   - xcopy.exe (t1074)
+  - klist.exe (pass-the-ticket)
+
+- Execution of known hacker tools
+  - mimikatz
+  - fgdump
+  - gsecdump
+  - metasploit
+  - acehash
+  - pwdump.py
+  - creddump
+  - cachedump.py
+  - wce
 
 - Microsoft process name without digital signature
 
