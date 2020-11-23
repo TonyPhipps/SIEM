@@ -108,7 +108,51 @@ MITRE ATT&CK Framework:
   - xcopy.exe (t1074)
   - klist.exe (pass-the-ticket)
 
-- Execution of known hacker tools
+
+- System process with suspicious starting location
+  - conhost.exe not starting from c:\windows\system32\
+  - csrss.exe not starting from c:\windows\system32\
+  - ctfmon.exe not starting from c:\windows\system32\
+  - dasHost.exe not starting from c:\windows\system32\
+  - dllhost.exe not starting from c:\windows\system32\
+  - dwm.exe not starting from c:\windows\system32\
+  - CompPkgSrv.exe not starting from c:\windows\system32\
+  - backgroundTaskHost.exe not starting from c:\windows\system32\
+  - ntoskrnl.exe not starting from c:\windows\system32\
+  - services.exe not starting from c:\windows\system32\
+  - svchost.exe not starting from c:\windows\system32\
+  - taskhostw.exe not starting from c:\windows\system32\
+  - taskmgr.exe not starting from c:\windows\system32\
+  - wininit.exe not starting from c:\windows\system32\
+  - winlogon.exe not starting from c:\windows\system32\
+  - RuntimeBroker.exe not starting from c:\windows\system32\
+  - explorer.exe not starting from c:\windows\
+  - splwow64.exe not starting from c:\windows\
+
+- System process with suspicious parent process
+  - taskhost.exe with a parent other than services.exe
+  - lsass.exe with a parent other than wininit.exe
+  - iexplore.exe with a parent other than explorer.exe
+  - explorer.exe with a parent other than userinit.exe
+  - winlogon.exe with a parent other than smss.exe
+  - wininit.exe with a parent other than smss.exe
+  - smss.exe with a parent process other than System
+  - csrss.exe with a parent other than smss.exe
+  - services.exe with a parent other than wininit.exe
+  - svchost.exe with a parent other than services.exe
+  - lsm.exe with a parent other than wininit.exe
+
+- System process with suspicious owner
+  - csrss.exe with an owner other than Local System
+  - smss.exe with an owner other than Local System
+  - services.exe with an owner other than Local System
+  - wininit.exe with an owner other than Local System
+  - lsass.exe with an owner other than Local System
+  - lsm.exe with an owner other than Local System
+  - winlogon.exe with an owner other than Local System
+  - svchost.exe with an owner other than Local System, Network Service, or Local Service
+
+- Execution of known malicious tools
   - mimikatz
   - fgdump
   - gsecdump
