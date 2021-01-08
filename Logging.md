@@ -67,3 +67,26 @@ Logs that do not provide basic security context should be considered for tuning 
 - Description of Outcome (sometimes implied)
 
 Note: This does not immply that non-security focused logs are of no value/use.
+
+
+# Log Setup
+
+## PowerShell Transcription
+https://devblogs.microsoft.com/powershell/powershell-the-blue-team/
+
+- Set up PowerShell Transcription logging via GPO at
+  - Windows Components -> Administrative Templates -> Windows PowerShell
+- Turn On PowerShell Transcription: ON
+  - Set Transcript output directory to the \\server\transcripts share path
+  - Check Include Invocation Headers
+
+## Windows Event Forwarding and Collector
+https://docs.microsoft.com/en-us/windows/security/threat-protection/use-windows-event-forwarding-to-assist-in-intrusion-detection
+https://docs.microsoft.com/en-us/windows/win32/wec/windows-event-collector
+https://medium.com/palantir/windows-event-forwarding-for-network-defense-cb208d5ff86f
+https://hackernoon.com/the-windows-event-forwarding-survival-guide-2010db7a68c4
+http://zenshaze.com/wp/?p=57
+
+- Set WEC timezone to UTC / GMT
+- Set up GPO Computer Configuration → Policies → Administrative Templates → Windows Components → Event Forwarding → Configure Target Subscription Manager
+- Set up subscriptions
