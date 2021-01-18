@@ -26,6 +26,20 @@ Grouped by [Detection Method](/Detection-Methods.md)
   - narrator.exe
   - magnify.exe
   - displayswitch.exe
+- Files typically related to ransomware "recovery"
+  - RECOVER-FILES.TXT (egregor)
+  - [HOW TO RECOVER FILES].TXT (ProLock)
+  - \_readme.txt (Weui, Lisp, Epor)
+  - hard2decrypt_readme.txt (Hard2decrypt)
+  - HELP_DECRYPT_YOUR_FILES.txt (Sext)
+  - !!! YourDataRestore !!! txt (STOP)
+  - !!RestoreProcess!!!.txt (STOP)
+  - !!!!RESTORE_FILES!!!.txt (STOP)
+  - !!!DATA_RESTORE!!!.txt (STOP)
+  - !!!DECRYPTION__KEYPASS__INFO!!!.txt (STOP)
+  - !!!WHY_MY_FILES_NOT_OPEN!!!.txt (STOP)
+  - !!SAVE_FILES_INFO!!!.txt (STOP)
+  - !readme.txt (STOP)
 
 
 ## Whitelist Alert
