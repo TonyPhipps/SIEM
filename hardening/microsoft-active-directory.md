@@ -1,3 +1,14 @@
+- [Windows Firewall](#windows-firewall)
+- [RDP](#rdp)
+- [Microsoft  Local Administrator Password Solution (LAPS)](#microsoft--local-administrator-password-solution-laps)
+- [Least Privilege and Tiered Admin](#least-privilege-and-tiered-admin)
+- [Service Account Restrictions](#service-account-restrictions)
+- [Protected Users Security Group](#protected-users-security-group)
+- [Eliminate Older Operating Systems](#eliminate-older-operating-systems)
+- [Set GPO to Reprocess Even if Not Changed](#set-gpo-to-reprocess-even-if-not-changed)
+- [Group Managed Service Accounts](#group-managed-service-accounts)
+- [Additional Resources](#additional-resources)
+
 # Windows Firewall
 - Maintain at least a workstation and server Group Policy Object (GPO) to control the Windows Firewall
   - Computer Configuration > Policies > Windows Settings > Security Settings > Windows Firewall with Advanced Security

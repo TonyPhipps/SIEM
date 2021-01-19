@@ -1,3 +1,9 @@
+- [Windows Firewall](#windows-firewall)
+- [User Account Control and Virtualization](#user-account-control-and-virtualization)
+- [Credential Guard](#credential-guard)
+- [Limit Cached Credential Count](#limit-cached-credential-count)
+- [Resources](#resources)
+
 Note that [Active Directory](active-directory.md) GPO should be used as much as possible over individually targeting Windows systems.
 
 # Windows Firewall

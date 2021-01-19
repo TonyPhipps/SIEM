@@ -1,3 +1,17 @@
+- [Enable Email Encryption](#enable-email-encryption)
+- [Enable Client Rules Forwarding Blocks](#enable-client-rules-forwarding-blocks)
+- [Set Outbound Spam Notifications](#set-outbound-spam-notifications)
+- [Do not allow mailbox delegation](#do-not-allow-mailbox-delegation)
+- [Set up Connection Filtering](#set-up-connection-filtering)
+- [Spam Filtering](#spam-filtering)
+- [Malware Protection](#malware-protection)
+- [Anti-Phishing Policy](#anti-phishing-policy)
+- [Configure Enhanced Filtering](#configure-enhanced-filtering)
+- [Configure ATP Safe Links and Safe Attachments Policy](#configure-atp-safe-links-and-safe-attachments-policy)
+- [Add SPF, DKIM, and DMARC](#add-spf-dkim-and-dmarc)
+- [Do not Allow Calendar Details Sharing](#do-not-allow-calendar-details-sharing)
+- [Additional Resources](#additional-resources)
+
 # Enable Email Encryption
  
  # Enable Client Rules Forwarding Blocks

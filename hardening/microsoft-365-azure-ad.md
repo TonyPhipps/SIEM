@@ -1,3 +1,13 @@
+- [Enable MFA](#enable-mfa)
+  - [Enable MFA For Just Admins](#enable-mfa-for-just-admins)
+- [Block Legacy Authentication](#block-legacy-authentication)
+- [Enable Self-Service Password Reset](#enable-self-service-password-reset)
+- [Do Not Expire Passwords](#do-not-expire-passwords)
+- [Delete/block accounts not used in last 30 days](#deleteblock-accounts-not-used-in-last-30-days)
+- [Designate More than 1 Global Admin but fewer than 5](#designate-more-than-1-global-admin-but-fewer-than-5)
+- [Do not allowusers to grant consent to unmanaged applications](#do-not-allowusers-to-grant-consent-to-unmanaged-applications)
+- [Additional Resources](#additional-resources)
+
 # Enable MFA
 
 Security defaults make it easier to help protect your organization from these attacks with preconfigured security settings:

@@ -1,3 +1,8 @@
+- [Endpoint Segmentation](#endpoint-segmentation)
+- [Services](#services)
+  - [Remote Desktop Protocol](#remote-desktop-protocol)
+- [Resources](#resources)
+
 # Endpoint Segmentation
 - Endpoints should NOT be allowed to communicate with each other unless absolutely necessary. This peer-level communication can be controlled via [Private VLANs](https://en.wikipedia.org/wiki/Private_VLAN) (AKA port isolation) on switches.
   - Generally, it is best to limit the following scenarios
