@@ -58,8 +58,33 @@ To block legacy authentication via security defaults in your directory:
 
 # Do Not Expire Passwords
 
+Compliance Controls
+- FedRAMP Moderate; Control AC-7(a)
+- NIST 800-171; Control 3.1.8
+- NIST 800-53; Control AC-7(a)
 
+# Delete/block accounts not used in last 30 days
 
+Compliance Controls
+- FedRAMP Moderate; Control AC-2(3)
+- NIST 800-53; Control AC-2(3)
+
+# Designate More than 1 Global Admin but fewer than 5
+
+Compliance Controls
+- CSA CCM301; Control DSI-02
+- FedRAMP Moderate; Control IA-3
+- GDPR; Control 6.6.5
+- ISO 27018:2014; Control C.9.4.2, Control A.10.8
+- NIST 800-171; Control 3.5.2
+- NIST 800-53; Control IA-3
+
+# Do not allowusers to grant consent to unmanaged applications
+
+Compliance Controls
+- FedRAMP Moderate; Control CM-8(3)(a)
+- NIST 800-53; Control CM-8(3)(a)
+- NIST CSF; Control ID.AM-1
 
 
 # Additional Resources
