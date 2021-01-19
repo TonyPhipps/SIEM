@@ -1,4 +1,4 @@
-# MFA and Security Defaults
+# Enable MFA
 
 Security defaults make it easier to help protect your organization from these attacks with preconfigured security settings:
 - Requiring all users to register for Azure AD Multi-Factor Authentication.
@@ -22,7 +22,7 @@ To enable security defaults in your directory:
 - Set the Enable security defaults toggle to Yes.
 - Select Save.
 
-## MFA For Just Admins via Conditional Access
+## Enable MFA For Just Admins
 To create an MFA conditional access policy in your directory for admins:
 - Sign in to the Azure portal as a security administrator, Conditional Access administrator, or global administrator.
 - Browse to Azure Active Directory > Security.
