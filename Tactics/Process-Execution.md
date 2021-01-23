@@ -107,6 +107,23 @@ MITRE ATT&CK Framework:
   - wusa.exe
   - xcopy.exe (t1074)
   - klist.exe (pass-the-ticket)
+  - compmgmtlauncher.exe (TA0043)
+  - find.exe  (TA0043)
+  - fsutil.exe (TA0043)
+  - hostname.exe (TA0043)
+  - ipconfig.exe (TA0043)
+  - net.exe (TA0043)
+  - net1.exe (TA0043)
+  - ping.exe (TA0043)
+  - set.exe (TA0043)
+  - time.exe (TA0043)
+  - tracert.exe (TA0043)
+  - vds.exe (TA0043)
+  - vdsldr.exe (TA0043)
+  - ver.exe (TA0043)
+  - winver.exe (TA0043)
+  - wmic.exe (TA0043)
+  - winrshost.exe (TA0043)
 
 
 - System process with suspicious starting location
