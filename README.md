@@ -43,9 +43,9 @@ These efforts can provide significant benefits to some ingested logs. Typically 
 - DNS Lookup
 - Reverse-DNS Lookup
 - Certificate Parsing
-- [O365 Principal App IDs](lookups/o365-principalappid.csv)
-- [Windows Logon Type Lookups](lookups/windows-logon-type.csv)
-- [Windows Status Code Lookups](lookups/windows-status-code.csv)
+- [O365 Principal App IDs](/Lookups/o365-principalappid.csv)
+- [Windows Logon Type Lookups](/Lookups/windows-logon-type.csv)
+- [Windows Status Code Lookups](/Lookups/windows-status-code.csv)
 
 # [Metrics](/Metrics.md)
  Metrics requiring fields, queries, and manual work. This section also suggests which ticketing system and form fields are recommended to allow proper recording/reporting of metrics.
