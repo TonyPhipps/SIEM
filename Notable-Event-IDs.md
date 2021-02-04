@@ -1,6 +1,7 @@
 Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, etc
 
 - [Security Events](#security-events)
+- [Security Events (Domain Controller Specific)](#security-events-domain-controller-specific)
 - [Microsoft-Windows-Sysmon/Operational](#microsoft-windows-sysmonoperational)
 - [System Events](#system-events)
 - [Application](#application)
@@ -52,7 +53,6 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 4634    | An account was logged off.                                                                                                                               |
 | 4647    | User initiated logoff.                                                                                                                                   |
 | 4648    | A logon was attempted using explicit credentials.                                                                                                        |
-| 4649    | A replay attack was detected.                                                                                                                            |
 | 4657    | A registry value was modified.                                                                                                                           | OperationType %%1904, %%1905, %%1906 |
 | 4670    | Permissions on an object were changed.                                                                                                                   |
 | 4672    | Special privileges assigned to new logon.                                                                                                                |
@@ -66,11 +66,7 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 4702    | A scheduled task was updated.                                                                                                                            |
 | 4703    | A user right was adjusted.                                                                                                                               |
 | 4704    | A user right was assigned.                                                                                                                               |
-| 4706    | A new trust was created to a domain.                                                                                                                     |
-| 4707    | A trust to a domain was removed.                                                                                                                         |
-| 4713    | Kerberos policy was changed.                                                                                                                             |
 | 4715    | The audit policy (SACL) on an object was changed.                                                                                                        |
-| 4716    | Trusted domain information was modified.                                                                                                                 |
 | 4717    | System security access was granted to an account.                                                                                                        |
 | 4718    | System security access was removed from an account.                                                                                                      |
 | 4719    | System audit policy was changed.                                                                                                                         |
@@ -80,36 +76,15 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 4724    | An attempt was made to reset an account's password.                                                                                                      |
 | 4725    | A user account was disabled.                                                                                                                             |
 | 4726    | A user account was deleted.                                                                                                                              |
-| 4727    | A security-enabled global group was created.                                                                                                             |
-| 4728    | A member was added to a security-enabled global group.                                                                                                   |
-| 4729    | A member was removed from a security-enabled global group.                                                                                               |
-| 4730    | A security-enabled global group was deleted.                                                                                                             |
 | 4731    | A security-enabled local group was created.                                                                                                              |
 | 4732    | A member was added to a security-enabled local group.                                                                                                    |
 | 4733    | A member was removed from a security-enabled local group.                                                                                                |
 | 4734    | A security-enabled local group was deleted.                                                                                                              |
 | 4735    | A security-enabled local group was changed.                                                                                                              |
-| 4737    | A security-enabled global group was changed.                                                                                                             |
 | 4738    | A user account was changed.                                                                                                                              |
 | 4739    | Domain Policy was changed.                                                                                                                               |
 | 4740    | A user account was locked out.                                                                                                                           |
-| 4741    | A computer account was created.                                                                                                                          |
-| 4742    | A computer account was changed.                                                                                                                          |
-| 4743    | A computer account was deleted.                                                                                                                          |
-| 4754    | A security-enabled universal group was created.                                                                                                          |
-| 4755    | A security-enabled universal group was changed.                                                                                                          |
-| 4756    | A member was added to a security-enabled universal group.                                                                                                |
-| 4757    | A member was removed from a security-enabled universal group.                                                                                            |
-| 4764    | A group’s type was changed.                                                                                                                              |
-| 4765    | SID History was added to an account.                                                                                                                     |
-| 4766    | An attempt to add SID History to an account failed.                                                                                                      |
 | 4767    | A user account was unlocked.                                                                                                                             |
-| 4768    | A Kerberos authentication ticket (TGT) was requested.                                                                                                    |
-| 4769    | A Kerberos service ticket was requested.                                                                                                                 |
-| 4770    | A Kerberos service ticket was renewed.                                                                                                                   |
-| 4771    | Kerberos pre-authentication failed.                                                                                                                      |
-| 4772    | A Kerberos authentication ticket request failed.                                                                                                         |
-| 4773    | A Kerberos service ticket request failed.                                                                                                                |
 | 4776    | The domain controller attempted to validate the credentials for an account.                                                                              |
 | 4778    | A session was reconnected to a Window Station.                                                                                                           |
 | 4779    | A session was disconnected from a Window Station.                                                                                                        |
@@ -117,17 +92,12 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 4781    | The name of an account was changed.                                                                                                                      |
 | 4782    | The password hash an account was accessed.                                                                                                               |
 | 4793    | The Password Policy Checking API was called.                                                                                                             |
-| 4794    | An attempt was made to set the Directory Services Restore Mode administrator password.                                                                   |
 | 4798    | A user's local group membership was enumerated.                                                                                                          |
-| 4799    | A security-enabled local group membership was enumerated.                                                                                                |
 | 4800    | The workstation was locked.                                                                                                                              |
 | 4801    | The workstation was unlocked.                                                                                                                            |
 | 4803    | The screen saver was dismissed.                                                                                                                          |
 | 4816    | RPC detected an integrity violation while decrypting an incoming message.                                                                                |
 | 4817    | Auditing settings on object were changed.                                                                                                                |
-| 4865    | A trusted forest information entry was added.                                                                                                            |
-| 4866    | A trusted forest information entry was removed.                                                                                                          |
-| 4867    | A trusted forest information entry was added.                                                                                                            |
 | 4882    | The security permissions for Certificate Services changed.                                                                                               |
 | 4885    | The audit filter for Certificate Services changed.                                                                                                       |
 | 4890    | The certificate manager settings for Certificate Services changed.                                                                                       |
@@ -156,8 +126,6 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 5035    | Windows Firewall Driver failed to start                                                                                                                  |
 | 5037    | Windows Firewall Driver detected critical runtime error Terminating                                                                                      |
 | 5038    | Code integrity determined that the image hash of a file is not valid                                                                                     | Level 0 or 4                         |
-| 5136    | A directory service object was modified. [1]                                                                                                             |
-| 5140    | Network share object accessed                                                                                                                            |
 | 5142    | Network share object added                                                                                                                               |
 | 5143    | Network share object changed                                                                                                                             |
 | 5144    | Network share object deleted                                                                                                                             |
@@ -179,6 +147,45 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 | 6422    | A device was enabled.                                                                                                                                    |
 | 6423    | The installation of this device is forbidden by system policy.                                                                                           |
 | 6424    | The installation of this device was allowed after having previously been forbidden by policy.                                                            |
+
+
+## Security Events (Domain Controller Specific)
+| EventID | Description                                                                            | Filter |
+| ------- | -------------------------------------------------------------------------------------- | ------ |
+| 4649    | A replay attack was detected.                                                          |        |
+| 4706    | A new trust was created to a domain.                                                   |        |
+| 4707    | A trust to a domain was removed.                                                       |        |
+| 4713    | Kerberos policy was changed.                                                           |        |
+| 4716    | Trusted domain information was modified.                                               |        |
+| 4727    | A security-enabled global group was created.                                           |        |
+| 4728    | A member was added to a security-enabled global group.                                 |        |
+| 4729    | A member was removed from a security-enabled global group.                             |        |
+| 4730    | A security-enabled global group was deleted.                                           |        |
+| 4737    | A security-enabled global group was changed.                                           |        |
+| 4741    | A computer account was created.                                                        |        |
+| 4742    | A computer account was changed.                                                        |        |
+| 4743    | A computer account was deleted.                                                        |        |
+| 4754    | A security-enabled universal group was created.                                        |        |
+| 4755    | A security-enabled universal group was changed.                                        |        |
+| 4756    | A member was added to a security-enabled universal group.                              |        |
+| 4757    | A member was removed from a security-enabled universal group.                          |        |
+| 4764    | A group’s type was changed.                                                            |        |
+| 4765    | SID History was added to an account.                                                   |        |
+| 4766    | An attempt to add SID History to an account failed.                                    |        |
+| 4768    | A Kerberos authentication ticket (TGT) was requested.                                  |        |
+| 4769    | A Kerberos service ticket was requested.                                               |        |
+| 4770    | A Kerberos service ticket was renewed.                                                 |        |
+| 4771    | Kerberos pre-authentication failed.                                                    |        |
+| 4794    | An attempt was made to set the Directory Services Restore Mode administrator password. |        |
+| 4799    | A security-enabled local group membership was enumerated.                              |        |
+| 4865    | A trusted forest information entry was added.                                          |        |
+| 4866    | A trusted forest information entry was removed.                                        |        |
+| 4867    | A trusted forest information entry was added.                                          |        |
+| 5136    | A directory service object was modified. [1]                                           |        |
+| 5137    | A directory service object was created.                                                |        |
+| 5138    | A directory service object was undeleted                                               |        |
+| 5139    | A directory service object was moved.                                                  |        |
+| 5140    | Network share object accessed                                                          |        |
 
 - 1 - Requires that “Audit Directory Service Changes” auditing be enabled.
 
