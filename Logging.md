@@ -2,20 +2,21 @@
 
 The following is a prioritized list of recommended event logs to collect into your SIEM (ordering should be customized per organization and is subject to change here). 
 
-- Security Product Alerts (EDR/AV/HIPS/IPS)
+- Security Product Logs (EDR/AV/HIPS/IPS)
 - Active Directory / LDAP Logs
 - Web Proxy Requests
-- DHCP Leases
+- PowerShell Transcription Logs
 - DNS Queries (with endpoint name/IP)
 - Layer 3 or 7 Firewall (Egress Only)
 - VPN Logs
-- Netflow
 - Windows Event Logs
 - Linux auditd Logs
 - Email Logs
 - Custom Application Logs
 - Layer 7 Firewall
 - Layer 3 Firewall
+- DHCP Leases
+- Netflow
 - Full packet capture
 
 The priority here takes into consideration
@@ -66,3 +67,26 @@ Logs that do not provide basic security context should be considered for tuning 
 - Description of Outcome (sometimes implied)
 
 Note: This does not immply that non-security focused logs are of no value/use.
+
+
+# Log Setup
+
+## PowerShell Transcription
+https://devblogs.microsoft.com/powershell/powershell-the-blue-team/
+
+- Set up PowerShell Transcription logging via GPO at
+  - Windows Components -> Administrative Templates -> Windows PowerShell
+- Turn On PowerShell Transcription: ON
+  - Set Transcript output directory to the \\server\transcripts share path
+  - Check Include Invocation Headers
+
+## Windows Event Forwarding and Collector
+https://docs.microsoft.com/en-us/windows/security/threat-protection/use-windows-event-forwarding-to-assist-in-intrusion-detection
+https://docs.microsoft.com/en-us/windows/win32/wec/windows-event-collector
+https://medium.com/palantir/windows-event-forwarding-for-network-defense-cb208d5ff86f
+https://hackernoon.com/the-windows-event-forwarding-survival-guide-2010db7a68c4
+http://zenshaze.com/wp/?p=57
+
+- Set WEC timezone to UTC / GMT
+- Set up GPO Computer Configuration → Policies → Administrative Templates → Windows Components → Event Forwarding → Configure Target Subscription Manager
+- Set up subscriptions

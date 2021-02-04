@@ -1,5 +1,7 @@
 # Process Execution Use Cases
 
+This use case is purposefully separated from commandline activity. These detections assume you have all process execution details other than commandline (process name, PID, full path, etc.)
+
 Grouped by [Detection Method](/Detection-Methods.md)
 
 MITRE ATT&CK Framework: 
@@ -41,6 +43,7 @@ MITRE ATT&CK Framework:
   - cmdkey.exe (t1087)
   - computerdefaults.exe (t1088)
   - control.exe (t1202)
+  - dcsync.exe
   - dism.exe (t1088)
   - displayswitch.exe (t1015)
   - esentutl.exe (t1003)
@@ -93,7 +96,7 @@ MITRE ATT&CK Framework:
   - tasklist.exe (t1057)
   - tree.com (t1016)
   - utilman.exe (t1015)
-  - vassadmin.exe (t1490)
+  - vssadmin.exe (t1490)
   - wevtutil.exe (t1070)
   - where.exe (t1081)
   - whoami.exe (t1033)
@@ -103,16 +106,84 @@ MITRE ATT&CK Framework:
   - wsmprovhost.exe (t1028)
   - wusa.exe
   - xcopy.exe (t1074)
+  - klist.exe (pass-the-ticket)
+  - compmgmtlauncher.exe (TA0043)
+  - find.exe  (TA0043)
+  - fsutil.exe (TA0043)
+  - hostname.exe (TA0043)
+  - ipconfig.exe (TA0043)
+  - net.exe (TA0043)
+  - net1.exe (TA0043)
+  - ping.exe (TA0043)
+  - set.exe (TA0043)
+  - time.exe (TA0043)
+  - tracert.exe (TA0043)
+  - vds.exe (TA0043)
+  - vdsldr.exe (TA0043)
+  - ver.exe (TA0043)
+  - winver.exe (TA0043)
+  - wmic.exe (TA0043)
+  - winrshost.exe (TA0043)
+
+
+- System process with suspicious starting location
+  - conhost.exe not starting from c:\windows\system32\
+  - csrss.exe not starting from c:\windows\system32\
+  - ctfmon.exe not starting from c:\windows\system32\
+  - dasHost.exe not starting from c:\windows\system32\
+  - dllhost.exe not starting from c:\windows\system32\
+  - dwm.exe not starting from c:\windows\system32\
+  - CompPkgSrv.exe not starting from c:\windows\system32\
+  - backgroundTaskHost.exe not starting from c:\windows\system32\
+  - ntoskrnl.exe not starting from c:\windows\system32\
+  - services.exe not starting from c:\windows\system32\
+  - svchost.exe not starting from c:\windows\system32\
+  - taskhostw.exe not starting from c:\windows\system32\
+  - taskmgr.exe not starting from c:\windows\system32\
+  - wininit.exe not starting from c:\windows\system32\
+  - winlogon.exe not starting from c:\windows\system32\
+  - RuntimeBroker.exe not starting from c:\windows\system32\
+  - explorer.exe not starting from c:\windows\
+  - splwow64.exe not starting from c:\windows\
+
+- System process with suspicious parent process
+  - taskhost.exe with a parent other than services.exe
+  - lsass.exe with a parent other than wininit.exe
+  - iexplore.exe with a parent other than explorer.exe
+  - explorer.exe with a parent other than userinit.exe
+  - winlogon.exe with a parent other than smss.exe
+  - wininit.exe with a parent other than smss.exe
+  - smss.exe with a parent process other than System
+  - csrss.exe with a parent other than smss.exe
+  - services.exe with a parent other than wininit.exe
+  - svchost.exe with a parent other than services.exe
+  - lsm.exe with a parent other than wininit.exe
+
+- System process with suspicious owner
+  - csrss.exe with an owner other than Local System
+  - smss.exe with an owner other than Local System
+  - services.exe with an owner other than Local System
+  - wininit.exe with an owner other than Local System
+  - lsass.exe with an owner other than Local System
+  - lsm.exe with an owner other than Local System
+  - winlogon.exe with an owner other than Local System
+  - svchost.exe with an owner other than Local System, Network Service, or Local Service
+
+- Execution of known malicious tools
+  - mimikatz
+  - fgdump
+  - gsecdump
+  - metasploit
+  - acehash
+  - pwdump.py
+  - creddump
+  - cachedump.py
+  - wce
 
 - Microsoft process name without digital signature
 
 - Suspicious parent process of system executable
   - eventvwr.exe child of process other than mmc.exe (T1088)
-
-- msiexec.exe with command line containing 'http' or 'ftp'
-- regsvr32.exe with command line containing 'http' or 'ftp'
-- Use of wevutil.exe with 'cl' in command line
-- cmd.exe with command line containing 'http' or 'ftp'
 
 - Executable running from $Recylce.Bin
 - Executable running from \System Volume Information
@@ -140,9 +211,7 @@ MITRE ATT&CK Framework:
   - MSBuild.exe (T1127)
   - tracert.exe (T1016)
   - runas.exe
-
-- Suspicious commandline parameters of commonly installed apps
-  - chrome.exe with commandline containing "headless" or "remote-debugging"
+  - scrcons.exe (parent process of wmi ActiveScriptConsumers)
 
 
 ## Blacklist Alert

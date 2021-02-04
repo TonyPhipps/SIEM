@@ -1,3 +1,9 @@
+- [Windows Firewall](#windows-firewall)
+- [User Account Control and Virtualization](#user-account-control-and-virtualization)
+- [Credential Guard](#credential-guard)
+- [Limit Cached Credential Count](#limit-cached-credential-count)
+- [Resources](#resources)
+
 Note that [Active Directory](active-directory.md) GPO should be used as much as possible over individually targeting Windows systems.
 
 # Windows Firewall
@@ -14,10 +20,16 @@ This can be controlled via [network](network.md) devices, Active Directory GPO, 
     - Windows Management Instrumentation (WMI) (Dynamic/DCOM)
   - Consider setting "Apply local firewall rules" and "Apply local connection security rules" to "No" for all profiles
 
+# User Account Control and Virtualization
+- https://www.microsoftpressstore.com/articles/article.aspx?p=2228450&seqNum=9
 
 
+# Credential Guard
+- https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-requirements
 
 
+# Limit Cached Credential Count
+- HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\Current Version\Winlogon\CachedLogonsCount
 
 # Resources
 - Mandiant Whitepaper: Ransomware Protection and Containment Strategies

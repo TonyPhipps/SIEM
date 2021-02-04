@@ -2,6 +2,9 @@
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
+## Match Alert
+- NTDS.dit
+
 
 ## Aggregate Count
 - Access of .ost, .pst files (Outlook Email Archives)
