@@ -9,6 +9,9 @@ MITRE ATT&CK Framework:
 - Observe general process execution with the goal of understanding normal and detecting anomalies. Use of multiple visualizations, tables, and aggregation methods is recommended. Any confirmed malicious behavior from this use case should be considered as a foundation for a new alert.
 
 ## Match Alarm
+- Alternate Data Stream Use
+  - Process command line contains regex \.[\w]+:
+
 - Execution of sysinternals processes (include name.exe and name64.exe variants)
   - pslist.exe
   - psservice.exe
@@ -127,24 +130,26 @@ MITRE ATT&CK Framework:
 
 
 - System process with suspicious starting location
+  - backgroundTaskHost.exe not starting from c:\windows\system32\
+  - CompPkgSrv.exe not starting from c:\windows\system32\
   - conhost.exe not starting from c:\windows\system32\
   - csrss.exe not starting from c:\windows\system32\
   - ctfmon.exe not starting from c:\windows\system32\
   - dasHost.exe not starting from c:\windows\system32\
   - dllhost.exe not starting from c:\windows\system32\
   - dwm.exe not starting from c:\windows\system32\
-  - CompPkgSrv.exe not starting from c:\windows\system32\
-  - backgroundTaskHost.exe not starting from c:\windows\system32\
+  - explorer.exe not starting from c:\windows\
+  - iexplore.exe not starting from c:\program files\internet explorer\
+  - lsass.exe not starting from c:\windows\system32\
   - ntoskrnl.exe not starting from c:\windows\system32\
+  - RuntimeBroker.exe not starting from c:\windows\system32\
   - services.exe not starting from c:\windows\system32\
+  - splwow64.exe not starting from c:\windows\
   - svchost.exe not starting from c:\windows\system32\
   - taskhostw.exe not starting from c:\windows\system32\
   - taskmgr.exe not starting from c:\windows\system32\
   - wininit.exe not starting from c:\windows\system32\
   - winlogon.exe not starting from c:\windows\system32\
-  - RuntimeBroker.exe not starting from c:\windows\system32\
-  - explorer.exe not starting from c:\windows\
-  - splwow64.exe not starting from c:\windows\
 
 - System process with suspicious parent process
   - taskhost.exe with a parent other than services.exe
@@ -167,20 +172,21 @@ MITRE ATT&CK Framework:
   - lsass.exe with an owner other than Local System
   - lsm.exe with an owner other than Local System
   - winlogon.exe with an owner other than Local System
-  - svchost.exe with an owner other than Local System, Network Service, or Local Service
 
-- Execution of known malicious tools
-  - mimikatz
-  - fgdump
-  - gsecdump
-  - metasploit
-  - acehash
-  - pwdump.py
-  - creddump
-  - cachedump.py
-  - wce
+
+- SYSTEM account launching processes other than
+  - 
 
 - Microsoft process name without digital signature
+- svchost.exe
+- services.exe
+- smss.exe
+- lsass.exe
+- csrss.exe
+- wininit.exe
+- taskhostw.exe
+- runtimebroker.exe
+
 
 - Suspicious parent process of system executable
   - eventvwr.exe child of process other than mmc.exe (T1088)
@@ -262,16 +268,18 @@ MITRE ATT&CK Framework:
 
 
 ## Rolling Whitelist Alert
-- Newly observed Source Process=cmd.exe, Child Process
-- Newly observed Source Process=powershell.exe, Child Process
-- Newly observed Source Process=powershell_ise.exe, Child Process
-- Newly observed Destination File Path
-- Newly observed Destination File Path=[User-Editable Path]
-- Newly observed Destination File, User=[Privileged Account]
-- Newly observed Destination File, User=[Serivce Account]
-- Newly observed Destination File, User=[System Account]
-- Newly observed Source Executable and Destination File
-- Newly observed Source User executing items on list [LOLBAS](https://github.com/LOLBAS-Project/LOLBAS)
+- Source Process=cmd.exe, Newly observed Child Process
+- Source Process=powershell.exe, Newly observed Child Process
+- Source Process=powershell_ise.exe, Newly observed Child Process
+- Executing items on list [LOLBAS](https://github.com/LOLBAS-Project/LOLBAS), Newly observed User
+- Source Process Path=c:\windows\, newly observed process
+- Source Process Path=c:\windows\system32\, newly observed process
+- Source Process Path=c:\windows\syswow64\, newly observed process
+- Source Process Path=c:\windows\fonts\, newly observed process
+- Source Process Path=C:\$Recycle.Bin\, newly observed process
+- Source Process Path=c:\windows\system32\, newly observed process
+- Source Process Path=c:\system volume information\, newly observed process
+- Source Process Path=C:\ProgramData\, newly observed process
 
 
 ## Shannon Entropy Score Alert

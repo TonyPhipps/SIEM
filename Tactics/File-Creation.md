@@ -13,33 +13,30 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Count of User and Extension
 - Count of User and File Path
 - Count of Process and File Path
+- 10 or more unique .txt file saved within 1 min
 
 
 ## Blacklist Alert
-- File Created in System Folder
+- File Created in System Folders by unexpected accounts (Local System)
+  - c:\windows\
+  - c:\windows\fonts\
+  - c:\windows\system32\
 - File Created in User Space by Privileged Account
-- File Created in System Space by Nonprivileged Account
-- File Created that matches known-system executables (pre-staging)
+- File Created that matches known-system executables
   - sethc.exe
   - utilman.exe
   - osk.exe
   - narrator.exe
   - magnify.exe
   - displayswitch.exe
+  - etc
 - Files typically related to ransomware "recovery"
-  - RECOVER-FILES.TXT (egregor)
-  - [HOW TO RECOVER FILES].TXT (ProLock)
-  - \_readme.txt (Weui, Lisp, Epor)
-  - hard2decrypt_readme.txt (Hard2decrypt)
-  - HELP_DECRYPT_YOUR_FILES.txt (Sext)
-  - !!! YourDataRestore !!! txt (STOP)
-  - !!RestoreProcess!!!.txt (STOP)
-  - !!!!RESTORE_FILES!!!.txt (STOP)
-  - !!!DATA_RESTORE!!!.txt (STOP)
-  - !!!DECRYPTION__KEYPASS__INFO!!!.txt (STOP)
-  - !!!WHY_MY_FILES_NOT_OPEN!!!.txt (STOP)
-  - !!SAVE_FILES_INFO!!!.txt (STOP)
-  - !readme.txt (STOP)
+  - .txt file with one or more of the following
+    - Two or more !'s
+    - name contains "decrypt"
+    - name contains "recover"
+    - name contains "restore"
+    - File name starts with ! 
 
 
 ## Whitelist Alert
