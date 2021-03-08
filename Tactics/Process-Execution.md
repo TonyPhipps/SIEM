@@ -43,27 +43,37 @@ MITRE ATT&CK Framework:
   - bash.exe (t1202)
   - bitsadmin.exe (t1197)
   - certutil.exe (t1202)
+  - cscript.exe (T1202)
   - cmdkey.exe (t1087)
+  - compmgmtlauncher.exe (TA0043)
   - computerdefaults.exe (t1088)
   - control.exe (t1202)
   - dcsync.exe
   - dism.exe (t1088)
   - displayswitch.exe (t1015)
   - esentutl.exe (t1003)
+  - find.exe  (TA0043)
   - findstr.exe (t1081)
   - fodhelper.exe (t1088)
   - fodhelper.exe (t1088)
   - forfiles.exe (t1222)
+  - fsutil.exe (TA0043)
   - hh.exe (t1047)
+  - hostname.exe (TA0043)
   - icacls.exe (t1222)
+  - ipconfig.exe (TA0043)
   - jjs.exe (t1218)
+  - klist.exe (pass-the-ticket)
   - klist.exe (t1087)
   - magnify.exe (t1015)
   - makecab.exe
   - mofcomp.exe (t1047)
+  - MSBuild.exe (T1127)
   - mshta.exe (t1170)
   - narrator.exe (t1015)
   - nbtstat.exe (t1016)
+  - net.exe (TA0043)
+  - net1.exe (TA0043)
   - netsh.exe (t1063)
   - netstat.exe (t1049)
   - nltest.exe (t1033)
@@ -71,6 +81,9 @@ MITRE ATT&CK Framework:
   - odbcconf.exe (t1073)
   - osk.exe (t1015)
   - pcalua.exe (t1202)
+  - ping.exe (TA0043)
+  - powershell.exe (T1086)
+  - powershell_ise.exe (T1086)
   - psexec.exe
   - psexesvc.exe
   - qprocess.exe (t1057)
@@ -88,8 +101,9 @@ MITRE ATT&CK Framework:
   - rwinsta.exe (t1057)
   - sc.exe (t1031)
   - schtasks.exe (t1053)
-  - scrcons.exe (t1047)
+  - scrcons.exe (t1047) (parent process of wmi ActiveScriptConsumers)
   - sdbinst.exe (t1138)
+  - set.exe (TA0043)
   - sethc.exe (t1015)
   - syncappvpublishingserver.exe (t1218)
   - systeminfo.exe (t1033)
@@ -97,36 +111,27 @@ MITRE ATT&CK Framework:
   - taskeng.exe (t1053)
   - taskkill.exe (t1112)
   - tasklist.exe (t1057)
+  - time.exe (TA0043)
+  - tracert.exe (TA0043)
   - tree.com (t1016)
   - utilman.exe (t1015)
+  - vds.exe (TA0043)
+  - vdsldr.exe (TA0043)
+  - ver.exe (TA0043)
   - vssadmin.exe (t1490)
   - wevtutil.exe (t1070)
   - where.exe (t1081)
   - whoami.exe (t1033)
   - winrm.cmd (t1028)
   - winrs.exe (t1202)
+  - winrshost.exe (TA0043)
+  - winver.exe (TA0043)
+  - wmic.exe (TA0043)
   - wmiprvse.exe (t1047)
+  - wscript.exe (T1202)
   - wsmprovhost.exe (t1028)
   - wusa.exe
   - xcopy.exe (t1074)
-  - klist.exe (pass-the-ticket)
-  - compmgmtlauncher.exe (TA0043)
-  - find.exe  (TA0043)
-  - fsutil.exe (TA0043)
-  - hostname.exe (TA0043)
-  - ipconfig.exe (TA0043)
-  - net.exe (TA0043)
-  - net1.exe (TA0043)
-  - ping.exe (TA0043)
-  - set.exe (TA0043)
-  - time.exe (TA0043)
-  - tracert.exe (TA0043)
-  - vds.exe (TA0043)
-  - vdsldr.exe (TA0043)
-  - ver.exe (TA0043)
-  - winver.exe (TA0043)
-  - wmic.exe (TA0043)
-  - winrshost.exe (TA0043)
 
 
 - System process with suspicious starting location
@@ -163,7 +168,9 @@ MITRE ATT&CK Framework:
   - services.exe with a parent other than wininit.exe
   - svchost.exe with a parent other than services.exe
   - lsm.exe with a parent other than wininit.exe
-
+  - eventvwr.exe with a parent process other than mmc.exe (T1088)
+  - wmiprvse.exe with a parent process other than svchost.exe
+  
 - System process with suspicious owner
   - csrss.exe with an owner other than Local System
   - smss.exe with an owner other than Local System
@@ -173,23 +180,16 @@ MITRE ATT&CK Framework:
   - lsm.exe with an owner other than Local System
   - winlogon.exe with an owner other than Local System
 
-
-- SYSTEM account launching processes other than
-  - 
-
 - Microsoft process name without digital signature
-- svchost.exe
-- services.exe
-- smss.exe
-- lsass.exe
-- csrss.exe
-- wininit.exe
-- taskhostw.exe
-- runtimebroker.exe
+  - svchost.exe
+  - services.exe
+  - smss.exe
+  - lsass.exe
+  - csrss.exe
+  - wininit.exe
+  - taskhostw.exe
+  - runtimebroker.exe
 
-
-- Suspicious parent process of system executable
-  - eventvwr.exe child of process other than mmc.exe (T1088)
 
 - Executable running from $Recylce.Bin
 - Executable running from \System Volume Information
@@ -199,26 +199,6 @@ MITRE ATT&CK Framework:
 ## Aggregate Count
 - Suspicious child process of system executable
 
-- Unrecognized Child Processes of Office Products (T1137)
-  - excel.exe
-  - winword.exe
-  - powerpnt.exe
-  - outlook.exe
-  - msaccess.exe
-  - mspub.exe
-  
-- Unexpected source user of system executable  
-  - ipconfig.exe (T1016)
-  - powershell.exe (T1086)
-  - powershell_ise.exe (T1086)
-  - net.exe (T1018)
-  - cscript.exe (T1202)
-  - wscript.exe (T1202)
-  - MSBuild.exe (T1127)
-  - tracert.exe (T1016)
-  - runas.exe
-  - scrcons.exe (parent process of wmi ActiveScriptConsumers)
-
 
 ## Blacklist Alert
 - Executables masquerading as c:\windows system files running from bad paths (blacklist of processes expected in c:\windows\)
@@ -226,31 +206,44 @@ MITRE ATT&CK Framework:
 - Executables running from any folder with TEMP in the path
 
 - Administrator account running "daily use" applications (blacklist of admin names)
-  -  chrome.exe 
-  -  iexplore.exe
-  -  MicrosoftEdge.exe
-  -  msedge.exe
-  -  firefox.exe
-  -  brave.exe
+  - chrome.exe 
+  - iexplore.exe
+  - MicrosoftEdge.exe
+  - msedge.exe
+  - firefox.exe
+  - brave.exe
+
+
+- cmd.exe with following parent names
+  - w3wp.exe
+  - wmiprvse.exe
+
+
+- powershell*.exe with a parent process of
+  - w3wp.exe
+  - wmiprvse.exe
 
 
 ## Whitelist Alert
 - A file with a non-executable extension is executed (whitelist of extensions)
   - bat, bin, cmd, com, cpl, exe, gadget, inf, ins, inx, isu, job, jse, lnk, msc, msi, msp, mst, paf, pif, ps1, reg, rgs, scr, sct, shb, shs, u3p, vb, vbe, vbs, vbscript, ws, wsf, wsh
-  
+
 - Unexpected process from non-admin/helpdesk/developer (whitelist of admins, etc)
   - ipconfig.exe (T1016)
   - powershell.exe (T1086)
   - powershell_ise.exe (T1086)
   - net.exe ran (T1018)
-  - cscript.exe (T1202)
-  - wscript.exe (T1202)
-  - MSBuild.exe (T1127)
-  - tracert.exe (T1016)
-  - runas.exe
-  - mstsc.exe
-  - cmd.exe
+    - mstsc.exe
   - python*.exe
+
+- Unexpectd Source Process is Office Products (T1137)
+  - excel.exe
+  - winword.exe
+  - powerpnt.exe
+  - outlook.exe
+  - msaccess.exe
+  - mspub.exe
+
 
 - Unrecognized processes with owner of 'NT AUTHORITY\SYSTEM' (whitelist of expected full process paths)
 - Unrecognized processes with owner of 'NETWORK SERVICE' (whitelist of expected full process paths)
@@ -261,6 +254,9 @@ MITRE ATT&CK Framework:
   - ```Get-ChildItem c:\windows\system32\*.exe | select name```
 - Unrecognized process starting from c:\windows\winsxs\ (T1036) (whitelist of processes expected)
   - ```Get-ChildItem c:\windows\winsxs\*.exe | group-object | select name```
+
+- SYSTEM account launching processes other than
+  - (WIP)
 
 
 ## Levenshtein Score Alert
@@ -280,6 +276,7 @@ MITRE ATT&CK Framework:
 - Source Process Path=c:\windows\system32\, newly observed process
 - Source Process Path=c:\system volume information\, newly observed process
 - Source Process Path=C:\ProgramData\, newly observed process
+- source Process=wmiprvse.exe, newly observed child process
 
 
 ## Shannon Entropy Score Alert

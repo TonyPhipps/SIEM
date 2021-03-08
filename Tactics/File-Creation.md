@@ -3,10 +3,12 @@
 Grouped by [Detection Method](/Detection-Methods.md)
 
 ## Match Alert
-- Startup items
+- New Startup items created at
   - %AppData%\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 - File Created with Known-Malicious Name
 - File Created in System Space by Process in User Space
+- User creating a .dll file
+- Any .mof file creation (WMI Consumer)
 
 
 ## Aggregate Count
