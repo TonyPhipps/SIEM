@@ -59,3 +59,6 @@ Credential Access (CA), Discovery (D), Lateral Movement (LM), Collection (C), Ex
 - https://www.elastic.co/guide/en/siem/guide/current/prebuilt-rules.html
 - https://github.com/Neo23x0/sigma
 - https://github.com/splunk/security_content/tree/develop/detections
+- https://lolbas-project.github.io/
+- https://docs.rapid7.com/insightidr/windows-suspicious-process/
+- 
