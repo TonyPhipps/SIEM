@@ -1,0 +1,6 @@
+- Open the Domain Name System Microsoft Management Console (DNS MMC) snap-in.
+- Click Start → Programs → Administrative Tools, then select DNS.
+- From the DNS Server, right-click the server and select the Properties submenu.
+- Click the Debug Logging tab, then select Log packets debugging.
+- Ensure that the Incoming, UDP, Queries/Transfer, and Request checkboxes are selected.
+- File location is: systemroot\System32\Dns\Dns.log
