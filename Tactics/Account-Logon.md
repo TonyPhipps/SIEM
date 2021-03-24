@@ -17,7 +17,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Whitelist Alert
-- Logon More than an Hour Outside Expected Times
 - A user with an unrecognized naming convention is observed
 
 
@@ -46,6 +45,9 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Windows Security Event ID 4624: An account was successfully logged on
 - Windows Security Event ID 4625: An account failed to log on
 - Windows Security Event ID 4648: A logon was attempted using explicit credentials
+- VPN Logons
+- SSH Logons
+- Application Logons
 
 
 # Possible False Positives
