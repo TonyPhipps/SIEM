@@ -4,14 +4,16 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Aggregate Count
-- Count of Events per Hour
-- Count of Events per Source System
-- Count of Events per Source User
+- Count of Successful/Failed Events per Hour
+- Count of Successful/Failed Events per Source System
+- Count of Successful/Failed Events per Source User
 
 
 ## Blacklist Alert
 - Account Logon After Employee End Date
-- Service account logs on interactively
+- Account Logon During Unusual Time of Day
+- Account Logon During Unusual Day of Week
+- Service Account Interactive Logon
 
 
 ## Whitelist Alert
