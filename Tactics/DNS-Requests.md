@@ -40,7 +40,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Number of requests with DNS Type TXT from a single system exceeds X amount in Y time (aggregate on fields: source system; filter by RCODE=16)
 - Number of requests with DNS Type NULL from a single system exceeds X amount in Y time (aggregate on fields: source system; filter by RCODE=10)
 - Number of requests with DNS Type CNAME from a single system exceeds X amount in Y time (aggregate on fields: source system; filter by RCODE=5)
-- Number of DNS request volume for multiple sub domains of a single parent domain exceeds x amount in Y time (aggregate on fields: source system)
+- Number of DNS request volume for multiple sub domains of a single parent domain exceeds x amount in Y time (aggregate on fields: source system) (T1520)
 - Parent domain text length exceeds X characters
 - Number of responses with code SERVFAIL to a single system exceeds X amount in Y time (aggregate on fields: source system; filter by RCODE=2)
 - Number of responses with code NXDOMAIN to a single system exceeds X amount in Y time (aggregate on fields: source system; filter by RCODE=3)
