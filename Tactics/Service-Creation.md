@@ -31,4 +31,4 @@ MITRE ATT&CK Framework: [New Service (T1050)](https://attack.mitre.org/technique
 - Windows Security Event ID 4697
 
 
-# Possible False Postivies
+# Possible False Positives

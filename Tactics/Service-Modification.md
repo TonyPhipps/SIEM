@@ -30,4 +30,4 @@ MITRE ATT&CK Framework: [Modify Existing Service (T1031)](https://attack.mitre.o
 # Log Source Examples
 
 
-# Possible False Postivies
+# Possible False Positives

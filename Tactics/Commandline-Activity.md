@@ -29,6 +29,8 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
   - 'get-wmiobject' or 'gwmi'
   - 'ToBase64String'
   - 'FromBase64String'
+  - set-wmiinstance
+  - createInstance
 
 - Powershell third-party functions tied to malicious activity
   - nishang
@@ -39,9 +41,18 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 - schtasks.exe with 'create'
 
-- wmic.exe with 'process get', 'service get', 'qfe get', 'startup get', 'process call create'
 
-- mofcomp.exe with '-N'
+- wmic.exe where commandline contains
+  - process call create
+  - useraccount list full
+  - group list full
+  - netuse list full
+  - qfe get
+  - startup get
+  - service get
+
+
+- mofcomp.exe with '-N' and '\\' (WMI with remote host namespace)
 
 - msiexec.exe with command line containing 'http' or 'ftp'
 

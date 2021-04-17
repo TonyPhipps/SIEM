@@ -4,18 +4,19 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Aggregate Count
-- Count of Events per Hour
-- Count of Events per Source System
-- Count of Events per Source User
+- Count of Successful/Failed Events per Hour
+- Count of Successful/Failed Events per Source System
+- Count of Successful/Failed Events per Source User
 
 
 ## Blacklist Alert
 - Account Logon After Employee End Date
-- Service account logs on interactively
+- Account Logon During Unusual Time of Day
+- Account Logon During Unusual Day of Week
+- Service Account Interactive Logon
 
 
 ## Whitelist Alert
-- Logon More than an Hour Outside Expected Times
 - A user with an unrecognized naming convention is observed
 
 
@@ -44,6 +45,9 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Windows Security Event ID 4624: An account was successfully logged on
 - Windows Security Event ID 4625: An account failed to log on
 - Windows Security Event ID 4648: A logon was attempted using explicit credentials
+- VPN Logons
+- SSH Logons
+- Application Logons
 
 
 # Possible False Positives
