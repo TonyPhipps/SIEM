@@ -1,5 +1,12 @@
 Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, etc
 
+
+[Google Doc: Audit Policies and Event Logs - Windows Auditing](https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vRJHXf5AqD8CMkMAlzkwCpFVN3YtxqsSD-G_tDLBw1XRiLzYI2Frrd04Z9l4zrUGosinzyUWfCAz8nF/pubhtml)
+
+
+
+
+----------------------------------
 - [Security Events](#security-events)
 - [Security Events (Domain Controller Specific)](#security-events-domain-controller-specific)
 - [Microsoft-Windows-Sysmon/Operational](#microsoft-windows-sysmonoperational)
