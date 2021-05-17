@@ -36,7 +36,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 ## Threshold Alert
 - Requests where type=TXT and TXT field length exceeds X characters (filter by RCODE=16)
-- Number of requests from a single system exceeds X amount in Y time (aggregate on fields: source system)
+- Number of unique domain requests from a single system exceeds X amount in Y time (aggregate on fields: source system, unique_question_count)
 - Number of requests with DNS Type TXT from a single system exceeds X amount in Y time (aggregate on fields: source system; filter by RCODE=16)
 - Number of requests with DNS Type NULL from a single system exceeds X amount in Y time (aggregate on fields: source system; filter by RCODE=10)
 - Number of requests with DNS Type CNAME from a single system exceeds X amount in Y time (aggregate on fields: source system; filter by RCODE=5)
