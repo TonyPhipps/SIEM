@@ -69,3 +69,4 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn800669(v=ws.11)
 - https://docs.microsoft.com/en-us/powershell/module/dnsclient/resolve-dnsname?view=windowsserver2019-ps
 - https://www.rsreese.com/parsing-microsoft-dns-server-logs/
+- https://blueteamblog.com/7-ways-to-detect-malicious-dns-traffic-using-siem
