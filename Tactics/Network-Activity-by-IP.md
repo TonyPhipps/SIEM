@@ -7,7 +7,9 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Blacklist Alert
-- Known-Bad Destination Port Use
+- Egress Traffic to Known-Bad Port
+- Engress Traffic to Known Bad IP
+- Egress Traffic to Known Sinkhole IP
 
 
 ## Whitelist Alert
