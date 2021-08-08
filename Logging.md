@@ -9,6 +9,13 @@ The following is a prioritized list of recommended event logs to collect into yo
 - DNS Queries (with endpoint name/IP)
 - Layer 3 or 7 Firewall (Egress Only)
 - VPN Logs
+- Google Cloud Logging
+- AWS CloudWatch
+- Microsoft M365 UnifiedAuditLog
+- Microsoft M365 AzureADAuditSignInLogs
+- Microsoft Cloud App Security Logs
+- Microsoft AzureAD Identity Protection
+- Microsoft M365 Defender for Identity
 - Windows Event Logs
 - Linux auditd Logs
 - Email Logs
@@ -17,7 +24,11 @@ The following is a prioritized list of recommended event logs to collect into yo
 - Layer 3 Firewall
 - DHCP Leases
 - Netflow
+- AWS VPC Flow Logs
+- Google VPC Flow Logs
+- Microsoft Network Security Group Flow Logs
 - Full packet capture
+
 
 The priority here takes into consideration
 - Common attack vectors 

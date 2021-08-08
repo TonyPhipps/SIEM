@@ -17,8 +17,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Rolling Whitelist Alert
-- Newly Observed Virus Scan Signature
-- Newly Observed Virus Scan Signature per System/User
 - Newly Observed Host IPS Signature
 - Newly Observed Host IPS Signature per System/User
 - Newly Observed IPS Signature

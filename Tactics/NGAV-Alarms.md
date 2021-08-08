@@ -1,12 +1,15 @@
-# API Usage Use Cases
+# Next-Generation Antivirus Use Cases
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Aggregate Count
+- Count of Alarms per Source User
+- Count of Alarms per Source System
 
 
 ## Blacklist Alert
+- Any Server Firing Alarms
 
 
 ## Whitelist Alert
@@ -16,7 +19,8 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Rolling Whitelist Alert
-  
+- Newly Observed Virus Scan Signature
+- Newly Observed Virus Scan Signature per System/User
 
 ## Shannon Entropy Score Alert
 
@@ -25,13 +29,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 # Log Source Examples
-- CloudWatch Logs
-- Config Logs
-- Load Balancer Logs
-  - Application Load, Network Load, Classic Load
-- S3 Bucket Logs
-- CloudTrail
-- CloudFront Logs
 
 
 # Possible False Positives

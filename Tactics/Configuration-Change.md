@@ -1,15 +1,21 @@
-# API Usage Use Cases
+# Configuration Change Use Cases
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Aggregate Count
+- Count of Changes per Source User
+- Count of Changes per Source System
 
 
 ## Blacklist Alert
 
 
+
 ## Whitelist Alert
+- Audit Policy Changed by Unexpected User
+- Audit Policy Changed at Unexpected Time of Day
+- Audit Policy Changed at Unexpected Day of Week
 
 
 ## Levenshtein Score Alert
@@ -25,12 +31,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 # Log Source Examples
-- Activity Logs
-- Data Access Logs
-- System Event Audit Logs
-- Cloud Storage Logs
-- Container (GKE) Logs
-  - StackdriverLogging for Kubernetes (GKE)
 
 
 # Possible False Positives
