@@ -1,6 +1,9 @@
-# API Usage Use Cases
+# Instance Stop Use Cases
 
 Grouped by [Detection Method](/Detection-Methods.md)
+
+## Match Alert
+
 
 
 ## Aggregate Count
@@ -16,7 +19,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Rolling Whitelist Alert
-  
+
 
 ## Shannon Entropy Score Alert
 
@@ -25,13 +28,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 # Log Source Examples
-- CloudWatch Logs
-- Config Logs
-- Load Balancer Logs
-  - Application Load, Network Load, Classic Load
-- S3 Bucket Logs
-- CloudTrail
-- CloudFront Logs
-
+ 
 
 # Possible False Positives

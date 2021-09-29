@@ -1,6 +1,8 @@
-# API Usage Use Cases
+# Group Modification Use Cases
 
 Grouped by [Detection Method](/Detection-Methods.md)
+
+## Match Alert
 
 
 ## Aggregate Count
@@ -16,7 +18,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Rolling Whitelist Alert
-  
+
 
 ## Shannon Entropy Score Alert
 
@@ -25,12 +27,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 # Log Source Examples
-- Activity Logs
-- Data Access Logs
-- System Event Audit Logs
-- Cloud Storage Logs
-- Container (GKE) Logs
-  - StackdriverLogging for Kubernetes (GKE)
-
+ 
 
 # Possible False Positives

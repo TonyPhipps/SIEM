@@ -17,7 +17,7 @@ A "use case" describes and documents a goal and how it's objectives are accompli
     - [Query [Name]](#query-name)
   - [Data Stream Analysis](#data-stream-analysis)
   - [Validation](#validation)
-    - [Attack Simlulation](#attack-simlulation)
+    - [Attack Simulation](#attack-simulation)
   - [References and Resources](#references-and-resources)
 
 
@@ -113,7 +113,7 @@ Pseudocode-like logic flow of how events are processed by the SIEM and presented
 Methods to ensure the use case was developed and is operating properly. These can be pass/fail, time based, or other relevant measurements. When possible, include an automated script or manual steps to cause the alert to fire on demand (i.e. attack simulation)
 
 
-### Attack Simlulation
+### Attack Simulation
 
 Specific actions to reproduce events that are expected to be detected/highlighted by use case components.
 

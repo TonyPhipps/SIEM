@@ -1,10 +1,9 @@
-# Service Modification Use Cases
+# Group Deletion Use Cases
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
-MITRE ATT&CK Framework: [Modify Existing Service (T1031)](https://attack.mitre.org/techniques/T1031)
+## Match Alert
 
-- Service modification can be used by an adversary to achieve persistence.
 
 ## Aggregate Count
 
@@ -19,7 +18,7 @@ MITRE ATT&CK Framework: [Modify Existing Service (T1031)](https://attack.mitre.o
 
 
 ## Rolling Whitelist Alert
-- Newly observed Source User
+
 
 ## Shannon Entropy Score Alert
 
@@ -28,8 +27,6 @@ MITRE ATT&CK Framework: [Modify Existing Service (T1031)](https://attack.mitre.o
 
 
 # Log Source Examples
-- AWS Cloudtrail
-- Azure
-- GCP
+ 
 
 # Possible False Positives
