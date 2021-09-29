@@ -61,4 +61,6 @@ Credential Access (CA), Discovery (D), Lateral Movement (LM), Collection (C), Ex
 - https://github.com/splunk/security_content/tree/develop/detections
 - https://lolbas-project.github.io/
 - https://docs.rapid7.com/insightidr/windows-suspicious-process/
-- 
+- http://tajdini.net/blog/forensics-and-security/digital-forensics-and-incident-response/
+- https://rules.fluencysecurity.com/
+- https://splunkresearch.com/detections/
