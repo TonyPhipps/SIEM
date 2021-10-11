@@ -1,3 +1,15 @@
 # Cybersecurity RSS Feeds
-- [Microsoft Security Response Center](https://msrc-blog.microsoft.com/feed)
-- [US CERT CISA](https://us-cert.cisa.gov/ncas/alerts.xml)
+- https://msrc-blog.microsoft.com/feed
+- https://us-cert.cisa.gov/ncas/alerts.xml
+- https://thedfirreport.com/feed/
+- https://adsecurity.org/?feed=rss2
+- https://cqureacademy.com/feed
+- https://dfir.blog/rss/
+- https://feeds.feedburner.com/IrongeeksSecuritySite
+- https://laskowski-tech.com/feed
+- https://medium.com/feed/@Cyb3rWard0g
+- https://ponderthebits.com/feed/
+- https://posts.specterops.io/feed
+- https://www.us-cert.gov/ncas/alerts.xml
+- https://www.welivesecurity.com/category/cybercrime,malware,cybersecurity,password,scams,vulnerability,mobile-security,threat-reports/feed/
+- https://www.zerodayinitiative.com/blog?format=rss

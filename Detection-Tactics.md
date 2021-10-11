@@ -78,3 +78,5 @@ Credential Access (CA), Discovery (D), Lateral Movement (LM), Collection (C), Ex
 - http://tajdini.net/blog/forensics-and-security/digital-forensics-and-incident-response/
 - https://rules.fluencysecurity.com/
 - https://splunkresearch.com/detections/
+- https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES
+- https://ihsansencan.github.io/index.html

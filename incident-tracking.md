@@ -4,29 +4,30 @@ Tables and their fields are listed below.
 - Tables may "lookup" entries in another table to establish a relationship.
 
 - [Incidents](#incidents)
+- [Indicator of Compromise](#indicator-of-compromise)
 - [Adversary](#adversary)
-- [Affected Software](#affected-software)
+- [Software](#software)
 - [Affected Systems](#affected-systems)
 - [Affected Users](#affected-users)
 - [Attack Techniques](#attack-techniques)
 - [Emails](#emails)
-- [Events](#events)
 - [Use Cases/Plays](#use-casesplays)
 - [Work Log](#work-log)
 - [Mitigations](#mitigations)
 - [Owner](#owner)
+- [Signature](#signature)
 
 # Incidents
 - Adversary (Lookup)
+- Signature (lookup)
+  - Use Cases/Plays (Lookup)
+    - Attack Techniques (Lookup)
+    - Mitigations (Lookup)
 - Affected Software (Lookup)
 - Affected Systems (Lookup)
 - Affected Users (Lookup)
-- Attack Techniques (Lookup)
 - Emails (Lookup)
 - Related Incidents (Lookup)
-- Events (Lookup)
-- Mitigations (Lookup)
-- Use Cases/Plays (Lookup)
 - Work Log (Lookup)
 - Resolutions (Lookup)
 - Owner (Lookup)
@@ -43,7 +44,7 @@ Tables and their fields are listed below.
 - Last updated by
 - Date Created
 - Created By
-- Title
+- Title/Subject
 - Executive Summary
 - Internal Comments
 - Origination
@@ -108,27 +109,28 @@ Tables and their fields are listed below.
   - External
 - Attachments
 - Change Log
-- Containment Method(s) Taken
-  - Isolation via Host Firewall
-  - Isolation via Firewall Appliance
-  - Isolation via EDR
-  - Isolation via Physical Disconnect
-  - Isolation via ISP
-  - Account Disablement
-  - System Disablement
 
-# Adversary
+
+# Indicator of Compromise
 - IP
 - Hostname
 - Domain Name
-- Aliases
 - Date Last Observed
 
-# Affected Software
+
+# Adversary
+- Name
+- Aliases
+- References
+- Signatures (lookup)
+  - Attack Techniques (lookup)
+
+
+
+# Software
 - Vendor
 - Product
 - Version
-- Date Last Observed
 
 # Affected Systems
 - MAC(s)
@@ -159,9 +161,6 @@ Tables and their fields are listed below.
 - Date Sent
 - Header
 
-# Events
-- Raw Message
-- [Parsed fields as available]
 
 # Use Cases/Plays
 - Title
@@ -180,3 +179,26 @@ Tables and their fields are listed below.
 # Owner
 - Username
 - Full Name
+
+
+# Signature
+- Name
+- Use Case (Lookup)
+- Event Feed (lookup)
+- Adversaries (lookup)
+- Use Case (lookup)
+  - Attack Techniques (lookup)
+- Date Last Reviewed
+- Date Last Validated
+- Severity
+- Fidelity
+- Status
+- References
+- Attack Simluation
+- Notess
+- Change Log
+- Sample Source Events
+- Pseudologic
+- Deployed Logic
+- Sigma Logic
+
