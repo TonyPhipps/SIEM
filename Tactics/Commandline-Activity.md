@@ -7,6 +7,12 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 - Execution of malicious commands and scripts from command-line interfaces.
 
 
+## Aggregate Count
+- Process file names (without path)
+- Process file names (with path)
+- Rundll32.exe commandlines
+
+
 ## Match Alert
 - PowerShell.exe or powershell_ise.exe with one of the following in the command line (or straight commandline use)
   - '-nop' or '/nop' (from -noprofile)
@@ -14,7 +20,7 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
   - '-noni' or '/noni' (from -noninteractive)
   - '-ep' or '/ep' (from -execution-policy)
   - 'bypass'
-  - '-enc or /enc or -ec or /ec (from -encodedcommand)
+  - '-e or /e (from -encodedcommand)
   - 'invoke-webrequest' or 'iwr' or 'curl' or 'wget'
   - 'invoke-restmethod' or 'irm'
   - 'invoke-expression' or 'iex'
@@ -41,7 +47,6 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 - schtasks.exe with 'create'
 
-
 - wmic.exe where commandline contains
   - process call create
   - useraccount list full
@@ -51,6 +56,20 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
   - startup get
   - service get
 
+- Suspicious commandline parameters of system executables
+  - CMSTP.exe with commandline containing '/ni' or '-ni' or '/s' or '-s' (T1191)
+  - MpCmdRun.exe with commandline containing 'Add-MpPreference' OR 'RemoveDefinitions' OR 'DisableIOAVProtection' (T1089)
+  - nltestrk.exe with command line containing 'domain_trusts (T1482)
+  - Mavinject.exe with command line containing 'INJECTRUNNING'(T1218)
+  - fltMC.exe with commandline contains 'unload' OR 'detach' (T1054)
+  - InstallUtil.exe with commandline contains 'logfile=' OR 'LogToConsole=false' OR '/u' or '-u' (T1118)
+  - 'certutil.exe' with any of the following in the command line
+    - urlcach
+    - url
+    - ping
+    - http
+    - ftp
+    - -decode
 
 - mofcomp.exe with '-N' and '\\' (WMI with remote host namespace)
 
@@ -66,41 +85,21 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 - chrome.exe with commandline containing "headless" or "remote-debugging"
 
-## Aggregate Count
-- Process file names (without path)
-- Process file names (with path)
-- Rundll32.exe commandlines
 
-
-## Blacklist Alert
-- Suspicious commandline parameters of system executables
-  - CMSTP.exe with commandline containing '/ni' or '-ni' or '/s' or '-s' (T1191)
-  - MpCmdRun.exe with commandline containing 'Add-MpPreference' OR 'RemoveDefinitions' OR 'DisableIOAVProtection' (T1089)
-  - nltestrk.exe with command line containing 'domain_trusts (T1482)
-  - Mavinject.exe with command line containing 'INJECTRUNNING'(T1218)
-  - fltMC.exe with commandline contains 'unload' OR 'detach' (T1054)
-  - InstallUtil.exe with commandline contains 'logfile=' OR 'LogToConsole=false' OR '/u' or '-u' (T1118)
-  - 'certutil.exe' with any of the following in the command line
-    - urlcach
-    - url
-    - ping
-    - http
-    - ftp
-    - -decode
-    
-  
+## Blacklist Alert  
 - Commandline Obfuscation
-  - Commandline containing a caret (^) (T1027)
-  - Commandline containing /c echo
-  - Commandline containing two double quotes ("")
-  - Commandline containing a comma immediately followed by a  (,;)
-  - Commandline containing a semicolon immediately followed by a comma (;,)
-  - Commandline containing consecutive commas
-  - Commandline containing consecutive semicolons
-  - Commandline containing COMSPEC (part of %COMSPEC%)
-  - Commandline containing /\\ or \\/ or \\.\\ or /./ or\\./ or ..
-  - Commandline containing | cmd or |cmd
-  - Commandline containing final
+  - Commandline containing
+    - a caret (^) (T1027)
+    - /c echo
+    - two double quotes ("")
+    - a comma immediately followed by a  (,;)
+    - a semicolon immediately followed by a comma (;,)
+    - consecutive commas
+    - consecutive semicolons
+    - COMSPEC (part of %COMSPEC%)
+    - /\\ or \\/ or \\.\\ or /./ or\\./ or ..
+    - | cmd or |cmd
+    - final
 
 
 ## Whitelist Alert
