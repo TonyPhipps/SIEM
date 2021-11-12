@@ -3,27 +3,28 @@
 The following is a prioritized list of recommended event logs to collect into your SIEM (ordering should be customized per organization and is subject to change here). 
 
 - Security Product Logs (EDR/AV/HIPS/IPS)
-- Active Directory / LDAP Logs
+- Windows DC Event Logs / LDAP Logs
 - Web Proxy Requests
-- PowerShell Transcription Logs
+- PowerShell Logs
 - DNS Queries (with endpoint name/IP)
-- Layer 3 or 7 Firewall (Egress Only)
+- Firewall (Egress Only)
 - VPN Logs
 - Google Cloud Logging
 - AWS CloudWatch
 - Microsoft M365 UnifiedAuditLog
-- Microsoft M365 AzureADAuditSignInLogs
+- Microsoft AzureAD Sign-In Logs
 - Microsoft Cloud App Security Logs
 - Microsoft AzureAD Identity Protection
 - Microsoft M365 Defender for Identity
 - Windows Event Logs
 - Linux osquery Logs
+- Windows Member Server Event Logs
+- Windows Workstation Event Logs
 - Linux auditd Logs
 - Email Logs
 - Custom Application Logs
-- Layer 7 Firewall
-- Layer 3 Firewall
-- DHCP Leases
+- Firewall
+- DHCP
 - Netflow
 - AWS VPC Flow Logs
 - Google VPC Flow Logs
@@ -32,11 +33,13 @@ The following is a prioritized list of recommended event logs to collect into yo
 
 
 The priority here takes into consideration
+- Data ingestion/space restrictions
 - Common attack vectors 
 - Common detection sources
 - Expected noise levels
+- Overaid aid to investigations
 - Legal precedence on what adequate security monitoring includes
-- Raw space consumption
+
 
 # Requirements
 - Normalize all field names and content. This is critical to success in correlation and analyst faith in their search results.
