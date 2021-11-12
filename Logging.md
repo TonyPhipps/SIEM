@@ -17,6 +17,7 @@ The following is a prioritized list of recommended event logs to collect into yo
 - Microsoft AzureAD Identity Protection
 - Microsoft M365 Defender for Identity
 - Windows Event Logs
+- Linux osquery Logs
 - Linux auditd Logs
 - Email Logs
 - Custom Application Logs

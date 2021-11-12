@@ -80,3 +80,10 @@ Credential Access (CA), Discovery (D), Lateral Movement (LM), Collection (C), Ex
 - https://splunkresearch.com/detections/
 - https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES
 - https://ihsansencan.github.io/index.html
+- https://www.siemusecases.com/
+
+
+
+
+
+
