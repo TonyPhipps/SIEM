@@ -29,3 +29,6 @@ Prepend Review/Deploy/Audit/Change/Remove to any of the following where it makes
 - Separation of Duties
 - Endpoint Detection and Response
 - Antivirus
+
+# Resources
+- See Mitre's mitigations at https://attack.mitre.org/mitigations/enterprise/

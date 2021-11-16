@@ -1,3 +1,5 @@
+Metrics require fields, queries, and manual work. This section also suggests which ticketing system and form fields are recommended to allow proper recording/reporting of metrics.
+
 # Recommended Fields for Metric Collection
 - DateTime Occurred
 - DateTime Detected
@@ -28,3 +30,7 @@
 - Count of Incidents per Use Case
 - Count of False Positive Incidents Per Use Case
 - Count of Incidents per Attack Technique
+
+
+See Also
+- [Incident Tracking](/incident-tracking.md)
