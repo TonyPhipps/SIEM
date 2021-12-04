@@ -10,15 +10,17 @@
 
 Study these tools to find new ways to discover/defend against.
 
+- TokenPlayer - https://github.com/S1ckB0y1337/TokenPlayer
+- crackmapexec - https://github.com/byt3bl33d3r/CrackMapExec
+- impacket - https://github.com/SecureAuthCorp/impacket
+  - Especially secretsdump.py
 - Basically anything in Kali Linux - https://www.kali.org/
 - pingcastle - https://github.com/vletoux/pingcastle
 - mimikatz - https://github.com/gentilkiwi/mimikatz
-- crackmapexec - https://github.com/byt3bl33d3r/CrackMapExec
 - hashchat - https://github.com/hashcat/hashcat
 - Burp Suite - https://portswigger.net/burp/communitydownload
   - Request Smuggler plugin
 - openvas - https://github.com/greenbone/openvas
-- impacket - https://github.com/SecureAuthCorp/impacket
 - autossh - www.harding.motd.ca/autossh/
 - dirb - http://dirb.sourceforge.net/
 - evilginx2 - https://github.com/kgretzky/evilginx2
@@ -60,6 +62,8 @@ You might see some of this
 
 # Open Source Attacker Simulation Tools
 
+- Atomic Red Team
+  - https://github.com/redcanaryco/atomic-red-team
 - Mordor
   - https://github.com/hunters-forge/mordor
 - EVTX Attack Samples
@@ -72,8 +76,6 @@ You might see some of this
   - https://github.com/NextronSystems/APTSimulator
 - Red Team Automation
   - https://github.com/endgameinc/RTA
-- Atomic Red Team
-  - https://github.com/redcanaryco/atomic-red-team
 - Infection Monkey
   - https://github.com/guardicore/monkey
 - Blue Team Training Toolkit (BT3)

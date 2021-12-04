@@ -16,6 +16,8 @@ Tables and their fields are listed below.
 - [Mitigations](#mitigations)
 - [Owner](#owner)
 - [Signature](#signature)
+- [Hunts](#hunts)
+- [Hunt Backlog](#hunt-backlog)
 
 # Incidents
 - Adversary (Lookup)
@@ -123,7 +125,7 @@ Tables and their fields are listed below.
 - Aliases
 - References
 - Signatures (lookup)
-  - Attack Techniques (lookup)
+- Attack Techniques (lookup)
 
 
 
@@ -133,11 +135,13 @@ Tables and their fields are listed below.
 - Version
 
 # Affected Systems
+- Internal IP(s)
+- Public IP(s)
 - MAC(s)
-- IP(s)
 - Hostname
 - User (Lookup)
 - Location
+- Platform
 - Operating System
 - Operating System Version
 
@@ -201,4 +205,36 @@ Tables and their fields are listed below.
 - Pseudologic
 - Deployed Logic
 - Sigma Logic
+
+# Hunts
+- Name - Hypothesis statement - what is being hunted for
+- Description - Details to provide context surrounding who, what, when, where, how, etc. Anticipate questions and answer them here.
+- Data Sources - Types of data to be analyzed and where they come from
+- Duration - Dataset mininum and maximum age
+- Scope - which systems, assets, etc. should be included
+- MITRE Tactics (lookup) - if any are applicable
+- MITRE Techniques (lookup) - if any are applicable
+- Adversary Groups (lookup) - or related recognizable names like botnet names, ransomware as a service names, etc.
+- Script - how the hunt is actually conducted. May be geared toward a specific tool, but should have enough detail to allow reproduction in another tool. Should include specific techniques and detail sufficient for another hunter to reproduce the hunt.
+- Resources (links, report names)
+
+# Hunt Backlog
+- Hunt (lookup)
+- Name (hypothesis or trigger)
+- Hunt Model - Reactive or Proactive
+- Date performed
+- Hunters
+- Result (proven, disproven, inconclusive)
+- Lessons Learned
+- Script (how this specific hunt was conducted)
+- Count of incidents created
+- Count of use cases/signatures updated
+- Threat Intelligence output produced
+- Security Recommendations produced
+- Vulnerability findings produced
+- Knowledge gained
+- Visiblity gained
+- New analysis techniques extracted
+- New data sources obtained
+- Time Spent
 
