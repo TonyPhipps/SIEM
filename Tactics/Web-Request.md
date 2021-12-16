@@ -33,6 +33,11 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - A service account generates any web traffic
 - A system account generates any web traffic
 - User Agent string containing 'Nmap'
+- User Agent string containing 'pangolin'
+- User Agent string containing 'FHScan Core'
+- User Agent string containing 'DominoHunter'
+- User Agent string containing 'Grabber'
+- User Agent string containing 'CZ32ts' or 'czxt2s'
 
 
 ## Whitelist Alert
