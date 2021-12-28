@@ -81,9 +81,5 @@ Credential Access (CA), Discovery (D), Lateral Movement (LM), Collection (C), Ex
 - https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES
 - https://ihsansencan.github.io/index.html
 - https://www.siemusecases.com/
-
-
-
-
-
-
+- https://docs.logpoint.com/docs/alert-rules/en/latest/MITRE.html
+- https://github.com/olafhartong/sysmon-modular

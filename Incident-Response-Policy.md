@@ -11,20 +11,41 @@ The following sample Incident Response Policy is meant to be tailored to your or
   - [OODA Loop](#ooda-loop)
   - [Ticketing System](#ticketing-system)
   - [Coordination & Correspondence](#coordination--correspondence)
+    - [Safeguarding Information](#safeguarding-information)
+    - [Sanitization of Data](#sanitization-of-data)
+    - [Escalation](#escalation)
+    - [Incident-Related Correspondence](#incident-related-correspondence)
+    - [External Correspondence](#external-correspondence)
+    - [Law Enforcement Notification and Interaction](#law-enforcement-notification-and-interaction)
+    - [Chain of Custody](#chain-of-custody)
+    - [Turnover Log & Call](#turnover-log--call)
 - [Console Access](#console-access)
 - [Identification](#identification)
   - [Initial Assessment](#initial-assessment)
   - [Creating a Ticket for an Incident](#creating-a-ticket-for-an-incident)
   - [Investigation](#investigation)
+    - [Gather Logs](#gather-logs)
+    - [Analysis](#analysis)
+    - [Determine Priority](#determine-priority)
+    - [Determine Attack Technique](#determine-attack-technique)
+    - [Determine Root Cause](#determine-root-cause)
+    - [Develop Courses of Action](#develop-courses-of-action)
+    - [Computer Forensics](#computer-forensics)
+    - [Malware Analysis](#malware-analysis)
 - [Containment](#containment)
   - [User Participation](#user-participation)
   - [Containment Courses of Action](#containment-courses-of-action)
+    - [Disablement and/or Shutdown of Services/Processes](#disablement-andor-shutdown-of-servicesprocesses)
+    - [Disabling Connectivity](#disabling-connectivity)
 - [Eradication](#eradication)
 - [Recovery](#recovery)
   - [Risk Acceptance](#risk-acceptance)
   - [Closing a Ticket](#closing-a-ticket)
   - [Lessons Learned](#lessons-learned)
+    - [After Action Report](#after-action-report)
+    - [Signature Development](#signature-development)
 - [Glossary](#glossary)
+- [Resources](#resources)
 
 
 # Scope
@@ -755,3 +776,9 @@ Some incidents are expected to give way to potential development of new signatur
 - Vulnerability Assessment: Systematic examination of an information system or product to determine the adequacy of security measures, identify security deficiencies, provide data from which to predict the effectiveness of proposed security measures, and confirm the adequacy of such measures after implementation.
 
 - Worm: A self-replicating, self-propagating, self-contained program that uses networking mechanisms to spread itself. See malicious code.
+
+
+# Resources
+- https://www.cisa.gov/uscert/ncas/alerts/aa20-245a
+- SANS PICERL
+- NIST CSF

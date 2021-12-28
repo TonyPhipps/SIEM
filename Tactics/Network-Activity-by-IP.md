@@ -10,6 +10,11 @@ Grouped by [Detection Method](/Detection-Methods.md)
 - Egress Traffic to Known-Bad Port
 - Engress Traffic to Known Bad IP
 - Egress Traffic to Known Sinkhole IP
+- Allowed Ingress Border Traffic on port 3389 (RDP)
+- Allowed Ingress Border Traffic on port 6568 (Anydesk)
+- Allowed Ingress Border Traffic on port 6129, 6132, or 6133 (Dameware)
+- Allowed Ingress Border Traffic on port 5938 (Teamviewer)
+- Allowed Ingress Border Traffic on port 5800 or 5900 (VNC)
 
 
 ## Whitelist Alert

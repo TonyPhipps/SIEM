@@ -1,0 +1,2 @@
+# Threat Intelligence-Based Blocking
+- Implement a URL blocklist and/or allowlist to prevent users from accessing malicious websites. Ideally sites are categorized, including Uncategorized, Newly Registered, and Known Malicious (or similar).

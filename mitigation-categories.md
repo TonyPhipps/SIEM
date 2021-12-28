@@ -1,34 +1,47 @@
-Prepend Review/Deploy/Audit/Change/Remove to any of the following where it makes sense
+Account Use Policies
+Active Directory Configuration
+Antivirus/Antimalware
+Application Developer Guidance
+Application Isolation and Sandboxing
+Audit
+Behavior Prevention on Endpoint
+Boot Integrity
+Code Signing
+Credential Access Protection
+Data Backup
+Data Loss Prevention
+Disable or Remove Feature or Program
+Do Not Mitigate
+Encrypt Sensitive Information
+Environment Variable Permissions
+Execution Prevention
+Exploit Protection
+Filter Network Traffic
+Limit Access to Resource Over Network
+Limit Hardware Installation
+Limit Software Installation
+Multi-factor Authentication
+Network Intrusion Prevention
+Network Segmentation
+Operating System Configuration
+Password Policies
+Pre-compromise
+Privileged Account Management
+Privileged Process Integrity
+Remote Data Storage
+Restrict File and Directory Permissions
+Restrict Library Loading
+Restrict Registry Permissions
+Restrict Web-Based Content
+Software Configuration
+SSL/TLS Inspection
+Threat Intelligence Program
+Update Software
+User Account Control
+User Account Management
+User Training
+Vulnerability Scanning
 
-- Administrative Policy
-- Application Whitelisting
-- Vulnerability Management
-- Privileges/Memberships
-- Installed Software
-- Enabled Services
-- Code Signing
-- Security Configuration
-- Group Policy
-- High-Availability/Redundancy
-- Network Access Control
-- Network Segmentation
-- OffSite Backup
-- Password Complexity Policy
-- Redundant Power Supply
-- Network Traffic Restriction
-- User Awareness Training
-- User/Entity Behavior Analytics
-- Web Proxy/Filtering
-- Email Security/Filtering
-- Next-Generation Antivirus
-- Network/Host IPS
-- Web Application Firewall
-- IOC/Reputation Subscription
-- Centralized Logging and Monitoring
-- Principal of Least Privilege
-- Separation of Duties
-- Endpoint Detection and Response
-- Antivirus
 
 # Resources
 - See Mitre's mitigations at https://attack.mitre.org/mitigations/enterprise/

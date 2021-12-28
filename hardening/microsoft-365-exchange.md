@@ -10,6 +10,7 @@
 - [Configure ATP Safe Links and Safe Attachments Policy](#configure-atp-safe-links-and-safe-attachments-policy)
 - [Add SPF, DKIM, and DMARC](#add-spf-dkim-and-dmarc)
 - [Do not Allow Calendar Details Sharing](#do-not-allow-calendar-details-sharing)
+- [Audits](#audits)
 - [Additional Resources](#additional-resources)
 
 # Enable Email Encryption
@@ -30,7 +31,7 @@ Compliance Controls
 
 
 # Do not allow mailbox delegation
- 
+
  Compliance Controls
 - FedRAMP Moderate; Control AC-2, Control AC-2(3)
 - GDPR; Control 6.6.1
@@ -67,6 +68,9 @@ Compliance Controls
 - FedRAMP Moderate; Control AC-2(9)
 - NIST 800-53; Control AC-2(9)
 
+
+# Audits
+- Regular audits of mailbox settings, account permissions, and mail forwarding rules for evidence of unauthorized changes.
 
 # Additional Resources
 - https://usc.pax8.com/resource/display/33588
