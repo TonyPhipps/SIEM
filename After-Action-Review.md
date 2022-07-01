@@ -11,7 +11,7 @@ The facilitator and participants determine what actually occurred during the inc
 Participants then establish the strong and weak points of their performance based on the commander’s intent and performance measures. The facilitator guides discussions to ensure maximum input that is operationally sound and relevant to the incident.
 
 ## Determine how the task should be done differently next time.
-The facilitator guides the unit in self-determining how the task(s) might be performed more effectively in the future. The unit identifies problems and provides solutions as well as identifies who is responsible for making the recommended changes.Additionally, the facilitator guides the discussion to determine if there is a moreeffective way to train the tasks to achieve the commander’s intent.
+The facilitator guides the unit in self-determining how the task(s) might be performed more effectively in the future. The unit identifies problems and provides solutions as well as identifies who is responsible for making the recommended changes.Additionally, the facilitator guides the discussion to determine if there is a more effective way to train the tasks to achieve the commander’s intent.
 
 
 ## AAR Fundamentals
