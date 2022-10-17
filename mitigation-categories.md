@@ -1,46 +1,46 @@
-Account Use Policies
-Active Directory Configuration
-Antivirus/Antimalware
-Application Developer Guidance
-Application Isolation and Sandboxing
-Audit
-Behavior Prevention on Endpoint
-Boot Integrity
-Code Signing
-Credential Access Protection
-Data Backup
-Data Loss Prevention
-Disable or Remove Feature or Program
-Do Not Mitigate
-Encrypt Sensitive Information
-Environment Variable Permissions
-Execution Prevention
-Exploit Protection
-Filter Network Traffic
-Limit Access to Resource Over Network
-Limit Hardware Installation
-Limit Software Installation
-Multi-factor Authentication
-Network Intrusion Prevention
-Network Segmentation
-Operating System Configuration
-Password Policies
-Pre-compromise
-Privileged Account Management
-Privileged Process Integrity
-Remote Data Storage
-Restrict File and Directory Permissions
-Restrict Library Loading
-Restrict Registry Permissions
-Restrict Web-Based Content
-Software Configuration
-SSL/TLS Inspection
-Threat Intelligence Program
-Update Software
-User Account Control
-User Account Management
-User Training
-Vulnerability Scanning
+- Account Use Policies
+- Active Directory Configuration
+- Antivirus/Antimalware
+- Application Developer Guidance
+- Application Isolation and Sandboxing
+- Audit
+- Behavior Prevention on Endpoint
+- Boot Integrity
+- Code Signing
+- Credential Access Protection
+- Data Backup
+- Data Loss Prevention
+- Disable or Remove Feature or Program
+- Do Not Mitigate
+- Encrypt Sensitive Information
+- Environment Variable Permissions
+- Execution Prevention
+- Exploit Protection
+- Filter Network Traffic
+- Limit Access to Resource Over Network
+- Limit Hardware Installation
+- Limit Software Installation
+- Multi-factor Authentication
+- Network Intrusion Prevention
+- Network Segmentation
+- Operating System Configuration
+- Password Policies
+- Pre-compromise
+- Privileged Account Management
+- Privileged Process Integrity
+- Remote Data Storage
+- Restrict File and Directory Permissions
+- Restrict Library Loading
+- Restrict Registry Permissions
+- Restrict Web-Based Content
+- Software Configuration
+- SSL/TLS Inspection
+- Threat Intelligence Program
+- Update Software
+- User Account Control
+- User Account Management
+- User Training
+- Vulnerability Scanning
 
 
 # Resources
