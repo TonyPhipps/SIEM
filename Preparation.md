@@ -64,19 +64,23 @@ What compliance mandates are required by law or internal policy? Which systems a
 # Existing Security Policies and Other Documentation
 
 - Asset Inventory (Hardware and Software)
-- Network Architecture
-- Authorized Users and Groups
-- Account and Device Naming Conventions
-- Disaster Recovery Plan
-- Business Continuity Plan
-- Change Management Process
-- Acceptable Use Policy
-- Data Classification and Protection
-
-# Temporal Documentation
-- Vulnerability Scan Reports
+- Network Architecture Diagrams
+- Assessment, Authorization, and Monitoring Policy
+- Configuration Management Policy
+- Awareness and Training Policy
+- Access Control Policy
+- Identification and Authentication Policy
+- Contingency Planning Policy
+- System and Information Integrity Policy
+- Incident Response Policy
+- Media Protection Policy
+- Physical and Environmental Protection Policy
+- Personnel Security Policy
+- PII Policy
+- System and Services Acquisition Policy
 
 # Logging
+
 - [Logging Priorities and Considerations](/Logging.md)
 - What log sources are available immediately?
 - What log sources can we work on down the road?
@@ -117,7 +121,6 @@ Incident Response may benefit greatly from access to various systems, including 
 # Domain Controller Redundancy
 - Ensure there is a domain controller that can be quickly taken offline in the need of an isolation to prevent rebuilding. Preferable one that holds FSMO roles. 
   - ```netdom query fsmo```
-
 
 
 # Backups
