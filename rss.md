@@ -1,6 +1,8 @@
 # Cybersecurity RSS Feeds
 - https://msrc-blog.microsoft.com/feed
-- https://us-cert.cisa.gov/ncas/alerts.xml
+- https://www.cisa.gov/uscert/ncas/alerts.xml
+- https://www.cisa.gov/uscert/ncas/bulletins
+- https://www.cisa.gov/uscert/ncas/current-activity.xml
 - https://thedfirreport.com/feed/
 - https://adsecurity.org/?feed=rss2
 - https://cqureacademy.com/feed
