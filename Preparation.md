@@ -72,7 +72,7 @@ What compliance mandates are required by law or internal policy? Which systems a
 - Identification and Authentication Policy
 - Contingency Planning Policy
 - System and Information Integrity Policy
-- Incident Response Policy
+- [Incident Response Policy](/Incident-Response-Policy.md)
 - Media Protection Policy
 - Physical and Environmental Protection Policy
 - Personnel Security Policy
