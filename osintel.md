@@ -27,4 +27,4 @@
 
 # Other
 - [CISA Directives](https://www.cisa.gov/directives)
-- [CISA Known-Exploited Vulnerabilities]{https://www.cisa.gov/known-exploited-vulnerabilities}
+- [CISA Known-Exploited Vulnerabilities](https://www.cisa.gov/known-exploited-vulnerabilities)
