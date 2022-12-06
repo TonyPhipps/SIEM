@@ -2,44 +2,43 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 
 - [Security Events](#security-events)
 - [Security Events (Domain Controller Specific)](#security-events-domain-controller-specific)
-- [Microsoft-Windows-Sysmon/Operational](#microsoft-windows-sysmonoperational)
 - [System Events](#system-events)
 - [Application](#application)
-- [Microsoft-Windows-SmartCard-Audit/Authentication](#microsoft-windows-smartcard-auditauthentication)
-- [Microsoft-Windows-Forwarding/Operational](#microsoft-windows-forwardingoperational)
-- [Microsoft-Windows-Bits-Client/Operational](#microsoft-windows-bits-clientoperational)
-- [Microsoft-Windows-PrintService/Operational](#microsoft-windows-printserviceoperational)
-- [Microsoft-Windows-DriverFrameworks-UserMode/Operational](#microsoft-windows-driverframeworks-usermodeoperational)
-- [Microsoft-Windows-PrintService/Operational Events](#microsoft-windows-printserviceoperational-events)
-- [Microsoft-Windows-Kernel-PnP/Device Configuration](#microsoft-windows-kernel-pnpdevice-configuration)
-- [Microsoft-Windows-TaskScheduler/Operational](#microsoft-windows-taskscheduleroperational)
-- [Windows PowerShell](#windows-powershell)
-- [Microsoft-Windows-Powershell/Operational](#microsoft-windows-powershelloperational)
-- [Microsoft-Windows-PowerShell/Analytic](#microsoft-windows-powershellanalytic)
-- [Microsoft-Windows-PowerShell-DesiredStateConfiguration-FileDownloadManager/Operational](#microsoft-windows-powershell-desiredstateconfiguration-filedownloadmanageroperational)
-- [Microsoft-Windows-Windows Defender/Operational](#microsoft-windows-windows-defenderoperational)
-- [Microsoft-Windows-Windows Firewall With Advanced Security/Firewall](#microsoft-windows-windows-firewall-with-advanced-securityfirewall)
-- [Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational](#microsoft-windows-remotedesktopservices-rdpcoretsoperational)
-- [Microsoft-Windows-TerminalServices-RDPClient/Operational](#microsoft-windows-terminalservices-rdpclientoperational)
-- [Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational](#microsoft-windows-terminalservices-remoteconnectionmanageroperational)
-- [Microsoft-Windows-TerminalServices-LocalSessionManager/Operational](#microsoft-windows-terminalservices-localsessionmanageroperational)
-- [Microsoft-Windows-SmbClient/Security](#microsoft-windows-smbclientsecurity)
-- [Microsoft-Windows-WMI-Activity/Operational](#microsoft-windows-wmi-activityoperational)
-- [Microsoft-Windows-TPM-WMI](#microsoft-windows-tpm-wmi)
-- [Microsoft-Windows-WinRM/Operational](#microsoft-windows-winrmoperational)
 - [Microsoft-Windows-AppLocker/EXE and DLL](#microsoft-windows-applockerexe-and-dll)
 - [Microsoft-Windows-AppLocker/MSI and Script](#microsoft-windows-applockermsi-and-script)
 - [Microsoft-Windows-AppLocker/Packaged app-Execution](#microsoft-windows-applockerpackaged-app-execution)
 - [Microsoft-Windows-AppLocker/Packaged app-Deployment](#microsoft-windows-applockerpackaged-app-deployment)
-- [Microsoft-Windows-GroupPolicy](#microsoft-windows-grouppolicy)
 - [Microsoft-Windows-Authentication/AuthenticationPolicyFailures-DomainController](#microsoft-windows-authenticationauthenticationpolicyfailures-domaincontroller)
 - [Microsoft-Windows-Authentication/ProtectedUserFailures-DomainController](#microsoft-windows-authenticationprotecteduserfailures-domaincontroller)
-- [Microsoft-Windows-NTLM/Operational](#microsoft-windows-ntlmoperational)
+- [Microsoft-Windows-Bits-Client/Operational](#microsoft-windows-bits-clientoperational)
 - [Microsoft-Windows-CodeIntegrity/Operational](#microsoft-windows-codeintegrityoperational)
-- [EMET](#emet)
-- [Microsoft-Windows-DNS-Client/Operational](#microsoft-windows-dns-clientoperational)
-- [DNS Server](#dns-server)
 - [Microsoft-Windows-DNSServer/Audit](#microsoft-windows-dnsserveraudit)
+- [Microsoft-Windows-DNS-Client/Operational](#microsoft-windows-dns-clientoperational)
+- [Microsoft-Windows-DriverFrameworks-UserMode/Operational](#microsoft-windows-driverframeworks-usermodeoperational)
+- [Microsoft-Windows-Forwarding/Operational](#microsoft-windows-forwardingoperational)
+- [Microsoft-Windows-GroupPolicy](#microsoft-windows-grouppolicy)
+- [Microsoft-Windows-Kernel-PnP/Device Configuration](#microsoft-windows-kernel-pnpdevice-configuration)
+- [Microsoft-Windows-NTLM/Operational](#microsoft-windows-ntlmoperational)
+- [Microsoft-Windows-PrintService/Operational](#microsoft-windows-printserviceoperational)
+- [Microsoft-Windows-PowerShell/Analytic](#microsoft-windows-powershellanalytic)
+- [Microsoft-Windows-PowerShell-DesiredStateConfiguration-FileDownloadManager/Operational](#microsoft-windows-powershell-desiredstateconfiguration-filedownloadmanageroperational)
+- [Microsoft-Windows-Powershell/Operational](#microsoft-windows-powershelloperational)
+- [Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational](#microsoft-windows-remotedesktopservices-rdpcoretsoperational)
+- [Microsoft-Windows-SmartCard-Audit/Authentication](#microsoft-windows-smartcard-auditauthentication)
+- [Microsoft-Windows-SmbClient/Security](#microsoft-windows-smbclientsecurity)
+- [Microsoft-Windows-Sysmon/Operational](#microsoft-windows-sysmonoperational)
+- [Microsoft-Windows-TaskScheduler/Operational](#microsoft-windows-taskscheduleroperational)
+- [Microsoft-Windows-TerminalServices-RDPClient/Operational](#microsoft-windows-terminalservices-rdpclientoperational)
+- [Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational](#microsoft-windows-terminalservices-remoteconnectionmanageroperational)
+- [Microsoft-Windows-TerminalServices-LocalSessionManager/Operational](#microsoft-windows-terminalservices-localsessionmanageroperational)
+- [Microsoft-Windows-TPM-WMI](#microsoft-windows-tpm-wmi)
+- [Microsoft-Windows-Windows Defender/Operational](#microsoft-windows-windows-defenderoperational)
+- [Microsoft-Windows-Windows Firewall With Advanced Security/Firewall](#microsoft-windows-windows-firewall-with-advanced-securityfirewall)
+- [Microsoft-Windows-WMI-Activity/Operational](#microsoft-windows-wmi-activityoperational)
+- [Microsoft-Windows-WinRM/Operational](#microsoft-windows-winrmoperational)
+- [EMET](#emet)
+- [DNS Server](#dns-server)
+- [Windows PowerShell](#windows-powershell)
 
 ## Security Events
 
@@ -153,7 +152,6 @@ Quick-use filter string
 | 6423    | The installation of this device is forbidden by system policy.                                                                                           |
 | 6424    | The installation of this device was allowed after having previously been forbidden by policy.                                                            |
 
-
 ## Security Events (Domain Controller Specific)
 | EventID | Description                                                                            | Filter |
 | ------- | -------------------------------------------------------------------------------------- | ------ |
@@ -194,9 +192,147 @@ Quick-use filter string
 
 - 1 - Requires that “Audit Directory Service Changes” auditing be enabled.
 
+## System Events
+| EventID | Description                                                                                     | Filter                 |
+| :-----: | :---------------------------------------------------------------------------------------------- | ---------------------- |
+|   104   | Event Log was Cleared                                                                           |
+|   219   | Failed Kernel Driver Loading                                                                    | Level 3                |
+|  1001   | System Crash                                                                                    |
+|  7022   | Service hung on starting                                                                        | Level 0, 1, 2, 3, or 4 |
+|  7023   | Service terminated with error                                                                   | Level 0, 1, 2, 3, or 4 |
+|  7024   | Service terminated with the following service-specific error                                    | Level 0, 1, 2, 3, or 4 |
+|  7026   | The boot-start or system-start driver(s) [did not/failed to] load                               | Level 0, 1, 2, 3, or 4 |
+|  7030   | Service Creation Errors                                                                         |
+|  7031   | Service terminated unexpectedly                                                                 | Level 0, 1, 2, 3, or 4 |
+|  7032   | Service tried to take a corrective action (1) after the unexpected termination of the % service | Level 0, 1, 2, 3, or 4 |
+|  7034   | service terminated unexpectedly                                                                 | Level 0, 1, 2, 3, or 4 |
+|  7035   | The [Service Name] service was successfully sent a [start/stop] control                         |
+|  7036   | The [Service Name] service entered the [Status] state                                           |
+|  7040   | The service state has changed                                                                   | Level 0, 1, 2, 3, or 4 |
+|  7045   | A service was installed in the system                                                           | Level 0, 1, 2, 3, or 4 |
+
+## Application
+| EventID | Description       |
+| :-----: | :---------------- |
+|  1001   | Application Crash |
+|  1002   | Application Hang  |
+|  1003   | Application Error |
+
+## Microsoft-Windows-AppLocker/EXE and DLL
+| EventID | Description                                 |
+| :-----: | ------------------------------------------- |
+|  8003   | ... would have been prevented from running. |
+|  8004   | ... was prevented from running.             |
+
+## Microsoft-Windows-AppLocker/MSI and Script
+| EventID | Description                                 |
+| :-----: | ------------------------------------------- |
+|  8006   | ... would have been prevented from running. |
+|  8007   | ... was prevented from running.             |
+
+## Microsoft-Windows-AppLocker/Packaged app-Execution
+| EventID | Description                     |
+| :-----: | ------------------------------- |
+|  8022   | ... was prevented from running. |
+
+## Microsoft-Windows-AppLocker/Packaged app-Deployment
+| EventID | Description                     |
+| :-----: | ------------------------------- |
+|  8025   | ... was prevented from running. |
+
+
+## Microsoft-Windows-Authentication/AuthenticationPolicyFailures-DomainController
+101, 105, 106, 305, 306
+
+## Microsoft-Windows-Authentication/ProtectedUserFailures-DomainController
+100, 104, 303
+
+## Microsoft-Windows-Bits-Client/Operational
+(All)
+
+## Microsoft-Windows-CodeIntegrity/Operational
+3001, 3002, 3003, 3004, 3010, 3023 with Level 2 or 3
+
+## Microsoft-Windows-DNSServer/Audit
+| EventID | Description                                                           | Filter |
+| :-----: | --------------------------------------------------------------------- | ------ |
+|   541   | The setting serverlevelplugindll on scope . has been set to $dll_path |
+
+## Microsoft-Windows-DNS-Client/Operational
+| EventID | Description                       | Filter |
+| :-----: | --------------------------------- | ------ |
+|  3008   | DNS Client events Query Completed |
+
+
+## Microsoft-Windows-DriverFrameworks-UserMode/Operational
+| EventID | Description              |
+| :-----: | :----------------------- |
+|  2004   | User-Mode drivers loaded |
+
+## Microsoft-Windows-Forwarding/Operational
+(All)
+
+## Microsoft-Windows-GroupPolicy
+| EventID | Description                                                                                           | Filter  |
+| :-----: | ----------------------------------------------------------------------------------------------------- | ------- |
+|  1085   | Windows failed to apply the ... settings                                                              | Level 2 |
+|  1125   | The processing of Group Policy failed because of an internal system error.                            | Level 2 |
+|  1127   | The processing of Group Policy failed due to an internal error.                                       | Level 2 |
+|  1129   | The processing of Group Policy failed because of lack of network connectivity to a domain controller. | Level 2 |
+
+## Microsoft-Windows-Kernel-PnP/Device Configuration
+| EventID | Description                   |
+| :-----: | :---------------------------- |
+|   400   | New Mass Storage Installation |
+|   410   | New Mass Storage Installation |
+
+## Microsoft-Windows-NTLM/Operational
+8001, 8002, 8003, 8004
+
+## Microsoft-Windows-PrintService/Operational
+| EventID | Description | Filter  |
+| :-----: | :---------- | ------- |
+|   307   | Print Job   | Level 4 |
+
+## Microsoft-Windows-PowerShell/Analytic
+
+| EventID | Description                      |
+| :-----: | -------------------------------- |
+|  32850  | Creating a server remote session |
+|  32867  | PowerShell input object          |
+|  32868  | PowerShell output object         |
+
+## Microsoft-Windows-PowerShell-DesiredStateConfiguration-FileDownloadManager/Operational
+(All)
+
+## Microsoft-Windows-Powershell/Operational
+|  EventID   | Description                     |
+| :--------: | :------------------------------ |
+|    4103    | Pipeline executed               |
+|    4104    | Scriptblock executed            |
+|   40961    | PowerShell Console Starting     |
+|   40962    | PowerShell Console Started      |
+|   24577    | Powershell script ran           |
+| 8193, 8194 | Session created                 |
+|    8197    | Session Closed                  |
+|   53504    | Records the authenticating user |
+
+## Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational
+| EventID | Description                                 |
+| :-----: | ------------------------------------------- |
+|   131   | Accepted new TCP connection                 |
+|   140   | Connection failed; bad username or password |
+
+
+## Microsoft-Windows-SmartCard-Audit/Authentication
+(All)
+
+## Microsoft-Windows-SmbClient/Security
+| EventID | Description                 |
+| :-----: | --------------------------- |
+|  31001  | Failed login to destination |
 
 ## Microsoft-Windows-Sysmon/Operational
-
 | EventID | Description                                           |
 | :-----: | ----------------------------------------------------- |
 |    1    | Process creation                                      |
@@ -222,78 +358,7 @@ Quick-use filter string
 |   22    | DNSEvent (DNS query)                                  |
 |   255   | Error                                                 |
 
-
-## System Events
-
-| EventID | Description                                                                                     | Filter                 |
-| :-----: | :---------------------------------------------------------------------------------------------- | ---------------------- |
-|   104   | Event Log was Cleared                                                                           |
-|   219   | Failed Kernel Driver Loading                                                                    | Level 3                |
-|  1001   | System Crash                                                                                    |
-|  7022   | Service hung on starting                                                                        | Level 0, 1, 2, 3, or 4 |
-|  7023   | Service terminated with error                                                                   | Level 0, 1, 2, 3, or 4 |
-|  7024   | Service terminated with the following service-specific error                                    | Level 0, 1, 2, 3, or 4 |
-|  7026   | The boot-start or system-start driver(s) [did not/failed to] load                               | Level 0, 1, 2, 3, or 4 |
-|  7030   | Service Creation Errors                                                                         |
-|  7031   | Service terminated unexpectedly                                                                 | Level 0, 1, 2, 3, or 4 |
-|  7032   | Service tried to take a corrective action (1) after the unexpected termination of the % service | Level 0, 1, 2, 3, or 4 |
-|  7034   | service terminated unexpectedly                                                                 | Level 0, 1, 2, 3, or 4 |
-|  7035   | The [Service Name] service was successfully sent a [start/stop] control                         |
-|  7036   | The [Service Name] service entered the [Status] state                                           |
-|  7040   | The service state has changed                                                                   | Level 0, 1, 2, 3, or 4 |
-|  7045   | A service was installed in the system                                                           | Level 0, 1, 2, 3, or 4 |
-
-
-## Application
-
-| EventID | Description       |
-| :-----: | :---------------- |
-|  1001   | Application Crash |
-|  1002   | Application Hang  |
-|  1003   | Application Error |
-
-
-## Microsoft-Windows-SmartCard-Audit/Authentication
-(All)
-
-
-## Microsoft-Windows-Forwarding/Operational
-(All)
-
-
-## Microsoft-Windows-Bits-Client/Operational
-(All)
-
-
-## Microsoft-Windows-PrintService/Operational
-| EventID | Description | Filter  |
-| :-----: | :---------- | ------- |
-|   307   | Print Job   | Level 4 |
-
-
-## Microsoft-Windows-DriverFrameworks-UserMode/Operational
-| EventID | Description              |
-| :-----: | :----------------------- |
-|  2004   | User-Mode drivers loaded |
-
-
-## Microsoft-Windows-PrintService/Operational Events
-
-| EventID | Description       |
-| :-----: | :---------------- |
-|   307   | Printing Document |
-
-
-## Microsoft-Windows-Kernel-PnP/Device Configuration
-
-| EventID | Description                   |
-| :-----: | :---------------------------- |
-|   400   | New Mass Storage Installation |
-|   410   | New Mass Storage Installation |
-
-
 ## Microsoft-Windows-TaskScheduler/Operational
-
 | EventID | Description                                    |
 | :-----: | :--------------------------------------------- |
 |   106   | Task Scheduled                                 |
@@ -303,45 +368,36 @@ Quick-use filter string
 |   200   | Task Executed                                  |
 |   201   | Task Completed                                 |
 
-
-## Windows PowerShell
-
-| EventID | Description                  |
-| :-----: | ---------------------------- |
-|   400   | Engine started               |
-|   403   | Engine stopped               |
-|   800   | Includes partial script code |
-
-
-## Microsoft-Windows-Powershell/Operational
-
-|  EventID   | Description                     |
-| :--------: | :------------------------------ |
-|    4103    | Pipeline executed               |
-|    4104    | Scriptblock executed            |
-|   40961    | PowerShell Console Starting     |
-|   40962    | PowerShell Console Started      |
-|   24577    | Powershell script ran           |
-| 8193, 8194 | Session created                 |
-|    8197    | Session Closed                  |
-|   53504    | Records the authenticating user |
+## Microsoft-Windows-TerminalServices-RDPClient/Operational
+| EventID | Description                        |
+| :-----: | ---------------------------------- |
+|  1024   | RDP connection attempt             |
+|  1025   | RDP connection made                |
+|  1102   | multi-transport connection attempt |
+|  1103   | multi-transport connection made    |
 
 
-## Microsoft-Windows-PowerShell/Analytic
-
-| EventID | Description                      |
-| :-----: | -------------------------------- |
-|  32850  | Creating a server remote session |
-|  32867  | PowerShell input object          |
-|  32868  | PowerShell output object         |
+## Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational
+| EventID | Description                   |
+| :-----: | ----------------------------- |
+|  1149   | User authentication succeeded |
 
 
-## Microsoft-Windows-PowerShell-DesiredStateConfiguration-FileDownloadManager/Operational
+## Microsoft-Windows-TerminalServices-LocalSessionManager/Operational
+| EventID | Description                                        |
+| :-----: | -------------------------------------------------- |
+|   21    | Session logon succeeded                            |
+|   22    | Shell start notification received                  |
+|   23    | Session logoff succeeded                           |
+|   24    | Session has been disconnected                      |
+|   25    | Session reconnection succeeded                     |
+|   39    | Session <X> has been disconnected by session <Y>   |
+|   40    | Session <X> has been disconnected, reason code <Z> |
 
-
+## Microsoft-Windows-TPM-WMI
+513, 514
 
 ## Microsoft-Windows-Windows Defender/Operational
-
 | EventID | Description                                                                                                                                                                      | Filter  |
 | :-----: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 |  1002   | An antimalware scan was stopped before it finished.                                                                                                                              | Level 2 |
@@ -368,9 +424,7 @@ Quick-use filter string
 |  5012   | Scanning for viruses is disabled.                                                                                                                                                |
 |  5101   | The antimalware platform is expired.                                                                                                                                             |
 
-
 ## Microsoft-Windows-Windows Firewall With Advanced Security/Firewall
-
 | EventID | Description                               |
 | :-----: | ----------------------------------------- |
 |  2002   | Windows Defender Firewall setting changed |
@@ -380,54 +434,7 @@ Quick-use filter string
 |  2033   | Firewall Rule Deleted                     |
 |  2009   | Firewall Failed to load group policy      |
 
-
-## Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational
-
-| EventID | Description                                 |
-| :-----: | ------------------------------------------- |
-|   131   | Accepted new TCP connection                 |
-|   140   | Connection failed; bad username or password |
-
-
-## Microsoft-Windows-TerminalServices-RDPClient/Operational
-
-| EventID | Description                        |
-| :-----: | ---------------------------------- |
-|  1024   | RDP connection attempt             |
-|  1025   | RDP connection made                |
-|  1102   | multi-transport connection attempt |
-|  1103   | multi-transport connection made    |
-
-
-## Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational
-
-| EventID | Description                   |
-| :-----: | ----------------------------- |
-|  1149   | User authentication succeeded |
-
-
-## Microsoft-Windows-TerminalServices-LocalSessionManager/Operational
-
-| EventID | Description                                        |
-| :-----: | -------------------------------------------------- |
-|   21    | Session logon succeeded                            |
-|   22    | Shell start notification received                  |
-|   23    | Session logoff succeeded                           |
-|   24    | Session has been disconnected                      |
-|   25    | Session reconnection succeeded                     |
-|   39    | Session <X> has been disconnected by session <Y>   |
-|   40    | Session <X> has been disconnected, reason code <Z> |
-
-
-## Microsoft-Windows-SmbClient/Security
-
-| EventID | Description                 |
-| :-----: | --------------------------- |
-|  31001  | Failed login to destination |
-
-
 ## Microsoft-Windows-WMI-Activity/Operational
-
 | EventID | Description                              |
 | :-----: | ---------------------------------------- |
 |  5857   | Provider started                         |
@@ -435,13 +442,7 @@ Quick-use filter string
 |  5860   | Registration of Temporary Event Consumer |
 |  5861   | Registration of Permanent Event Consumer |
 
-
-## Microsoft-Windows-TPM-WMI
-513, 514
-
-
 ## Microsoft-Windows-WinRM/Operational
-
 |   EventID    | Description                    |
 | :----------: | ------------------------------ |
 |      6       | WSMan Session created          |
@@ -453,69 +454,8 @@ Quick-use filter string
 |     168      | Authenticating attempt         |
 |     169      | Authentication success         |
 
-
-## Microsoft-Windows-AppLocker/EXE and DLL
-| EventID | Description                                 |
-| :-----: | ------------------------------------------- |
-|  8003   | ... would have been prevented from running. |
-|  8004   | ... was prevented from running.             |
-
-
-
-## Microsoft-Windows-AppLocker/MSI and Script
-
-| EventID | Description                                 |
-| :-----: | ------------------------------------------- |
-|  8006   | ... would have been prevented from running. |
-|  8007   | ... was prevented from running.             |
-
-
-## Microsoft-Windows-AppLocker/Packaged app-Execution
-| EventID | Description                     |
-| :-----: | ------------------------------- |
-|  8022   | ... was prevented from running. |
-
-
-## Microsoft-Windows-AppLocker/Packaged app-Deployment
-| EventID | Description                     |
-| :-----: | ------------------------------- |
-|  8025   | ... was prevented from running. |
-
-
-## Microsoft-Windows-GroupPolicy
-| EventID | Description                                                                                           | Filter  |
-| :-----: | ----------------------------------------------------------------------------------------------------- | ------- |
-|  1085   | Windows failed to apply the ... settings                                                              | Level 2 |
-|  1125   | The processing of Group Policy failed because of an internal system error.                            | Level 2 |
-|  1127   | The processing of Group Policy failed due to an internal error.                                       | Level 2 |
-|  1129   | The processing of Group Policy failed because of lack of network connectivity to a domain controller. | Level 2 |
-
-
-
-## Microsoft-Windows-Authentication/AuthenticationPolicyFailures-DomainController
-101, 105, 106, 305, 306
-
-
-## Microsoft-Windows-Authentication/ProtectedUserFailures-DomainController
-100, 104, 303
-
-## Microsoft-Windows-NTLM/Operational
-8001, 8002, 8003, 8004
-
-
-## Microsoft-Windows-CodeIntegrity/Operational
-3001, 3002, 3003, 3004, 3010, 3023 with Level 2 or 3
-
-
 ## EMET
 1, 2 with Level 2 or 3
-
-
-## Microsoft-Windows-DNS-Client/Operational
-| EventID | Description                       | Filter |
-| :-----: | --------------------------------- | ------ |
-|  3008   | DNS Client events Query Completed |
-
 
 ## DNS Server
 | EventID | Description                                             | Filter |
@@ -523,12 +463,12 @@ Quick-use filter string
 |   150   | DNS Server could not load or initialize the plug-in DLL |
 |   770   | DNS Server plugin DLL has been loaded                   |
 
-
-## Microsoft-Windows-DNSServer/Audit
-| EventID | Description                                                           | Filter |
-| :-----: | --------------------------------------------------------------------- | ------ |
-|   541   | The setting serverlevelplugindll on scope . has been set to $dll_path |
-
+## Windows PowerShell
+| EventID | Description                  |
+| :-----: | ---------------------------- |
+|   400   | Engine started               |
+|   403   | Engine stopped               |
+|   800   | Includes partial script code |
 
 Sources
 * [Detecting Lateral Movement through Tracking Event Logs - JPCERT Coordination Center](https://www.jpcert.or.jp/english/pub/sr/20170612ac-ir_research_en.pdf)
