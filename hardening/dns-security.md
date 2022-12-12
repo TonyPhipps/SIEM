@@ -1,0 +1,3 @@
+- Regularly review DNS records for proper resolution, or build signatures to detect.
+- Use Multifactor Authentication for all accounts that can make changes to DNS records
+- Monitor certificate transparency logs for newly added certificates, or build signatures to detect.
