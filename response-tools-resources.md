@@ -7,6 +7,8 @@
   - https://www.sans.org/score/incident-forms
 - Jai Minton's DFIR Cheat Sheet
   - https://www.jaiminton.com/cheatsheet/DFIR/#persistence-and-automatic-loadrun-reg-keys
+- CISA Incident Response Series
+  - https://www.youtube.com/playlist?list=PL-BF3N9rHBLJaSbTRPyWYj56f0m2uDQD7
 
 
 # Non-Free Resources
