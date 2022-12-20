@@ -13,7 +13,7 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 - Rundll32.exe commandlines
 
 
-## Match Alert
+## [Match Alert](https://github.com/TonyPhipps/SIEM/blob/master/Detection-Methods.md#match-alarm)
 - PowerShell.exe or powershell_ise.exe with one of the following in the command line (or straight commandline use)
   - '-nop' or '/nop' (from -noprofile)
   - 'hidden'
@@ -85,8 +85,12 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 - chrome.exe with commandline containing "headless" or "remote-debugging"
 
+-	vssadmin.exe with "delete" (T1490)
+-	wbadmin.exe with "delete" (T1490)
+-	bcdedit.exe with "recoveryenabled" (T1490)
+- "shadowcopy delete" (T1490)
 
-## Blacklist Alert  
+## [Blacklist Alert](https://github.com/TonyPhipps/SIEM/blob/master/Detection-Methods.md#blacklist-alarm)
 - Commandline Obfuscation
   - Commandline containing
     - a caret (^) (T1027)
