@@ -85,10 +85,10 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 - chrome.exe with commandline containing "headless" or "remote-debugging"
 
--	vssadmin.exe with "delete" (T1490)
--	wbadmin.exe with "delete" (T1490)
--	bcdedit.exe with "recoveryenabled" (T1490)
-- "shadowcopy delete" (T1490)
+-	vssadmin.exe with "delete" (T1059, T1490)
+-	wbadmin.exe with "delete" (T1059, T1490)
+-	bcdedit.exe with "recoveryenabled" (T1059, T1490)
+- "shadowcopy delete" (T1059, T1490)
 
 ## [Blacklist Alert](https://github.com/TonyPhipps/SIEM/blob/master/Detection-Methods.md#blacklist-alarm)
 - Commandline Obfuscation
