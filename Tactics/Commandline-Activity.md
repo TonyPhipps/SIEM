@@ -2,7 +2,7 @@
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
-MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.org/techniques/T1059), [PowerShell (T1086)](https://attack.mitre.org/techniques/T1086)
+MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.org/techniques/T1059), [PowerShell (T1086)](https://attack.mitre.org/techniques/T1086), [Inhibit System Recovery](https://attack.mitre.org/versions/v12/techniques/T1490/)
 
 - Execution of malicious commands and scripts from command-line interfaces.
 
