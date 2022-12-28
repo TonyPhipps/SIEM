@@ -9,6 +9,8 @@
   - https://www.jaiminton.com/cheatsheet/DFIR/#persistence-and-automatic-loadrun-reg-keys
 - CISA Incident Response Series
   - https://www.youtube.com/playlist?list=PL-BF3N9rHBLJaSbTRPyWYj56f0m2uDQD7
+- s0cm0nkeys Security Reference Guide
+  - https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/
 
 
 # Non-Free Resources
