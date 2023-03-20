@@ -16,7 +16,8 @@ Study these tools to find new ways to discover/defend against.
   - Especially secretsdump.py
 - Basically anything in Kali Linux - https://www.kali.org/
 - pingcastle - https://github.com/vletoux/pingcastle
-- mimikatz - https://github.com/gentilkiwi/mimikatz
+- mimikatz - https://github.com/gentilkiwi/mimikatz *
+- Kerberoast - https://github.com/nidem/kerberoast *
 - hashchat - https://github.com/hashcat/hashcat
 - Burp Suite - https://portswigger.net/burp/communitydownload
   - Request Smuggler plugin
@@ -90,3 +91,6 @@ You might see some of this
   - https://github.com/fugawi/mate
 - Purple Team ATT&CK Automation
   - https://github.com/praetorian-inc/purple-team-attack-automation
+
+
+* - Implementation attack, unlikely to be patched traditionally.
