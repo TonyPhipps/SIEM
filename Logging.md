@@ -82,6 +82,55 @@ Logs that do not provide basic security context should be considered for tuning 
 
 Note: This does not immply that non-security focused logs are of no value/use.
 
+## Detection Layering
+This approach allows a high-level understanding of interactions between log collection, detections, and monitoring.
+
+- Detection can (and should) occur at any tier. 
+- "Tuning" based on content analysis and feedback should be used on every tier.
+
+Tiers
+- Raw Events
+	- Monitoring for visible anomalies in a stream of events.
+		- Are the logs needed?
+		- Can we filter some events?
+		- Are the appropriate fields collected?
+		- Are the fields parsed correctly?
+	
+- Aggregation of Raw Events (usually via widgets on dashboards)
+	- Stack counting of one or more fields helps surface interesting events
+	- Which fields do you aggregate?
+	- When should information roll over/expire?
+	- Styles
+  	- Aggregation counts
+	  - First occurance
+	  - Last occurance
+	  - Frequency bar chart enabling Long tail analysis
+	
+- Prioritized Alerts
+	- When confirmed incidents are found, an opportunity to create a prioritized alert is presented.
+		- What is the criticality of asset?
+				- People
+				- Services
+				- Devices
+				- Data
+			- Tiers within assets
+			- Interaction between assets
+		- What is the fidelity of the technique?
+			- Blacklist Alert
+			- Whitelist
+			- Count Threshold
+			- Newly Observed
+			- Etc.
+
+- Incidents
+	- A Prioritized Alert of highest severity requires acknowledgement.
+	- Known-Bad
+		- Vendor Signature
+		- IP
+		- Domain
+		- Etc.
+	
+
 
 # Log Setup
 
