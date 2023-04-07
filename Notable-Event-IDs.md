@@ -218,6 +218,8 @@ Quick-use filter string
 |  1002   | Application Hang  |
 |  1003   | Application Error |
 
+Note: Some installable applications are known to write to this log. Consider looking in your logs to determine if any more are necessary for proper visibility.
+
 ## Microsoft-Windows-AppLocker/EXE and DLL
 | EventID | Description                                 |
 | :-----: | ------------------------------------------- |
