@@ -223,11 +223,13 @@ Quick-use filter string
 |  7045   | A service was installed in the system                                                           | Level 0, 1, 2, 3, or 4 |
 
 ## Application
-| EventID | Description       |
-| :-----: | :---------------- |
-|  1001   | Application Crash |
-|  1002   | Application Hang  |
-|  1003   | Application Error |
+| EventID | Description                                                   |
+| :-----: | :------------------------------------------------------------ |
+|  1001   | Application Crash                                             |
+|  1002   | Application Hang                                              |
+|  1003   | Application Error                                             |
+|  11707  | Product: [1] –- Installation operation completed successfully |
+|  11724  | Product: [1] -- Removal completed successfully.               |
 
 Note: Some installable applications are known to write to this log. Consider looking in your logs to determine if any more are necessary for proper visibility.
 
