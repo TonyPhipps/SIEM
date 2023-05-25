@@ -24,6 +24,8 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 - [Microsoft-Windows-PowerShell-DesiredStateConfiguration-FileDownloadManager/Operational](#microsoft-windows-powershell-desiredstateconfiguration-filedownloadmanageroperational)
 - [Microsoft-Windows-Powershell/Operational](#microsoft-windows-powershelloperational)
 - [Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational](#microsoft-windows-remotedesktopservices-rdpcoretsoperational)
+- [Microsoft-Windows-Security-Mitigations/KernelMode](#microsoft-windows-security-mitigationskernelmode)
+- [Microsoft-Windows-Shell-Core/Operational](#microsoft-windows-shell-coreoperational)
 - [Microsoft-Windows-SmartCard-Audit/Authentication](#microsoft-windows-smartcard-auditauthentication)
 - [Microsoft-Windows-SmbClient/Security](#microsoft-windows-smbclientsecurity)
 - [Microsoft-Windows-Sysmon/Operational](#microsoft-windows-sysmonoperational)
@@ -32,8 +34,13 @@ Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, et
 - [Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational](#microsoft-windows-terminalservices-remoteconnectionmanageroperational)
 - [Microsoft-Windows-TerminalServices-LocalSessionManager/Operational](#microsoft-windows-terminalservices-localsessionmanageroperational)
 - [Microsoft-Windows-TPM-WMI](#microsoft-windows-tpm-wmi)
+- [Microsoft-Windows-UniversalTelemetryClient/Operational](#microsoft-windows-universaltelemetryclientoperational)
+- [Microsoft-Windows-VHDMP-Operational](#microsoft-windows-vhdmp-operational)
 - [Microsoft-Windows-Windows Defender/Operational](#microsoft-windows-windows-defenderoperational)
 - [Microsoft-Windows-Windows Firewall With Advanced Security/Firewall](#microsoft-windows-windows-firewall-with-advanced-securityfirewall)
+- [Microsoft-Windows-Winlogon/Operational](#microsoft-windows-winlogonoperational)
+- [Microsoft-Windows-WinINet-Config/ProxyConfigChanged](#microsoft-windows-wininet-configproxyconfigchanged)
+- [Microsoft-Windows-WLAN-AutoConfig/Operational](#microsoft-windows-wlan-autoconfigoperational)
 - [Microsoft-Windows-WMI-Activity/Operational](#microsoft-windows-wmi-activityoperational)
 - [Microsoft-Windows-WinRM/Operational](#microsoft-windows-winrmoperational)
 - [EMET](#emet)
@@ -51,6 +58,8 @@ Quick-use filter string
 | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
 | 1100    | The event logging service has shut down.                                                                                                                 |                                      |
 | 1102    | The audit log was cleared.                                                                                                                               |
+| 4611    | A trusted logon process has been registered with the Local Security Authority.                                                                           |
+| 4616    | The system time was changed.                                                                                                                             |
 | 4618    | A monitored security event pattern has occurred.                                                                                                         |
 | 4624    | An account was successfully logged on.                                                                                                                   |
 | 4625    | An account failed to log on.                                                                                                                             |
@@ -67,6 +76,8 @@ Quick-use filter string
 | 4695    | Unprotection of auditable protected data was attempted.                                                                                                  |
 | 4697    | A service was installed in the system.                                                                                                                   |
 | 4698    | A scheduled task was created.                                                                                                                            |
+| 4699    | A scheduled task was deleted.                                                                                                                            |
+| 4700    | A scheduled task was enabled.                                                                                                                            |
 | 4702    | A scheduled task was updated.                                                                                                                            |
 | 4703    | A user right was adjusted.                                                                                                                               |
 | 4704    | A user right was assigned.                                                                                                                               |
@@ -142,8 +153,8 @@ Quick-use filter string
 | 6273    | Network Policy Server denied access to a user                                                                                                            |
 | 6276    | Network Policy Server quarantined a user                                                                                                                 |
 | 6280    | Network Policy Server unlocked the user account                                                                                                          |
-| 6281    |                                                                                                                                                          | Level 0 or 4                         |
-| 6410    |                                                                                                                                                          | Level 0 or 4                         |
+| 6281    | Code Integrity determined that the page hashes of an image file are not valid.                                                                           | Level 0 or 4                         |
+| 6410    | Code integrity determined that a file does not meet the security requirements to load into a process.                                                    | Level 0 or 4                         |
 | 6416    | A new external device was recognized by the system                                                                                                       |
 | 6419    | A request was made to disable a device.                                                                                                                  |
 | 6420    | A device was disabled.                                                                                                                                   |
@@ -188,7 +199,7 @@ Quick-use filter string
 | 5137    | A directory service object was created.                                                |        |
 | 5138    | A directory service object was undeleted                                               |        |
 | 5139    | A directory service object was moved.                                                  |        |
-| 5140    | Network share object accessed                                                          |        |
+| 5140    | (NOISY!) Network share object accessed                                                 |        |
 
 - 1 - Requires that “Audit Directory Service Changes” auditing be enabled.
 
@@ -244,16 +255,33 @@ Note: Some installable applications are known to write to this log. Consider loo
 
 
 ## Microsoft-Windows-Authentication/AuthenticationPolicyFailures-DomainController
-101, 105, 106, 305, 306
+| EventID | Description                                                         |
+| :-----: | ------------------------------------------------------------------- |
+|   101   | NTLM usage attempted.                                               |
+|   105   | Kerberos authentication from a particular device was not permitted. |
+|   106   | The user or device was not allowed to authenticate to the server.   |
+|   305   | Kerberos TGT request did not meet access control restrictions.      |
+|   306   | User, device or both do not meet the access control restrictions.   |
 
 ## Microsoft-Windows-Authentication/ProtectedUserFailures-DomainController
-100, 104, 303
+| EventID | Description                                                                                               |
+| :-----: | --------------------------------------------------------------------------------------------------------- |
+|   100   | An NTLM sign-in failure occurs for an account that is in the Protected Users security group.              |
+|   104   | The security package on the client does not contain the credentials.                                      |
+|   303   | A Kerberos ticket-granting-ticket (TGT) was successfully issued for a member of the Protected User group. |
 
 ## Microsoft-Windows-Bits-Client/Operational
 (All)
 
 ## Microsoft-Windows-CodeIntegrity/Operational
-3001, 3002, 3003, 3004, 3010, 3023 with Level 2 or 3
+| EventID | Description                                                                                                                                                                                                                                                                            | Filter       |
+| :-----: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+|  3001   | Code Integrity determined an unsigned kernel module %2 is loaded into the system. Check with the publisher to see if a signed version of the kernel module is available.                                                                                                               | Level 2 or 3 |
+|  3002   | Code Integrity is unable to verify the image integrity of the file %2 because the set of per-page image hashes could not be found on the system.                                                                                                                                       | Level 2 or 3 |
+|  3003   | Code Integrity is unable to verify the image integrity of the file %2 because the set of per-page image hashes could not be found on the system. The image is allowed to load because kernel mode debugger is attached.                                                                | Level 2 or 3 |
+|  3004   | Windows is unable to verify the image integrity of the file %2 because file hash could not be found on the system. A recent hardware or software change might have installed a file that is signed incorrectly or damaged, or that might be malicious software from an unknown source. | Level 2 or 3 |
+|  3010   | Code Integrity was unable to load the %2 catalog.                                                                                                                                                                                                                                      | Level 2 or 3 |
+|  3023   | Windows is unable to verify the integrity of the file %2 because the signing certificate has been revoked. Check with the publisher to see if a new signed version of the kernel module is available.                                                                                  | Level 2 or 3 |
 
 ## Microsoft-Windows-DNSServer/Audit
 | EventID | Description                                                           | Filter |
@@ -289,7 +317,13 @@ Note: Some installable applications are known to write to this log. Consider loo
 |   410   | New Mass Storage Installation |
 
 ## Microsoft-Windows-NTLM/Operational
-8001, 8002, 8003, 8004
+| EventID | Description                                                                                  |
+| :-----: | :------------------------------------------------------------------------------------------- |
+|  8001   | NTLM client blocked audit: Audit outgoing NTLM authentication traffic that would be blocked. |
+|  8002   | NTLM server blocked audit: Audit Incoming NTLM Traffic that would be blocked.                |
+|  8003   | NTLM server blocked in the domain audit: Audit NTLM authentication in this domain.           |
+|  8004   | Domain Controller Blocked Audit: Audit NTLM authentication to this domain controller.        |
+
 
 ## Microsoft-Windows-PrintService/Operational
 | EventID | Description | Filter  |
@@ -324,6 +358,19 @@ Note: Some installable applications are known to write to this log. Consider loo
 | :-----: | ------------------------------------------- |
 |   131   | Accepted new TCP connection                 |
 |   140   | Connection failed; bad username or password |
+
+## Microsoft-Windows-Security-Mitigations/KernelMode
+| EventID | Description                                                         |
+| :-----: | ------------------------------------------------------------------- |
+|    *    | This event log contains log about the “Exploit Protection” feature. |
+
+
+## Microsoft-Windows-Shell-Core/Operational
+| EventID | Description                                                                                                                                                                                                     |
+| :-----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  9707   | Detects the start of the execution of a process from both the “Software\Microsoft\Windows\CurrentVersion\Run” and “Software\Microsoft\Windows\CurrentVersion\RunOnce” registry keys with the full command line. |
+|  9708   | Detects when the aforementioned process finishes execution with the corresponding PID (Useful when the process is still running on the system).                                                                 |
+|  28115  | Triggered when a shortcut is added to the “App Resolver Cache”. Indicates when an application is installed.                                                                                                     |
 
 
 ## Microsoft-Windows-SmartCard-Audit/Authentication
@@ -397,7 +444,22 @@ Note: Some installable applications are known to write to this log. Consider loo
 |   40    | Session <X> has been disconnected, reason code <Z> |
 
 ## Microsoft-Windows-TPM-WMI
-513, 514
+| EventID | Description                                                                                             |
+| :-----: | ------------------------------------------------------------------------------------------------------- |
+|   513   | TPM Owner Authorization information was backed up successfully to Active Directory Domain Services.     |
+|   514   | Failed to backup TPM Owner Authorization information to Active Directory Domain Services. Errorcode: %1 |
+
+## Microsoft-Windows-UniversalTelemetryClient/Operational
+| EventID | Description                                         |
+| :-----: | --------------------------------------------------- |
+|   55    | Indicates whether the computer has Internet or Not. |
+
+## Microsoft-Windows-VHDMP-Operational
+| EventID | Description                                                                    |
+| :-----: | ------------------------------------------------------------------------------ |
+|    1    | Triggers when you mount a VHD (Virtual Hard Disk).                             |
+|    2    | Triggers when you unmount a VHD (Virtual Hard Disk).                           |
+|   12    | Contains information about the type, path, handle count of the mounted device. |
 
 ## Microsoft-Windows-Windows Defender/Operational
 | EventID | Description                                                                                                                                                                      | Filter  |
@@ -436,6 +498,22 @@ Note: Some installable applications are known to write to this log. Consider loo
 |  2033   | Firewall Rule Deleted                     |
 |  2009   | Firewall Failed to load group policy      |
 
+## Microsoft-Windows-Winlogon/Operational
+| EventID | Description                                                                                                                                                  |
+| :-----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|   811   | Triggers when a user logon to a machine. You can check for the “<SessionEnv>” subscriber notification in EID 811 to indicates that a user logged on via RDP. |
+
+## Microsoft-Windows-WinINet-Config/ProxyConfigChanged
+| EventID | Description                                                                                                                                                |
+| :-----: | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  5600   | Indicates change in the proxy configuration. For example if i change my proxy configuration from the “Internet Option” menu. The event will get generated. |
+
+## Microsoft-Windows-WLAN-AutoConfig/Operational
+| EventID | Description                                                                    |
+| :-----: | ------------------------------------------------------------------------------ |
+|  8001   | WLAN AutoConfig service has successfully connected to a wireless network.      |
+|  8003   | WLAN AutoConfig service has successfully disconnected from a wireless network. |
+
 ## Microsoft-Windows-WMI-Activity/Operational
 | EventID | Description                              |
 | :-----: | ---------------------------------------- |
@@ -457,7 +535,11 @@ Note: Some installable applications are known to write to this log. Consider loo
 |     169      | Authentication success         |
 
 ## EMET
-1, 2 with Level 2 or 3
+Legacy. [Final release was 2016](https://en.wikipedia.org/wiki/Enhanced_Mitigation_Experience_Toolkit).
+| EventID | Description | Filter            |
+| :-----: | ----------- | ----------------- |
+|    1    |             | with Level 2 or 3 |
+|    2    |             | with Level 2 or 3 |
 
 ## DNS Server
 | EventID | Description                                             | Filter |
@@ -472,6 +554,11 @@ Note: Some installable applications are known to write to this log. Consider loo
 |   403   | Engine stopped               |
 |   800   | Includes partial script code |
 
+
+
+
+
+
 Sources
 * [Detecting Lateral Movement through Tracking Event Logs - JPCERT Coordination Center](https://www.jpcert.or.jp/english/pub/sr/20170612ac-ir_research_en.pdf)
 * [Appendix L: Events to Monitor](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)
@@ -483,6 +570,8 @@ Sources
 * [Windows RDP-Related Event Logs: Identification, Tracking, and Investigation](https://ponderthebits.com/2018/02/windows-rdp-related-event-logs-identification-tracking-and-investigation/)
 * [Basics of Tracking WMI Activity](https://www.darkoperator.com/blog/2017/10/14/basics-of-tracking-wmi-activity)
 * [Investigating PowerShell Attack](https://www.blackhat.com/docs/us-14/materials/us-14-Kazanciyan-Investigating-Powershell-Attacks-WP.pdf)
+* [Finding Forensic Goodness In Obscure Windows Event Logs](https://nasbench.medium.com/finding-forensic-goodness-in-obscure-windows-event-logs-60e978ea45a3)
+* https://archive.org/stream/pdfy-xNodO-t_DlVFf20s/Mitigating-Pass-the-Hash-Attacks-and-Other-Credential-Theft-Version-2_djvu.txt
 * https://docs.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/authentication-policies-and-authentication-policy-silos
 * https://docs.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/protected-users-security-group
 * https://docs.microsoft.com/en-us/windows/security/threat-protection/use-windows-event-forwarding-to-assist-in-intrusion-detection
