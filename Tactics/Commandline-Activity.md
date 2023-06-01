@@ -10,7 +10,8 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 ## Aggregate Count
 - Process file names (without path)
 - Process file names (with path)
-- Rundll32.exe commandlines
+- rundll32.exe DLL Paths
+- regsvr32.exe DLL Paths
 
 
 ## [Match Alert](https://github.com/TonyPhipps/SIEM/blob/master/Detection-Methods.md#match-alarm)
@@ -75,7 +76,23 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 - msiexec.exe with command line containing 'http' or 'ftp'
 
-- regsvr32.exe with command line containing 'http' or 'ftp'
+
+- mshta.exe
+  - execution of .hta file in userspace
+  - execution of .hta file from Internet
+
+- rundll32.exe
+  - execution of .dll file in userspace
+  - execution of .dll file from Internet
+
+- regsvr32.exe
+  - execution of .dll file in userspace
+  - execution of .dll file from Internet
+
+- certutil.exe
+  - Used to -encode
+  - Used to -decode
+  - Using -urlcache to download files
 
 - Use of wevutil.exe with 'cl' in command line
 

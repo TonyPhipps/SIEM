@@ -190,14 +190,16 @@ MITRE ATT&CK Framework:
   - taskhostw.exe
   - runtimebroker.exe
 
-
 - Executable running from $Recylce.Bin
 - Executable running from \System Volume Information
 - Executable running from \Temp folders
 
-
 ## Aggregate Count
-- Suspicious child process of system executable
+- Suspicious child process of system executables
+  - notepad.exe
+  - regsvr32.exe
+  - rundll32.exe
+  - mshta.exe
 
 
 ## Blacklist Alert
