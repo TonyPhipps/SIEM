@@ -1,4 +1,4 @@
-See Also: https://attack.mitre.org/datasources/ This MITRE effort came out after my work here, and has surpassed it.
+See Also: https://attack.mitre.org/datasources/ This MITRE effort came out after my work here, and has surpassed it. I will look for a way to expand/compliment MITRE's efforts rather than recreate.
 
 #### ATT&CK Abbreviations Used
 Initial Access (IA), Execution (Exe), Persistence (P), Privilege Escalation (PE), Defense Evasion (DE), 
