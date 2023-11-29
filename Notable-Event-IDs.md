@@ -211,19 +211,27 @@ Quick-use filter-OUT string
 ## System Events
 | EventID | Description                                                                                     | Filter                 |
 | :-----: | :---------------------------------------------------------------------------------------------- | ---------------------- |
-|   104   | Event Log was Cleared                                                                           |
+|   12    | The operating system started at system time xxxx                                                |                        |
+|   13    | The operating system is shutting down at system time xxxx                                       |                        |
+|   27    | Network link is disconnected                                                                    | !source=Kernel-Boot    |
+|   33    | Network link has been established                                                               | !source=Kernel-Boot    |
+|   41    | The system has rebooted without cleanly shutting down first                                     |                        |
+|   42    | The system is entering sleep                                                                    |                        |
+|   104   | Event Log was Cleared                                                                           |                        |
+|   105   | Power source change                                                                             |                        |
+|   107   | The system has resumed from sleep                                                               |                        |
 |   219   | Failed Kernel Driver Loading                                                                    | Level 3                |
-|  1001   | System Crash                                                                                    |
+|  1001   | System Crash                                                                                    |                        |
 |  7022   | Service hung on starting                                                                        | Level 0, 1, 2, 3, or 4 |
 |  7023   | Service terminated with error                                                                   | Level 0, 1, 2, 3, or 4 |
 |  7024   | Service terminated with the following service-specific error                                    | Level 0, 1, 2, 3, or 4 |
 |  7026   | The boot-start or system-start driver(s) [did not/failed to] load                               | Level 0, 1, 2, 3, or 4 |
-|  7030   | Service Creation Errors                                                                         |
+|  7030   | Service Creation Errors                                                                         |                        |
 |  7031   | Service terminated unexpectedly                                                                 | Level 0, 1, 2, 3, or 4 |
 |  7032   | Service tried to take a corrective action (1) after the unexpected termination of the % service | Level 0, 1, 2, 3, or 4 |
 |  7034   | service terminated unexpectedly                                                                 | Level 0, 1, 2, 3, or 4 |
-|  7035   | The [Service Name] service was successfully sent a [start/stop] control                         |
-|  7036   | The [Service Name] service entered the [Status] state                                           |
+|  7035   | The [Service Name] service was successfully sent a [start/stop] control                         |                        |
+|  7036   | The [Service Name] service entered the [Status] state                                           |                        |
 |  7040   | The service state has changed                                                                   | Level 0, 1, 2, 3, or 4 |
 |  7045   | A service was installed in the system                                                           | Level 0, 1, 2, 3, or 4 |
 
