@@ -4,7 +4,7 @@
 - Which Event IDs can be filtered out, having no value to the investigation?
 
 #### Security
-Review any of these Event IDs
+Note any of these Event IDs
 - 1102 events present (log cleared)
 
 #### System
