@@ -12,3 +12,5 @@
 - Note any Event ID 33 (Network link has been established)
 - Note any Event ID 13 (The operating system is shutting down at system time xxxx)
 - Note any Event ID 12 (The operating system started at system time xxxx)
+- Note any Event ID 105 (Power source change.) Could be a laptop plugging/unplugging power supply.
+- 
