@@ -10,7 +10,7 @@ Without covering the basics, there isn't much point in having a SIEM. Harden you
 - [Incident Response Policy Sample](Incident-Response-Policy.md)
 - [RSS Feeds](/rss.md)
 - [Email Subscriptions](/Subscriptions.md)
-- [Logging](/logging.md)
+- [Logging](/Logging.md)
 - [Notable Event IDs](/Notable-Event-IDs.md)
 - [IR Tool & Resoures](/response-tools-resources.md)
 - [Incident Tracking](/incident-tracking.md)
