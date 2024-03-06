@@ -1,3 +1,6 @@
+- [Domain Controller Redundancy](#domain-controller-redundancy)
+- [Ensure Regular Backup of GPO's](#ensure-regular-backup-of-gpos)
+- [Ensure the Directory Services Restore Mode (DSRM) password is Set](#ensure-the-directory-services-restore-mode-dsrm-password-is-set)
 - [Windows Firewall](#windows-firewall)
 - [RDP](#rdp)
 - [Microsoft  Local Administrator Password Solution (LAPS)](#microsoft--local-administrator-password-solution-laps)
@@ -8,6 +11,24 @@
 - [Set GPO to Reprocess Even if Not Changed](#set-gpo-to-reprocess-even-if-not-changed)
 - [Group Managed Service Accounts](#group-managed-service-accounts)
 - [Additional Resources](#additional-resources)
+
+# Domain Controller Redundancy
+- Ensure there is a domain controller that can be quickly taken offline in the need of an isolation to prevent rebuilding. Preferable one that holds FSMO roles. 
+  - ```netdom query fsmo```
+
+# Ensure Regular Backup of GPO's
+  - ```backup-gpo -domain "domain.local" -all -path "c:\temp\gpo-backups"```
+
+# Ensure the Directory Services Restore Mode (DSRM) password is Set 
+To a known value on all Domain Controllers. The steps will need to be initiated on each Domain Controller:
+```
+   PS C:\Windows\system32> ntdsutil
+   C:\Windows\System32\ntdsutil.exe: set drsm password
+   Reset DRSM Administrator Password: reset password on server null
+   Please type password for DS Restore Mode Administrator Account: ***
+   Please confirm new password: ***
+   Password has been set successfully.
+```
 
 # Windows Firewall
 - Maintain at least a workstation and server Group Policy Object (GPO) to control the Windows Firewall
