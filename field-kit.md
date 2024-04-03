@@ -1,0 +1,58 @@
+(AKA incident response kit, bugout bag, flyaway kit, go bag, deployment kit, jump bag, rapid response kit)
+
+Individual Kit
+- Any necessary Personal Protective Equipment (PPE)
+- Notetaking materials
+- Audio recording capability
+- Photography capability
+- Analysis laptop (with authorized, preinstalled, and tested forensic tools and playbooks per Incident Response Plan)
+
+Team Kit
+- Kit should be in one or more containers with wheels.
+- Flashlight (headlamp style)
+  - Spare batteries or rechargeable
+- Multitool
+- Electronics Components
+  - Electronics screwdriver set
+  - Antistatic protection wrist strap and pad
+  - Electronics Vacuum (antistatic)
+  - digital multimeter
+- Power Components
+  - 2x USB-A Chargers (3amps+)
+  - 2x 20ft+ extension cords
+  - 2x power strips (with surge protection)
+- Wiring Components
+  - Universal USB Conversion Kit
+  - USB Micro to USB A Wire
+  - USB C to USB A Wire
+  - USB-A Extension Wire
+  - USB Hub (with external power)
+  - USB to Ethernet adapter
+  - USB to Serial adapter
+- Networking  Components
+  - Ethernet cable
+  - Ethernet crossover adapter or cable
+  - 5+ port managed switched (with port spanning)
+  - 5 port hub (unmanaged)
+  - Ethernet cable testers / Wire Tracker kit
+  - Ethernet cable crimper
+  - RJ-45 connectors
+- Forensics Components
+  - Digital evidence bags and tags
+  - Chain of custody forms as specified by Incident Response Plan
+  - USB 3.1 Write Blocker
+- Drive Components
+  - 2x External hard drives (5 TB+ storage, USB-3.0+, hardware-encryption compatible)
+  - 2x External "thumbsticks" (1TB+ storage, USB 3.0+)
+  - 2x SATA to External USB Adapter/Enclosure/Dock (USB 3.0+)
+  - 2x IDE to External USB Adapter/Enclosure/Dock  (USB 3.0+)
+  - 2x NVMe to USB Adapter/Enclosure/Dock (USB 3.0+)
+  - External DVD-R Drive
+  - Blank DVD-Rs
+- Server Room Components
+  - StarTech.com USB Crash Cart Adapter
+  - 2x Foldable Stools (with back rest)
+- Long-haul Components
+  - Emergency Food Supply (non-perishable meals, long shelf life)
+  - 2+ tableware sets (spoon, fork, knife, bowl, cup, plate) 
+  - Water boiler
