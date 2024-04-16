@@ -26,13 +26,27 @@ Threat hunting should focus on events outside the traditional detection capabili
 - Ratios (e.g. request/response, upload/download, success/failure)
 - Standard deviation
   
-
 # Frameworks
 - MITRE ATT&CK
 - Targeted Hunting integrating Threat Intelligence (TaHiTI)
 
 
-# Hypotheses
+# Hypotheses-Based
+Planning Phase
+- Gather intelligence
+-	Develop a hypothesis
+-	Determine data sources
+
+Execution Phase
+-	Query data sources
+-	Follow breadcrumbs
+-	Test hypothesis
+
+Reporting Phase
+-	Distill findings
+-	Create detections
+-	Improve process
+
 Focusing on hypothesis that are unlikely to boil down into a signature to automate.
 
 General Examples:
