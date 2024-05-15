@@ -1,7 +1,9 @@
 
 # Threat Hunting
-The main purpose of threat hunting is to reduce the time required to find traces of attackers that  have  already  compromised  the  IT  environment.  By  finding  these  traces  as  soon  as 
-possible, the impact of breaches to the organization can be minimized. Reduction of the breach detection gap is another important goal.
+The main goals of threat hunting are to
+- detect compromises that existing systems failed to detect.
+- minimize the impact of breaches by shrinking the breach detection gap.
+- convert hunts into automated detections.
 
 Other benefits of threat hunting are: 
 - Identification of gaps in visibility necessary to detect and respond to a specific attacker TTP. 
@@ -13,9 +15,12 @@ Other benefits of threat hunting are:
 Threat hunting should focus on events outside the traditional detection capabilities, and may uncover missed or misinterpreted events during the hunt that can be used to improve detection and further train analysts. Threat hunting assumes that there already was a breach and that it has not been identified yet.
 
 # Models
-- Intel-based
+- Hypothesis-Driven
+  - A supposition is made about potential threats and their activities that may be present on the organization’s network, then data and analysis are used to confirm or deny suspicion.
+- Intel-Driven
   - Information on TTPs and actor capabilities is where threat intelligence comes in play. Threat intelligence can be used to determine TTPs of attackers. Thus, threat hunting uses threat intelligence in its process. In turn, threat hunting activities may uncover new TTPs that have not been identified or disclosed yet. Hence, threat hunting can provide unique insights into threat actor capabilities and generate threat intelligence.
-- Hypothesis-based
+- Baseline Hunts
+  - A proactive approach to threat detection that involves setting up a baseline of normal activity, monitoring that baseline for deviations, and investigating any suspicious activity.
 - Custom/on-demand
 
 # Techniques
@@ -29,39 +34,44 @@ Threat hunting should focus on events outside the traditional detection capabili
 # Frameworks
 - MITRE ATT&CK
 - Targeted Hunting integrating Threat Intelligence (TaHiTI)
+- Splunk's PEAK (Plan, Execute, Act, all with Knowledge)
 
+# Hunting Phases
+## Planning Phase
+-	Develop a hypothesis / Identify impactful intelligence / Establish a baseline
+- Research the involved technologies, tactics, techniques, threat actors
+-	Determine data sources and scope
+- Plan the hunt
 
-# Hypotheses-Based
-Planning Phase
-- Gather intelligence
--	Develop a hypothesis
--	Determine data sources
-
-Execution Phase
+## Execution Phase
 -	Query data sources
--	Follow breadcrumbs
--	Test hypothesis
+- Ensure data/results are clean
+-	Investigate/Analyze
+- Escalate any critical findings immediately
+- Test and refine hypothesis, if appropriate
 
-Reporting Phase
--	Distill findings
+## Action Phase
+- Document the hunt itself
+-	Document findings
 -	Create detections
 -	Improve process
-
-Focusing on hypothesis that are unlikely to boil down into a signature to automate.
+- Report findings
+- Plan to redo hunt or scrap it
 
 General Examples:
-- An adversary acheived <tactic> via/to <technique>.
-- An adversary exploited the vulnerbility described in <CVE/Vulnerability>.
-- <Group/Campaign> activity has compromised an endpoint.
-- A(n) <Type> account has been compromised.
-- An adversary is using covert channels based on DNS to exfiltrate data from the organization
-- An adversary is levering PowerShell to automatically exfiltrate sensitive data from the organization.
-- An adversary is using existing user accounts for lateral movement
-- An adversary is leveraging web shells to retain access to the infrastructure
-- An adversary is using malware with filenames that are similar to existing system binaries to avoid detection
-- An adversary is using fileless malware based on memory injections to avoid detection of malware on disk
+- An adversary acheived [tactic] via/to [technique].
+- An adversary exploited the vulnerbility described in [CVE/Vulnerability].
+- [Group/Campaign] activity has compromised an endpoint.
+- A(n) [Type] account has been compromised.
+- An adversary is using covert channels based on [protocol] to exfiltrate data from the organization
+- An adversary is levering [software] to automatically exfiltrate sensitive data from the organization.
+- An adversary is levering [hardware] to automatically exfiltrate sensitive data from the organization.
+- An adversary is using existing user accounts for lateral movement.
+- An adversary is leveraging web shells to retain access to the infrastructure.
+- An adversary is using malware with filenames that are similar to existing system binaries to avoid detection.
+- An adversary is using fileless malware based on memory injections to avoid detection of malware on disk.
 - An adversary is using persistence mechanisms without adding files to the operating system.
-- An adversary is using Kerberoasting attack techniques to obtain valid credentials
+- An adversary is using Kerberoasting attack techniques to obtain valid credentials.
 
 
 
