@@ -91,5 +91,7 @@ A higher score means the string has a higher level of randomness.
 ## Aggregate Count
 
 (AKA Stack Count; AKA Long Tail Analysis)
+Also known as stacking or least frequency of occurrence analysis (LFO), this method involves counting the number of occurrences of each unique value and sorting them in ascending order. The values with the lowest counts are considered outliers. In some cases, this can be reversed, with the values with the highest counts being considered the outliers, but this is relatively rare.
 
-- Aggregating on specific fields and showing the total count of each set. Presented in the form of a table, bar chart, or pie chart and visually monitored.
+Z-score
+When dealing with numeric values, a statistical test like z-score can be used. This test looks for values that are ± a certain threshold from the standard deviation. Typically, this threshold is two or three standard deviations.

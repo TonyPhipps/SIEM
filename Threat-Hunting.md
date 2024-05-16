@@ -40,7 +40,8 @@ Threat hunting should focus on events outside the traditional detection capabili
 ## Planning Phase
 -	Develop a hypothesis / Identify impactful intelligence / Establish a baseline
 - Research the involved technologies, tactics, techniques, threat actors
--	Determine data sources and scope
+-	Determine relevant data sources
+- Determine scope of time
 - Plan the hunt
 
 ## Execution Phase
