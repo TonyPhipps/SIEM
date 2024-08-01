@@ -4,7 +4,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.org/techniques/T1059), [PowerShell (T1086)](https://attack.mitre.org/techniques/T1086), [Inhibit System Recovery](https://attack.mitre.org/versions/v12/techniques/T1490/)
 
-- Execution of malicious commands and scripts from command-line interfaces.
+- Execution of malicious commands AND scripts from command-line interfaces.
 
 
 ## Aggregate Count
@@ -15,97 +15,204 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 
 
 ## [Match Alert](https://github.com/TonyPhipps/SIEM/blob/master/Detection-Methods.md#match-alarm)
-- PowerShell.exe or powershell_ise.exe with one of the following in the command line (or straight commandline use)
-  - '-nop' or '/nop' (from -noprofile)
-  - 'hidden'
-  - '-noni' or '/noni' (from -noninteractive)
-  - '-ep' or '/ep' (from -execution-policy)
-  - 'bypass'
-  - '-e or /e (from -encodedcommand)
-  - 'invoke-webrequest' or 'iwr' or 'curl' or 'wget'
-  - 'invoke-restmethod' or 'irm'
-  - 'invoke-expression' or 'iex'
-  - 'invoke-wmimethod' or 'invoke-cimmethod'
-  - 'bitstransfer'
-  - 'downloadstring'
-  - 'downloadfile'
-  - 'winhttprequest'
-  - 'http'
-  - 'ftp'
-  - 'get-ciminstance' or 'gcim'
-  - 'get-wmiobject' or 'gwmi'
-  - 'ToBase64String'
-  - 'FromBase64String'
-  - set-wmiinstance
-  - createInstance
 
-- Powershell third-party functions tied to malicious activity
-  - nishang
-    - Enable-DuplicateToken
-    - Get-LsaSecret
 
-- sc.exe with 'create'
+Question the use of these, as they are infrequently used legitimately
+- at.exe
+- aspnet_compiler.exe
 
-- schtasks.exe with 'create'
+#### !!!! IMPORTANT NOTES !!!!
+- MANY commandlines can use - OR / interchangeably. Account for this!
+- Commandlines can have junk characters like ^ to obfuscate detections, where the command is ran as if those characters didn't exist.
 
-- wmic.exe where commandline contains
-  - process call create
-  - useraccount list full
-  - group list full
-  - netuse list full
-  - qfe get
-  - startup get
-  - service get
+----------------------
 
-- Suspicious commandline parameters of system executables
-  - CMSTP.exe with commandline containing '/ni' or '-ni' or '/s' or '-s' (T1191)
-  - MpCmdRun.exe with commandline containing 'Add-MpPreference' OR 'RemoveDefinitions' OR 'DisableIOAVProtection' (T1089)
-  - nltestrk.exe with command line containing 'domain_trusts (T1482)
-  - Mavinject.exe with command line containing 'INJECTRUNNING'(T1218)
-  - fltMC.exe with commandline contains 'unload' OR 'detach' (T1054)
-  - InstallUtil.exe with commandline contains 'logfile=' OR 'LogToConsole=false' OR '/u' or '-u' (T1118)
-  - 'certutil.exe' with any of the following in the command line
-    - urlcach
-    - url
-    - ping
-    - http
-    - ftp
-    - -decode
+- addinutil.exe
+  - "-AddinRoot:" to set root directory for addins
 
-- mofcomp.exe with '-N' and '\\' (WMI with remote host namespace)
+- appinstaller.exe
+  - "http" to attempt to load/install a package from a URL and save in INetCache
 
-- msiexec.exe with command line containing 'http' or 'ftp'
+- atbroker.exe
+  - "/start" to execute code referenced in a prestaged registry key
 
+- auditpol.exe
+  - "/set" AND "disable"
+
+-	bcdedit.exe
+  - "recoveryenabled"
+  - "ignoreallfailures"
+  - "minimal" (T1059, T1490)
+
+- bitsadmin.exe
+  - "/create" to make a new job which can download, copy, execute, and create alternate data streams
+
+- certoc.exe
+  - "-loaddll"
+  - "-getcacaps"
+
+- certreq.exe
+  - "-config" AND "http" to download content
+  - "-post" AND "http" to either download or upload data
+
+- certutil.exe
+  - "-urlcache" to download files
+  - "url"
+  - "ping"
+  - "http"
+  - "ftp"
+  - "-decode"
+  - "-encode"
+  - "-addstore"
+
+- chrome.exe
+  - "headless"
+  - "remote-debugging"
+
+- cmd.exe
+  - "http"
+  - "ftp"
+  - "reg add"
+  - "^" to attempt obfuscation
+  - "<" AND ":" to execute an alternate data stream
+
+- cmdkey.exe
+  - "/list" to list cached credentials
+
+- cmstp.exe
+  - "/ni" 
+  - "/s" (T1191)
+
+- fltMC.exe
+  - "unload"
+  - "detach" (T1054)
+
+- InstallUtil.exe
+  - "logfile="
+  - "LogToConsole=false"
+  - "/U" (T1118)
+
+- Mavinject.exe
+  - "injectrunning" (T1218)
+
+- MpCmdRun.exe 
+  - "Add-MpPreference"
+  - "RemoveDefinitions"
+  - "DisableIOAVProtection" (T1089)
+
+- mofcomp.exe
+  - "-N" AND "\\" (WMI with remote host namespace)
 
 - mshta.exe
   - execution of .hta file in userspace
-  - execution of .hta file from Internet
+  - "http"
+  - "vbscript"
+  - "javascript"
 
-- rundll32.exe
-  - execution of .dll file in userspace
-  - execution of .dll file from Internet
+- msiexec.exe
+  - "/z" OR /y" AND "http"
+  - "/z" OR /y" AND "ftp"
+  - "/z" OR /y" AND "c:\users"
+
+- net
+  - with "localgroup" AND "/add"
+  - with "user" AND "/add"
+
+- netstat
+
+- nltestrk.exe
+  - "domain_trusts (T1482)
+
+- odbcconf.exe
+  - "/A" (T1218)
+  - "/F" (T1218)
+
+- PowerShell.exe OR powershell_ise.exe
+  - "-noprofile" OR "-nop"
+  - "hidden"
+  - "-noninteractive" OR "-noni"
+  - "-execution-policy" OR "-ep"
+  - "bypass"
+  - "-encodedcommand" OR "-e" OR "-enc"
+  - "invoke-webrequest" OR "iwr" OR "curl" OR "wget"
+  - "invoke-restmethod" OR "irm"
+  - "invoke-expression" OR "iex"
+  - "invoke-wmimethod" OR "invoke-cimmethod"
+  - "bitstransfer"
+  - "downloadstring"
+  - "downloadfile"
+  - "winhttprequest"
+  - "http"
+  - "ftp"
+  - "get-ciminstance" OR "gcim"
+  - "get-wmiobject" OR "gwmi"
+  - "ToBase64String"
+  - "FromBase64String"
+  - "set-wmiinstance"
+  - "createInstance"
+  - "nishang" with "Enable-DuplicateToken"
+  - "nishang" with Get-LsaSecret
+  - "-stream" to interact with an alternate data stream
+
+- reg.exe
+  - "add" to add registry objects
+  - "export" to export registry objects
+
+- regasm.exe 
+  - "/u"  to proxy execution of code
+
+- regedit.exe
+  - "/s" to silently import .reg files
+  - "/e" to export registry objects
 
 - regsvr32.exe
+  - "/i" to execute a .dll file in userspace
+  - "/i" AND "http" to execute a .dll file from Internet
+
+- rundll32.exe
+  - "javascript"
+  - "http"
   - execution of .dll file in userspace
   - execution of .dll file from Internet
 
-- certutil.exe
-  - Used to -encode
-  - Used to -decode
-  - Using -urlcache to download files
+- sc.exe
+  - "create"
 
-- Use of wevutil.exe with 'cl' in command line
+- schtasks.exe
+  - "create"
 
-- cmd.exe with command line containing these strings (or straight commandline use)
-  - 'http' or 'ftp'
-  - 'reg add'
+- shadowcopy
+  - "delete" (T1059, T1490)
 
-- chrome.exe with commandline containing "headless" or "remote-debugging"
+- taskkill.exe
+  - [with any of your known antivirus/protection executable names]
 
--	vssadmin.exe with "delete" (T1059, T1490)
--	wbadmin.exe with "delete" (T1059, T1490)
--	bcdedit.exe with "recoveryenabled" (T1059, T1490)
-- "shadowcopy delete" (T1059, T1490)
+
+- verclsid.exe
+  - "/C" to proxy execution of code
+
+-	vssadmin.exe
+  - "delete" (T1059, T1490) to delete volume shadow copy
+  - "resize" AND "/maxsize" to neuter volume shadow copy
+
+-	wbadmin.exe
+  - "delete" (T1059, T1490)
+
+- wevutil.exe
+  - "cl" to clear event logs
+  - "clearn-log" to clear event logs
+
+- wmic.exe where commandline contains
+  - "process call create"
+  - "useraccount list full"
+  - "group list full"
+  - "netuse list full"
+  - "qfe get"
+  - "startup get"
+  - "service get" 
+
+  
+
 
 ## [Blacklist Alert](https://github.com/TonyPhipps/SIEM/blob/master/Detection-Methods.md#blacklist-alarm)
 - Commandline Obfuscation
@@ -118,8 +225,8 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
     - consecutive commas
     - consecutive semicolons
     - COMSPEC (part of %COMSPEC%)
-    - /\\ or \\/ or \\.\\ or /./ or\\./ or ..
-    - | cmd or |cmd
+    - /\\ OR \\/ OR \\.\\ OR /./ or\\./ OR ..
+    - | cmd OR |cmd
     - final
 
 
@@ -148,8 +255,13 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
   - Create new DWORD EnableTranscripting = 1
   - Create new STRING VALUE OutputDirectory = <path_to_directory>
   - Logs will be stored in .txt files in teh specified directory, using the format `..\YYYYMMDD\PowerShell_transcript.PCNAME.RANDOM.YYYYMMDDHHMMSS.txt`)
-- Endpoint Detection and Response product
+- Endpoint Detection AND Response product
 
 
 # Possible False Positives
 - Many commandline activities performed by authorized privileged users may false-positive on this content.
+
+
+# References
+- https://lolbas-project.github.io/
+- https://github.com/3CORESec/MAL-CL
