@@ -79,9 +79,25 @@ Question the use of these, as they are infrequently used legitimately
 - cmdkey.exe
   - "/list" to list cached credentials
 
+- cmdl32.exe
+  - "/vpn" AND "/lan" to download files
+
 - cmstp.exe
-  - "/ni" 
-  - "/s" (T1191)
+  - "/ni" AND "/s" to execute malicious .INF (T1218.003)
+  - "http" to download (T1218.003)
+
+- colorcpl.exe
+  - copies any file to C:\Windows\System32\spool\drivers\color\ for staging (T1036.005)
+
+- configsecuritypolicy.exe
+  - "http" to download or upload a file (T1567 or T1105)
+
+- conhost.exe
+  - ".exe" to execute another command (T1202)
+  - "--headless" to hide child process window (T1202)
+
+- control.exe
+  - ":" to execute alternate data stream (T1218.002)
 
 - fltMC.exe
   - "unload"
