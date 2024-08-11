@@ -20,10 +20,13 @@ MITRE ATT&CK Framework: [Command-Line Interface (T1059)](https://attack.mitre.or
 Question the use of these, as they are infrequently used legitimately
 - at.exe
 - aspnet_compiler.exe
+- CustomShellHost.exe to execute an explorer.exe child process
+- DeviceCredentialDeployment.exe to hide a process (T1564)
 
 #### !!!! IMPORTANT NOTES !!!!
 - MANY commandlines can use - OR / interchangeably. Account for this!
 - Commandlines can have junk characters like ^ to obfuscate detections, where the command is ran as if those characters didn't exist.
+- Any inclusion of "http" can be supplemented by a pattern to match IP addresses for web communication.
 
 ----------------------
 
@@ -75,6 +78,7 @@ Question the use of these, as they are infrequently used legitimately
   - "reg add"
   - "^" to attempt obfuscation
   - "<" AND ":" to execute an alternate data stream
+  - DeviceCredentialDeployment.exe" to hide a process (T1564)
 
 - cmdkey.exe
   - "/list" to list cached credentials
@@ -99,14 +103,106 @@ Question the use of these, as they are infrequently used legitimately
 - control.exe
   - ":" to execute alternate data stream (T1218.002)
 
+- csc.exe
+  - "-out:" to compile code locally, bypassing defenses. (T1127)
+  - "-target": to compile code locally, bypassing defenses. (T1127)
+
+- cscript.exe
+  - ".js"
+  - ".jse"
+  - ".vba"
+  - ".vbe"
+  - ".vbs"
+  - ".wsf"
+  - "//e:" to execute a script file with a specific engine (not a typo, two slashes)
+  
+- datasvcutil.exe
+  - "http" to upload files (T1567)
+
+- desktopimagedownldr.exe
+  - "http" to download a file and set it as the screensaver (T1105)
+
+- diantz.exe
+  - ":" to compress a file into an alternate data stream (T1564.004)
+  - "http" to download and compress a file (T1105)
+
+- diskshadow.exe
+  - "/s" to execute a prepared diskshadow script (T1003.003)
+  - "> exec " to execute a child process (T1202)
+
+- dnscmd.exe
+  -  "/config" AND "/serverlevelplugindll" to add a malicious dll as a plugin of the DNS service. (T1543.003)
+
+- esentutl.exe
+  - "/y" AND "/vss" to copy a file via volume shadow copy (T1003.003)
+  - "y" AND "/d" AND ":" AND "/o" to copy a file to an alternate data stream (T1564.004)
+  - "http" to download a file (T1564.004)
+
+- expand.exe
+  - ":" to expand into an alternate data stream. (T1564.004)
+
+- extexport.exe
+  - ":\" to load an executable named mozcrt19.dll, mozsqlite3.dll, or sqlite.dll from a supplied folder path (T1218)
+
+- extrac32.exe
+  - ":" to extract a CAB file into an alternate data stream. (T1564.004)
+  - "/C" to copy a file to another folder. (T1105)
+
+- explorer.exe
+  - ".exe" to indirectly execute commands (T1202)
+
+- findstr.exe
+  - ":" and "/V" to write to an alternate data stream (T1564.004)
+
+- finger.exe
+  - "http" to download a malicious payload (T1105)
+
 - fltMC.exe
-  - "unload"
+  - "unload" to unload a driver used by a security agent (T1562.001)
   - "detach" (T1054)
+
+- forfiles.exe
+  - "/p" and "/m" to execute another binary (T1202)
+
+- fsutil.exe
+  - "setZeroData" to forensically erase a file (T1485)
+  - "deletejournal" to delete the USN journal volume, hiding file creation activity (T1485)
+  - "trace decode" to executes a binary named netsh.exe from the current directory (T1218)
+
+- ftp.exe
+  - "-s:" to execute cmd commands from a referenced text file (T1202)
+
+- hh.exe1
+  - "http" to download a file (T1105)
+  - ".exe" to execute another executable (T1218.001)
+
+- ie4uinit.exe
+  - "-BaseSettings" to execute malicious commands from a prepared ie4uinit.inf file (T1218)
+
+- iediagcmd.exe
+  - "set" and "/out:" to execute a binary that is pre-planted at C:\somedir\system32\netsh.exe. (T1218)
+
+- ieexec.exe
+  - "http" to download a file (T1105)
+  
+- ilasm.exe
+  - "/exe" or "/dll" to compile a file (T1127)
+
+- installutil.exe
+  - "http" to download a file to INetCache (T1105)
+
+- imewdbld.exe
+  - "http" to download a file to INetCache (T1105)
 
 - InstallUtil.exe
   - "logfile="
   - "LogToConsole=false"
   - "/U" (T1118)
+
+- jsc.exe
+  - 
+
+
 
 - Mavinject.exe
   - "injectrunning" (T1218)
