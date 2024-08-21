@@ -22,6 +22,9 @@ Question the use of these, as they are infrequently used legitimately
 - aspnet_compiler.exe
 - CustomShellHost.exe to execute an explorer.exe child process
 - DeviceCredentialDeployment.exe to hide a process (T1564)
+- makecab.exe (T1105, T1564.004, T1036)
+- pktmon.exe to capture packets (T1040)
+- rpcping.exe to exploit RPC (T1003, T1187)
 
 #### !!!! IMPORTANT NOTES !!!!
 - MANY commandlines can use - OR / interchangeably. Account for this!
@@ -199,15 +202,14 @@ Question the use of these, as they are infrequently used legitimately
   - "LogToConsole=false"
   - "/U" (T1118)
 
-- jsc.exe
-  - 
+- ldifde.exe
+  - "-i -f" to import a file into LDAP (T1105)
 
-
-
-- Mavinject.exe
-  - "injectrunning" (T1218)
+- mavinject.exe
+  - "/injectrunning" to inject a dll into a process (T1218.013)
 
 - MpCmdRun.exe 
+  - "DownloadFile" to download from internet (T1105)
   - "Add-MpPreference"
   - "RemoveDefinitions"
   - "DisableIOAVProtection" (T1089)
@@ -215,29 +217,55 @@ Question the use of these, as they are infrequently used legitimately
 - mofcomp.exe
   - "-N" AND "\\" (WMI with remote host namespace)
 
+- msconfig.exe
+  - "-5" to execute commands inside crafted c:\windows\system32\mscfgtlc.xml (T1218)
+
+- msdt.exe
+  - "PCWDiagnostic" to execute arbitrary code (T1202)
+
 - mshta.exe
-  - execution of .hta file in userspace
-  - "http"
-  - "vbscript"
-  - "javascript"
+  - ".hta" AND "c:\users" to execute a .hta file in user space (T1218.005)
+  - "http" to download a file (T1105)
+  - "vbscript" to execute vbscript file (T1218.005)
+  - "javascript" to execute javascript file (T1218.005)
+  - ":" to interact with an alternate data stream (T1218.005)
 
 - msiexec.exe
-  - "/z" OR /y" AND "http"
-  - "/z" OR /y" AND "ftp"
-  - "/z" OR /y" AND "c:\users"
+  - "/i" OR "/y"  AND "http" to download and install remote msi (T1218.007)
+  - "/i" OR "/y" AND "ftp" to download and install remote msi (T1218.007)
+  - "/i" OR "/y" AND "c:\users" to install msi (T1218.007)
+  - "TRANSFORMS=" to leverage a secondary, malicious file (T1218.007)
 
 - net
   - with "localgroup" AND "/add"
   - with "user" AND "/add"
 
+- netsh.exe
+  - "add helper" to execute a given .dll and gain persistence (T1546.007)
+
 - netstat
+
+- ngen.exe
+  - "http" or "\d+\.\d+\.\d+\.\d+" to download a file (T1105)
 
 - nltestrk.exe
   - "domain_trusts (T1482)
 
 - odbcconf.exe
-  - "/A" (T1218)
-  - "/F" (T1218)
+  - "/A" to Execute DllREgisterServer from DLL specified. (T1218.008)
+  - "/F" toj Load DLL specified in target .RSP file. (T1218.008)
+
+- OfflineScannerShell.exe
+  - "OfflineScannerShell" to execute mpclient.dll library in the current working directory (T1218)
+
+- pcalua.exe
+  - "-a" to get this exe to open another command or DLL (T1202)
+
+- pcwrun.exe
+- ".exe" to get this exe to open another command or DLL (T1202)
+
+- pnputil.exe
+  - "-i -a" to install drivers (T1547)
 
 - PowerShell.exe OR powershell_ise.exe
   - "-noprofile" OR "-nop"
@@ -266,32 +294,62 @@ Question the use of these, as they are infrequently used legitimately
   - "nishang" with Get-LsaSecret
   - "-stream" to interact with an alternate data stream
 
+- presentationhost.exe
+  - "http" to download a remote file (T1105)
+
+- print.exe
+  - "/d:" to copy or hide something inside an alternate data stream (T1564.004, T1105)
+
+- psr.exe
+  - "/gui 0" to record the user's screen without creating a GUI (T1113)
+
+- rasautou.exe
+  - "-d" AND "-p" to load a target DLL and execute an export (T1218)
+
+- rdrleakdiag.exe
+  - "/p" to dump a process (T1003)
+
 - reg.exe
   - "add" to add registry objects
-  - "export" to export registry objects
+  - "export" to export registry objects (T1564.004)
+  - "save" to dump hives (T1003.002)
 
 - regasm.exe 
-  - "/u"  to proxy execution of code
+  - ".dll" to load target DLL (T1218.009)
 
 - regedit.exe
   - "/s" to silently import .reg files
   - "/e" to export registry objects
 
+- register-cimprovider.exe
+  - ".dll" to load a dll (T1218)
+
+- regsvcs.exe
+  - ".dll" to load a dll (T1218.009)
+
 - regsvr32.exe
-  - "/i" to execute a .dll file in userspace
-  - "/i" AND "http" to execute a .dll file from Internet
+    - "/i" AND "scrobj.dll" to execute a .SCT file with scrobj.dll (T1218.010)
 
 - rundll32.exe
-  - "javascript"
-  - "http"
-  - execution of .dll file in userspace
-  - execution of .dll file from Internet
+  - "javascript" to execute javascript code (T1218.011)
+  - ".dll" AND "\users\" to execute a .dll file in userspace (T1218.011)
+  - ".dll" AND "http" to execute a .dll file from the Internet (T1218.011)
+
+- runonce.exe
+  - "/AlternateShellStartup" to execute a Run Once Task preconfigured in registry (T1218)
+
+- runscripthelper.exe
+  - "surfacecheck" to execute a PowerShell script with an arbitrary name and extension (T1218)
 
 - sc.exe
-  - "create"
+  - "create" AND "start" to create and run a service (T1564.004)
+  - "config" AND "start" to modify and run a service (T1564.004)
 
 - schtasks.exe
-  - "create"
+  - "create" to creat a new scheduled task (T1053.005)
+
+- scriptrunner.exe
+  - "appvscript" to execute a binary (T1202)
 
 - shadowcopy
   - "delete" (T1059, T1490)
