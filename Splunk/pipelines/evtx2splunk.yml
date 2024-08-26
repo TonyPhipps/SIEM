@@ -1,0 +1,304 @@
+name: Windows Transforms
+priority: 10
+transformations:
+  - id: field_mapping_windows
+    type: field_name_mapping
+    mapping:
+        Provider_Name: "etw_provider"
+    rule_conditions:
+      - type: logsource
+        product: windows
+
+  - id: condition_system_channel
+    type: add_condition
+    conditions:
+      Channel: System
+    rule_conditions:
+      - type: logsource
+        product: windows
+        service: system
+
+  - id: condition_security_channel
+    type: add_condition
+    conditions:
+      Channel: Security
+    rule_conditions:
+      - type: logsource
+        product: windows
+        service: security
+
+  - id: condition_psclassic
+    type: add_condition
+    conditions:
+      Channel: "Windows PowerShell"
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: ps_classic_provider_start
+
+  - id: condition_psclassic2
+    type: add_condition
+    conditions:
+      Channel: "Windows PowerShell"
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: ps_classic_start
+
+  - id: condition_psclassic3
+    type: add_condition
+    conditions:
+      Channel: "Windows PowerShell"
+    rule_conditions:
+      - type: logsource
+        product: windows
+        service: powershell-classic
+
+  - id: condition_ps_module
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-PowerShell/Operational"
+      EventID: 4103
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: ps_module 
+
+  - id: condition_ps_sbl
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-PowerShell/Operational"
+      EventID: 4104
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: ps_script 
+
+  - id: condition_sysmon_channel
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+    rule_conditions:
+      - type: logsource
+        product: windows
+        service: sysmon
+
+  - id: condition_windows_process_creation
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 1
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: process_creation
+
+  - id: condition_windows_create_remote_thread
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 8
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: create_remote_thread
+
+  - id: condition_windows_create_stream_hash
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 15
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: create_stream_hash
+
+  - id: condition_windows_dns_query
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 22
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: dns_query
+
+  - id: condition_windows_driver_load
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 6
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: driver_load
+
+  - id: condition_windows_file_event
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 11
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: file_event
+
+  - id: condition_windows_file_delete
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 
+        - 23
+        - 26
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: file_delete
+
+  - id: condition_windows_image_load
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 7
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: image_load
+
+  - id: condition_windows_network_connection
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 3
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: network_connection
+
+  - id: condition_windows_pipe_created
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 17
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: pipe_created
+
+  - id: condition_windows_process_access
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 10
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: process_access
+
+  - id: condition_windows_process_tampering
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 25
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: process_tampering
+
+  - id: condition_windows_raw_access_thread
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 9
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: raw_access_thread
+
+  - id: condition_windows_registry_add
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 12
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: registry_add
+
+  - id: condition_windows_registry_delete
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 12
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: registry_delete
+
+  - id: condition_windows_registry_event
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 
+        - 12
+        - 13
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: registry_event
+
+  - id: condition_windows_registry_set
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 13
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: registry_set
+
+  - id: condition_windows_wmi_event
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-Sysmon/Operational"
+      EventID: 
+        - 19
+        - 20
+        - 21
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: wmi_event
+
+  - id: Windows Placeholders Management
+    type: query_expression_placeholders
+    include:
+      - "domain_admin"
+      - "Administrator"
+    expression: "`placeholder_{id}({field})`"
+    rule_conditions:
+      - type: logsource
+        product: windows
+
+name: Splunk Alert stanza Windows
+priority: 20
+postprocessing:
+- type: template
+  template: |+
+    [{{ rule.title }}]
+    description = {{ rule.description | replace('\n', ' ') }}
+    search = index=evtx _index_earliest=-1h@h {{ query | replace('\n', '\\\n')}} | fields - _raw | collect index=notable_events source="{{ rule.title }}" marker="guid={{ rule.id }},{% for t in rule.tags %}tags={{ t }},{% endfor %}"
+  rule_conditions:
+    - type: logsource
+      product: windows
+
+finalizers:
+- type: template
+  template: |
+    [default]
+    cron_schedule = */30 * * * *
+    dispatch.earliest_time = 0
+    dispatch.latest_time = now
+    enableSched = 0
+    schedule_window = auto
+    {{ queries | join('\n') }}

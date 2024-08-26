@@ -1,0 +1,24 @@
+name: Splunk Alert stanza Postprocessing
+priority: 20
+postprocessing:
+- type: template
+  template: |+
+    [{{ rule.title }}]
+    description = {{ rule.description | replace('\n', ' ') }}
+    search = index=cloudtrail _index_earliest=-1h@h {{ query | replace('\n', '\\\n')}} | fields - _raw | collect index=notable_events source="{{ rule.title }}" marker="guid={{ rule.id }},{% for t in rule.tags %}tags={{ t }},{% endfor %}"
+  rule_conditions:
+    - type: logsource
+      product: aws
+      service: cloudtrail
+
+
+finalizers:
+- type: template
+  template: |
+    [default]
+    cron_schedule = */30 * * * *
+    dispatch.earliest_time = 0
+    dispatch.latest_time = now
+    enableSched = 0
+    schedule_window = auto
+    {{ queries | join('\n') }}
