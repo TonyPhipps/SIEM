@@ -8,7 +8,7 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 ## Blacklist Alert
 - Egress Traffic to Known-Bad Port
-- Engress Traffic to Known Bad IP
+- ingress Traffic to Known Bad IP
 - Egress Traffic to Known Sinkhole IP
 - Allowed Ingress Border Traffic on port 3389 (RDP)
 - Allowed Ingress Border Traffic on port 6568 (Anydesk)
