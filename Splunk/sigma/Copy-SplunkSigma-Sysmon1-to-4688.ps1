@@ -111,6 +111,7 @@
             $_ = $_ -replace ' IntegrityLevel=".*?"', ''
             $_ = $_ -replace ' OR CurrentDirectory=".*?"', ''
             $_ = $_ -replace ' CurrentDirectory=".*?"', ''
+            $_ = $_ -replace '^\[(.*?)\]$', '[$1 4688]'
 
             # Return the modified line
             $_
