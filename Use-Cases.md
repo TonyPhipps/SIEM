@@ -12,3 +12,4 @@ These less-technical use cases should also be considered for addition into your 
 - Unauthorized changes appear to have been made to a device's logic code/configuration. (https://attack.mitre.org/techniques/T0845/)
 - A secure location shows clear signs of breaking and entering.
 - An unauthorized person is found in a location.
+- An antivirus/antimalware product presents a detection alert.
