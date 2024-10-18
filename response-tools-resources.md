@@ -16,6 +16,10 @@
 - s0cm0nkeys Security Reference Guide
   - https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/
 
+# Curated Lists
+- https://github.com/rshipp/awesome-malware-analysis
+- https://github.com/cugu/awesome-forensics
+
 ## Live Forensics Tools
 - Google Rapid Response (GRR)
   - https://github.com/google/grr
