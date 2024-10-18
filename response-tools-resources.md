@@ -3,12 +3,10 @@
 ## Guides and FAQ
 - NIST Computer Security Incident Handling Guide (800-61r2)
   - https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final
-- Interfacing with Law Enforcement
-  - https://www.sans.org/score/law-enforcement-faq
  
 ## Forms and Templates
-- Incident Handling Forms
-  - https://www.sans.org/score/incident-forms
+- Security Policy Templates
+  - https://www.sans.org/information-security-policy/?per-page=100
 
 ## Refernce Material and Cheat Sheets
 - Jai Minton's DFIR Cheat Sheet
@@ -27,7 +25,8 @@
 ## Offline Forensics Tools
 - log2timeline & Plaso
   - https://github.com/log2timeline/plaso
-  - https://digital-forensics.sans.org/media/Plaso-Cheat-Sheet.pdf
+  - https://github.com/mark-hallman/plaso_filters/blob/master/Plaso_Filtering_Cheat-Sheet_V1.03.pdf
+  - https://www.sans.org/blog/digital-forensics-sift-ing-cheating-timelines-with-log2timeline/
   - https://plaso.readthedocs.io/en/latest/sources/user/Using-log2timeline.html
 - Timesketch
   - http://timesketch.org/
@@ -46,8 +45,12 @@
 # Non-Free Resources
 
 ## Courses
-- SANS Hacker Tools, Techniques, Exploits, and Incident Handling (SEC504)
-  - https://www.sans.org/course/hacker-techniques-exploits-incident-handling
+- SANS SEC504: Hacker Tools, Techniques, Exploits, and Incident Handling
+  - https://www.sans.org/cyber-security-courses/hacker-techniques-incident-handling/
+- SANS SEC555: SIEM with Tactical Analytics
+  - https://www.sans.org/cyber-security-courses/siem-with-tactical-analytics/
+- SANS FOR508: Advanced Incident Response, Threat Hunting, and Digital Forensics
+  - https://www.sans.org/cyber-security-courses/advanced-incident-response-threat-hunting-training/
 
 
 
