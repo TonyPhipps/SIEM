@@ -17,6 +17,7 @@
   - https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/
 
 # Curated Lists
+- https://github.com/sbilly/awesome-security
 - https://github.com/rshipp/awesome-malware-analysis
 - https://github.com/cugu/awesome-forensics
 
