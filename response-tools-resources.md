@@ -1,5 +1,10 @@
 # Free Resources
 
+## Curated Lists
+- https://github.com/sbilly/awesome-security
+- https://github.com/rshipp/awesome-malware-analysis
+- https://github.com/cugu/awesome-forensics
+
 ## Guides and FAQ
 - NIST Computer Security Incident Handling Guide (800-61r2)
   - https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final
@@ -8,18 +13,13 @@
 - Security Policy Templates
   - https://www.sans.org/information-security-policy/?per-page=100
 
-## Refernce Material and Cheat Sheets
+## Reference Materials and Cheat Sheets
 - Jai Minton's DFIR Cheat Sheet
   - https://www.jaiminton.com/cheatsheet/DFIR/#persistence-and-automatic-loadrun-reg-keys
 - CISA Incident Response Series
   - https://www.youtube.com/playlist?list=PL-BF3N9rHBLJaSbTRPyWYj56f0m2uDQD7
 - s0cm0nkeys Security Reference Guide
   - https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/
-
-# Curated Lists
-- https://github.com/sbilly/awesome-security
-- https://github.com/rshipp/awesome-malware-analysis
-- https://github.com/cugu/awesome-forensics
 
 ## Live Forensics Tools
 - Google Rapid Response (GRR)
@@ -56,8 +56,3 @@
   - https://www.sans.org/cyber-security-courses/siem-with-tactical-analytics/
 - SANS FOR508: Advanced Incident Response, Threat Hunting, and Digital Forensics
   - https://www.sans.org/cyber-security-courses/advanced-incident-response-threat-hunting-training/
-
-
-
-
-
