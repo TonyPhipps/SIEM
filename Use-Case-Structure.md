@@ -42,3 +42,7 @@
 
 # References and Resources
 [Provide any useful resources or references that can help understand the vulnerability, attack, detection, affected software, protocols, etc. Usually in the form of URLs with page names (in case the Website owner restructure their links, like Microsoft does often.]
+
+
+
+https://www.cisa.gov/sites/default/files/2024-08/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf
