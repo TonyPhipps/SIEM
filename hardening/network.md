@@ -3,6 +3,7 @@
 - [Services](#services)
   - [Remote Desktop Protocol](#remote-desktop-protocol)
 - [Maintain Network Documentation](#maintain-network-documentation)
+- [](#)
 - [Resources](#resources)
 
 # Endpoint Segmentation
@@ -31,7 +32,11 @@ Filter network traffic to prohibit ingress and egress communications with known 
 Develop/update network maps to ensure a full accounting of all equipment that is connected to the network.
   - Remove any equipment from networks that is not required to conduct operations to reduce the attack surface malicious actors can exploit.  
 
+# 
+Establish baselines of network traffic, application execution, and account authentication. 
+Use these baselines to enforce an “allowlist” philosophy rather than denying known-bad IOCs. Ensure monitoring and detection tools and procedures are primarily behavior-based, rather than IOC-centric.
 
 # Resources
 - Mandiant Whitepaper: Ransomware Protection and Containment Strategies
   - https://www.fireeye.com/content/dam/fireeye-www/current-threats/pdfs/wp-ransomware-protection-and-containment-strategies.pdf
+  - https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-193a?mc_cid=78cd2ac95a&mc_eid=UNIQID
