@@ -1,0 +1,10 @@
+title: "yourstuff-b Rules Exlcuded"
+description: "Rules that NOT apply to yourstuff-b"
+logsource:
+  product: windows
+filter:
+  rules:
+    - ec570e53-4c76-45a9-804d-dc3f355ff7a7 # 7Zip Compressing Dump Files
+  exclude:
+    index: "yourstuff-b"
+  condition: exclude

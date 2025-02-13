@@ -1,0 +1,13 @@
+title: "yourindex-* Rules"
+description: "Rules that will go to yourindex-* but not yourindex-c"
+logsource:
+  category: process_creation
+  product: windows
+filter:
+  rules:
+    - ec570e53-4c76-45a9-804d-dc3f355ff7a7 # 7Zip Compressing Dump Files
+  include:
+    index: "yourindex-*"
+  exclude:
+    index: "yourindex-c"
+  condition: include and not exclude
