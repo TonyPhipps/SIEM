@@ -45,4 +45,8 @@
 
 
 
-https://www.cisa.gov/sites/default/files/2024-08/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf
+
+References (for this template)
+- Don Murdoch's Blue Team Handbook (2018)
+- https://www.cisa.gov/sites/default/files/2024-08/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf
+- https://github.com/socfortress/Playbooks/blob/main/IRP-TEMPLATE.md

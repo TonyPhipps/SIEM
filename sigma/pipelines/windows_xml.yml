@@ -1,0 +1,75 @@
+﻿name: Windows Transforms
+priority: 10
+transformations:
+  - id: field_mapping_windows
+    type: field_name_mapping
+    mapping:
+        Provider_Name: "etw_provider"
+    rule_conditions:
+      - type: logsource
+        product: windows
+
+  - id: condition_system_channel
+    type: add_condition
+    conditions:
+      Channel: System
+    rule_conditions:
+      - type: logsource
+        product: windows
+        service: system
+
+  - id: condition_security_channel
+    type: add_condition
+    conditions:
+      Channel: Security
+    rule_conditions:
+      - type: logsource
+        product: windows
+        service: security
+
+  - id: condition_psclassic
+    type: add_condition
+    conditions:
+      Channel: "Windows PowerShell"
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: ps_classic_provider_start
+
+  - id: condition_psclassic2
+    type: add_condition
+    conditions:
+      Channel: "Windows PowerShell"
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: ps_classic_start
+
+  - id: condition_psclassic3
+    type: add_condition
+    conditions:
+      Channel: "Windows PowerShell"
+    rule_conditions:
+      - type: logsource
+        product: windows
+        service: powershell-classic
+
+  - id: condition_ps_module
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-PowerShell/Operational"
+      EventID: 4103
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: ps_module 
+
+  - id: condition_ps_sbl
+    type: add_condition
+    conditions:
+      Channel: "Microsoft-Windows-PowerShell/Operational"
+      EventID: 4104
+    rule_conditions:
+      - type: logsource
+        product: windows
+        category: ps_script
