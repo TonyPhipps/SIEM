@@ -7,21 +7,32 @@ These resources are intended to guide a SIEM team to...
 # Preparation, Prerequisites, etc.
 Without covering the basics, there isn't much point in having a SIEM. Harden your environment and configure appropriate auditing on all endpoints.
 - [Preparation](/Preparation.md)
-- [Incident Response Policy Sample](Incident-Response-Policy.md)
-- [RSS Feeds](/rss.md)
-- [Email Subscriptions](/Subscriptions.md)
+- [Incident Response Policy Sample](/Policy/Incident-Response-Policy.md)
+- [RSS Feeds, Subscriptions, etc](/osintel.md)
 - [Logging](/Logging.md)
 - [Notable Event IDs](/Notable-Event-IDs.md)
 - [IR Tool & Resoures](/response-tools-resources.md)
 - [Incident Tracking](/incident-tracking.md)
 - [Metrics](/Metrics.md)
-- [After Action Review](/After-Action-Review.md)
 - [Attacker Tools](/attack-tools-resources.md)
 
 ## Hardening
-- [Microsoft Windows](hardening/microsoft-windows.md)
+- [DNS Security](/hardening/dns-security.md)
+- [Email Security](/hardening/email-security.md)
+- [General Security](/hardening/general-security.md)
+- Microsoft 365
+  - [Auditing and Reporting](/hardening/microsoft-365-auditing-and-reporting.md)
+  - [Azure AD](/hardening/microsoft-365-azure-ad.md)
+  - [Exchange](/hardening/microsoft-365-exchange.md)
+  - [SharePoint and OneDrive](/hardening/microsoft-365-sharepoint-and-onedrive.md)
+  - [Teams](/hardening/microsoft-365-teams.md)
 - [Microsoft Active Directory](hardening/microsoft-active-directory.md)
+- [Microsoft Windows DNS](/hardening/microsoft-windows-dns.md)
+- [Microsoft Windows](hardening/microsoft-windows.md)
 - [Network](hardening/network.md)
+- [Remote Access](/hardening/remote-access.md)
+- [Software Manufacturers](/hardening/software-manufacturers.md)
+- [Web Security](/hardening/web-security.md)
 
 
 # [Detection Tactics](/Detection-Tactics.md)
@@ -39,7 +50,7 @@ Once necessary logs are collected (detection tactics), use various methods to re
 Use Cases provide a means to document solutions for many reasons including tracking work, uniform response, content recreation, metrics & reporting, making informed decisions, avoiding work duplication, and more.
 
 - [Use Case Structure](/Use-Case-Structure.md)
-- [Use Case Review](/Use-Case-Review.md)
+- [Use Case Review](/Use-Cases.md)
 
 
 # Data Enrichment
