@@ -75,7 +75,7 @@ Authority to operate as the primary and sole incident response for the organizat
 Signature:
 
 # Scope
-This policy applies to all employees, customers, clients, visitors, and third-party affiliates working on behalf of this organization within all business areas and geographic markets (“Staff”).  Compliance with this policy is required by related procedural documents and knowledge base articles. 
+This policy applies to all employees, customers, clients, visitors, and third-party affiliates working on behalf of this organization within all business areas and geographic markets ("Staff").  Compliance with this policy is required by related procedural documents and knowledge base articles. 
 
 
 # References
@@ -349,7 +349,7 @@ The priority in which detections (signatures, alerts, etc.) will be deployed is 
 
 ## OODA Loop
 
-Incident Response Team members will utilize the OODA Loop to maintain calm control under sometimes high-stress situations when responding to incidents:
+Incident Response Team members are encouraged to utilize the OODA Loop to maintain calm control under sometimes high-stress situations when responding to incidents:
 
 1. Observe
 2. Orient
@@ -449,7 +449,7 @@ Example external parties include:
 - Business Partners
 - Clients/Customers
  
-If attacks are originating from an external organization’s IP address space, coordination with the designated security contacts for the organization shall be conducted to alert them of the activity, ask for a response, and any necessary followup collaboration.
+If attacks are originating from an external organization's IP address space, coordination with the designated security contacts for the organization shall be conducted to alert them of the activity, ask for a response, and any necessary followup collaboration.
 
 
 ### Activation of IR Plan
@@ -516,7 +516,7 @@ Critical systems must be backed up and stored in a way that prevents their being
 # Identification
 
 An event is any observable occurrence in a system or network. Events include a user connecting to a file share, a server receiving a request for a web page, a user sending email, and a firewall blocking a connection attempt. Suspicious activity includes events with a potentially negative consequence, such as system crashes, packet floods, unauthorized/questionable use of system privileges, unauthorized/questionable access to sensitive data, and destruction of data. An incident is a violation or imminent threat ...
-- of violation of computer security policies
+- of compliance requirements
 - of acceptable use policies
 - of standard security practices
 - to confidentiality of business-critical data
