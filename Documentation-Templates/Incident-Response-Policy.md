@@ -22,6 +22,8 @@ The following sample Incident Response Policy is meant to be tailored to your or
   - [Coordination \& Correspondence](#coordination--correspondence)
 - [Identification](#identification)
   - [OODA Loop](#ooda-loop)
+  - [Initial Assessment](#initial-assessment)
+  - [Creating a Ticket for an Incident](#creating-a-ticket-for-an-incident)
   - [Investigation](#investigation)
     - [Activation of IR Plan](#activation-of-ir-plan)
     - [Incident-Related Correspondence](#incident-related-correspondence)
@@ -44,6 +46,9 @@ The following sample Incident Response Policy is meant to be tailored to your or
       - [Review What Went Right and Wrong](#review-what-went-right-and-wrong)
     - [Determine how the event or task should be done next time](#determine-how-the-event-or-task-should-be-done-next-time)
   - [AAR Resources](#aar-resources)
+- [Containment](#containment)
+  - [Disabling Connectivity](#disabling-connectivity)
+- [Eradication](#eradication)
 - [Glossary](#glossary)
 - [Resources](#resources)
 
@@ -348,6 +353,10 @@ Additional points of contact that may be required to investigate or respond to a
 
 
 # Identification
+Incident Responders shall monitor available dashboards, signatures, and logs for suspicious activity and events that have the potential to cause an incident. Identification by automated means (e.g. signatures, heuristics analysis, statistics-based anomalies, and automated correlation) shall be leveraged to increase the effectiveness of each Incident Responder. Manual identification methods, such as relying on users to identify and report infected hosts, and individually checking each host, are not feasible for most situations. However, a means of manual end-user reporting shall be made available by maintaining a group email box and a phone number.
+
+
+However, centralized log databases and Security Information and Event Management (SIEM) solutions are expected to be the primary points of monitoring and incident identification. Within the SIEM, correlation rules and dashboards shall be maintained that both display events of particular concern and present recent events for short-term correlation and analysis. Queries tuned to the business operating environment shall be maintained and shared among the team to speed up identification.
 
 
 ## OODA Loop
@@ -359,6 +368,29 @@ Incident Response Team members are encouraged to utilize the OODA Loop to mainta
 4. Act
 
 Following a simple model presents allows the opportunity to calmly assess, carefully process available choices, and act on the most appropriate one for the situation at hand.
+
+## Initial Assessment
+An initial assessment shall be conducted to determine if the identified event or activity constitutes an incident. Initial assessment shall be performed quickly, even with limited details and analysis. After initial assessment, if the activity or event is determined to be benign, no incident is required.
+
+An Incident Responder that suspects that an incident has occurred shall immediately start recording all facts regarding the potential incident. At the very least this shall include date/time, source party, destination party(ies), a description of the actions performed, and a copy of correspondence/events. Documenting system events, conversations, and observed changes in files can lead to a more efficient, more systematic, and less error-prone handling of the incident. Every step taken from the time the incident was detected to its final resolution shall be documented and time-stamped. Information of this nature can also be used as evidence in a court of law if legal prosecution is pursued.
+
+When conducting an initial assessment, the following shall be considered:
+- When did the activity first begin? When did it end, or is it on-going?
+- Was the activity observed conducted by an expected, authorized party?
+  - Implies gathering data on involved users.
+- Was the activity observed conducted on an expected, authorized system?
+  - Implies gathering data on involved systems.
+- Did the activity occur during an expected time of day?
+  - Implies gathering and normalizing time stamps.
+- What would the potential business impact be if an incident is confirmed?
+  - Implies understanding business processes and criticality of systems.
+- Were any relevant security alarms triggered?
+
+
+## Creating a Ticket for an Incident
+The investigating Incident Responder shall create a ticket and assign it to themselves. Senior Incident Responders may assign and reassign tickets as needed. Incident Responders may request ticket reassignments, which remains at the discretion of the present Senior Incident Responders, management, or the most senior Incident Responder on duty. The Incident Responder assigned to a ticket is responsible for successful execution of all actions required in handling the ticket until otherwise notified or relieved during the next shift change. The assigned Incident Responder may request assistance from team members, but ultimately maintains all responsibility for the progression of the ticket.
+
+High or emergency tickets that require continuous attention shall be passed along during each shift turnover until resolved.
 
 
 ## Investigation
@@ -565,6 +597,26 @@ The facilitator guides the unit in self-determining how the task(s) might be per
 
 ## AAR Resources
 - https://www.nwcg.gov/sites/default/files/wfldp/docs/army-leaders-guide-to-aar.pdf
+
+
+# Containment
+Incident Responders shall attempt to contain systems, software, and adversaries in an effort to limit the overall scope of incidents. Courses of action related to containment focus on the immediate protection of information systems and data from further damage while analysis continues and/or deepens. A more complete response may be taken after thorough analysis is performed. 
+
+The primary objectives of containment include:
+- Preventing an incident from causing further impact on confidentiality, integrity, and availability.
+- Preventing the compromise of additional systems, users, and data.
+- Maintaining control of the affected information system(s) and the surrounding environment.
+- Ensuring forensically sound acquisition of data when necessary.
+- Maintaining and updating the ticket.
+- Actively communicating updates through the appropriate technical and operational command channels.
+
+
+## Disabling Connectivity
+Management approval is required before disabling connectivity, except in the most dire and obvious situations.
+
+
+# Eradication
+Upon conclusion of an incident involving a compromised system requiring a rebuild, the original hard drive/device may be reused or be destroyed at the discretion of management. Master boot records must be erased on reused disks to eliminate any possible boot sector infection.
 
 
 # Glossary

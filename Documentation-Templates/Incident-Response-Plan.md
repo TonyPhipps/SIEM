@@ -1,5 +1,4 @@
 ﻿# Identification
-
 An event is any observable occurrence in a system or network. Events include a user connecting to a file share, a server receiving a request for a web page, a user sending email, and a firewall blocking a connection attempt. Suspicious activity includes events with a potentially negative consequence, such as system crashes, packet floods, unauthorized/questionable use of system privileges, unauthorized/questionable access to sensitive data, and destruction of data. An incident is a violation or imminent threat ...
 - of compliance requirements
 - of acceptable use policies
@@ -8,13 +7,9 @@ An event is any observable occurrence in a system or network. Events include a u
 - to accessibility of business-critical services
 - to integrity of business-critical data
 
-Incident Responders shall monitor available dashboards, signatures, and logs for suspicious activity and events that have the potential to cause an incident. Identification by automated means (e.g. signatures, heuristics analysis, statistics-based anomalies, and automated correlation) shall be leveraged to increase the effectiveness of each Incident Responder. Manual identification methods, such as relying on users to identify and report infected hosts, and individually checking each host, are not feasible for most situations. However, a means of manual end-user reporting shall be made available by maintaining a group email box and a phone number.
-
 Incidents can originate from several other sources, including:
 - Users or individuals may report suspicious activity via email, telephone, or a support ticket.
 - Reports from other organizations such as another service provider, governments agencies, law enforcement, partners, and competitors.
-
-However, centralized log databases and Security Information and Event Management (SIEM) solutions are expected to be the primary points of monitoring and incident identification. Within the SIEM, correlation rules and dashboards shall be maintained that both display events of particular concern and present recent events for short-term correlation and analysis. Queries tuned to the business operating environment shall be maintained and shared among the team to speed up identification.
 
 Identification can occur from multiple places in the environment, including:
 - Network-level events including firewalls, VPN, proxy logs, network-level intrusion detection and prevention systems, network access control, routers, switches, and other appliances.
@@ -23,12 +18,7 @@ Identification can occur from multiple places in the environment, including:
 
 
 ## Initial Assessment
-
-An initial assessment shall be conducted to determine if the identified event or activity constitutes an incident. Initial assessment shall be performed quickly, even with limited details and analysis. After initial assessment, if the activity or event is determined to be benign, no incident is required.
-
-An Incident Responder that suspects that an incident has occurred shall immediately start recording all facts regarding the potential incident. At the very least this shall include date/time, source party, destination party(ies), a description of the actions performed, and a copy of correspondence/events. Documenting system events, conversations, and observed changes in files can lead to a more efficient, more systematic, and less error-prone handling of the incident. Every step taken from the time the incident was detected to its final resolution shall be documented and time-stamped. Information of this nature can also be used as evidence in a court of law if legal prosecution is pursued.
-
-When conducting an initial assessment, the following shall be considered:
+When conducting an initial assessment, consider the following:
 - When did the activity first begin? When did it end, or is it on-going?
 - Was the activity observed conducted by an expected, authorized party?
   - Implies gathering data on involved users.
@@ -42,15 +32,11 @@ When conducting an initial assessment, the following shall be considered:
 
 
 ## Creating a Ticket for an Incident
-
-The investigating Incident Responder shall create a ticket and assign it to themselves. Senior Incident Responders may assign and reassign tickets as needed. Incident Responders may request ticket reassignments, which remains at the discretion of the present Senior Incident Responders, management, or the most senior Incident Responder on duty. The Incident Responder assigned to a ticket is responsible for successful execution of all actions required in handling the ticket until otherwise notified or relieved during the next shift change. The assigned Incident Responder may request assistance from team members, but ultimately maintains all responsibility for the progression of the ticket.
-
-High or emergency tickets that require continuous attention shall be passed along during each shift turnover until resolved.
+A ticket must be created in the ticket management system to track all activites. The Incident Responder assigned to a ticket is responsible for successful execution of all actions required in handling the ticket until otherwise notified or relieved during the next shift change. The assigned Incident Responder may request assistance from team members, but ultimately maintains all responsibility for the progression of the ticket.
 
 
 ## Investigation
-
-Available information related to the incident shall be collected, validated, and analyzed to characterize the perceived threat and to assist in identifying the attack technique, scope of compromise, root cause(s), and potential business impact. The associated ticket shall continue to be updated with any actions taken and other useful information that may help to better characterize the incident. Tickets shall be handed over to the next shift, rather than remain inactive while the original Incident Responder is off duty.
+Collect, validate, and analyze information related to the incident to characterize the perceived threat and to assist in identifying the attack technique, scope of compromise, root cause(s), and potential business impact. Continue to update the ticket with any actions taken and other useful information that may help to better characterize the incident. Ensure tickets are handed over to the next shift as needed, rather than letting them remain inactive while off duty.
 
 The primary objectives of investigation include:
 - Ensuring the accuracy and completeness of steps taken during investigation.
@@ -93,7 +79,6 @@ Once the incident is determined to be a true positive, the timeline requirement 
 
 
 ### Gather Logs
-
 Understanding associated logs is helpful in assigning an appropriate priority to the ticket and planning effective containment, eradication, and recovery activities. Details of queries executed (search string and date) to collect logs shall be recorded in the applicable ticket.
 
 The information to be analyzed typically includes various logs, files, configuration settings, records of currently logged-on users, past connections (logins), running processes, open files, and changes to files or system settings (access control lists (ACLs), registries, and permissions).
@@ -102,8 +87,7 @@ All logs relevant to the incident shall be gathered for analysis and stored or a
 
 
 ### Analysis
-
-Timeline reconstruction can help in understanding the attacker’s actions. Collected logs from relevant hosts, network appliances, server applications, etc. must be identified and placed into an event timeline to allow proper analysis. This timeline may be used to correlate events among multiple sources, which is invaluable in confirming of denying any hypotheses formed in earlier stages of the investigation.
+Timeline reconstruction can help in understanding the attacker's actions. Collected logs from relevant hosts, network appliances, server applications, etc. must be identified and placed into an event timeline to allow proper analysis. This timeline may be used to correlate events among multiple sources, which is invaluable in confirming of denying any hypotheses formed in earlier stages of the investigation.
 
 Note affected systems IPs, domain names, files, and accounts to allow retrospective analysis for repeat offenders, threat intelligence matches, and the potential for a wider scope than expected. Analysis that does result in a widening of scope in relation to time, systems, users, files, etc. may require gathering of additional logs. Incident Responders shall maintain a high level of awareness of data that could be used as internal indicators of compromise that could result in a shorter detection time (or even prevention of) future incidents.
 
@@ -111,7 +95,6 @@ The involvement of multiple teams and various functional communities (e.g., inte
 
 
 ### Determine Priority
-
 Tickets are classified by incident priority, which primarily determines notification timeline requirements. Ticket Priority be "Low," "Medium," "High," or "Emergency." Priority determination must include consideration of the current and potential impact on the confidentiality, availability, and integrity of organizational operations, data, assets, and individuals.
 
 Emergency: Tickets are Emergency priority when one of the following is suspect or confirmed:
@@ -141,14 +124,12 @@ _Establish any service level agreements or other requirements related to Priorit
 
 
 ### Determine Attack Technique
-
 Attack Techniques define the primary paths or methods used by the adversary to cause the incident to occur. This information is used to provide metrics and identify trends in the prevalence of attack techniques. By understanding the most prevalent attack techniques, tactical and strategic plans can be developed to improve defensive and detective posturing.
 
 Incident Responders shall use the MITRE ATT&CK Framework to determine the appropriate attack techniques tied to the incident and record the information in the ticket.
 
 
 ### Determine Root Cause
-
 Root cause is defined as the high-level oversight, misconfiguration, or process failure that provided the exposure exploited by the adversary. Root cause metrics are used to assisting in preventing similar incidents from occurring in the future. Underlying system weaknesses, vulnerabilities, or security controls that could have prevented or mitigated the impact of the incident shall be identified. More than one weakness category may apply.
 
 Root Causes may include, but are not limited to:
@@ -169,7 +150,6 @@ Root cause(s) shall be determined prior to the recovery and reconstitution of an
 
 
 ### Develop Courses of Action
-
 Identify a base plan including actions necessary to respond to the incident including containment, eradication, and recovery.
 
 The following list of consideration for determining appropriate courses of action includes may be used as a starting point: 
@@ -182,7 +162,6 @@ The following list of consideration for determining appropriate courses of actio
 
 
 ### Computer Forensics
-
 Computer forensics is the application of science to the identification, collection, examination, and analysis of data while preserving the integrity of the information and maintaining a strict chain of custody.
 
 Many forensics collection and analysis tasks are similar to or overlap with other incident analysis activities, which are generally more focused on gaining a technical understanding of the incident. When these information gathering and analysis activities are performed for forensics purposes, the forensic activities focus on processing and preserving the authenticity and integrity of the data in a manner that ensures the evidence is admissible in a court of law.
@@ -198,7 +177,6 @@ Proper chain of custody, media write-protection, and immediate hash generation o
 
 
 ### Malware Analysis
-
 Malware analysis, when necessary, shall be conducted on system isolated from all business systems and networks.
 
 Incident Responders may study the behavior of malware by analyzing it actively by means of executing the malware and monitoring it during execution. Such active approaches are best performed on malware test systems instead of production hosts to minimize possible damage caused by allowing the malware to execute. Ideal active approaches involve an Incident Responder acquiring a malware sample from an infected host and placing the malware on an isolated test system. Test systems are to be maintained virtually to allow instantaneous restoration to a known-good state through snapshots or similar features.
@@ -212,7 +190,6 @@ Malware test systems are helpful not only for analyzing current malware threats 
 
 
 # Containment
-
 Incident Responders shall attempt to contain systems, software, and adversaries in an effort to limit the overall scope of incidents. Courses of action related to containment focus on the immediate protection of information systems and data from further damage while analysis continues and/or deepens. A more complete response may be taken after thorough analysis is performed. 
 
 The primary objectives of containment include:
@@ -233,12 +210,10 @@ When sufficient information to contain and eradicate the incident is lacking, co
 
 
 ## User Participation
-
 When possible, automated and/or remote containment actions must be performed by trained, experience staff. However, when a system administrator or pre-established contact for incident response assistance is unavailable, options are limited. Leveraging users for containment actions is a last resort due to varying levels of user expertise. In most cases, the level of user participation is expected to be limited to disconnecting from the network immediately and either notifying or delivering their system to the nearest administrator or shipping the hardware to the Incident Response Team.
 
 
 ## Containment Courses of Action
-
 Various courses of action can be taken to contain malware and malicious activity to allow further analysis and eradication. Often signature-based or threat intelligence-based security tools are updated with capabilities that automate containment/prevention effectively. This may allow careful rolling back of containment steps. Note that if the scope of compromise includes the OS, it is possible for malware or adversaries to remain hidden from any security tools or controls.
 
 Containment courses of action include:
@@ -266,11 +241,11 @@ NIST SP 800-83 may be referred to for COAs and Response Actions (RAs) for variou
 
 
 ### Disablement and/or Shutdown of Services/Processes
-
 Some incidents necessitate more drastic and potentially disruptive measures for containment. These incidents make extensive use of a particular service. Containing such an incident quickly and effectively might be accomplished through a loss of services, such as shutting down a service used by malware, blocking a certain service at the network perimeter, or disabling portions of a service (e.g., large mailing lists). Also, a service might provide a channel for infection or for transferring data from infected hosts. This action is typically performed at the application level (e.g. disabling a service on servers) or at the network level (e.g. configuring firewalls to block IP addresses or ports associated with a service). System administrators must be consulted to gain understanding of dependencies between major services when making containment decisions.
 
 
 ### Disabling Connectivity
+Ensure management approves of connectivity before execution, except in the most dire and obvious situations.
 
 Containing incidents by placing temporary restrictions on network connectivity can be very effective. An alternative to blocking network access for particular IP addresses is to disconnect the infected hosts from the network, which could be accomplished by reconfiguring network devices to deny network access, physically disconnecting network cables from infected hosts, or using host-based firewalls to greatly restrict network communication. Such activities could eliminate network or service access to groups of non-compromised hosts. Implementing a widespread loss of connectivity to achieve containment is most likely to be acceptable in cases where malware activity is already causing severe network disruptions or infected hosts are performing attacks. Because a major loss of connectivity is likely to affect organizational missions, connectivity must be restored as soon as possible.
 
@@ -278,7 +253,6 @@ When possible, avoid shutting down systems prior to acquiring and preserving vol
 
 
 # Eradication
-
 The goal of eradication is to permanently remove the infection. During eradication, it is important to identify all hosts within the scope of compromise to ensure complete remediation. Different situations necessitate various combinations of eradication techniques.
 
 Eradication options include:
@@ -300,7 +274,6 @@ Rebuilding is the best eradication option when the extent of a system's compromi
 
 
 # Recovery
-
 The main goals of recovery from incidents are restoring operations and data, removing temporary containment measures, and preventing reinfection and similar incidents. Once a resource is successfully attacked, it is often targeted again, or other resources are targeted in a similar manner.
 
 Recovery may include but is not limited to the following:
