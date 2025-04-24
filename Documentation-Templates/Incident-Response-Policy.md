@@ -7,43 +7,43 @@ The following sample Incident Response Policy is meant to be tailored to your or
 - [Objectives](#objectives)
 - [Regulatory and Compliance Mandates in Scope](#regulatory-and-compliance-mandates-in-scope)
 - [Preparation](#preparation)
-  - [Training, Simulations, and Tabletops](#training-simulations-and-tabletops)
-  - [Tools and Access](#tools-and-access)
-  - [Standard Operating Prorcedures / Playbooks /Use Cases](#standard-operating-prorcedures--playbooks-use-cases)
+  - [Standard Operating Prorcedures / Playbooks / Use Cases](#standard-operating-prorcedures--playbooks--use-cases)
   - [Internal Points of Contact](#internal-points-of-contact)
   - [External Points of Contact](#external-points-of-contact)
   - [Alternate Communication Plan](#alternate-communication-plan)
   - [Documentation, Training, Awareness](#documentation-training-awareness)
   - [Log Generation and Collection](#log-generation-and-collection)
+  - [Tools and Access](#tools-and-access)
+    - [Maintain Backups of Cybersecurity Tools](#maintain-backups-of-cybersecurity-tools)
   - [Internally-Gathered Indicators of Compromise](#internally-gathered-indicators-of-compromise)
   - [Detection Deployment Prioritization](#detection-deployment-prioritization)
     - [Local Log Retention Requirements](#local-log-retention-requirements)
-  - [OODA Loop](#ooda-loop)
   - [Ticketing System](#ticketing-system)
   - [Coordination \& Correspondence](#coordination--correspondence)
-    - [Safeguarding Information](#safeguarding-information)
-    - [Sanitization of Data](#sanitization-of-data)
-    - [Escalation](#escalation)
-    - [Incident-Related Correspondence](#incident-related-correspondence)
-    - [External Correspondence](#external-correspondence)
+- [Identification](#identification)
+  - [OODA Loop](#ooda-loop)
+  - [Investigation](#investigation)
     - [Activation of IR Plan](#activation-of-ir-plan)
+    - [Incident-Related Correspondence](#incident-related-correspondence)
+    - [Escalation](#escalation)
+    - [Safeguarding Information](#safeguarding-information)
+    - [External Correspondence](#external-correspondence)
     - [Law Enforcement Notification and Interaction](#law-enforcement-notification-and-interaction)
     - [Chain of Custody](#chain-of-custody)
     - [Turnover Log \& Call](#turnover-log--call)
-  - [Backups](#backups)
   - [Risk Acceptance](#risk-acceptance)
   - [Closing a Ticket](#closing-a-ticket)
-  - [Lessons Learned](#lessons-learned)
-    - [After Action Review and Reporting](#after-action-review-and-reporting)
-  - [AAR Fundamentals](#aar-fundamentals)
-  - [AAR Agenda](#aar-agenda)
-    - [Introduction](#introduction)
-    - [Review what was supposed to happen](#review-what-was-supposed-to-happen)
-    - [Review what happened for a particular event (all levels)](#review-what-happened-for-a-particular-event-all-levels)
-    - [Review what went right and wrong (all levels)](#review-what-went-right-and-wrong-all-levels)
+- [Lessons Learned](#lessons-learned)
+  - [Signature Development](#signature-development)
+  - [After Action Review and Reporting](#after-action-review-and-reporting)
+    - [AAR Fundamentals](#aar-fundamentals)
+    - [AAR Agenda](#aar-agenda)
+      - [Introduction](#introduction)
+      - [Review What was Supposed to Happen](#review-what-was-supposed-to-happen)
+      - [Review What Did Happened](#review-what-did-happened)
+      - [Review What Went Right and Wrong](#review-what-went-right-and-wrong)
     - [Determine how the event or task should be done next time](#determine-how-the-event-or-task-should-be-done-next-time)
   - [AAR Resources](#aar-resources)
-    - [Signature Development](#signature-development)
 - [Glossary](#glossary)
 - [Resources](#resources)
 
@@ -133,44 +133,8 @@ The following compliance mandates are required by law or internal policy:
 
 # Preparation
 
-
-## Training, Simulations, and Tabletops
-
-
-## Tools and Access
-The Incident Response Team must include personnel with console access to the following tools.
-
-- Active Directory
-- File Servers
-- Print Servers
-- Cloud
-- Virtualization
-- DNS
-- DHCP
-- MFA
-- HIPS
-- IPS/IDS
-- EDR
-- AV
-- Firewall
-- NetFlow
-- Web Proxy
-- Domain Controllers
-- EDR
-- Email
-- VPN
-- File Sharing
-- Switches
-- Routers
-- Door Access Systems
-- Privileged Account Management System
-- Service Management
-- Third-party services
-- Vulnerability Scanners
-
-
-## Standard Operating Prorcedures / Playbooks /Use Cases
-A library of Standard Operating Prorcedures / Playbooks /Use Cases documents shall be created and maintained to train new members, ensure uniformity, and to prevent unnecessary delays.
+## Standard Operating Prorcedures / Playbooks / Use Cases
+A library of Standard Operating Prorcedures / Playbooks / Use Cases documents shall be created and maintained to train new members, ensure uniformity, and to prevent unnecessary delays.
 
 This library shall be kept up-to-date by all Incident Responders with detailed procedures for products and Incident Response-specific tasks. Incident Responders are to assist in keeping articles up to date and reflective of current procedures by updating as soon as possible when steps change for any reason (i.e. software updates, governance updates, improvements in knowledge or experience gained).
 
@@ -219,7 +183,6 @@ The Incident Response Team shall establish an alternate communications plan for 
 
 
 ## Documentation, Training, Awareness
-
 Incident Responders shall be familiar with the following documents and have them readily accessible:
 - IP Address Management
 - Network Architecture Diagrams
@@ -264,7 +227,6 @@ Incident Responders must have a strong command of the tools at their disposal. T
 
 
 ## Log Generation and Collection
-
 Logs shall be centrally gathered from systems that provide the ability to identify and investigate security incidents as well as troubleshooting performance, stability, and other operational benefits. Centralized logging minimizes the risk of tampering, clearing, and general integrity concerns of logs. An NTP server shall be deployed with as many systems as possible configured to utilize the service. Systems with synchronized time greatly simplify all types of investigations and bolsters confidence and reliability in all logs. Where possible, systems that generate logs shall store log dates in the GMT Time Zone.
 
 The following logs shall be collected and stored centrally in the SIEM when the applicable hardware/application exists and necessary hardware/software support exists to do so.
@@ -272,47 +234,71 @@ The following logs shall be collected and stored centrally in the SIEM when the 
 [Your list]
 
 
-## Internally-Gathered Indicators of Compromise
+## Tools and Access
+The Incident Response Team must include personnel with console access to the following tools.
 
+- Active Directory
+- File Servers
+- Print Servers
+- Cloud
+- Virtualization
+- DNS
+- DHCP
+- MFA
+- HIPS
+- IPS/IDS
+- EDR
+- AV
+- Firewall
+- NetFlow
+- Web Proxy
+- Domain Controllers
+- EDR
+- Email
+- VPN
+- File Sharing
+- Switches
+- Routers
+- Door Access Systems
+- Privileged Account Management System
+- Service Management
+- Third-party services
+- Vulnerability Scanners
+
+
+### Maintain Backups of Cybersecurity Tools
+Critical systems must be backed up and stored in a way that prevents their being accessible from the network. Often connected backups are targeted for encryption or deletion.
+
+- Test recovery from backups at least annually for critical data, servers, and domains.
+
+
+## Internally-Gathered Indicators of Compromise
 True-positive incidents may provide valuable indicators of compromise (IOC) including file names, URLs, IP addresses, domains, etc. that could reveal compromise of other systems being monitored. These internal IOCs and their respective details shall be tracked in such a way that allows Incident Responders to quickly find, study, and respond to ongoing investigations. Details shall include the context in which the IOC was first observed, when it will expire, and where it is currently being leveraged for automated detection.
 
-Internal IOCs shall be reviewed annually at expiration time and each time it is referenced during an investigation. If the IOC is determined to still be of value, its expiration shall be set for one year from that review date.
+Internal IOCs shall be reviewed annually and each time it is referenced during an investigation. If the IOC is determined to still be of value, its expiration shall be extended based on the review date.
 
 
 ## Detection Deployment Prioritization
 The priority in which detections (signatures, alerts, etc.) will be deployed is outline in the below table. Alerts related to exploits characteristics listed higher in the table have a higher priority for detection development. An authoritive stance on prioritization ensures the team deploying detections aligns properly with the risk appetite and provides clarity on the workload and detection team bench strength.
 
-| Exploit Characteristics      | Affecting Assets with these Characteristics |
-| ---------------------------- | ------------------------------------------- |
-| 9+ CVSS Score, Known Exploit | Any                                         |
-| 8+ CVSS Score, Known Exploit | High Value Assets (HVA), Public Facing      |
-| 8+ CVSS Score, Known Exploit | High Value Assets (HVA)                     |
-| 8+ CVSS Score, Known Exploit | Servers or Network Appliances               |
-| 8+ CVSS Score                | Servers or Network Appliances               |
-| 8+ CVSS Score, Known Exploit | Non-Servers                                 |
-| 8+ CVSS Score                | Non-Servers                                 |
-| 7- CVSS Score, Known Exploit | Any                                         |
-| 7- CVSS Score                | Any                                         |
-
+| Exploit Characteristics                   | Affecting Assets with these Characteristics |
+| ----------------------------------------- | ------------------------------------------- |
+| 9+ CVSS Score, Publicly Exploited         | Any                                         |
+| 8+ CVSS Score, Publicly Exploited         | High Value Assets (HVA), Public Facing      |
+| 8+ CVSS Score, Publicly Exploited         | High Value Assets (HVA)                     |
+| 8+ CVSS Score, Publicly Exploited         | Servers or Network Appliances               |
+| 8+ CVSS Score                             | Servers or Network Appliances               |
+| 8+ CVSS Score, Publicly Exploited         | Non-Servers                                 |
+| 8+ CVSS Score                             | Non-Servers                                 |
+| 7- CVSS Score, Publicly Exploited Exploit | Any                                         |
+| 7- CVSS Score                             | Any                                         |
 
 
 ### Local Log Retention Requirements
-- Logging must be configured to allow X days/megabytes of local log retention and be configured to "roll over" the earliest logs in the event of a full log.
-
-## OODA Loop
-
-Incident Response Team members are encouraged to utilize the OODA Loop to maintain calm control under sometimes high-stress situations when responding to incidents:
-
-1. Observe
-2. Orient
-3. Decide
-4. Act
-
-Following a simple model presents allows the opportunity to calmly assess, carefully process available choices, and act on the most appropriate one for the situation at hand.
+- Logging must be configured to allow [X] days/megabytes of local log retention and be configured to "roll over" the earliest logs in the event of a full log.
 
 
 ## Ticketing System
-
 A full-featured ticketing system shall be used to track all Incidents. All tickets and related data shall be stored for a period of no less than 1 (one) year. Tickets shall have relevant emails and correspondence attached in such a way that they are archived alongside other incident details.
 
 Documents too large or otherwise not easily attached to the Ticket shall be stored in a secondary file system, encrypted and limited in access to the Incident Response Team and other parties with a need-to-know.
@@ -321,14 +307,7 @@ It is the shared responsibility of all Incident Responders to ensure all tickets
 
 
 ## Coordination & Correspondence
-
 Incident Responders will often need to communicate with outside parties regarding an incident, and shall do so whenever appropriate, such as contacting law enforcement, ISPs, vendors, other incident response teams, and seeking external expertise. The Incident Response Team shall maintain contacts with the public affairs office, legal department, and various persons in management.
-
-All email correspondence related to incidents shall include a carbon-copy (CC) to the Incident Response Team email inbox. Emails containing sensitive information must have all recipients verified for authorized access and must be encrypted. Using an external, encrypting file sharing service is acceptable.
-
-All communication, files, and information related to an incident shall be disseminated only on a need-to-know basis. Incident details shall not be discussed outside of the Incident Response Team, management, and those with a clear need-to-know without previous consent from management.
-
-Incident Responders may need to speak to a software vendor about suspicious activity. This contact could include questions regarding the significance of certain log entries or known false positives for certain intrusion detection signatures, where minimal information regarding the incident may need to be revealed. Software vendors may also provide information on known threats (e.g., new attacks) to help organizations understand the current threat environment. Sanitization shall be performed on data prior to being sent to software vendors when possible and reasonable. Scripts may be used to significantly reduce what appears to be a large amount of manual effort.
 
 At least one secondary communication channel shall be established for use in cases where primary means of communication may be compromised. This could be cell phones, secondary email accounts, etc. These communication channels must be established prior to their need to minimize their immediate use in a time of need.
 
@@ -344,7 +323,7 @@ The following actions are likely to arise when investigating or responding to an
 - Acquire and deliver a system image
 - Block or redirect an IP address or domain
 - Remove sensitive/confidential information
-- Activities listed under Containment section
+- Activities related to Containment
 
 Additional points of contact that may be required to investigate or respond to an incident include the following.
 
@@ -366,30 +345,53 @@ Additional points of contact that may be required to investigate or respond to a
 - Local law enforcement
 - Product Vendor and Technical Support
 
-### Safeguarding Information
-
-Incident Responders shall practice due diligence in safeguarding information related to incidents both while stored at rest and in transit. Every effort shall be made to reasonably secure data known to contain sensitive information with modern encryption techniques applied, both in transit (e.g. email encryption and secure web servers) and at rest (e.g. encrypted zip containers and physical media).
 
 
-### Sanitization of Data
-
-After receiving authorization for data release to third parties, a sanitization check shall be performed to ensure the data is appropriate for the audience. Possible concerns include the releasing of protected intellectual property or other data protected by laws and governance. This data can be stripped with custom scripts or tools design for such sanitization. Only after sensitive data is removed or obfuscated shall the data be shared.
+# Identification
 
 
-### Escalation
+## OODA Loop
+Incident Response Team members are encouraged to utilize the OODA Loop to maintain calm control under sometimes high-stress situations when responding to incidents:
 
-Incident Responders requiring assistance shall escalate the ticket to the next higher position of seniority. The next level of escalation beyond the Incident Response Team is the manager and remaining chain of command, who may then request external, third-party assistance if needed.
+1. Observe
+2. Orient
+3. Decide
+4. Act
+
+Following a simple model presents allows the opportunity to calmly assess, carefully process available choices, and act on the most appropriate one for the situation at hand.
+
+
+## Investigation
+
+
+### Activation of IR Plan
+The following individuals and/or Teams shall be notified of IR Plan Activation
+- [list]
+
+All email correspondence related to incidents shall include a carbon-copy (CC) to the Incident Response Team email inbox. Emails containing sensitive information must have all recipients verified for authorized access and must be encrypted. Using an external, encrypting file sharing service is acceptable.
+
+All communication, files, and information related to an incident shall be disseminated only on a need-to-know basis. Incident details shall not be discussed outside of the Incident Response Team, management, and those with a clear need-to-know without previous consent from management.
+
+Incident Responders may need to speak to a software vendor about suspicious activity. This contact could include questions regarding the significance of certain log entries or known false positives for certain intrusion detection signatures, where minimal information regarding the incident may need to be revealed. Software vendors may also provide information on known threats (e.g. new attacks) to help organizations understand the current threat environment. Sanitization shall be performed on data prior to being sent to software vendors when possible and reasonable. Scripts may be used to significantly reduce what appears to be a large amount of manual effort.
 
 
 ### Incident-Related Correspondence
-
 All external correspondence shall be sent with courtesy copies (CC) to the ticketing system inbox that allows for automated association to the ticket in the subject line. All correspondence with Emergency priority shall be sent with CC to sender's manager and the recipients manager, when possible.
 
 Recipients are expected to acknowledge the receipt of notification emails following the same timeline above. If an acknowledgement is not received, the Incident Responder shall begin the notification process again seeking acknowledgement through another means of communication, like email or phone. Further lack of response shall result in escalating the ticket to a higher authority. The notification process shall be repeated until acknowledgement is received or if the ticket runs its course to complete recovery.
 
 
-### External Correspondence
+### Escalation
+Incident Responders requiring assistance shall escalate the ticket to the next higher position of seniority. The next level of escalation beyond the Incident Response Team is the manager and remaining chain of command, who may then request external, third-party assistance if needed.
 
+
+### Safeguarding Information
+Incident Responders shall practice due diligence in safeguarding information related to incidents both while stored at rest and in transit. Every effort shall be made to reasonably secure data known to contain sensitive information with modern encryption techniques applied, both in transit (e.g. email encryption and secure web servers) and at rest (e.g. encrypted zip containers and physical media).
+
+After receiving authorization for data release to third parties, a sanitization check shall be performed to ensure the data is appropriate for the audience. Possible concerns include the releasing of protected intellectual property or other data protected by laws and governance. This data can be stripped with custom scripts or tools design for such sanitization. Only after sensitive data is removed or obfuscated shall the data be shared.
+
+
+### External Correspondence
 Any incident that may potentially affect another organization shall be reported to that organization as soon as possible along with a summary sufficiently detailed to allow them to begin an investigation.
 
 Tickets being escalated or that are expected to be escalated to Law Enforcement or to parties outside the organization shall also include notification of management beforehand and during email, phone, or other correspondence.
@@ -404,12 +406,7 @@ Example external parties include:
 If attacks are originating from an external organization's IP address space, coordination with the designated security contacts for the organization shall be conducted to alert them of the activity, ask for a response, and any necessary followup collaboration.
 
 
-### Activation of IR Plan
-The following individuals and/or Teams shall be notified of IR Plan Activation
-- (list)
-
 ### Law Enforcement Notification and Interaction
-
 Law Enforcement shall be notified of all activity matching the following characteristics:
 - Threatens public safety
 - Threatens national security
@@ -417,16 +414,15 @@ Law Enforcement shall be notified of all activity matching the following charact
 - Involves child pornography
 - Otherwise legally questionable
 
-Report of such incidents shall occur according to priority timelines previously outlined. Any reported ticket shall include all related evidence and investigation shall be paused immediately. If the Incident Responder or takes action on behalf of Law Enforcement, they are considered an Agent of Law Enforcement, possibly leading to a court summons. Such authorization must be provided by a manager or a higher position of authority. If authorization is provided, the Incident Responder must ensure that all evidence handling, chain of custody forms, and notes are thoroughly recorded. Management and Law Enforcement must remain fully informed and involved regarding all decisions revolving around Law Enforcement requesting action of an Incident Responder.
+Report of such incidents shall occur according to priority timelines previously outlined. Any reported ticket shall include all related evidence and investigation shall be paused immediately. If the Incident Responder takes action on behalf of Law Enforcement, they are considered an Agent of Law Enforcement, possibly leading to a court summons. Such authorization must be provided by a manager or a higher position of authority. If authorization is provided, the Incident Responder must ensure that all evidence handling, chain of custody forms, and notes are thoroughly recorded. Management and Law Enforcement must remain fully informed and involved regarding all decisions revolving around Law Enforcement requesting action of an Incident Responder.
 
-For incidents to be investigated for computer crime, a qualifying Incident Responder shall have a firm understanding of proper forensics and evidence handling policies and procedures. Otherwise, the Incident Handler must stand by and seek the assistance of a qualified Incident Responder to perform proper evidence collection. Data and information gathered for forensics analysis or evidence must be obtained and handled in accordance with various applicable laws, possibly spanning many jurisdictions, in order to ensure the authenticity and reliability of the information ensuring it remains admissible in court.
+For incidents to be investigated for computer crime, a qualifying Incident Responder shall have a firm understanding of proper forensics and evidence handling policies and procedures. Otherwise, the Incident Responder must stand by and seek the assistance of a qualified Incident Responder to perform proper evidence collection. Data and information gathered for forensics analysis or evidence must be obtained and handled in accordance with various applicable laws, possibly spanning many jurisdictions, in order to ensure the authenticity and reliability of the information ensuring it remains admissible in court.
 
 Pornography alone is not enough to alert Law Enforcement unless it involves a minor or is otherwise legally questionable.
 
 
 ### Chain of Custody
-
-It is important to clearly document how all evidence has been preserved. Evidence shall be accounted for at all times; whenever evidence is transferred from person to person, chain of custody forms shall detail the transfer and include each party’s signature.
+It is important to clearly document how all evidence has been preserved. Evidence shall be accounted for at all times; whenever evidence is transferred from person to person, chain of custody forms shall detail the transfer and include each party's signature.
 
 A proper chain of custody must be maintained for all evidence including, but not limited to, log files, forensic images, hard drives, peripherals, removable media, and other hardware related to the incident. This also applies to backups of evidence created while in abeyance of further instruction, shipment, or onsite pickup by Law Enforcement.
 
@@ -444,10 +440,9 @@ Physical evidence shall be placed in a protected storage container or secure are
 
 
 ### Turnover Log & Call
+In order to facilitate information exchange, a brief Turnover Call shall be conducted between each shift during any "shift change." Turnover calls will signify the relinquishing of monitoring duties and investigation continuation from one shift to the next including promptly responding to phone calls, emails, and other related duties.
 
-In order to facilitate information exchange, a brief Turnover Call shall be conducted between each of the three shifts. Turnover calls will signify the relinquishing of monitoring duties and investigation continuation from one shift to the next including promptly responding to phone calls, emails, and other related duties.
-
-A turnover page shall be maintained on Confluence/SharePoint/Collaboration Tool to track any ongoing tasks that must continue to the next shift including, but not limited to:
+A turnover tracker shall be maintained on a team-accessible collaboration tool to document any ongoing tasks that must continue to the next shift including, but not limited to:
 - Follow-up calls.
 - Repeating notifications where acknowledgement was not received.
 - Continuing to work open tickets.
@@ -459,47 +454,41 @@ Other agenda items may include:
 - Zero-day announcements affecting monitored users, systems, software, etc.
 
 
-## Backups
-Critical systems must be backed up and stored in a way that prevents their being accessible from the network. Often connected backups are targeted for encryption or deletion.
-
-- Test recovery from backups at least annually for critical data, servers, and domains.
-
-
-
-
 ## Risk Acceptance
-
 Given a breakdown of risk and any deployed mitigations, management may formally accept residual risk. Risk acceptance shall be discussed on a need-to-know basis, with paperwork and correspondence treated as confidential information and stored carefully to avoid unnecessary exposure of accepted risks.
 
 
 ## Closing a Ticket	
-
-Tickets marked as closed must be reviewed by a Senior Incident Responder or a manager. Review consists of the following checks:
+Tickets marked as closed must be reviewed by a Senior Incident Responder or a Manager. Review consists of the following checks:
 - verifying fields are filled properly
 - summary and correspondence are professional and reflect well upon the organization
 - work logs are present and appear complete and accurate
 
+The reviewer highlighting issues are responsible for ensuring the issues are addressed and the original Incident Responder(s) understand the change sufficiently to avoid the original issue on future tickets.
 
-## Lessons Learned
 
+# Lessons Learned
 During the course of many incidents, it is expected that lessons are learned. 
 
 The primary benefits of being mindful of, discussing, and integrating lessons learned include:
 - Identifying and addressing infrastructure problems or improvements.
 - Identifying and addressing needed updates to existing organizational policies and procedures, or the creation thereof.
 - Identifying and addressing technical skill gaps and operational training needs.
-- Identifying and addressing issues in the any phase of the incident response process outlined in this document.
-- Clarifying unclear or undefined roles, responsibilities, interfaces, and authority as needed.
+- Identifying and addressing issues in any phase of the incident response process outlined in any official documentation.
+- Clarifying or adding roles, responsibilities, interfaces, and authority as needed.
 - Improving tools required to perform protection, detection, analysis, or response actions.
-- Developing training and knowledge base material as needed.
+- Developing training material as needed.
 
-After a major incident has been handled, an "After-Action Review" meeting is to be conducted, wherein lessons-learned shall be presented, reviewed, and assigned to members of the team for integration. After-Action Review meetings shall each have a moderator to ensure topics are covered in a timely and efficient manner, as well as an individual assigned to document the discussion. These meetings must result in a specific list of actionables with primary points of contact who will be responsible for enacting changes required during the course of the meeting.
+After a major incident has been handled, an "After-Action Review" meeting shall be conducted, wherein lessons-learned will be presented, reviewed, and assigned to members of the team for integration. After-Action Review meetings shall each have a moderator to ensure topics are covered in a timely and efficient manner, as well as an individual assigned to document the discussion. These meetings must conducted with the aim to construct a specific list of actionables with primary points of contact who will be responsible for enacting changes required during the course of the meeting.
 
-In order to benefit the entire Incident Response Team and the organization, these lessons learned must lead to actual change in documentation, instruction, practice, architecture, etc. Smaller scale or scoped incidents may also result in lessons learned that are just as impactful as those observed in larger incidents, and shall be likewise incorporated, though may not necessitate holding formal After-Action Review meetings.
+In order to benefit the entire Incident Response Team and the organization, these lessons learned should lead to actual change in documentation, instruction, practice, architecture, etc. Smaller scale or scoped incidents may also result in lessons learned that are just as impactful as those observed in larger incidents, and shall be likewise incorporated, though they may not necessitate holding formal After-Action Review meetings.
 
 
-### After Action Review and Reporting
+## Signature Development
+Some incidents are expected to give way to potential development of new signatures, rules, reports, etc. to assist in the automated detection of future activity indicative of compromise. Such efforts and content shall be tracked and grouped by the intentions and expected response into use cases. Use cases shall fully document content creation and analysis steps.
 
+
+## After Action Review and Reporting
 After-Action Reports (AARs) are created during and after After-Action Review meetings to identify successes, failures, and lessons learned. These reports also serve to track the assignment and execution of any changes that may be warranted as a result of lessons learned.
 
 AARs shall include:
@@ -512,7 +501,8 @@ AARs shall include:
 
 Action items shall be tracked until completion. Completed AARs shall be stored in the ticket as an attachment.
 
-## AAR Fundamentals
+
+### AAR Fundamentals
 - Conducted during or immediately after each event
 - Focused on intent, objectives and standards
 - Focus is on team member, manager, and company performance
@@ -522,62 +512,62 @@ Action items shall be tracked until completion. Completed AARs shall be stored i
 - Determines strengths and weaknesses
 - Links performance to subsequent training
 
-## AAR Agenda
 
-### Introduction
+### AAR Agenda
 
-- **Everyone must participate** if  they  have an insight,  observation,  or  question which will help the team identify and correct deficiencies or sustain strengths. The AAR is a dynamic, candid, professional discussion of training that focuses on team performance measured against the task standards.
-- **The AAR  is not a critique.** No one, regardless of rank,  position, or strength of personality, has all of the information or answers. AARs maximize training benefits by allowing members to learn from each other.
-- **The AAR does not evaluate success or failure.** There are always weaknesses to improve and strengths to  sustain.
+
+#### Introduction
+- **Everyone must participate** if they have an insight, observation, or question which will help the team identify and correct deficiencies or sustain strengths. The AAR is a dynamic, candid, professional discussion of training that focuses on team performance measured against the task standards.
+- **The AAR  is not a critique.** No one, regardless of rank, position, or strength of personality, has all of the information or answers. AARs maximize training benefits by allowing members to learn from each other.
+- **The AAR does not evaluate success or failure.** There are always weaknesses to improve and strengths to sustain.
 - Reinforce the fact that it is permissible to disagree respectfully.
 - Focus on learning and encourage people to give honest opinions.
 - Use open-ended and leading questions to guide the discussion of member, manager, and team performance.
 - Enter the discussion only when necessary.
 
-### Review what was supposed to happen
-The facilitator, along with the participants, reviews what was supposed to happen. This review is based on the intent, objectives and standards. This information is usually found in the Recommended Actions in the Use Case/Use Case Appendix, Blue Team Case Workflow, and Client Case Workflow.
 
-  - State the objectives and standards
-  - Review OPFOR (if used) mission and purpose
-  - Review company mission, intent and concept of operations
+#### Review What was Supposed to Happen
+The facilitator, along with the participants, reviews what was supposed to happen. This review is based on the intent, objectives and standards. This information is usually found in the IR Policy, Plan and related documentation.
 
-### Review what happened for a particular event (all levels)
-The facilitator and participants determine what actually occurred during the incident or project. The leader attempts to gather as many views or perspectives (OPFOR, manager, analyst, engineer, etc) as feasible and possible. This helps to establish a common understanding of the operation/event. Leaders then understand the complexity of an event and work to solve complex, ill-defined problems quickly.
+- State the objectives and standards
+- Review Opposition Forces (OPFOR) if used, including their mission and purpose
+- Review company mission, intent and concept of operations
 
-  - Review actions before first detection
-  - Review report of first detection or contact
-  - Review reaction to  detection or contact
-  - Review events during engagement
 
-### Review what went right and wrong (all levels)
-Participants then establish the strong and weak points of their performance based on the commander’s intent and performance measures. The facilitator guides discussions to ensure maximum input that is operationally sound and relevant to the incident.
+#### Review What Did Happened
+The facilitator and participants determine what actually occurred during the incident. The leader attempts to gather as many views or perspectives (OPFOR, manager, analyst, engineer, etc) as feasible and possible. This helps to establish a common understanding of the operation/event. Leaders then understand the complexity of an event and work to solve complex, ill-defined problems quickly.
 
-  - Review extent to which objectives were met
-  - Review extent that the intent was met
-  - Have participants summarize the major learning points
-  - Identify training deficiencies
-  - Identify team's ability to perform task and meet intent
-  - Identify safety risks and measures employed to mitigate the risks
+- Review actions before first detection
+- Review report of first detection or contact
+- Review reaction to  detection or contact
+- Review events during engagement
+
+
+#### Review What Went Right and Wrong
+Participants are to establish the strong and weak points of their performance based on the original intent and performance measures. The facilitator guides discussions to ensure maximum input that is operationally sound and relevant to the incident.
+
+- Review extent to which objectives were met
+- Review extent that the intent was met
+- Have participants summarize the major learning points
+- Identify training deficiencies
+- Identify team's ability to perform task and meet intent
+- Identify safety risks and measures employed to mitigate the risks
+
 
 ### Determine how the event or task should be done next time
-The facilitator guides the unit in self-determining how the task(s) might be performed more effectively in the future. The unit identifies problems and provides solutions as well as identifies who is responsible for making the recommended changes.Additionally, the facilitator guides the discussion to determine if there is a more effective way to train the tasks to achieve the commander’s intent.
+The facilitator guides the unit in self-determining how the task(s) might be performed more effectively in the future. The unit identifies problems and provides solutions as well as identifies who is responsible for making the recommended changes. Additionally, the facilitator guides the discussion to determine if there is a more effective way to train the tasks to achieve the commander's intent.
 
-  - Identify if retraining should occur
-  - Identify the conditions to modify
-  - Identify which tasks to retrain to meet the intent
-  - Identify a more effective way to meet the intent
+- Identify if retraining should occur
+- Identify the condition(s) to modify
+- Identify which task(s) to retrain to meet the intent
+- Identify a more effective way to meet the intent
+
 
 ## AAR Resources
 - https://www.nwcg.gov/sites/default/files/wfldp/docs/army-leaders-guide-to-aar.pdf
 
 
-### Signature Development
-
-Some incidents are expected to give way to potential development of new signatures, rules, reports, etc. to assist in the automated detection of future activity indicative of compromise. Such efforts and content shall be tracked and grouped by the intentions and expected response into use cases. Use cases shall fully document analysis steps, content creation 
-
-
 # Glossary
-
 - Authenticity: The property of being genuine and being able to be verified and trusted; confidence in the validity of a transmission, a message, or message originator.
 
 - Availability: The property of being accessible and useable upon demand by an authorized entity.
