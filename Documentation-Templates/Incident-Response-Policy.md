@@ -23,10 +23,12 @@ The following sample Incident Response Policy is meant to be tailored to your or
 - [Identification](#identification)
   - [OODA Loop](#ooda-loop)
   - [Initial Assessment](#initial-assessment)
-  - [Creating a Ticket for an Incident](#creating-a-ticket-for-an-incident)
-  - [Investigation](#investigation)
-    - [Activation of IR Plan](#activation-of-ir-plan)
+    - [Creating a Ticket for an Incident](#creating-a-ticket-for-an-incident)
+    - [Notification Activation of IR Plan](#notification-activation-of-ir-plan)
     - [Incident-Related Correspondence](#incident-related-correspondence)
+  - [Investigation](#investigation)
+    - [Computer Forensics](#computer-forensics)
+    - [Malware Analysis](#malware-analysis)
     - [Escalation](#escalation)
     - [Safeguarding Information](#safeguarding-information)
     - [External Correspondence](#external-correspondence)
@@ -63,11 +65,8 @@ This policy applies to all employees, customers, clients, visitors, and third-pa
 
 # References
 - NIST SP 800-61, Revision 2, Computer Security Incident Handling Guide
-  - https://doi.org/10.6028/NIST.SP.800-61r2
 - NIST SP 800-83 rev. 1, Guide to Malware Incident Prevention and Handling for Desktops and Laptops
-  - https://doi.org/10.6028/NIST.SP.800-83r1
 - NIST SP 800-86 rev. 2, Guide to Integrating Forensic Techniques into Incident Response
-  - https://doi.org/10.6028/NIST.SP.800-86
 - CJCSM 6510.01B, Cyber Incident Handling Program
   - https://www.jcs.mil/Portals/36/Documents/Library/Manuals/m651001.pdf
 - European Union General Data Protection Regulation (EU GDPR)
@@ -359,6 +358,24 @@ Incident Responders shall monitor available dashboards, signatures, and logs for
 However, centralized log databases and Security Information and Event Management (SIEM) solutions are expected to be the primary points of monitoring and incident identification. Within the SIEM, correlation rules and dashboards shall be maintained that both display events of particular concern and present recent events for short-term correlation and analysis. Queries tuned to the business operating environment shall be maintained and shared among the team to speed up identification.
 
 
+An event is any observable occurrence in a system or network. Events include a user connecting to a file share, a server receiving a request for a web page, a user sending email, and a firewall blocking a connection attempt. Suspicious activity includes events with a potentially negative consequence, such as system crashes, packet floods, unauthorized/questionable use of system privileges, unauthorized/questionable access to sensitive data, and destruction of data. An incident is a violation or imminent threat ...
+- of compliance requirements
+- of acceptable use policies
+- of standard security practices
+- to confidentiality of business-critical data
+- to accessibility of business-critical services
+- to integrity of business-critical data
+
+Incidents can originate from several other sources, including:
+- Users or individuals may report suspicious activity via email, telephone, or a support ticket.
+- Reports from other organizations such as another service provider, governments agencies, law enforcement, partners, and competitors.
+
+Identification can occur from multiple places in the environment, including:
+- Network-level events including firewalls, VPN, proxy logs, network-level intrusion detection and prevention systems, network access control, routers, switches, and other appliances.
+- Workstation-level events including operating system events, antivirus, host-based intrusion prevention systems, host-based firewalls, rogue detection, application whitelisting, etc.
+- Server-level events including Active Directory, DNS, DHCP, web, database, and other application servers.
+
+
 ## OODA Loop
 Incident Response Team members are encouraged to utilize the OODA Loop to maintain calm control under sometimes high-stress situations when responding to incidents:
 
@@ -369,34 +386,29 @@ Incident Response Team members are encouraged to utilize the OODA Loop to mainta
 
 Following a simple model presents allows the opportunity to calmly assess, carefully process available choices, and act on the most appropriate one for the situation at hand.
 
+
 ## Initial Assessment
 An initial assessment shall be conducted to determine if the identified event or activity constitutes an incident. Initial assessment shall be performed quickly, even with limited details and analysis. After initial assessment, if the activity or event is determined to be benign, no incident is required.
 
-An Incident Responder that suspects that an incident has occurred shall immediately start recording all facts regarding the potential incident. At the very least this shall include date/time, source party, destination party(ies), a description of the actions performed, and a copy of correspondence/events. Documenting system events, conversations, and observed changes in files can lead to a more efficient, more systematic, and less error-prone handling of the incident. Every step taken from the time the incident was detected to its final resolution shall be documented and time-stamped. Information of this nature can also be used as evidence in a court of law if legal prosecution is pursued.
-
-When conducting an initial assessment, the following shall be considered:
-- When did the activity first begin? When did it end, or is it on-going?
-- Was the activity observed conducted by an expected, authorized party?
-  - Implies gathering data on involved users.
-- Was the activity observed conducted on an expected, authorized system?
-  - Implies gathering data on involved systems.
-- Did the activity occur during an expected time of day?
-  - Implies gathering and normalizing time stamps.
-- What would the potential business impact be if an incident is confirmed?
-  - Implies understanding business processes and criticality of systems.
-- Were any relevant security alarms triggered?
+Once an incident is confirmed or is highly suspect, an Incident Responder shall immediately open a ticket if one does not exist. A timeline shall be created and backfilled as necessary recording date/time, source party, destination party(ies), a description of the actions performed, and a raw copy of correspondence/events. Information of this nature can also be used as evidence in a court of law if legal prosecution is pursued.
 
 
-## Creating a Ticket for an Incident
-The investigating Incident Responder shall create a ticket and assign it to themselves. Senior Incident Responders may assign and reassign tickets as needed. Incident Responders may request ticket reassignments, which remains at the discretion of the present Senior Incident Responders, management, or the most senior Incident Responder on duty. The Incident Responder assigned to a ticket is responsible for successful execution of all actions required in handling the ticket until otherwise notified or relieved during the next shift change. The assigned Incident Responder may request assistance from team members, but ultimately maintains all responsibility for the progression of the ticket.
 
-High or emergency tickets that require continuous attention shall be passed along during each shift turnover until resolved.
+### Creating a Ticket for an Incident
+A ticket shall be created to track all related activities according to policy. Such tickets shall be kept up-to-date to ensure management and other team members are informed.
+
+Once the incident is determined to be a true positive, the timeline requirement to notify the affected party or parties begins.
+
+ | Priority  |      Description      | Timeline  |
+ | :-------: | :-------------------: | :-------: |
+ | Emergency |   Clear Emergencies   | Immediate |
+ |   High    |  Probable Compromise  |    1h     |
+ |  Medium   |  Suspicious Activity  |    8h     |
+ |    Low    | Questionable Activity |    24h    |
 
 
-## Investigation
 
-
-### Activation of IR Plan
+### Notification Activation of IR Plan
 The following individuals and/or Teams shall be notified of IR Plan Activation
 - [list]
 
@@ -411,6 +423,37 @@ Incident Responders may need to speak to a software vendor about suspicious acti
 All external correspondence shall be sent with courtesy copies (CC) to the ticketing system inbox that allows for automated association to the ticket in the subject line. All correspondence with Emergency priority shall be sent with CC to sender's manager and the recipients manager, when possible.
 
 Recipients are expected to acknowledge the receipt of notification emails following the same timeline above. If an acknowledgement is not received, the Incident Responder shall begin the notification process again seeking acknowledgement through another means of communication, like email or phone. Further lack of response shall result in escalating the ticket to a higher authority. The notification process shall be repeated until acknowledgement is received or if the ticket runs its course to complete recovery.
+
+
+## Investigation
+
+
+### Computer Forensics
+Computer forensics is the application of science to the identification, collection, examination, and analysis of data while preserving the integrity of the information and maintaining a strict chain of custody.
+
+Many forensics collection and analysis tasks are similar to or overlap with other incident analysis activities, which are generally more focused on gaining a technical understanding of the incident. When these information gathering and analysis activities are performed for forensics purposes, the forensic activities focus on processing and preserving the authenticity and integrity of the data in a manner that ensures the evidence is admissible in a court of law.
+
+It is generally desirable to acquire evidence from a system of interest as soon as one suspects that an incident may have occurred - even more so when legal action is required suspected. In such cases, it is essential to isolate the affected system from the network and acquire a snapshot before Incident Responders, system administrators, and others begin investigating, which will alter the state of the machine during the investigation (and therefore make all evidence questionable or inadmissable).
+
+Forensic approaches include:
+- Immediate memory capture and artifact collection with a minimal impact to evidence
+- Booting into a forensic environment
+- Acquiring a copy of associated virtual disks
+
+Proper chain of custody, media write-protection, and immediate hash generation of evidence are among the most critical components of forensics intended for use in court. Further details in forensics processes are beyond the scope of this document.
+
+
+### Malware Analysis
+Malware analysis, when necessary, shall be conducted on system isolated from all business systems and networks.
+
+Incident Responders may study the behavior of malware by analyzing it actively by means of executing the malware and monitoring it during execution. Such active approaches are best performed on malware test systems instead of production hosts to minimize possible damage caused by allowing the malware to execute. Ideal active approaches involve an Incident Responder acquiring a malware sample from an infected host and placing the malware on an isolated test system. Test systems are to be maintained virtually to allow instantaneous restoration to a known-good state through snapshots or similar features.
+
+The test system shall: 
+- include up-to-date tools for identifying and monitoring software
+- maintain an elevated logging level, at debug level when necessary.
+- include immediate log forwarding to reduce potential of losing visibility when malware cleans up its own tracks by means of log and data destruction or altering
+
+Malware test systems are helpful not only for analyzing current malware threats without the risk of inadvertently causing additional damage to the organization, but also for training staff in malware incident handling.
 
 
 ### Escalation
@@ -472,10 +515,10 @@ Physical evidence shall be placed in a protected storage container or secure are
 
 
 ### Turnover Log & Call
-In order to facilitate information exchange, a brief Turnover Call shall be conducted between each shift during any "shift change." Turnover calls will signify the relinquishing of monitoring duties and investigation continuation from one shift to the next including promptly responding to phone calls, emails, and other related duties.
+In order to facilitate information exchange, a brief Turnover Call shall be conducted between each shift during any "shift change." Turnover calls will signify the relinquishing of monitoring duties and investigation continuation from one shift to the next including promptly responding to phone calls, emails, and other related duties.Tickets shall be handed over to the next shift as needed, rather than letting them remain inactive while off duty.
 
 A turnover tracker shall be maintained on a team-accessible collaboration tool to document any ongoing tasks that must continue to the next shift including, but not limited to:
-- Follow-up calls.
+- Follow-up interview calls.
 - Repeating notifications where acknowledgement was not received.
 - Continuing to work open tickets.
 - Attending scheduled and/or impromptu meetings on behalf of the team.
