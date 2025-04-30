@@ -1,25 +1,26 @@
 The following sample Incident Response Policy is meant to be tailored to your organization before use.
 
-- [Authority](#authority)
+- [Purpose and Introduction](#purpose-and-introduction)
 - [Scope](#scope)
+- [Authority](#authority)
+- [Regulatory and Compliance Mandates in Scope](#regulatory-and-compliance-mandates-in-scope)
 - [References](#references)
 - [Roles and Responsibilities](#roles-and-responsibilities)
-- [Objectives](#objectives)
-- [Regulatory and Compliance Mandates in Scope](#regulatory-and-compliance-mandates-in-scope)
 - [Preparation](#preparation)
-  - [Standard Operating Prorcedures / Playbooks / Use Cases](#standard-operating-prorcedures--playbooks--use-cases)
-  - [Internal Points of Contact](#internal-points-of-contact)
-  - [External Points of Contact](#external-points-of-contact)
-  - [Alternate Communication Plan](#alternate-communication-plan)
+  - [Coordination \& Correspondence](#coordination--correspondence)
+    - [Internal Points of Contact](#internal-points-of-contact)
+    - [External Points of Contact](#external-points-of-contact)
+    - [Alternate Communication Plan](#alternate-communication-plan)
   - [Documentation, Training, Awareness](#documentation-training-awareness)
   - [Log Generation and Collection](#log-generation-and-collection)
   - [Tools and Access](#tools-and-access)
-    - [Maintain Backups of Cybersecurity Tools](#maintain-backups-of-cybersecurity-tools)
-  - [Internally-Gathered Indicators of Compromise](#internally-gathered-indicators-of-compromise)
-  - [Detection Deployment Prioritization](#detection-deployment-prioritization)
+  - [SIEM Content](#siem-content)
+    - [Internally-Gathered Indicators of Compromise](#internally-gathered-indicators-of-compromise)
+    - [Detection Deployment Prioritization](#detection-deployment-prioritization)
     - [Local Log Retention Requirements](#local-log-retention-requirements)
+    - [Maintain Backups of Cybersecurity Tools](#maintain-backups-of-cybersecurity-tools)
+  - [Standard Operating Prorcedures / Playbooks / Use Cases](#standard-operating-prorcedures--playbooks--use-cases)
   - [Ticketing System](#ticketing-system)
-  - [Coordination \& Correspondence](#coordination--correspondence)
 - [Identification](#identification)
   - [OODA Loop](#ooda-loop)
   - [Initial Assessment](#initial-assessment)
@@ -54,13 +55,53 @@ The following sample Incident Response Policy is meant to be tailored to your or
 - [Glossary](#glossary)
 - [Resources](#resources)
 
+
+# Purpose and Introduction
+This policy establishes the requirements for detecting, analyzing, and responding to information or technology incidents for the purpose of protecting business operations, minimizing risk and negative impact, and mitigating the results of cybersecurity attacks against critical systems, networks, services, information, and client data.
+
+The primary objectives are to provide policy that ensures the following:
+- Robust detection capabilities are maintained, ensuring all suspicious activity is reported. This includes network, host, and/or wireless Intrusion Detection System alerts and any correlated events from other log sources.
+- Incidents are effectively contained and systems isolated, minimizing any damage or negative impact on client data, systems, networks, and services.
+- The integrity of data is preserved during incident analysis, ensuring accurate time reconstruction and determination of root cause(s), scope of compromise, attacker techniques, and other relevant details.
+- Effective coordination and communication of incident information is maintained through appropriate channels.
+- Effective and comprehensive incident response, leading to confident recovery of any affected systems and the return to a fully functioning and secure operational state for all services and systems involved. 
+- Lessons learned, improving identification, protection, detection, and response strategies and incident handling procedures are identified regularly, preventing and/or reducing reoccurrence.
+- Patterns of activity and trends are understood, characterizing the threat and directing protective and defensive strategies.
+- A robust incident response life cycle is followed wherein major steps may be performed repetitively, in parallel, or sequentially depending on the requirements of the incident.
+
+There are two categories of anomalous behavior on a system or network:
+- Event: Any observable occurrence in a system and/or network. Events sometimes provide indication that an incident is occurring.
+- Cybersecurity Incident: Actions taken through the use of computer networks that result in an actual or potentially adverse effect on an information system and/or the information residing therein.
+
+An Event is escalated into a Cybersecurity Incident when it is confirmed to involve a security violation, compromise, or threat that impacts the confidentiality, integrity, or availability of systems, data, or networks. This typically occurs after initial investigation reveals that the event exceeds normal operational thresholds, requires active response, or poses a significant risk, necessitating formal incident response procedures.
+
+Incident Response personnel must understand the kinds of asset and identity behaviors that are regular in occurrence and recognizable as ordinary when the system is operating under normal operational conditions. Therefore, anomalous behavior is defined as anything that falls outside of that known-normal operational behavior.
+
+
+# Scope
+This policy applies to all employees, customers, clients, visitors, and third-party affiliates working on behalf of [Organization] within all business areas and geographic markets ("Staff"). Related procedural documents, knowledge base articles, etc. must be written and updated so as to remain compliant with this policy.
+
+
 # Authority
 Authority to operate as the primary and sole incident response for the organization has been granted by XXXX.
 
 Signature:
 
-# Scope
-This policy applies to all employees, customers, clients, visitors, and third-party affiliates working on behalf of this organization within all business areas and geographic markets ("Staff").  Compliance with this policy is required by related procedural documents and knowledge base articles. 
+
+# Regulatory and Compliance Mandates in Scope
+The following compliance mandates are required by law or internal policy:
+
+- HIPAA
+- PCI-DSS
+- GLBA
+- FISMA
+- Sarbanes-Oxley Act
+- GDPR
+- Other Foreign laws
+- NIST 800-53
+- ISO/IEC 27002
+
+[include relevant scoping details for each mandate here]
 
 
 # References
@@ -98,56 +139,47 @@ This policy applies to all employees, customers, clients, visitors, and third-pa
   - Provide guidance and assistance to all organizational elements in dealing with computer incidents/events.
   - Maintain awareness of business operations to identify potential impact to organizational systems and anything that may impact incident response work load or incident response operations at large.
 
-- Incident Response Commander
-  - 
+- Incident Commander
+  - A member of the Incident Response team selected when a "critical" incident is declared
+  - Serves as the priamry point of contact for IR activities
+  - Coordinates communications and response activities with internal and external parties
+  - Has overall incident management authority and responsibility
+  - Directs the flow of all IR actions and communicates response activity status to executive management
 
 - Internal Liaisons
-  - 
+  - Advises the Incident Response team on potential and planned actions, how they can/will impact operations, etc.
+  - Supports the Incident Response team's efforts to prepare, identify, investigate, contain, eradicate, and recover for all incidents.
 
 Note: Third party responsibilities must be outlined in respective contracts.
 
-# Objectives
-This policy establishes the requirements for detecting, analyzing, and responding to information or technology incidents for the purpose of protecting business operations as well, minimizing risk and negative impact, and mitigating the results of cybesecurity attacks against critical systems, networks, services, information, and client data.
-
-The primary objectives are to provide policy that ensures the following:
-- Robust detection capabilities are maintained, ensuring all suspicious activity is reported. This includes network, host, and/or wireless Intrusion Detection System alerts and any correlated events from other log sources.
-- Incidents are effectively contained and systems isolated, minimizing any damage or negative impact on client data, systems, networks, and services.
-- The integrity of data is preserved during incident analysis, ensuring accurate time reconstruction and determination of root cause(s), scope of compromise, attacker techniques, and other relevant details.
-- Effective coordination and communication of incident information is maintained through appropriate channels.
-- Effective and comprehensive incident response, leading to confident recovery of any affected systems and the return to a fully functioning and secure operational state for all services and systems involved. 
-- Lessons learned, improving identification, protection, detection, and response strategies and incident handling procedures are identified regularly, preventing and/or reducing reoccurrence.
-- Patterns of activity and trends are understood, characterizing the threat and directing protective and defensive strategies.
-- A robust incident response life cycle is followed wherein major steps may be performed repetitively, in parallel, or sequentially depending on the requirements of the incident.
-
-
-# Regulatory and Compliance Mandates in Scope
-The following compliance mandates are required by law or internal policy:
-
-- HIPAA
-- PCI-DSS
-- GLBA
-- FISMA
-- Sarbanes-Oxley Act
-- GDPR
-- Other Foreign laws
-- NIST 800-53
-- ISO/IEC 27002
-
-[include relevant scoping details for each mandate here]
 
 # Preparation
 
-## Standard Operating Prorcedures / Playbooks / Use Cases
-A library of Standard Operating Prorcedures / Playbooks / Use Cases documents shall be created and maintained to train new members, ensure uniformity, and to prevent unnecessary delays.
 
-This library shall be kept up-to-date by all Incident Responders with detailed procedures for products and Incident Response-specific tasks. Incident Responders are to assist in keeping articles up to date and reflective of current procedures by updating as soon as possible when steps change for any reason (i.e. software updates, governance updates, improvements in knowledge or experience gained).
+## Coordination & Correspondence
+Incident Responders will often need to communicate with outside parties regarding an incident, and shall do so whenever appropriate, such as contacting law enforcement, ISPs, vendors, other incident response teams, and seeking external expertise. The Incident Response Team shall maintain contacts with the public affairs office, legal department, and various persons in management.
+
+Incident Responders shall collaborate with security and product administrators in advance in any incidents to identify data sources that can aid in detection, investigation, and response efforts. Incident Responders shall seek to understand what types of information each data source may record and identify data/logging relationships that could offer secondary sources of logs.
 
 
-## Internal Points of Contact
-Each internal point of contact is expected be aware of this role and to be comfortable acting as a liaison between the Incident Response Team and their respective office. The goal is to eliminate surprises and confidently expect an efficient, streamlined workflow.
+### Internal Points of Contact
+The Incident Response team must establish and maintain an internal points of contact list with respect to who will be called upon to assist during tabletops, investigations and/or incidents. The list shall include primary POC, initial contact guidance, and links or summary of requirements for each office.
 
-The Incident Response Team shall create and maintain a list of Internal Points of Contact. Include primary POC, initial contact guidance, and links or summary of requirements for each office.
+Each internal point of contact is expected be aware and comfortable of their role as a liaison between the Incident Response Team and their respective office. The goal is to eliminate surprises and confidently expect an efficient, streamlined workflow.
 
+The following actions are likely to arise when investigating or responding to an incident; point(s) of contact shall be maintained for each, where possible:
+- Taking a server or service offline or isolating it
+- Taking a workstation offline or isolating it
+- Making changes in Active Directory or other LDAPs
+- Retrieving or deleting a file on a workstation, server, NAS, cloud storage, etc.
+- Performing initial triage/data collection on an endpoint with administrative account locally or remotely
+- Physically quarantine, collect, and/or ship a physical system or its hard drives
+- Acquire and deliver a system image
+- Block or redirect an IP address or domain
+- Remove sensitive/confidential information
+- Activities related to Containment
+
+Some potential office groups for which a POC may be collected and maintained include:
 - IT Support
 - IT Architecture/Server Teams
 - Asset Management
@@ -162,13 +194,17 @@ The Incident Response Team shall create and maintain a list of Internal Points o
 - Human Resources
 - Public Relations
 - Legal Department
+- Internet Service Provider(s)
+- Local law enforcement
+- Product Vendor and Technical Support
 
 
-## External Points of Contact
-Each external point of contact must be aware they are a point of contact. Pricing, timing, support staff, and all other questions should be clarified prior to engagement in the middle of a large scale incident. The goal is to eliminate surprises and confidently expect an efficient, streamlined workflow.
+### External Points of Contact
+The Incident Response Team shall create and maintain a list of External Points of Contact. Include primary POC, initial contact guidance, and links or summary of requirements for each organization.
 
-The Incident Response Team shall create and maintain a list of External Points of Contact. Include primary POC, initial contact guidance, and links or summary of requirements for each organizaiton.
+Each external point of contact must be aware they are a point of contact on the Incident Handling Team's list, and that they may be asked to support an incident. Pricing, timing, support staff, and all other questions should be clarified prior to engagement in the middle of a large scale incident. The goal is to eliminate surprises and confidently expect an efficient, streamlined workflow.
 
+Potential inclusions:
 - Advanced IR/Forensics
 - Cybersecurity Insurance Provider
 - Nearest Hospital, Fire, and other emergency services
@@ -182,8 +218,8 @@ The Incident Response Team shall create and maintain a list of External Points o
 - Other external support
 
 
-## Alternate Communication Plan
-The Incident Response Team shall establish an alternate communications plan for use during any incident or potential incident where the existing organzational communications platforms may or have become unavailable or otherwise compromised.
+### Alternate Communication Plan
+The Incident Response Team shall establish at least one secondary communication channel for situations where the primary means of communication is unavailable or compromised. This could be personal cell phones, a secondary teleconferencing system, etc. These communication channels must be established prior to their need to minimize their immediate use in a time of need.
 
 
 ## Documentation, Training, Awareness
@@ -238,6 +274,13 @@ The following logs shall be collected and stored centrally in the SIEM when the 
 [Your list]
 
 
+Additional Requirements
+- Field names and content must be normalized. This is critical to success in correlation and analyst faith in their search results.
+- Fields containing multiple values should be parsed into separate fields.
+- All event logs should be set to ISO 8601 UTC. This may require transforms to convert from the original device's local time.
+- All logging devices should sync with Network Time Protocol (NTP) providers.
+
+
 ## Tools and Access
 The Incident Response Team must include personnel with console access to the following tools.
 
@@ -270,19 +313,17 @@ The Incident Response Team must include personnel with console access to the fol
 - Vulnerability Scanners
 
 
-### Maintain Backups of Cybersecurity Tools
-Critical systems must be backed up and stored in a way that prevents their being accessible from the network. Often connected backups are targeted for encryption or deletion.
-
-- Test recovery from backups at least annually for critical data, servers, and domains.
+## SIEM Content
+SIEM content shall be created and maintained by the ICS SecOps Team. This content will focus on usable dashboards, widgets, queries, reports, alerts, etc. in the realms of operations, troubleshooting, compliance, and cybersecurity.
 
 
-## Internally-Gathered Indicators of Compromise
+### Internally-Gathered Indicators of Compromise
 True-positive incidents may provide valuable indicators of compromise (IOC) including file names, URLs, IP addresses, domains, etc. that could reveal compromise of other systems being monitored. These internal IOCs and their respective details shall be tracked in such a way that allows Incident Responders to quickly find, study, and respond to ongoing investigations. Details shall include the context in which the IOC was first observed, when it will expire, and where it is currently being leveraged for automated detection.
 
 Internal IOCs shall be reviewed annually and each time it is referenced during an investigation. If the IOC is determined to still be of value, its expiration shall be extended based on the review date.
 
 
-## Detection Deployment Prioritization
+### Detection Deployment Prioritization
 The priority in which detections (signatures, alerts, etc.) will be deployed is outline in the below table. Alerts related to exploits characteristics listed higher in the table have a higher priority for detection development. An authoritive stance on prioritization ensures the team deploying detections aligns properly with the risk appetite and provides clarity on the workload and detection team bench strength.
 
 | Exploit Characteristics                   | Affecting Assets with these Characteristics |
@@ -302,6 +343,18 @@ The priority in which detections (signatures, alerts, etc.) will be deployed is 
 - Logging must be configured to allow [X] days/megabytes of local log retention and be configured to "roll over" the earliest logs in the event of a full log.
 
 
+### Maintain Backups of Cybersecurity Tools
+Critical systems must be backed up and stored in a way that prevents their being accessible from the network. Often connected backups are targeted for encryption or deletion.
+
+- Test recovery from backups at least annually for critical data, servers, and domains.
+
+
+## Standard Operating Prorcedures / Playbooks / Use Cases
+A library of Standard Operating Prorcedures / Playbooks / Use Cases documents shall be created and maintained to train new members, ensure uniformity, and to prevent unnecessary delays.
+
+This library shall be kept up-to-date by all Incident Responders with detailed procedures for products and Incident Response-specific tasks. Incident Responders are to assist in keeping articles up to date and reflective of current procedures by updating as soon as possible when steps change for any reason (i.e. software updates, governance updates, improvements in knowledge or experience gained).
+
+
 ## Ticketing System
 A full-featured ticketing system shall be used to track all Incidents. All tickets and related data shall be stored for a period of no less than 1 (one) year. Tickets shall have relevant emails and correspondence attached in such a way that they are archived alongside other incident details.
 
@@ -310,53 +363,10 @@ Documents too large or otherwise not easily attached to the Ticket shall be stor
 It is the shared responsibility of all Incident Responders to ensure all tickets receive proper attention and timely updates. Tickets must be actioned upon and updated at least once per shift until closure. Updates shall consist of, at a minimum, a Work Log entry specifying the last action taken, who took the actions, and when. The Executive Summary shall be kept up-to-date, reflecting the known beginning, middle, and end of each incident at a high level. Outstanding actions shall be included in this field, as they represent a portion the complete ticket summary.
 
 
-## Coordination & Correspondence
-Incident Responders will often need to communicate with outside parties regarding an incident, and shall do so whenever appropriate, such as contacting law enforcement, ISPs, vendors, other incident response teams, and seeking external expertise. The Incident Response Team shall maintain contacts with the public affairs office, legal department, and various persons in management.
-
-At least one secondary communication channel shall be established for use in cases where primary means of communication may be compromised. This could be cell phones, secondary email accounts, etc. These communication channels must be established prior to their need to minimize their immediate use in a time of need.
-
-Incident Responders shall collaborate with security and product administrators in advance in any incidents to identify data sources that can aid in detection, investigation, and response efforts. Incident Responders shall seek to understand what types of information each data source may record and identify data/logging relationships that could offer secondary sources of logs.
-
-The following actions are likely to arise when investigating or responding to an incident; point(s) of contact shall be maintained for each, where possible:
-- Taking a server or service offline or isolating it
-- Taking a workstation offline or isolating it
-- Making changes in Active Directory or other LDAPs
-- Retrieving or deleting a file on a workstation, server, NAS, cloud storage, etc.
-- Performing initial triage/data collection on an endpoint with administrative account locally or remotely
-- Physically quarantine, collect, and/or ship a physical system or its hard drives
-- Acquire and deliver a system image
-- Block or redirect an IP address or domain
-- Remove sensitive/confidential information
-- Activities related to Containment
-
-Additional points of contact that may be required to investigate or respond to an incident include the following.
-
-- IT Support
-- IT Architecture/Server Teams
-- Asset Management
-- Identity and Access Management
-- Data Backup Administration
-- Networking
-- Hosting/Application Teams
-- Database Administration
-- Development Teams
-- Computer Security-related teams
-- Physical Security
-- Human Resources
-- Public Relations
-- Legal Department
-- Internet Service Provider(s)
-- Local law enforcement
-- Product Vendor and Technical Support
-
-
-
 # Identification
 Incident Responders shall monitor available dashboards, signatures, and logs for suspicious activity and events that have the potential to cause an incident. Identification by automated means (e.g. signatures, heuristics analysis, statistics-based anomalies, and automated correlation) shall be leveraged to increase the effectiveness of each Incident Responder. Manual identification methods, such as relying on users to identify and report infected hosts, and individually checking each host, are not feasible for most situations. However, a means of manual end-user reporting shall be made available by maintaining a group email box and a phone number.
 
-
 However, centralized log databases and Security Information and Event Management (SIEM) solutions are expected to be the primary points of monitoring and incident identification. Within the SIEM, correlation rules and dashboards shall be maintained that both display events of particular concern and present recent events for short-term correlation and analysis. Queries tuned to the business operating environment shall be maintained and shared among the team to speed up identification.
-
 
 An event is any observable occurrence in a system or network. Events include a user connecting to a file share, a server receiving a request for a web page, a user sending email, and a firewall blocking a connection attempt. Suspicious activity includes events with a potentially negative consequence, such as system crashes, packet floods, unauthorized/questionable use of system privileges, unauthorized/questionable access to sensitive data, and destruction of data. An incident is a violation or imminent threat ...
 - of compliance requirements
