@@ -45,7 +45,7 @@ The following sample Incident Response Policy is meant to be tailored to your or
   - [Lessons Learned](#lessons-learned)
   - [Signature Development](#signature-development)
 - [Glossary](#glossary)
-- [Resources](#resources)
+- [References and Resources](#references-and-resources)
 
 
 # Purpose and Introduction
@@ -72,6 +72,8 @@ Incident Response personnel must understand the kinds of asset and identity beha
 
 # Scope
 This policy applies to all employees, customers, clients, visitors, and third-party affiliates working on behalf of [Organization] within all business areas and geographic markets ("Staff"). Related procedural documents, knowledge base articles, etc. must be written and updated so as to remain compliant with this policy.
+
+The scope of the this IR Policy includes all [Organization] systems. This IR Policy is designed for [Organization] networks and the various components that are used in them. While this IR Policy does not include procedures regarding third party networks, it does presume that all such networks are hostile networks. [Organization] network staff should not rely on the cyber security infrastructure that these networks provide and should maintain a level of awareness regarding potential cyber attacks coming from these networks.
 
 
 # Authority
@@ -389,6 +391,7 @@ Identification can occur from multiple places in the environment, including:
 - Server-level events including Active Directory, DNS, DHCP, web, database, and other application servers.
 - Users or individuals may report suspicious activity via email, telephone, or a support ticket.
 - Reports from other organizations such as another service provider, governments agencies, law enforcement, partners, and competitors.
+- Routine monitoring and equipment checks.
 
 All facts regarding incidents shall be recorded; at the very least records shall include date/time, source party, destination party(ies), a description of the actions performed, and a copy of correspondence/events. Every step taken from the time the incident was detected to its final resolution shall be documented and time-stamped. Information of this nature can also be used as evidence in a court of law if legal prosecution is pursued.
 
@@ -562,10 +565,13 @@ Upon conclusion of an incident involving a compromised system requiring a rebuil
 
 
 # Recovery
+During Recovery, IR and IT personnel will restore the affected network/systems to a "fully mission-capable" (FMC) state. This IR Policy presumes close coordination with the management and the relevant incident response staff and assumes that detailed reporting is updated with current status. 
+
+Managers should establish what a FMC network is as it pertains to their specific installations and missions PRIOR to the need to activate an IR Plan. Once this is defined, staff and managers should capture the FMC condition of their network entry points (e.g., firewalls, routers, remote access terminals, wireless access points, etc.), network topology, network data flow, and machine/device configurations, then store these in a secure location. This information should be kept under configuration management and updated every time changes are made to the network. This information forms the FMC baseline. The FMC baseline is used to determine normal operational conditions versus anomalous conditions of the network and its systems.
 
 
 ## Risk Acceptance
-Given a breakdown of risk and any deployed mitigations, management may formally accept residual risk. Risk acceptance shall be discussed on a need-to-know basis, with paperwork and correspondence treated as confidential information and stored carefully to avoid unnecessary exposure of accepted risks.
+Given a breakdown of risk and any deployed mitigations, management may formally accept residual risk. Risk acceptance shall be discussed on a need-to-know basis, with paperwork and correspondence treated as confidential information and stored carefully to avoid unnecessary exposure of accepted risks. 
 
 
 ## Closing a Ticket	
@@ -644,7 +650,22 @@ Some incidents are expected to give way to potential development of new signatur
 - Worm: A self-replicating, self-propagating, self-contained program that uses networking mechanisms to spread itself. See malicious code.
 
 
-# Resources
-- https://www.cisa.gov/uscert/ncas/alerts/aa20-245a
-- SANS PICERL
-- NIST CSF
+# References and Resources
+Federal Information Security Modernization Act of 2014
+- https://www.congress.gov/bill/113th-congress/senate-bill/2521
+NIST Risk Management Framework
+- https://csrc.nist.gov/Projects/risk-management
+NIST Cybersecurity Framework (CSF) 2.0
+- https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf
+NIST Special Publication (SP) 800-61 Rev. 2, Computer Security Incident Handling Guide
+- https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
+CISA Cybersecurity Incident & Vulnerability Response Playbooks
+- https://www.cisa.gov/sites/default/files/2024-08/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf
+Federal Information Security Modernization Act of 2014
+- https://www.congress.gov/bill/113th-congress/senate-bill/2521
+CISA Computer Security Incident Handling Guide
+- https://csrc.nist.gov/pubs/sp/800/61/r3/final
+DOD Instruction 8500.01 - Cybersecurity
+- https://www.esd.whs.mil/portals/54/documents/dd/issuances/dodi/850001_2014.pdf
+CJCSM 6510.01B - Cyber Incident Handling Program
+- https://www.jcs.mil/Portals/36/Documents/Library/Manuals/m651001.pdf

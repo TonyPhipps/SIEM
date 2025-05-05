@@ -20,6 +20,7 @@
   - [User Participation](#user-participation)
 - [Eradication](#eradication)
 - [Recovery](#recovery)
+- [References and Resources](#references-and-resources)
 
 
 # Purpose and Introduction
@@ -56,14 +57,15 @@ This plan applies to all [Organization] owned, operated, or maintained [System T
 Conduct an initial assessment to determine if the identified event or activity constitutes an incident. This initial assessment should be performed quickly, even with limited details and analysis. If the activity or event is determined to be benign, no incident is required.
 
 The following questions are provided for consideration during initial assessment:
-- When did the activity first begin? When did it end, or is it on-going?
-- Did the activity occur during an expected time of day?
 - Was the activity observed conducted by an expected, authorized party?
 - Was the activity observed conducted on an expected, authorized system?
-- What would the potential business impact be if an incident is confirmed?
-- Were any relevant security alarms triggered?
-- What does the recent activity look like for the assets and/or identities affected?
+- Can the activity observed be explained fully as hardware/software malfunctions or administrative issues?
 - Were there any recent changes recorded that could be related?
+- Did the activity occur during an expected time of day?
+- What does the recent activity look like for the assets and/or identities affected?
+- Were any relevant security alarms triggered?
+- When did the activity first begin? When did it end, or is it on-going?
+- What would the potential business impact be if an incident is confirmed?
 - Do any related file hashes appear on VirusTotal? NOTE: NEVER submit the actual file, even if there are no matching results for the hash.
 
 
@@ -235,7 +237,9 @@ Root cause(s) shall be determined prior to the recovery and reconstitution of an
 
 
 # Containment
-When appropriate, take actions in an attempt to contain systems, software, and adversaries in an effort to limit the overall scope of incidents.
+While activities in Identification, Containment, and Recovery can be executed in parallel, the [appropriate role] must grant their permission to begin either Containment or Recovery procedures.
+
+When appropriate, take actions in an attempt to contain systems, software, and adversaries in an effort to reduce or eliminate further propogation.
 
 The primary objectives of containment include:
 - Ensuring understanding of the impact of containment, including what will NOT be impacted, both positively and negatively.
@@ -345,18 +349,22 @@ Recovery may include but is not limited to the following:
 - Pivoting around any residual impacts to service availability.
 - Identification and acceptance of residual risk.
 
-References and Resources
+# References and Resources
 Federal Information Security Modernization Act of 2014
 - https://www.congress.gov/bill/113th-congress/senate-bill/2521
 NIST Risk Management Framework
 - https://csrc.nist.gov/Projects/risk-management
 NIST Cybersecurity Framework (CSF) 2.0
 - https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf
-NIST Special Publication NIST SP 800-82r3, Guide to Operational Technology (OT) Security
-- https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf
 NIST Special Publication (SP) 800-61 Rev. 2, Computer Security Incident Handling Guide
 - https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
-MITRE ATT&CK
-- https://attack.mitre.org/
 CISA Cybersecurity Incident & Vulnerability Response Playbooks
 - https://www.cisa.gov/sites/default/files/2024-08/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf
+Federal Information Security Modernization Act of 2014
+- https://www.congress.gov/bill/113th-congress/senate-bill/2521
+CISA Computer Security Incident Handling Guide
+- https://csrc.nist.gov/pubs/sp/800/61/r3/final
+DOD Instruction 8500.01 - Cybersecurity
+- https://www.esd.whs.mil/portals/54/documents/dd/issuances/dodi/850001_2014.pdf
+CJCSM 6510.01B - Cyber Incident Handling Program
+- https://www.jcs.mil/Portals/36/Documents/Library/Manuals/m651001.pdf
