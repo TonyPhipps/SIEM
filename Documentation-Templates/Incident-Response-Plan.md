@@ -27,7 +27,7 @@
 This plan provides for Incident Responders a standardized approach to the documentation, analysis and resolution of cybersecurity incidents within the [Organization].
 
 Goals include:
-- Guide the Incident Responder through a uniform approach for consistent results that comply with the IR Policy.
+- Provide Incident Responders with a means to use both best practices and procedures in the defense of the network, to degrade the network, if necessary, and to maintain business/system operations during an active cyber attack.
 - Reduce repetition of info/steps by providing a Playbook Library to defer to for deviations/specifics.
 - Maintain compliance with applicable security frameworks requirements.
 

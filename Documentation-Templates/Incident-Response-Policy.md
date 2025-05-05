@@ -319,7 +319,7 @@ The Incident Response Team must include personnel with console access to the fol
 
 
 ## SIEM Content
-SIEM content shall be created and maintained by the ICS SecOps Team. This content will focus on usable dashboards, widgets, queries, reports, alerts, etc. in the realms of operations, troubleshooting, compliance, and cybersecurity. Queries tuned to the business operating environment shall be maintained and shared among the team to speed up identification and improve fidelity.
+SIEM content shall be created and maintained by the Incident Response Team. This content will focus on usable dashboards, widgets, queries, reports, alerts, etc. in the realms of operations, troubleshooting, compliance, and cybersecurity. Queries tuned to the business operating environment shall be maintained and shared among the team to speed up identification and improve fidelity.
 
 
 ### Internally-Gathered Indicators of Compromise
