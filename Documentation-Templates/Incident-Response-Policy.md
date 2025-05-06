@@ -1,4 +1,4 @@
-The following sample Incident Response Policy is meant to be tailored to your organization before use.
+The IR Policy is written in an authoritative voice. It sets forth requirements, what SHALL be done and, when flexibility is offered, what SHOULD be done. Some reminder-level explanations and clarifying points may be made to help emphasize requirements and guidance points.
 
 - [Purpose and Introduction](#purpose-and-introduction)
 - [Scope](#scope)
@@ -270,8 +270,12 @@ Incident Responders shall maximize off-peak duty hours by remaining productive a
 
 Incident Responders must have a strong command of the tools at their disposal. This organization provides support by providing Incident Responders with specialized training, continuing education, and a lab environment to maintain awareness and familiarity. Automated analysis and alerting tools only provide the beginnings of understanding a security incident, and only a skilled analyst provided with appropriate tools can complete the picture. Incident Responders shall cross-train to improve the overall skill and confidence of the team.
 
+The MITRE ATT&CK Framework helps understand the paths or methods used by the adversary during their malicious activities. This information is used to provide metrics and identify trends in the prevalence of attack techniques. By studying and understanding the most prevalent attack techniques, tactical and strategic plans can be developed to improve defensive and detective posturing. Mapping MITRE ATT&CK techniques in this way can improve understanding and pathways during the incident investigation.
+
 
 ## Log Generation and Collection
+Understanding associated logs is helpful in assigning an appropriate priority to the ticket and planning effective containment, eradication, and recovery activities. The information to be analyzed typically includes various logs, files, configuration settings, records of currently logged-on users, past connections (logins), running processes, open files, and changes to files or system settings (access control lists (ACLs), registries, and permissions).
+
 Logs shall be centrally gathered from systems that provide the ability to identify and investigate security incidents as well as troubleshooting performance, stability, and other operational benefits. Centralized logging minimizes the risk of tampering, clearing, and general integrity concerns of logs. An NTP server shall be deployed with as many systems as possible configured to utilize the service. Systems with synchronized time greatly simplify all types of investigations and bolsters confidence and reliability in all logs. Where possible, systems that generate logs shall store log dates in the GMT Time Zone.
 
 The following logs shall be collected and stored centrally in the SIEM when the applicable hardware/application exists and necessary hardware/software support exists to do so.
@@ -542,6 +546,8 @@ Other agenda items may include:
 - Important documentation updates
 - Important use case adjustments
 - Zero-day announcements affecting monitored users, systems, software, etc.
+
+Root cause is defined as the high-level oversight, misconfiguration, or process failure that provided the exposure exploited by the adversary. Root cause metrics are used to assist in preventing similar incidents from occurring in the future. Underlying system weaknesses, vulnerabilities, or security controls that could have prevented or mitigated the impact of the incident shall be identified. More than one weakness category may apply.
 
 
 # Containment

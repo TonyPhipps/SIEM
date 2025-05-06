@@ -1,19 +1,21 @@
-﻿- [Purpose and Introduction](#purpose-and-introduction)
+﻿The IR Plan is written in a commanding voice. Do this, don't do that. Carefully consider these facts. Little explanation should be needed in this document, as it assumees one is already trained and familiar with the IR Policy.
+
+- [Purpose and Introduction](#purpose-and-introduction)
 - [Compliance](#compliance)
 - [Applicability](#applicability)
 - [Assumptions and Limitations](#assumptions-and-limitations)
 - [Important Notes](#important-notes)
 - [Identification](#identification)
   - [Conduct an Initial Assessment](#conduct-an-initial-assessment)
-  - [Create a Ticket for an Incident](#create-a-ticket-for-an-incident)
-  - [Create and Fill a Tracking Spreadsheet](#create-and-fill-a-tracking-spreadsheet)
-  - [Notify the Appropriate Individuals/Groups/Organizations](#notify-the-appropriate-individualsgroupsorganizations)
   - [Investigation](#investigation)
-    - [Gather Logs](#gather-logs)
+  - [Create a Ticket for an Incident](#create-a-ticket-for-an-incident)
+  - [Notify the Appropriate Individuals/Groups/Organizations](#notify-the-appropriate-individualsgroupsorganizations)
+  - [Create and Fill a Tracking Spreadsheet](#create-and-fill-a-tracking-spreadsheet)
     - [Conduct Analysis](#conduct-analysis)
-    - [Determine Priority](#determine-priority)
-    - [Determine Attack Technique](#determine-attack-technique)
-    - [Develop Next Courses of Action](#develop-next-courses-of-action)
+      - [Gather Logs](#gather-logs)
+      - [Determine Priority](#determine-priority)
+      - [Determine Attack Technique](#determine-attack-technique)
+      - [Develop Next Courses of Action](#develop-next-courses-of-action)
     - [Determine Root Cause](#determine-root-cause)
 - [Containment](#containment)
   - [Containment Courses of Action](#containment-courses-of-action)
@@ -54,7 +56,7 @@ This plan applies to all [Organization] owned, operated, or maintained [System T
 
 ## Conduct an Initial Assessment
 
-Conduct an initial assessment to determine if the identified event or activity constitutes an incident. This initial assessment should be performed quickly, even with limited details and analysis. If the activity or event is determined to be benign, no incident is required.
+Conduct an initial assessment to determine if the identified event or activity constitutes an incident. This initial assessment should be performed quickly, even with limited details and analysis. If the activity or event is determined to be clearly benign, no incident or ticket is required. If there is clear evidence of malicious activity, the Incident Responder will declare an incident and notify the appropriate parties.
 
 The following questions are provided for consideration during initial assessment:
 - Was the activity observed conducted by an expected, authorized party?
@@ -69,8 +71,49 @@ The following questions are provided for consideration during initial assessment
 - Do any related file hashes appear on VirusTotal? NOTE: NEVER submit the actual file, even if there are no matching results for the hash.
 
 
+## Investigation
+Collect, validate, and analyze information related to the incident to characterize the perceived threat and to assist in identifying the attack techniques, scope of compromise, root cause(s), and potential business impact. Continue to update the ticket with any actions taken and other useful information that may help to better characterize the incident.
+
+The primary objectives of investigation include:
+- Ensuring the accuracy and completeness of steps taken during investigation.
+- Characterizing and communicating the potential impact to the business.
+- Systematically capturing the methods used in the attack and the security controls that could prevent future occurrences.
+- Determining the present scope of compromise and identifying containment options.
+- Determining options available to eradicate the adversarial presence.
+- Identifying the root cause(s) of the incident through technical analysis.
+
+The following questions are provided as a starting point for investigation; tailoring is likely required and recommended:
+- What is the earliest observable event relevant to the investigation?
+- What symptoms has the user experienced?
+- What is the current state of the affected system? Is it compromised at the user or root/admin level?
+- If policy allows the choice, should the system be isolated or should the team monitor closely?
+  - What is the impact on the mission if the system is isolated from the network immediately?
+    - If a server or appliance is involved, what notable applications/services are installed/running?
+    - If a workstation is involved, how long would it take to restore operations to its user, and how would that downtime affect the business?
+- What surrounding events exist with matching source/destination user/IP addresses?
+- Are there any logs available outside the centralized logging solution that would benefit the investigation?
+- If the system was compromised, what did its most recent vulnerability scan data reveal?
+  - Are there any recent zero-day or otherwise notable vulnerabilities present?
+- What is the hypothesis for what happened? What logs will be needed to confirm or deny that hypothesis?
+
+Unless a suspicion arises early in the investigation of an insider threat, affected users may be asked relevant questions via email or telephone interview depending on the characteristics of the incident. Such interview questions and answers shall be recorded in the ticket, even when a verbal interview was conducted.
+
+When possible, conduct Investigation actions in parallel with containment, eradication, and recovery stages. Linear incident response tends to result in a far lengthier and expensive process than is necessary due to prolonging adversarial exposure and impact to confidentiality, integrity, and availability.
+
+
 ## Create a Ticket for an Incident
 Create a ticket in [ticket management system] to track all activities. Keep the related ticket updated with, at a minimum, an executive summary of ongoing actions and findings.
+
+
+## Notify the Appropriate Individuals/Groups/Organizations
+Ensure all communication, files, and information related to an incident are disseminated only on a need-to-know basis. Incident details may not be discussed outside of the Incident Response Team, management, and those with a clear need-to-know without previous consent from management.
+
+- Include [Incident Resposne Team] in all Incident-related correspondence.
+- Emails containing sensitive information must have all recipients verified for authorized access and must be encrypted.
+- Emails containing attachments with sensitive information must be encrypted and sent via [service].
+- Sanitize all files being sent to product vendors by sufficiently anonymizing all hostnames, IP addresses, and user-specific account names.
+
+[Add Details as to who should be notified under which conditions.]
 
 
 ## Create and Fill a Tracking Spreadsheet
@@ -109,66 +152,23 @@ Given a tracker Excel (or equivalent) file, each column in the table below repre
 - Investigative Queries - Record incident-specific queries for SIEM / log correlation / investigative platforms to facilitate investigative analysis.
 
 
-## Notify the Appropriate Individuals/Groups/Organizations
-All communication, files, and information related to an incident shall be disseminated only on a need-to-know basis. Incident details shall not be discussed outside of the Incident Response Team, management, and those with a clear need-to-know without previous consent from management.
+### Conduct Analysis
+Record any logs from relevant hosts, network appliances, server applications, etc. that are determined to be related to the event in the tracker to allow proper analysis. This timeline may be used to correlate events among multiple sources, which is invaluable in confirming of denying any hypotheses formed in earlier stages of the investigation.
 
-- Include [Incident Resposne Team] in all Incident-related correspondence.
-- Emails containing sensitive information must have all recipients verified for authorized access and must be encrypted.
-- Emails containing attachments with sensitive information must be encrypted and sent via [service].
-- Sanitize all files being sent to product vendors by sufficiently anonymizing all hostnames, IP addresses, and user-specific account names.
+Note affected systems IPs, domain names, files, and accounts to allow retrospective analysis for repeat offenders, threat intelligence matches, and the potential for a wider scope than expected in the tracker. Analysis that does result in a widening of scope in relation to time, systems, users, files, etc. may require gathering of additional logs. Maintain a high level of awareness of data that could be used as internal indicators of compromise that could result in a shorter detection time (or even prevention of) future incidents.
 
-[Add Details as to who should be notified under which conditions.]
+Involve multiple teams and various functional communities by informing them, asking direct questions, and making direct requests for support as needed and as soon as possible (e.g., intelligence, subject-matter experts, and application owners) as doing so may significantly improve incident response. 
 
 
-## Investigation
-Collect, validate, and analyze information related to the incident to characterize the perceived threat and to assist in identifying the attack techniques, scope of compromise, root cause(s), and potential business impact. Continue to update the ticket with any actions taken and other useful information that may help to better characterize the incident.
-
-The primary objectives of investigation include:
-- Ensuring the accuracy and completeness of steps taken during investigation.
-- Characterizing and communicating the potential impact to the business.
-- Systematically capturing the methods used in the attack and the security controls that could prevent future occurrences.
-- Determining the present scope of compromise and identifying containment options.
-- Determining options available to eradicate the adversarial presence.
-- Identifying the root cause(s) of the incident through technical analysis.
-
-The following questions are provided as a starting point for investigation; tailoring is likely required and recommended:
-- What is the earliest observable event relevant to the investigation?
-- What symptoms has the user experienced?
-- What is the current state of the affected system? Is it compromised at the user or root/admin level?
-- If policy allows the choice, should the system be isolated or should the team monitor closely?
-  - What is the impact on the mission if the system is isolated from the network immediately?
-    - If a server or appliance is involved, what notable applications/services are installed/running?
-    - If a workstation is involved, how long would it take to restore operations to its user, and how would that downtime affect the business?
-- What surrounding events exist with matching source/destination user/IP addresses?
-- Are there any logs available outside the centralized logging solution that would benefit the investigation?
-- If the system was compromised, what did its most recent vulnerability scan data reveal?
-  - Are there any recent zero-day or otherwise notable vulnerabilities present?
-- What is the hypothesis for what happened? What logs will be needed to confirm or deny that hypothesis?
-
-Unless a suspicion arises early in the investigation of an insider threat, affected users may be asked relevant questions via email or telephone interview depending on the characteristics of the incident. Such interview questions and answers shall be recorded in the ticket, even when a verbal interview was conducted.
-
-When possible, investigation shall be conducted in parallel with containment, eradication, and recovery stages. Linear incident response tends to result in a far lengthier and expensive process than is necessary due to prolonging adversarial exposure and impact to confidentiality, integrity, and availability.
-
-
-### Gather Logs
-Understanding associated logs is helpful in assigning an appropriate priority to the ticket and planning effective containment, eradication, and recovery activities. The information to be analyzed typically includes various logs, files, configuration settings, records of currently logged-on users, past connections (logins), running processes, open files, and changes to files or system settings (access control lists (ACLs), registries, and permissions).
-
-Gather all logs relevant to the incident for analysis and store or associate them with the respective ticket. [Location or System] shall be the starting point for log acquisition. When necessary, valuable logs from non-centralized services may be collected or requested from the system owner(s). Details of queries executed (search string and date) to collect logs shall be recorded in the tracker.
+#### Gather Logs
+Gather all logs relevant to the incident for analysis, export them, and store or associate them with the respective ticket. [Location or System] shall be the starting point for log acquisition. When necessary, valuable logs from non-centralized services may be collected or requested from the system owner(s). Details of queries executed (search string and date) to collect logs shall be recorded in the tracker.
 
 Endpoint logs or a collection endpoint volatile state information is often necessary to confirm scope of compromise. This rarely may include a memory snapshot or a collection of scripts to collect information. If escalation to law enforcement or the court system is expected, carefully consider the evidence impact of accessing the endpoint at all beyond network isolation.
 
 Network captures (in the form of .pcap files) may be required depending on the nature of the incident. Acquiring only traffic that matches specific criteria keeps the volume of data manageable and minimizes the inadvertent capture of sensitive, regulated information. 
 
 
-### Conduct Analysis
-Timeline reconstruction can help in understanding the attacker's actions. During analysis, record any logs from relevant hosts, network appliances, server applications, etc. that are determined to be related to the event in the tracker to allow proper analysis. This timeline may be used to correlate events among multiple sources, which is invaluable in confirming of denying any hypotheses formed in earlier stages of the investigation.
-
-Note affected systems IPs, domain names, files, and accounts to allow retrospective analysis for repeat offenders, threat intelligence matches, and the potential for a wider scope than expected in the tracker. Analysis that does result in a widening of scope in relation to time, systems, users, files, etc. may require gathering of additional logs. Maintain a high level of awareness of data that could be used as internal indicators of compromise that could result in a shorter detection time (or even prevention of) future incidents.
-
-The involvement of multiple teams and various functional communities (e.g., intelligence, subject-matter experts, and application owners) may significantly improve incident response. It is important to involve relevant parties by informing them, asking direct questions, and making direct requests for support as needed and as soon as possible.
-
-
-### Determine Priority
+#### Determine Priority
 Tickets are classified by incident priority, which primarily determines notification timeline requirements. Ticket Priority be "Low," "Medium," "High," or "Emergency." Priority determination must include consideration of the current and potential impact on the confidentiality, availability, and integrity of organizational operations, data, assets, and individuals.
 
 Emergency: Tickets are Emergency priority when one of the following is suspect or confirmed:
@@ -197,13 +197,11 @@ Other considerations include direct or indirect impact on:
 _Establish any service level agreements or other requirements related to Priority_
 
 
-### Determine Attack Technique
-Attack Techniques define the primary paths or methods used by the adversary to cause the incident to occur. This information is used to provide metrics and identify trends in the prevalence of attack techniques. By understanding the most prevalent attack techniques, tactical and strategic plans can be developed to improve defensive and detective posturing.
-
-Use the MITRE ATT&CK Framework to determine the appropriate attack techniques tied to the incident and record the information in the ticket and tracker.
+#### Determine Attack Technique
+Reference the MITRE ATT&CK Framework to determine which attack techniques may be associated with activity observed and record the information in the ticket and tracker.
 
 
-### Develop Next Courses of Action
+#### Develop Next Courses of Action
 Identify a base plan including actions necessary to respond to the incident including containment, eradication, and recovery.
 
 The following list of consideration for determining appropriate courses of action includes may be used as a starting point: 
@@ -217,7 +215,7 @@ The following list of consideration for determining appropriate courses of actio
 
 
 ### Determine Root Cause
-Root cause is defined as the high-level oversight, misconfiguration, or process failure that provided the exposure exploited by the adversary. Root cause metrics are used to assist in preventing similar incidents from occurring in the future. Underlying system weaknesses, vulnerabilities, or security controls that could have prevented or mitigated the impact of the incident shall be identified. More than one weakness category may apply.
+Determine Root Cause(s) to the recovery and of any affected system, unless it not practical or otherwise approved to forgoe root cause determination. The decision to restore a system without identifying the root cause(s) must be weighed carefully doing so may restore the original exposure for repeated exploitation.
 
 Root Causes may include, but are not limited to:
 - User Training/Awareness
@@ -232,8 +230,6 @@ Root Causes may include, but are not limited to:
 - Natural Disaster
 - Sabotage
 - Negligence
-
-Root cause(s) shall be determined prior to the recovery and reconstitution of any affected system, unless not practical or otherwise approved. The decision to restore a system without identifying the root cause(s) must be weighed carefully doing so may restore the original exposure for repeated exploitation.
 
 
 # Containment
