@@ -253,30 +253,25 @@ When sufficient information to contain and eradicate the incident is lacking, co
 
 ## Containment Courses of Action
 Containment courses of action may include:
-- Local user account disablement
-- Authorization/access revocation
-- Host isolation by removal of a network card
-- Host isolation by EDR or similar software
-- Port Blocking
-- IP/Domain blocking or redirection
-- Web content filtering
-- Hash Blacklisting
-- Switchport Isolation
-- VLAN/subnet Isolation
-- Trunk Switchport Isolation
+- Isolation from Internet
+- Isolation from internal network segments via router, firewall, switch, or VLAN
+- Isolation of host via EDR or similar software (usually can be performed remotely)
+- Isolation of host by removal of network cable(s)
+- Disablement of domain account(s)
+- Disablement of local account(s)
+- Revocation of account authorization/access
+- LDAP Object disablement
+- Redirection or blocking access to known-bad remote IP/Domain(s)
+- Filter web access via web content filtering software by domain or category
+- File blocking via hash-based signatures
 - Disablement and/or Shutdown of Services/Processes
 - Power Disconnection of endpoints or network appliances
-- LDAP Object disablement
-- Software or file removal
-- Registry deletions/modifications
 - ISP assistance with DDoS response
-- Upgrading software/firmware
 
 Various courses of action can be taken to contain malware and malicious activity to allow further analysis and eradication. Courses of action may also evolve as additional information is developed during ongoing investigation.
 
 Often signature-based or threat intelligence-based security tools are updated with capabilities that automate containment/prevention effectively. This may allow careful rolling back of containment steps. Note that if the scope of compromise includes the OS, it is possible for malware or adversaries to remain hidden from any security tools or controls.
 
-Some details on containments steps are presented below.
 NIST SP 800-83 may be referred to for COAs and Response Actions (RAs) for various attacks such as DoS, malicious code, unauthorized access, and inappropriate usage.
 
 When possible, avoid powering off systems prior to acquiring and preserving volatile data such as running processes, network connections, and/or the entire contents of memory. This may not be an option if the compromised system begins to perform destructive tasks such as deleting files, exfiltrating sensitive data, formatting drives, or actively spreading to other hosts. In these cases, the system shall be promptly disconnected, or otherwise effectively isolated. If there is no backup or restoration efforts are significant, immediate shutdown through severing power shall be considered.
@@ -287,22 +282,24 @@ When possible, automated and/or remote containment actions must be performed by 
 
 
 # Eradication
-The goal of eradication is to permanently remove the infection.  Different situations necessitate various combinations of eradication techniques. It is important to accurately determine the root cause of each incident to allow confidence in the completeness of eradication courses of action.
+The goal of eradication is to permanently remove the infection AND the weaknesses that were leveraged to achieve the initial compromise. Different situations necessitate various combinations of eradication techniques. It is important to accurately determine the root cause of each incident to allow confidence in the completeness of eradication courses of action.
 
 Eradication options include:
-- System replacement/rebuild
+- System replacement/rebuild, then applying latest patches
+  - For servers and critical devices, save a current image of the system and memory beforehand, when possible
 - Permanent firewall/ACL changes on border devices
-- Disinfection via security software-provided solutions.
-- Disinfection by means of surgical removal/restoration/disinfection/reversal of any and every malicious action on the system.
+- Disinfection via security software-provided solutions
+- Required change of all affected account passwords with strong requirements, including all passwords to accounts the affected accounts had access to
+- Disinfection by means of surgical removal/restoration/disinfection/reversal of any and every malicious action taken and file left/modified on the system
 
 In general, a system rebuild is advised if any of the following characteristics are present:
-- Administrator/root accounts were compromised.
-- Arbitrary code execution was performed at the administrator/root level.
-- Critical system files were replaced or modified.
-- Boot sectors, BIOS/UEFI, or firmware is confirmed or suspected to be compromised.
-- Physical access to the system was made available to an adversary.
-- After disinfection attempts, the system shows signs of instability.
-- There is a reasonable suspicion that a rootkit or similar means of persistence exists. 
+- Administrator/root accounts were compromised
+- Arbitrary code execution was performed at the administrator/root level
+- Critical system files were replaced or modified
+- Boot sectors, BIOS/UEFI, or firmware is confirmed or suspected to be compromised
+- Physical access to the system was made available to an adversary
+- After disinfection attempts, the system shows signs of instability
+- There is a reasonable suspicion that a rootkit or similar means of persistence exists
 
 Rebuilding is the best eradication option when the extent of a system's compromise is unknown, when a rootkit is suspected, or the fastest possible restoration is required. Rebuilding includes the reinstallation, updating, and hardening of the OS and subsequently installed applications. New, secured hardware may be swapped out during the rebuild process to allow an even faster recovery of operations. The rebuild process may be followed by data restoration from known-good backups. Great care and caution must be taken with any file preservation from a compromised system due to the potential for carrying-over infected files. Upon conclusion of an incident involving a compromised system requiring a rebuild, the original hard drive/device may be reused or be destroyed at the discretion of management. Master boot records must be erased on reused disks to eliminate any possible boot sector infection.
 
@@ -354,6 +351,8 @@ NIST Cybersecurity Framework (CSF) 2.0
 - https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf
 NIST Special Publication (SP) 800-61 Rev. 2, Computer Security Incident Handling Guide
 - https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
+NIST Special Publication (SP) 800-83 Rev. 1, Guide to Malware Incident Prevention and Handling for Desktops and Laptops
+- https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-83r1.pdf
 CISA Cybersecurity Incident & Vulnerability Response Playbooks
 - https://www.cisa.gov/sites/default/files/2024-08/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf
 Federal Information Security Modernization Act of 2014

@@ -37,7 +37,6 @@ The IR Policy is written in an authoritative voice. It sets forth requirements, 
     - [Chain of Custody](#chain-of-custody)
     - [Turnover Log \& Call](#turnover-log--call)
 - [Containment](#containment)
-  - [Disabling Connectivity](#disabling-connectivity)
 - [Eradication](#eradication)
 - [Recovery](#recovery)
   - [Risk Acceptance](#risk-acceptance)
@@ -551,7 +550,7 @@ Root cause is defined as the high-level oversight, misconfiguration, or process 
 
 
 # Containment
-Incident Responders shall attempt to contain systems, software, and adversaries in an effort to limit the overall scope of incidents. Courses of action related to containment focus on the immediate protection of information systems and data from further damage while analysis continues and/or deepens. A more complete response may be taken after thorough analysis is performed. 
+Incident Responders shall attempt to contain systems, software, and adversaries in an effort to limit the overall scope of incidents. Courses of action related to containment focus on the immediate protection of information systems and data from further damage while analysis continues and/or deepens. A more complete response may be taken after thorough analysis is performed. Regardless of actions taken during containment, necessary points of contact and managers must be aware of and approving of all containment actions before they are executed.
 
 The primary objectives of containment include:
 - Preventing an incident from causing further impact on confidentiality, integrity, and availability.
@@ -560,10 +559,6 @@ The primary objectives of containment include:
 - Ensuring forensically sound acquisition of data when necessary.
 - Maintaining and updating the ticket.
 - Actively communicating updates through the appropriate technical and operational command channels.
-
-
-## Disabling Connectivity
-Management approval is required before disabling connectivity, except in the most dire and obvious situations.
 
 
 # Eradication
@@ -665,6 +660,8 @@ NIST Cybersecurity Framework (CSF) 2.0
 - https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf
 NIST Special Publication (SP) 800-61 Rev. 2, Computer Security Incident Handling Guide
 - https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
+NIST Special Publication (SP) 800-83 Rev. 1, Guide to Malware Incident Prevention and Handling for Desktops and Laptops
+- https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-83r1.pdf
 CISA Cybersecurity Incident & Vulnerability Response Playbooks
 - https://www.cisa.gov/sites/default/files/2024-08/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf
 Federal Information Security Modernization Act of 2014
