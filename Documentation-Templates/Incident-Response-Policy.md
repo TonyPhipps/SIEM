@@ -1,4 +1,4 @@
-The IR Policy is written in an authoritative voice. It sets forth requirements, what SHALL be done and, when flexibility is offered, what SHOULD be done. Some reminder-level explanations and clarifying points may be made to help emphasize requirements and guidance points.
+Policy documents are typically written in a formal, prescriptive tone to define standards and expectations. Some reminder-level explanations and clarifying points may be made to help emphasize requirements and guidance points.
 
 - [Purpose and Introduction](#purpose-and-introduction)
 - [Scope](#scope)

@@ -1,4 +1,4 @@
-﻿The IR Plan is written in a commanding voice. Do this, don't do that. Carefully consider these facts. Little explanation should be needed in this document, as it assumees one is already trained and familiar with the IR Policy.
+﻿Plans and procedures use a clear, directive tone to outline actionable steps and processes. Deep explanation should not be expected or needed in this document, as it assumes the reader is already trained and familiar with the IR Policy.
 
 - [Purpose and Introduction](#purpose-and-introduction)
 - [Compliance](#compliance)
