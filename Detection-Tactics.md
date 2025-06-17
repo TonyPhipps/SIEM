@@ -71,16 +71,18 @@ Credential Access (CA), Discovery (D), Lateral Movement (LM), Collection (C), Ex
 - https://attack.mitre.org/
 - https://threathunterplaybook.com/introduction.html
 - https://www.elastic.co/guide/en/siem/guide/current/prebuilt-rules.html
-- https://github.com/Neo23x0/sigma
+- https://github.com/elastic/detection-rules
+- https://github.com/SigmaHQ/sigma
+- https://github.com/olafhartong/sysmon-modular
+- https://splunkresearch.com/detections/
 - https://github.com/splunk/security_content/tree/develop/detections
 - https://github.com/Azure/Azure-Sentinel/tree/master/Detections
 - https://lolbas-project.github.io/
 - https://docs.rapid7.com/insightidr/windows-suspicious-process/
 - http://tajdini.net/blog/forensics-and-security/digital-forensics-and-incident-response/
 - https://rules.fluencysecurity.com/
-- https://splunkresearch.com/detections/
 - https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES
 - https://ihsansencan.github.io/index.html
 - https://www.siemusecases.com/
 - https://docs.logpoint.com/docs/alert-rules/en/latest/MITRE.html
-- https://github.com/olafhartong/sysmon-modular
+
