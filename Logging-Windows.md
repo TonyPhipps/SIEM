@@ -2,97 +2,98 @@
 
 ## Audit Process Creation
 - Description: 
+- Event ID: 4688, 4696
 - MITRE: 
 - GPO Location: Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Configuration > Detailed Tracking > Audit Process Creation
-- Event ID: 4688, 4696
+- ```reg add "hklm\software\microsoft\windows\currentversion\policies\system\audit" /v ProcessCreationIncludeCmdLine_Enabled /t REG_DWORD /d 1```
 
 
 ### Add COmmandline to Process Creation
 - Description: Adds commandline to Proceess Creation Events (4688)
+- Event ID: 4688 impacted
 - MITRE: 
 - GPO Location: Computer Configuration > Administrative Templates > System > Audit Process Creation >Include command line in process creation events
-- Event ID: 4688 impacted
+
 
 
 ## Audit Computer Account Management
 - MITRE: T1207
+- Event ID: 4741, 4743
 - GPO Location: Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > Account Management > Audit Computer Account Management
     - Setting: Check Configure the following audit events:
     - Setting: Check Success
     - Setting: Check Failure
-- Event ID: 4741, 4743
-- Event GPO Location: Domain Controller
+- Event Location: Domain Controller
 
 
 ## Audit Computer Account Management
+- Event ID: 4738
 - MITRE: T1207
 - GPO Location: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies\Account Management > Audit User Account Management
     - Setting: Check Configure the following audit events:
     - Setting: Check Success
     - Setting: Check Failure
-- Event ID: 4738
-- Event GPO Location: Domain Controller
+- Event Location: Domain Controller
 
 
 ## Audit User Rights in AD to Control User Objects
-- If a user is assigned the SeEnableDelegationPrivilege right in Active Directory it would allow control of other AD user objects.
+- Description: If a user is assigned the SeEnableDelegationPrivilege right in Active Directory it would allow control of other AD user objects.
+- Event ID: Security 4704
+- Event Location: Affected endpoint
 - MITRE: T1098
 - GPO Location: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > Policy Change > Audit Authorization Policy Change
-- Event ID: Security\4704
-- Event GPO Location: Affected endpoint
 
 
 ## Audit AllowedToDelegateTo and AllowedToActOnBehalfOfOtherIdentity
--  With these rights, one can control another users or computers account without having to use their credentials.
+- With these rights, one can control another users or computers account without having to use their credentials.
+- Event ID: Security\5136, Security\4738
+- Event Location: Domain Controller
 - MITRE: T1098
   - GPO Location: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > DS Access > Audit Directory Service Changes
-- Event ID: Security\5136, Security\4738
-- Event GPO Location: Domain Controller
 
 
 ## Audit Code Integrity Failures
 - Detect code integrity failures such as missing page hashes or corrupted drivers due unauthorized modification. This could be a sign of tampered binaries.
+- Event ID: 5038, 6281
 - MITRE: T1027.001
 - GPO Location: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > System > Audit System Integrity
-- Event ID: 5038, 6281
 
 
 ## Audit Device Installations
 - Audit installation of all devices
+- Event ID: 6423, 4663 on affected endpoint
 - MITRE: T1200
-  - GPO Location: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > Object Access > Audit Removable Storage
-    - Policy: Audit Handle Manipulation
-  - Event ID: 6423, 4663 on affected endpoint
+  - GPO Location: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > Object Access > Audit Removable Storage > Audit Handle Manipulation
 
 
 ## Audit Policy Changes
-- MITRE: T1112, T1562
-- GPO Location: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > System Audit Policies > Policy Change > Audit Policy Change
-  - Policy: Audit Authentication Policy Change
-  - Policy: Audit Authorization Policy Change
 - Event ID: 4719
+- MITRE: T1112, T1562
+- GPO Location: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > System Audit Policies > Policy Change > Audit Policy Change > Audit Authentication Policy Change
+- GPO Location: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > System Audit Policies > Policy Change > Audit Policy Change > Audit Authorization Policy Change
 
 
 ## Audit ETW Logging Disablement
 - Potential adversaries stopping ETW providers recording loaded .NET assemblies.
+- Event ID: 4657
 - MITRE: T1112, T1562
 - GPO Location: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > System Audit Policies > Object Access > Audit Registry
-- Event ID: 4657
 
 
 ## Audit GPO Scheduled Task
+- Event ID: 5136, 5145 
+- Event Location: DC
 - MITRE: T1053.005
 - GPO Location:  Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Policy Configuration > System Audit Policies > Object Access > Audit Detailed File Share
 - GPO Location:  Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Policy Configuration > System Audit Policies > DS Access
   - Policy: Audit Directory Services Changes
-- Event ID: 5136, 5145 on DC
 
 
 ## Audit Windows Filtering Platform Policy Changes
 - The Windows Filtering Platform (WFP) may be abused to block the outbound traffic of running EDR agents based on specific hardcoded filter names.
+- Event ID: 5441, 5447
 - MITRE: T1562
 - GPO Location: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > Policy Change > Audit Filtering Platform Policy Change
-- Event ID: 5441, 5447
 
 
 # PowerShell Transcription
