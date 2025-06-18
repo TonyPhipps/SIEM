@@ -37,10 +37,6 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 ## Threshold Alert
 - Source User where Count > threshold
-- Source User Count, Source Host where Source User Count > threshold
-- Source User Count, Source Host where Source Host Count > threshold
-- Source User Count, Destination Host where Source User Count > threshold
-- Source User Count, Destination Host where Destination User Count > threshold
 
 
 # Log Source Examples

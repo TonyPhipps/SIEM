@@ -33,9 +33,14 @@ Grouped by [Detection Method](/Detection-Methods.md)
 
 
 ## Threshold Alert
-- User Name, Destination Host where Destination Host Count exceeds threshold
-- Source Account, Outcome=Failure where Count exceeds threshold
-- Source Account, Outcome=Failure, Destination Host where Destination Host Count exceeds threshold
+- Source User where Type=Failure AND Count > threshold
+- Source User Count, Source Host where Type=Failure AND Source User Count > threshold
+- Source User Count, Source Host where Type=Failure AND Source Host Count > threshold
+- Source User Count, Destination Host where Type=Failure AND Source User Count > threshold
+- Source User Count, Destination Host where Type=Failure AND Destination User Count > threshold
+- User Name, Destination Host where Type=Failure AND Destination Host Count exceeds threshold
+- Source Account, Outcome=Failure where Type=Failure AND Count exceeds threshold
+- Source Account, Outcome=Failure, Destination Host where Type=Failure AND Destination Host Count exceeds threshold
 
 
 # Log Source Examples
