@@ -8,7 +8,7 @@
 - ```reg add "hklm\software\microsoft\windows\currentversion\policies\system\audit" /v ProcessCreationIncludeCmdLine_Enabled /t REG_DWORD /d 1```
 
 
-### Add COmmandline to Process Creation
+### Add Commandline to Process Creation
 - Description: Adds commandline to Proceess Creation Events (4688)
 - Event ID: 4688 impacted
 - MITRE: 
@@ -96,6 +96,11 @@
 - GPO Location: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > Policy Change > Audit Filtering Platform Policy Change
 
 
+# Audit Bits-Client Operational Logs
+```powershell
+wevtutil set-log Microsoft-Windows-Bits-Client/Operational /enabled:true /rt:true /q:true
+```
+
 # PowerShell Transcription
 https://devblogs.microsoft.com/powershell/powershell-the-blue-team/
 
@@ -113,7 +118,7 @@ https://hackernoon.com/the-windows-event-forwarding-survival-guide-2010db7a68c4
 http://zenshaze.com/wp/?p=57
 
 - Set WEC timezone to UTC / GMT
-- Set up GPO Computer Configuration → Policies → Administrative Templates → Windows Components → Event Forwarding → Configure Target Subscription Manager
+- Set up GPO Computer Configuration > Policies > Administrative Templates > Windows Components > Event Forwarding > Configure Target Subscription Manager
 - Set up subscriptions
 
 # References
