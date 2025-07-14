@@ -1,2 +1,2 @@
-﻿index=pan_logs sourcetype=pan:traffic action!=blocked NOT (dest_port IN (1197, 1198, 123, 14000, 2638, 3389, 443, 445, 5001, 53, 5450, 9997, 22)) earliest=-1h
+﻿index=pan_logs sourcetype=pan:traffic action!=blocked NOT (dest_port IN (1197, 1198, 123, 14000, 2638, 3389, 443, 445, 5001, 53, 5450, 9997, 22)) _index_earliest=-1h@m _index_latest=-2m@m
 | stats count by index, src_ip, transport, dest_port

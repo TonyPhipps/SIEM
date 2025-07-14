@@ -25,7 +25,7 @@ quantity = 0
 relation = greater than
 request.ui_dispatch_app = search
 request.ui_dispatch_view = search
-search = index="pan_logs" sourcetype=pan:threat src_ip!="your-scanner"\
+search = index="pan_logs" sourcetype=pan:threat src_ip!="your-scanner" _index_earliest=-1h@m _index_latest=-2m@m\
 | rename "app:category" as app_category \
 | fields _time host log_subtype, threat, threat_category, severity, action, app, app_category, category, src_ip, src_port, dest_ip, dest_port\
 | foreach log_subtype, threat, threat_category, severity, action, app, app_category, category, src_ip, src_port, dest_ip, dest_port \

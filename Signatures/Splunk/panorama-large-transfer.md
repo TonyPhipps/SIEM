@@ -1,4 +1,4 @@
-﻿index=pan_logs sourcetype=pan:traffic earliest=-1h
+﻿index=pan_logs sourcetype=pan:traffic _index_earliest=-1h@m _index_latest=-2m@m
 | eval transfer_mb=bytes_out/1024/1024 
 | eval hour_of_day=strftime(_time, "%H")
 ```| where hour_of_day < "08" OR hour_of_day > "18" ```
