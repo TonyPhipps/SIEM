@@ -81,7 +81,7 @@
 
 
 ## Audit GPO Scheduled Task
-- Event ID: 5136, 5145 
+- Event ID: 5136
 - Event Location: DC
 - MITRE: T1053.005
 - GPO Location:  Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Policy Configuration > System Audit Policies > Object Access > Audit Detailed File Share
