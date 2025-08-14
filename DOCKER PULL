@@ -1,0 +1,5 @@
+docker pull ahmet444/siem:calculator-graph-app
+docker pull ahmet444/siem:mysql
+docker pull ahmet444/siem:elasticsearch
+docker pull ahmet444/siem:calculator-angular-app
+docker pull ahmet444/siem:calculator-python-app
