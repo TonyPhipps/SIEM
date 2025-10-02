@@ -1,6 +1,6 @@
 TODO: Merge into Tactics md's
 
-SIEM Use Cases for Layer 7 Firewalls. Note that Layer 3 Firewall use cases also apply here.
+SIEM detection content for Layer 7 Firewalls. Note that Layer 3 Firewall detection content also apply here.
 
 - [Abnormal Expired Certificates](#abnormal-expired-certificates)
 - [Abnormal Self-Signed Certificates](#abnormal-self-signed-certificates)

@@ -1,4 +1,4 @@
-# Service Modification Use Cases
+# Service Modification Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

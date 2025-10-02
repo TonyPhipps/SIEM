@@ -1,4 +1,4 @@
-# Instance Start Use Cases
+# Instance Start Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

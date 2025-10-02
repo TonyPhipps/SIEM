@@ -1,4 +1,4 @@
-# Next-Generation Antivirus Use Cases
+# Next-Generation Antivirus Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

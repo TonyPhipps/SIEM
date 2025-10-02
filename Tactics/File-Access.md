@@ -1,4 +1,4 @@
-# File Access Use Cases
+# File Access Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

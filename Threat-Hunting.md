@@ -8,7 +8,7 @@ The main goals of threat hunting are to
 Other benefits of threat hunting are: 
 - Identification of gaps in visibility necessary to detect and respond to a specific attacker TTP. 
 - Identification of gaps in detection. 
-- Development of new monitoring use cases and detection analytics. 
+- Development of new monitoring Playbooks and detection analytics. 
 - Uncovering new threats and TTPs that feedback to the threat intelligence process. 
 - Recommendations on new preventive measures.
 

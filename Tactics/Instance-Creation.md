@@ -1,4 +1,4 @@
-# Instance Creation Use Cases
+# Instance Creation Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

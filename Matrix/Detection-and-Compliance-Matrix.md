@@ -11,7 +11,7 @@ Tables and their fields are listed below.
 - [Affected Users](#affected-users)
 - [Attack Techniques](#attack-techniques)
 - [Emails](#emails)
-- [Use Cases/Plays](#use-casesplays)
+- [Playbooks](#Playbooks)
 - [Work Log](#work-log)
 - [Mitigations](#mitigations)
 - [Owner](#owner)
@@ -19,10 +19,11 @@ Tables and their fields are listed below.
 - [Hunts](#hunts)
 - [Hunt Backlog](#hunt-backlog)
 
+
 # Incidents
 - Adversary (Lookup)
 - Signature (lookup)
-  - Use Cases/Plays (Lookup)
+  - Playbooks (Lookup)
     - Attack Techniques (Lookup)
     - Mitigations (Lookup)
 - Affected Software (Lookup)
@@ -133,6 +134,7 @@ Tables and their fields are listed below.
 - Vendor
 - Product
 - Version
+  
 
 # Affected Systems
 - Internal IP(s)
@@ -145,16 +147,19 @@ Tables and their fields are listed below.
 - Operating System
 - Operating System Version
 
+
 # Affected Users
 - Name
 - Email
 - Phone
 - Username
 
+
 # Attack Techniques
 - ID
 - Name
 - URL
+
 
 # Emails
 - Subject
@@ -166,9 +171,10 @@ Tables and their fields are listed below.
 - Header
 
 
-# Use Cases/Plays
+# Playbooks
 - Title
 - Link
+
 
 # Work Log
 - Owner (Lookup)
@@ -176,22 +182,27 @@ Tables and their fields are listed below.
 - Title
 - Details
 
+
 # Mitigations
 - Title
 - Description
+
 
 # Owner
 - Username
 - Full Name
 
 
-# Signature
+# Playbook
+
+
+
+# Signatures
 - Name
-- Use Case (Lookup)
+- Playbook (Lookup)
 - Event Feed (lookup)
 - Adversaries (lookup)
-- Use Case (lookup)
-  - Attack Techniques (lookup)
+- Attack Techniques (lookup)
 - Date Last Reviewed
 - Date Last Validated
 - Severity
@@ -206,6 +217,7 @@ Tables and their fields are listed below.
 - Deployed Logic
 - Sigma Logic
 
+
 # Hunts
 - Name - Hypothesis statement - what is being hunted for
 - Description - Details to provide context surrounding who, what, when, where, how, etc. Anticipate questions and answer them here.
@@ -218,6 +230,7 @@ Tables and their fields are listed below.
 - Script - how the hunt is actually conducted. May be geared toward a specific tool, but should have enough detail to allow reproduction in another tool. Should include specific techniques and detail sufficient for another hunter to reproduce the hunt.
 - Resources (links, report names)
 
+
 # Hunt Backlog
 - Hunt (lookup)
 - Name (hypothesis or trigger)
@@ -228,7 +241,7 @@ Tables and their fields are listed below.
 - Lessons Learned
 - Script (how this specific hunt was conducted)
 - Count of incidents created
-- Count of use cases/signatures updated
+- Count of Playbooks/signatures updated
 - Threat Intelligence output produced
 - Security Recommendations produced
 - Vulnerability findings produced

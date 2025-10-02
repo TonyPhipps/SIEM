@@ -1,4 +1,4 @@
-# Configuration Change Use Cases
+# Configuration Change Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

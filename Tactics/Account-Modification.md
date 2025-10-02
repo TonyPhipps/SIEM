@@ -1,6 +1,6 @@
 # TODO: Merge into Tactics md's
 
-# Account Modification Use Cases
+# Account Modification Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

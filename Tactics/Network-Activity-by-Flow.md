@@ -1,4 +1,4 @@
-# Network Activity by Flow Use Cases
+# Network Activity by Flow Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

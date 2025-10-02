@@ -1,4 +1,4 @@
-# Network Activity by Process Use Cases
+# Network Activity by Process Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

@@ -1,4 +1,4 @@
-# Commandline Activity Use Cases
+# Commandline Activity Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

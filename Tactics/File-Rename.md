@@ -1,4 +1,4 @@
-# File Rename Use Cases
+# File Rename Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

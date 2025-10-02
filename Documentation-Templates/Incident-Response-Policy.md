@@ -8,34 +8,16 @@ Policy documents are typically written in a formal, prescriptive tone to define 
 - [Roles and Responsibilities](#roles-and-responsibilities)
 - [Preparation](#preparation)
   - [Coordination \& Correspondence](#coordination--correspondence)
-    - [Internal Points of Contact](#internal-points-of-contact)
-    - [External Points of Contact](#external-points-of-contact)
-    - [Alternate Communication Plan](#alternate-communication-plan)
   - [Third Party Support](#third-party-support)
   - [Documentation, Training, Awareness](#documentation-training-awareness)
   - [Log Generation and Collection](#log-generation-and-collection)
   - [Tools and Access](#tools-and-access)
   - [SIEM Content](#siem-content)
-    - [Internally-Gathered Indicators of Compromise](#internally-gathered-indicators-of-compromise)
-    - [Detection Deployment Prioritization](#detection-deployment-prioritization)
-    - [Local Log Retention Requirements](#local-log-retention-requirements)
-    - [Maintain Backups of Cybersecurity Tools](#maintain-backups-of-cybersecurity-tools)
-  - [Standard Operating Prorcedures / Playbooks / Use Cases](#standard-operating-prorcedures--playbooks--use-cases)
+  - [Standard Operating Prorcedures / Playbooks](#standard-operating-prorcedures--playbooks)
   - [Ticketing System](#ticketing-system)
 - [Identification](#identification)
   - [OODA Loop](#ooda-loop)
-    - [Creating a Ticket for an Incident](#creating-a-ticket-for-an-incident)
-    - [Notification Activation of IR Plan](#notification-activation-of-ir-plan)
-    - [Incident-Related Correspondence](#incident-related-correspondence)
   - [Investigation](#investigation)
-    - [Computer Forensics](#computer-forensics)
-    - [Malware Analysis](#malware-analysis)
-    - [Escalation](#escalation)
-    - [Safeguarding Information](#safeguarding-information)
-    - [External Correspondence](#external-correspondence)
-    - [Law Enforcement Notification and Interaction](#law-enforcement-notification-and-interaction)
-    - [Chain of Custody](#chain-of-custody)
-    - [Turnover Log \& Call](#turnover-log--call)
 - [Containment](#containment)
 - [Eradication](#eradication)
 - [Recovery](#recovery)
@@ -357,8 +339,8 @@ Critical systems must be backed up and stored in a way that prevents their being
 - Test recovery from backups at least annually for critical data, servers, and domains.
 
 
-## Standard Operating Prorcedures / Playbooks / Use Cases
-A library of Standard Operating Prorcedures / Playbooks / Use Cases documents shall be created and maintained to train new members, ensure uniformity, and to prevent unnecessary delays.
+## Standard Operating Prorcedures / Playbooks
+A library of Standard Operating Prorcedures / Playbooks documents shall be created and maintained to train new members, ensure uniformity, and to prevent unnecessary delays.
 
 This library shall be kept up-to-date by all Incident Responders with detailed procedures for products and Incident Response-specific tasks. Incident Responders are to assist in keeping articles up to date and reflective of current procedures by updating as soon as possible when steps change for any reason (i.e. software updates, governance updates, improvements in knowledge or experience gained).
 
@@ -543,7 +525,7 @@ A turnover tracker shall be maintained on a team-accessible collaboration tool t
 
 Other agenda items may include:
 - Important documentation updates
-- Important use case adjustments
+- Important Playbooks adjustments
 - Zero-day announcements affecting monitored users, systems, software, etc.
 
 Root cause is defined as the high-level oversight, misconfiguration, or process failure that provided the exposure exploited by the adversary. Root cause metrics are used to assist in preventing similar incidents from occurring in the future. Underlying system weaknesses, vulnerabilities, or security controls that could have prevented or mitigated the impact of the incident shall be identified. More than one weakness category may apply.
@@ -602,7 +584,7 @@ In order to benefit the entire Incident Response Team and the organization, thes
 
 
 ## Signature Development
-Some incidents are expected to give way to potential development of new signatures, rules, reports, etc. to assist in the automated detection of future activity indicative of compromise. Such efforts and content shall be tracked and grouped by the intentions and expected response into use cases. Use cases shall fully document content creation and analysis steps.
+Some incidents are expected to give way to potential development of new signatures, rules, reports, etc. to assist in the automated detection of future activity indicative of compromise. Such efforts and content shall be tracked and grouped by the intentions and expected response into Playbooks. Playbooks shall fully document content creation and analysis steps.
 
 
 # Glossary

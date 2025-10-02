@@ -1,4 +1,4 @@
-# Web Request Use Cases
+# Web Request Detection Content
 
 
 Grouped by [Detection Method](/Detection-Methods.md)

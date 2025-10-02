@@ -1,4 +1,4 @@
-# File Modification Use Cases
+# File Modification Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

@@ -1,4 +1,4 @@
-# Log Clearing Use Cases
+# Log Clearing Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

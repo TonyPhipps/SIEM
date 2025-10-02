@@ -1,4 +1,4 @@
-# Registry Modification Use Cases
+# Registry Modification Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

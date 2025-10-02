@@ -1,4 +1,4 @@
-# File Creation Use Cases
+# File Creation Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

@@ -1,4 +1,4 @@
-# Email Traffic Use Cases
+# Email Traffic Detection Content
 
 
 Grouped by [Detection Method](/Detection-Methods.md)

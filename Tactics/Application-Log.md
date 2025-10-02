@@ -1,4 +1,4 @@
-# Application Log Use Cases
+# Application Log Detection Content
 
 
 Grouped by [Detection Method](/Detection-Methods.md)

@@ -1,4 +1,4 @@
-# Resource Consumption Use Cases
+# Resource Consumption Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

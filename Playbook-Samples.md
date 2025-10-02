@@ -1,6 +1,6 @@
-Signatures should be mapped to use cases based on grouping that makes sense. This mapping allows the investigator to review recommended response actions. A good start would be using MITRE ATT&CK framework Tactics as Use Cases for signatures.
+Signatures should be mapped to Playbooks based on grouping that makes sense. This mapping allows the investigator to review recommended response actions. A good start would be using MITRE ATT&CK framework Tactics as Playbooks for signatures.
 
-These less-technical use cases should also be considered for addition into your use case library: 
+These less-technical Playbooks should also be considered for addition into your use case library: 
 - The mouse and/or keyboard start moving/typing on their own. (https://attack.mitre.org/techniques/T1021/)
 - A device performs unexpected functions on its own (like a gate opening or closing unexpectedly).
 - An endpoint computer fails to boot up properly.

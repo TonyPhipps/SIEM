@@ -1,4 +1,4 @@
-# Group Rename Use Cases
+# Group Rename Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

@@ -1,4 +1,4 @@
-# Scheduled Task Creation Use Cases
+# Scheduled Task Creation Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

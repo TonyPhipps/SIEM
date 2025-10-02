@@ -1,4 +1,4 @@
-# Service Creation Use Cases
+# Service Creation Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

@@ -1,4 +1,4 @@
-﻿# Performance Metrics Use Cases
+﻿# Performance Metrics Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

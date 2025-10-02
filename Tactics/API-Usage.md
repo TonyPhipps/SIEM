@@ -1,4 +1,4 @@
-# API Usage Use Cases
+# API Usage Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

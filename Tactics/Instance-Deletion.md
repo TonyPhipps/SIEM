@@ -1,4 +1,4 @@
-# Instance Deletion Use Cases
+# Instance Deletion Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

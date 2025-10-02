@@ -1,4 +1,4 @@
-# Group Deletion Use Cases
+# Group Deletion Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

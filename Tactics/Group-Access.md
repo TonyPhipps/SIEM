@@ -1,4 +1,4 @@
-# Group Access Use Cases
+# Group Access Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

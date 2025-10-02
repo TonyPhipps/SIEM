@@ -1,4 +1,4 @@
-# File Deletion Use Cases
+# File Deletion Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

@@ -1,4 +1,4 @@
-# Process Access Use Cases
+# Process Access Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

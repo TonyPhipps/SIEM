@@ -1,20 +1,14 @@
 - [Executive Summary](#executive-summary)
   - [Name](#name)
-  - [Problem Statement](#problem-statement)
-  - [Objectives](#objectives)
   - [Compliance](#compliance)
-  - [MITRE ATT&CK Framework](#mitre-attck-framework)
+  - [MITRE ATT\&CK Framework](#mitre-attck-framework)
   - [Assumptions and Limitations](#assumptions-and-limitations)
 - [Analysis](#analysis)
   - [Monitoring and Notifications](#monitoring-and-notifications)
-  - [Recommended Response Action(s)](#recommended-response-actions)
+  - [Recommended Playbook(s)](#recommended-playbooks)
 - [Engineering](#engineering)
   - [Component Names](#component-names)
-    - [Alert [Name]](#alert-name)
-    - [Query [Name]](#query-name)
-  - [Data Stream Analysis](#data-stream-analysis)
   - [Validation](#validation)
-    - [Attack Simulation](#attack-simulation)
   - [References and Resources](#references-and-resources)
 
 
@@ -52,7 +46,7 @@ Insight on the actions of and tools for those who are expected to monitor and re
 Describes how the detection will bring attention to itself. This typically involves monitors, dashboards, reports, emails, alerts, etc.
 
 
-## Recommended Use Case / Playbook(s)
+## Recommended Playbook(s)
 
 Describes which one or more playbooks should be followed in handling the detection.
 
@@ -67,7 +61,7 @@ The necessary steps and content construction that fulfills the Detection. If the
 The base components that provide business logic, display, and notification.
 - Include the expected source log makeup and example.
 - Use a word like "Suspicious" to indicate that the fidelity is lower, therefore some false positives may result.
-- Group alerts/queries into a single use case when they share common objectives/recommended response actions.
+- Group alerts/queries into a single Playbooks when they share common objectives/recommended response actions.
 
 
 ### Alert [Name]
@@ -97,7 +91,7 @@ Methods to ensure the Detection was developed and is operating properly. These c
 
 ### Attack Simulation
 
-Specific actions to reproduce events that are expected to be detected/highlighted by use case components.
+Specific actions to reproduce events that are expected to be detected/highlighted by Playbooks components.
 
 
 ## References and Resources

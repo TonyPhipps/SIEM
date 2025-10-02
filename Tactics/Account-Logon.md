@@ -1,4 +1,4 @@
-# Account Logon Use Cases
+# Account Logon Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

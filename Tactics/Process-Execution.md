@@ -1,4 +1,4 @@
-# Process Execution Use Cases
+# Process Execution Detection Content
 
 This use case is purposefully separated from commandline activity. These detections assume you have all process execution details other than commandline (process name, PID, full path, etc.)
 

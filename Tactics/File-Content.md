@@ -1,4 +1,4 @@
-# File Content Use Cases
+# File Content Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

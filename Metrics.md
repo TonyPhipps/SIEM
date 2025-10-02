@@ -9,7 +9,7 @@ Metrics require fields, queries, and manual work. This section also suggests whi
 - DateTime Escalated
 - Recommended Mitigation
 - Severity
-- Source Use Case
+- Source Playbook
 - Source Signature
 - Origination
 - MITRE ATT&CK Technique
@@ -27,8 +27,8 @@ Metrics require fields, queries, and manual work. This section also suggests whi
 - Count of Incidents per Severity
 - Count of Incidents per Severity Not Reviewed Within Required Time
 - Count of Incidents per Alert/Rule/Signature
-- Count of Incidents per Use Case
-- Count of False Positive Incidents Per Use Case
+- Count of Incidents per Playbook
+- Count of False Positive Incidents Per Playbook
 - Count of Incidents per Attack Technique
 
 

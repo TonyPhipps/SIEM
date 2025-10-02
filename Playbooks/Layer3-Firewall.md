@@ -1,6 +1,6 @@
 TODO: Merge into Tactics md's
 
-SIEM Use Cases based on Layer 3 Firewalls
+SIEM Signatures  based on Layer 3 Firewalls
 - [Traffic from Printers to Servers/Workstations](#traffic-from-printers-to-serversworkstations)
 - [Traffic from Servers to Workstations](#traffic-from-servers-to-workstations)
 - [Traffic from Workstations to Workstations](#traffic-from-workstations-to-workstations)

@@ -1,4 +1,4 @@
-# Instance Modification Use Cases
+# Instance Modification Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 

@@ -1,4 +1,4 @@
-# Account Creation Use Cases
+# Account Creation Detection Content
 
 Grouped by [Detection Method](/Detection-Methods.md)
 
