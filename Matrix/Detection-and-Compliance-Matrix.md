@@ -28,6 +28,38 @@ Tables and their fields are listed below.
 - onWatchlist
 - Aliases
 - Reasons
+  
+
+# Groups
+(To append to MITRE Groups those not covered)
+- ID
+- STIX ID
+- name
+- description
+- url
+- created
+- last modified
+- domain
+- version
+- contributors
+- associated groups
+
+
+# Relationships
+(To append to MITRE Relationships those not covered)
+- source ID
+- source name
+- source ref
+- source type
+- mapping type
+- target ID
+- target name
+- target ref
+- target type
+- mapping description
+- STIX ID
+- created
+- last modified
 
 
 # Log Sources
@@ -74,9 +106,6 @@ Tables and their fields are listed below.
 
 # Signatures
 - Name
-- Source
-- SourceID
-- SourcePath
 - Date Last Reviewed
 - Date Last Simulated
 - Severity
@@ -85,13 +114,21 @@ Tables and their fields are listed below.
 - References
 - Attack Simluation Preparation
 - Attack Simulation Steps
-- Notes
+- Event Provider/Channel/EventID
 - Sample Source Events
 - Logic
+- Notes
 - Playbook (Lookup)
-- Event Feed (lookup)
-- Adversaries (lookup)
-- Attack Techniques (lookup)
+- Adversaries (Lookup)
+- Attack Techniques (Lookup)
+- SourceID (Lookup)
+
+
+# Settings
+- ID
+- STIG
+- Location / Command
+- Notes
 
 
 # Hunts
@@ -354,8 +391,10 @@ Tables and their fields are listed below.
 - type
 - url
 
+
 # Sigma as CSV
 (From https://github.com/TonyPhipps/Powershell/blob/master/Get-FlatYAML.ps1)
+(Or, if using PowerBI, from https://github.com/TonyPhipps/tech-notes/blob/main/Products/powerbi/sigma.md)
 (Command: .\Get-FlatYAML.ps1 -InputDir "d:\Github\sigma\rules" -Outputfile "d:\sigma.csv" -IgnoreFields detection, related)
 - author
 - date
