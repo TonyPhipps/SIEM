@@ -413,3 +413,34 @@ Tables and their fields are listed below.
 - status
 - tags
 - title
+
+
+# NIST SP-00-53
+(From https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
+- Control Identifier
+- Control (or Control Enhancement) Name
+- Control (or Control Enhancement) 
+- Discussion
+- Related Controls
+
+
+# NIST to MITRE Techniques
+(From https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/)
+- mapping_framework
+- mapping_framework_version
+- capability_group
+- capability_id
+- capability_description
+- mapping_type
+- attack_object_id
+- attack_object_name
+- attack_version
+- technology_domain
+- score_category
+- score_value
+- related_score
+- references
+- comments
+- organization
+- creation_date
+- last_update
