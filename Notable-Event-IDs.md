@@ -205,6 +205,10 @@ Quick-use filter string
 | 4728    | A member was added to a security-enabled global group.                                                              |        |
 | 4729    | A member was removed from a security-enabled global group.                                                          |        |
 | 4730    | A security-enabled global group was deleted.                                                                        |        |
+| 4731    | A security-enabled local group was created.                                                                         |        |
+| 4732    | A member was added to a security-enabled local group.                                                               |        |
+| 4733    | A member was removed to a security-enabled local group.                                                             |        |
+| 4734    | A security-enabled local group was deleted.                                                                         |        |
 | 4737    | A security-enabled global group was changed.                                                                        |        |
 | 4741    | A computer account was created.                                                                                     |        |
 | 4742    | A computer account was changed.                                                                                     |        |
@@ -223,6 +227,7 @@ Quick-use filter string
 | 4755    | A security-enabled universal group was changed.                                                                     |        |
 | 4756    | A member was added to a security-enabled universal group.                                                           |        |
 | 4757    | A member was removed from a security-enabled universal group.                                                       |        |
+| 4758    | A security-enabled universal group was deleted.                                                                     |        |
 | 4759    | A security-disabled universal group was created                                                                     |        |
 | 4760    | A security-disabled universal group was changed                                                                     |        |
 | 4761    | A member was added to a security-disabled universal group                                                           |        |
@@ -231,6 +236,7 @@ Quick-use filter string
 | 4764    | A group's type was changed.                                                                                         |        |
 | 4765    | SID History was added to an account.                                                                                |        |
 | 4766    | An attempt to add SID History to an account failed.                                                                 |        |
+| 4767    | A user account was unlocked.                                                                                        |        |
 | 4768    | A Kerberos authentication ticket (TGT) was requested.                                                               |        |
 | 4769    | A Kerberos service ticket was requested.                                                                            |        |
 | 4770    | A Kerberos service ticket was renewed.                                                                              |        |

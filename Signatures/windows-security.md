@@ -1,51 +1,57 @@
-Scheduled Task Created or Modified
+Scheduled Task Created Modified Deleted
 ```sql
-index=wineventlog sourcetype="WinEventLog*" EventCode IN (4698, 4702)
+index=wineventlog sourcetype="WinEventLog*" EventCode IN (4698, 4699, 4702)
 | rex field=_raw "<Command>(?<Command>.*?)<\/Command>"
 | rex field=_raw "<Arguments>(?<Arguments>.*?)<\/Arguments>"
 | rex field=_raw "<UserId>(?<TargetUser>.*?)<\/UserId>"
 ```
 
 
-Service Created or Modified
+Service Created Modified
 ```sql
-index=wineventlog sourcetype="WinEventLog*" EventCode IN (4697, 7045, 7040)
+index=wineventlog sourcetype="WinEventLog*" EventCode IN (4697, 7040, 7045)
 ```
 
 
-User Created or Modified
+User Created Modified Deleted
 ```sql
-index=wineventlog sourcetype="WinEventLog*" EventCode IN (4720, 4738)
+index=wineventlog sourcetype="WinEventLog*" EventCode IN (4720, 4726, 4738)
 ```
 
 
-Group Created or Modified
-```sql
-index=wineventlog sourcetype="WinEventLog*" EventCode IN (4731, 4732)
-```
-
-
-Domain Computer Object Created or Modified
-```sql
-index=wineventlog sourcetype="WinEventLog*" EventCode IN (4741, 4742)
-```
-
-
-Domain User Object Enabled or Disabled
+User Object Enabled or Disabled
 ```sql
 index=wineventlog sourcetype="WinEventLog*" EventCode IN (4722, 4725)
 ```
 
 
-Domain Group Object Created or Modified
+Domain Group Created Modified Deleted
 ```sql
-index=wineventlog sourcetype="WinEventLog*" EventCode IN (4727, 4737)
+index=wineventlog sourcetype="WinEventLog*" EventCode IN (4727, 4730, 4737, 4754, 4755, 4758)
 ```
 
 
-Member Added to Group
+Member Added or Removed to Domain Security Group
 ```sql
-index=wineventlog sourcetype="WinEventLog*" EventCode IN (4728, 4756, 4732)
+index=wineventlog sourcetype="WinEventLog*" EventCode IN (4728, 4729, 4756, 4757)
+```
+
+
+Local Group Created Modified Deleted
+```sql
+index=wineventlog sourcetype="WinEventLog*" EventCode IN (4731, 4734, 4735)
+```
+
+
+Member Added or Removed from Local Security Group
+```sql
+index=wineventlog sourcetype="WinEventLog*" EventCode IN (4732, 4733)
+```
+
+
+Domain Computer Object Created Modified Deleted
+```sql
+index=wineventlog sourcetype="WinEventLog*" EventCode IN (4741, 4742, 4743)
 ```
 
 
@@ -62,7 +68,7 @@ Member Added to Priveleged Local Group
 - Remote Management Users
 - Replicator
 ```sql
-index=wineventlog sourcetype="WinEventLog*" EventCode IN (4728, 4756, 4732) Group_Name IN("Administrators", "Backup Operators", "Cryptographic Operators", "Distributed COM Users", "Event Log Readers", "Hyper-V Administrators", "Network Configuration Operators", "Power Users", "Remote Desktop Users", "Remote Management Users", "Replicator")
+index=wineventlog sourcetype="WinEventLog*" EventCode IN (4732, 4733) Group_Name IN("Administrators", "Backup Operators", "Cryptographic Operators", "Distributed COM Users", "Event Log Readers", "Hyper-V Administrators", "Network Configuration Operators", "Power Users", "Remote Desktop Users", "Remote Management Users", "Replicator")
 ```
 
 
@@ -83,13 +89,13 @@ Member Added to privleged Domain Group
 - Schema Admins
 - Server Operators
 ```sql
-index=wineventlog sourcetype="WinEventLog*" EventCode IN (4728, 4756, 4732) Group_Name IN("Account Operators", "Administrators", "Backup Operators", "Cert Publishers", "Cryptographic Operators", "Distributed COM Users", "DnsAdmins", "Domain Admins", "Enterprise Admins", "Group Policy Creator Owners", "Incoming Forest Trust Builders", "Network Configuration Operators", "Print Operators", "Schema Admins", "Server Operators")
+index=wineventlog sourcetype="WinEventLog*" EventCode IN (4728, 4729, 4732, 4733, 4756, 4757) Group_Name IN("Account Operators", "Administrators", "Backup Operators", "Cert Publishers", "Cryptographic Operators", "Distributed COM Users", "DnsAdmins", "Domain Admins", "Enterprise Admins", "Group Policy Creator Owners", "Incoming Forest Trust Builders", "Network Configuration Operators", "Print Operators", "Schema Admins", "Server Operators")
 ```
 
 
 Domain GPO Created or Modified
 ```sql
-index=wineventlog sourcetype="WinEventLog*" EventCode IN (5136, 5137)
+index=wineventlog sourcetype="WinEventLog*" EventCode IN (5136, 5137, 5141)
 ```
 
 
