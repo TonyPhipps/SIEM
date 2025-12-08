@@ -109,14 +109,14 @@ index=wineventlog sourcetype="WinEventLog*" EventCode IN (5136) LDAP_Display_Nam
 User Account Password Changed
 - Source and target are typically both the same user.
 ```sql
-index=wineventlog sourcetype="WinEventLog*" EventCode=4723 TargetUserName="*$"
+index=wineventlog sourcetype="WinEventLog*" EventCode=4723 NOT TargetUserName="*$"
 ```
 
 
 User Account Password Reset
 - Source and target are typically different users.
 ```sql
-index=wineventlog sourcetype="WinEventLog*" EventCode=4724 TargetUserName="*$"
+index=wineventlog sourcetype="WinEventLog*" EventCode=4724
 ```
 
 
