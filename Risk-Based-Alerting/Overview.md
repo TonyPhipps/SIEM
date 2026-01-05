@@ -28,7 +28,7 @@ The following are recommended risk scores for a setup where a RR triggering crea
 - 2 - Low - Innocence is Plausible (Uncommon for users, common for admins)
 - 4 - Medium - Innocence is Questionable (rare for users, uncommon for admins)
 - 8 - High - Innocence is Unlikely (Probably evil for users, rare for admins)
-- 16 - Critical - Innocence is Impossible (Known Evil)
+- 16 - Critical - Innocence is Extremely Unlikely (Known Evil or once-a-year for admins)
 
 
 # Risk Score Multipliers
