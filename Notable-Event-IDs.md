@@ -208,6 +208,7 @@ Quick-use filter string
 | 4731    | A security-enabled local group was created.                                                                         |        |
 | 4732    | A member was added to a security-enabled local group.                                                               |        |
 | 4733    | A member was removed to a security-enabled local group.                                                             |        |
+| 4735    | A security-enabled local group was changed.                                                                         |        |
 | 4734    | A security-enabled local group was deleted.                                                                         |        |
 | 4737    | A security-enabled global group was changed.                                                                        |        |
 | 4741    | A computer account was created.                                                                                     |        |
