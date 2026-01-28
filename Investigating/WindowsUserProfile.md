@@ -123,3 +123,7 @@ https://thumbcacheviewer.github.io/
 - Use Zimmmerman's LECmd.exe to scan Recent docs and investigate output for suspicous activity. Files even clicked on in this directory will modify them while inspecting, so tread carefully.
 - The LNK file's "Date Modified" timestamp indicates the last time the user opened/interacted with that specific target file or folder via Windows Explorer (or an Open/Save dialog).
 ```LECmd.exe -d "$UserDir\AppData\Roaming\Microsoft\Windows\Recent" --csv d:\temp --html d:\temp --xml d:\temp --pretty```
+
+
+# TODO
+## Inspect NTUSER.DAT
