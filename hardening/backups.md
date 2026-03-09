@@ -1,0 +1,6 @@
+- Maintain offline backups, test restoration procedures, and business continuity operations during and after an incident.
+- Backup frequency and types depend on business needs. A good starting point is the Grandfather-Father-Son (GFS) approach:
+  - Grandfather (Monthly/Long-term): A full backup taken monthly or quarterly, often moved off-site or to the cloud for long-term retention and disaster recovery.
+  - Father (Weekly): A full backup taken weekly, providing an intermediate recovery point.
+  - Son (Daily): The most recent backup, usually incremental, allowing for rapid recovery of data from the previous day.
+  - Store Grandfather backup off-site to protect against catastrophic on-site disasters.
