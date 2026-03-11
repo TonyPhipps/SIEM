@@ -1,6 +1,7 @@
 $Resources = "C:\Alerts\resources"
 $Logs = "C:\Alerts\Logs"
 $TestADDomain = "Contoso.com"
+$TestADOU = Get-ADOrganizationalUnit -Filter "Name -eq 'Alert-Simulation'" | Select-Object -ExpandProperty DistinguishedName
 $TestADComputer = "testhost"
 $TestADUser = "TestUser"
 $Pass = ConvertTo-SecureString -String "SuperStrong123!@#" -AsPlainText -Force
@@ -21,10 +22,12 @@ $ISOPath = "C:\Alerts\resources\Core-current.iso"
 # title: Active Directory User Backdoors
 # sid: 300bac00-e041-4ee2-9c36-e262656a6ecc (Security 4742, 5136 on DC)
     Import-Module ActiveDirectory
+    New-ADUser -Name $TestADUser -SamAccountName $TestADUser -UserPrincipalName $TestADUserPrincipal -Path $TestADOU -AccountPassword (ConvertTo-SecureString "TempPass123!" -AsPlainText -Force) -Enabled $true
     $Delegate = Get-ADObject -Filter {SamAccountName -eq $TestADUser} -Properties objectSid
     $SD = New-Object Security.AccessControl.RawSecurityDescriptor("O:SYG:SYD:(A;;CC;;;$($Delegate.objectSid))")
     $SDBytes = New-Object byte[] $SD.BinaryLength
     $SD.GetBinaryForm($SDBytes, 0)
+    New-ADComputer -Name $TestADComputer -SamAccountName $TestADComputer -Path $TestADOU -Enabled $true
     Set-ADComputer -Identity $TestADComputer -Replace @{'msDS-AllowedToActOnBehalfOfOtherIdentity'=$SDBytes} -Verbose
     Get-ADObject -Filter {SamAccountName -eq $TestADUser}
     Get-ADComputer -Identity $TestADComputer -Properties msDS-AllowedToActOnBehalfOfOtherIdentity | Select-Object -ExpandProperty msDS-AllowedToActOnBehalfOfOtherIdentity
@@ -44,7 +47,7 @@ $ISOPath = "C:\Alerts\resources\Core-current.iso"
 # title: Possible DC Shadow Attack
 # id: 32e19d25-4aed-4860-a55a-be99cb0bf7ed (Security 4742, 5136)
     # Step 1: Get the current ACL for the AD object
-    $DistinguishedName = (Get-ADComputer $env:COMPUTERNAME | select -ExpandProperty DistinguishedName)
+    $DistinguishedName = (Get-ADComputer $env:COMPUTERNAME | Select-Object -ExpandProperty DistinguishedName)
     $adPath = "AD:$DistinguishedName"
     $acl = Get-Acl -Path $adPath
 
@@ -196,3 +199,13 @@ netsh advfirewall firewall delete rule name="TestRule"
 # id: 9e2575e7-2cb9-4da1-adc8-ed94221dca5e (Microsoft-Windows-Windows Firewall With Advanced Security/Firewall 2004)
 netsh advfirewall firewall add rule name="SuspiciousTestRule" dir=in action=allow program="C:\Windows\Temp\testapp.exe" protocol=any
 netsh advfirewall firewall delete rule name="SuspiciousTestRule"
+
+
+# Cleanup
+
+    Remove-ADUser $TestADUser -Confirm:$false
+    Remove-ADComputer -Identity $TestADComputer -Confirm:$false
+    
+
+
+
