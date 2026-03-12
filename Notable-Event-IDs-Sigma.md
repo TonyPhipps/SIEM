@@ -1,4 +1,4 @@
-Notable Event Log EventID's for Incident Response, Threat Hunting, Forensics, etc
+Notable Event IDs for ensuring collections are in place to trigger Sigma rules.
 
 - [Security](#security)
 - [Security (Domain Controller Specific)](#security-domain-controller-specific)
