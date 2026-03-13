@@ -1,4 +1,8 @@
 Notable Event IDs for ensuring collections are in place to trigger Sigma rules.
+- Use in conjunction with [Notable-Event-IDs-Risk.md](Notable-Event-IDs-Risk.md)
+- Use in conjunction with [Notable-Event-IDs-Forensics.md](Notable-Event-IDs-Forensics.md)
+
+Table of Contents
 
 - [Quick-Use Filter String for All Event IDs](#quick-use-filter-string-for-all-event-ids)
 - [Application](#application)
