@@ -443,7 +443,7 @@ NOTE: These are included above and are likely worth the effort, but will likely 
 | 5145    | A network share object was checked to see whether client can be granted desired access.            | NOISY without filters                       |
 | 5157    | The Windows Filtering Platform has blocked a connection.                                           | NOISY without filters                       |
 | 517     | The audit log was cleared.                                                                         |                                             |
-| 5379    | Credential Manager credentials were read.                                                          |                                             |
+| 5379    | Credential Manager credentials were read.                                                          | NOISY without filters                       |
 | 5441    | The following filter was present when the Windows Filtering Platform Base Filtering Engine started |                                             |
 | 5447    | A Windows Filtering Platform filter has been modified.                                             |                                             |
 | 5449    | A Windows Filtering Platform layer has been modified.                                              |                                             |
