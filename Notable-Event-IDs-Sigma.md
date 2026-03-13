@@ -130,25 +130,26 @@ Quick-use filter string
 
 ## System
 
-| EventID | Provider Name                                      | Description                                           | Filter                 |
-| :-----: | :------------------------------------------------- | :---------------------------------------------------- | ---------------------- |
-|   26    | Application Popup                                  |                                                       |                        |
-|  6038   | LsaSrv                                             |                                                       |                        |
-|   16    | Microsoft-Windows-Kerberos-Key-Distribution-Center |                                                       |
-|   16    | Microsoft-Windows-Kernel-General                   |                                                       |                        |
-|   16    | Microsoft-Windows-WindowsUpdateClient              |                                                       |                        |
-|   39    | Microsoft-Windows-Kerberos-Key-Distribution-Center |                                                       |
-|   42    |                                                    | The system is entering sleep                          |                        |
-|   98    | Microsoft-Windows-Ntfs                             |                                                       |                        |
-|   104   | Microsoft-Windows-Eventlog                         | Event Log was Cleared                                 |                        |
-|  1001   | Microsoft-Windows-WER-SystemErrorReporting         | System Crash                                          |                        |
-|  5805   | Netlogon                                           |                                                       |                        |
-|  5829   | Netlogon                                           |                                                       |                        |
-|  7023   |                                                    | Service terminated with error                         | Level 0, 1, 2, 3, or 4 |
-|  7034   |                                                    | service terminated unexpectedly                       | Level 0, 1, 2, 3, or 4 |
-|  7036   |                                                    | The [Service Name] service entered the [Status] state |                        |
-|  7045   |                                                    | A service was installed in the system                 | Level 0, 1, 2, 3, or 4 |
-|  10001  | Microsoft-Windows-DistributedCOM                   |                                                       |
+| EventID | Provider Name                                      | Description                                           | Filter                       |
+| :-----: | :------------------------------------------------- | :---------------------------------------------------- | ---------------------------- |
+|   26    | Application Popup                                  |                                                       |                              |
+|  6038   | LsaSrv                                             |                                                       |                              |
+|   16    | Microsoft-Windows-Kerberos-Key-Distribution-Center |                                                       |                              |
+|   16    | Microsoft-Windows-Kernel-General                   |                                                       |                              |
+|   16    | Microsoft-Windows-WindowsUpdateClient              |                                                       |                              |
+|   39    | Microsoft-Windows-Kerberos-Key-Distribution-Center |                                                       |                              |
+|   42    |                                                    | The system is entering sleep                          |                              |
+|   55    | Ntfs                                               |                                                       | Origin: 'File System Driver' |
+|   98    | Microsoft-Windows-Ntfs                             |                                                       |                              |
+|   104   | Microsoft-Windows-Eventlog                         | Event Log was Cleared                                 |                              |
+|  1001   | Microsoft-Windows-WER-SystemErrorReporting         | System Crash                                          |                              |
+|  5805   | Netlogon                                           |                                                       |                              |
+|  5829   | Netlogon                                           |                                                       |                              |
+|  7023   | Service Control Manager                            | Service terminated with error                         |                              |
+|  7034   | Service Control Manager                            | service terminated unexpectedly                       |                              |
+|  7036   | Service Control Manager                            | The [Service Name] service entered the [Status] state |                              |
+|  7045   | Service Control Manager                            | A service was installed in the system                 |                              |
+|  10001  | Microsoft-Windows-DistributedCOM                   |                                                       |                              |
 
 
 ## Application
@@ -394,6 +395,9 @@ OR just "CAPI2"
 |   20    | WmiEvent (WmiEventConsumer activity detected)         |
 |   21    | WmiEvent (WmiEventConsumerToFilter activity detected) |
 |   22    | DNSEvent (DNS query)                                  |
+|   27    | FileBlockExecutable                                   |
+|   28    | FileBlockShredding                                    |
+|   29    | FileExecutableDetected                                |
 |   255   | Error                                                 |
 
 
@@ -421,10 +425,13 @@ OR just "CAPI2"
 |  1009   | The antimalware platform restored an item from quarantine.                                   |
 |  1013   | The antimalware platform deleted history of malware and other potentially unwanted software. |
 |  1116   | The antimalware platform detected malware or other potentially unwanted software.            |
+|  1121   |                                                                                              |
 |  3002   | Real-time protection encountered an error and failed.                                        |
 |  5001   | Real-time protection is disabled.                                                            |
+|  5007   |                                                                                              |
 |  5010   | Scanning for malware and other potentially unwanted software is disabled.                    |
 |  5012   | Scanning for viruses is disabled.                                                            |
+|  5013   |                                                                                              |
 |  5101   | The antimalware platform is expired.                                                         |
 
 
@@ -446,6 +453,7 @@ OR just "CAPI2"
 
 | EventID | Description                              |
 | :-----: | ---------------------------------------- |
+|  5859   |                                          |
 |  5861   | Registration of Permanent Event Consumer |
 
 
@@ -483,6 +491,8 @@ OR just "CAPI2"
 | :-----: | ----------- |
 |  1031   |             |
 |  1033   |             |
+
+
 
 
 
