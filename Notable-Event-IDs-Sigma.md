@@ -463,18 +463,18 @@ NOTE: Event IDs below may be extra noisy and need tuning.
 4768
 ```
 
-| EventID | Description                                                                            | Filter |
-| ------- | -------------------------------------------------------------------------------------- | ------ |
-| 4649    | A replay attack was detected.                                                          |        |
-| 4706    | A new trust was created to a domain.                                                   |        |
-| 4741    | A computer account was created.                                                        |        |
-| 4742    | A computer account was changed.                                                        |        |
-| 4765    | SID History was added to an account.                                                   |        |
-| 4768    | A Kerberos authentication ticket (TGT) was requested.                                  |        |
-| 4769    | A Kerberos service ticket was requested.                                               |        |
-| 4771    | Kerberos pre-authentication failed.                                                    |        |
-| 4794    | An attempt was made to set the Directory Services Restore Mode administrator password. |        |
-| 5136    | A directory service object was modified. [1]                                           |        |
+| EventID | Description                                                                            | Filter                |
+| ------- | -------------------------------------------------------------------------------------- | --------------------- |
+| 4649    | A replay attack was detected.                                                          |                       |
+| 4706    | A new trust was created to a domain.                                                   |                       |
+| 4741    | A computer account was created.                                                        |                       |
+| 4742    | A computer account was changed.                                                        |                       |
+| 4765    | SID History was added to an account.                                                   |                       |
+| 4768    | A Kerberos authentication ticket (TGT) was requested.                                  | NOISY without filters |
+| 4769    | A Kerberos service ticket was requested.                                               |                       |
+| 4771    | Kerberos pre-authentication failed.                                                    |                       |
+| 4794    | An attempt was made to set the Directory Services Restore Mode administrator password. |                       |
+| 5136    | A directory service object was modified. [1]                                           |                       |
 
 
 ## System
