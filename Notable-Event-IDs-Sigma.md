@@ -1,43 +1,373 @@
 Notable Event IDs for ensuring collections are in place to trigger Sigma rules.
 
-- [Security](#security)
-- [Security (Domain Controller Specific)](#security-domain-controller-specific)
-- [System](#system)
 - [Application](#application)
-- [Microsoft-Windows-Iphlpsvc/Operational](#microsoft-windows-iphlpsvcoperational)
-- [Applications and Services Logs](#applications-and-services-logs)
+- [MSExchange Management](#msexchange-management)
+- [Microsoft-IIS-Configuration/Operational](#microsoft-iis-configurationoperational)
+- [Microsoft-ServiceBus/Operational](#microsoft-servicebusoperational)
+- [Microsoft-Windows-AppLocker/EXE and DLL](#microsoft-windows-applockerexe-and-dll)
 - [Microsoft-Windows-AppModel-Runtime/Admin](#microsoft-windows-appmodel-runtimeadmin)
 - [Microsoft-Windows-AppXDeployment-Server/Operational](#microsoft-windows-appxdeployment-serveroperational)
 - [Microsoft-Windows-AppxPackaging/Operational](#microsoft-windows-appxpackagingoperational)
-- [Microsoft-Windows-AppLocker/EXE and DLL](#microsoft-windows-applockerexe-and-dll)
 - [Microsoft-Windows-Bits-Client/Operational](#microsoft-windows-bits-clientoperational)
 - [Microsoft-Windows-CAPI2](#microsoft-windows-capi2)
 - [Microsoft-Windows-CertificateServicesClient-Lifecycle-System/Operational](#microsoft-windows-certificateservicesclient-lifecycle-systemoperational)
 - [Microsoft-Windows-CodeIntegrity/Operational](#microsoft-windows-codeintegrityoperational)
-- [Microsoft-Windows-Security-Mitigations](#microsoft-windows-security-mitigations)
-- [Microsoft-ServiceBus/Operational](#microsoft-servicebusoperational)
-- [Microsoft-Windows-Diagnosis-DPS/Operational](#microsoft-windows-diagnosis-dpsoperational)
-- [Microsoft-Windows-Shell-Core/Operational](#microsoft-windows-shell-coreoperational)
-- [Microsoft-Windows-DNSServer/Audit](#microsoft-windows-dnsserveraudit)
+- [Microsoft-Windows-DHCP-Server](#microsoft-windows-dhcp-server)
 - [Microsoft-Windows-DNS-Client/Operational](#microsoft-windows-dns-clientoperational)
+- [Microsoft-Windows-DNSServer/Audit](#microsoft-windows-dnsserveraudit)
+- [Microsoft-Windows-Diagnosis-DPS/Operational](#microsoft-windows-diagnosis-dpsoperational)
 - [Microsoft-Windows-DriverFrameworks-UserMode/Operational](#microsoft-windows-driverframeworks-usermodeoperational)
+- [Microsoft-Windows-Iphlpsvc/Operational](#microsoft-windows-iphlpsvcoperational)
 - [Microsoft-Windows-Kernel-PnP/Device Configuration](#microsoft-windows-kernel-pnpdevice-configuration)
+- [Microsoft-Windows-LDAP-Client/Operational](#microsoft-windows-ldap-clientoperational)
+- [Microsoft-Windows-LSA-Server/Operational](#microsoft-windows-lsa-serveroperational)
 - [Microsoft-Windows-NTLM/Operational](#microsoft-windows-ntlmoperational)
 - [Microsoft-Windows-Powershell/Operational](#microsoft-windows-powershelloperational)
-- [Microsoft-Windows-Shell-Core/Operational](#microsoft-windows-shell-coreoperational-1)
-- [Microsoft-Windows-SMBClient/Security](#microsoft-windows-smbclientsecurity)
+- [Microsoft-Windows-RpcFirewall/Operational](#microsoft-windows-rpcfirewalloperational)
 - [Microsoft-Windows-SMBClient/Connectivity](#microsoft-windows-smbclientconnectivity)
+- [Microsoft-Windows-SMBClient/Security](#microsoft-windows-smbclientsecurity)
+- [Microsoft-Windows-Security-Mitigations](#microsoft-windows-security-mitigations)
+- [Microsoft-Windows-Shell-Core/Operational](#microsoft-windows-shell-coreoperational)
 - [Microsoft-Windows-Sysmon/Operational](#microsoft-windows-sysmonoperational)
 - [Microsoft-Windows-TaskScheduler/Operational](#microsoft-windows-taskscheduleroperational)
 - [Microsoft-Windows-TerminalServices-LocalSessionManager/Operational](#microsoft-windows-terminalservices-localsessionmanageroperational)
+- [Microsoft-Windows-WMI-Activity/Operational](#microsoft-windows-wmi-activityoperational)
 - [Microsoft-Windows-Windows Defender/Operational](#microsoft-windows-windows-defenderoperational)
 - [Microsoft-Windows-Windows Firewall With Advanced Security/Firewall](#microsoft-windows-windows-firewall-with-advanced-securityfirewall)
-- [Microsoft-Windows-WMI-Activity/Operational](#microsoft-windows-wmi-activityoperational)
-- [Microsoft-IIS-Configuration/Operational](#microsoft-iis-configurationoperational)
-- [Microsoft-Windows-LDAP-Client/Operational](#microsoft-windows-ldap-clientoperational)
-- [Microsoft-Windows-LSA-Server/Operational](#microsoft-windows-lsa-serveroperational)
-- [MSExchange Management](#msexchange-management)
-- [Microsoft-Windows-DHCP-Server](#microsoft-windows-dhcp-server)
+- [OpenSSH](#openssh)
+- [Security](#security)
+- [Security (Domain Controller Specific)](#security-domain-controller-specific)
+- [System](#system)
+
+
+
+## Application
+
+| EventID | ProviderName                                  | Description       |
+| :-----: | :-------------------------------------------- | :---------------- |
+|    1    | Microsoft-Windows-Audit-CVE                   |                   |
+|   216   | ESENT                                         |                   |
+|   325   | ESENT                                         |                   |
+|   53    | Microsoft-Windows-CertificationAuthority      |                   |
+|   524   | Microsoft-Windows-Backup                      |                   |
+|   865   | Microsoft-Windows-SoftwareRestrictionPolicies |                   |
+|  1000   | Application Error                             |                   |
+|  1001   | Windows Error Reporting                       | Application Crash |
+|  1033   | MsiInstaller                                  |                   |
+|  1034   | MsiInstaller                                  |                   |
+|  1040   | MsiInstaller                                  |                   |
+|  33205  | MSSQLSERVER                                   |                   |
+|  18456  | MSSQLSERVER                                   |                   |
+|  33205  | MSSQLSERVER                                   |                   |
+|  15457  | MSSQLSERVER                                   |                   |
+|   200   | ScreenConnect                                 |                   |
+|   201   | ScreenConnect                                 |                   |
+
+
+Note: Some installable applications are known to write to this log. Consider looking in your logs to determine if any more are necessary for proper visibility.
+
+
+## MSExchange Management
+
+| EventID | Description |
+| :-----: | ----------- |
+|    6    |             |
+
+
+## Microsoft-IIS-Configuration/Operational
+
+| EventID | Description |
+| :-----: | ----------- |
+|   29    |             |
+
+
+## Microsoft-ServiceBus/Operational
+
+| EventID | Description |
+| :-----: | ----------- |
+|  40300  |             |
+
+
+## Microsoft-Windows-AppLocker/EXE and DLL
+
+| EventID | Description                     |
+| :-----: | ------------------------------- |
+|  8004   | ... was prevented from running. |
+
+
+## Microsoft-Windows-AppModel-Runtime/Admin
+
+| EventID | Description |
+| :-----: | ----------- |
+|   201   |             |
+
+
+## Microsoft-Windows-AppXDeployment-Server/Operational
+
+| EventID | Description |
+| :-----: | ----------- |
+|   400   |             |
+|   401   |             |
+|   412   |             |
+|   441   |             |
+|   854   |             |
+
+
+## Microsoft-Windows-AppxPackaging/Operational
+
+| EventID | Description |
+| :-----: | ----------- |
+|   157   |             |
+
+
+## Microsoft-Windows-Bits-Client/Operational
+
+| EventID | Description |
+| :-----: | ----------- |
+|    3    |             |
+|  16403  |             |
+
+
+## Microsoft-Windows-CAPI2
+OR just "CAPI2"
+
+| EventID | Description |
+| :-----: | ----------- |
+|   70    |             |
+
+
+## Microsoft-Windows-CertificateServicesClient-Lifecycle-System/Operational
+
+| EventID | Description |
+| :-----: | ----------- |
+|  1007   |             |
+
+
+## Microsoft-Windows-CodeIntegrity/Operational
+
+| EventID | Description                                                                                                                                                                                           | Filter       |
+| :-----: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+|  3001   | Code Integrity determined an unsigned kernel module %2 is loaded into the system. Check with the publisher to see if a signed version of the kernel module is available.                              | Level 2 or 3 |
+|  3021   |                                                                                                                                                                                                       |
+|  3023   | Windows is unable to verify the integrity of the file %2 because the signing certificate has been revoked. Check with the publisher to see if a new signed version of the kernel module is available. | Level 2 or 3 |
+|  3032   |                                                                                                                                                                                                       |
+|  3033   |                                                                                                                                                                                                       |
+|  3036   |                                                                                                                                                                                                       |
+|  3037   |                                                                                                                                                                                                       |
+|  3077   |                                                                                                                                                                                                       |
+|  3082   |                                                                                                                                                                                                       |
+|  3104   |                                
+
+
+## Microsoft-Windows-DHCP-Server
+
+| EventID | Description |
+| :-----: | ----------- |
+|  1031   |             |
+|  1033   |             |
+
+## Microsoft-Windows-DNS-Client/Operational
+
+| EventID | Description                       | Filter |
+| :-----: | --------------------------------- | ------ |
+|  3008   | DNS Client events Query Completed |        |
+
+
+## Microsoft-Windows-DNSServer/Audit
+
+| EventID | Description                                             | Filter |
+| :-----: | ------------------------------------------------------- | ------ |
+|   150   | DNS Server could not load or initialize the plug-in DLL |        |
+|  6004   |                                                         |        |
+
+
+## Microsoft-Windows-Diagnosis-DPS/Operational
+
+| EventID | Description |
+| :-----: | ----------- |
+|   101   |             |
+
+
+## Microsoft-Windows-DriverFrameworks-UserMode/Operational
+
+| EventID | Description              |
+| :-----: | :----------------------- |
+|  2003   |                          |
+|  2004   | User-Mode drivers loaded |
+|  2006   |                          |
+|  2033   |                          |
+
+
+## Microsoft-Windows-Iphlpsvc/Operational
+
+| EventID | Description |
+| :-----: | ----------- |
+|  4100   |             |
+
+
+## Microsoft-Windows-Kernel-PnP/Device Configuration
+
+| EventID | Description                   |
+| :-----: | :---------------------------- |
+|   400   | New Mass Storage Installation |
+|   410   | New Mass Storage Installation |
+
+
+## Microsoft-Windows-LDAP-Client/Operational
+
+| EventID | Description |
+| :-----: | ----------- |
+|   30    |             |
+
+
+## Microsoft-Windows-LSA-Server/Operational
+
+| EventID | Description |
+| :-----: | ----------- |
+|   300   |             |
+
+
+## Microsoft-Windows-NTLM/Operational
+
+| EventID | Description                                                                                  |
+| :-----: | :------------------------------------------------------------------------------------------- |
+|  8001   | NTLM client blocked audit: Audit outgoing NTLM authentication traffic that would be blocked. |
+|  8002   | NTLM server blocked audit: Audit Incoming NTLM Traffic that would be blocked.                |
+|  8004   | Domain Controller Blocked Audit: Audit NTLM authentication to this domain controller.        |
+
+
+## Microsoft-Windows-Powershell/Operational
+
+| EventID | Description          |
+| :-----: | :------------------- |
+|  4103   | Pipeline executed    |
+|  4104   | Scriptblock executed |
+
+
+## Microsoft-Windows-RpcFirewall/Operational
+
+| EventID | Description |
+| :-----: | ----------- |
+|    3    |             |
+
+
+## Microsoft-Windows-SMBClient/Connectivity
+
+| EventID | Description |
+| :-----: | ----------- |
+|  4000   |             |
+
+
+## Microsoft-Windows-SMBClient/Security
+
+| EventID | Description |
+| :-----: | ----------- |
+|  31017  |             |
+
+
+## Microsoft-Windows-Security-Mitigations
+
+| EventID | Description |
+| :-----: | ----------- |
+|   11    |             |
+
+
+## Microsoft-Windows-Shell-Core/Operational
+
+| EventID | Description                                                                                                 |
+| :-----: | ----------------------------------------------------------------------------------------------------------- |
+|  28115  | Triggered when a shortcut is added to the "App Resolver Cache". Indicates when an application is installed. |
+
+
+## Microsoft-Windows-Sysmon/Operational
+
+| EventID | Description                                           |
+| :-----: | ----------------------------------------------------- |
+|    1    | Process creation                                      |
+|    3    | Network connection                                    |
+|    4    | Sysmon service state changed                          |
+|    5    | Process terminated                                    |
+|    6    | Driver loaded                                         |
+|    7    | Image loaded                                          |
+|    8    | CreateRemoteThread                                    |
+|    9    | RawAccessRead                                         |
+|   10    | ProcessAccess                                         |
+|   11    | FileCreate                                            |
+|   12    | RegistryEvent (Object create and delete)              |
+|   13    | RegistryEvent (Value Set)                             |
+|   14    | RegistryEvent (Key and Value Rename)                  |
+|   17    | PipeEvent (Pipe Created)                              |
+|   19    | WmiEvent (WmiEventFilter activity detected)           |
+|   20    | WmiEvent (WmiEventConsumer activity detected)         |
+|   21    | WmiEvent (WmiEventConsumerToFilter activity detected) |
+|   22    | DNSEvent (DNS query)                                  |
+|   27    | FileBlockExecutable                                   |
+|   28    | FileBlockShredding                                    |
+|   29    | FileExecutableDetected                                |
+|   255   | Error                                                 |
+
+
+## Microsoft-Windows-TaskScheduler/Operational
+
+| EventID | Description    |
+| :-----: | :------------- |
+|   106   | Task Scheduled |
+|   129   | Task Created   |
+|   141   | Task Removed   |
+
+
+## Microsoft-Windows-TerminalServices-LocalSessionManager/Operational
+
+| EventID | Description             |
+| :-----: | ----------------------- |
+|   21    | Session logon succeeded |
+
+
+## Microsoft-Windows-WMI-Activity/Operational
+
+| EventID | Description                              |
+| :-----: | ---------------------------------------- |
+|  5859   |                                          |
+|  5861   | Registration of Permanent Event Consumer |
+
+
+## Microsoft-Windows-Windows Defender/Operational
+
+| EventID | Description                                                                                  | Filter |
+| :-----: | -------------------------------------------------------------------------------------------- | ------ |
+|  1006   | The antimalware engine found malware or other potentially unwanted software.                 |
+|  1009   | The antimalware platform restored an item from quarantine.                                   |
+|  1013   | The antimalware platform deleted history of malware and other potentially unwanted software. |
+|  1116   | The antimalware platform detected malware or other potentially unwanted software.            |
+|  1121   |                                                                                              |
+|  3002   | Real-time protection encountered an error and failed.                                        |
+|  5001   | Real-time protection is disabled.                                                            |
+|  5007   |                                                                                              |
+|  5010   | Scanning for malware and other potentially unwanted software is disabled.                    |
+|  5012   | Scanning for viruses is disabled.                                                            |
+|  5013   |                                                                                              |
+|  5101   | The antimalware platform is expired.                                                         |
+
+
+## Microsoft-Windows-Windows Firewall With Advanced Security/Firewall
+
+| EventID | Description                               |
+| :-----: | ----------------------------------------- |
+|  2002   | Windows Defender Firewall setting changed |
+|  2004   | Firewall Rule Added                       |
+|  2005   | Firewall Rule Changed                     |
+|  2006   | Firewall Rule Deleted                     |
+|  2009   |                                           |
+|  2032   |                                           |
+|  2033   | Firewall Rule Deleted                     |
+|  2009   | Firewall Failed to load group policy      |
+
+
+## OpenSSH
+
+| EventID | Description |
+| :-----: | ----------- |
+|    3    |             |
 
 
 ## Security
@@ -152,345 +482,16 @@ Quick-use filter string
 |  10001  | Microsoft-Windows-DistributedCOM                   |                                                       |                              |
 
 
-## Application
 
-| EventID | ProviderName                                  | Description       |
-| :-----: | :-------------------------------------------- | :---------------- |
-|    1    | Microsoft-Windows-Audit-CVE                   |                   |
-|   216   | ESENT                                         |                   |
-|   325   | ESENT                                         |                   |
-|   53    | Microsoft-Windows-CertificationAuthority      |                   |
-|   524   | Microsoft-Windows-Backup                      |                   |
-|   865   | Microsoft-Windows-SoftwareRestrictionPolicies |                   |
-|  1000   | Application Error                             |                   |
-|  1001   | Windows Error Reporting                       | Application Crash |
-|  1033   | MsiInstaller                                  |                   |
-|  1034   | MsiInstaller                                  |                   |
-|  1040   | MsiInstaller                                  |                   |
-|  33205  | MSSQLSERVER                                   |                   |
-|  18456  | MSSQLSERVER                                   |                   |
-|  33205  | MSSQLSERVER                                   |                   |
-|  15457  | MSSQLSERVER                                   |                   |
-|   200   | ScreenConnect                                 |                   |
-|   201   | ScreenConnect                                 |                   |
 
 
-Note: Some installable applications are known to write to this log. Consider looking in your logs to determine if any more are necessary for proper visibility.
 
 
-## Microsoft-Windows-Iphlpsvc/Operational
 
-| EventID | Description |
-| :-----: | ----------- |
-|  4100   |             |
 
 
-## Applications and Services Logs
 
 
-### Microsoft-Windows-RpcFirewall/Operational
-
-| EventID | Description |
-| :-----: | ----------- |
-|    3    |             |
-
-
-### OpenSSH
-
-| EventID | Description |
-| :-----: | ----------- |
-|    3    |             |
-
-
-## Microsoft-Windows-AppModel-Runtime/Admin
-
-| EventID | Description |
-| :-----: | ----------- |
-|   201   |             |
-
-
-## Microsoft-Windows-AppXDeployment-Server/Operational
-
-| EventID | Description |
-| :-----: | ----------- |
-|   400   |             |
-|   401   |             |
-|   412   |             |
-|   441   |             |
-|   854   |             |
-
-
-## Microsoft-Windows-AppxPackaging/Operational
-
-| EventID | Description |
-| :-----: | ----------- |
-|   157   |             |
-
-
-## Microsoft-Windows-AppLocker/EXE and DLL
-
-| EventID | Description                     |
-| :-----: | ------------------------------- |
-|  8004   | ... was prevented from running. |
-
-
-## Microsoft-Windows-Bits-Client/Operational
-
-| EventID | Description |
-| :-----: | ----------- |
-|    3    |             |
-|  16403  |             |
-
-
-## Microsoft-Windows-CAPI2
-OR just "CAPI2"
-
-| EventID | Description |
-| :-----: | ----------- |
-|   70    |             |
-
-
-## Microsoft-Windows-CertificateServicesClient-Lifecycle-System/Operational
-
-| EventID | Description |
-| :-----: | ----------- |
-|  1007   |             |
-
-
-## Microsoft-Windows-CodeIntegrity/Operational
-
-| EventID | Description                                                                                                                                                                                           | Filter       |
-| :-----: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-|  3001   | Code Integrity determined an unsigned kernel module %2 is loaded into the system. Check with the publisher to see if a signed version of the kernel module is available.                              | Level 2 or 3 |
-|  3021   |                                                                                                                                                                                                       |
-|  3023   | Windows is unable to verify the integrity of the file %2 because the signing certificate has been revoked. Check with the publisher to see if a new signed version of the kernel module is available. | Level 2 or 3 |
-|  3032   |                                                                                                                                                                                                       |
-|  3033   |                                                                                                                                                                                                       |
-|  3036   |                                                                                                                                                                                                       |
-|  3037   |                                                                                                                                                                                                       |
-|  3077   |                                                                                                                                                                                                       |
-|  3082   |                                                                                                                                                                                                       |
-|  3104   |                                                                                                                                                                                                       |
-
-
-## Microsoft-Windows-Security-Mitigations
-
-| EventID | Description |
-| :-----: | ----------- |
-|   11    |             |
-
-
-## Microsoft-ServiceBus/Operational
-
-
-| EventID | Description |
-| :-----: | ----------- |
-|  40300  |             |
-
-
-## Microsoft-Windows-Diagnosis-DPS/Operational
-
-| EventID | Description |
-| :-----: | ----------- |
-|   101   |             |
-
-
-## Microsoft-Windows-Shell-Core/Operational
-
-| EventID | Description |
-| :-----: | ----------- |
-|  28115  |             |
-
-
-## Microsoft-Windows-DNSServer/Audit
-
-| EventID | Description                                             | Filter |
-| :-----: | ------------------------------------------------------- | ------ |
-|   150   | DNS Server could not load or initialize the plug-in DLL |        |
-|  6004   |                                                         |        |
-
-
-## Microsoft-Windows-DNS-Client/Operational
-
-| EventID | Description                       | Filter |
-| :-----: | --------------------------------- | ------ |
-|  3008   | DNS Client events Query Completed |        |
-
-
-## Microsoft-Windows-DriverFrameworks-UserMode/Operational
-
-| EventID | Description              |
-| :-----: | :----------------------- |
-|  2003   |                          |
-|  2004   | User-Mode drivers loaded |
-|  2006   |                          |
-|  2033   |                          |
-
-
-## Microsoft-Windows-Kernel-PnP/Device Configuration
-
-| EventID | Description                   |
-| :-----: | :---------------------------- |
-|   400   | New Mass Storage Installation |
-|   410   | New Mass Storage Installation |
-
-
-## Microsoft-Windows-NTLM/Operational
-
-| EventID | Description                                                                                  |
-| :-----: | :------------------------------------------------------------------------------------------- |
-|  8001   | NTLM client blocked audit: Audit outgoing NTLM authentication traffic that would be blocked. |
-|  8002   | NTLM server blocked audit: Audit Incoming NTLM Traffic that would be blocked.                |
-|  8004   | Domain Controller Blocked Audit: Audit NTLM authentication to this domain controller.        |
-
-
-## Microsoft-Windows-Powershell/Operational
-
-| EventID | Description          |
-| :-----: | :------------------- |
-|  4103   | Pipeline executed    |
-|  4104   | Scriptblock executed |
-
-
-## Microsoft-Windows-Shell-Core/Operational
-
-| EventID | Description                                                                                                 |
-| :-----: | ----------------------------------------------------------------------------------------------------------- |
-|  28115  | Triggered when a shortcut is added to the "App Resolver Cache". Indicates when an application is installed. |
-
-
-## Microsoft-Windows-SMBClient/Security
-
-| EventID | Description |
-| :-----: | ----------- |
-|  31017  |             |
-
-
-## Microsoft-Windows-SMBClient/Connectivity
-
-| EventID | Description |
-| :-----: | ----------- |
-|  4000   |             |
-
-
-## Microsoft-Windows-Sysmon/Operational
-
-| EventID | Description                                           |
-| :-----: | ----------------------------------------------------- |
-|    1    | Process creation                                      |
-|    3    | Network connection                                    |
-|    4    | Sysmon service state changed                          |
-|    5    | Process terminated                                    |
-|    6    | Driver loaded                                         |
-|    7    | Image loaded                                          |
-|    8    | CreateRemoteThread                                    |
-|    9    | RawAccessRead                                         |
-|   10    | ProcessAccess                                         |
-|   11    | FileCreate                                            |
-|   12    | RegistryEvent (Object create and delete)              |
-|   13    | RegistryEvent (Value Set)                             |
-|   14    | RegistryEvent (Key and Value Rename)                  |
-|   17    | PipeEvent (Pipe Created)                              |
-|   19    | WmiEvent (WmiEventFilter activity detected)           |
-|   20    | WmiEvent (WmiEventConsumer activity detected)         |
-|   21    | WmiEvent (WmiEventConsumerToFilter activity detected) |
-|   22    | DNSEvent (DNS query)                                  |
-|   27    | FileBlockExecutable                                   |
-|   28    | FileBlockShredding                                    |
-|   29    | FileExecutableDetected                                |
-|   255   | Error                                                 |
-
-
-## Microsoft-Windows-TaskScheduler/Operational
-
-| EventID | Description    |
-| :-----: | :------------- |
-|   106   | Task Scheduled |
-|   129   | Task Created   |
-|   141   | Task Removed   |
-
-
-## Microsoft-Windows-TerminalServices-LocalSessionManager/Operational
-
-| EventID | Description             |
-| :-----: | ----------------------- |
-|   21    | Session logon succeeded |
-
-
-## Microsoft-Windows-Windows Defender/Operational
-
-| EventID | Description                                                                                  | Filter |
-| :-----: | -------------------------------------------------------------------------------------------- | ------ |
-|  1006   | The antimalware engine found malware or other potentially unwanted software.                 |
-|  1009   | The antimalware platform restored an item from quarantine.                                   |
-|  1013   | The antimalware platform deleted history of malware and other potentially unwanted software. |
-|  1116   | The antimalware platform detected malware or other potentially unwanted software.            |
-|  1121   |                                                                                              |
-|  3002   | Real-time protection encountered an error and failed.                                        |
-|  5001   | Real-time protection is disabled.                                                            |
-|  5007   |                                                                                              |
-|  5010   | Scanning for malware and other potentially unwanted software is disabled.                    |
-|  5012   | Scanning for viruses is disabled.                                                            |
-|  5013   |                                                                                              |
-|  5101   | The antimalware platform is expired.                                                         |
-
-
-## Microsoft-Windows-Windows Firewall With Advanced Security/Firewall
-
-| EventID | Description                               |
-| :-----: | ----------------------------------------- |
-|  2002   | Windows Defender Firewall setting changed |
-|  2004   | Firewall Rule Added                       |
-|  2005   | Firewall Rule Changed                     |
-|  2006   | Firewall Rule Deleted                     |
-|  2009   |                                           |
-|  2032   |                                           |
-|  2033   | Firewall Rule Deleted                     |
-|  2009   | Firewall Failed to load group policy      |
-
-
-## Microsoft-Windows-WMI-Activity/Operational
-
-| EventID | Description                              |
-| :-----: | ---------------------------------------- |
-|  5859   |                                          |
-|  5861   | Registration of Permanent Event Consumer |
-
-
-## Microsoft-IIS-Configuration/Operational
-
-| EventID | Description |
-| :-----: | ----------- |
-|   29    |             |
-
-
-## Microsoft-Windows-LDAP-Client/Operational
-
-| EventID | Description |
-| :-----: | ----------- |
-|   30    |             |
-
-
-## Microsoft-Windows-LSA-Server/Operational
-
-| EventID | Description |
-| :-----: | ----------- |
-|   300   |             |
-
-
-## MSExchange Management
-
-| EventID | Description |
-| :-----: | ----------- |
-|    6    |             |
-
-
-## Microsoft-Windows-DHCP-Server
-
-| EventID | Description |
-| :-----: | ----------- |
-|  1031   |             |
-|  1033   |             |
 
 
 
