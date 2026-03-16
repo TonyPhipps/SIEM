@@ -439,7 +439,7 @@ NOTE: These are included above and are likely worth the effort, but will likely 
 | 4898    | Certificate Services loaded a template                                                             |                                             |
 | 4899    | A Certificate Services template was updated                                                        |                                             |
 | 5038    | Code integrity determined that the image hash of a file is not valid                               | Level 0 or 4                                |
-| 5140    | (NOISY!) Network share object accessed                                                             |                                             |
+| 5140    | Network share object accessed                                                                      | NOISY without filters                       |
 | 5145    | A network share object was checked to see whether client can be granted desired access.            | NOISY without filters                       |
 | 5157    | The Windows Filtering Platform has blocked a connection.                                           | NOISY without filters                       |
 | 517     | The audit log was cleared.                                                                         |                                             |
