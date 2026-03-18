@@ -354,9 +354,12 @@ OR just "CAPI2"
 |  1006   | The antimalware engine found malware or other potentially unwanted software.                          |
 |  1009   | The antimalware platform restored an item from quarantine.                                            |
 |  1013   | The antimalware platform deleted history of malware and other potentially unwanted software.          |
+|  1015   | The antimalware platform detected suspicious behavior.                                                |
 |  1116   | The antimalware platform detected malware or other potentially unwanted software.                     |
+|  1117   | The antimalware platform detected malware or other potentially unwanted software.                     |
 |  1121   | Successfully blocked an unauthorized change to a protected folder via Controlled Folder Access (CFA). |
 |  3002   | Real-time protection encountered an error and failed.                                                 |
+|  3007   | Real-time Protection feature has restarted                                                            |
 |  5001   | Real-time protection is disabled.                                                                     |
 |  5007   | configuration has changed.                                                                            |
 |  5010   | Scanning for malware and other potentially unwanted software is disabled.                             |

@@ -267,9 +267,9 @@ Table of Contents
 
 ## Microsoft-Windows-TaskScheduler/Operational
 
-| EventID | Description    |
-| :-----: | :------------- |
-|   140   | Task Updated   |
+| EventID | Description  |
+| :-----: | :----------- |
+|   140   | Task Updated |
 
 
 ## Microsoft-Windows-TerminalServices-RDPClient/Operational
@@ -287,9 +287,11 @@ Table of Contents
 | EventID | Description                                                                                                                                                                      | Filter  |
 | :-----: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 |  1002   | An antimalware scan was stopped before it finished.                                                                                                                              | Level 2 |
+|  1003   | malware scan paused                                                                                                                                                              |
 |  1005   | An antimalware scan failed.                                                                                                                                                      |
 |  1007   | The antimalware platform performed an action to protect your system from malware or other potentially unwanted software.                                                         |
 |  1008   | The antimalware platform attempted to perform an action to protect your system from malware or other potentially unwanted software, but the action failed.                       |
+|  1012   | unable to delete item in quarantine                                                                                                                                              |
 |  1014   | The antimalware platform could not delete history of malware and other potentially unwanted software.                                                                            |
 |  1015   | The antimalware platform detected suspicious behavior.                                                                                                                           |
 |  1117   | The antimalware platform performed an action to protect your system from malware or other potentially unwanted software.                                                         |
@@ -314,3 +316,9 @@ Table of Contents
 | EventID | Description                              |
 | :-----: | ---------------------------------------- |
 |  5860   | Registration of Temporary Event Consumer |
+
+
+
+# Resources
+- https://graylog.org/post/critical-windows-event-ids-to-monitor/
+- https://learn.microsoft.com/en-us/defender-endpoint/troubleshoot-microsoft-defender-antivirus
