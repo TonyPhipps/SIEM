@@ -201,11 +201,22 @@ netsh advfirewall firewall add rule name="SuspiciousTestRule" dir=in action=allo
 netsh advfirewall firewall delete rule name="SuspiciousTestRule"
 
 
+# title: Certificate Exported From Local Certificate Store
+# id: 58c0bff0-40a0-46e8-b5e8-b734b84d2017 (Microsoft-Windows-CertificateServicesClient-Lifecycle-System/Operational 1007)
+wevtutil set-log "Microsoft-Windows-CertificateServicesClient-Lifecycle-System/Operational" /e:true
+# Create a self-signed cert with an exportable private key
+$cert = New-SelfSignedCertificate -DnsName "LabExportTest" `
+    -CertStoreLocation "Cert:\LocalMachine\My" `
+    -KeyExportPolicy Exportable
+Get-ChildItem Cert:\LocalMachine\My | Where-Object { $_.Subject -like "*LabExportTest*" } | Select-Object Subject, NotAfter, Thumbprint
+$pwd = ConvertTo-SecureString -String "Password123!" -Force -AsPlainText
+$path = "C:\temp\LabExport.pfx"
+# This command should trigger Event 1007
+Export-PfxCertificate -Cert $cert -FilePath $path -Password $pwd
+
+
+
 # Cleanup
 
     Remove-ADUser $TestADUser -Confirm:$false
     Remove-ADComputer -Identity $TestADComputer -Confirm:$false
-    
-
-
-

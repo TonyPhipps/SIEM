@@ -1,25 +1,37 @@
 In order to build a lab for Windows logs, a Windows system is required. The content on this page will focus on setting up a victim system with advanced logging. While production systems may not have such high levels of logging, it remains important to understand how attacks and activities can be logged. It may be the case that observations in a lab environment warrant increasing logging on production systems to allow detection.
 
 - [Windows Configuration](#windows-configuration)
+  - [Enable All Logs](#enable-all-logs)
   - [Set Logging Defaults](#set-logging-defaults)
-  - [Disable Windows Firewall](#disable-windows-firewall)
+  - [Enable Windows Fireall, Disable Blocks, and Log All](#enable-windows-fireall-disable-blocks-and-log-all)
   - [Disable Password Protected Sharing](#disable-password-protected-sharing)
-  - [PowerShell Logging](#powershell-logging)
-    - [Enable ScriptBlock Logging](#enable-scriptblock-logging)
-    - [Enable Module Logging](#enable-module-logging)
-    - [Transcription](#transcription)
   - [Increase Log Size](#increase-log-size)
   - [Enable Process Creation (Event ID 4688)](#enable-process-creation-event-id-4688)
-    - [Include Command Line in 4688 Events](#include-command-line-in-4688-events)
   - [Enable Task History](#enable-task-history)
 - [Sysmon](#sysmon)
 - [WinLogBeat](#winlogbeat)
-    - [Break SleepStudy](#break-sleepstudy)
 - [Other Useful Tidbits](#other-useful-tidbits)
   - [Clear all the Logs](#clear-all-the-logs)
 
 
 # Windows Configuration
+
+
+## Enable All Logs
+```powershell
+# Get all log names that are currently disabled
+$disabledLogs = Get-WinEvent -ListLog * | Where-Object { $_.IsEnabled -eq $false }
+foreach ($log in $disabledLogs) {
+    try {
+        # Use wevtutil for the actual enabling as it is highly reliable
+        wevtutil set-log "$($log.LogName)" /e:true
+        Write-Host "Enabled: $($log.LogName)" -ForegroundColor Green
+    }
+    catch {
+        Write-Host "Failed to enable: $($log.LogName)" -ForegroundColor Red
+    }
+}
+```
 
 
 ## Set Logging Defaults
@@ -28,11 +40,48 @@ In order to build a lab for Windows logs, a Windows system is required. The cont
     - HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\<LogName>\MaxSize (REG_DWORD of 52428800)
 - Computer Configuration > Policies > Administrative Templates > Windows Components > Event Log Service > [Log Name] > Control event log behavior when the log file reaches its maximum size
   - Overwrite events as needed (oldest events first)
-    
+```powershell
+$maxSizeInBytes = 52428800 # (500 MB)
+$channels = Get-WinEvent -ListLog *
+foreach ($log in $channels) {
+    $registryPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\$($log.LogName)"
+    if (Test-Path $registryPath) {
+        try {
+            Set-ItemProperty -Path $registryPath -Name "MaxSize" -Value $maxSizeInBytes -Type Dword
+            Set-ItemProperty -Path $registryPath -Name "Retention" -Value 0 -Type Dword # 'Overwrite as needed'
+            Write-Host "Success: $($log.LogName)" -ForegroundColor Green
+        }
+        catch {
+            Write-Host "Failed to update: $($log.LogName)" -ForegroundColor Red
+        }
+    }
+}
+Restart-Service EventLog -Force
+```
 
 
-## Disable Windows Firewall
-Windows Security > Firewall & Network Protection > Private Network > Turn Off
+## Enable Windows Fireall, Disable Blocks, and Log All
+```powershell
+Get-NetFirewallRule -Action Block | Remove-NetFirewallRule
+$profiles = @("Domain", "Private", "Public")
+$logPath = "C:\Windows\System32\LogFiles\Firewall\pfirewall.log"
+foreach ($profile in $profiles) {
+    try {
+        Set-NetFirewallProfile -Name $profile `
+            -LogAllowed True `
+            -LogBlocked True `
+            -LogIgnored True `
+            -LogFileName $logPath `
+            -LogMaxSizeKilobytes 512000 # 500 MB Log File
+        Write-Host "Successfully enabled logging for $profile." -ForegroundColor Green
+    }
+    catch {
+        Write-Host "Failed to configure $profile profile." -ForegroundColor Red
+    }
+}
+Set-NetFirewallProfile -All -Enabled True
+Write-Host "Firewall is ENABLED. Logging is active at $logPath" -ForegroundColor Yellow
+```
 
 
 ## Disable Password Protected Sharing
@@ -40,10 +89,6 @@ Windows Security > Firewall & Network Protection > Private Network > Turn Off
 - Control Panel > Network and Internet > Network and Sharing Center > Advanced Sharing Settings > All Networks > ...
   - Public Folder Sharing > Turn on...
   - Password Protected Sharing > Turn off...
-
-
-## PowerShell Logging
-- %SystemRoot%\system32\winevt\logs\Microsoft-Windows-PowerShell%4Operational.evtx
 
 
 ### Enable ScriptBlock Logging
@@ -147,3 +192,4 @@ Set-ItemProperty -Path C:\Windows\System32\SleepStudy\*.etl -Name IsReadOnly -Va
 
 ## Clear all the Logs
 `wevtutil el | Foreach-Object {wevtutil cl "$_"}`
+
