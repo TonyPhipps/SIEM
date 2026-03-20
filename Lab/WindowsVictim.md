@@ -1,9 +1,8 @@
 In order to build a lab for Windows logs, a Windows system is required. The content on this page will focus on setting up a victim system with advanced logging. While production systems may not have such high levels of logging, it remains important to understand how attacks and activities can be logged. It may be the case that observations in a lab environment warrant increasing logging on production systems to allow detection.
 
 - [Windows Configuration](#windows-configuration)
-  - [Enable All Logs](#enable-all-logs)
-  - [Set Logging Defaults](#set-logging-defaults)
-  - [Enable Windows Fireall, Disable Blocks, and Log All](#enable-windows-fireall-disable-blocks-and-log-all)
+  - [Enable All Logs and Set Logging Defaults](#enable-all-logs-and-set-logging-defaults)
+  - [Enable Windows Firewall, Disable Blocks, and Log All](#enable-windows-firewall-disable-blocks-and-log-all)
   - [Disable Password Protected Sharing](#disable-password-protected-sharing)
   - [Increase Log Size](#increase-log-size)
   - [Enable Process Creation (Event ID 4688)](#enable-process-creation-event-id-4688)
@@ -16,25 +15,7 @@ In order to build a lab for Windows logs, a Windows system is required. The cont
 
 # Windows Configuration
 
-
-## Enable All Logs
-```powershell
-# Get all log names that are currently disabled
-$disabledLogs = Get-WinEvent -ListLog * | Where-Object { $_.IsEnabled -eq $false }
-foreach ($log in $disabledLogs) {
-    try {
-        # Use wevtutil for the actual enabling as it is highly reliable
-        wevtutil set-log "$($log.LogName)" /e:true
-        Write-Host "Enabled: $($log.LogName)" -ForegroundColor Green
-    }
-    catch {
-        Write-Host "Failed to enable: $($log.LogName)" -ForegroundColor Red
-    }
-}
-```
-
-
-## Set Logging Defaults
+## Enable All Logs and Set Logging Defaults
 - Computer Configuration > Policies > Administrative Templates > Windows Components > Event Log Service > [Log Name] > Specify the maximum log file size
   - 500 MB
     - HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\<LogName>\MaxSize (REG_DWORD of 52428800)
@@ -49,6 +30,7 @@ foreach ($log in $channels) {
         try {
             Set-ItemProperty -Path $registryPath -Name "MaxSize" -Value $maxSizeInBytes -Type Dword
             Set-ItemProperty -Path $registryPath -Name "Retention" -Value 0 -Type Dword # 'Overwrite as needed'
+            wevtutil set-log "$($log.LogName)" /e:true
             Write-Host "Success: $($log.LogName)" -ForegroundColor Green
         }
         catch {
@@ -60,7 +42,7 @@ Restart-Service EventLog -Force
 ```
 
 
-## Enable Windows Fireall, Disable Blocks, and Log All
+## Enable Windows Firewall, Disable Blocks, and Log All
 ```powershell
 Get-NetFirewallRule -Action Block | Remove-NetFirewallRule
 $profiles = @("Domain", "Private", "Public")

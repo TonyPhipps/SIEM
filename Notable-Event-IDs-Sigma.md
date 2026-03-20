@@ -14,10 +14,10 @@ Table of Contents
 - [Microsoft-Windows-AppXDeployment-Server/Operational](#microsoft-windows-appxdeployment-serveroperational)
 - [Microsoft-Windows-AppxPackaging/Operational](#microsoft-windows-appxpackagingoperational)
 - [Microsoft-Windows-Bits-Client/Operational](#microsoft-windows-bits-clientoperational)
-- [Microsoft-Windows-CAPI2](#microsoft-windows-capi2)
+- [Microsoft-Windows-CAPI2/Operational](#microsoft-windows-capi2operational)
 - [Microsoft-Windows-CertificateServicesClient-Lifecycle-System/Operational](#microsoft-windows-certificateservicesclient-lifecycle-systemoperational)
 - [Microsoft-Windows-CodeIntegrity/Operational](#microsoft-windows-codeintegrityoperational)
-- [Microsoft-Windows-DHCP-Server](#microsoft-windows-dhcp-server)
+- [Microsoft-Windows-DHCP-Server/Operational](#microsoft-windows-dhcp-serveroperational)
 - [Microsoft-Windows-DNS-Client/Operational](#microsoft-windows-dns-clientoperational)
 - [Microsoft-Windows-DNSServer/Audit](#microsoft-windows-dnsserveraudit)
 - [Microsoft-Windows-Diagnosis-DPS/Operational](#microsoft-windows-diagnosis-dpsoperational)
@@ -144,7 +144,7 @@ Note: Some installable applications are known to write to this log. Consider loo
 |  16403  | A BITS job has been modified by a user or an application.           |
 
 
-## Microsoft-Windows-CAPI2
+## Microsoft-Windows-CAPI2/Operational
 OR just "CAPI2"
 
 | EventID | Description                                                |
@@ -154,9 +154,9 @@ OR just "CAPI2"
 
 ## Microsoft-Windows-CertificateServicesClient-Lifecycle-System/Operational
 
-| EventID | Description                                           |
-| :-----: | ----------------------------------------------------- |
-|  1007   | A certificate has been deleted from the system store. |
+| EventID | Description                                            |
+| :-----: | ------------------------------------------------------ |
+|  1007   | A certificate has been exported from the system store. |
 
 
 ## Microsoft-Windows-CodeIntegrity/Operational
@@ -175,7 +175,7 @@ OR just "CAPI2"
 |  3104   | Code Integrity is starting the image verification process for a file.                                                                                                                                 |
 
 
-## Microsoft-Windows-DHCP-Server
+## Microsoft-Windows-DHCP-Server/Operational
 
 | EventID | Description                                                                                    |
 | :-----: | ---------------------------------------------------------------------------------------------- |
