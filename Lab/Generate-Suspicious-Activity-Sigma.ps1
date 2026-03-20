@@ -215,6 +215,22 @@ $path = "C:\temp\LabExport.pfx"
 Export-PfxCertificate -Cert $cert -FilePath $path -Password $pwd
 
 
+# title: Potential Remote Desktop Connection to Non-Domain Host (Microsoft-Windows-NTLM/Operational 8001)
+# id: ce5678bb-b9aa-4fb5-be4b-e57f686256ad
+$regPathSystem = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
+$regPathLsa = "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0"
+$origRestrict = (Get-ItemProperty $regPathSystem -Name "RestrictNTLM").RestrictNTLM
+$origAuditDomain = (Get-ItemProperty $regPathLsa -Name "AuditNTLMInDomain").AuditNTLMInDomain
+Set-ItemProperty $regPathSystem -Name "RestrictNTLM" -Value 0
+Set-ItemProperty $regPathSystem -Name "AuditIncomingNTLMTraffic" -Value 1
+Set-ItemProperty $regPathLsa -Name "AuditNTLMInDomain" -Value 7 
+Restart-Service Netlogon -Force
+Start-Sleep -Seconds 2
+$null = net use \\127.0.0.1\IPC$ /user:FakeUser "FakePass123" 2>$null
+Set-ItemProperty $regPathSystem -Name "RestrictNTLM" -Value $origRestrict
+Set-ItemProperty $regPathLsa -Name "AuditNTLMInDomain" -Value $origAuditDomain
+Restart-Service Netlogon -Force
+
 
 # Cleanup
 
