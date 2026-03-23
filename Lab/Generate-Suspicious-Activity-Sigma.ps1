@@ -232,6 +232,44 @@ Set-ItemProperty $regPathLsa -Name "AuditNTLMInDomain" -Value $origAuditDomain
 Restart-Service Netlogon -Force
 
 
+# title: Important Scheduled Task Deleted (Microsoft-Windows-TaskScheduler/Operational 141)
+# id: 9e3cb244-bdb8-4632-8c90-6079c8f4f16d
+$taskPath = "\Windows\Windows Defender\"
+$taskName = "FakeDefenderScan"
+$action = New-ScheduledTaskAction -Execute "calc.exe"
+$trigger = New-ScheduledTaskTrigger -AtLogon
+Register-ScheduledTask -Action $action -Trigger $trigger -TaskName $taskName -TaskPath $taskPath -ErrorAction Stop | Out-Null
+Start-Sleep -Seconds 2
+Unregister-ScheduledTask -TaskName $taskName -TaskPath $taskPath -Confirm:$false -ErrorAction Stop
+
+
+# title: WMI Persistence (Microsoft-Windows-WMI-Activity/Operational 5859, 5861)
+# id: 0b7889b4-5577-4521-a60a-3376ee7f9f7b
+$FilterName = "SigmaTestFilter"
+$Query = "SELECT * FROM MSFT_SCMEventLogEvent"
+$FilterArgs = @{
+    Name = $FilterName
+    EventNamespace = "root\cimv2"
+    QueryLanguage = "WQL"
+    Query = $Query
+}
+$Filter = Set-WmiInstance -Namespace 'root\subscription' -Class __EventFilter -Arguments $FilterArgs
+$ConsumerArgs = @{
+    Name = 'TestConsumer'
+    CommandLineTemplate = 'notepad.exe'
+}
+$Consumer = Set-WmiInstance -Namespace 'root\subscription' -Class CommandLineEventConsumer -Arguments $ConsumerArgs
+$BindingArgs = @{
+    Filter = $Filter
+    Consumer = $Consumer
+}
+Set-WmiInstance -Namespace "root\subscription" -Class "__FilterToConsumerBinding" -Arguments $BindingArgs
+Restart-Service winmgmt -Force
+Get-WmiObject -Namespace "root\subscription" -Class "__EventFilter" -Filter "Name='$FilterName'" | Remove-WmiObject
+Get-WmiObject -Namespace "root\subscription" -Class "CommandLineEventConsumer" -Filter "Name='$ConsumerName'" | Remove-WmiObject
+Get-WmiObject -Namespace "root\subscription" -Class "__FilterToConsumerBinding" -Filter "Filter=""__EventFilter.Name='$FilterName'""" | Remove-WmiObject
+
+
 # Cleanup
 
     Remove-ADUser $TestADUser -Confirm:$false
