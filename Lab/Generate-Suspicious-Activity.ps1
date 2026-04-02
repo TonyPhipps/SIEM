@@ -205,3 +205,8 @@ $TestLocalUser = "TestLocalUser"
     (Get-Acl "HKLM:\SYSTEM\CurrentControlSet\Services").Sddl
     
     sc.exe delete "TestService"
+
+
+#  Suspicious Windows Event Log Service Shutdown (Security 1100)
+    Stop-Service -Name EventLog -Force
+    Start-Service -Name EventLog
