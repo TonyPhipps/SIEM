@@ -274,3 +274,11 @@ Get-WmiObject -Namespace "root\subscription" -Class "__FilterToConsumerBinding" 
 
     Remove-ADUser $TestADUser -Confirm:$false
     Remove-ADComputer -Identity $TestADComputer -Confirm:$false
+
+
+# ISATAP Router Address Was Set (System 4100)
+    Set-NetIsatapConfiguration -Router 192.168.1.100 # Set the ISATAP router to a dummy IP (non-loopback)
+    Set-NetIsatapConfiguration -State Disabled # Disable ISATAP first
+    Set-NetIsatapConfiguration -Router 192.168.1.100 -State Enabled # Set the malicious/test router
+    Set-NetIsatapConfiguration -Router default # Reset ISATAP router to default (disabled/automatic)
+

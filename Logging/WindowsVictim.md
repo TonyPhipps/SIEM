@@ -4,6 +4,9 @@ In order to build a lab for Windows logs, a Windows system is required. The cont
   - [Enable All Logs and Set Logging Defaults](#enable-all-logs-and-set-logging-defaults)
   - [Enable Windows Firewall, Disable Blocks, and Log All](#enable-windows-firewall-disable-blocks-and-log-all)
   - [Enable and Configure NTLM Logging](#enable-and-configure-ntlm-logging)
+  - [Enable PowerShell ScriptBlock Logging](#enable-powershell-scriptblock-logging)
+  - [Enable PowerShell Module Logging](#enable-powershell-module-logging)
+  - [Enable PowerShell Transcription Logging](#enable-powershell-transcription-logging)
   - [Enable Process Creation (Event ID 4688), Including Command Line](#enable-process-creation-event-id-4688-including-command-line)
 - [Sysmon](#sysmon)
 - [WinLogBeat](#winlogbeat)
@@ -35,6 +38,12 @@ foreach ($log in $channels) {
     }
 }
 Restart-Service EventLog -Force
+```
+
+- OR - 
+Just the important ones
+```
+wevtutil set-log Microsoft-Windows-Bits-Client/Operational /enabled:true /rt:true /q:true
 ```
 
 
@@ -74,9 +83,7 @@ Start-Sleep -Seconds 2
 ```
 
 
-
-
-### Enable ScriptBlock Logging
+## Enable PowerShell ScriptBlock Logging
 Event ID 4104 will populate the Microsoft-Windows-PowerShell/Operational log
 
 ```powershell
@@ -103,7 +110,7 @@ foreach ($name in $values.Keys) {
 - Log Stop/Start Events: Checked
 
 
-### Enable Module Logging
+## Enable PowerShell Module Logging
 ```powershell
 $basePath = "HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ModuleLogging"
 $namesPath = "$basePath\ModuleNames"
@@ -127,8 +134,9 @@ Set-ItemProperty -Path $namesPath -Name "*" -Value "*" -Type String -Force
 Event ID 4103 will populate the Microsoft-Windows-PowerShell/Operational log
 
 
-### Transcription
+## Enable PowerShell Transcription Logging
 - Logs will be stored in .txt files in the specified directory, using the format `..\YYYYMMDD\PowerShell_transcript.PCNAME.RANDOM.YYYYMMDDHHMMSS.txt`
+- https://devblogs.microsoft.com/powershell/powershell-the-blue-team/
 ```powershell
 $transcriptPath = "C:\PowerShellTranscripts"
 $registryPath = "HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\Transcription"
@@ -148,7 +156,9 @@ Set-ItemProperty -Path $registryPath -Name "OutputDirectory" -Value $transcriptP
 - gpedit.msc
 - Computer Configuration > Administrative Templates > Windows Components > Windows Powershell
 - Turn On PowerShell Transcription: Enabled
+- Set Transcript output directory to the \\server\transcripts share path
 - Log Stop/Start Events: Checked
+- Check Include Invocation Headers
 
 
 ## Enable Process Creation (Event ID 4688), Including Command Line
