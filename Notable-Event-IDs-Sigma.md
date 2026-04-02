@@ -22,7 +22,6 @@ Table of Contents
 - [Microsoft-Windows-DNSServer/Audit](#microsoft-windows-dnsserveraudit)
 - [Microsoft-Windows-Diagnosis-DPS/Operational](#microsoft-windows-diagnosis-dpsoperational)
 - [Microsoft-Windows-DriverFrameworks-UserMode/Operational](#microsoft-windows-driverframeworks-usermodeoperational)
-- [Microsoft-Windows-Iphlpsvc/Operational](#microsoft-windows-iphlpsvcoperational)
 - [Microsoft-Windows-Kernel-PnP/Device Configuration](#microsoft-windows-kernel-pnpdevice-configuration)
 - [Microsoft-Windows-LDAP-Client/Operational](#microsoft-windows-ldap-clientoperational)
 - [Microsoft-Windows-LSA-Server/Operational](#microsoft-windows-lsa-serveroperational)
@@ -31,6 +30,7 @@ Table of Contents
 - [Microsoft-Windows-RpcFirewall/Operational](#microsoft-windows-rpcfirewalloperational)
 - [Microsoft-Windows-SMBClient/Connectivity](#microsoft-windows-smbclientconnectivity)
 - [Microsoft-Windows-SMBClient/Security](#microsoft-windows-smbclientsecurity)
+- [Microsoft-Windows-SMBServer/Connectivity](#microsoft-windows-smbserverconnectivity)
 - [Microsoft-Windows-Security-Mitigations](#microsoft-windows-security-mitigations)
 - [Microsoft-Windows-Shell-Core/Operational](#microsoft-windows-shell-coreoperational)
 - [Microsoft-Windows-Sysmon/Operational](#microsoft-windows-sysmonoperational)
@@ -214,13 +214,6 @@ OR just "CAPI2"
 |  2033   | A UMDF (User-Mode Driver Framework) host process is being terminated because it has timed out during a state change. |
 
 
-## Microsoft-Windows-Iphlpsvc/Operational
-
-| EventID | Description                                             |
-| :-----: | ------------------------------------------------------- |
-|  4100   | A network interface has changed its connectivity state. |
-
-
 ## Microsoft-Windows-Kernel-PnP/Device Configuration
 
 | EventID | Description                   |
@@ -279,6 +272,12 @@ OR just "CAPI2"
 | EventID | Description                                                            |
 | :-----: | ---------------------------------------------------------------------- |
 |  31017  | SMB client rejected a response from a server because it was not signed |
+
+
+## Microsoft-Windows-SMBServer/Connectivity
+| EventID | Description                                            |
+| :-----: | ------------------------------------------------------ |
+|  4000   | The SMB client connection to the share was established |
 
 
 ## Microsoft-Windows-Security-Mitigations
@@ -484,7 +483,7 @@ NOTE: Event IDs below may be extra noisy and need tuning.
 
 Quick-use filter string
 ```
-26, 6038, 16, 16, 16, 39, 42, 55, 98, 104, 1001, 5805, 5829, 7023, 7034, 7036, 7045, 10001
+26, 6038, 16, 16, 16, 39, 42, 55, 98, 104, 1001, 4100, 5805, 5829, 7023, 7034, 7036, 7045, 10001
 ```
 
 | EventID | Provider Name                                      | Description                                                                                                                                 | Filter                       |
@@ -500,6 +499,7 @@ Quick-use filter string
 |   98    | Microsoft-Windows-Ntfs                             | Volume Shadow Copy (VSS) service has started on the volume.                                                                                 |                              |
 |   104   | Microsoft-Windows-Eventlog                         | Event Log was Cleared                                                                                                                       |                              |
 |  1001   | Microsoft-Windows-WER-SystemErrorReporting         | System Crash                                                                                                                                |                              |
+|  4100   | Microsoft-Windows-Iphlpsvc                         | A network interface has changed its connectivity state.                                                                                     |
 |  5805   | Netlogon                                           | A computer failed to authenticate because its account password is incorrect.                                                                |                              |
 |  5829   | Netlogon                                           | A machine is using a vulnerable Netlogon secure channel connection.                                                                         |                              |
 |  7023   | Service Control Manager                            | Service terminated with error                                                                                                               |                              |
