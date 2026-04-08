@@ -118,10 +118,15 @@
   - Ability to change field values 
   - Parsers are configured in an human-readable open format 
   - Parsers or searches support regular expression extraction 
-- Event Enrichment
-  - Data can be enriched before correlation analytics are applied. 
-    - For example, resolve the geolocation of an IP address and add it to another field 
-    - Enrichment can use a lookup table to lookup a key and retrieve the value into a field 
+- Event/Search Enrichment
+  - Data can be enriched before correlation analytics are applied.
+  - Data can be enriched at search time.
+  - Fields can be added/adjusted based on matching a stored list, a subsearch, or localized math/logic
+- Lookup Lists
+  - Can be updated by scheduled searches
+  - Can be referencd by correlation engine / searches
+  - Can be called and added to searches
+  - Can be updated by third parties (for example, a file/API-sourced threat intel feed)
 - Self Auditing 
   - Provides logs to detail activity performed within the tool stack. 
     - User Log In Success/Fail 
@@ -133,14 +138,6 @@
   - Mute - Ability to silence matching alarms from firing for X time period 
   - Aggregation - Ability to group up alarms into one parent alarm in a given time period 
   - Trigger Action - Ability to execute a script/command for each alarm (automation) 
-- Detection Methods
-- Match Alarm 
-  - Threshold Alarm (time and count) 
-  - Cardinality / Distinct Count 
-  - Blacklist (value found in lookup table) 
-  - Whitelist Alarm (value NOT found in lookup table) 
-  - Time of Day Alarm 
-  - Day of Week Alarm 
 - Visualizations 
   - Stack Counting bar chart 
   - Split Bar Chart 
@@ -261,14 +258,16 @@ SIEM POC testing should consider several elements of the interface and capabilit
     - Alert when log sources stops feeding 
     - Alert when received time and generated times have a gap greater than 4hrs 
   
-### Rule Capability Demo / Testing
-| Type                  | Sample Psuedocode                                                                                                                |
-| :-------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| Two Disparate Events  | When an endpoint has a threat intel watchlist hit and a firewall/AV threat event within 10min                                    |
-| Rule + Event          | Any brute force SIEM rule followed by a successful logon event                                                                   |
-| Two Disparate Rules   | Any two SIEM rules within a 10min window                                                                                         |
-| Watchlist hit         | SIEM monitors a list that is updated by an external source or file read. The list is used to dynamically monitor events for hits |
-| Match events to lists | Determine if a user is in a list of known-sensitive users before triggering a rule                                               |
+### Capability Demo / Testing
+| Type                    | Sample Psuedocode                                                                                                                |
+| :---------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| Two Disparate Events    | When an endpoint has a threat intel watchlist hit and a firewall/AV threat event within 10min                                    |
+| Rule + Event            | Any brute force SIEM rule followed by a successful logon event                                                                   |
+| Two Disparate Rules     | Any two SIEM rules within a 10min window                                                                                         |
+| Watchlist hit           | SIEM monitors a list that is updated by an external source or file read. The list is used to dynamically monitor events for hits |
+| Lookup-based Enrichment | Determine if a user is in a list of known-sensitive users before triggering a rule                                               |
+| Search-Time Enrichment  | Ability to calculate upload vs download ratio and consider the result in a threshold rule                                        |
+| Cross-Search Enrichment | Ability to pull in an IP address into an event that only has a hostname by running a subsearch                                   |
 
 
 Get a demo and/or perform testing on each of the detection methods here:

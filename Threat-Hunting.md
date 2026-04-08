@@ -1,4 +1,3 @@
-
 # Threat Hunting
 The main goals of threat hunting are to
 - detect compromises that existing systems failed to detect.
@@ -14,6 +13,7 @@ Other benefits of threat hunting are:
 
 Threat hunting should focus on events outside the traditional detection capabilities, and may uncover missed or misinterpreted events during the hunt that can be used to improve detection and further train analysts. Threat hunting assumes that there already was a breach and that it has not been identified yet.
 
+
 # Models
 - Hypothesis-Driven
   - A supposition is made about potential threats and their activities that may be present on the organization’s network, then data and analysis are used to confirm or deny suspicion.
@@ -23,6 +23,7 @@ Threat hunting should focus on events outside the traditional detection capabili
   - A proactive approach to threat detection that involves setting up a baseline of normal activity, monitoring that baseline for deviations, and investigating any suspicious activity.
 - Custom/on-demand
 
+
 # Techniques
 - Indicator Search
 - Stack Counting (total count-based, AKA long-tail analysis)
@@ -30,13 +31,17 @@ Threat hunting should focus on events outside the traditional detection capabili
 - Grouping (e.g. group up endpoints, then use other techniques)
 - Ratios (e.g. request/response, upload/download, success/failure)
 - Standard deviation
-  
+
+
 # Frameworks
 - MITRE ATT&CK
 - Targeted Hunting integrating Threat Intelligence (TaHiTI)
 - Splunk's PEAK (Plan, Execute, Act, all with Knowledge)
 
+
 # Hunting Phases
+
+
 ## Planning Phase
 -	Develop a hypothesis / Identify impactful intelligence / Establish a baseline
 - Research the involved technologies, tactics, techniques, threat actors
@@ -44,12 +49,14 @@ Threat hunting should focus on events outside the traditional detection capabili
 - Determine scope of time
 - Plan the hunt
 
+
 ## Execution Phase
 -	Query data sources
 - Ensure data/results are clean
 -	Investigate/Analyze
 - Escalate any critical findings immediately
 - Test and refine hypothesis, if appropriate
+
 
 ## Action Phase
 - Document the hunt itself
@@ -73,8 +80,6 @@ General Examples:
 - An adversary is using fileless malware based on memory injections to avoid detection of malware on disk.
 - An adversary is using persistence mechanisms without adding files to the operating system.
 - An adversary is using Kerberoasting attack techniques to obtain valid credentials.
-
-
 
 
 # Resources
