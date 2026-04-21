@@ -86,7 +86,7 @@ $AuditSettings = @(
         RegistryKey = "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Eventlog\Security"
         ValueName   = "MaxSize"
         Type        = "DWord"
-        Value       = 1048576000  # 1000 MB in bytes
+        Value       = 1048576000  # 1GB in bytes
         # Windows 11: SV-253338r958752_rule
         # Windows 10: SV-220780r877391_rule
         # Windows Server 2022: SV-254359r958752_rule
@@ -100,7 +100,7 @@ $AuditSettings = @(
         RegistryKey = "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Eventlog\System"
         ValueName   = "MaxSize"
         Type        = "DWord"
-        Value       = 1048576000  # 1000 MB in bytes
+        Value       = 1048576000  # 1GB in bytes
         # Windows 11: SV-253339r958752_rule
         # Windows 10: SV-220781r569187_rule
         # Windows Server 2022: SV-254360r958752_rule
@@ -113,7 +113,7 @@ $AuditSettings = @(
         RegistryKey = "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Eventlog\Application"
         ValueName   = "MaxSize"
         Type        = "DWord"
-        Value       = 1048576000  # 1000 MB in bytes
+        Value       = 1048576000  # 1GB in bytes
         # Windows 11: SV-253337r958752_rule
         # Windows 10: SV-220779r877391_rule
         # Windows Server 2022: SV-254358r958752_rule
