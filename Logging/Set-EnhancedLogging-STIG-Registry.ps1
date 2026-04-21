@@ -126,7 +126,7 @@ $RegistrySettings = @(
         # Windows Server 2019: SV-205797r958400_rule
         # Windows 11: SV-253338r958752_rule
         # Windows 10: SV-220780r958752_rule
-        Name        = "Security Log MaxSize (1000MB)"
+        Name        = "Security Log MaxSize (1GB)"
         Path        = "HKLM:\System\CurrentControlSet\Services\Eventlog\Security"
         ValueName   = "MaxSize"
         Type        = "DWord"
@@ -140,7 +140,7 @@ $RegistrySettings = @(
         # Windows Server 2019: SV-205798r958400_rule
         # Windows 11: SV-253339r958752_rule
         # Windows 10: SV-220781r958752_rule
-        Name        = "System Log MaxSize (1000MB)"
+        Name        = "System Log MaxSize (1GB)"
         Path        = "HKLM:\System\CurrentControlSet\Services\Eventlog\System"
         ValueName   = "MaxSize"
         Type        = "DWord"
@@ -154,7 +154,7 @@ $RegistrySettings = @(
         # Windows Server 2019: SV-205796r958400_rule
         # Windows 11: SV-253337r958752_rule
         # Windows 10: SV-220779r958752_rule
-        Name        = "Application Log MaxSize (1000MB)"
+        Name        = "Application Log MaxSize (1GB)"
         Path        = "HKLM:\System\CurrentControlSet\Services\Eventlog\Application"
         ValueName   = "MaxSize"
         Type        = "DWord"
