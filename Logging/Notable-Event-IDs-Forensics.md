@@ -1,5 +1,5 @@
 Notable Event IDs to record that will help in forensics, if not exclicity in detection. Exlcudes those already included in existing Sigma rules.
-- Use in conjunction with [Notable-Event-IDs-Sigma.md]([Notable-Event-IDs-Sigma.md)
+- Use in conjunction with [Notable-Event-IDs-Sigma.md](Notable-Event-IDs-Sigma.md)
 - Use in conjunction with [Notable-Event-IDs-Risk.md](Notable-Event-IDs-Risk.md)
 
 Table of Contents
