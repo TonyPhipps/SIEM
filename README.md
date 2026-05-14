@@ -37,22 +37,20 @@ Without covering the basics, there isn't much point in having a SIEM. Harden you
 - [Web Security](/hardening/web-security.md)
 
 
-# [Detection Tactics](/Detection-Tactics.md)
+# Detection and Compliance Matrix
+A [Detection and Complianace Matrix](/Matrix/Detection-and-Compliance-Matrix.md) is an object oriented, relational database approach to recording and associating all elements to one another - cases, adversaries, techniques, mitigations, detections, hunts, log sources, etc.
 
+- [Detection Tactics](/Detection-Tactics.md)
 To detect an attacker, one must be equipped with the necessary logs to reveal their activities. Here we use a matrix to map detection tactics to attacker tactics ([Mitre ATT&CK](https://attack.mitre.org/)).
 
-
-# [Detection Methods](/Detection-Methods.md)
-
+- [Detection Methods](/Detection-Methods.md)
 Once necessary logs are collected (detection tactics), use various methods to reveal anomalous, suspicious, and malicious activity.
 
-
-# Playbooks
-
+- Playbooks
 Playbooks provide a means to document solutions for many reasons including tracking work, uniform response, content recreation, metrics & reporting, making informed decisions, avoiding work duplication, and more.
 
-- [Use Case Structure](/Use-Case-Structure.md)
-- [Use Case Review](/Use-Cases.md)
+- [Playbook Structure](/Matrix/Playbook-Structure.md)
+- [Signature Structure](/Matrix/Signature-Structure.md)
 
 
 # Data Enrichment
@@ -78,6 +76,4 @@ Set up a lab with a Windows system, a SIEM, and an attacking system to aid in de
 
 
 # TODO
-- [ ] Add Use Case Examples
 - [ ] Add Threat Hunts Library
-- [ ] Add an object oriented, relational database approach to recording and associating all elements to one another - cases, adversaries, techniques, mitigations, detections, hunts, log sources, etc.
