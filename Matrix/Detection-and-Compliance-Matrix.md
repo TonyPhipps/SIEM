@@ -28,7 +28,7 @@ Tables and their fields are listed below.
 - onWatchlist
 - Aliases
 - Reasons
-  
+
 
 # Groups
 (To append to MITRE Groups those not covered)
