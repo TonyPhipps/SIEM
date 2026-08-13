@@ -1,6 +1,7 @@
 - [Disconnect the PLC from the public-facing internet](#disconnect-the-plc-from-the-public-facing-internet)
 - [If remote access is required, implement a network proxy, gateway, firewall, and/or virtual private network (VPN) in front of the PLC to control network access.](#if-remote-access-is-required-implement-a-network-proxy-gateway-firewall-andor-virtual-private-network-vpn-in-front-of-the-plc-to-control-network-access)
 - [Strictly control network access to PLC devices](#strictly-control-network-access-to-plc-devices)
+- [Segment IT and OT networks](#segment-it-and-ot-networks)
 - [For controllers with a physical mode switch, place the physical mode switch into run position to prevent remote modification.](#for-controllers-with-a-physical-mode-switch-place-the-physical-mode-switch-into-run-position-to-prevent-remote-modification)
 - [For devices that allow for software key switching, enable programming protection in PLC configuration software](#for-devices-that-allow-for-software-key-switching-enable-programming-protection-in-plc-configuration-software)
 - [Create and test strong backups of the logic and configurations of PLCs.](#create-and-test-strong-backups-of-the-logic-and-configurations-of-plcs)
@@ -9,7 +10,7 @@
 - [Disable any unused authentication methods, logic, or features](#disable-any-unused-authentication-methods-logic-or-features)
 - [Monitor asset management systems for device configuration changes](#monitor-asset-management-systems-for-device-configuration-changes)
 - [Monitor the content of network traffic for the following](#monitor-the-content-of-network-traffic-for-the-following)
-- [Ensure device passwords are complex, unique combinations of letters, numbers, and symbols that are not easily guessable.](#ensure-device-passwords-are-complex-unique-combinations-of-letters-numbers-and-symbols-that-are-not-easily-guessable)
+- [Change default passwords immediately](#change-default-passwords-immediately)
 - [Place physical and software key switches into the run position to block unauthorized changes to logic, configuration, and firmware.](#place-physical-and-software-key-switches-into-the-run-position-to-block-unauthorized-changes-to-logic-configuration-and-firmware)
 - [Practice and maintain the ability to operate OT systems manually.](#practice-and-maintain-the-ability-to-operate-ot-systems-manually)
 - [Review project files running on PLCs for unauthorized changes](#review-project-files-running-on-plcs-for-unauthorized-changes)
@@ -30,6 +31,10 @@ Keep PLC devices updated with the latest software patches by the manufacturer. U
 
 # Strictly control network access to PLC devices
 - Configure firewall rules or access control list (ACL) security features on PLCs or programmable controllers to allow only authorized communications between expected control system devices. Block access from unauthorized or threat actor-controlled IP addresses, such as those associated with hosting providers
+
+
+# Segment IT and OT networks
+- Segmenting critical systems and introducing a demilitarized zone for passing control data to enterprise logistics reduces the potential impact of cyber threats and reduces the risk of disruptions to essential OT operations [[CPG 2.F]](https://www.cisa.gov/cybersecurity-performance-goals-cpgs#NetworkSegmentation2F).
 
 
 # For controllers with a physical mode switch, place the physical mode switch into run position to prevent remote modification.
@@ -65,9 +70,8 @@ These can be used to understand expected parameter settings.
 - Functions of industrial control systems (ICS) management protocols that change an asset’s operating mode or modify programs.
 
 
-# Ensure device passwords are complex, unique combinations of letters, numbers, and symbols that are not easily guessable. 
-- Implementing robust password practices remains a critical security measure that can help prevent unauthorized access and strengthen the overall security posture of OT devices.
-
+# Change default passwords immediately 
+- And use strong, unique passwords. Recent analysis of this cyber activity indicates that targeted systems use default or easily guessable (using open source tools) passwords. Changing default passwords is especially important for public-facing internet devices that have the capability to control OT systems or processes [[CPG 2.A]](https://www.cisa.gov/cybersecurity-performance-goals-cpgs#ChangingDefaultPasswords2A), [[CPG 2.B]](https://www.cisa.gov/cybersecurity-performance-goals-cpgs#MinimumPasswordStrength2B), [[CPG 2.C]](https://www.cisa.gov/cybersecurity-performance-goals-cpgs#UniqueCredentials2C).
 
 # Place physical and software key switches into the run position to block unauthorized changes to logic, configuration, and firmware.
 - Devices should only be in the program or remote position when updating or downloading software online and immediately switched back to the run position when complete. (See Rockwell Automation’s System Security Design Guidelines for manufacturer’s instructions.)
@@ -90,3 +94,6 @@ These can be used to understand expected parameter settings.
   - Track EOL systems by product, owner, location, and retirement date.
   - Replace or isolate EOL assets; if delays occur, apply compensating controls with firm decommission dates.
 
+
+Resources
+- https://www.cisa.gov/cybersecurity-performance-goals-2-0-cpg-2-0

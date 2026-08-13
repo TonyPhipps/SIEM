@@ -3,6 +3,16 @@
 # 2026
 
 
+## 2026-08-11
+
+In a concerning development, attackers managed to disrupt operations at a Polish combined heat and power plant by exploiting a private cellular network used by the local grid operator. The breach allowed the attackers to shut down a steam turbine and interfere with the process-water treatment system, though fortunately, the plant's 50,000 customers did not experience any loss of heat or electricity. The incident, which took place in December 2025, was disclosed on August 8 after an extensive investigation by CERT Polska.
+
+CERT says reaching an industrial control network through a private APN was, to the best of its knowledge, "the first instance of this attack vector being observed in a real-world cyberattack." The wind farm and the plant are separate facilities, and neither of them runs the network that linked them.
+
+
+- https://thehackernews.com/2026/08/hackers-breach-polish-power-plant.html
+
+
 ## 2026-07 to 08 - FBI & CISA: Water Utilities Targeted in 7 States, Protect PLCs Now
 
 (July 30 & 31, and August 1 & 3, 2026)
@@ -23,6 +33,7 @@ Following cyberattacks that disrupted the control systems of 30+ water utilities
 
 
 ## 2026-07-01 - Lake Risevatnet Dam, Norway
+
 - Entry Point: The attackers exploited a weak password on a web-accessible Human-Machine Interface (HMI) control panel that regulated the dam's minimum water flow. This internet-exposed control system lacked robust authentication, such as multi-factor authentication (MFA), allowing hackers to bypass security controls and gain direct access to the operational technology (OT) environment.
 
 - Result: The attackers remotely opened a water discharge valve to 100% capacity for approximately four hours, causing an increased outflow of 497 liters per second above the mandated minimum flow. The breach was detected on April 7, 2025, by the dam's owner, Breivika Eiendom, and reported to Norwegian authorities (NSM, NVE, and Kripos) on April 10. Fortunately, the riverbed could handle up to 20,000 liters per second, so the additional flow did not cause physical damage or endanger public safety. The attack, attributed to the Russian hacktivist group Z-PENTEST (based on Telegram videos), exposed critical vulnerabilities in OT systems but did not lead to significant operational disruption, as the dam primarily serves a fish farm and is not connected to Norway's power grid.
@@ -30,6 +41,7 @@ Following cyberattacks that disrupted the control systems of 30+ water utilities
 
 
 ## Army of Russia Reborn (CARR) Attack on Muleshoe, Texas Water Facility
+
 - Entry Point: Unauthorized access to HMIs, likely via internet-exposed interfaces, with attackers sharing screen recordings of manipulation on Telegram.
 
 - Result: Water storage tanks overflowed, disrupting operations. The attack underscored vulnerabilities in small utilities with limited cybersecurity resources.

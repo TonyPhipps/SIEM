@@ -18,13 +18,18 @@
 - https://www.zerodayinitiative.com/blog?format=rss
 
 
-
 # Subscriptions
 - [CIS Advisories](https://learn.cisecurity.org/ms-isac-subscription)
 - [Microsoft Technical Security Notifications](https://www.microsoft.com/en-us/msrc/technical-security-notifications)
 - [CISA Alerts](https://public.govdelivery.com/accounts/USDHSCISA/subscriber/new?topic_id=USDHSCISA_138)
 
 
+# Multireddits
+- https://old.reddit.com/r/InfoSecNews+blueteamsec+netsec+icssec+SCADA+PLC/
+
+
 # Other
 - [CISA Directives](https://www.cisa.gov/directives)
 - [CISA Known-Exploited Vulnerabilities](https://www.cisa.gov/known-exploited-vulnerabilities)
+
+
