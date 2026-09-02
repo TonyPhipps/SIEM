@@ -30,15 +30,20 @@
 [Provide insights on the actions of and tools for those who are expected to monitor and respond.]
 
 
-## Monitoring and Notifications
+## Detection Validation
+[Describe how the detection will bring attention to itself. This typically involves monitors, dashboards, reports, emails, alerts, etc.]
 
-Describes how the detection will bring attention to itself. This typically involves monitors, dashboards, reports, emails, alerts, etc.
 
-
-## Playbook Verification
+### Expected Paths that Surface This Playbook
 [Describe expected paths that would lead to this Playbook being identified as the proper course of action/response. List specific monitors, dashboards, reports, automated emails, alerts, etc. In cases where a user may provide the initial notification, provide language to look for. e.g.:
 - A call from a user referencing a Symantec Antivirus popup or window.
 - An email from a System Administrator citing an antivirus alert in Symantec Manager.]
+
+
+#### Indicators of Legitimacy (false positive, but may still warrant a response action)
+
+
+#### Indicators of Compromise (true positive):
 
 
 ## Recommended Response Action(s)
