@@ -1,0 +1,6 @@
+StartType,start_mode
+disabled,disabled
+"auto start",auto
+"demand start",manual
+"boot start",auto
+"system start",auto

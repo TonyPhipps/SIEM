@@ -1,0 +1,197 @@
+EventCode,action,Error_Code,Description
+4625,failure,0XC000005E,There are currently no logon servers available to service the logon request.
+4625,unknown,0xC0000064,User logon with misspelled or bad user account
+4625,failure,0xC000006A,User logon with misspelled or bad password
+4625,failure,0XC000006D,This is either due to a bad username or authentication information
+4625,failure,0XC000006E,Unknown user name or bad password.
+4625,failure,0XC000010B,Indicates an invalid value has been provided for the LogonType requested.
+4625,denied,0xC000006F,User logon outside authorized hours
+4625,denied,0xC0000070,User logon from unauthorized workstation
+4625,failure,0xC0000071,User logon with expired password
+4625,failure,0xC0000072,User logon to account disabled by administrator
+4625,failure,0XC00000DC,Indicates the Sam Server was in the wrong state to perform the desired operation.
+4625,error,0XC0000133,Clocks between DC and other computer too far out of sync
+4625,denied,0XC000015B,The user has not been granted the requested logon type (aka logon right) at this machine
+4625,failure,0XC000018C,The logon request failed because the trust relationship between the primary domain and the trusted domain failed.
+4625,failure,0XC0000192,"An attempt was made to logon, but the Netlogon service was not started."
+4625,failure,0xC0000193,User logon with expired account
+4625,failure,0XC0000224,User is required to change password at next logon
+4625,error,0XC0000225,Evidently a bug in Windows and not a risk
+4625,denied,0xC0000234,User logon with account locked
+4625,failure,0XC00002EE,Failure Reason: An Error occurred during Logon
+4625,failure,0XC0000413,Logon Failure: The machine you are logging onto is protected by an authentication firewall. The specified account is not allowed to authenticate to the machine.
+4625,failure,0x0,Status OK.
+4776,failure,0xC0000064,The username you typed does not exist. Bad username.
+4776,failure,0xC000006A,Account logon with misspelled or bad password.
+4776,failure,0xC000006D,Generic logon failure.
+4776,denied,0xC000006F,Account logon outside authorized hours.
+4776,denied,0xC0000070,Account logon from unauthorized workstation.
+4776,failure,0xC0000071,Account logon with expired password.
+4776,failure,0xC0000072,Account logon to account disabled by administrator.
+4776,failure,0xC0000193,Account logon with expired account.
+4776,failure,0xC0000224,Account logon with "Change Password at Next Logon" flagged.
+4776,failure,0xC0000234,Account logon with account locked.
+4776,failure,0xc0000371,The local account store does not contain secret material for the specified account.
+4776,success,0x0,No errors.
+4768,success,0x0,No error
+4768,failure,0x1,Client's entry in KDC database has expired
+4768,failure,0x2,Server's entry in KDC database has expired
+4768,failure,0x3,Requested Kerberos version number not supported
+4768,failure,0x4,Client's key encrypted in old master key
+4768,failure,0x5,Server's key encrypted in old master key
+4768,failure,0x6,Client not found in Kerberos database
+4768,failure,0x7,Server not found in Kerberos database
+4768,failure,0x8,Multiple principal entries in KDC database
+4768,failure,0x9,The client or server has a null key (master key)
+4768,failure,0xA,Ticket (TGT) not eligible for postdating
+4768,failure,0xB,Requested start time is later than end time
+4768,failure,0xC,Requested start time is later than end time
+4768,failure,0xD,KDC cannot accommodate requested option
+4768,failure,0xE,KDC has no support for encryption type
+4768,failure,0xF,KDC has no support for checksum type
+4768,failure,0x10,KDC has no support for PADATA type (pre-authentication data)
+4768,failure,0x11,KDC has no support for transited type
+4768,failure,0x12,Client's credentials have been revoked
+4768,failure,0x13,Credentials for server have been revoked
+4768,failure,0x14,TGT has been revoked
+4768,failure,0x15,Client not yet valid-try again later
+4768,failure,0x16,Server not yet valid-try again later
+4768,failure,0x17,Password has expired-change password to reset
+4768,failure,0x18,Pre-authentication information was invalid
+4768,failure,0x19,Additional pre-authentication required
+4768,failure,0x1A,KDC does not know about the requested server
+4768,failure,0x1B,KDC is unavailable
+4768,failure,0x1F,Integrity check on decrypted field failed
+4768,failure,0x20,The ticket has expired
+4768,failure,0x21,The ticket is not yet valid
+4768,failure,0x22,The request is a replay
+4768,failure,0x23,The ticket is not for us
+4768,failure,0x24,The ticket and authenticator do not match
+4768,failure,0x25,The clock skew is too great
+4768,failure,0x26,Network address in network layer header doesn't match address inside ticket
+4768,failure,0x27,Protocol version numbers don't match (PVNO)
+4768,failure,0x28,Message type is unsupported
+4768,failure,0x29,Message stream modified and checksum didn't match
+4768,failure,0x2A,Message out of order (possible tampering)
+4768,failure,0x2C,Specified version of key is not available
+4768,failure,0x2D,Service key not available
+4768,failure,0x2E,Mutual authentication failed
+4768,failure,0x2F,Incorrect message direction
+4768,failure,0x30,Alternative authentication method required
+4768,failure,0x31,Incorrect sequence number in message
+4768,failure,0x32,Inappropriate type of checksum in message (checksum may be unsupported)
+4768,failure,0x33,Desired path is unreachable
+4768,failure,0x34,Too much data
+4768,failure,0x3C,Generic error
+4768,failure,0x3D,Field is too long for this implementation
+4768,failure,0x3E,The client trust failed or is not implemented
+4768,failure,0x3F,The KDC server trust failed or could not be verified
+4768,failure,0x40,The signature is invalid
+4768,failure,0x41,A higher encryption level is needed
+4768,failure,0x42,User-to-user authorization is required
+4768,failure,0x43,No TGT was presented or available
+4768,failure,0x44,Incorrect domain or principal
+4769,success,0x0,No error
+4769,failure,0x1,Client's entry in KDC database has expired
+4769,failure,0x2,Server's entry in KDC database has expired
+4769,failure,0x3,Requested Kerberos version number not supported
+4769,failure,0x4,Client's key encrypted in old master key
+4769,failure,0x5,Server's key encrypted in old master key
+4769,failure,0x6,Client not found in Kerberos database
+4769,failure,0x7,Server not found in Kerberos database
+4769,failure,0x8,Multiple principal entries in KDC database
+4769,failure,0x9,The client or server has a null key (master key)
+4769,failure,0xA,Ticket (TGT) not eligible for postdating
+4769,failure,0xB,Requested start time is later than end time
+4769,failure,0xC,Requested start time is later than end time
+4769,failure,0xD,KDC cannot accommodate requested option
+4769,failure,0xE,KDC has no support for encryption type
+4769,failure,0xF,KDC has no support for checksum type
+4769,failure,0x10,KDC has no support for PADATA type (pre-authentication data)
+4769,failure,0x11,KDC has no support for transited type
+4769,failure,0x12,Client's credentials have been revoked
+4769,failure,0x13,Credentials for server have been revoked
+4769,failure,0x14,TGT has been revoked
+4769,failure,0x15,Client not yet valid try again later
+4769,failure,0x16,Server not yet valid try again later
+4769,failure,0x17,Password has expired change password to reset
+4769,failure,0x18,Pre-authentication information was invalid
+4769,failure,0x19,Additional pre-authentication required
+4769,failure,0x1A,KDC does not know about the requested server
+4769,failure,0x1B,KDC is unavailable
+4769,failure,0x1F,Integrity check on decrypted field failed
+4769,failure,0x20,The ticket has expired
+4769,failure,0x21,The ticket is not yet valid
+4769,failure,0x22,The request is a replay
+4769,failure,0x23,The ticket is not for us
+4769,failure,0x24,The ticket and authenticator do not match
+4769,failure,0x25,The clock skew is too great
+4769,failure,0x26,Network address in network layer header doesn't match address inside ticket
+4769,failure,0x27,Protocol version numbers don't match (PVNO)
+4769,failure,0x28,Message type is unsupported
+4769,failure,0x29,Message stream modified and checksum didn't match
+4769,failure,0x2A,Message out of order (possible tampering)
+4769,failure,0x2C,Specified version of key is not available
+4769,failure,0x2D,Service key not available
+4769,failure,0x2E,Mutual authentication failed
+4769,failure,0x2F,Incorrect message direction
+4769,failure,0x30,Alternative authentication method required
+4769,failure,0x31,Incorrect sequence number in message
+4769,failure,0x32,Inappropriate type of checksum in message (checksum may be unsupported)
+4769,failure,0x33,Desired path is unreachable
+4769,failure,0x34,Too much data
+4769,failure,0x3C,Generic error
+4769,failure,0x3D,Field is too long for this implementation
+4769,failure,0x3E,The client trust failed or is not implemented
+4769,failure,0x3F,The KDC server trust failed or could not be verified
+4769,failure,0x40,The signature is invalid
+4769,failure,0x41,A higher encryption level is needed
+4769,failure,0x42,User-to-user authorization is required
+4769,failure,0x43,No TGT was presented or available
+4769,failure,0x44,Incorrect domain or principal
+4771,failure,0x1,Client's entry in database has expired
+4771,failure,0x2,Server's entry in database has expired
+4771,failure,0x3,Requested protocol version # not supported
+4771,failure,0x4,Client's key encrypted in old master key
+4771,failure,0x5,Server's key encrypted in old master key
+4771,failure,0x6,Client not found in Kerberos database
+4771,failure,0x7,Server not found in Kerberos database
+4771,failure,0x8,Multiple principal entries in database
+4771,failure,0x9,The client or server has a null key
+4771,failure,0xA,Ticket not eligible for postdating
+4771,failure,0xB,Requested start time is later than end time
+4771,failure,0xC,KDC policy rejects request
+4771,failure,0xD,KDC cannot accommodate requested option
+4771,failure,0xE,KDC has no support for encryption type
+4771,failure,0xF,KDC has no support for checksum type
+4771,failure,0x10,KDC has no support for padata type
+4771,failure,0x11,KDC has no support for transited type
+4771,failure,0x12,Clients credentials have been revoked
+4771,failure,0x13,Credentials for server have been revoked
+4771,failure,0x14,TGT has been revoked
+4771,failure,0x15,Client not yet valid - try again later
+4771,failure,0x16,Server not yet valid - try again later
+4771,failure,0x17,Password has expired
+4771,failure,0x18,Pre-authentication information was invalid
+4771,failure,0x19,Additional pre-authentication required*
+4771,failure,0x1F,Integrity check on decrypted field failed
+4771,failure,0x20,Ticket expired
+4771,failure,0x21,Ticket not yet valid
+4771,failure,0x22,Request is a replay
+4771,failure,0x23,The ticket isn't for us
+4771,failure,0x24,Ticket and authenticator don't match
+4771,failure,0x25,Clock skew too great
+4771,failure,0x26,Incorrect net address
+4771,failure,0x27,Protocol version mismatch
+4771,failure,0x28,Invalid msg type
+4771,failure,0x29,Message stream modified
+4771,failure,0x2A,Message out of order
+4771,failure,0x2C,Specified version of key is not available
+4771,failure,0x2D,Service key not available
+4771,failure,0x2E,Mutual authentication failed
+4771,failure,0x2F,Incorrect message direction
+4771,failure,0x30,Alternative authentication method required*
+4771,failure,0x31,Incorrect sequence number in message
+4771,failure,0x32,Inappropriate type of checksum in message
+4771,failure,0x3C,Generic error
+4771,failure,0x3D,Field is too long for this implementation

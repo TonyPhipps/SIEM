@@ -1,0 +1,7 @@
+EventType,Description
+0,Information
+1,Error
+2,Warning
+4,Information
+8,Success Audit
+16,Failure Audit

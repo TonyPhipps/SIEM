@@ -1,0 +1,5 @@
+RCODE,reply_code
+0,NoError
+1,FormErr
+2,ServFail
+3,NXDomain

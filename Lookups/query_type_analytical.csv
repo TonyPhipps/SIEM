@@ -1,0 +1,793 @@
+Opcode,QTYPE,query_type
+0,0,Query Reserved
+0,1,Query A
+0,2,Query NS
+0,3,Query MD
+0,4,Query MF
+0,5,Query CNAME
+0,6,Query SOA
+0,7,Query MB
+0,8,Query MG
+0,9,Query MR
+0,10,Query NULL
+0,11,Query WKS
+0,12,Query PTR
+0,13,Query HINFO
+0,14,Query MINFO
+0,15,Query MX
+0,16,Query TXT
+0,17,Query RP
+0,18,Query AFSDB
+0,19,Query X25
+0,20,Query ISDN
+0,21,Query RT
+0,22,Query NSAP
+0,23,Query NSAP-PTR
+0,24,Query SIG
+0,25,Query KEY
+0,26,Query PX
+0,27,Query GPOS
+0,28,Query AAAA
+0,29,Query LOC
+0,30,Query NXT
+0,31,Query EID
+0,32,Query NIMLOC
+0,33,Query SRV
+0,34,Query ATMA
+0,35,Query NAPTR
+0,36,Query KX
+0,37,Query CERT
+0,38,Query A6
+0,39,Query DNAME
+0,40,Query SINK
+0,41,Query OPT
+0,42,Query APL
+0,43,Query DS
+0,44,Query SSHFP
+0,45,Query IPSECKEY
+0,46,Query RRSIG
+0,47,Query NSEC
+0,48,Query DNSKEY
+0,49,Query DHCID
+0,50,Query NSEC3
+0,51,Query NSEC3PARAM
+0,52,Query TLSA
+0,53,Query SMIMEA
+0,55,Query HIP
+0,56,Query NINFO
+0,57,Query RKEY
+0,58,Query TALINK
+0,59,Query CDS
+0,60,Query CDNSKEY
+0,61,Query OPENPGPKEY
+0,62,Query CSYNC
+0,63,Query ZONEMD
+0,64,Query SVCB
+0,65,Query HTTPS
+0,66,Query DSYNC
+0,67,Query HHIT
+0,68,Query BRID
+0,99,Query SPF
+0,100,Query UINFO
+0,101,Query UID
+0,102,Query GID
+0,103,Query UNSPEC
+0,104,Query NID
+0,105,Query L32
+0,106,Query L64
+0,107,Query LP
+0,108,Query EUI48
+0,109,Query EUI64
+0,128,Query NXNAME
+0,249,Query TKEY
+0,250,Query TSIG
+0,251,Query IXFR
+0,252,Query AXFR
+0,253,Query MAILB
+0,254,Query MAILA
+0,255,Query *
+0,256,Query URI
+0,257,Query CAA
+0,258,Query AVC
+0,259,Query DOA
+0,260,Query AMTRELAY
+0,261,Query RESINFO
+0,262,Query WALLET
+0,263,Query CLA
+0,264,Query IPN
+0,32768,Query TA
+0,32769,Query DLV
+0,65535,Query Reserved
+1,0,IQuery Reserved
+1,1,IQuery A
+1,2,IQuery NS
+1,3,IQuery MD
+1,4,IQuery MF
+1,5,IQuery CNAME
+1,6,IQuery SOA
+1,7,IQuery MB
+1,8,IQuery MG
+1,9,IQuery MR
+1,10,IQuery NULL
+1,11,IQuery WKS
+1,12,IQuery PTR
+1,13,IQuery HINFO
+1,14,IQuery MINFO
+1,15,IQuery MX
+1,16,IQuery TXT
+1,17,IQuery RP
+1,18,IQuery AFSDB
+1,19,IQuery X25
+1,20,IQuery ISDN
+1,21,IQuery RT
+1,22,IQuery NSAP
+1,23,IQuery NSAP-PTR
+1,24,IQuery SIG
+1,25,IQuery KEY
+1,26,IQuery PX
+1,27,IQuery GPOS
+1,28,IQuery AAAA
+1,29,IQuery LOC
+1,30,IQuery NXT
+1,31,IQuery EID
+1,32,IQuery NIMLOC
+1,33,IQuery SRV
+1,34,IQuery ATMA
+1,35,IQuery NAPTR
+1,36,IQuery KX
+1,37,IQuery CERT
+1,38,IQuery A6
+1,39,IQuery DNAME
+1,40,IQuery SINK
+1,41,IQuery OPT
+1,42,IQuery APL
+1,43,IQuery DS
+1,44,IQuery SSHFP
+1,45,IQuery IPSECKEY
+1,46,IQuery RRSIG
+1,47,IQuery NSEC
+1,48,IQuery DNSKEY
+1,49,IQuery DHCID
+1,50,IQuery NSEC3
+1,51,IQuery NSEC3PARAM
+1,52,IQuery TLSA
+1,53,IQuery SMIMEA
+1,55,IQuery HIP
+1,56,IQuery NINFO
+1,57,IQuery RKEY
+1,58,IQuery TALINK
+1,59,IQuery CDS
+1,60,IQuery CDNSKEY
+1,61,IQuery OPENPGPKEY
+1,62,IQuery CSYNC
+1,63,IQuery ZONEMD
+1,64,IQuery SVCB
+1,65,IQuery HTTPS
+1,66,IQuery DSYNC
+1,67,IQuery HHIT
+1,68,IQuery BRID
+1,99,IQuery SPF
+1,100,IQuery UINFO
+1,101,IQuery UID
+1,102,IQuery GID
+1,103,IQuery UNSPEC
+1,104,IQuery NID
+1,105,IQuery L32
+1,106,IQuery L64
+1,107,IQuery LP
+1,108,IQuery EUI48
+1,109,IQuery EUI64
+1,128,IQuery NXNAME
+1,249,IQuery TKEY
+1,250,IQuery TSIG
+1,251,IQuery IXFR
+1,252,IQuery AXFR
+1,253,IQuery MAILB
+1,254,IQuery MAILA
+1,255,IQuery *
+1,256,IQuery URI
+1,257,IQuery CAA
+1,258,IQuery AVC
+1,259,IQuery DOA
+1,260,IQuery AMTRELAY
+1,261,IQuery RESINFO
+1,262,IQuery WALLET
+1,263,IQuery CLA
+1,264,IQuery IPN
+1,32768,IQuery TA
+1,32769,IQuery DLV
+1,65535,IQuery Reserved
+2,0,Status Reserved
+2,1,Status A
+2,2,Status NS
+2,3,Status MD
+2,4,Status MF
+2,5,Status CNAME
+2,6,Status SOA
+2,7,Status MB
+2,8,Status MG
+2,9,Status MR
+2,10,Status NULL
+2,11,Status WKS
+2,12,Status PTR
+2,13,Status HINFO
+2,14,Status MINFO
+2,15,Status MX
+2,16,Status TXT
+2,17,Status RP
+2,18,Status AFSDB
+2,19,Status X25
+2,20,Status ISDN
+2,21,Status RT
+2,22,Status NSAP
+2,23,Status NSAP-PTR
+2,24,Status SIG
+2,25,Status KEY
+2,26,Status PX
+2,27,Status GPOS
+2,28,Status AAAA
+2,29,Status LOC
+2,30,Status NXT
+2,31,Status EID
+2,32,Status NIMLOC
+2,33,Status SRV
+2,34,Status ATMA
+2,35,Status NAPTR
+2,36,Status KX
+2,37,Status CERT
+2,38,Status A6
+2,39,Status DNAME
+2,40,Status SINK
+2,41,Status OPT
+2,42,Status APL
+2,43,Status DS
+2,44,Status SSHFP
+2,45,Status IPSECKEY
+2,46,Status RRSIG
+2,47,Status NSEC
+2,48,Status DNSKEY
+2,49,Status DHCID
+2,50,Status NSEC3
+2,51,Status NSEC3PARAM
+2,52,Status TLSA
+2,53,Status SMIMEA
+2,55,Status HIP
+2,56,Status NINFO
+2,57,Status RKEY
+2,58,Status TALINK
+2,59,Status CDS
+2,60,Status CDNSKEY
+2,61,Status OPENPGPKEY
+2,62,Status CSYNC
+2,63,Status ZONEMD
+2,64,Status SVCB
+2,65,Status HTTPS
+2,66,Status DSYNC
+2,67,Status HHIT
+2,68,Status BRID
+2,99,Status SPF
+2,100,Status UINFO
+2,101,Status UID
+2,102,Status GID
+2,103,Status UNSPEC
+2,104,Status NID
+2,105,Status L32
+2,106,Status L64
+2,107,Status LP
+2,108,Status EUI48
+2,109,Status EUI64
+2,128,Status NXNAME
+2,249,Status TKEY
+2,250,Status TSIG
+2,251,Status IXFR
+2,252,Status AXFR
+2,253,Status MAILB
+2,254,Status MAILA
+2,255,Status *
+2,256,Status URI
+2,257,Status CAA
+2,258,Status AVC
+2,259,Status DOA
+2,260,Status AMTRELAY
+2,261,Status RESINFO
+2,262,Status WALLET
+2,263,Status CLA
+2,264,Status IPN
+2,32768,Status TA
+2,32769,Status DLV
+2,65535,Status Reserved
+3,0,Unassigned Reserved
+3,1,Unassigned A
+3,2,Unassigned NS
+3,3,Unassigned MD
+3,4,Unassigned MF
+3,5,Unassigned CNAME
+3,6,Unassigned SOA
+3,7,Unassigned MB
+3,8,Unassigned MG
+3,9,Unassigned MR
+3,10,Unassigned NULL
+3,11,Unassigned WKS
+3,12,Unassigned PTR
+3,13,Unassigned HINFO
+3,14,Unassigned MINFO
+3,15,Unassigned MX
+3,16,Unassigned TXT
+3,17,Unassigned RP
+3,18,Unassigned AFSDB
+3,19,Unassigned X25
+3,20,Unassigned ISDN
+3,21,Unassigned RT
+3,22,Unassigned NSAP
+3,23,Unassigned NSAP-PTR
+3,24,Unassigned SIG
+3,25,Unassigned KEY
+3,26,Unassigned PX
+3,27,Unassigned GPOS
+3,28,Unassigned AAAA
+3,29,Unassigned LOC
+3,30,Unassigned NXT
+3,31,Unassigned EID
+3,32,Unassigned NIMLOC
+3,33,Unassigned SRV
+3,34,Unassigned ATMA
+3,35,Unassigned NAPTR
+3,36,Unassigned KX
+3,37,Unassigned CERT
+3,38,Unassigned A6
+3,39,Unassigned DNAME
+3,40,Unassigned SINK
+3,41,Unassigned OPT
+3,42,Unassigned APL
+3,43,Unassigned DS
+3,44,Unassigned SSHFP
+3,45,Unassigned IPSECKEY
+3,46,Unassigned RRSIG
+3,47,Unassigned NSEC
+3,48,Unassigned DNSKEY
+3,49,Unassigned DHCID
+3,50,Unassigned NSEC3
+3,51,Unassigned NSEC3PARAM
+3,52,Unassigned TLSA
+3,53,Unassigned SMIMEA
+3,55,Unassigned HIP
+3,56,Unassigned NINFO
+3,57,Unassigned RKEY
+3,58,Unassigned TALINK
+3,59,Unassigned CDS
+3,60,Unassigned CDNSKEY
+3,61,Unassigned OPENPGPKEY
+3,62,Unassigned CSYNC
+3,63,Unassigned ZONEMD
+3,64,Unassigned SVCB
+3,65,Unassigned HTTPS
+3,66,Unassigned DSYNC
+3,67,Unassigned HHIT
+3,68,Unassigned BRID
+3,99,Unassigned SPF
+3,100,Unassigned UINFO
+3,101,Unassigned UID
+3,102,Unassigned GID
+3,103,Unassigned UNSPEC
+3,104,Unassigned NID
+3,105,Unassigned L32
+3,106,Unassigned L64
+3,107,Unassigned LP
+3,108,Unassigned EUI48
+3,109,Unassigned EUI64
+3,128,Unassigned NXNAME
+3,249,Unassigned TKEY
+3,250,Unassigned TSIG
+3,251,Unassigned IXFR
+3,252,Unassigned AXFR
+3,253,Unassigned MAILB
+3,254,Unassigned MAILA
+3,255,Unassigned *
+3,256,Unassigned URI
+3,257,Unassigned CAA
+3,258,Unassigned AVC
+3,259,Unassigned DOA
+3,260,Unassigned AMTRELAY
+3,261,Unassigned RESINFO
+3,262,Unassigned WALLET
+3,263,Unassigned CLA
+3,264,Unassigned IPN
+3,32768,Unassigned TA
+3,32769,Unassigned DLV
+3,65535,Unassigned Reserved
+4,0,Notify Reserved
+4,1,Notify A
+4,2,Notify NS
+4,3,Notify MD
+4,4,Notify MF
+4,5,Notify CNAME
+4,6,Notify SOA
+4,7,Notify MB
+4,8,Notify MG
+4,9,Notify MR
+4,10,Notify NULL
+4,11,Notify WKS
+4,12,Notify PTR
+4,13,Notify HINFO
+4,14,Notify MINFO
+4,15,Notify MX
+4,16,Notify TXT
+4,17,Notify RP
+4,18,Notify AFSDB
+4,19,Notify X25
+4,20,Notify ISDN
+4,21,Notify RT
+4,22,Notify NSAP
+4,23,Notify NSAP-PTR
+4,24,Notify SIG
+4,25,Notify KEY
+4,26,Notify PX
+4,27,Notify GPOS
+4,28,Notify AAAA
+4,29,Notify LOC
+4,30,Notify NXT
+4,31,Notify EID
+4,32,Notify NIMLOC
+4,33,Notify SRV
+4,34,Notify ATMA
+4,35,Notify NAPTR
+4,36,Notify KX
+4,37,Notify CERT
+4,38,Notify A6
+4,39,Notify DNAME
+4,40,Notify SINK
+4,41,Notify OPT
+4,42,Notify APL
+4,43,Notify DS
+4,44,Notify SSHFP
+4,45,Notify IPSECKEY
+4,46,Notify RRSIG
+4,47,Notify NSEC
+4,48,Notify DNSKEY
+4,49,Notify DHCID
+4,50,Notify NSEC3
+4,51,Notify NSEC3PARAM
+4,52,Notify TLSA
+4,53,Notify SMIMEA
+4,55,Notify HIP
+4,56,Notify NINFO
+4,57,Notify RKEY
+4,58,Notify TALINK
+4,59,Notify CDS
+4,60,Notify CDNSKEY
+4,61,Notify OPENPGPKEY
+4,62,Notify CSYNC
+4,63,Notify ZONEMD
+4,64,Notify SVCB
+4,65,Notify HTTPS
+4,66,Notify DSYNC
+4,67,Notify HHIT
+4,68,Notify BRID
+4,99,Notify SPF
+4,100,Notify UINFO
+4,101,Notify UID
+4,102,Notify GID
+4,103,Notify UNSPEC
+4,104,Notify NID
+4,105,Notify L32
+4,106,Notify L64
+4,107,Notify LP
+4,108,Notify EUI48
+4,109,Notify EUI64
+4,128,Notify NXNAME
+4,249,Notify TKEY
+4,250,Notify TSIG
+4,251,Notify IXFR
+4,252,Notify AXFR
+4,253,Notify MAILB
+4,254,Notify MAILA
+4,255,Notify *
+4,256,Notify URI
+4,257,Notify CAA
+4,258,Notify AVC
+4,259,Notify DOA
+4,260,Notify AMTRELAY
+4,261,Notify RESINFO
+4,262,Notify WALLET
+4,263,Notify CLA
+4,264,Notify IPN
+4,32768,Notify TA
+4,32769,Notify DLV
+4,65535,Notify Reserved
+5,0,Update Reserved
+5,1,Update A
+5,2,Update NS
+5,3,Update MD
+5,4,Update MF
+5,5,Update CNAME
+5,6,Update SOA
+5,7,Update MB
+5,8,Update MG
+5,9,Update MR
+5,10,Update NULL
+5,11,Update WKS
+5,12,Update PTR
+5,13,Update HINFO
+5,14,Update MINFO
+5,15,Update MX
+5,16,Update TXT
+5,17,Update RP
+5,18,Update AFSDB
+5,19,Update X25
+5,20,Update ISDN
+5,21,Update RT
+5,22,Update NSAP
+5,23,Update NSAP-PTR
+5,24,Update SIG
+5,25,Update KEY
+5,26,Update PX
+5,27,Update GPOS
+5,28,Update AAAA
+5,29,Update LOC
+5,30,Update NXT
+5,31,Update EID
+5,32,Update NIMLOC
+5,33,Update SRV
+5,34,Update ATMA
+5,35,Update NAPTR
+5,36,Update KX
+5,37,Update CERT
+5,38,Update A6
+5,39,Update DNAME
+5,40,Update SINK
+5,41,Update OPT
+5,42,Update APL
+5,43,Update DS
+5,44,Update SSHFP
+5,45,Update IPSECKEY
+5,46,Update RRSIG
+5,47,Update NSEC
+5,48,Update DNSKEY
+5,49,Update DHCID
+5,50,Update NSEC3
+5,51,Update NSEC3PARAM
+5,52,Update TLSA
+5,53,Update SMIMEA
+5,55,Update HIP
+5,56,Update NINFO
+5,57,Update RKEY
+5,58,Update TALINK
+5,59,Update CDS
+5,60,Update CDNSKEY
+5,61,Update OPENPGPKEY
+5,62,Update CSYNC
+5,63,Update ZONEMD
+5,64,Update SVCB
+5,65,Update HTTPS
+5,66,Update DSYNC
+5,67,Update HHIT
+5,68,Update BRID
+5,99,Update SPF
+5,100,Update UINFO
+5,101,Update UID
+5,102,Update GID
+5,103,Update UNSPEC
+5,104,Update NID
+5,105,Update L32
+5,106,Update L64
+5,107,Update LP
+5,108,Update EUI48
+5,109,Update EUI64
+5,128,Update NXNAME
+5,249,Update TKEY
+5,250,Update TSIG
+5,251,Update IXFR
+5,252,Update AXFR
+5,253,Update MAILB
+5,254,Update MAILA
+5,255,Update *
+5,256,Update URI
+5,257,Update CAA
+5,258,Update AVC
+5,259,Update DOA
+5,260,Update AMTRELAY
+5,261,Update RESINFO
+5,262,Update WALLET
+5,263,Update CLA
+5,264,Update IPN
+5,32768,Update TA
+5,32769,Update DLV
+5,65535,Update Reserved
+6,0,DNS Stateful Operations Reserved
+6,1,DNS Stateful Operations A
+6,2,DNS Stateful Operations NS
+6,3,DNS Stateful Operations MD
+6,4,DNS Stateful Operations MF
+6,5,DNS Stateful Operations CNAME
+6,6,DNS Stateful Operations SOA
+6,7,DNS Stateful Operations MB
+6,8,DNS Stateful Operations MG
+6,9,DNS Stateful Operations MR
+6,10,DNS Stateful Operations NULL
+6,11,DNS Stateful Operations WKS
+6,12,DNS Stateful Operations PTR
+6,13,DNS Stateful Operations HINFO
+6,14,DNS Stateful Operations MINFO
+6,15,DNS Stateful Operations MX
+6,16,DNS Stateful Operations TXT
+6,17,DNS Stateful Operations RP
+6,18,DNS Stateful Operations AFSDB
+6,19,DNS Stateful Operations X25
+6,20,DNS Stateful Operations ISDN
+6,21,DNS Stateful Operations RT
+6,22,DNS Stateful Operations NSAP
+6,23,DNS Stateful Operations NSAP-PTR
+6,24,DNS Stateful Operations SIG
+6,25,DNS Stateful Operations KEY
+6,26,DNS Stateful Operations PX
+6,27,DNS Stateful Operations GPOS
+6,28,DNS Stateful Operations AAAA
+6,29,DNS Stateful Operations LOC
+6,30,DNS Stateful Operations NXT
+6,31,DNS Stateful Operations EID
+6,32,DNS Stateful Operations NIMLOC
+6,33,DNS Stateful Operations SRV
+6,34,DNS Stateful Operations ATMA
+6,35,DNS Stateful Operations NAPTR
+6,36,DNS Stateful Operations KX
+6,37,DNS Stateful Operations CERT
+6,38,DNS Stateful Operations A6
+6,39,DNS Stateful Operations DNAME
+6,40,DNS Stateful Operations SINK
+6,41,DNS Stateful Operations OPT
+6,42,DNS Stateful Operations APL
+6,43,DNS Stateful Operations DS
+6,44,DNS Stateful Operations SSHFP
+6,45,DNS Stateful Operations IPSECKEY
+6,46,DNS Stateful Operations RRSIG
+6,47,DNS Stateful Operations NSEC
+6,48,DNS Stateful Operations DNSKEY
+6,49,DNS Stateful Operations DHCID
+6,50,DNS Stateful Operations NSEC3
+6,51,DNS Stateful Operations NSEC3PARAM
+6,52,DNS Stateful Operations TLSA
+6,53,DNS Stateful Operations SMIMEA
+6,55,DNS Stateful Operations HIP
+6,56,DNS Stateful Operations NINFO
+6,57,DNS Stateful Operations RKEY
+6,58,DNS Stateful Operations TALINK
+6,59,DNS Stateful Operations CDS
+6,60,DNS Stateful Operations CDNSKEY
+6,61,DNS Stateful Operations OPENPGPKEY
+6,62,DNS Stateful Operations CSYNC
+6,63,DNS Stateful Operations ZONEMD
+6,64,DNS Stateful Operations SVCB
+6,65,DNS Stateful Operations HTTPS
+6,66,DNS Stateful Operations DSYNC
+6,67,DNS Stateful Operations HHIT
+6,68,DNS Stateful Operations BRID
+6,99,DNS Stateful Operations SPF
+6,100,DNS Stateful Operations UINFO
+6,101,DNS Stateful Operations UID
+6,102,DNS Stateful Operations GID
+6,103,DNS Stateful Operations UNSPEC
+6,104,DNS Stateful Operations NID
+6,105,DNS Stateful Operations L32
+6,106,DNS Stateful Operations L64
+6,107,DNS Stateful Operations LP
+6,108,DNS Stateful Operations EUI48
+6,109,DNS Stateful Operations EUI64
+6,128,DNS Stateful Operations NXNAME
+6,249,DNS Stateful Operations TKEY
+6,250,DNS Stateful Operations TSIG
+6,251,DNS Stateful Operations IXFR
+6,252,DNS Stateful Operations AXFR
+6,253,DNS Stateful Operations MAILB
+6,254,DNS Stateful Operations MAILA
+6,255,DNS Stateful Operations *
+6,256,DNS Stateful Operations URI
+6,257,DNS Stateful Operations CAA
+6,258,DNS Stateful Operations AVC
+6,259,DNS Stateful Operations DOA
+6,260,DNS Stateful Operations AMTRELAY
+6,261,DNS Stateful Operations RESINFO
+6,262,DNS Stateful Operations WALLET
+6,263,DNS Stateful Operations CLA
+6,264,DNS Stateful Operations IPN
+6,32768,DNS Stateful Operations TA
+6,32769,DNS Stateful Operations DLV
+6,65535,DNS Stateful Operations Reserved
+7,0,Unassigned Reserved
+7,1,Unassigned A
+7,2,Unassigned NS
+7,3,Unassigned MD
+7,4,Unassigned MF
+7,5,Unassigned CNAME
+7,6,Unassigned SOA
+7,7,Unassigned MB
+7,8,Unassigned MG
+7,9,Unassigned MR
+7,10,Unassigned NULL
+7,11,Unassigned WKS
+7,12,Unassigned PTR
+7,13,Unassigned HINFO
+7,14,Unassigned MINFO
+7,15,Unassigned MX
+7,16,Unassigned TXT
+7,17,Unassigned RP
+7,18,Unassigned AFSDB
+7,19,Unassigned X25
+7,20,Unassigned ISDN
+7,21,Unassigned RT
+7,22,Unassigned NSAP
+7,23,Unassigned NSAP-PTR
+7,24,Unassigned SIG
+7,25,Unassigned KEY
+7,26,Unassigned PX
+7,27,Unassigned GPOS
+7,28,Unassigned AAAA
+7,29,Unassigned LOC
+7,30,Unassigned NXT
+7,31,Unassigned EID
+7,32,Unassigned NIMLOC
+7,33,Unassigned SRV
+7,34,Unassigned ATMA
+7,35,Unassigned NAPTR
+7,36,Unassigned KX
+7,37,Unassigned CERT
+7,38,Unassigned A6
+7,39,Unassigned DNAME
+7,40,Unassigned SINK
+7,41,Unassigned OPT
+7,42,Unassigned APL
+7,43,Unassigned DS
+7,44,Unassigned SSHFP
+7,45,Unassigned IPSECKEY
+7,46,Unassigned RRSIG
+7,47,Unassigned NSEC
+7,48,Unassigned DNSKEY
+7,49,Unassigned DHCID
+7,50,Unassigned NSEC3
+7,51,Unassigned NSEC3PARAM
+7,52,Unassigned TLSA
+7,53,Unassigned SMIMEA
+7,55,Unassigned HIP
+7,56,Unassigned NINFO
+7,57,Unassigned RKEY
+7,58,Unassigned TALINK
+7,59,Unassigned CDS
+7,60,Unassigned CDNSKEY
+7,61,Unassigned OPENPGPKEY
+7,62,Unassigned CSYNC
+7,63,Unassigned ZONEMD
+7,64,Unassigned SVCB
+7,65,Unassigned HTTPS
+7,66,Unassigned DSYNC
+7,67,Unassigned HHIT
+7,68,Unassigned BRID
+7,99,Unassigned SPF
+7,100,Unassigned UINFO
+7,101,Unassigned UID
+7,102,Unassigned GID
+7,103,Unassigned UNSPEC
+7,104,Unassigned NID
+7,105,Unassigned L32
+7,106,Unassigned L64
+7,107,Unassigned LP
+7,108,Unassigned EUI48
+7,109,Unassigned EUI64
+7,128,Unassigned NXNAME
+7,249,Unassigned TKEY
+7,250,Unassigned TSIG
+7,251,Unassigned IXFR
+7,252,Unassigned AXFR
+7,253,Unassigned MAILB
+7,254,Unassigned MAILA
+7,255,Unassigned *
+7,256,Unassigned URI
+7,257,Unassigned CAA
+7,258,Unassigned AVC
+7,259,Unassigned DOA
+7,260,Unassigned AMTRELAY
+7,261,Unassigned RESINFO
+7,262,Unassigned WALLET
+7,263,Unassigned CLA
+7,264,Unassigned IPN
+7,32768,Unassigned TA
+7,32769,Unassigned DLV
+7,65535,Unassigned Reserved

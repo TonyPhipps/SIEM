@@ -1,0 +1,10 @@
+sourcetype,EventCode,vendor_status,status
+WMI:InstalledUpdates,,,installed
+,17,,available
+,18,,available
+,19,,installed
+,,"Installation Ready",available
+,,"Installation Successful",installed
+,,"Restart Required","restart required"
+,,"Installation successful and restart required","restart required"
+,,"Installation Failure",failure

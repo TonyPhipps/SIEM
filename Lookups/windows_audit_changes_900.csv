@@ -1,0 +1,73 @@
+EventCode,action,change_type,object_category
+517,cleared,audit,audit
+1100,stopped,audit,audit
+1102,cleared,audit,audit log
+4720,created,AAA,user
+4741,created,user,user
+624,created,user,user
+645,created,user,user
+4722,modified,AAA,user
+626,modified,user,user
+4723,modified,AAA,user
+627,modified,user,user
+4724,modified,AAA,user
+628,modified,user,user
+4725,modified,AAA,user
+629,modified,user,user
+4726,deleted,AAA,user
+4743,deleted,user,user
+630,deleted,user,user
+647,deleted,user,user
+4738,modified,AAA,user
+4742,modified,user,user
+642,modified,user,user
+646,modified,user,user
+4740,lockout,AAA,user
+644,modified,user,user
+625,modified,user,user
+671,modified,user,user
+4767,modified,AAA,user
+1101,success,audit,audit
+1108,success,audit,audit
+4719,modified,audit,audit policy
+4717,,AAA,security access
+4718,,AAA,security access
+4727,,AAA,group
+4728,,AAA,user
+4729,,AAA,user
+4730,,AAA,group
+4731,,AAA,group
+4732,modified,AAA,user
+4733,,AAA,user
+4734,,AAA,group
+4735,,AAA,group
+4737,,AAA,group
+4739,,AAA,global group
+4750,modified,AAA,user group
+4753,,AAA,global group
+4754,,AAA,group
+4755,,AAA,group
+4756,,AAA,user
+4757,,AAA,user
+4758,,AAA,group
+4764,,AAA,group
+4799,,AAA,group
+4781,modified,AAA,user
+4703,modified,AAA,user
+4704,modified,AAA,user
+4705,modified,AAA,user
+4706,modified,AAA,directory service
+4800,locked,AAA,user
+4801,unlocked,AAA,user
+4634,logoff,AAA,user
+4698,created,scheduled task,scheduled task
+4700,started,scheduled task,scheduled task
+4701,stopped,scheduled task,scheduled task
+4702,modified,scheduled task,scheduled task
+4713,modified,AAA,directory service
+4794,modified,AAA,user
+4798,read,AAA,user
+4744,created,AAA,user group
+4749,created,AAA,user group
+4759,created,AAA,user group
+4876,read,AAA,database

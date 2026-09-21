@@ -1,0 +1,9 @@
+Opcode,name
+0,Query
+1,IQuery
+2,Status
+3,Unassigned
+4,Notify
+5,Update
+6,DNS Stateful Operations
+7,Unassigned

@@ -1,0 +1,18 @@
+Type,action
+"audit failure",failure
+"Audit Failure",failure
+"AUDIT_FAILURE",failure
+"failure audit",failure
+"Failure Audit",failure
+"FAILURE_AUDIT",failure
+"audit success",success
+"Audit Success",success
+"AUDIT_SUCCESS",success
+"success audit",success
+"Success Audit",success
+"SUCCESS_AUDIT",success
+"success","success"
+"failure","failure"
+"0x8010000000000000","failure"
+"0x8020000000000000","success"
+"0x4020000000000000","success"

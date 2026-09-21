@@ -1,0 +1,7 @@
+Type,EventCode,severity
+Error,,high
+Warning,,medium
+Information,,informational
+Success Audit,,informational
+Failure Audit,,medium
+,4739,high

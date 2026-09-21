@@ -1,0 +1,11 @@
+vendor_action,action
+CreateKey,created
+SetValue,modified
+DeleteKey,deleted
+RenameKey,modified
+add,created
+delete,deleted
+update,modified
+created,created
+deleted,deleted
+modified,modified

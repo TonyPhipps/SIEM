@@ -1,0 +1,60 @@
+EventCode,change_type,object_attrs,object_category,result
+1100,,service,,
+1101,audit,transport,audit,
+1102,,registry,,The audit log was cleared
+1108,audit,Microsoft-Windows-Security-Auditing,audit,
+4706,AAA,domain trust,directory service,A new trust was created to a domain
+4713,AAA,Kerberos policy,directory service,Kerberos policy was changed
+4719,audit,Kerberos Authentication Service,audit policy,System audit policy was changed
+4717,AAA,,security access,access was granted
+4718,AAA,,security access,account was removed
+4720,,account,,A user account was created
+4722,,account,,A user account was enabled
+4723,,account,,An attempt was made to change an account's password
+4724,,account,,An attempt was made to reset an account's password
+4725,,account,,A user account was disabled
+4726,,account,,A user account was deleted
+4727,AAA,global group,group,A security-enabled global group was created
+4728,AAA,,user,A member was added to a security-enabled global group
+4729,AAA,,user,A member was removed from a security-enabled global group
+4730,AAA,global group,group,A security-enabled global group was deleted
+4731,AAA,local group,group,A security-enabled local group was created
+4732,AAA,,user,A member was added to a security-enabled local group
+4733,AAA,,user,A member was removed from a security-enabled local group
+4734,AAA,local group,group,A security-enabled local group was deleted
+4735,AAA,local group,group,A security-enabled local group was changed
+4737,AAA,global group,group,A security-enabled global group was changed
+4738,,account,,A user account was changed
+4739,AAA,domain policy,global group,Domain Policy was changed
+4740,,account,,A user account was locked out
+4741,,computer account,,account was created
+4742,,computer account,,account was changed
+4743,,computer account,,account was deleted
+4744,AAA,security-disabled local group,user group,A security-disabled local group was created
+4749,AAA,security-disabled global group,user group,A security-disabled global group was created
+4750,AAA,security-disabled global group,user group,A security-disabled global group was changed
+4753,AAA,,global group,group was deleted
+4754,AAA,universal group,group,A security-enabled universal group was created
+4755,AAA,universal group,group,A security-enabled universal group was changed
+4756,AAA,,user,A member was added to a security-enabled universal group
+4757,AAA,,user,A member was removed from a security-enabled universal group
+4758,AAA,universal group,group,A security-enabled universal group was deleted
+4759,AAA,security-disabled universal group,user group,A security-disabled universal group was created
+4764,AAA,,group,A group's type was changed
+4767,AAA,account,user,A user account was unlocked
+4781,AAA,account,user,The name of an account was changed
+5461,AAA,registry,policy,failed
+4703,,account,,A token right was adjusted
+4704,,account,,A user right was assigned
+4705,,account,,A user right was removed
+4800,AAA,workstation,user,The workstation was locked
+4801,AAA,workstation,user,The workstation was unlocked
+4876,AAA,Certificate Services,database,Certificate Services backup started
+4634,,login session,,An account was logged off
+4698,,,,A scheduled task was created
+4700,,,,A scheduled task was enabled
+4701,,,,A scheduled task was disabled
+4702,,,,A scheduled task was updated
+4794,AAA,Directory Services Restore Mode,user,set the Directory Services Restore Mode administrator password
+4799,AAA,local group,group,A security-enabled local group membership was enumerated
+4798,,local group,,A user's local group membership was enumerated

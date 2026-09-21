@@ -1,0 +1,8 @@
+tcpflags,tcp_flag
+*S*,SYN
+*A*,ACK
+*F*, FIN
+*R*,RST
+*U*,URG
+*P*,PSH
+-,-

@@ -1,0 +1,9 @@
+EventCode,service,service_name
+5024,Firewall,Firewall
+5025,Firewall,Firewall
+5030,Firewall,Firewall
+5033,Firewall Driver,Firewall Driver
+5034,Firewall Driver,Firewall Driver
+5035,Firewall Driver,Firewall Driver
+5478,IPsec Policy Agent service,IPsec Policy Agent service
+1100,Event Logging Service,Event Logging Service

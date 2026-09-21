@@ -1,0 +1,9 @@
+EventID,name
+256,DNS query received
+257,Response success
+258,Response failure
+260,Query out
+261,Response in
+262,Recursive query
+279,Internal lookup CNAME
+280,Internal lookup

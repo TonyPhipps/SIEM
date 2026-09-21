@@ -1,0 +1,43 @@
+message_type,vendor_dns_action,action,reply_code,reply_code_id
+Response,NOERROR,success,No Error,0
+Response,FORMERR,failure,Format Error,1
+Response,SERVFAIL,failure,Server Failure,2
+Response,NXDOMAIN,failure,Non-Existent Domain,3
+Response,NOTIMPL,failure,NotImp,4
+Response,REFUSED,failure,Refused,5
+Response,YXDOMAIN,failure,YXDomain,6
+Response,YXRRSET,failure,YXRRSet,7
+Response,NXRRSET,failure,NXRRSer,8
+Response,NOTAUTH,failure,NotAuth,9
+Response,NOTZONE,failure,NotZone,10
+Response,DSOTYPENI,failure,DSOTYPENI,11
+Response,BADVERS,failure,BADVERS,16
+Response,BADSIG,failure,BADSIG,16
+Response,BADKEY,failure,BADKEY,17
+Response,BADTIME,failure,BADTIME,18
+Response,BADMODE,failure,BADMODE,19
+Response,BADNAME,failure,BADNAME,20
+Response,BADALG,failure,BADALG,21
+Response,BADTRUNC,failure,BADTRUNC,22
+Response,BADCOOKIE,failure,BADCOOKIE,23
+Query,NOERROR,success,,
+Query,FORMERR,failure,,
+Query,SERVFAIL,failure,,
+Query,NXDOMAIN,failure,,
+Query,NOTIMPL,failure,,
+Query,REFUSED,failure,,
+Query,YXDOMAIN,failure,,
+Query,YXRRSET,failure,,
+Query,NXRRSET,failure,,
+Query,NOTAUTH,failure,,
+Query,NOTZONE,failure,,
+Query,DSOTYPENI,failure,,
+Query,BADVERS,failure,,
+Query,BADSIG,failure,,
+Query,BADKEY,failure,,
+Query,BADTIME,failure,,
+Query,BADMODE,failure,,
+Query,BADNAME,failure,,
+Query,BADALG,failure,,
+Query,BADTRUNC,failure,,
+Query,BADCOOKIE,failure,,

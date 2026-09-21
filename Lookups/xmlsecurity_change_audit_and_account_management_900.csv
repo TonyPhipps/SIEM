@@ -1,0 +1,53 @@
+EventCode,object_attrs,result
+1100,service,
+1102,registry,The audit log was cleared
+4720,account,A user account was created
+4741,computer account,account was created
+4722,account,A user account was enabled
+4723,account,An attempt was made to change an account's password
+4724,account,An attempt was made to reset an account's password
+4725,account,A user account was disabled
+4726,account,A user account was deleted
+4743,computer account,account was deleted
+4738,account,A user account was changed
+4742,computer account,account was changed
+4740,account,A user account was locked out
+4767,account,A user account was unlocked
+1101,transport,
+1108,Microsoft-Windows-Security-Auditing,
+4719,Kerberos Authentication Service,System audit policy was changed
+4717,,access was granted
+4718,,account was removed
+4727,global group,A security-enabled global group was created
+4728,,A member was added to a security-enabled global group
+4729,,A member was removed from a security-enabled global group
+4730,global group,A security-enabled global group was deleted
+4731,local group,A security-enabled local group was created
+4732,,A member was added to a security-enabled local group
+4733,,A member was removed from a security-enabled local group
+4734,local group,A security-enabled local group was deleted
+4735,local group,A security-enabled local group was changed
+4737,global group,A security-enabled global group was changed
+4739,domain policy,Domain Policy was changed
+4750,,group was changed
+4753,,group was deleted
+4754,universal group,A security-enabled universal group was created
+4755,universal group,A security-enabled universal group was changed
+4756,,A member was added to a security-enabled universal group
+4757,,A member was removed from a security-enabled universal group
+4758,universal group,A security-enabled universal group was deleted
+4764,,A group's type was changed
+4799,local group,A security-enabled local group membership was enumerated
+4781,account,The name of an account was changed
+4703,account,A token right was adjusted
+4704,account,A user right was assigned
+4705,account,A user right was removed
+4800,workstation,The workstation was locked
+4801,workstation,The workstation was unlocked
+4634,login session,An account was logged off
+4698,,A scheduled task was created
+4700,,A scheduled task was enabled
+4701,,A scheduled task was disabled
+4702,,A scheduled task was updated
+4794,Directory Services Restore Mode,set the Directory Services Restore Mode administrator password
+4798,local group,A user's local group membership was enumerated

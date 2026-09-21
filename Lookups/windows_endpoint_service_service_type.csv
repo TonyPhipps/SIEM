@@ -1,0 +1,6 @@
+Service_Start_Type,start_mode
+0,auto
+1,auto
+2,auto
+3,manual
+4,disabled

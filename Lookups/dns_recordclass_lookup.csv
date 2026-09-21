@@ -1,0 +1,8 @@
+record_class_number,record_class
+0,reserved
+1,internet(IN)
+2,unassigned
+3,chaos (CH)
+4,hesiod (HS)
+255,* (any)
+65535,reserved

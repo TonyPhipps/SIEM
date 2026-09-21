@@ -1,0 +1,5 @@
+win_action,action
+ALLOW,allowed
+DROP,blocked
+OPEN-INBOUND,allowed
+CLOSE,teardown
